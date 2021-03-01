@@ -1,0 +1,1116 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="/ananas/video-js-7.2.2/video-js.css" rel="stylesheet" type="text/css">
+	<link href="/ananas/videojs-ext/videojs-ans.css" rel="stylesheet" type="text/css">
+	<link href="/ananas/videojs-ext/resolution-switcher/videojs-resolution-switcher.css" rel="stylesheet">
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		html,
+		body {
+			background-color: #fff;
+			height: 100%;
+			font: 12px/1.5 Microsoft YaHei, SimSun, Arial, Helvetica, sans-serif;
+		}
+
+		#loading {
+			width: 16px;
+			height: 16px;
+			background: url(/ananas/css/loading.gif) no-repeat center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+		}
+
+		#note,
+		#note1 {
+			background: #FAFBFD;
+			font-size: 14px;
+			display: block;
+		}
+
+		#note {
+			display: none;
+		}
+
+		#note1 {
+			background-image: url(/ananas/modules/video/warning.png);
+		}
+
+		#note1-wrap {
+			background: #FAFBFD;
+			font-size: 14px;
+		}
+
+		#hl {
+			width: 0%;
+			transition: width 200ms;
+			-webkit-transition: width 200ms;
+		}
+
+		#reader {
+			height: 100%;
+			width: 100%;
+			font-size: 12px;
+			color: red;
+		}
+
+		img {
+			border: 0px;
+			display: block;
+		}
+
+		ul,
+		ol {
+			list-style-type: none;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-weight: normal;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		input,
+		select,
+		textarea {
+			vertical-align: middle;
+			outline: none;
+			resize: none;
+		}
+
+		a {
+			color: #4a4a4a;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #c60000;
+		}
+
+		.clearfix {
+			zoom: 1;
+			overflow: hidden;
+		}
+
+		.clear {
+			clear: both;
+			font-size: 0;
+			height: 0;
+			line-height: 0;
+		}
+
+		.leftF {
+			float: left;
+		}
+
+		.rightF {
+			float: right;
+		}
+
+		.icons {
+			font-size: 0px;
+			text-indent: -9999999px;
+			overflow: hidden;
+			display: block;
+			font-family: "宋体";
+			font-family: SimSun;
+		}
+
+		/*******************************************************/
+		.rage_bd {
+			background: #f9f9f9;
+			padding: 17px 0 0 0;
+			width: 680px;
+			margin: 0 auto;
+		}
+
+		.article {
+			width: 118px;
+			height: 36px;
+			line-height: 34px;
+			font-size: 12px;
+			color: #7b9e31;
+			float: right;
+			overflow: hidden;
+		}
+
+		.article .icons {
+			background: url(rage_icons.png) no-repeat;
+			width: 21px;
+			height: 25px;
+			float: left;
+			margin: 5px 8px 0 15px;
+		}
+
+		.form_bd {
+			margin: 0 200px 0 70px;
+		}
+
+		/*2017-12-12 改*/
+		.form_content {
+			height: 34px;
+			border: solid #7b9e31 1px;
+			border-radius: 4px;
+			overflow: hidden;
+		}
+
+		.form_bd .fidtext {
+			width: 324px;
+			height: 20px;
+			line-height: 20px;
+			padding: 7px;
+			border: 0;
+			background: none;
+			float: left;
+		}
+
+		/*2017-12-12 改*/
+		.form_bd .bnt {
+			width: 70px;
+			height: 34px;
+			line-height: 34px;
+			display: block;
+			background: #7b9e31;
+			border: 0 none;
+			text-align: center;
+			cursor: pointer;
+			float: right;
+			font-size: 14px;
+			color: #FFF;
+		}
+
+		.form_bd dl {
+			font-size: 12px;
+			line-height: 20px;
+			color: #999;
+			margin: 15px 0 5px 0;
+		}
+
+		.form_bd dt {
+			width: 40px;
+			float: left;
+		}
+
+		.form_bd dd {
+			overflow: hidden;
+		}
+
+		.form_bd dd a {
+			max-width: 50px;
+			text-align: center;
+			padding: 0 6px;
+			margin: 0 8px 8px 0;
+			background: #e8e8e8;
+			color: #999;
+			border-radius: 2px;
+			height: 20px;
+			display: inline-block;
+		}
+
+		.form_bd dd a:hover {
+			color: #7b9e31;
+		}
+
+		.bar_right {
+			float: left;
+			padding: 7px 15px 0 15px;
+		}
+
+		.bar_bnt {
+			display: block;
+			overflow: hidden;
+			background: url(rage_icons.png) no-repeat 0 -60px;
+			width: 38px;
+			height: 23px;
+		}
+
+		.bar_current {
+			background: url(rage_icons.png) no-repeat 0 -30px;
+		}
+
+		/*列表*/
+		@media \0screen\,screen\9 {
+
+			/*透明 ie 6 7 8 */
+			.rage_list {
+				filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#99000000, endcolorstr=#99000000);
+				zoom: 1;
+			}
+		}
+
+		.rage_list {
+			width: 234px;
+			border-right: solid #000000 1px;
+			background: rgba(0, 0, 0, 0.6);
+			position: absolute;
+			top: 0;
+		}
+
+		.rage_list h3 {
+			font-size: 14px;
+			color: #FFF;
+			line-height: 30px;
+			padding: 5px 0 5px 15px;
+			margin: 0;
+		}
+
+		.rage_list .dele {
+			background: url(rage_icons.png) no-repeat 0 -110px;
+			width: 11px;
+			height: 11px;
+			float: right;
+			margin: 14px 10px 0 0;
+		}
+
+		.rage_list ul {
+			padding: 0 10px 0 15px;
+		}
+
+		.rage_list li {
+			padding: 5px 40px 5px 0;
+			line-height: 22px;
+			font-size: 12px;
+			position: relative;
+		}
+
+		.rage_list li a {
+			color: #FFF;
+		}
+
+		.rage_list li .icons {
+			background: url(rage_icons.png) no-repeat;
+			width: 13px;
+			height: 13px;
+			float: right;
+			position: absolute;
+			top: 8px;
+			display: none;
+		}
+
+		.rage_list li .bar_ico_01 {
+			background-position: 1px -90px;
+			right: 0;
+		}
+
+		.rage_list li .bar_ico_02 {
+			background-position: -20px -90px;
+			right: 20px;
+		}
+
+		.rage_list li:hover .icons {
+			display: block;
+		}
+
+		.rage_list li a {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -moz-box;
+			-moz-line-clamp: 2;
+			-moz-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -ms-box;
+			-ms-line-clamp: 2;
+			-ms-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -o-box;
+			-o-line-clamp: 2;
+			-o-box-orient: vertical;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: box;
+			line-clamp: 2;
+			box-orient: vertical;
+		}
+
+		.great {
+			float: right;
+			width: 52px;
+			height: 36px;
+			line-height: 34px;
+			font-size: 12px;
+			color: #7b9e31;
+		}
+
+		.greatIcons {
+			float: left;
+			height: 26px;
+			width: 24px;
+			background: url(normalzan.png);
+			margin-top: 2px;
+			margin-right: 5px;
+		}
+
+		.great:hover {
+			color: #5f7927
+		}
+
+		.great:hover .greatIcons {
+			background: url(clickzan.png);
+		}
+
+		/*2017-12-12 添加*/
+		.praise {
+			width: 56px;
+			height: 36px;
+			float: right;
+			position: relative;
+		}
+
+		.praise a.zan {
+			display: block;
+			height: 36px;
+			line-height: 36px;
+			color: #7b9e31;
+			text-align: right;
+			background: url(arrow.png) no-repeat center right;
+			padding-right: 15px;
+		}
+
+		.praise a.zan b {
+			background: url(m_zan.png) no-repeat;
+			width: 26px;
+			height: 26px;
+			float: left;
+			margin-top: 2px;
+		}
+
+		.praise a.zan_cur b {
+			background: url(d_zan.png) no-repeat;
+		}
+
+		.aise_top {
+			background: url(underBox.png) no-repeat;
+			width: 244px;
+			height: 94px;
+			position: absolute;
+			top: -94px;
+			right: 0px;
+		}
+
+		.aise_top li {
+			float: left;
+		}
+
+		.aise_top li.bzc {
+			width: 81px;
+			height: 20px;
+			padding: 14px 0 0 22px;
+		}
+
+		.aise_top li.gd {
+			width: 70px;
+			height: 20px;
+			padding: 14px 0 0 0;
+		}
+
+		.aise_top li.yh {
+			width: 60px;
+			height: 20px;
+			padding: 14px 0 0 0;
+		}
+
+		.aise_top li.xh {
+			width: 81px;
+			height: 20px;
+			padding: 21px 0 0 22px;
+		}
+
+		.aise_top li.gz {
+			width: 70px;
+			height: 20px;
+			padding: 17px 0 0 0;
+		}
+
+		.aise_top li.yq {
+			width: 60px;
+			height: 20px;
+			padding: 21px 0 0 0;
+		}
+
+		.aise_top li.bzc a.icons {
+			background: url(m_bzt.png) no-repeat;
+			width: 60px;
+			height: 17px;
+		}
+
+		.aise_top li.gd a.icons {
+			background: url(m_gd.png) no-repeat;
+			width: 49px;
+			height: 16px;
+		}
+
+		.aise_top li.yh a.icons {
+			background: url(m_yh.png) no-repeat;
+			width: 49px;
+			height: 18px;
+		}
+
+		.aise_top li.xh a.icons {
+			background: url(m_xh.png) no-repeat;
+			width: 49px;
+			height: 20px;
+		}
+
+		.aise_top li.gz a.icons {
+			background: url(m_gz.png) no-repeat;
+			width: 49px;
+			height: 20px;
+		}
+
+		.aise_top li.yq a.icons {
+			background: url(m_yq.png) no-repeat;
+			width: 49px;
+			height: 20px;
+		}
+
+		.aise_top li.bzc a.icons:active {
+			background: url(d_bzt.png) no-repeat;
+		}
+
+		.aise_top li.gd a.icons:active {
+			background: url(d_gd.png) no-repeat;
+		}
+
+		.aise_top li.yh a.icons:active {
+			background: url(d_yh.png) no-repeat;
+		}
+
+		.aise_top li.xh a.icons:active {
+			background: url(d_xh.png) no-repeat;
+		}
+
+		.aise_top li.gz a.icons:active {
+			background: url(d_gz.png) no-repeat;
+		}
+
+		.aise_top li.yq a.icons:active {
+			background: url(d_yq.png) no-repeat;
+		}
+
+		.line1 {
+			height: 8px;
+			background: #EBF0F5;
+			position: relative;
+		}
+
+		.line2,
+		.line3 {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 8px;
+			width: 251px;
+			opacity: 0.3;
+		}
+
+		.line2 {
+			background: #8B8B8B;
+		}
+
+		.line3 {
+			background: #4FCF5A;
+			opacity: 1;
+		}
+
+		.tipStyle {
+			padding-left: 51px;
+			height: 54px;
+			font-size: 14px;
+			color: #646873;
+			line-height: 54px;
+			background: url(/ananas/modules/video/wrong.png) no-repeat 21px 17px;
+		}
+
+		.tipStyle span {
+			color: #646873;
+			font-size: 12px
+		}
+
+		.tipStyle a {
+			font-size: 14px;
+			color: #646873;
+			text-decoration: none;
+		}
+
+		.making {
+			background: url(/ananas/modules/video/tips.png) no-repeat 21px 17px;
+		}
+	</style>
+	<script type="text/javascript" src="/ananas/static/js/domain.js?v=20141027"></script>
+	<script type="text/javascript" src="/ananas/swfobject/flashchecker.js?v=20141027"></script>
+	<script type="text/javascript" src="/ananas/swfobject/fileloader.js?v=20141027"></script>
+	<script type="text/javascript" src="/ananas/ext/import-all-classes.js?v=2020-0908-2019"></script>
+	<script type="text/javascript" src="/ananas/ext/ed_complete.js?v=20141027"></script>
+	<!--videojs-->
+	<script type="text/javascript" src="/ananas/video-js-7.2.2/video.min.js?v=20180910"></script>
+	<script type="text/javascript" src="/ananas/video-js-7.2.2/lang/zh-CN.js?v=20180910"></script>
+	<script type="text/javascript" src="/ananas/videojs-ext/videojs-ext.min.js?v=2020-0908-2153"></script>
+	<script type="text/javascript">
+		Ext.Ajax.autoAbort = true;
+		Ext.isIpad = (navigator.userAgent.indexOf('iPad') > -1);
+		Ext.isIos = (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/));
+		Ext.isAndroid = (navigator.userAgent.indexOf("Android") > -1);
+		Ext.isSogou = !!navigator.userAgent.match(/metasr/i);
+		Ext.isChaoxing = (navigator.userAgent.indexOf("ChaoXingStudy") > -1);
+		function greenligth() {
+			Ext.fly(window.frameElement).parent().addCls('ans-job-finished');
+		}
+		var isViturlEdit = false;
+		function proxy_completed() {
+			if (ed_complete) {
+				greenligth();
+				ed_complete();
+			}
+		}
+		function config(d) {
+			return window.frameElement.getAttribute(d);
+		}
+		function getCookie(objname) {
+			var arrstr = document.cookie.split("; ");
+			for (var i = 0; i < arrstr.length; i++) {
+				var temp = arrstr[i].split("=");
+				if (temp[0] == objname) {
+					return unescape(temp[1]);
+				}
+			}
+		}
+		function showMoocPlayer(paras) {
+			loadMultiFile([{
+				src: 'cxplayer/jquery-1.7.2.min.js',
+				tag: 'script',
+				type: 'text/javascript',
+				defer: 'defer'
+			}, {
+				src: '/ananas/swfobject/swfobject.js',
+				tag: 'script',
+				type: 'text/javascript',
+				defer: 'defer'
+			}, {
+				src: 'cxplayer/json.util.js',
+				tag: 'script',
+				type: 'text/javascript',
+				defer: 'defer'
+			}], function () {
+				loadMultiFile([{
+					src: 'cxplayer/scroll.js',
+					tag: 'script',
+					type: 'text/javascript',
+					defer: 'defer'
+				}, {
+					src: 'cxplayer/cxplayer.4.0.5.js?v=20160405',
+					tag: 'script',
+					type: 'text/javascript',
+					defer: 'defer'
+				}, {
+					src: 'cxplayer/moocplayer_4.0.11.js?v=2020-1016-2010',
+					tag: 'script',
+					type: 'text/javascript',
+					defer: 'defer'
+				}], function () {
+					var mp = new MoocPlayer({
+						isSendLog: !!parent.AttachmentSetting && parent.AttachmentSetting.control,
+						data: paras,
+						height: 540,
+						width: 676
+					});
+				});
+			});
+		}
+		function showHTML5Player(paras) {
+			//paras.rootPath="/ananas"
+			Ext.get('reader').setHTML('<video id="video" class="video-js vjs-default-skin vjs-big-play-centered"></video>');
+			new ans.VideoJs({
+				videojs: 'video',
+				params: paras
+			});
+			document.getElementsByTagName('video')[0].addEventListener('play', function () {
+				var iframearray = parent.document.getElementsByTagName("iframe");
+				for (var i = 0; i < iframearray.length; i++) {
+					if (iframearray[i].getAttribute("src").indexOf("microCourse") != -1) {
+						var item = iframearray[i].contentWindow.document.getElementsByTagName("iframe")[0].contentWindow;
+						item.PageView.stopAll && item.PageView.stopAll();
+					}
+				}
+			})
+		}
+		var wrongObj = "";
+		function loadVideo() {
+			var objectid = config('objectid');
+			//Ext.get('objectid').setHTML('(文件ID:' + objectid + ')');
+			var reader = Ext.get('reader');
+			if (!objectid) {
+				reader.setHTML('未找到该文件');
+				return;
+			}
+			wrongObj = objectid;
+			var iframe = window.frameElement;
+			var data = Ext.decode(iframe.getAttribute('data'));
+			var setting = parent.AttachmentSetting;
+			var mid = config('mid');
+			var percent = 0;
+			var vbegin = config('vbegin');
+			var vend = config('vend');
+			var jobid = config('jobid') || "";
+			var danmaku = 0;
+			var fastforward = config('fastforward') == 'true' ? true : false;
+			var switchwindow = config('switchwindow') == 'true' ? true : false;
+			var note = Ext.get('note');
+			var hl = Ext.get('hl');
+			var note1Wrap = Ext.get('note1-wrap');
+			var note1 = Ext.get('note1');
+			var timer = null;
+			var rt = data ? (data.rt ? data.rt : 0.9) : 0.9;
+			var fls = 0;
+			try {
+				isTeacher = top.location.href.indexOf("teacherstudy") > 0;
+			} catch (e) { }
+			var isVideoVisibleName = parent.isVideoVisibleName;
+			var doublespeed = 1;
+			if (data.v_begin && data.v_end && data.pobjectid) {
+				isViturlEdit = true;
+			}
+			function request() {
+				if (percent <= 100) {
+					hl.setWidth((percent += 5) + "%");
+				}
+				var k = getCookie('fid') || '';
+				Ext.Ajax.request({
+					url: '/ananas/status/' + objectid + '?k=' + k + "&flag=normal",
+					success: function (response) {
+						var oData = eval('(' + response.responseText + ')');
+						Ext.get('loading').hide();
+						switch (oData.status) {
+							case 'success':
+								note1Wrap.remove();
+								var videoName = data && data.name || '';
+								if (isVideoVisibleName != "false") {
+									if (Ext.fly(window.frameElement).parent().first('.ans-job-icon') != null) {
+										Ext.fly(window.frameElement).parent().first('.ans-job-icon').insertHtml('beforeEnd', '<span title="' + videoName + '" style="width: 500px;margin-left: 120px;display: inline-block;height: 23px;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</span>');
+									} else {
+										Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title="' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div>');
+									}
+								}
+								var d = oData.duration,
+									paras = {
+										enableFastForward: 1,
+										enableSwitchWindow: 1,
+										duration: d,
+										httpmd: oData.httpmd,
+										http: oData.http,
+										httphd: oData.httphd,
+										httpshd: oData.httpshd,
+										filename: oData.filename,
+										dtoken: oData.dtoken
+									};
+								window.duration = d;
+								if (oData.cdn) {
+									paras.cdn = oData.cdn;
+								}
+								if (document.cookie.length > 0) {
+									paras.memberinfo = getCookie('memberinfo');
+									paras.questionErrorLogUrl = ServerHosts.MASTER_HOST + '/question/addquestionerror';
+								}
+								if (mid) {
+									paras.mid = mid;
+								}
+								if (oData.duration) {
+									paras.videoTotalTime = oData.duration;
+								}
+								if (oData.screenshot) {
+									paras.screenshot = oData.screenshot;
+								}
+								if (oData.thumbnails) {
+									paras.thumbnails = oData.thumbnails;
+								}
+								if (oData.subobjectid) {
+									paras.subobjectid = oData.subobjectid;
+								}
+								if (vbegin) {
+									paras.startTime = vbegin;
+								}
+								if (vend) {
+									paras.endTime = vend;
+								}
+								paras.rt = rt;
+								paras.control = setting && setting.control;
+								var m = {}, s, vb, ve;
+								if (setting && setting.control) {
+									var attachments = setting.attachments,
+										defaults = setting.defaults,
+										spec = oData.objectid + "-" + (vbegin ? vbegin : 0) + "-" + (vend ? vend : d) + "-" + jobid;
+									if (defaults) {
+										paras.userid = defaults.userid || '';
+										paras.fid = defaults.fid || '';
+									}
+									for (var i = 0; i < attachments.length; i++) {
+										m = attachments[i], vb = 0, ve = d;
+										if (m.property) {
+											if (m.property.vbegin) {
+												vb = m.property.vbegin;
+											}
+											if (m.property.vend) {
+												ve = m.property.vend;
+											}
+										}
+										if (!m.jobid) {
+											m.jobid = "";
+										}
+										s = m.objectId + "-" + vb + "-" + ve + "-" + m.jobid;
+										if (spec == s) {
+											Ext.apply(paras, setting.defaults);
+											paras.headOffset = m.headOffset ? Math.floor(parseInt(m.headOffset) / 1000) : 0;
+											paras.objectId = m.objectId;
+											paras.otherInfo = m.otherInfo;
+											paras.isPassed = m.isPassed;
+											paras.danmaku = danmaku;
+											var schoolDoubleSpeed = paras.schooldoublespeed;
+											if (typeof schoolDoubleSpeed == "undefined" || (typeof schoolDoubleSpeed != "undefined" && schoolDoubleSpeed == 2)) {
+												paras.doublespeed = doublespeed;
+											} else {
+												paras.doublespeed = schoolDoubleSpeed;
+											}
+											if (jobid) {
+												paras.jobid = jobid;
+												if (!m.job) {
+													if (!isTeacher) {
+														greenligth();
+													}
+													ed_complete = false;
+													paras.enableFastForward = 1;
+													paras.enableSwitchWindow = 1;
+													paras.headOffset = 0;
+												}
+											}
+											paras.reportUrl = paras.reportUrl && paras.reportUrl.replace("http://", window.location.protocol + "//");
+											window._jobindex = i;
+											break;
+										}
+									}
+								}
+								// course ignoreVideoCtrl
+								if (paras.ignoreVideoCtrl == 1) {
+									paras.enableFastForward = 1;
+									paras.enableSwitchWindow = 1;
+								}
+								// course state
+								//if (paras.state == 1) {
+								//	delete paras.reportUrl;
+								//}	
+								if (!paras.control || isTeacher) {
+									ed_complete = false;
+									paras.enableFastForward = 1;
+									paras.enableSwitchWindow = 1;
+									paras.headOffset = 0;
+								}
+								if (paras.isPassed || paras.headOffset > paras.videoTotalTime * 0.95) {
+									paras.headOffset = 0;
+								}
+								timer && clearInterval(timer);
+								if (!data.danmaku && supportH5Video() && !Ext.isSogou) {
+									showHTML5Player(paras);
+								} else {
+									if (!fls) {
+										var href = 'http://www.adobe.com/go/getflashplayer';
+										Ext.get('reader').setHTML('您没有安装flashplayer，请到<a href="' + href + '" target="_blank">www.adobe.com</a>下载安装。<br/>如果已经安装请点击此处启用：<object id="swf_jlxl1lfb" height="50" width="100" type="application/x-shockwave-flash" data="/ananas/modules/video/cxplayer/player_4.0.11.swf?v=20161025" style="border:#ccc 1px solid"><param name="quality" value="high"><param name="allowScriptAccess" value="always"><param name="wMode" value="transparent"><param name="align" value="middle"><param name="bgcolor" value="#000000"><param name="swLiveConnect" value="true"><param name="loop" value="true"><param name="play" value="true"><param name="DeviceFont" value="false"><param name="allowFullScreen" value="true"><param name="menu" value="true"></object>');
+										return;
+									}
+									showMoocPlayer(paras);
+								}
+								sendReadZTMediaLog(0);
+								break;
+							case 'failed':
+								timer && clearInterval(timer);
+								note1Wrap.remove();
+								note.show();
+								break;
+							case 'waiting':
+								note1Wrap.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle making">视频正在转码，您无需在此页面等待【9001】</p>');
+								break;
+							case 'converting':
+							case 'transfer':
+								note1Wrap.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频上传失败，请重新上传【9002】</p>');
+								break;
+						}
+					},
+					failure: function (resp) {
+						if (resp.status == 0) {
+							timer && clearInterval(timer);
+							note1Wrap.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频加载超时，请刷新页面重试【9003】</p>');
+							Ext.get('loading').hide();
+						} else {
+							timer && clearInterval(timer);
+							note1Wrap.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle">视频加载失败，请稍后再试【9004】</p>');
+							Ext.get('loading').hide();
+						}
+					}
+				});
+			}
+			request();
+			//timer = setInterval(request, 5000);
+		}
+		function supportH5Video() {
+			var videoMp4Support = function () {
+				var elem = document.createElement('video');
+				if (typeof elem.canPlayType == 'function') {
+					var playable = elem.canPlayType('video/mp4;codecs="avc1.42E01E,mp4a.40.2"');
+					if ((playable.toLowerCase() == 'maybe') || (playable.toLowerCase() == 'probably')) {
+						return true;
+					}
+					var playable = elem.canPlayType('video/mp4;codecs="avc1.64001E,mp4a.40.2"');
+					if ((playable.toLowerCase() == 'maybe') || (playable.toLowerCase() == 'probably')) {
+						return true;
+					}
+				}
+				return false;
+			}
+			if (Ext.isIE && Ext.isIE10m) {
+				return false;
+			}
+			return videoMp4Support();
+		}
+		var playLogTimer;
+		function sendReadZTMediaLog(st) {
+			try {
+				var GetQueryString = function (name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+					var r = parent.location.search.substr(1).match(reg);
+					if (r != null) return unescape(r[2]); return null;
+				};
+				var setting = parent.AttachmentSetting;
+				var iframe = window.frameElement;
+				var kid = iframe.parentElement.parentElement.parentElement.getAttribute("kid");
+				if (kid) {
+					var margKid = 'marg-' + kid;
+					setting = top[margKid];
+					if (typeof (setting) == "string") {
+						setting = eval('(' + setting + ')');
+					}
+				}
+				if (!setting) {
+					return;
+				}
+				var isFiled = setting.defaults.isFiled;
+				var state = setting.defaults.state;
+				if (isFiled == 1 || state == 1) {
+					return;
+				}
+				var dtype = top.dtype || 'Course';
+				if (dtype == "ZT" || dtype == "HB" || dtype == "MAG") {
+					var search = parent.location.search || '';
+					//				if (!/_from_=(\d+_){3}/.test(search)) {
+					//					return;
+					//				}
+					var uid = getCookie('UID');
+					var objectId = config('objectid');
+					var type = 0;
+					var courseId = setting.defaults.courseid;
+					var chapterId = setting.defaults.knowledgeid;
+					var duration = window.duration;
+					var _from_ = GetQueryString('_from_');
+					var attachments = setting.attachments;
+					var enc = "";
+					if (attachments.length > 0) {
+						for (var i = 0, len = attachments.length; i < len; i++) {
+							var item = attachments[i];
+							var obj = item.objectId;
+							if (obj == objectId) {
+								if (st == 0) {
+									enc = item.enc0;
+								} else if (st == 1) {
+									enc = item.enc1;
+								} else {
+									enc = item.enc2;
+								}
+								break;
+							}
+						}
+					}
+					var logUrl = location.protocol + '//data-xxt.aichaoxing.com/analysis/datalog?s='
+						+ courseId + '&c=' + chapterId + '&o=' + objectId + '&st='
+						+ st + '&m=' + type + '&d=' + duration * 1000 + '&u=' + uid + '&_from_=' + _from_ + "&enc=" + enc;
+					var logRequest = function () {
+						Ext.Ajax.request({
+							url: logUrl,
+							success: function (response) {
+							}
+						});
+					};
+					logRequest();
+					if (st == 1) {
+						playLogTimer && clearInterval(playLogTimer);
+						playLogTimer = setInterval(function () {
+							logRequest();
+						}, 2500);
+					} else if (st == 2) {
+						playLogTimer && clearInterval(playLogTimer);
+					}
+				}
+			} catch (error) { }
+		}
+		function receiveStudyLog() {
+			try {
+				var setting = parent.AttachmentSetting;
+				if (!setting) {
+					return;
+				}
+				if (setting && setting.defaults) {
+					var defaults = setting.defaults;
+					if (defaults.chapterCapture != 1) {
+						return;
+					}
+					var url = '/keeper/api/receive-studylog';
+					var eventTime = new Date().getTime();
+					var courseId = defaults.courseid;
+					var clazzId = defaults.clazzId;
+					var personId = defaults.cpi;
+					var userId = defaults.userid;
+					var knowledgeId = defaults.knowledgeid;
+					var fid = defaults.fid;
+					var relationId = "";
+					var objectId = config('objectid');
+					var jobid = config('jobid') || "";
+					var attachments = setting.attachments;
+					if (attachments.length > 0) {
+						for (var i = 0, len = attachments.length; i < len; i++) {
+							var item = attachments[i];
+							var obj = item.objectId;
+							if (obj == objectId) {
+								relationId = item.aid;
+								break;
+							}
+						}
+					}
+					var data = {
+						"relationId": relationId,
+						"objectId": objectId,
+						"userId": userId,
+						"knowledgeId": knowledgeId,
+						"fid": fid,
+						"jobId": jobid
+					}
+					var log = {
+						"courseId": courseId,
+						"clazzId": clazzId,
+						"personId": personId,
+						"eventType": 4,
+						"eventTime": eventTime,
+						"data": data
+					};
+					var monitorEnc = defaults.mtEnc;
+					Ext.Ajax.request({
+						method: 'post',
+						url: url,
+						params: { "log": JSON.stringify(log), "enc": monitorEnc },
+						success: function (data) {
+						}
+					});
+				}
+			} catch (err) { }
+		}
+		function createVideoTask() {
+			if (isViturlEdit) {
+				return;
+			}
+			var taskUrl = location.protocol + '//convertservice.chaoxing.com/video/createVideoTask?objectid=' + wrongObj;
+			Ext.Ajax.request({
+				type: "get",
+				async: false,
+				url: taskUrl,
+				dataType: "jsonp",
+				jsonp: "jsoncallback",
+				success: function (response) { },
+				failure: function (resp) {
+					console.log("创建任务失败");
+				}
+			});
+		}
+		Ext.onReady(function () {
+			var requestSatusResourceDownGrade = parent.requestSatusResourceDownGrade;
+			if (requestSatusResourceDownGrade && requestSatusResourceDownGrade == 1) {
+				var tipImg = '<img src="/ananas/css/downgradeBlueTip.jpg" width="676" height="540">';
+				Ext.select('body').setHTML(tipImg);
+				return;
+			}
+			loadVideo();
+		});
+	</script>
+</head>
+
+<body>
+	<div id="loading"></div>
+	<div id="note">
+		<div class="line1">
+			<div class="line2"></div>
+		</div>
+		<p class="tipStyle">视频转码失败，请使用其他软件另存后重新上传【9005】</p>
+	</div>
+	<div id="note1-wrap">
+		<div class="line1">
+			<div class="line3" id="hl"></div>
+		</div>
+		<p class="tipStyle making">正在为您加载文件... </p>
+	</div>
+	<div class="rage_list" style="height:490px;right:0; display:none;">
+		<!-- 高度自定 -->
+		<a id="delete" class="dele icons" href="javascript:;"></a>
+		<h3>弹幕列表</h3>
+		<div id="boxscroll" style="height:380px;">
+			<ul id="danmulist"></ul>
+		</div>
+	</div>
+	<div id="reader" style="height: 540px;"></div>
+	<div class="rage_bd">
+		<div class="article"><b class="icons"></b>弹幕列表</div>
+		<!--  <div class="great"><b class="greatIcons"></b>赞</div>-->
+		<div class="bar_right"><a class="bar_bnt bar_current" href="javascript:void(0);"></a></div>
+		<div class="praise"> <a class="zan" href="#"><b class="icons"></b>赞</a> <!-- 点赞 zan_cur -->
+			<div class="aise_top" style="display:none;">
+				<ul class="clearfix">
+					<li class="bzc" value="@不赞同@"><a class="icons" href="javascript:void(0);"></a></li>
+					<li class="gd" value="@感动@"><a class="icons" href="javascript:void(0);"></a></li>
+					<li class="yh" value="@疑惑@"><a class="icons" href="javascript:void(0);"></a></li>
+					<li class="xh" value="@献花@"><a class="icons" href="javascript:void(0);"></a></li>
+					<li class="gz" value="@鼓掌@"><a class="icons" href="javascript:void(0);"></a></li>
+					<li class="yq" value="@有趣@"><a class="icons" href="javascript:void(0);"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="form_bd">
+			<div class="form_content">
+				<input type="text" name="textfield" class="fidtext" id="barragetext" />
+				<!-- <input  name="button" value="" class="bnt" id="sendbarrage"/> -->
+				<a class="bnt" id="sendbarrage" href="javascript:void(0);">发送</a>
+			</div>
+		</div>
+	</div>
+	<script>
+		Ext.onReady(function () {
+			Ext.select(".xl-chrome-ext-bar").remove();
+		})
+	</script>
+</body>
+
+</html>
