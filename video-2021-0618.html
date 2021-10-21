@@ -261,6 +261,7 @@
 			background: rgba(0, 0, 0, 0.6);
 			position: absolute;
 			top: 0;
+			z-index: 100;
 		}
 
 		.rage_list h3 {
@@ -402,6 +403,10 @@
 			background: url(d_zan.png) no-repeat;
 		}
 
+		.praise .zan {}
+
+		.praise .zan {}
+
 		.aise_top {
 			background: url(underBox.png) no-repeat;
 			width: 244px;
@@ -411,9 +416,13 @@
 			right: 0px;
 		}
 
+		.aise_top ul {}
+
 		.aise_top li {
 			float: left;
 		}
+
+		.aise_top li a.icons {}
 
 		.aise_top li.bzc {
 			width: 81px;
@@ -559,16 +568,99 @@
 		.making {
 			background: url(/ananas/modules/video/tips.png) no-repeat 21px 17px;
 		}
+
+		.danmuChannel {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 678px;
+		}
+
+		.danmuChannel .channel {
+			width: 678px;
+			overflow: hidden;
+			height: 40px;
+			font-size: 16px;
+			color: #fff;
+			position: relative
+		}
+
+		.danmuItem {
+			display: inline-block;
+		}
+
+		.danmuItem span {
+			padding: 0 5px
+		}
+
+		.danmuItem span i {
+			display: inline-block;
+			width: 18px;
+			height: 18px;
+			vertical-align: middle;
+			margin-right: 2px;
+		}
+
+		.danmuItem span i.zanIcon {
+			background: url(zan.png) no-repeat left center;
+			background-size: 100%;
+		}
+
+		.danmuItem span i.clapIcon {
+			background: url(clapIcon.png) no-repeat left center;
+			background-size: 100%;
+		}
+
+		.danmuItem span i.huaIcon {
+			background: url(huaIcon.png) no-repeat left center;
+			background-size: 100%;
+		}
+
+		.danmuItem span i.moveIcon {
+			background: url(moveIcon.png) no-repeat left center;
+			background-size: 100%;
+		}
+
+		.danmuItem span i.doubtIcon {
+			background: url(doubtIcon.png) no-repeat left center;
+			background-size: 100%;
+		}
+
+		.danmuItem span i.noZanIcon {
+			background: url(noZanIcon.png) no-repeat left center;
+			background-size: 100%;
+		}
+
+		.danmuItem span i.interestingIcon {
+			background: url(interestingIcon.png) no-repeat left center;
+			background-size: 100%;
+		}
+
+		.right {
+			position: absolute;
+			visibility: hidden;
+			white-space: nowrap;
+			/*left: 700px;*/
+			transform: translateX(678px);
+		}
+
+		.left {
+			position: absolute;
+			white-space: nowrap;
+			user-select: none;
+			transition: transform 7s linear;
+		}
 	</style>
 	<script type="text/javascript" src="/ananas/static/js/domain.js?v=20141027"></script>
 	<script type="text/javascript" src="/ananas/swfobject/flashchecker.js?v=20141027"></script>
 	<script type="text/javascript" src="/ananas/swfobject/fileloader.js?v=20141027"></script>
-	<script type="text/javascript" src="/ananas/ext/import-all-classes.js?v=2020-0908-2019"></script>
+	<script type="text/javascript" src="/ananas/ext/import-all-classes.js?v=2021-0401-1110"></script>
 	<script type="text/javascript" src="/ananas/ext/ed_complete.js?v=20141027"></script>
 	<!--videojs-->
 	<script type="text/javascript" src="/ananas/video-js-7.2.2/video.min.js?v=20180910"></script>
 	<script type="text/javascript" src="/ananas/video-js-7.2.2/lang/zh-CN.js?v=20180910"></script>
-	<script type="text/javascript" src="/ananas/videojs-ext/videojs-ext.min.js?v=2020-1105-2153"></script>
+	<script type="text/javascript" src="/ananas/videojs-ext/videojs-ext.min.js?v=2021-0612-2251"></script>
+	<script type="text/javascript" src="/ananas/ueditor/third-party/apputils/jquery.min.js?v=2021-0325"></script>
 	<script type="text/javascript">
 		Ext.Ajax.autoAbort = true;
 		Ext.isIpad = (navigator.userAgent.indexOf('iPad') > -1);
@@ -600,7 +692,7 @@
 		}
 		function showMoocPlayer(paras) {
 			loadMultiFile([{
-				src: 'cxplayer/jquery-1.7.2.min.js',
+				src: 'cxplayer/jquery.min.js',
 				tag: 'script',
 				type: 'text/javascript',
 				defer: 'defer'
@@ -713,6 +805,19 @@
 			if (data.v_begin && data.v_end && data.pobjectid) {
 				isViturlEdit = true;
 			}
+			function setTopicName(list) {
+				if (Ext.fly(window.frameElement).parent().select("#topicList") != null) {
+					if (list && list.length == 0) {
+						return;
+					}
+					Ext.fly(window.frameElement).parent().select("#topicType").setHTML('知识点:');
+					var spanList = "";
+					for (var i = 0, len = list.length; i < len; i++) {
+						spanList += "<span>" + list[i] + "</span>";
+					}
+					Ext.fly(window.frameElement).parent().select("#topicContent").setHTML(spanList);
+				}
+			}
 			function request() {
 				if (percent <= 100) {
 					hl.setWidth((percent += 5) + "%");
@@ -807,6 +912,9 @@
 											paras.otherInfo = m.otherInfo;
 											paras.isPassed = m.isPassed;
 											paras.danmaku = danmaku;
+											if (m.topicList) {
+												setTopicName(m.topicList);
+											}
 											var schoolDoubleSpeed = paras.schooldoublespeed;
 											if (typeof schoolDoubleSpeed == "undefined" || (typeof schoolDoubleSpeed != "undefined" && schoolDoubleSpeed == 2)) {
 												paras.doublespeed = doublespeed;
@@ -850,7 +958,30 @@
 									paras.headOffset = 0;
 								}
 								timer && clearInterval(timer);
-								if (!data.danmaku && supportH5Video() && !Ext.isSogou) {
+								paras.isSupportFace = $(".maskDiv1", top.document).length > 0 && (/\/studentstudy/.test(top.location.pathname)) ? true : false;
+								if (supportH5Video()) {
+									if (data.danmaku) {
+										loadMultiFile([{
+											src: 'cxplayer/jquery.min.js',
+											tag: 'script',
+											type: 'text/javascript',
+											defer: 'defer'
+										}], function () {
+											loadMultiFile([{
+												src: 'cxplayer/scroll.js',
+												tag: 'script',
+												type: 'text/javascript',
+												defer: 'defer'
+											}], function () {
+												loadMultiFile([{
+													src: 'cxplayer/videodanmu.js',
+													tag: 'script',
+													type: 'text/javascript',
+													defer: 'defer'
+												}])
+											});
+										});
+									}
 									showHTML5Player(paras);
 								} else {
 									if (!fls) {
@@ -872,7 +1003,7 @@
 								break;
 							case 'converting':
 							case 'transfer':
-								note1Wrap.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频上传失败，请重新上传【9002】</p>');
+								note1Wrap.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频上传中【9002】</p>');
 								break;
 						}
 					},
@@ -1078,6 +1209,133 @@
 			}
 			loadVideo();
 		});
+		var danmaku = {};
+		function getDanmuByTime(state, time) {
+			var setting = parent.AttachmentSetting;
+			if (!setting) {
+				return;
+			}
+			if (setting && setting.defaults) {
+				var defaults = setting.defaults;
+				var courseId = defaults.courseid;
+				var clazzId = defaults.clazzId;
+			} else {
+				return;
+			}
+			if (state == "pause") {
+				danmaku = {};
+				return;
+			}
+			if (state == "play") {
+				danmaku = {};
+			}
+			var mid = config('mid');
+			var param = {
+				"courseid": courseId,
+				"classid": clazzId,
+				"mid": mid,
+				"timebegin": parseInt(time),
+				"timeend": parseInt(time) + 59
+			};
+			Ext.Ajax.request({
+				url: '/videodanmaku/timerange-danmakulist',
+				method: 'get',
+				params: param,
+				success: function (response) {
+					var result = eval('(' + response.responseText + ')');
+					if (result.status == 1) {
+						var data = result.data;
+						for (var i = 0; i < data.length; i++) {
+							var key = data[i].timeline;
+							if (!danmaku[key]) {
+								danmaku[key] = new Array();
+							}
+							danmaku[key].push(data[i].content);
+						}
+						if (time == 0) {
+							danmuPlay(0);
+						}
+					} else {
+						alert("服务异常,稍后再试!");
+					}
+				},
+				failure: function (resp) {
+					alert("服务异常,稍后再试!");
+				}
+			});
+		}
+		var count = 0;
+		var timeFlag = -1;
+		var currentTime = 0;
+		function shotdanmu(dom) {
+			var clientWidth = dom.clientWidth;
+			clientWidth = -parseInt(clientWidth);
+			var transformX = 'translateX(' + clientWidth + 'px)';
+			setTimeout(function () {
+				dom.style.transform = transformX;
+				dom.className = 'danmuItem left';
+			}, 500);
+		}
+		function danmuPlay(time) {
+			currentTime = time;
+			if (timeFlag == time) {
+				return;
+			}
+			timeFlag = time;
+			var list = danmaku[time];
+			if (!list) {
+				return;
+			}
+			if (!$('.bar_bnt').hasClass("bar_current")) {
+				return;
+			}
+			var content = '<div class="danmuItem right">';
+			for (var i = 0; i < list.length; i++) {
+				if (list[i] == "@zan@") {
+					content += '<span><i class="zanIcon"></i>赞</span>';
+				} else if (list[i] == "@不赞同@") {
+					content += '<span><i class="noZanIcon"></i>不赞同</span>';
+				} else if (list[i] == "@感动@") {
+					content += '<span><i class="moveIcon"></i>感动</span>';
+				} else if (list[i] == "@疑惑@") {
+					content += '<span><i class="doubtIcon"></i>疑惑</span>';
+				} else if (list[i] == "@献花@") {
+					content += '<span><i class="huaIcon"></i>献花</span>';
+				} else if (list[i] == "@鼓掌@") {
+					content += '<span><i class="clapIcon"></i>鼓掌</span>';
+				} else if (list[i] == "@有趣@") {
+					content += '<span><i class="interestingIcon"></i>有趣</span>';
+				} else {
+					content += '<span>' + list[i] + '</span>';
+				}
+			}
+			content += '</div>';
+			var r = count % 3;
+			var el = new Ext.XTemplate(content).append("channel_" + r);
+			shotdanmu(el);
+			count++;
+		}
+		var getPlayState;
+		function clearStateInterval() {
+			getPlayState && clearInterval(getPlayState);
+		}
+		function startFaceCollection(player, collectionType, obj) {
+			if (/\/studentstudy/.test(top.location.pathname)) {
+				var len = $(".maskDiv1", top.document).length;
+				if (len > 0) {
+					top.getQRCodeURLShow1 && top.getQRCodeURLShow1();
+					$(".maskDiv1", top.document).css("display", "block");
+					getPlayState = setInterval(function () {
+						if (top.playerState) {
+							clearStateInterval();
+							obj.isPlay = true;
+							player.play();
+							top.playerState = false;
+						}
+					}, 1000);
+				}
+			}
+		}
 	</script>
 </head>
 
@@ -1095,7 +1353,7 @@
 		</div>
 		<p class="tipStyle making">正在为您加载文件... </p>
 	</div>
-	<div class="rage_list" style="height:490px;right:0; display:none;">
+	<div class="rage_list" style="height:490px;right:0; display:none;" id="rage_list">
 		<!-- 高度自定 -->
 		<a id="delete" class="dele icons" href="javascript:;"></a>
 		<h3>弹幕列表</h3>
@@ -1105,12 +1363,18 @@
 		</div>
 	</div>
 	<div id="reader" style="height: 540px;"></div>
+	<div class="danmuChannel" id="danmuChannel">
+		<div class="channel" id="channel_0"></div>
+		<div class="channel" id="channel_1"></div>
+		<div class="channel" id="channel_2"></div>
+		<div class="channel" id="channel_3"></div>
+	</div>
 	<div class="rage_bd">
 		<div class="article"><b class="icons"></b>弹幕列表</div>
 		<!--  <div class="great"><b class="greatIcons"></b>赞</div>-->
 		<div class="bar_right"><a class="bar_bnt bar_current" href="javascript:void(0);"></a></div>
-		<div class="praise"> <a class="zan" href="#"><b class="icons"></b>赞</a> <!-- 点赞 zan_cur -->
-			<div class="aise_top" style="display:none;">
+		<div class="praise"> <a class="zan" href="javascript:;"><b class="icons"></b>赞</a> <!-- 点赞 zan_cur -->
+			<div class="aise_top" style="display:none;" id="aise_top">
 				<ul class="clearfix">
 					<li class="bzc" value="@不赞同@"><a class="icons" href="javascript:void(0);"></a></li>
 					<li class="gd" value="@感动@"><a class="icons" href="javascript:void(0);"></a></li>
