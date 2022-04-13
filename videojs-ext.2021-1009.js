@@ -1,3 +1,39 @@
+Ext.define("ananas.ServerHosts", {
+	alternateClassName: "ServerHosts",
+	singleton: true,
+	constructor: function () {
+		var a = this;
+		a.callParent(arguments);
+		var b = document.domain;
+		try {
+			a.MASTER_HOST = location.protocol + "//" + top.location.host
+		} catch (c) {
+			a.MASTER_HOST = location.protocol + "//" + location.host
+		}
+		try {
+			a.PARENT_HOST = location.protocol + "//" + parent.location.host
+		} catch (c) {
+			a.MASTER_HOST = location.protocol + "//" + location.host
+		}
+		a.P_HOST = location.protocol + "//p.ananas.chaoxing.com";
+		a.s1_HOST = location.protocol + "//s1.ananas.chaoxing.com";
+		a.s2_HOST = location.protocol + "//s2.ananas.chaoxing.com";
+		a.CLOUD_HOST = "http://cloud.ananas." + b;
+		a.NEW_CLOUD_HOST = location.protocol + "//pan-yz.chaoxing.com";
+		a.CS_HOST = location.protocol + "//cs.ananas." + b;
+		a.FANYA_HOST = "http://course.fanya." + b;
+		a.PAN_HOST = "http://pan.ananas." + b;
+		a.CXLIVE_HOST = "http://cxlive." + b;
+		a.ERYA_TSK_HOST = "http://erya.tsk." + b;
+		a.QUESTIONNAIRE_HOST = "http://surveyapp.fy." + b;
+		a.FX_HOST = "http://www." + b;
+		a.PHONE_ZT_HOST = "https://special.rhky.com";
+		a.CHAOXING_CLASS_HOST = "https://k.chaoxing.com";
+		a.LIVE_HOST = location.protocol + "//live.chaoxing.com";
+		a.APPCD_HOST = location.protocol + "//appcd.chaoxing.com";
+		a.ZHIBO_HOST = "https://zhibo.chaoxing.com"
+	}
+});
 (function (g) {
 	function q(v, A) {
 		var z = (v & 65535) + (A & 65535);
@@ -244,25 +280,25 @@ Ext.define("ans.VideoJs", {
 	mixins: {
 		observable: "Ext.util.Observable"
 	},
-	constructor: function (a) {
-		a = a || {};
-		var c = this;
-		c.addEvents(["seekstart"]);
-		c.mixins.observable.constructor.call(c, a);
-		var b = videojs(a.videojs, c.params2VideoOpt(a.params), function () {});
-		Ext.fly(a.videojs).on("contextmenu", function (f) {
+	constructor: function (b) {
+		b = b || {};
+		var e = this;
+		e.addEvents(["seekstart"]);
+		e.mixins.observable.constructor.call(e, b);
+		var c = videojs(b.videojs, e.params2VideoOpt(b.params), function () {});
+		Ext.fly(b.videojs).on("contextmenu", function (f) {
 			f.preventDefault()
 		});
-		Ext.fly(a.videojs).on("keydown", function (f) {
+		Ext.fly(b.videojs).on("keydown", function (f) {
 			if (f.keyCode == 32 || f.keyCode == 37 || f.keyCode == 39 || f.keyCode == 107) {
 				f.preventDefault()
 			}
 		});
-		if (b.videoJsResolutionSwitcher) {
-			b.on("resolutionchange", function () {
-				var f = b.currentResolution(),
-				e = f.sources ? f.sources[0].res : false;
-				Ext.setCookie("resolution", e)
+		if (c.videoJsResolutionSwitcher) {
+			c.on("resolutionchange", function () {
+				var g = c.currentResolution(),
+				f = g.sources ? g.sources[0].res : false;
+				Ext.setCookie("resolution", f)
 			})
 		}
 	},
@@ -271,12 +307,12 @@ Ext.define("ans.VideoJs", {
 		var cdn = [{
 				indexorder: 0,
 				label: "公网1",
-				url: "https://s1.ananas.chaoxing.com",
+				url: ServerHosts.s1_HOST,
 				ispublic: true
 			}, {
 				indexorder: 1,
 				label: "公网2",
-				url: "https://s2.ananas.chaoxing.com",
+				url: ServerHosts.s2_HOST,
 				ispublic: true
 			}
 		];
@@ -297,8 +333,19 @@ Ext.define("ans.VideoJs", {
 			return "http://hls-ans.chaoxing.com/hls/m3u8/" + objectId + "/" + r + ".m3u8?cdn=" + encodeURIComponent(cdn)
 		}
 		function makeSource(src, r) {
-			var start = src.src.indexOf("/s1.ananas.chaoxing.com") + "/s1.ananas.chaoxing.com".length,
-			file = src.src.substr(start);
+			var sdomain = ServerHosts.s1_HOST.replace("http:/", "").replace("https:/", "");
+			var start = 0;
+			if (src.src.indexOf(sdomain) > -1) {
+				start = src.src.indexOf(sdomain) + sdomain.length
+			}
+			var file = src.src.substr(start);
+			if (r.ispublic && start == 0) {
+				return {
+					src: file,
+					type: "video/mp4",
+					res: src.res
+				}
+			}
 			if (r.ispublic) {
 				return useM3u8 ? {
 					src: m3u8(params.objectId, src.resolution, r.url),
@@ -312,12 +359,12 @@ Ext.define("ans.VideoJs", {
 				}
 			} else {
 				return useM3u8 ? {
-					src: m3u8(params.objectId, src.resolution, r.url + "/s1.ananas.chaoxing.com"),
+					src: m3u8(params.objectId, src.resolution, r.url + sdomain),
 					type: "application/x-mpegURL",
 					res: src.res
 				}
 				 : {
-					src: r.url + "/s1.ananas.chaoxing.com" + file,
+					src: r.url + sdomain + file,
 					type: "video/mp4",
 					res: src.res
 				}
@@ -472,6 +519,10 @@ Ext.define("ans.VideoJs", {
 					isSendLog: !!parent.AttachmentSetting && parent.AttachmentSetting.control,
 					reportTimeInterval: params.reportTimeInterval,
 					isShowDanmu: params.danmaku,
+					chapterCapture: params.chapterCapture || 0,
+					captureInterval: params.captureInterval || 600,
+					chapterCollectionType: params.chapterCollectionType || 0,
+					isSupportFace: params.isSupportFace || false,
 					sendLog: function (player, evt, sec) {
 						if (this.isSendLog !== true) {
 							return
@@ -494,12 +545,14 @@ Ext.define("ans.VideoJs", {
 					}
 				},
 				timelineObjects: {
-					url: params.rootPath + "/richvideo/initdatawithviewer?mid=" + params.mid,
-					quizErrorReportUrl: params.rootPath + "/question/addquestionerror?classid=" + params.clazzId
+					url: params.rootPath + "/richvideo/initdatawithviewer?mid=" + params.mid + "&cpi=" + params.cpi + "&classid=" + params.clazzId,
+					quizErrorReportUrl: params.rootPath + "/question/addquestionerror?classid=" + params.clazzId + "&cpi=" + params.cpi,
+					validationUrl2: params.rootPath + "/question/quiz-validation?classid=" + params.clazzId + "&cpi=" + params.cpi + "&objectid=" + params.objectId
 				},
 				subtitle: {
-					subtitleUrl: params.rootPath + "/richvideo/subtitle?mid=" + params.mid,
-					subtitle: params.subobjectid ? "https://cs-ans.chaoxing.com/support/sub/" + params.subobjectid + ".vtt" : false
+					translate: params.chapterVideoTranslate,
+					subtitleUrl: params.rootPath + "/richvideo/allsubtitle?mid=" + params.mid + "&objectid=" + params.objectId + "&courseid=" + params.courseid,
+					subtitle: params.rootPath +  + "/ananas/video-editor/sub?objectid=" + params.subobjectid
 				}
 			}
 		}
@@ -523,13 +576,6 @@ Ext.define("ans.VideoJs", {
 					j = window.parent ? window.parent : window.document
 				}
 			}
-			Ext.fly(j).on("mouseout", function (k) {
-				k = k ? k : window.event;
-				var l = k.relatedTarget || k.toElement;
-				if (!l) {
-					if (i != 1) {}
-				}
-			});
 			g.singleton(f)
 		},
 		singleton: function (c) {
@@ -639,6 +685,13 @@ Ext.define("ans.VideoJs", {
 			g.isSendLog_ = !!e.isSendLog;
 			g.isShowDanmu_ = !!e.isShowDanmu;
 			g.damuLastGetTime = 0;
+			g.timeCount = 0;
+			g.isPlay = false;
+			g.playTimer,
+			g.chapterCapture = e.chapterCapture || 0;
+			g.captureInterval = e.captureInterval * 60 || 600;
+			g.chapterCollectionType = e.chapterCollectionType || 0;
+			g.isSupportFace = e.isSupportFace;
 			f.on("ready", function () {
 				if (e.enableFastForward != 1) {
 					f.disableSeek()
@@ -664,10 +717,29 @@ Ext.define("ans.VideoJs", {
 				}
 			};
 			f.on("play", function () {
-				h("log");
-				g.sendDataLog("play");
-				g.receiveStudyLog();
-				g.getDanmuList("play", f)
+				// if (g.chapterCapture == 0 || !g.isSupportFace) {
+					h("log");
+					g.sendDataLog("play");
+					g.receiveStudyLog();
+					g.getDanmuList("play", f)
+				// } else {
+				// 	if (g.chapterCapture == 1) {
+				// 		if (g.timeCount == 0) {
+				// 			if (!g.isPlay) {
+				// 				g.faceCollection("play", f, g.chapterCollectionType);
+				// 				f.pause()
+				// 			} else {
+				// 				h("log");
+				// 				g.sendDataLog("play");
+				// 				g.receiveStudyLog();
+				// 				g.getDanmuList("play", f);
+				// 				g.timer(f)
+				// 			}
+				// 		} else {
+				// 			g.timer(f)
+				// 		}
+				// 	}
+				// }
 			});
 			f.on("seeked", function () {
 				if (e.enableFastForward != 1 && !f.switchStatus) {
@@ -682,7 +754,8 @@ Ext.define("ans.VideoJs", {
 			f.on("pause", function () {
 				h("log");
 				g.sendDataLog("pause");
-				g.getDanmuList("pause", f)
+				g.getDanmuList("pause", f);
+				g.playTimer && clearInterval(g.playTimer)
 			});
 			f.on("timeupdate", function () {
 				if (j == 0) {
@@ -719,7 +792,9 @@ Ext.define("ans.VideoJs", {
 		},
 		receiveStudyLog: function () {
 			if (typeof(receiveStudyLog) != "undefined") {
-				receiveStudyLog()
+				setTimeout(function () {
+					receiveStudyLog()
+				}, 50)
 			}
 		},
 		getDanmuList: function (e, c) {
@@ -729,14 +804,18 @@ Ext.define("ans.VideoJs", {
 			var f = this.sec_(c);
 			if (e == "pause") {
 				this.damuLastGetTime = 0;
-				getDanmuByTime(e, 0);
+				setTimeout(function () {
+					getDanmuByTime(e, 0)
+				}, 200);
 				return
 			}
 			if (f < this.damuLastGetTime) {
 				return
 			}
 			if (typeof(getDanmuByTime) != "undefined") {
-				getDanmuByTime(e, f);
+				setTimeout(function () {
+					getDanmuByTime(e, f)
+				}, 200);
 				this.damuLastGetTime = f + 59
 			}
 		},
@@ -747,6 +826,33 @@ Ext.define("ans.VideoJs", {
 			var e = this.sec_(c);
 			if (typeof(danmuPlay) != "undefined") {
 				danmuPlay(e)
+			}
+		},
+		timer: function (c) {
+			var e = this;
+			this.playTimer = setInterval(function () {
+				e.timeCount++;
+				if (e.timeCount >= e.captureInterval) {
+					e.isPlay = false;
+					e.faceCollection("pause", c, e.chapterCollectionType)
+				}
+			}, 1000)
+		},
+		faceCollection: function (e, c, f) {
+			if (e == "play" && this.timeCount == 0) {
+				if (typeof(startFaceCollection) != "undefined") {
+					startFaceCollection(c, f, this)
+				}
+			} else {
+				if (e == "pause") {
+					this.playTimer && clearInterval(this.playTimer);
+					if (!this.isPlay && this.timeCount >= this.captureInterval) {
+						if (typeof(startFaceCollection) != "undefined") {
+							startFaceCollection(c, f, this)
+						}
+						this.timeCount = 0
+					}
+				}
 			}
 		}
 	});
@@ -775,37 +881,56 @@ Ext.define("ans.videojs.VideoQuiz", {
 		})
 	},
 	checkResult: function () {
-		var e = this,
-		h = Ext.query("input", e.el.dom),
-		c = true,
-		f = e.renderData,
-		a = f.options,
-		b = [],
-		g = e.quizErrorReportUrl;
-		Ext.each(h, function (k, j) {
+		var f = this,
+		i = Ext.query("input", f.el.dom),
+		e = true,
+		g = f.renderData,
+		b = g.options,
+		c = [],
+		h = f.quizErrorReportUrl,
+		a = f.validationUrl2;
+		Ext.each(i, function (k, j) {
 			if ((k.value == "true" && !k.checked) || (k.value == "false" && k.checked)) {
-				c = false;
-				alert("回答有错误")
+				e = false
 			}
 			if (k.checked) {
-				b.push(a[j].name)
+				c.push(b[j].name)
 			}
 		});
-		if (!c) {
+		if (!e) {
+			alert("回答有错误")
+		}
+		if (typeof a != "undefined") {
 			Ext.Ajax.request({
-				url: g,
+				url: a,
 				params: {
-					eventid: f.resourceId,
-					memberinfo: f.memberinfo,
-					answerContent: b.join(",")
+					eventid: g.resourceId,
+					isRight: e,
+					memberinfo: g.memberinfo,
+					answerContent: c.join(",")
 				},
 				method: "get"
 			});
-			if (e.onerror) {
-				e.onerror()
+			if (!e && f.onerror) {
+				f.onerror()
+			}
+		} else {
+			if (!e) {
+				Ext.Ajax.request({
+					url: h,
+					params: {
+						eventid: g.resourceId,
+						memberinfo: g.memberinfo,
+						answerContent: c.join(",")
+					},
+					method: "get"
+				});
+				if (f.onerror) {
+					f.onerror()
+				}
 			}
 		}
-		return c
+		return e
 	}
 });
 Ext.define("ans.videojs.VideoImg", {
@@ -881,6 +1006,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 				xtype: "videoquiz",
 				renderData: e,
 				quizErrorReportUrl: i.quizErrorReportUrl,
+				validationUrl2: i.validationUrl2,
 				onerror: j
 			})
 		}
@@ -907,7 +1033,6 @@ Ext.define("ans.videojs.TimelineObjects", {
 		});
 		var f = !(k.model === false);
 		i.showModel(f);
-		if (f) {}
 	},
 	showModel: function (a) {
 		var c = this;
@@ -943,7 +1068,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 		a;
 		for (a = 0; a < c.objects.length; a++) {
 			var f = c.objects[a].datas[0].startTime;
-			if (e < f) {
+			if (e <= f) {
 				break
 			}
 		}
@@ -977,6 +1102,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 					var timeline = Ext.create("ans.videojs.TimelineObjects", {
 						renderTo: player.el_,
 						quizErrorReportUrl: options.quizErrorReportUrl,
+						validationUrl2: options.validationUrl2,
 						objects: data
 					});
 					player.on("play", function () {
@@ -1006,7 +1132,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 			toVtt = function (srt) {
 				var m = srt.match(/support\/(\w+).\w+/);
 				if (m) {
-					return "https://cs-ans.chaoxing.com/support/sub/" + m[1] + ".vtt"
+					return ServerHosts.PARENT_HOST + "/ananas/video-editor/sub?objectid=" + m[1]
 				}
 			},
 			addSub = function (name, src, isdefault) {
@@ -1031,6 +1157,10 @@ Ext.define("ans.videojs.TimelineObjects", {
 								Ext.each(subs, function (o) {
 									addSub(o.name, toVtt(o.url), o.selected)
 								})
+							}
+							if (options.translate == 1) {
+								Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").setHTML("翻译");
+								Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").addCls("vjs-hide-content")
 							}
 							setTimeout(function () {
 								var tracks = player.textTracks();
@@ -1139,6 +1269,10 @@ Ext.define("ans.videojs.ErrorNote", {
 	});
 	videojs.registerComponent("ErrorDisplay", a)
 })();
+/*! videojs-resolution-switcher - 2015-7-26
+ * Copyright (c) 2016 Kasper Moskwiak
+ * Modified by Pierre Kraft
+ * Licensed under the Apache-2.0 license. */
 (function () {
 	var a = null;
 	if (typeof window.videojs === "undefined" && typeof require === "function") {

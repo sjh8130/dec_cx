@@ -1,0 +1,102 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link href="/ananas/video-js-7.2.2/video-js.css?v=2021-0823-1846" rel="stylesheet" type="text/css">
+	<link href="/ananas/videojs-ext/videojs-ans.css?v=2022-0104-1807" rel="stylesheet" type="text/css">
+	<link href="/ananas/videojs-ext/videojs-test-ans.css?v=2022-0310-1000" rel="stylesheet" type="text/css">
+	<link href="/ananas/videojs-ext/resolution-switcher/videojs-resolution-switcher.css" rel="stylesheet">
+	<link href="/ananas/videojs-ext/zsCloud.css?v=2022-0318-1635" rel="stylesheet">
+	<link href="/ananas/modules/video/index.css" rel="stylesheet">
+	<script type="text/javascript" src="/ananas/static/js/domain.js?v=2022-0214-1506"></script>
+	<script type="text/javascript" src="/ananas/swfobject/flashchecker.js?v=20141027"></script>
+	<script type="text/javascript" src="/ananas/swfobject/fileloader.js?v=20141027"></script>
+	<script type="text/javascript" src="/ananas/ext/import-all-classes.js?v=2021-1009-1020"></script>
+	<script type="text/javascript" src="/ananas/ext/ed_complete.js?v=20141027"></script>
+	<script type="text/javascript" src="/ananas/ueditor/third-party/apputils/jquery.min.js?v=2021-0325"></script>
+	<script type="text/javascript" src="/ananas/jquery.nicescroll-3.7.6/jquery.nicescroll.min.js"></script>
+	<script src="marker/video.js"></script>
+	<!--videojs-->
+	<script type="text/javascript" src="/ananas/video-js-7.2.2/video.min.js?v=2022030214300"></script>
+	<script type="text/javascript" src="/ananas/video-js-7.2.2/lang/zh-CN.js?v=20180910"></script>
+	<script type="text/javascript" src="/ananas/videojs-ext/videojs-ext.min.js?v=2022-0324-1800"></script>
+	<script type="text/javascript" src="marker/videojs-markers.min.js?v=2022-0311-1907"></script>
+	<script type="text/javascript" src="/ananas/videojs-ext/js/jqcloud-1.0.4.js?v=2021-1220-1200"></script>
+	<script type="text/javascript" src="/ananas/modules/video/index.js?v=2022-0318-1942"></script>
+</head>
+
+<body>
+	<div class="main clearfix">
+		<div id="loading"></div>
+		<div id="note">
+			<div class="line1">
+				<div class="line2"></div>
+			</div>
+			<p class="tipStyle">视频转码失败，请使用其他软件另存后重新上传【9005】</p>
+		</div>
+		<div id="note1-wrap">
+			<div class="line1">
+				<div class="line3" id="hl"></div>
+			</div>
+			<p class="tipStyle making">正在为您加载文件... </p>
+		</div>
+		<div class="rage_list" style="height:490px;right:0; display:none;" id="rage_list">
+			<!-- 高度自定 -->
+			<a id="delete" class="dele icons" href="javascript:;"></a>
+			<h3>弹幕列表</h3>
+			<div id="boxscroll" style="height:380px;">
+				<ul id="danmulist">
+				</ul>
+			</div>
+		</div>
+		<div id="reader" style="height: 540px;"></div>
+		<div class="danmuChannel" id="danmuChannel">
+			<div class="channel" id="channel_0"></div>
+			<div class="channel" id="channel_1"></div>
+			<div class="channel" id="channel_2"></div>
+			<div class="channel" id="channel_3"></div>
+		</div>
+		<div class="sp_function">
+			<div class="rage_bd leftF">
+				<div class="mui-switch mui-switch-animbg leftF checked"><input name="isUsed" type="checkbox"></div>
+				<input type="text" name="textfield" value="" class="sp_video_input leftF" id="barragetext" />
+				<a class="ed_btn ed_btn_60 fs14 leftF sp_video_bnt" href="javascript:void(0)" id="sendbarrage">发送</a>
+				<div class="praise leftF">
+					<a class="zan" href="javascript:;"><b class="icons"></b>赞</a>
+					<div class="sp_expr_con">
+						<ul class="sp_expr_list">
+							<li class="sp_expr_ico sp_expr_bzt" value="@不赞同@">不赞同</li>
+							<li class="sp_expr_ico sp_expr_gd" value="@感动@">感动</li>
+							<li class="sp_expr_ico sp_expr_yh" value="@疑惑@">疑惑</li>
+							<li class="sp_expr_ico sp_expr_xh" value="@献花@">献花</li>
+							<li class="sp_expr_ico sp_expr_gz" value="@鼓掌@">鼓掌</li>
+							<li class="sp_expr_ico sp_expr_yq" value="@有趣@">有趣</li>
+						</ul>
+						<i class="sp_expr_arrow"></i>
+					</div>
+				</div>
+				<div class="article sp_barrage leftF catalog_tishi80">
+					<div class="bntHoverPos"><span class="bntHoverEditor">弹幕列表</span><i class="bntHoverArrow"></i></div>
+				</div>
+			</div>
+			<div class="writeNote rightF">写笔记</div>
+		</div>
+		<div class="zsCloud" style="display: none">
+			<div class="zsCloud_head">
+				<h2 class="zsCloud_h2">知识点</h2>
+				<div class="zsCloud_down" style="display: none">收起</div>
+			</div>
+			<div class="zsCloud_label">
+				<ul class="zsCloud_ul"></ul>
+			</div>
+			<div class="zsCloud_body" style="display: none">
+				<h3 class="zsCloud_h3">词云图</h3>
+				<div class="zsCloud_con" id="word_cloud"></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
