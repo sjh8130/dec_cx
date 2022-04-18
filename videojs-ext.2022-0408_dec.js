@@ -1,2192 +1,2656 @@
 var TT = TT;
 function TTTT() {
-	var A = ['contextmenu', 'studyControl', 'VideoJs', 'againStartTime', 'datas', 'ans.videojs.TimelineObjects', '</tpl>\x20', 'text', 'rootPath', 'getAt', 'startTime', 'vjserrdisplay', '<div\x20class=\x22tkTopic_oper\x22>', 'getSeekBar', 'httphd', 'document', 'timeCount', 'toString', 'res', '.png', 'pptPicEl', 'seeked', 'status', 'http://pan.ananas.', 'http', 'PPT', '<span\x20class=\x22spanNot\x20fr\x22\x20id=\x22spanNot\x22><tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>真遗憾，再接再厉！<tpl\x20else>回答错误</tpl></span>', '<div\x20class=\x22tkParsing\x22\x20id=\x22tkParsing\x22>', '&clipTime=', 'techName_', '</span>', 'formatTime', '0px', 'ERYA_TSK_HOST', 'drag', 'var\x20subs=', 'params2VideoOpt', '服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e:\x20', 'inline-block', '<div\x20class=\x22tkTopic\x22>', 'textTrackButton', 'params', 'videoJsResolutionSwitcher', 'Ext.Component', 'defineProperty', 'cdn', 'addEvents', 'testAnalysis', 'firstClick', 'duration', 'videoquiz', 'isIos', 'sizeSmallEl', 'div.sp_video_ppt_pic', '<div\x20class=\x22ans-vjserrdisplay-title\x22>播放出现异常。</div>', '超高清', 'a.tkParsing_dele', 'cookie', 'object', 'elements', '<span\x20class=\x22spanNotBack\x20fr\x22\x20id=\x22spanNotBack\x22><tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>真遗憾，再接再厉！<tpl\x20else>回答错误，</tpl>回看\x20{errorBackTime}\x20分钟</span>', 'top', 'playTimer', 'sendLog', 'find', 'event', 'removeClass', 'currentResolution', '<li\x20class=\x22ans-vjserrdisplay-opt\x22><label>', 'resetTime', 'split', 'max', '#A5A5A5', '<input\x20type=\x22radio\x22\x20name=\x22ans-vjserrdisplay-opt\x22\x20{[xindex-1\x20===\x20parent.selectedIndex\x20?\x20\x22checked\x20disabled\x22:\x22\x22]}>', '<span\x20class=\x22spanNotBack\x20fr\x22\x20id=\x22spanNotBackPoint\x22>真遗憾，再接再厉！</span>', '<a\x20class=\x22sp_video_pic_dele\x22\x20href=\x22javascript:;\x22></a>', 'app', 'plugin', 'textTrackSettings', 'InteractiveQuiz', 'reload', '?clazzId=', 'dtoken', 'timeupdate', 'dynamicLabel', 'setAutoScroll', '_onlyBackward', 'filename', '</ul>', 'shd', 'continue', 'click', 'keyCode', 'options', '&otherInfo=', 'ResolutionMenuItem', 'scrollEl', 'ignoreSeek', 'onClick', '公网1', '/ananas/video-editor/sub?objectid=', 'reportTimeInterval', 'request', 'trigger', 'checked=\x22checked\x22', '<tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22><span\x20id=\x22spanHas\x22></span><tpl\x20else><span\x20class=\x22spanHas\x20fr\x22\x20id=\x22spanHas\x22>回答正确</span></tpl>', 'ansErrorDisplay', 'calculateDistance', 'concat', 'percent', 'body', 'match', '#DADFE6', 'SyncAnnotationEvent', 'paused', 'getGroupedSrc', '#zsCloud_div_', '2154747qihZEI', '&dtype=Audio', '[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]', 'sp_video_ppt_pic', 'constructor', 'resolution', 'block', 'enableFastForward', 'mouseout', 'isSupportFace', 'submitEl', 'Ajax', 'Ext.util.Observable', 'ErrorDisplay', 'PARENT_HOST', 'httpshd', 'Playline', 'pageNo', 'objectId', 'parentElement', 'preventDefault', 'setCookie', 'userid', '<div\x20class=\x22sp_video_pic\x22>', 'log', 'MenuItem', 'chapterVideoTranslate', 'control', 'danmaku', 'location', 'http://cxlive.', '#e0e0e0', 'customSourcePicker', 'disable', 'url', 'current', '\x27\x20title=\x27', 'one', '1090yHOeaS', 'ispublic', 'videoannotation', 'jobid', '#000', 'dom', 'playlinechange', 'span', 'xhr', 'https://zhibo.chaoxing.com', 'now_', 'handleMouseDown', 'getDanmuList', 'controlBar', 'setStyle', 'handleMouseMove', '</div>', 'loopCaptureInterval', 'play', '&playingTime=', 'isPlay', 'captureInterval', 'updateDisplay', 'random', '<img\x20src=\x22{src}\x22\x20class=\x22sp_video_img\x22\x20/>', 'isEnd', 'delAnalysisEl', 'createVideoTask函数不存在！', 'a.ans-videoquiz-back', 's2_HOST', 'innerHTML', '&rt=', 'thumb', 'thumb/', '<ul\x20class=\x22tkItem_ul\x22>', 'colse', 'errorMsgEl', '<li\x20class=\x22zsCloud_select\x22><span\x20class=\x22zsCloud_span\x22>', 'preload', 'FX_HOST', 'host', '<tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>', 'onClickListener', 'scroller', '<a\x20class=\x22ans-videoquiz-continue\x20bntLinear\x20fr\x22\x20id=\x22videoquiz-continue\x22><tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>继续学习<tpl\x20else>继续</tpl></a>', 'mode', 'd_yHJ!$pdA~5', 'ananas.ServerHosts', 'QUIZ', ':not(.markertime)', 'http://surveyapp.fy.', 'isAlertTip', 'decode', 'display', 'fly', 'responseText', 'marker-key', 'ans.VideoJs', '//s2.ananas.chaoxing.com', 'String', '</label></li>', 'spanNot', 'knowledgeBack', 'ans-vjserrdisplay', 'checkResult', 'spanNotBack', 'endCapture', '<a\x20class=\x22sp_size_small\x22\x20href=\x22javascript:;\x22\x20style=\x22display:none;\x22\x20id=\x22sp_size_small\x22></a>', 'fullscreenToggle', '<div\x20class=\x22tkItem\x22>', 'onerror', 'quizRightCountUrl', 'rightNum', 'vjs-hide-content', 's1_HOST', 'mid', '&dtype=Video', 'freeze', 'mixins', 'false', 'Quality', 'html', 'title', 'viewAnalysisEl', 'volumePanel', 'logCount', 'getTime', 'extend', 'isShowDanmu_', 'zh-CN', 'close', 'chapterCapture', '&cpi=', 'createElement', 'resourceId', '<img\x20src=\x22{src}\x22\x20class=\x22sp_video_img\x22\x20style=\x22width:\x20100%;\x22/>', ';\x20domain=', 'ended', 'destroy', ';\x20secure', 'apply', '&classid=', 'errorBackTime', 'low', 'answerContent', 'mergeOptions', 'tkParseScrollEl', 'videojs', 'reportUrl', 'http://hls-ans.chaoxing.com/hls/m3u8/', 'type', 'showing', 'playbackRate', 'getChild', '355027JGcfaP', 'setTimeout', '\x22\x20data-marker-time=\x22', 'ready', '<div\x20class=\x22vidNota\x22>', 'tkParseScroll', 'aginPlay', 'playing', 'getNiceScroll', 'ans.videojs.VideoAnnotation', 'src', 'DomHelper', '480384EPOSua', 'replace', 'playToggle', 'eBstartPoint', 'sources', 'query', 'playbackRateMenuButton', 'uniform', 'maxPercent', 'sizeBigEl', '.zsCloud_div', 'show', 'audioNote', 'enableSwitchWindow', 'headOffset', 'clazzId', 'sp_size_big', '&courseid=', 'getComponent', 'rightAnswerNum', '#word_cloud', 'toggleCls', '<a\x20class=\x22spanHref\x20fl\x22\x20href=\x22javascript:\x22\x20id=\x22viewAnalysis\x22>查看解析</a>', '<div\x20class=\x22ans-vjserrdisplay-title\x22>{errorMsg}</div>', 'resize', ':visible', 'ans-videoannotation', 'getPercent', '&enc=', 'subsCapsButton', 'hasCls', 'label', 'indexOf', 'errorBack', 'sp_size_small', '视频只允许试看', 'undefined', 'map', 'removeCls', 'CS_HOST', 'hasOwnProperty', 'md5', 'durationDisplay', 'sort_', 'vjs-selected', 'progressControl', '.zsCloud_ul', 'sp_ppt_pic_fullScreen', 'onlyBackward', 'ans.AudioJs', 'allowNextVideo', 'videoTrialDuration', 'SeekBar', '/richvideo/initdatawithviewer?mid=', '<li><span\x20class=\x27topicId', 'seekend', '<span\x20class=\x22tkRadio\x22><input\x20type=\x22{[parent.questionType==\x22多选题\x22?\x22checkbox\x22:\x22radio\x22]}\x22\x20<tpl\x20if=\x22parent.dtype==\x27InteractiveQuiz\x27\x22>{[this.getChecked(parent.answerContent,\x20values.name,\x20parent.dtype)]}</tpl>\x20name=\x22ans-videoquiz-opt\x22\x20value=\x22{isRight}\x22/><i></i></span>', 'AttachmentSetting', 'none', 'isAndroid', 'visibility', 'quizErrorReportUrl', 'getCookie', 'el_', '.m3u8?cdn=', '&jobid=', 'videoimg', 'height', 'videojs_id', 'fireEvent', 'a.ans-videoquiz-continue', 'faceCollection', '&view=pc', 'isSendLog_', 'a.sp_size_big', 'MenuButton', 'removeChild', '</div></div></div>', 'marker', '您的网络不稳定，请您稍后继续...', 'bigPlayButton', 'weight', 'showAsLabel', 'input', 'select', 'ZHIBO_HOST', 'CHAOXING_CLASS_HOST', 'vjs-resolution-button-label', 'ans.videojs.AudioNote', 'remove', 'vjs-playline-button', '//cs.ananas.', 'initialySelected', 'markers', 'options_', 'damuLastGetTime', 'appendChild', 'Ext.container.Container', 'playNextVideo', 'subobjectid', 'substr', 'auto', 'checked', '816OfLHLE', 'seekBarControl', '&objectid=', 'a.sp_size_small', 'each', '<div\x20class=\x22tkTopic_con\x20tkScroll\x22>', 'courseid', 'var\x20data=', 'P_HOST', 'insertBefore', 'getStyle', 'playAginCapture', '.topicId', '公网2', '</li>', '.zsCloud_box', 'value', 'http://cloud.ananas.', 'sliderinactive', 'indexorder', '</span></li>', '<div\x20class=\x22tkParsing_screll\x20tkParsing_con\x22\x20id=\x22tkParsing_con\x22></div>', 'screenshot', 'isSendLog', 'renderData', '<tpl\x20for=\x22playlines\x22>', 'playingCapture', 'updateSrc', 'charCodeAt', '互动测验', 'join', 'function', 'attachmentId', 'a.ans-videoquiz-submit', '//appcd.chaoxing.com', 'controlText', 'cpi', 'subtitles', 'protocol', '.vjs-modal-dialog-content', 'hide', 'ignorePlay', '<div\x20class=\x22tkTopic_numbar\x20fr\x22>共\x20{interactiveQuestionCount}\x20题<span\x20id=\x22rightAnswerNum\x22>，已答对\x20<i\x20id=\x22rightNum\x22></i>\x20题</span></div>', 'isRight', 'a.spanHref', 'LIVE_HOST', 'afterBegin', 'left', '//pan-yz.chaoxing.com', 'name', 'disableSeek', 'startCapture', 'get', 'translate', 'httpmd', '.zsCloud_down', 'dispose', 'selectCDN', 'isShowFaceCollection', 'dtype', 'window', 'jQCloud', 'callParent', 'player_', 'closeEl', 'onSelected', 'spanHas', 'end', 'updateTime', 'ans.videojs.VideoQuiz', 'ServerHosts', 'registerPlugin', 'ans-timelineobjects-autosize', 'sendDataLog', 'getCookieVal', '<div\x20class=\x22zsCloud_item\x20topicId', 'eventPoints', 'parent', 'proxy_completed', 'ans.videojs.ErrorDisplay', 'ans-audionote', 'isBackward', 'sec_', 'create', 'resolutionchange', '/question/quiz-rightcount?classid=', 'prototype', 'div.tkScroll', 'subtitle', 'memberinfo', 'addCls', 'ratechange', 'audio/mp3', 'resolutionSwitcher', '8339292VgTlxJ', 'observable', 'http:/', '您可以尝试其他线路:\x20', 'errorContinue', 'isShowDanmu', 'afterEnd', 'ignorePause', '&_t=', '.zsCloud_body', '4iWRajd', 'backEl', 'keydown', 'data', 'vjs-resolution-button-staticlabel', 'videoppt', '<p>{description}</p>', 'endTime', 'showModel', 'fill', 'amd', 'ans-timelineobjectsbg', '_disableSeek', '/ananas/getpoints?courseid=', 'div.ans-vjserrdisplay-title', 'https://k.chaoxing.com', 'aId', 'chapterCollectionType', 'ans.videojs.TimelineObjectsBg', '&objectId=', 'application/x-mpegURL', '<div\x20class=\x22vidNota_title\x22><h2\x20class=\x22vidNota_h2\x22>[批注]</h2><a\x20class=\x22vidNota_close\x22\x20href=\x22javascript:;\x22></a></div>', 'tkParsing', 'zsCloud_div_', 'toElement', 'seekstart', 'items', 'topicid', 'switchStatus', 'videoquiz-continue', 'viewAnalysis', '%的同学</span></span>', '&userid=', 'timer', 'playingFace', '<li\x20class=\x22ans-videoquiz-opt\x22><label>', 'sort', 'CXLIVE_HOST', 'add', 'list', 'doublespeed', 'PHONE_ZT_HOST', 'substring', '{label}', 'registerComponent', 'setValues', 'playlines', 'showJobLimitTip', 'model', 'Youtube', 'isChaoxing', '251292XJrAay', 'isAginFace', 'playingLoopCapture', 'attr', 'a.sp_video_pic_dele', 'validationUrl2', 'insertHtml', '<a\x20class=\x22sp_size_big\x22\x20id=\x22sp_size_big\x22\x20href=\x22javascript:;\x22></a>', 'define', 'exports', 'MASTER_HOST', 'objects', 'http://erya.tsk.', 'video', 'call', 'isFiled', 'spanNotBackPoint', 'video/mp4', 'fromCharCode', 'videoTopicCloud', 'rightAnswerCount', 'currentTime', 'videoquiz-submit', '&isdrag=', 'isPassed', 'video.js', 'videoJsPlayLine', 'initialySelectedLabel', 'a.vidNota_close', '<ul\x20class=\x22ans-vjserrdisplay-opts\x22>', 'push', ';\x20expires=', 'enable', 'contentEl', 'div.vidNota_con', 'currentTimeDisplay', '<div\x20class=\x22sp_video_ppt_pic\x22\x20id=\x22sp_video_ppt_pic\x22>', 'relatedTarget', 'stopPropagation', 'true', 'selected', 'niceScroll', 'getPlugin', 'slideractive', 'statusCode', 'QUESTIONNAIRE_HOST', 'length', '1904512uZIWQs', 'hasJobLimit', 'subtitleUrl', 'state', 'timelineObjects', '</tpl>', 'pause', 'setHTML', 'addClass', 'toGMTString', '/question/quiz-validation?classid=', 'ans.videojs.ErrorNote', 'currentPlayline', '.zsCloud', 'time', 'parentNode'];
-	TTTT = function() {
+	var A = ["contextmenu", "studyControl", "VideoJs", "againStartTime", "datas", "ans.videojs.TimelineObjects", "</tpl>\x20", "text", "rootPath", "getAt", "startTime", "vjserrdisplay", "<div\x20class=\x22tkTopic_oper\x22>", "getSeekBar", "httphd", "document", "timeCount", "toString", "res", ".png", "pptPicEl", "seeked", "status", "http://pan.ananas.", "http", "PPT", "<span\x20class=\x22spanNot\x20fr\x22\x20id=\x22spanNot\x22><tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>真遗憾，再接再厉！<tpl\x20else>回答错误</tpl></span>", "<div\x20class=\x22tkParsing\x22\x20id=\x22tkParsing\x22>", "&clipTime=", "techName_", "</span>", "formatTime", "0px", "ERYA_TSK_HOST", "drag", "var\x20subs=", "params2VideoOpt", "服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e:\x20", "inline-block", "<div\x20class=\x22tkTopic\x22>", "textTrackButton", "params", "videoJsResolutionSwitcher", "Ext.Component", "defineProperty", "cdn", "addEvents", "testAnalysis", "firstClick", "duration", "videoquiz", "isIos", "sizeSmallEl", "div.sp_video_ppt_pic", "<div\x20class=\x22ans-vjserrdisplay-title\x22>播放出现异常。</div>", "超高清", "a.tkParsing_dele", "cookie", "object", "elements", "<span\x20class=\x22spanNotBack\x20fr\x22\x20id=\x22spanNotBack\x22><tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>真遗憾，再接再厉！<tpl\x20else>回答错误，</tpl>回看\x20{errorBackTime}\x20分钟</span>", "top", "playTimer", "sendLog", "find", "event", "removeClass", "currentResolution", "<li\x20class=\x22ans-vjserrdisplay-opt\x22><label>", "resetTime", "split", "max", "#A5A5A5", "<input\x20type=\x22radio\x22\x20name=\x22ans-vjserrdisplay-opt\x22\x20{[xindex-1\x20===\x20parent.selectedIndex\x20?\x20\x22checked\x20disabled\x22:\x22\x22]}>", "<span\x20class=\x22spanNotBack\x20fr\x22\x20id=\x22spanNotBackPoint\x22>真遗憾，再接再厉！</span>", "<a\x20class=\x22sp_video_pic_dele\x22\x20href=\x22javascript:;\x22></a>", "app", "plugin", "textTrackSettings", "InteractiveQuiz", "reload", "?clazzId=", "dtoken", "timeupdate", "dynamicLabel", "setAutoScroll", "_onlyBackward", "filename", "</ul>", "shd", "continue", "click", "keyCode", "options", "&otherInfo=", "ResolutionMenuItem", "scrollEl", "ignoreSeek", "onClick", "公网1", "/ananas/video-editor/sub?objectid=", "reportTimeInterval", "request", "trigger", "checked=\x22checked\x22", "<tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22><span\x20id=\x22spanHas\x22></span><tpl\x20else><span\x20class=\x22spanHas\x20fr\x22\x20id=\x22spanHas\x22>回答正确</span></tpl>", "ansErrorDisplay", "calculateDistance", "concat", "percent", "body", "match", "#DADFE6", "SyncAnnotationEvent", "paused", "getGroupedSrc", "#zsCloud_div_", "2154747qihZEI", "&dtype=Audio", "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]", "sp_video_ppt_pic", "constructor", "resolution", "block", "enableFastForward", "mouseout", "isSupportFace", "submitEl", "Ajax", "Ext.util.Observable", "ErrorDisplay", "PARENT_HOST", "httpshd", "Playline", "pageNo", "objectId", "parentElement", "preventDefault", "setCookie", "userid", "<div\x20class=\x22sp_video_pic\x22>", "log", "MenuItem", "chapterVideoTranslate", "control", "danmaku", "location", "http://cxlive.", "#e0e0e0", "customSourcePicker", "disable", "url", "current", "\x27\x20title=\x27", "one", "1090yHOeaS", "ispublic", "videoannotation", "jobid", "#000", "dom", "playlinechange", "span", "xhr", "https://zhibo.chaoxing.com", "now_", "handleMouseDown", "getDanmuList", "controlBar", "setStyle", "handleMouseMove", "</div>", "loopCaptureInterval", "play", "&playingTime=", "isPlay", "captureInterval", "updateDisplay", "random", "<img\x20src=\x22{src}\x22\x20class=\x22sp_video_img\x22\x20/>", "isEnd", "delAnalysisEl", "createVideoTask函数不存在！", "a.ans-videoquiz-back", "s2_HOST", "innerHTML", "&rt=", "thumb", "thumb/", "<ul\x20class=\x22tkItem_ul\x22>", "colse", "errorMsgEl", "<li\x20class=\x22zsCloud_select\x22><span\x20class=\x22zsCloud_span\x22>", "preload", "FX_HOST", "host", "<tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>", "onClickListener", "scroller", "<a\x20class=\x22ans-videoquiz-continue\x20bntLinear\x20fr\x22\x20id=\x22videoquiz-continue\x22><tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>继续学习<tpl\x20else>继续</tpl></a>", "mode", "d_yHJ!$pdA~5", "ananas.ServerHosts", "QUIZ", ":not(.markertime)", "http://surveyapp.fy.", "isAlertTip", "decode", "display", "fly", "responseText", "marker-key", "ans.VideoJs", "//s2.ananas.chaoxing.com", "String", "</label></li>", "spanNot", "knowledgeBack", "ans-vjserrdisplay", "checkResult", "spanNotBack", "endCapture", "<a\x20class=\x22sp_size_small\x22\x20href=\x22javascript:;\x22\x20style=\x22display:none;\x22\x20id=\x22sp_size_small\x22></a>", "fullscreenToggle", "<div\x20class=\x22tkItem\x22>", "onerror", "quizRightCountUrl", "rightNum", "vjs-hide-content", "s1_HOST", "mid", "&dtype=Video", "freeze", "mixins", "false", "Quality", "html", "title", "viewAnalysisEl", "volumePanel", "logCount", "getTime", "extend", "isShowDanmu_", "zh-CN", "close", "chapterCapture", "&cpi=", "createElement", "resourceId", "<img\x20src=\x22{src}\x22\x20class=\x22sp_video_img\x22\x20style=\x22width:\x20100%;\x22/>", ";\x20domain=", "ended", "destroy", ";\x20secure", "apply", "&classid=", "errorBackTime", "low", "answerContent", "mergeOptions", "tkParseScrollEl", "videojs", "reportUrl", "http://hls-ans.chaoxing.com/hls/m3u8/", "type", "showing", "playbackRate", "getChild", "355027JGcfaP", "setTimeout", "\x22\x20data-marker-time=\x22", "ready", "<div\x20class=\x22vidNota\x22>", "tkParseScroll", "aginPlay", "playing", "getNiceScroll", "ans.videojs.VideoAnnotation", "src", "DomHelper", "480384EPOSua", "replace", "playToggle", "eBstartPoint", "sources", "query", "playbackRateMenuButton", "uniform", "maxPercent", "sizeBigEl", ".zsCloud_div", "show", "audioNote", "enableSwitchWindow", "headOffset", "clazzId", "sp_size_big", "&courseid=", "getComponent", "rightAnswerNum", "#word_cloud", "toggleCls", "<a\x20class=\x22spanHref\x20fl\x22\x20href=\x22javascript:\x22\x20id=\x22viewAnalysis\x22>查看解析</a>", "<div\x20class=\x22ans-vjserrdisplay-title\x22>{errorMsg}</div>", "resize", ":visible", "ans-videoannotation", "getPercent", "&enc=", "subsCapsButton", "hasCls", "label", "indexOf", "errorBack", "sp_size_small", "视频只允许试看", "undefined", "map", "removeCls", "CS_HOST", "hasOwnProperty", "md5", "durationDisplay", "sort_", "vjs-selected", "progressControl", ".zsCloud_ul", "sp_ppt_pic_fullScreen", "onlyBackward", "ans.AudioJs", "allowNextVideo", "videoTrialDuration", "SeekBar", "/richvideo/initdatawithviewer?mid=", "<li><span\x20class=\x27topicId", "seekend", "<span\x20class=\x22tkRadio\x22><input\x20type=\x22{[parent.questionType==\x22多选题\x22?\x22checkbox\x22:\x22radio\x22]}\x22\x20<tpl\x20if=\x22parent.dtype==\x27InteractiveQuiz\x27\x22>{[this.getChecked(parent.answerContent,\x20values.name,\x20parent.dtype)]}</tpl>\x20name=\x22ans-videoquiz-opt\x22\x20value=\x22{isRight}\x22/><i></i></span>", "AttachmentSetting", "none", "isAndroid", "visibility", "quizErrorReportUrl", "getCookie", "el_", ".m3u8?cdn=", "&jobid=", "videoimg", "height", "videojs_id", "fireEvent", "a.ans-videoquiz-continue", "faceCollection", "&view=pc", "isSendLog_", "a.sp_size_big", "MenuButton", "removeChild", "</div></div></div>", "marker", "您的网络不稳定，请您稍后继续...", "bigPlayButton", "weight", "showAsLabel", "input", "select", "ZHIBO_HOST", "CHAOXING_CLASS_HOST", "vjs-resolution-button-label", "ans.videojs.AudioNote", "remove", "vjs-playline-button", "//cs.ananas.", "initialySelected", "markers", "options_", "damuLastGetTime", "appendChild", "Ext.container.Container", "playNextVideo", "subobjectid", "substr", "auto", "checked", "816OfLHLE", "seekBarControl", "&objectid=", "a.sp_size_small", "each", "<div\x20class=\x22tkTopic_con\x20tkScroll\x22>", "courseid", "var\x20data=", "P_HOST", "insertBefore", "getStyle", "playAginCapture", ".topicId", "公网2", "</li>", ".zsCloud_box", "value", "http://cloud.ananas.", "sliderinactive", "indexorder", "</span></li>", "<div\x20class=\x22tkParsing_screll\x20tkParsing_con\x22\x20id=\x22tkParsing_con\x22></div>", "screenshot", "isSendLog", "renderData", "<tpl\x20for=\x22playlines\x22>", "playingCapture", "updateSrc", "charCodeAt", "互动测验", "join", "function", "attachmentId", "a.ans-videoquiz-submit", "//appcd.chaoxing.com", "controlText", "cpi", "subtitles", "protocol", ".vjs-modal-dialog-content", "hide", "ignorePlay", "<div\x20class=\x22tkTopic_numbar\x20fr\x22>共\x20{interactiveQuestionCount}\x20题<span\x20id=\x22rightAnswerNum\x22>，已答对\x20<i\x20id=\x22rightNum\x22></i>\x20题</span></div>", "isRight", "a.spanHref", "LIVE_HOST", "afterBegin", "left", "//pan-yz.chaoxing.com", "name", "disableSeek", "startCapture", "get", "translate", "httpmd", ".zsCloud_down", "dispose", "selectCDN", "isShowFaceCollection", "dtype", "window", "jQCloud", "callParent", "player_", "closeEl", "onSelected", "spanHas", "end", "updateTime", "ans.videojs.VideoQuiz", "ServerHosts", "registerPlugin", "ans-timelineobjects-autosize", "sendDataLog", "getCookieVal", "<div\x20class=\x22zsCloud_item\x20topicId", "eventPoints", "parent", "proxy_completed", "ans.videojs.ErrorDisplay", "ans-audionote", "isBackward", "sec_", "create", "resolutionchange", "/question/quiz-rightcount?classid=", "prototype", "div.tkScroll", "subtitle", "memberinfo", "addCls", "ratechange", "audio/mp3", "resolutionSwitcher", "8339292VgTlxJ", "observable", "http:/", "您可以尝试其他线路:\x20", "errorContinue", "isShowDanmu", "afterEnd", "ignorePause", "&_t=", ".zsCloud_body", "4iWRajd", "backEl", "keydown", "data", "vjs-resolution-button-staticlabel", "videoppt", "<p>{description}</p>", "endTime", "showModel", "fill", "amd", "ans-timelineobjectsbg", "_disableSeek", "/ananas/getpoints?courseid=", "div.ans-vjserrdisplay-title", "https://k.chaoxing.com", "aId", "chapterCollectionType", "ans.videojs.TimelineObjectsBg", "&objectId=", "application/x-mpegURL", "<div\x20class=\x22vidNota_title\x22><h2\x20class=\x22vidNota_h2\x22>[批注]</h2><a\x20class=\x22vidNota_close\x22\x20href=\x22javascript:;\x22></a></div>", "tkParsing", "zsCloud_div_", "toElement", "seekstart", "items", "topicid", "switchStatus", "videoquiz-continue", "viewAnalysis", "%的同学</span></span>", "&userid=", "timer", "playingFace", "<li\x20class=\x22ans-videoquiz-opt\x22><label>", "sort", "CXLIVE_HOST", "add", "list", "doublespeed", "PHONE_ZT_HOST", "substring", "{label}", "registerComponent", "setValues", "playlines", "showJobLimitTip", "model", "Youtube", "isChaoxing", "251292XJrAay", "isAginFace", "playingLoopCapture", "attr", "a.sp_video_pic_dele", "validationUrl2", "insertHtml", "<a\x20class=\x22sp_size_big\x22\x20id=\x22sp_size_big\x22\x20href=\x22javascript:;\x22></a>", "define", "exports", "MASTER_HOST", "objects", "http://erya.tsk.", "video", "call", "isFiled", "spanNotBackPoint", "video/mp4", "fromCharCode", "videoTopicCloud", "rightAnswerCount", "currentTime", "videoquiz-submit", "&isdrag=", "isPassed", "video.js", "videoJsPlayLine", "initialySelectedLabel", "a.vidNota_close", "<ul\x20class=\x22ans-vjserrdisplay-opts\x22>", "push", ";\x20expires=", "enable", "contentEl", "div.vidNota_con", "currentTimeDisplay", "<div\x20class=\x22sp_video_ppt_pic\x22\x20id=\x22sp_video_ppt_pic\x22>", "relatedTarget", "stopPropagation", "true", "selected", "niceScroll", "getPlugin", "slideractive", "statusCode", "QUESTIONNAIRE_HOST", "length", "1904512uZIWQs", "hasJobLimit", "subtitleUrl", "state", "timelineObjects", "</tpl>", "pause", "setHTML", "addClass", "toGMTString", "/question/quiz-validation?classid=", "ans.videojs.ErrorNote", "currentPlayline", ".zsCloud", "time", "parentNode"];
+	TTTT = function () {
 		return A;
-	}
-	;
+	};
 	return TTTT();
 }
 function TT(A, B) {
 	var C = TTTT();
-	return TT = function(D, E) {
-		D = D - 0x174;
+	return TT = function (D, E) {
+		D = D - 372;
 		var F = C[D];
 		return F;
-	}
-	,
-	TT(A, B);
+	},
+		TT(A, B);
 }
-(function(A, B) {
+(function (A, B) {
 	var C = A();
 	while (true) {
 		try {
-			var D = -parseInt(TT(0x209)) / 0x1 + -parseInt(TT(0x215)) / 0x2 + parseInt(TT(0x317)) / 0x3 * (-parseInt(TT(0x2e4)) / 0x4) + -parseInt(TT(0x197)) / 0x5 * (-parseInt(TT(0x27c)) / 0x6) + -parseInt(TT(0x3cb)) / 0x7 + parseInt(TT(0x346)) / 0x8 + parseInt(TT(0x2da)) / 0x9;
+			var D = -parseInt('355027JGcfaP') / 1 + -parseInt('480384EPOSua') / 2 + parseInt(TT(0x317)) / 3 * (-parseInt(TT(0x2e4)) / 4) + -parseInt(TT(0x197)) / 5 * (-parseInt(TT(0x27c)) / 6) + -parseInt(TT(0x3cb)) / 7 + parseInt(TT(0x346)) / 8 + parseInt(TT(0x2da)) / 9;
 			if (D === B)
 				break;
 			else
-				C['push'](C['shift']());
+				C.push(C.shift());
 		} catch (e) {
-			C['push'](C['shift']());
+			C.push(C.shift());
 		}
 	}
-}(TTTT, 0x32a88),
-Ext[TT(0x31f)](TT(0x1c6), {
-	'alternateClassName': TT(0x2c2),
-	'singleton': true,
-	'constructor': function() {
-		var _0x41331b = TT
-		  , a = this;
-		a[_0x41331b(0x2ba)](arguments);
-		var b = document['domain'];
-		try {
-			a['MASTER_HOST'] = location[_0x41331b(0x2a2)] + '//' + top['location'][_0x41331b(0x1bf)];
-		} catch (_0x5f4b28) {
-			a[_0x41331b(0x321)] = location[_0x41331b(0x2a2)] + '//' + location[_0x41331b(0x1bf)];
-		}
-		try {
-			a[_0x41331b(0x17f)] = location[_0x41331b(0x2a2)] + '//' + parent[_0x41331b(0x18e)][_0x41331b(0x1bf)];
-		} catch (_0x19c336) {
-			a[_0x41331b(0x321)] = location['protocol'] + '//' + location[_0x41331b(0x1bf)];
-		}
-		a[_0x41331b(0x284)] = location[_0x41331b(0x2a2)] + '//p.ananas.chaoxing.com',
-		a['s1_HOST'] = location[_0x41331b(0x2a2)] + '//s1.ananas.chaoxing.com',
-		a[_0x41331b(0x1b4)] = location[_0x41331b(0x2a2)] + _0x41331b(0x1d1),
-		a['CLOUD_HOST'] = _0x41331b(0x28d) + b,
-		a['NEW_CLOUD_HOST'] = location['protocol'] + _0x41331b(0x2ac),
-		a[_0x41331b(0x23c)] = location[_0x41331b(0x2a2)] + _0x41331b(0x270) + b,
-		a['FANYA_HOST'] = 'http://course.fanya.' + b,
-		a['PAN_HOST'] = _0x41331b(0x36d) + b,
-		a[_0x41331b(0x309)] = _0x41331b(0x18f) + b,
-		a[_0x41331b(0x377)] = _0x41331b(0x323) + b,
-		a[_0x41331b(0x344)] = _0x41331b(0x1c9) + b,
-		a[_0x41331b(0x1be)] = 'http://www.' + b,
-		a[_0x41331b(0x30d)] = 'https://special.rhky.com',
-		a[_0x41331b(0x26b)] = _0x41331b(0x2f3),
-		a[_0x41331b(0x2a9)] = location[_0x41331b(0x2a2)] + '//live.chaoxing.com',
-		a['APPCD_HOST'] = location['protocol'] + _0x41331b(0x29e),
-		a[_0x41331b(0x26a)] = _0x41331b(0x1a0);
-	}
-}),
-function(_0x9d27fb) {
-	var _0x42a44f = TT;
-	function _0x5b86b9(_0x4efef6, _0xe1f880) {
-		var _0x1e0866 = (_0x4efef6 & 0xffff) + (_0xe1f880 & 0xffff)
-		  , _0x147234 = (_0x4efef6 >> 0x10) + (_0xe1f880 >> 0x10) + (_0x1e0866 >> 0x10);
-		return _0x147234 << 0x10 | _0x1e0866 & 0xffff;
-	}
-	function _0x2e0fe0(_0xe6229, _0x3aeb3f) {
-		return _0xe6229 << _0x3aeb3f | _0xe6229 >>> 0x20 - _0x3aeb3f;
-	}
-	function _0x45983f(_0x267267, _0x270a81, _0x5d941d, _0x1d74ea, _0x2e046e, _0x51dee8) {
-		return _0x5b86b9(_0x2e0fe0(_0x5b86b9(_0x5b86b9(_0x270a81, _0x267267), _0x5b86b9(_0x1d74ea, _0x51dee8)), _0x2e046e), _0x5d941d);
-	}
-	function _0x3888e5(_0x2c5b0a, _0x268b50, _0x3e7cfd, _0xb695bb, _0x325f60, _0x2c34b6, _0x52e978) {
-		return _0x45983f(_0x268b50 & _0x3e7cfd | ~_0x268b50 & _0xb695bb, _0x2c5b0a, _0x268b50, _0x325f60, _0x2c34b6, _0x52e978);
-	}
-	function _0x1bf94e(_0x45f9ab, _0x1ef39a, _0x19a243, _0x5e36bf, _0x1b8692, _0x42c5d4, _0x3a67c6) {
-		return _0x45983f(_0x1ef39a & _0x5e36bf | _0x19a243 & ~_0x5e36bf, _0x45f9ab, _0x1ef39a, _0x1b8692, _0x42c5d4, _0x3a67c6);
-	}
-	function _0x3ca926(_0x2fed7b, _0x455757, _0x42e7fa, _0xc42759, _0x5d99b8, _0xc4087a, _0x122823) {
-		return _0x45983f(_0x455757 ^ _0x42e7fa ^ _0xc42759, _0x2fed7b, _0x455757, _0x5d99b8, _0xc4087a, _0x122823);
-	}
-	function _0x55b376(_0x4e8ca2, _0xfe3d0d, _0x40e1ab, _0x240655, _0xb2d3aa, _0x1a8a28, _0x1f4d2b) {
-		return _0x45983f(_0x40e1ab ^ (_0xfe3d0d | ~_0x240655), _0x4e8ca2, _0xfe3d0d, _0xb2d3aa, _0x1a8a28, _0x1f4d2b);
-	}
-	function _0x1c35f6(G, B) {
-		G[B >> 0x5] |= 0x80 << B % 0x20,
-		G[(B + 0x40 >>> 0x9 << 0x4) + 0xe] = B;
-		var y, _0x1b70cb, _0x5def27, _0x485f8a, _0x49aed0, _0x6159a8 = 0x67452301, _0x4816c3 = -0x10325477, _0x1ad702 = -0x67452302, _0x390a14 = 0x10325476;
-		for (y = 0x0; y < G[TT(0x345)]; y += 0x10) {
-			_0x1b70cb = _0x6159a8,
-			_0x5def27 = _0x4816c3,
-			_0x485f8a = _0x1ad702,
-			_0x49aed0 = _0x390a14,
-			_0x6159a8 = _0x3888e5(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y], 0x7, -0x28955b88),
-			_0x390a14 = _0x3888e5(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0x1], 0xc, -0x173848aa),
-			_0x1ad702 = _0x3888e5(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0x2], 0x11, 0x242070db),
-			_0x4816c3 = _0x3888e5(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0x3], 0x16, -0x3e423112),
-			_0x6159a8 = _0x3888e5(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x4], 0x7, -0xa83f051),
-			_0x390a14 = _0x3888e5(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0x5], 0xc, 0x4787c62a),
-			_0x1ad702 = _0x3888e5(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0x6], 0x11, -0x57cfb9ed),
-			_0x4816c3 = _0x3888e5(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0x7], 0x16, -0x2b96aff),
-			_0x6159a8 = _0x3888e5(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x8], 0x7, 0x698098d8),
-			_0x390a14 = _0x3888e5(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0x9], 0xc, -0x74bb0851),
-			_0x1ad702 = _0x3888e5(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0xa], 0x11, -0xa44f),
-			_0x4816c3 = _0x3888e5(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0xb], 0x16, -0x76a32842),
-			_0x6159a8 = _0x3888e5(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0xc], 0x7, 0x6b901122),
-			_0x390a14 = _0x3888e5(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0xd], 0xc, -0x2678e6d),
-			_0x1ad702 = _0x3888e5(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0xe], 0x11, -0x5986bc72),
-			_0x4816c3 = _0x3888e5(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0xf], 0x16, 0x49b40821),
-			_0x6159a8 = _0x1bf94e(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x1], 0x5, -0x9e1da9e),
-			_0x390a14 = _0x1bf94e(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0x6], 0x9, -0x3fbf4cc0),
-			_0x1ad702 = _0x1bf94e(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0xb], 0xe, 0x265e5a51),
-			_0x4816c3 = _0x1bf94e(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y], 0x14, -0x16493856),
-			_0x6159a8 = _0x1bf94e(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x5], 0x5, -0x29d0efa3),
-			_0x390a14 = _0x1bf94e(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0xa], 0x9, 0x2441453),
-			_0x1ad702 = _0x1bf94e(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0xf], 0xe, -0x275e197f),
-			_0x4816c3 = _0x1bf94e(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0x4], 0x14, -0x182c0438),
-			_0x6159a8 = _0x1bf94e(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x9], 0x5, 0x21e1cde6),
-			_0x390a14 = _0x1bf94e(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0xe], 0x9, -0x3cc8f82a),
-			_0x1ad702 = _0x1bf94e(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0x3], 0xe, -0xb2af279),
-			_0x4816c3 = _0x1bf94e(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0x8], 0x14, 0x455a14ed),
-			_0x6159a8 = _0x1bf94e(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0xd], 0x5, -0x561c16fb),
-			_0x390a14 = _0x1bf94e(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0x2], 0x9, -0x3105c08),
-			_0x1ad702 = _0x1bf94e(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0x7], 0xe, 0x676f02d9),
-			_0x4816c3 = _0x1bf94e(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0xc], 0x14, -0x72d5b376),
-			_0x6159a8 = _0x3ca926(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x5], 0x4, -0x5c6be),
-			_0x390a14 = _0x3ca926(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0x8], 0xb, -0x788e097f),
-			_0x1ad702 = _0x3ca926(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0xb], 0x10, 0x6d9d6122),
-			_0x4816c3 = _0x3ca926(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0xe], 0x17, -0x21ac7f4),
-			_0x6159a8 = _0x3ca926(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x1], 0x4, -0x5b4115bc),
-			_0x390a14 = _0x3ca926(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0x4], 0xb, 0x4bdecfa9),
-			_0x1ad702 = _0x3ca926(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0x7], 0x10, -0x944b4a0),
-			_0x4816c3 = _0x3ca926(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0xa], 0x17, -0x41404390),
-			_0x6159a8 = _0x3ca926(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0xd], 0x4, 0x289b7ec6),
-			_0x390a14 = _0x3ca926(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y], 0xb, -0x155ed806),
-			_0x1ad702 = _0x3ca926(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0x3], 0x10, -0x2b10cf7b),
-			_0x4816c3 = _0x3ca926(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0x6], 0x17, 0x4881d05),
-			_0x6159a8 = _0x3ca926(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x9], 0x4, -0x262b2fc7),
-			_0x390a14 = _0x3ca926(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0xc], 0xb, -0x1924661b),
-			_0x1ad702 = _0x3ca926(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0xf], 0x10, 0x1fa27cf8),
-			_0x4816c3 = _0x3ca926(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0x2], 0x17, -0x3b53a99b),
-			_0x6159a8 = _0x55b376(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y], 0x6, -0xbd6ddbc),
-			_0x390a14 = _0x55b376(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0x7], 0xa, 0x432aff97),
-			_0x1ad702 = _0x55b376(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0xe], 0xf, -0x546bdc59),
-			_0x4816c3 = _0x55b376(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0x5], 0x15, -0x36c5fc7),
-			_0x6159a8 = _0x55b376(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0xc], 0x6, 0x655b59c3),
-			_0x390a14 = _0x55b376(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0x3], 0xa, -0x70f3336e),
-			_0x1ad702 = _0x55b376(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0xa], 0xf, -0x100b83),
-			_0x4816c3 = _0x55b376(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0x1], 0x15, -0x7a7ba22f),
-			_0x6159a8 = _0x55b376(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x8], 0x6, 0x6fa87e4f),
-			_0x390a14 = _0x55b376(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0xf], 0xa, -0x1d31920),
-			_0x1ad702 = _0x55b376(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0x6], 0xf, -0x5cfebcec),
-			_0x4816c3 = _0x55b376(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0xd], 0x15, 0x4e0811a1),
-			_0x6159a8 = _0x55b376(_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14, G[y + 0x4], 0x6, -0x8ac817e),
-			_0x390a14 = _0x55b376(_0x390a14, _0x6159a8, _0x4816c3, _0x1ad702, G[y + 0xb], 0xa, -0x42c50dcb),
-			_0x1ad702 = _0x55b376(_0x1ad702, _0x390a14, _0x6159a8, _0x4816c3, G[y + 0x2], 0xf, 0x2ad7d2bb),
-			_0x4816c3 = _0x55b376(_0x4816c3, _0x1ad702, _0x390a14, _0x6159a8, G[y + 0x9], 0x15, -0x14792c6f),
-			_0x6159a8 = _0x5b86b9(_0x6159a8, _0x1b70cb),
-			_0x4816c3 = _0x5b86b9(_0x4816c3, _0x5def27),
-			_0x1ad702 = _0x5b86b9(_0x1ad702, _0x485f8a),
-			_0x390a14 = _0x5b86b9(_0x390a14, _0x49aed0);
-		}
-		return [_0x6159a8, _0x4816c3, _0x1ad702, _0x390a14];
-	}
-	function _0x4a3496(_0x50ee4d) {
-		var _0xe22c51 = TT, _0x3b778c, _0x62e64e = '', _0x28c78f = _0x50ee4d[_0xe22c51(0x345)] * 0x20;
-		for (_0x3b778c = 0x0; _0x3b778c < _0x28c78f; _0x3b778c += 0x8) {
-			_0x62e64e += String[_0xe22c51(0x329)](_0x50ee4d[_0x3b778c >> 0x5] >>> _0x3b778c % 0x20 & 0xff);
-		}
-		return _0x62e64e;
-	}
-	function _0x5ed79d(_0x2e3f98) {
-		var _0x43ef2e = TT, _0x457cb1, _0x23e42e = [];
-		_0x23e42e[(_0x2e3f98[_0x43ef2e(0x345)] >> 0x2) - 0x1] = undefined;
-		for (_0x457cb1 = 0x0; _0x457cb1 < _0x23e42e[_0x43ef2e(0x345)]; _0x457cb1 += 0x1) {
-			_0x23e42e[_0x457cb1] = 0x0;
-		}
-		var _0x6a6318 = _0x2e3f98['length'] * 0x8;
-		for (_0x457cb1 = 0x0; _0x457cb1 < _0x6a6318; _0x457cb1 += 0x8) {
-			_0x23e42e[_0x457cb1 >> 0x5] |= (_0x2e3f98[_0x43ef2e(0x298)](_0x457cb1 / 0x8) & 0xff) << _0x457cb1 % 0x20;
-		}
-		return _0x23e42e;
-	}
-	function _0xbb22c(_0x191ae8) {
-		var _0x52abb4 = TT;
-		return _0x4a3496(_0x1c35f6(_0x5ed79d(_0x191ae8), _0x191ae8[_0x52abb4(0x345)] * 0x8));
-	}
-	function _0x17df17(_0x46381c, _0x5b5bb0) {
-		var _0x5c0618 = TT, _0x56713a, _0x90b237 = _0x5ed79d(_0x46381c), _0x2092b7 = [], _0x3bee72 = [], _0x359736;
-		_0x2092b7[0xf] = _0x3bee72[0xf] = undefined;
-		_0x90b237['length'] > 0x10 && (_0x90b237 = _0x1c35f6(_0x90b237, _0x46381c['length'] * 0x8));
-		for (_0x56713a = 0x0; _0x56713a < 0x10; _0x56713a += 0x1) {
-			_0x2092b7[_0x56713a] = _0x90b237[_0x56713a] ^ 0x36363636,
-			_0x3bee72[_0x56713a] = _0x90b237[_0x56713a] ^ 0x5c5c5c5c;
-		}
-		return _0x359736 = _0x1c35f6(_0x2092b7[_0x5c0618(0x3c2)](_0x5ed79d(_0x5b5bb0)), 0x200 + _0x5b5bb0[_0x5c0618(0x345)] * 0x8),
-		_0x4a3496(_0x1c35f6(_0x3bee72[_0x5c0618(0x3c2)](_0x359736), 0x200 + 0x80));
-	}
-	function _0x5241bc(_0xef5b9e) {
-		var _0x4ac652 = TT, _0x3f0bff = '0123456789abcdef', _0x1f6bf6 = '', _0x57a7e2, _0x12f465;
-		for (_0x12f465 = 0x0; _0x12f465 < _0xef5b9e[_0x4ac652(0x345)]; _0x12f465 += 0x1) {
-			_0x57a7e2 = _0xef5b9e[_0x4ac652(0x298)](_0x12f465),
-			_0x1f6bf6 += _0x3f0bff['charAt'](_0x57a7e2 >>> 0x4 & 0xf) + _0x3f0bff['charAt'](_0x57a7e2 & 0xf);
-		}
-		return _0x1f6bf6;
-	}
-	function _0x51ad97(_0x1852a0) {
-		return unescape(encodeURIComponent(_0x1852a0));
-	}
-	function _0x2ff5f1(_0xaa0002) {
-		return _0xbb22c(_0x51ad97(_0xaa0002));
-	}
-	function _0x4e4805(_0x3fc722) {
-		return _0x5241bc(_0x2ff5f1(_0x3fc722));
-	}
-	function _0x57be24(_0x29f3ce, _0x19e572) {
-		return _0x17df17(_0x51ad97(_0x29f3ce), _0x51ad97(_0x19e572));
-	}
-	function _0x12c897(_0x46b9e1, _0x40b348) {
-		return _0x5241bc(_0x57be24(_0x46b9e1, _0x40b348));
-	}
-	function _0x50fd94(_0x2fa3f9, _0x269d69, _0x131471) {
-		if (!_0x269d69) {
-			if (!_0x131471)
-				return _0x4e4805(_0x2fa3f9);
-			return _0x2ff5f1(_0x2fa3f9);
-		}
-		if (!_0x131471)
-			return _0x12c897(_0x269d69, _0x2fa3f9);
-		return _0x57be24(_0x269d69, _0x2fa3f9);
-	}
-	typeof define === _0x42a44f(0x29b) && define[_0x42a44f(0x2ee)] ? define(function() {
-		return _0x50fd94;
-	}) : typeof module === _0x42a44f(0x390) && module[_0x42a44f(0x320)] ? module[_0x42a44f(0x320)] = _0x50fd94 : _0x9d27fb[_0x42a44f(0x23e)] = _0x50fd94;
-}(this),
-Ext[TT(0x1fb)](Ext, {
-	'setCookie': function(_0xf0e448, _0x13bb64) {
-		var _0x120e62 = TT
-		  , _0x368275 = arguments
-		  , _0x4d57f4 = arguments[_0x120e62(0x345)]
-		  , _0x4460f0 = _0x4d57f4 > 0x2 ? _0x368275[0x2] : null
-		  , _0x316c2f = _0x4d57f4 > 0x3 ? _0x368275[0x3] : '/'
-		  , _0x111edb = _0x4d57f4 > 0x4 ? _0x368275[0x4] : null
-		  , _0x2bcf50 = _0x4d57f4 > 0x5 ? _0x368275[0x5] : false;
-		document[_0x120e62(0x38f)] = _0xf0e448 + '=' + escape(_0x13bb64) + (_0x4460f0 === null ? '' : _0x120e62(0x336) + _0x4460f0[_0x120e62(0x34f)]()) + (_0x316c2f === null ? '' : ';\x20path=' + _0x316c2f) + (_0x111edb === null ? '' : _0x120e62(0x1f7) + _0x111edb) + (_0x2bcf50 === true ? _0x120e62(0x1fa) : '');
-	},
-	'getCookie': function(_0x55c262, _0x38e09f) {
-		var _0x136dcc = TT
-		  , _0x535333 = _0x55c262 + '='
-		  , _0x66c706 = _0x535333['length']
-		  , _0x16b32d = document[_0x136dcc(0x38f)][_0x136dcc(0x345)]
-		  , _0x32a2fd = 0x0
-		  , _0x293765 = 0x0;
-		while (_0x32a2fd < _0x16b32d) {
-			_0x293765 = _0x32a2fd + _0x66c706;
-			if (document[_0x136dcc(0x38f)][_0x136dcc(0x30e)](_0x32a2fd, _0x293765) == _0x535333)
-				return this[_0x136dcc(0x2c6)](_0x293765);
-			_0x32a2fd = document[_0x136dcc(0x38f)][_0x136dcc(0x235)]('\x20', _0x32a2fd) + 0x1;
-			if (_0x32a2fd === 0x0)
-				break;
-		}
-		return _0x38e09f;
-	},
-	'getCookieVal': function(_0x225937) {
-		var _0x3bf893 = TT
-		  , _0x22bf80 = document[_0x3bf893(0x38f)][_0x3bf893(0x235)](';', _0x225937);
-		return _0x22bf80 == -0x1 && (_0x22bf80 = document[_0x3bf893(0x38f)][_0x3bf893(0x345)]),
-		unescape(document[_0x3bf893(0x38f)][_0x3bf893(0x30e)](_0x225937, _0x22bf80));
-	}
-}),
-Ext['define'](TT(0x1d0), {
-	'videoJs': null,
-	'mixins': {
-		'observable': TT(0x17d)
-	},
-	'constructor': function(_0x313800) {
-		var _0x2fec4f = TT;
-		_0x313800 = _0x313800 || {};
-		var _0x31257c = this;
-		_0x31257c[_0x2fec4f(0x384)]([_0x2fec4f(0x2fd)]),
-		_0x31257c[_0x2fec4f(0x1e5)][_0x2fec4f(0x2db)][_0x2fec4f(0x175)][_0x2fec4f(0x325)](_0x31257c, _0x313800);
-		var _0x4edf21 = videojs(_0x313800[_0x2fec4f(0x202)], _0x31257c[_0x2fec4f(0x37a)](_0x313800[_0x2fec4f(0x37f)]), function() {});
-		Ext[_0x2fec4f(0x1cd)](_0x313800['videojs'])['on'](_0x2fec4f(0x356), function(_0x502a9f) {
-			var _0x1e921a = _0x2fec4f;
-			_0x502a9f[_0x1e921a(0x185)]();
-		}),
-		Ext[_0x2fec4f(0x1cd)](_0x313800[_0x2fec4f(0x202)])['on'](_0x2fec4f(0x2e6), function(_0x5f3a39) {
-			var _0xe141a9 = _0x2fec4f;
-			(_0x5f3a39[_0xe141a9(0x3b2)] == 0x20 || _0x5f3a39[_0xe141a9(0x3b2)] == 0x25 || _0x5f3a39[_0xe141a9(0x3b2)] == 0x27 || _0x5f3a39['keyCode'] == 0x6b) && _0x5f3a39[_0xe141a9(0x185)]();
-		});
-		_0x4edf21[_0x2fec4f(0x380)] && _0x4edf21['on'](_0x2fec4f(0x2d0), function() {
-			var _0x34a77d = _0x2fec4f
-			  , _0x5ba589 = _0x4edf21['currentResolution']()
-			  , _0xefec2b = _0x5ba589['sources'] ? _0x5ba589['sources'][0x0]['res'] : false;
-			Ext[_0x34a77d(0x186)](_0x34a77d(0x176), _0xefec2b);
-		});
-		var _0x564513 = _0x313800['params'] && _0x313800[_0x2fec4f(0x37f)][_0x2fec4f(0x30c)] ? 0x2 : 0x1;
-		_0x4edf21['on'](_0x2fec4f(0x2d7), function() {
-			var _0x2a633e = _0x2fec4f
-			  , _0x5e40c5 = _0x4edf21[_0x2a633e(0x207)]();
-			_0x5e40c5 > _0x564513 && (_0x4edf21[_0x2a633e(0x34c)](),
-			_0x4edf21['playbackRate'](0x1));
-		});
-	},
-	'params2VideoOpt': function(_0x264de4) {
-		var _0x49b681 = TT
-		  , _0x431029 = false
-		  , _0x3b923d = [{
-			'indexorder': 0x0,
-			'label': _0x49b681(0x3b9),
-			'url': ServerHosts[_0x49b681(0x1e1)],
-			'ispublic': true
-		}, {
-			'indexorder': 0x1,
-			'label': _0x49b681(0x289),
-			'url': ServerHosts[_0x49b681(0x1b4)],
-			'ispublic': true
-		}];
-		if (_0x264de4[_0x49b681(0x383)])
+}(TTTT, 207496),
+	Ext.define(TT(0x1c6), {
+		"alternateClassName": TT(0x2c2),
+		"singleton": true,
+		"constructor": function () {
+			var a = this;
+			a.callParent(arguments);
+			var b = document.domain;
 			try {
-				top[_0x49b681(0x2b8)][_0x49b681(0x3a2)] && top[_0x49b681(0x2b8)]['app'] == 0x2 ? _0x3b923d = _0x3b923d[_0x49b681(0x3c2)](_0x264de4[_0x49b681(0x383)]) : _0x3b923d = _0x3b923d[_0x49b681(0x3c2)](_0x264de4[_0x49b681(0x383)])[_0x49b681(0x308)](function(_0x5b6459, _0x26bcbd) {
-					var _0x2d6319 = _0x49b681;
-					return _0x5b6459[_0x2d6319(0x28f)] - _0x26bcbd[_0x2d6319(0x28f)];
-				});
-			} catch (_0x5d056e) {
-				_0x3b923d = _0x3b923d[_0x49b681(0x3c2)](_0x264de4[_0x49b681(0x383)]);
+				a.MASTER_HOST = location.protocol + "//" + top.location.host;
+			} catch (c) {
+				a.MASTER_HOST = location.protocol + "//" + location.host;
 			}
-		function _0x5df478(_0xd94773, _0x39bd4d, _0x493f23) {
-			var _0x4ad119 = _0x49b681;
-			return _0x4ad119(0x204) + _0xd94773 + '/' + _0x39bd4d + _0x4ad119(0x255) + encodeURIComponent(_0x493f23);
+			try {
+				a.PARENT_HOST = location.protocol + "//" + parent.location.host;
+			} catch (c) {
+				a.MASTER_HOST = location.protocol + "//" + location.host;
+			}
+			a[TT(0x284)] = location.protocol + "//p.ananas.chaoxing.com";
+			a.s1_HOST = location.protocol + "//s1.ananas.chaoxing.com";
+			a[TT(0x1b4)] = location.protocol + TT(0x1d1);
+			a.CLOUD_HOST = TT(0x28d) + b;
+			a.NEW_CLOUD_HOST = location.protocol + TT(0x2ac);
+			a[TT(0x23c)] = location.protocol + TT(0x270) + b;
+			a.FANYA_HOST = "http://course.fanya." + b;
+			a.PAN_HOST = TT(0x36d) + b;
+			a[TT(0x309)] = "http://cxlive." + b;
+			a[TT(0x377)] = TT(0x323) + b;
+			a[TT(0x344)] = TT(0x1c9) + b;
+			a[TT(0x1be)] = "http://www." + b;
+			a[TT(0x30d)] = "https://special.rhky.com";
+			a[TT(0x26b)] = TT(0x2f3);
+			a[TT(0x2a9)] = location.protocol + "//live.chaoxing.com";
+			a.APPCD_HOST = location.protocol + TT(0x29e);
+			a[TT(0x26a)] = TT(0x1a0);
 		}
-		function _0x3bd30c(_0x553f66, _0x29bf8b) {
-			var _0xd2e3a = _0x49b681
-			  , _0x1e78f2 = ServerHosts[_0xd2e3a(0x1e1)][_0xd2e3a(0x216)](_0xd2e3a(0x2dc), '')['replace']('https:/', '')
-			  , _0x5d0326 = 0x0;
-			_0x553f66[_0xd2e3a(0x213)][_0xd2e3a(0x235)](_0x1e78f2) > -0x1 && (_0x5d0326 = _0x553f66[_0xd2e3a(0x213)][_0xd2e3a(0x235)](_0x1e78f2) + _0x1e78f2[_0xd2e3a(0x345)]);
-			var _0x3a2bc9 = _0x553f66[_0xd2e3a(0x213)][_0xd2e3a(0x279)](_0x5d0326);
-			if (_0x29bf8b[_0xd2e3a(0x198)] && _0x5d0326 == 0x0)
-				return {
-					'src': _0x3a2bc9,
-					'type': 'video/mp4',
-					'res': _0x553f66['res']
+	}),
+	function (g) {
+		function q(v, A) {
+			var z = (v & 0xffff) + (A & 0xffff)
+				, w = (v >> 0x10) + (A >> 0x10) + (z >> 0x10);
+			return w << 0x10 | z & 0xffff
+		}
+		function p(v, w) {
+			return v << w | v >>> 0x20 - w
+		}
+		function k(B, y, w, v, A, z) {
+			return q(p(q(q(y, B), q(v, z)), A), w)
+		}
+		function a(y, w, C, B, v, A, z) {
+			return k(w & C | ~w & B, y, w, v, A, z)
+		}
+		function h(y, w, C, B, v, A, z) {
+			return k(w & B | C & ~B, y, w, v, A, z)
+		}
+		function n(y, w, C, B, v, A, z) {
+			return k(w ^ C ^ B, y, w, v, A, z)
+		}
+		function t(y, w, C, B, v, A, z) {
+			return k(C ^ (w | ~B), y, w, v, A, z)
+		}
+		function c(G, B) {
+			G[B >> 0x5] |= 0x80 << B % 0x20,
+				G[(B + 0x40 >>> 0x9 << 0x4) + 0xe] = B;
+			var y;
+			var A;
+			var z;
+			var w;
+			var v;
+			var F = 0x67452301;
+			var E = -0x10325477;
+			var D = -0x67452302;
+			var C = 0x10325476;
+			for (y = 0; y < G.length; y += 16) {
+				A = F;
+				z = E;
+				w = D;
+				v = C;
+				F = a(F, E, D, C, G[y], 0x7, -0x28955b88);
+				C = a(C, F, E, D, G[y + 0x1], 0xc, -0x173848aa);
+				D = a(D, C, F, E, G[y + 0x2], 0x11, 0x242070db);
+				E = a(E, D, C, F, G[y + 0x3], 0x16, -0x3e423112);
+				F = a(F, E, D, C, G[y + 0x4], 0x7, -0xa83f051);
+				C = a(C, F, E, D, G[y + 0x5], 0xc, 0x4787c62a);
+				D = a(D, C, F, E, G[y + 0x6], 0x11, -0x57cfb9ed);
+				E = a(E, D, C, F, G[y + 0x7], 0x16, -0x2b96aff);
+				F = a(F, E, D, C, G[y + 0x8], 0x7, 0x698098d8);
+				C = a(C, F, E, D, G[y + 0x9], 0xc, -0x74bb0851);
+				D = a(D, C, F, E, G[y + 0xa], 0x11, -0xa44f);
+				E = a(E, D, C, F, G[y + 0xb], 0x16, -0x76a32842);
+				F = a(F, E, D, C, G[y + 0xc], 0x7, 0x6b901122);
+				C = a(C, F, E, D, G[y + 0xd], 0xc, -0x2678e6d);
+				D = a(D, C, F, E, G[y + 0xe], 0x11, -0x5986bc72);
+				E = a(E, D, C, F, G[y + 0xf], 0x16, 0x49b40821);
+				F = h(F, E, D, C, G[y + 0x1], 0x5, -0x9e1da9e);
+				C = h(C, F, E, D, G[y + 0x6], 0x9, -0x3fbf4cc0);
+				D = h(D, C, F, E, G[y + 0xb], 0xe, 0x265e5a51);
+				E = h(E, D, C, F, G[y], 0x14, -0x16493856);
+				F = h(F, E, D, C, G[y + 0x5], 0x5, -0x29d0efa3);
+				C = h(C, F, E, D, G[y + 0xa], 0x9, 0x2441453);
+				D = h(D, C, F, E, G[y + 0xf], 0xe, -0x275e197f);
+				E = h(E, D, C, F, G[y + 0x4], 0x14, -0x182c0438);
+				F = h(F, E, D, C, G[y + 0x9], 0x5, 0x21e1cde6);
+				C = h(C, F, E, D, G[y + 0xe], 0x9, -0x3cc8f82a);
+				D = h(D, C, F, E, G[y + 0x3], 0xe, -0xb2af279);
+				E = h(E, D, C, F, G[y + 0x8], 0x14, 0x455a14ed);
+				F = h(F, E, D, C, G[y + 0xd], 0x5, -0x561c16fb);
+				C = h(C, F, E, D, G[y + 0x2], 0x9, -0x3105c08);
+				D = h(D, C, F, E, G[y + 0x7], 0xe, 0x676f02d9);
+				E = h(E, D, C, F, G[y + 0xc], 0x14, -0x72d5b376);
+				F = n(F, E, D, C, G[y + 0x5], 0x4, -0x5c6be);
+				C = n(C, F, E, D, G[y + 0x8], 0xb, -0x788e097f);
+				D = n(D, C, F, E, G[y + 0xb], 0x10, 0x6d9d6122);
+				E = n(E, D, C, F, G[y + 0xe], 0x17, -0x21ac7f4);
+				F = n(F, E, D, C, G[y + 0x1], 0x4, -0x5b4115bc);
+				C = n(C, F, E, D, G[y + 0x4], 0xb, 0x4bdecfa9);
+				D = n(D, C, F, E, G[y + 0x7], 0x10, -0x944b4a0);
+				E = n(E, D, C, F, G[y + 0xa], 0x17, -0x41404390);
+				F = n(F, E, D, C, G[y + 0xd], 0x4, 0x289b7ec6);
+				C = n(C, F, E, D, G[y], 0xb, -0x155ed806);
+				D = n(D, C, F, E, G[y + 0x3], 0x10, -0x2b10cf7b);
+				E = n(E, D, C, F, G[y + 0x6], 0x17, 0x4881d05);
+				F = n(F, E, D, C, G[y + 0x9], 0x4, -0x262b2fc7);
+				C = n(C, F, E, D, G[y + 0xc], 0xb, -0x1924661b);
+				D = n(D, C, F, E, G[y + 0xf], 0x10, 0x1fa27cf8);
+				E = n(E, D, C, F, G[y + 0x2], 0x17, -0x3b53a99b);
+				F = t(F, E, D, C, G[y], 0x6, -0xbd6ddbc);
+				C = t(C, F, E, D, G[y + 0x7], 0xa, 0x432aff97);
+				D = t(D, C, F, E, G[y + 0xe], 0xf, -0x546bdc59);
+				E = t(E, D, C, F, G[y + 0x5], 0x15, -0x36c5fc7);
+				F = t(F, E, D, C, G[y + 0xc], 0x6, 0x655b59c3);
+				C = t(C, F, E, D, G[y + 0x3], 0xa, -0x70f3336e);
+				D = t(D, C, F, E, G[y + 0xa], 0xf, -0x100b83);
+				E = t(E, D, C, F, G[y + 0x1], 0x15, -0x7a7ba22f);
+				F = t(F, E, D, C, G[y + 0x8], 0x6, 0x6fa87e4f);
+				C = t(C, F, E, D, G[y + 0xf], 0xa, -0x1d31920);
+				D = t(D, C, F, E, G[y + 0x6], 0xf, -0x5cfebcec);
+				E = t(E, D, C, F, G[y + 0xd], 0x15, 0x4e0811a1);
+				F = t(F, E, D, C, G[y + 0x4], 0x6, -0x8ac817e);
+				C = t(C, F, E, D, G[y + 0xb], 0xa, -0x42c50dcb);
+				D = t(D, C, F, E, G[y + 0x2], 0xf, 0x2ad7d2bb);
+				E = t(E, D, C, F, G[y + 0x9], 0x15, -0x14792c6f);
+				F = q(F, A);
+				E = q(E, z);
+				D = q(D, w);
+				C = q(C, v);
+			}
+			return [F, E, D, C]
+		}
+		function o(w) {
+			var x,
+				v = "",
+				y = w.length * 32;
+			for (x = 0; x < y; x += 8) {
+				v += String.fromCharCode(w[x >> 5] >>> x % 32 & 255)
+			}
+			return v
+		}
+		function j(w) {
+			var y,
+				v = [];
+			v[(w.length >> 2) - 1] = undefined;
+			for (y = 0; y < v.length; y += 1) {
+				v[y] = 0
+			}
+			var x = w.length * 8;
+			for (y = 0; y < x; y += 8) {
+				v[y >> 5] |= (w.charCodeAt(y / 8) & 255) << (y % 32)
+			}
+			return v
+		}
+		function i(v) {
+			return o(c(j(v), v.length * 8))
+		}
+		function u(x, A) {
+			var w, z = j(x), v = [], y = [], B;
+			v[15] = y[15] = undefined;
+			z.length > 16 && (z = c(z, x.length * 8));
+			for (w = 0; w < 16; w += 1) {
+				v[w] = z[w] ^ 0x36363636,
+					y[w] = z[w] ^ 0x5c5c5c5c;
+			}
+			return B = c(v.concat(j(A)), 0x200 + A.length * 8),
+				o(c(y.concat(B), 5122 + 128));
+		}
+		function s(z) {
+			var y = "0123456789abcdef";
+			var w = "";
+			var v;
+			var A;
+			for (A = 0; A < z.length; A += 1) {
+				v = z.charCodeAt(A);
+				w += y.charAt(v >>> 4 & 15) + y.charAt(v & 15)
+			}
+			return w
+		}
+		function l(v) {
+			return unescape(encodeURIComponent(v))
+		}
+		function e(v) {
+			return i(l(v))
+		}
+		function m(v) {
+			return s(e(v))
+		}
+		function b(v, w) {
+			return u(l(v), l(w))
+		}
+		function r(v, w) {
+			return s(b(v, w))
+		}
+		function f(w, x, v) {
+			if (!x) {
+				if (!v)
+					return m(w)
+				return e(w)
+			}
+			if (!v)
+				return r(x, w)
+			return b(x, w)
+		}
+		typeof define === TT(0x29b) && define[TT(0x2ee)] ? define(function () {
+			return f;
+		}) : typeof module === TT(0x390) && module.exports ? module.exports = f : g.md5 = f;
+	}(this),
+	Ext.apply(Ext, {
+		"setCookie": function (c, f) {
+			var a = arguments
+				, i = arguments.length
+				, b = i > 2 ? a[2] : null
+				, h = i > 3 ? a[3] : "/"
+				, e = i > 4 ? a[4] : null
+				, g = i > 5 ? a[5] : false;
+			document.cookie = c + "=" + escape(f) + (b === null ? "" : TT(0x336) + b.toGMTString()) + (h === null ? "" : ";\ path=" + h) + (e === null ? "" : TT(0x1f7) + e) + (g === true ? TT(0x1fa) : "");
+		},
+		"getCookie": function (e, h) {
+			var b = e + "="
+				, g = b.length
+				, a = document.cookie.length
+				, f = 0
+				, c = 0;
+			while (f < a) {
+				c = f + g;
+				if (document.cookie.substring(f, c) == b)
+					return this.getCookieVal(c);
+				f = document.cookie.indexOf(" ", f) + 1;
+				if (f === 0)
+					break;
+			}
+			return h;
+		},
+		"getCookieVal": function (b) {
+			var a = document.cookie.indexOf(";", b);
+			return a == -1 && (a = document.cookie.length),
+				unescape(document.cookie.substring(b, a));
+		}
+	}),
+	Ext.define(TT(0x1d0), {
+		"videoJs": null,
+		"mixins": {
+			"observable": "Ext.util.Observable"
+		},
+		"constructor": function (b) {
+			b = b || {};
+			var e = this;
+			e.addEvents([TT(0x2fd)]),
+				e.mixins.observable.constructor.call(e, b);
+			var c = videojs(b.videojs, e[TT(0x37a)](b[TT(0x37f)]), function () { });
+			Ext.fly(b.videojs).on(TT(0x356), function (f) {
+				f["preventDefault"]();
+			});
+			Ext.fly(b.videojs).on(TT(0x2e6), function (f) {
+				(f.keyCode == 32 || f.keyCode == 37 || f.keyCode == 39 || f.keyCode == 107) && f["preventDefault"]();
+			});
+			c[TT(0x380)] && c.on(TT(0x2d0), function () {
+				var g = c.currentResolution()
+					, f = g.sources ? g.sources[0].res : false;
+				Ext["setCookie"]("resolution", f);
+			});
+			var AAA = b.params && b[TT(0x37f)][TT(0x30c)] ? 0x2 : 1;
+			c.on(TT(0x2d7), function () {
+				var BBB = c[TT(0x207)]();
+				BBB > AAA && (c[TT(0x34c)](),
+					c.playbackRate(0x1));
+			});
+		},
+		"params2VideoOpt": function (params) {
+			var useM3u8 = false;
+			var cdn = [{
+				"indexorder": 0,
+				"label": TT(0x3b9),
+				"url": ServerHosts.s1_HOST,
+				"ispublic": true
+			}, {
+				"indexorder": 1,
+				"label": TT(0x289),
+				"url": ServerHosts[TT(0x1b4)],
+				"ispublic": true
+			}];
+			if (params.cdn)
+				try {
+					top.window[TT(0x3a2)] && top.window.app == 2 ? cdn = cdn.concat(params.cdn) : cdn = cdn.concat(params.cdn).sort(function (o1, o2) {
+						return o1.indexorder - o2.indexorder;
+					});
+				} catch (e) {
+					cdn = cdn.concat(params.cdn);
+				}
+			function m3u8(objectId, r, cdn) {
+				return TT(0x204) + objectId + "/" + r + TT(0x255) + encodeURIComponent(cdn);
+			}
+			function makeSource(src, r) {
+				var sdomain = ServerHosts.s1_HOST.replace(TT(0x2dc), "").replace("https:/", "")
+					, start = 0;
+				src.src.indexOf(sdomain) > -0x1 && (start = src.src.indexOf(sdomain) + sdomain.length);
+				var file = src.src[TT(0x279)](start);
+				if (r[TT(0x198)] && start == 0)
+					return {
+						"src": file,
+						"type": "video/mp4",
+						"res": src.res
+					};
+				return r.ispublic ? useM3u8 ? {
+					"src": m3u8(params.objectId, src.resolution, r.url),
+					"type": TT(0x2f8),
+					"res": src.res
+				} : {
+					"src": r.url + file,
+					"type": TT(0x328),
+					"res": src.res
+				} : useM3u8 ? {
+					"src": m3u8(params.objectId, src.resolution, r.url + sdomain),
+					"type": TT(0x2f8),
+					"res": src.res
+				} : {
+					"src": r.url + sdomain + file,
+					"type": TT(0x328),
+					"res": src.res
 				};
-			return _0x29bf8b['ispublic'] ? _0x431029 ? {
-				'src': _0x5df478(_0x264de4[_0xd2e3a(0x183)], _0x553f66[_0xd2e3a(0x176)], _0x29bf8b[_0xd2e3a(0x193)]),
-				'type': _0xd2e3a(0x2f8),
-				'res': _0x553f66[_0xd2e3a(0x368)]
-			} : {
-				'src': _0x29bf8b[_0xd2e3a(0x193)] + _0x3a2bc9,
-				'type': _0xd2e3a(0x328),
-				'res': _0x553f66['res']
-			} : _0x431029 ? {
-				'src': _0x5df478(_0x264de4['objectId'], _0x553f66[_0xd2e3a(0x176)], _0x29bf8b[_0xd2e3a(0x193)] + _0x1e78f2),
-				'type': _0xd2e3a(0x2f8),
-				'res': _0x553f66['res']
-			} : {
-				'src': _0x29bf8b[_0xd2e3a(0x193)] + _0x1e78f2 + _0x3a2bc9,
-				'type': _0xd2e3a(0x328),
-				'res': _0x553f66[_0xd2e3a(0x368)]
+			}
+			var sources = []
+				, defaultRes = Ext.getCookie("resolution", 0x168);
+			!params.rootPath && (params[TT(0x35e)] = "");
+			params[TT(0x36e)] && sources[TT(0x335)]({
+				"src": params[TT(0x36e)],
+				"type": "video/mp4",
+				"label": "标清",
+				"resolution": "sd",
+				"res": 0x168
+			});
+			params[TT(0x364)] && sources[TT(0x335)]({
+				"src": params.httphd,
+				"type": TT(0x328),
+				"label": "高清",
+				"resolution": "hd",
+				"res": 0x2d0
+			});
+			params["httpshd"] && sources[TT(0x335)]({
+				"src": params["httpshd"],
+				"type": TT(0x328),
+				"label": TT(0x38d),
+				"resolution": TT(0x3af),
+				"res": 0x438
+			});
+			params[TT(0x2b2)] && sources[TT(0x335)]({
+				"src": params[TT(0x2b2)],
+				"type": TT(0x328),
+				"label": "极速",
+				"resolution": "md",
+				"res": 0xf0
+			});
+			if (sources.length == 1) {
+				var cdnItem = sources[0];
+				cdnItem.label = "高清";
+			}
+			var findDefaultRes = false;
+			for (var i = 0; i < sources.length; i++) {
+				if (sources[i].res == defaultRes) {
+					findDefaultRes = true;
+					break;
+				}
+			}
+			!findDefaultRes && (defaultRes = 0x168);
+			var disableLog = !Ext.isChaoxing && (Ext[TT(0x389)] || Ext[TT(0x250)]);
+			var logFunc = function (player, url, callback) {
+				try {
+					if (typeof top[TT(0x347)] != TT(0x239) && top.hasJobLimit === true && isUnFinishJob())
+						return;
+				} catch (eeee) {
+					console.log(eeee);
+				}
+				if (disableLog)
+					return;
+				var me = this;
+				!me.logCount && (me.logCount = 0),
+					videojs.xhr({
+						"uri": url,
+						"headers": {
+							"Content-Type": "application/json"
+						}
+					}, function (err, resp) {
+						me.logCount++;
+						if (resp.statusCode == 200) {
+							me.logCount = 0;
+							if (resp.body.indexOf(TT(0x32f)) < 0) {
+								window.parent && window.parent.location[TT(0x3a6)]();
+								return;
+							}
+							eval("var d=" + resp.body);
+							if (d[TT(0x32f)]) {
+								try {
+									typeof d[TT(0x347)] != "undefined" && d[TT(0x347)] === true && (top[TT(0x247)] = false,
+										top[TT(0x347)] = true);
+								} catch (eeee) {
+									console.log(eeee);
+								}
+								callback();
+							}
+							return;
+						}
+						me.logCount >= 4 && (me.logCount = 0,
+							player[TT(0x34c)](),
+							resp.statusCode != 0 ? alert(TT(0x37b) + resp.statusCode + ")") : alert("您的网络不稳定，请您稍后继续..."));
+					});
+			}
+				, sendLog_ = function (player, isdrag, currentTimeSec, callback) {
+					if (!params.reportUrl)
+						return;
+					if (params.isFiled == 1 || params[TT(0x349)] == 1)
+						return;
+					var format = TT(0x3cd),
+						clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration),
+						playTime = 0,
+						pppp;
+					currentTimeSec.toString().indexOf("-") != -1 ? (pppp = currentTimeSec[TT(0x39c)]("-"),
+						pppp.length == 2 && (playTime = parseInt(pppp[1]) * 0x3e8)) : playTime = currentTimeSec * 0x3e8;
+					if (playTime == params.duration * 0x3e8 && isdrag == 2)
+						return;
+					var enc = Ext[TT(0x1d2)].format(format, params.clazzId, params["userid"], params[TT(0x19a)] || "", params.objectId, playTime, TT(0x1c5), params.duration * 0x3e8, clipTime)
+						,
+						rurl = [params.reportUrl, "/", params[TT(0x3a8)], TT(0x3a7), params[TT(0x224)], TT(0x1aa), currentTimeSec, "&duration=", params.duration, "&clipTime=", clipTime, TT(0x2f7), params.objectId, TT(0x3b4), params.otherInfo, TT(0x256), params[TT(0x19a)], TT(0x304), params["userid"], TT(0x32e), isdrag, TT(0x25d), TT(0x231), md5(enc), TT(0x1b6), params.rt, TT(0x1e3), "&_t=", new Date()[TT(0x1ed)]()][TT(0x29a)]("");
+					logFunc(player, rurl, callback);
+				};
+			return {
+				"language": TT(0x1f0),
+				"poster": params[TT(0x292)],
+				"controls": true,
+				"preload": "none",
+				"sources": sources,
+				"playlines": cdn,
+				"playbackRates": params[TT(0x30c)] != 0x0 ? [0x1, 1.25, 1.5, 0x2] : false,
+				"textTrackDisplay": true,
+				"controlBar": {
+					"volumePanel": {
+						"inline": false
+					},
+					"children": [TT(0x217), TT(0x21b), TT(0x33a), "timeDivider", "durationDisplay", TT(0x242), TT(0x1eb), TT(0x232), TT(0x1db), TT(0x331), TT(0x37e)]
+				},
+				"plugins": {
+					"videoJsResolutionSwitcher": {
+						"default": defaultRes,
+						"dynamicLabel": true,
+						"customSourcePicker": function (player, sources, label) {
+							var r = player.currentPlayline();
+							return player.src(sources[TT(0x23a)](function (src) {
+								return makeSource(src, r);
+							})),
+								player;
+						}
+					},
+					"videoJsPlayLine": {
+						"dynamicLabel": true,
+						"customSourcePicker": function (player, r, label) {
+							var src = player[TT(0x399)]()[TT(0x219)][0];
+							return player.src(makeSource(src, r)),
+								player;
+						}
+					},
+					"studyControl": {
+						"enableSwitchWindow": params[TT(0x222)]
+					},
+					"seekBarControl": {
+						"headOffset": params[TT(0x223)],
+						"enableFastForward": params["enableFastForward"],
+						"isSendLog": !!parent[TT(0x24e)] && params["control"],
+						"reportTimeInterval": params[TT(0x3bb)],
+						"isShowDanmu": params["danmaku"],
+						"chapterCapture": params[TT(0x1f2)] || 0,
+						"captureInterval": params[TT(0x1ac)] || 0x258,
+						"chapterCollectionType": params[TT(0x2f5)] || 0,
+						"startCapture": params[TT(0x2af)],
+						"endCapture": params[TT(0x1d9)],
+						"playAginCapture": params[TT(0x287)],
+						"playingCapture": params[TT(0x296)],
+						"playingLoopCapture": params[TT(0x319)],
+						"duration": params.duration,
+						"isSupportFace": params["isSupportFace"] || false,
+						"isShowFaceCollection": params[TT(0x2b6)],
+						"attachmentId": params[TT(0x2f4)],
+						"sendLog": function (player, evt, aaa, bbb) {
+							if (this[TT(0x293)] !== true)
+								return;
+							var isdrag = 0;
+							switch (evt) {
+								case TT(0x210):
+									isdrag = 0;
+									break;
+								case TT(0x378):
+									isdrag = 1;
+									break;
+								case "play":
+									isdrag = 0x3;
+									break;
+								case "pause":
+									isdrag = 0x2;
+									break;
+								case TT(0x1f8):
+									isdrag = 0x4;
+									break;
+							}
+							var ccc = this;
+							sendLog_(player, isdrag, aaa, function () {
+								try {
+									isdrag === 0x4 && typeof bbb != TT(0x239) && (bbb.sendDataLog("ended"),
+										bbb[TT(0x277)](ccc[TT(0x29c)]));
+								} catch (ddd) {
+									console.log(ddd);
+								}
+								window[TT(0x2ca)] && window.proxy_completed();
+							});
+						}
+					},
+					"timelineObjects": {
+						"url": params[TT(0x35e)] + TT(0x24a) + params.mid + TT(0x1f3) + params[TT(0x2a0)] + TT(0x1fc) + params.clazzId,
+						"quizErrorReportUrl": params[TT(0x35e)] + "/question/addquestionerror?classid=" + params[TT(0x224)] + "&cpi=" + params[TT(0x2a0)],
+						"validationUrl2": params.rootPath + TT(0x350) + params[TT(0x224)] + TT(0x1f3) + params[TT(0x2a0)] + "&objectid=" + params.objectId,
+						"quizRightCountUrl": params[TT(0x35e)] + TT(0x2d1) + params[TT(0x224)] + TT(0x1f3) + params[TT(0x2a0)]
+					},
+					"subtitle": {
+						"translate": params["chapterVideoTranslate"],
+						"subtitleUrl": params[TT(0x35e)] + "/richvideo/allsubtitle?mid=" + params[TT(0x1e2)] + TT(0x27e) + params.objectId + TT(0x226) + params.courseid,
+						"subtitle": params[TT(0x35e)] + TT(0x3ba) + params[TT(0x278)]
+					},
+					"marker": {
+						"url": !params.isNotMark ? params[TT(0x35e)] + TT(0x2f1) + params[TT(0x282)] + "&mid=" + params.mid : "",
+						"ff": params.enableFastForward,
+						"videoTopicCloud": params[TT(0x32a)]
+					}
+				}
 			};
 		}
-		var _0x5d6557 = []
-		  , _0xf4f211 = Ext[_0x49b681(0x253)](_0x49b681(0x176), 0x168);
-		!_0x264de4['rootPath'] && (_0x264de4[_0x49b681(0x35e)] = '');
-		_0x264de4[_0x49b681(0x36e)] && _0x5d6557[_0x49b681(0x335)]({
-			'src': _0x264de4[_0x49b681(0x36e)],
-			'type': 'video/mp4',
-			'label': '标清',
-			'resolution': 'sd',
-			'res': 0x168
-		});
-		_0x264de4[_0x49b681(0x364)] && _0x5d6557[_0x49b681(0x335)]({
-			'src': _0x264de4['httphd'],
-			'type': _0x49b681(0x328),
-			'label': '高清',
-			'resolution': 'hd',
-			'res': 0x2d0
-		});
-		_0x264de4[_0x49b681(0x180)] && _0x5d6557[_0x49b681(0x335)]({
-			'src': _0x264de4[_0x49b681(0x180)],
-			'type': _0x49b681(0x328),
-			'label': _0x49b681(0x38d),
-			'resolution': _0x49b681(0x3af),
-			'res': 0x438
-		});
-		_0x264de4[_0x49b681(0x2b2)] && _0x5d6557[_0x49b681(0x335)]({
-			'src': _0x264de4[_0x49b681(0x2b2)],
-			'type': _0x49b681(0x328),
-			'label': '极速',
-			'resolution': 'md',
-			'res': 0xf0
-		});
-		if (_0x5d6557[_0x49b681(0x345)] == 0x1) {
-			var _0x581750 = _0x5d6557[0x0];
-			_0x581750[_0x49b681(0x234)] = '高清';
-		}
-		var _0x5a147c = false;
-		for (var _0x3fbd5a = 0x0; _0x3fbd5a < _0x5d6557[_0x49b681(0x345)]; _0x3fbd5a++) {
-			if (_0x5d6557[_0x3fbd5a][_0x49b681(0x368)] == _0xf4f211) {
-				_0x5a147c = true;
-				break;
-			}
-		}
-		!_0x5a147c && (_0xf4f211 = 0x168);
-		var _0x246832 = !Ext[_0x49b681(0x316)] && (Ext[_0x49b681(0x389)] || Ext[_0x49b681(0x250)])
-		  , _0x490574 = function(_0x80a465, _0x59c0df, _0x16daf2) {
-			var _0x19d1c9 = _0x49b681;
-			try {
-				if (typeof top[_0x19d1c9(0x347)] != _0x19d1c9(0x239) && top['hasJobLimit'] === true && isUnFinishJob())
-					return;
-			} catch (_0x5cbb6) {
-				console[_0x19d1c9(0x189)](_0x5cbb6);
-			}
-			if (_0x246832)
-				return;
-			var _0x50993e = this;
-			!_0x50993e[_0x19d1c9(0x1ec)] && (_0x50993e[_0x19d1c9(0x1ec)] = 0x0),
-			videojs[_0x19d1c9(0x19f)]({
-				'uri': _0x59c0df,
-				'headers': {
-					'Content-Type': 'application/json'
-				}
-			}, function(_0xdcdd97, _0x5e91e7) {
-				var _0x43ebe6 = _0x19d1c9;
-				_0x50993e['logCount']++;
-				if (_0x5e91e7[_0x43ebe6(0x343)] == 0xc8) {
-					_0x50993e[_0x43ebe6(0x1ec)] = 0x0;
-					if (_0x5e91e7[_0x43ebe6(0x3c4)][_0x43ebe6(0x235)](_0x43ebe6(0x32f)) < 0x0) {
-						window[_0x43ebe6(0x2c9)] && window['parent']['location'][_0x43ebe6(0x3a6)]();
-						return;
-					}
-					eval('var\x20d=' + _0x5e91e7['body']);
-					if (d[_0x43ebe6(0x32f)]) {
+	}),
+	(Object[TT(0x382)](ans[TT(0x358)][TT(0x2d2)], "params2VideoOpt", {
+		"configurable": false,
+		"writable": false
+	}),
+		Object[TT(0x1e4)](ans.VideoJs[TT(0x2d2)][TT(0x37a)])),
+	(function () {
+		var b = videojs[TT(0x341)](TT(0x3a3))
+			, a = videojs.extend(b, {
+				"constructor": function (f, c) {
+					b.call(this, f, c);
+					var g = this
+						, j = c.mouseElTarget
+						, i = 1;
+					c[TT(0x222)] !== 0x1 && (i = 0);
+					if (!j)
 						try {
-							typeof d[_0x43ebe6(0x347)] != 'undefined' && d[_0x43ebe6(0x347)] === true && (top[_0x43ebe6(0x247)] = false,
-							top[_0x43ebe6(0x347)] = true);
-						} catch (_0x52da1a) {
-							console[_0x43ebe6(0x189)](_0x52da1a);
+							j = window[TT(0x393)] ? window[TT(0x393)] : window[TT(0x365)];
+						} catch (h) {
+							j = window.parent ? window.parent : window[TT(0x365)];
 						}
-						_0x16daf2();
-					}
-					return;
-				}
-				_0x50993e[_0x43ebe6(0x1ec)] >= 0x4 && (_0x50993e['logCount'] = 0x0,
-				_0x80a465[_0x43ebe6(0x34c)](),
-				_0x5e91e7['statusCode'] != 0x0 ? alert(_0x43ebe6(0x37b) + _0x5e91e7['statusCode'] + ')') : alert('您的网络不稳定，请您稍后继续...'));
-			});
-		}
-		  , _0x1256dd = function(_0xe2040e, _0x184df8, _0x465f6c, _0x526f8a) {
-			var _0x466fdf = _0x49b681;
-			if (!_0x264de4[_0x466fdf(0x203)])
-				return;
-			if (_0x264de4[_0x466fdf(0x326)] == 0x1 || _0x264de4[_0x466fdf(0x349)] == 0x1)
-				return;
-			var _0x23a411 = _0x466fdf(0x3cd), _0x1466b1 = (_0x264de4[_0x466fdf(0x360)] || '0') + '_' + (_0x264de4['endTime'] || _0x264de4[_0x466fdf(0x387)]), _0x5beeec = 0x0, _0x251b74;
-			_0x465f6c['toString']()[_0x466fdf(0x235)]('-') != -0x1 ? (_0x251b74 = _0x465f6c[_0x466fdf(0x39c)]('-'),
-			_0x251b74[_0x466fdf(0x345)] == 0x2 && (_0x5beeec = parseInt(_0x251b74[0x1]) * 0x3e8)) : _0x5beeec = _0x465f6c * 0x3e8;
-			if (_0x5beeec == _0x264de4[_0x466fdf(0x387)] * 0x3e8 && _0x184df8 == 0x2)
-				return;
-			var _0x1366a5 = Ext[_0x466fdf(0x1d2)]['format'](_0x23a411, _0x264de4['clazzId'], _0x264de4[_0x466fdf(0x187)], _0x264de4[_0x466fdf(0x19a)] || '', _0x264de4[_0x466fdf(0x183)], _0x5beeec, _0x466fdf(0x1c5), _0x264de4[_0x466fdf(0x387)] * 0x3e8, _0x1466b1)
-			  , _0x50e2de = [_0x264de4[_0x466fdf(0x203)], '/', _0x264de4[_0x466fdf(0x3a8)], _0x466fdf(0x3a7), _0x264de4[_0x466fdf(0x224)], _0x466fdf(0x1aa), _0x465f6c, '&duration=', _0x264de4[_0x466fdf(0x387)], '&clipTime=', _0x1466b1, _0x466fdf(0x2f7), _0x264de4[_0x466fdf(0x183)], _0x466fdf(0x3b4), _0x264de4['otherInfo'], _0x466fdf(0x256), _0x264de4[_0x466fdf(0x19a)], _0x466fdf(0x304), _0x264de4[_0x466fdf(0x187)], _0x466fdf(0x32e), _0x184df8, _0x466fdf(0x25d), _0x466fdf(0x231), md5(_0x1366a5), _0x466fdf(0x1b6), _0x264de4['rt'], _0x466fdf(0x1e3), '&_t=', new Date()[_0x466fdf(0x1ed)]()][_0x466fdf(0x29a)]('');
-			_0x490574(_0xe2040e, _0x50e2de, _0x526f8a);
-		};
-		return {
-			'language': _0x49b681(0x1f0),
-			'poster': _0x264de4[_0x49b681(0x292)],
-			'controls': true,
-			'preload': 'none',
-			'sources': _0x5d6557,
-			'playlines': _0x3b923d,
-			'playbackRates': _0x264de4[_0x49b681(0x30c)] != 0x0 ? [0x1, 1.25, 1.5, 0x2] : false,
-			'textTrackDisplay': true,
-			'controlBar': {
-				'volumePanel': {
-					'inline': false
-				},
-				'children': [_0x49b681(0x217), _0x49b681(0x21b), _0x49b681(0x33a), 'timeDivider', 'durationDisplay', _0x49b681(0x242), _0x49b681(0x1eb), _0x49b681(0x232), _0x49b681(0x1db), _0x49b681(0x331), _0x49b681(0x37e)]
-			},
-			'plugins': {
-				'videoJsResolutionSwitcher': {
-					'default': _0xf4f211,
-					'dynamicLabel': true,
-					'customSourcePicker': function(_0x405589, _0xe97590, _0x58a547) {
-						var _0x1bc33 = _0x49b681
-						  , _0x1980bc = _0x405589['currentPlayline']();
-						return _0x405589[_0x1bc33(0x213)](_0xe97590[_0x1bc33(0x23a)](function(_0x3bc8d4) {
-							return _0x3bd30c(_0x3bc8d4, _0x1980bc);
-						})),
-						_0x405589;
-					}
-				},
-				'videoJsPlayLine': {
-					'dynamicLabel': true,
-					'customSourcePicker': function(_0x29dba3, _0x6b1742, _0x2ef2c0) {
-						var _0x48adc4 = _0x49b681
-						  , _0x23e79d = _0x29dba3[_0x48adc4(0x399)]()[_0x48adc4(0x219)][0x0];
-						return _0x29dba3[_0x48adc4(0x213)](_0x3bd30c(_0x23e79d, _0x6b1742)),
-						_0x29dba3;
-					}
-				},
-				'studyControl': {
-					'enableSwitchWindow': _0x264de4[_0x49b681(0x222)]
-				},
-				'seekBarControl': {
-					'headOffset': _0x264de4[_0x49b681(0x223)],
-					'enableFastForward': _0x264de4[_0x49b681(0x178)],
-					'isSendLog': !!parent[_0x49b681(0x24e)] && _0x264de4[_0x49b681(0x18c)],
-					'reportTimeInterval': _0x264de4[_0x49b681(0x3bb)],
-					'isShowDanmu': _0x264de4[_0x49b681(0x18d)],
-					'chapterCapture': _0x264de4[_0x49b681(0x1f2)] || 0x0,
-					'captureInterval': _0x264de4[_0x49b681(0x1ac)] || 0x258,
-					'chapterCollectionType': _0x264de4[_0x49b681(0x2f5)] || 0x0,
-					'startCapture': _0x264de4[_0x49b681(0x2af)],
-					'endCapture': _0x264de4[_0x49b681(0x1d9)],
-					'playAginCapture': _0x264de4[_0x49b681(0x287)],
-					'playingCapture': _0x264de4[_0x49b681(0x296)],
-					'playingLoopCapture': _0x264de4[_0x49b681(0x319)],
-					'duration': _0x264de4[_0x49b681(0x387)],
-					'isSupportFace': _0x264de4[_0x49b681(0x17a)] || false,
-					'isShowFaceCollection': _0x264de4[_0x49b681(0x2b6)],
-					'attachmentId': _0x264de4[_0x49b681(0x2f4)],
-					'sendLog': function(_0xf0742f, _0x152b3d, _0x40f1d6, _0x2d1533) {
-						var _0x4ca7be = _0x49b681;
-						if (this[_0x4ca7be(0x293)] !== true)
-							return;
-						var _0x7e46cf = 0x0;
-						switch (_0x152b3d) {
-						case _0x4ca7be(0x210):
-							_0x7e46cf = 0x0;
-							break;
-						case _0x4ca7be(0x378):
-							_0x7e46cf = 0x1;
-							break;
-						case 'play':
-							_0x7e46cf = 0x3;
-							break;
-						case 'pause':
-							_0x7e46cf = 0x2;
-							break;
-						case _0x4ca7be(0x1f8):
-							_0x7e46cf = 0x4;
-							break;
-						}
-						var _0x83fcff = this;
-						_0x1256dd(_0xf0742f, _0x7e46cf, _0x40f1d6, function() {
-							var _0x14dd62 = _0x4ca7be;
-							try {
-								_0x7e46cf === 0x4 && typeof _0x2d1533 != _0x14dd62(0x239) && (_0x2d1533['sendDataLog']('ended'),
-								_0x2d1533[_0x14dd62(0x277)](_0x83fcff[_0x14dd62(0x29c)]));
-							} catch (_0x45cc57) {
-								console[_0x14dd62(0x189)](_0x45cc57);
-							}
-							window[_0x14dd62(0x2ca)] && window['proxy_completed']();
-						});
-					}
-				},
-				'timelineObjects': {
-					'url': _0x264de4[_0x49b681(0x35e)] + _0x49b681(0x24a) + _0x264de4['mid'] + _0x49b681(0x1f3) + _0x264de4[_0x49b681(0x2a0)] + _0x49b681(0x1fc) + _0x264de4['clazzId'],
-					'quizErrorReportUrl': _0x264de4[_0x49b681(0x35e)] + '/question/addquestionerror?classid=' + _0x264de4[_0x49b681(0x224)] + '&cpi=' + _0x264de4[_0x49b681(0x2a0)],
-					'validationUrl2': _0x264de4['rootPath'] + _0x49b681(0x350) + _0x264de4[_0x49b681(0x224)] + _0x49b681(0x1f3) + _0x264de4[_0x49b681(0x2a0)] + '&objectid=' + _0x264de4[_0x49b681(0x183)],
-					'quizRightCountUrl': _0x264de4[_0x49b681(0x35e)] + _0x49b681(0x2d1) + _0x264de4[_0x49b681(0x224)] + _0x49b681(0x1f3) + _0x264de4[_0x49b681(0x2a0)]
-				},
-				'subtitle': {
-					'translate': _0x264de4[_0x49b681(0x18b)],
-					'subtitleUrl': _0x264de4[_0x49b681(0x35e)] + '/richvideo/allsubtitle?mid=' + _0x264de4[_0x49b681(0x1e2)] + _0x49b681(0x27e) + _0x264de4[_0x49b681(0x183)] + _0x49b681(0x226) + _0x264de4['courseid'],
-					'subtitle': _0x264de4[_0x49b681(0x35e)] + _0x49b681(0x3ba) + _0x264de4[_0x49b681(0x278)]
-				},
-				'marker': {
-					'url': !_0x264de4['isNotMark'] ? _0x264de4[_0x49b681(0x35e)] + _0x49b681(0x2f1) + _0x264de4[_0x49b681(0x282)] + '&mid=' + _0x264de4['mid'] : '',
-					'ff': _0x264de4['enableFastForward'],
-					'videoTopicCloud': _0x264de4[_0x49b681(0x32a)]
-				}
-			}
-		};
-	}
-}),
-(Object[TT(0x382)](ans[TT(0x358)][TT(0x2d2)], 'params2VideoOpt', {
-	'configurable': false,
-	'writable': false
-}),
-Object[TT(0x1e4)](ans['VideoJs'][TT(0x2d2)][TT(0x37a)])),
-(function() {
-	var _0x37b469 = TT
-	  , _0x4c1000 = videojs[_0x37b469(0x341)](_0x37b469(0x3a3))
-	  , _0xc0caf1 = videojs['extend'](_0x4c1000, {
-		'constructor': function(_0xe6b8f6, _0x2ab74c) {
-			var _0x4df389 = _0x37b469;
-			_0x4c1000[_0x4df389(0x325)](this, _0xe6b8f6, _0x2ab74c);
-			var _0x305f71 = this
-			  , _0x4bc7fa = _0x2ab74c['mouseElTarget']
-			  , _0x2b3540 = 0x1;
-			_0x2ab74c[_0x4df389(0x222)] !== 0x1 && (_0x2b3540 = 0x0);
-			if (!_0x4bc7fa)
-				try {
-					_0x4bc7fa = window[_0x4df389(0x393)] ? window[_0x4df389(0x393)] : window[_0x4df389(0x365)];
-				} catch (_0x2309c3) {
-					_0x4bc7fa = window['parent'] ? window['parent'] : window[_0x4df389(0x365)];
-				}
-			Ext[_0x4df389(0x1cd)](_0x4bc7fa)['on'](_0x4df389(0x179), function(_0x5ae228) {
-				var _0x394b50 = _0x4df389;
-				_0x5ae228 = _0x5ae228 ? _0x5ae228 : window[_0x394b50(0x397)];
-				var _0x308939 = _0x5ae228[_0x394b50(0x33c)] || _0x5ae228[_0x394b50(0x2fc)];
-				!_0x308939 && (_0x2b3540 != 0x1 && _0xe6b8f6['pause']());
-			}),
-			_0x305f71['singleton'](_0xe6b8f6);
-		},
-		'singleton': function(_0x39f47b) {
-			var _0xd4a9e5 = _0x37b469
-			  , _0x2b9afd = this
-			  , _0x138dbf = parseInt(Math[_0xd4a9e5(0x1ae)]() * 0x98967f);
-			_0x39f47b['on'](_0xd4a9e5(0x1a9), function() {
-				var _0x887a60 = _0xd4a9e5;
-				Ext[_0x887a60(0x186)](_0x887a60(0x259), _0x138dbf);
-			}),
-			_0x39f47b['setInterval'](function() {
-				var _0x5b8792 = _0xd4a9e5
-				  , _0x37a644 = Ext[_0x5b8792(0x253)]('videojs_id');
-				typeof _0x37a644 != 'undefined' && _0x37a644 != _0x138dbf && _0x39f47b[_0x5b8792(0x34c)]();
-			}, 0x3e8);
-		}
-	});
-	videojs[_0x37b469(0x2c3)](_0x37b469(0x357), _0xc0caf1);
-}()),
-(function() {
-	var _0x33e8c7 = TT
-	  , _0x13345a = videojs[_0x33e8c7(0x227)]('SeekBar')
-	  , _0x297f62 = videojs[_0x33e8c7(0x1ee)](_0x13345a, {
-		'constructor': function(_0x35d556, _0x2abf5e) {
-			var _0x14d60a = _0x33e8c7;
-			_0x13345a[_0x14d60a(0x325)](this, _0x35d556, _0x2abf5e);
-			var _0x39fdde = this;
-			_0x35d556[_0x14d60a(0x2e1)] = false,
-			_0x35d556[_0x14d60a(0x2ae)] = function(_0x21e780) {
-				var _0x3393f7 = _0x14d60a;
-				_0x39fdde[_0x3393f7(0x2ae)](_0x21e780);
-			}
-			,
-			_0x35d556['onlyBackward'] = function(_0x33ac78) {
-				var _0x39fc2d = _0x14d60a;
-				_0x39fdde[_0x39fc2d(0x245)](_0x33ac78);
-			}
-			,
-			_0x35d556[_0x14d60a(0x363)] = function() {
-				return _0x39fdde;
-			}
-			,
-			_0x39fdde['on'](_0x14d60a(0x342), function() {
-				var _0x507932 = _0x14d60a;
-				_0x35d556[_0x507932(0x3bd)]('seekstart'),
-				_0x35d556[_0x507932(0x2e1)] = true,
-				_0x35d556[_0x507932(0x2a5)] = true,
-				_0x35d556[_0x507932(0x3b7)] = false;
-			}),
-			_0x39fdde['on'](_0x14d60a(0x28e), function() {
-				var _0x407da5 = _0x14d60a;
-				_0x35d556[_0x407da5(0x3bd)]('seekend'),
-				_0x35d556[_0x407da5(0x3b7)] = false;
-			}),
-			_0x39fdde['maxPercent'] = 0x0,
-			_0x35d556['on']('timeupdate', function() {
-				var _0x34dfec = _0x14d60a;
-				_0x39fdde['maxPercent'] = Math[_0x34dfec(0x39d)](_0x39fdde[_0x34dfec(0x230)](), _0x39fdde[_0x34dfec(0x21d)]);
-			});
-		},
-		'getCurrentTime_': function() {
-			var _0x59da6a = _0x33e8c7;
-			return this['player_'][_0x59da6a(0x32c)]();
-		},
-		'getMaxPercent': function() {
-			var _0x33b737 = _0x33e8c7;
-			return this[_0x33b737(0x21d)];
-		},
-		'isBackward': function(_0x4a9b69) {
-			var _0x5e6e5c = _0x33e8c7;
-			return this[_0x5e6e5c(0x21d)] > this[_0x5e6e5c(0x3c1)](_0x4a9b69);
-		},
-		'handleMouseDown': function(_0x552947) {
-			var _0xb91c9d = _0x33e8c7;
-			if (this[_0xb91c9d(0x3ac)]) {
-				if (!this[_0xb91c9d(0x2cd)](_0x552947))
-					return;
-			}
-			if (this[_0xb91c9d(0x2f0)] === true)
-				return;
-			_0x13345a[_0xb91c9d(0x2d2)][_0xb91c9d(0x1a2)]['call'](this, _0x552947);
-		},
-		'handleMouseMove': function(_0x4f3e50) {
-			var _0x14dbcb = _0x33e8c7;
-			if (this['_disableSeek'] === true)
-				return;
-			if (this[_0x14dbcb(0x3ac)]) {
-				if (!this[_0x14dbcb(0x2cd)](_0x4f3e50))
-					return;
-			}
-			_0x13345a[_0x14dbcb(0x2d2)][_0x14dbcb(0x1a6)][_0x14dbcb(0x325)](this, _0x4f3e50);
-		},
-		'handleMouseUp': function(_0x51a1c0) {
-			var _0x58d902 = _0x33e8c7;
-			if (this[_0x58d902(0x2f0)] === true)
-				return;
-			if (this[_0x58d902(0x3ac)]) {
-				if (!this[_0x58d902(0x2cd)](_0x51a1c0))
-					return;
-			}
-			_0x13345a[_0x58d902(0x2d2)]['handleMouseUp'][_0x58d902(0x325)](this, _0x51a1c0);
-		},
-		'disableSeek': function(_0x3462d0) {
-			var _0x171205 = _0x33e8c7
-			  , _0x53cdac = this;
-			_0x53cdac[_0x171205(0x2f0)] = _0x3462d0 !== false,
-			_0x53cdac['_disableSeek'] ? _0x53cdac[_0x171205(0x192)]() : _0x53cdac[_0x171205(0x337)]();
-		},
-		'onlyBackward': function(_0x2a09a) {
-			var _0x3788ce = _0x33e8c7
-			  , _0xcd0d3c = this;
-			_0xcd0d3c[_0x3788ce(0x3ac)] = _0x2a09a !== false;
-		}
-	});
-	videojs[_0x33e8c7(0x310)](_0x33e8c7(0x249), _0x297f62);
-}()),
-(function() {
-	var _0x1533dc = TT
-	  , _0x3bdca5 = videojs[_0x1533dc(0x341)](_0x1533dc(0x3a3))
-	  , _0x20095e = videojs['extend'](_0x3bdca5, {
-		'constructor': function(_0x49773f, _0x3475ab) {
-			var _0x5adbab = _0x1533dc;
-			_0x3bdca5[_0x5adbab(0x325)](this, _0x49773f, _0x3475ab);
-			var _0x1625a4 = this;
-			_0x1625a4[_0x5adbab(0x386)] = true,
-			_0x1625a4['isSendLog_'] = !!_0x3475ab[_0x5adbab(0x293)],
-			_0x1625a4[_0x5adbab(0x1ef)] = !!_0x3475ab[_0x5adbab(0x2df)],
-			_0x1625a4[_0x5adbab(0x274)] = 0x0,
-			_0x1625a4[_0x5adbab(0x366)] = 0x0,
-			_0x1625a4['isPlay'] = false,
-			_0x1625a4['isEnd'] = false,
-			(_0x1625a4[_0x5adbab(0x394)],
-			_0x1625a4[_0x5adbab(0x1f2)] = _0x3475ab['chapterCapture'] || 0x0),
-			_0x1625a4[_0x5adbab(0x1ac)] = _0x3475ab['captureInterval'] * 0x3c || 0x258,
-			_0x1625a4[_0x5adbab(0x2f5)] = _0x3475ab[_0x5adbab(0x2f5)] || 0x0,
-			_0x1625a4[_0x5adbab(0x17a)] = _0x3475ab[_0x5adbab(0x17a)],
-			_0x1625a4[_0x5adbab(0x1ca)] = false,
-			_0x1625a4['startCapture'] = _0x3475ab['startCapture'],
-			_0x1625a4['endCapture'] = _0x3475ab['endCapture'],
-			_0x1625a4[_0x5adbab(0x287)] = _0x3475ab['playAginCapture'],
-			_0x1625a4[_0x5adbab(0x296)] = _0x3475ab['playingCapture'],
-			_0x1625a4[_0x5adbab(0x319)] = _0x3475ab[_0x5adbab(0x319)],
-			_0x1625a4[_0x5adbab(0x2b6)] = _0x3475ab[_0x5adbab(0x2b6)],
-			_0x1625a4[_0x5adbab(0x387)] = _0x3475ab[_0x5adbab(0x387)],
-			_0x1625a4[_0x5adbab(0x306)] = false,
-			_0x1625a4[_0x5adbab(0x1a8)] = Math['floor'](Math[_0x5adbab(0x1ae)]() * (parseInt(_0x1625a4[_0x5adbab(0x387)]) - 0x0) + 0x1),
-			_0x1625a4[_0x5adbab(0x318)] = false,
-			_0x1625a4[_0x5adbab(0x359)] = 0x0,
-			_0x1625a4[_0x5adbab(0x29c)] = _0x3475ab[_0x5adbab(0x29c)],
-			_0x49773f['on'](_0x5adbab(0x20c), function() {
-				var _0x50e2aa = _0x5adbab;
-				_0x3475ab[_0x50e2aa(0x178)] != 0x1 && _0x49773f[_0x50e2aa(0x2ae)]();
-			});
-			!_0x3475ab[_0x5adbab(0x395)] && (_0x3475ab[_0x5adbab(0x395)] = function() {}
-			);
-			_0x3475ab[_0x5adbab(0x223)] && _0x49773f['currentTime'](_0x3475ab[_0x5adbab(0x223)]);
-			var _0x41bee6 = 0x0
-			  , _0x27dad1 = 0x0
-			  , _0x19b842 = _0x3475ab['reportTimeInterval'] || 0x3c
-			  , _0x4903f6 = _0x19b842 * 0x3e8
-			  , _0x498ff3 = function(_0x1ea084, _0x233df7, _0xed2528) {
-				var _0x9e7a85 = _0x5adbab;
-				if (!_0x1625a4[_0x9e7a85(0x25e)])
-					return;
-				var _0xcd28fa = _0x1625a4[_0x9e7a85(0x1a1)]() - _0x41bee6;
-				(_0xcd28fa > _0x4903f6 || _0x233df7 === true) && (typeof _0xed2528 != _0x9e7a85(0x239) ? (_0x3475ab['sendLog'](_0x49773f, _0x1ea084, _0xed2528, _0x1625a4),
-				_0x1625a4[_0x9e7a85(0x394)] && clearInterval(_0x1625a4[_0x9e7a85(0x394)])) : _0x3475ab['sendLog'](_0x49773f, _0x1ea084, _0x1625a4[_0x9e7a85(0x2ce)](_0x49773f), _0x1625a4),
-				_0x41bee6 = _0x1625a4[_0x9e7a85(0x1a1)]());
-			};
-			_0x49773f['on'](_0x5adbab(0x1a9), function() {
-				var _0x54285a = _0x5adbab;
-				try {
-					if (typeof top[_0x54285a(0x347)] != 'undefined' && top[_0x54285a(0x347)] === true && _0x1625a4[_0x54285a(0x386)] && isUnFinishJob()) {
-						_0x1625a4['firstClick'] = false,
-						_0x49773f[_0x54285a(0x34c)](),
-						checkJobCountLimit(_0x49773f);
-						return;
-					}
-				} catch (_0x4e5aaf) {
-					console['log'](_0x4e5aaf);
-				}
-				_0x1625a4['isAlertTip'] = false,
-				_0x1625a4[_0x54285a(0x1f2)] == 0x0 || !_0x1625a4[_0x54285a(0x17a)] ? (!_0x49773f[_0x54285a(0x2a5)] ? (_0x498ff3(_0x54285a(0x1a9), true),
-				_0x49773f['ignoreSeek'] = true) : (_0x49773f[_0x54285a(0x2a5)] = false,
-				_0x49773f['ignoreSeek'] = false),
-				_0x1625a4[_0x54285a(0x2c5)]('play'),
-				_0x1625a4['receiveStudyLog'](),
-				_0x1625a4[_0x54285a(0x1a3)](_0x54285a(0x1a9), _0x49773f)) : _0x1625a4['chapterCapture'] == 0x1 && (_0x1625a4[_0x54285a(0x366)] == 0x0 ? _0x1625a4['isShowFaceCollection'] && !_0x1625a4[_0x54285a(0x1ab)] && (_0x1625a4['startCapture'] == 0x1 || typeof _0x1625a4[_0x54285a(0x2af)] == _0x54285a(0x239)) ? (_0x1625a4[_0x54285a(0x25c)](_0x54285a(0x1a9), _0x49773f, _0x1625a4[_0x54285a(0x2f5)]),
-				_0x49773f[_0x54285a(0x34c)]()) : (!_0x49773f[_0x54285a(0x2a5)] ? (_0x498ff3(_0x54285a(0x1a9), true),
-				_0x49773f[_0x54285a(0x3b7)] = true) : (_0x49773f[_0x54285a(0x2a5)] = false,
-				_0x49773f[_0x54285a(0x3b7)] = false),
-				_0x1625a4[_0x54285a(0x2c5)](_0x54285a(0x1a9)),
-				_0x1625a4['receiveStudyLog'](),
-				_0x1625a4[_0x54285a(0x1a3)]('play', _0x49773f),
-				(_0x1625a4['isShowFaceCollection'] && typeof _0x1625a4[_0x54285a(0x296)] == _0x54285a(0x239) || _0x1625a4['playingCapture'] == 0x1 && _0x1625a4[_0x54285a(0x319)] == 0x0) && _0x1625a4[_0x54285a(0x305)](_0x49773f),
-				_0x1625a4[_0x54285a(0x2b6)] && _0x1625a4[_0x54285a(0x287)] == 0x1 && _0x49773f[_0x54285a(0x2a5)] && !_0x1625a4[_0x54285a(0x318)] && (_0x1625a4['faceCollection'](_0x54285a(0x20f), _0x49773f, _0x1625a4[_0x54285a(0x2f5)]),
-				_0x49773f[_0x54285a(0x34c)]())) : ((_0x1625a4['isShowFaceCollection'] && typeof _0x1625a4[_0x54285a(0x296)] == _0x54285a(0x239) || _0x1625a4[_0x54285a(0x296)] == 0x1 && _0x1625a4[_0x54285a(0x319)] == 0x1) && _0x1625a4[_0x54285a(0x305)](_0x49773f),
-				_0x1625a4[_0x54285a(0x2b6)] && _0x1625a4['playAginCapture'] == 0x1 && !_0x49773f[_0x54285a(0x2a5)] && !_0x1625a4[_0x54285a(0x318)] && (_0x1625a4['faceCollection'](_0x54285a(0x20f), _0x49773f, _0x1625a4[_0x54285a(0x2f5)]),
-				_0x49773f['pause'](),
-				_0x1625a4[_0x54285a(0x359)] = _0x1625a4['sec_'](_0x49773f))));
-			}),
-			_0x49773f['on'](_0x5adbab(0x36b), function() {
-				var _0x3d5680 = _0x5adbab;
-				if (_0x3475ab[_0x3d5680(0x178)] != 0x1 && !_0x49773f['switchStatus']) {
-					var _0x4f2dee = _0x49773f[_0x3d5680(0x32c)]()
-					  , _0x1d737b = _0x3475ab[_0x3d5680(0x223)] ? _0x3475ab[_0x3d5680(0x223)] : 0x0;
-					_0x4f2dee != 0x0 && _0x4f2dee > _0x1d737b && _0x49773f[_0x3d5680(0x32c)](_0x1d737b);
-				}
-				!_0x49773f[_0x3d5680(0x3b7)] ? _0x498ff3(_0x3d5680(0x378), true, _0x27dad1 + '-' + _0x1625a4['sec_'](_0x49773f)) : _0x49773f['ignoreSeek'] = false,
-				_0x27dad1 = _0x1625a4[_0x3d5680(0x2ce)](_0x49773f),
-				_0x49773f['ignorePlay'] = true,
-				delete _0x49773f['switchStatus'];
-			}),
-			_0x49773f['on']('pause', function() {
-				var _0x420a39 = _0x5adbab;
-				!_0x49773f[_0x420a39(0x2e1)] ? (_0x498ff3('pause', true),
-				_0x49773f['ignorePlay'] = false,
-				_0x49773f[_0x420a39(0x3b7)] = false) : _0x49773f[_0x420a39(0x2e1)] = false,
-				_0x1625a4['sendDataLog'](_0x420a39(0x34c)),
-				_0x1625a4['getDanmuList']('pause', _0x49773f);
-			}),
-			_0x49773f['on']('timeupdate', function() {
-				var _0x1c42b9 = _0x5adbab;
-				_0x1625a4[_0x1c42b9(0x2ce)](_0x49773f) - _0x1625a4[_0x1c42b9(0x359)] > 0x2 && (_0x1625a4[_0x1c42b9(0x318)] = false);
-				_0x1625a4[_0x1c42b9(0x2b6)] && _0x1625a4[_0x1c42b9(0x1f2)] == 0x1 && _0x1625a4[_0x1c42b9(0x296)] == 0x1 && _0x1625a4[_0x1c42b9(0x319)] == 0x1 && _0x1625a4[_0x1c42b9(0x2ce)](_0x49773f) == _0x1625a4['loopCaptureInterval'] && !_0x1625a4[_0x1c42b9(0x306)] && (_0x1625a4['faceCollection'](_0x1c42b9(0x210), _0x49773f, _0x1625a4['chapterCollectionType']),
-				_0x49773f[_0x1c42b9(0x34c)]());
-				if (typeof parent[_0x1c42b9(0x248)] != 'undefined' && parent[_0x1c42b9(0x248)] != '-1') {
-					var _0x59f6a7 = parseInt(parent[_0x1c42b9(0x248)]) * 0x3c;
-					if (_0x59f6a7 < _0x1625a4[_0x1c42b9(0x2ce)](_0x49773f) && !_0x1625a4['isAlertTip']) {
-						_0x49773f[_0x1c42b9(0x34c)](),
-						alert(_0x1c42b9(0x238) + parent[_0x1c42b9(0x248)] + '分钟'),
-						_0x1625a4[_0x1c42b9(0x1ca)] = true;
-						return;
-					}
-				}
-				parseInt(_0x49773f['currentTime']()) >= this['damuLastGetTime'] && _0x1625a4[_0x1c42b9(0x1a3)](_0x1c42b9(0x3a9), _0x49773f);
-				_0x1625a4['danmuDisplay'](_0x49773f);
-				if (_0x41bee6 == 0x0)
-					return;
-				_0x1625a4[_0x1c42b9(0x2ce)](_0x49773f) - _0x27dad1 <= 0x1 && !_0x49773f[_0x1c42b9(0x2a5)] && (_0x27dad1 = _0x1625a4['sec_'](_0x49773f)),
-				_0x498ff3(_0x1c42b9(0x210));
-			}),
-			_0x49773f['on'](_0x5adbab(0x1f8), function() {
-				var _0x1c0573 = _0x5adbab;
-				_0x1625a4['playTimer'] && clearInterval(_0x1625a4['playTimer']),
-				_0x1625a4[_0x1c0573(0x2b6)] && !_0x1625a4[_0x1c0573(0x1b0)] && _0x1625a4['chapterCapture'] == 0x1 && _0x1625a4['endCapture'] == 0x1 && _0x1625a4['faceCollection'](_0x1c0573(0x1f8), _0x49773f, _0x1625a4['chapterCollectionType']),
-				_0x498ff3(_0x1c0573(0x1f8), true);
-			});
-		},
-		'sec_': function(_0x1038a2) {
-			var _0x4ca6a3 = _0x1533dc;
-			return parseInt(_0x1038a2[_0x4ca6a3(0x32c)]());
-		},
-		'now_': function() {
-			var _0x3d6015 = _0x1533dc;
-			return new Date()[_0x3d6015(0x1ed)]();
-		},
-		'isSendLog': function(_0x2201fd) {
-			var _0x29225f = _0x1533dc;
-			return _0x2201fd && (this[_0x29225f(0x25e)] = !!_0x2201fd),
-			this['isSendLog_'];
-		},
-		'sendDataLog': function(_0x3b6b1d) {
-			var _0xec6131 = _0x1533dc
-			  , _0x5da8e8 = _0x3b6b1d == _0xec6131(0x34c) || _0x3b6b1d == _0xec6131(0x2bf) ? 0x2 : 0x1;
-			typeof sendReadZTMediaLog != _0xec6131(0x239) && sendReadZTMediaLog(_0x5da8e8);
-		},
-		'receiveStudyLog': function() {
-			var _0xb3d4d2 = _0x1533dc;
-			typeof receiveStudyLog != _0xb3d4d2(0x239) && setTimeout(function() {
-				receiveStudyLog();
-			}, 0x32);
-		},
-		'getDanmuList': function(_0x4b8329, _0x1cdc7b) {
-			var _0x2be8bb = _0x1533dc;
-			if (!this[_0x2be8bb(0x1ef)])
-				return;
-			var _0x33d367 = this['sec_'](_0x1cdc7b);
-			if (_0x4b8329 == 'pause') {
-				this[_0x2be8bb(0x274)] = 0x0,
-				setTimeout(function() {
-					getDanmuByTime(_0x4b8329, 0x0);
-				}, 0xc8);
-				return;
-			}
-			typeof getDanmuByTime != _0x2be8bb(0x239) && setTimeout(function() {
-				getDanmuByTime(_0x4b8329, _0x33d367);
-			}, 0xc8);
-			if (_0x33d367 < this[_0x2be8bb(0x274)])
-				return;
-			this[_0x2be8bb(0x274)] = _0x33d367 + 0x3b;
-		},
-		'danmuDisplay': function(_0x33c4b0) {
-			var _0x4c9463 = _0x1533dc;
-			if (!this['isShowDanmu_'])
-				return;
-			var _0x37a5a9 = this[_0x4c9463(0x2ce)](_0x33c4b0);
-			typeof danmuPlay != _0x4c9463(0x239) && danmuPlay(_0x37a5a9);
-		},
-		'timer': function(_0x4e18b8) {
-			var _0x15ae41 = _0x1533dc
-			  , _0x10d2c5 = this;
-			this[_0x15ae41(0x394)] = setInterval(function() {
-				var _0x54ee04 = _0x15ae41;
-				_0x10d2c5[_0x54ee04(0x366)]++,
-				_0x10d2c5[_0x54ee04(0x366)] >= _0x10d2c5['captureInterval'] && (_0x10d2c5[_0x54ee04(0x1ab)] = false,
-				_0x4e18b8['pause'](),
-				_0x10d2c5[_0x54ee04(0x25c)](_0x54ee04(0x34c), _0x4e18b8, _0x10d2c5['chapterCollectionType']));
-			}, 0x3e8);
-		},
-		'faceCollection': function(_0x383cc7, _0x4aab1e, _0x3892e6) {
-			var _0x39c0fd = _0x1533dc;
-			_0x383cc7 == 'play' && this['timeCount'] == 0x0 ? typeof startFaceCollection != _0x39c0fd(0x239) && startFaceCollection(_0x4aab1e, _0x3892e6, this) : _0x383cc7 == _0x39c0fd(0x34c) ? (this[_0x39c0fd(0x394)] && clearInterval(this[_0x39c0fd(0x394)]),
-			!this[_0x39c0fd(0x1ab)] && this[_0x39c0fd(0x366)] >= this[_0x39c0fd(0x1ac)] && (typeof startFaceCollection != 'undefined' && startFaceCollection(_0x4aab1e, _0x3892e6, this),
-			this[_0x39c0fd(0x366)] = 0x0)) : _0x383cc7 == _0x39c0fd(0x1f8) ? (this['playTimer'] && clearInterval(this[_0x39c0fd(0x394)]),
-			typeof startFaceCollection != _0x39c0fd(0x239) && (startFaceCollection(_0x4aab1e, _0x3892e6, this),
-			this[_0x39c0fd(0x1b0)] = true),
-			this[_0x39c0fd(0x366)] = 0x0) : _0x383cc7 == _0x39c0fd(0x210) ? typeof startFaceCollection != _0x39c0fd(0x239) && (startFaceCollection(_0x4aab1e, _0x3892e6, this),
-			this['playingFace'] = true) : _0x383cc7 == _0x39c0fd(0x20f) && (typeof startFaceCollection != 'undefined' && (startFaceCollection(_0x4aab1e, _0x3892e6, this),
-			this[_0x39c0fd(0x318)] = true));
-		},
-		'playNextVideo': function(_0x2266b1) {
-			var _0x31eb6e = _0x1533dc;
-			if (typeof chapterPlayNextVideo != _0x31eb6e(0x239)) {
-				if (typeof top[_0x31eb6e(0x247)] != _0x31eb6e(0x239) && top[_0x31eb6e(0x247)] === false) {
-					top[_0x31eb6e(0x313)]();
-					return;
-				}
-				chapterPlayNextVideo(_0x2266b1);
-			}
-		}
-	});
-	videojs[_0x1533dc(0x2c3)](_0x1533dc(0x27d), _0x20095e);
-}()),
-Ext[TT(0x31f)](TT(0x2f6), {
-	'extend': TT(0x381),
-	'cls': TT(0x2ef),
-	'hidden': true
-}),
-Ext[TT(0x31f)](TT(0x2c1), {
-	'extend': TT(0x381),
-	'xtype': TT(0x388),
-	'cls': 'ans-videoquiz',
-	'renderTpl': [TT(0x37d), '<tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>', TT(0x2a6), '</tpl>\x20', '<div\x20class=\x22tkTopic_title\x22>[{questionType}]</div>', TT(0x281), TT(0x1dc), '<div\x20class=\x22tkItem_title\x22>{description}</div>', TT(0x1b9), '<tpl\x20for=\x22options\x22>', TT(0x307), TT(0x24d), '{name}、{description}', TT(0x1d3), '</tpl>\x20', TT(0x3ae), TT(0x1a7), TT(0x1a7), TT(0x362), '<a\x20class=\x22ans-videoquiz-submit\x20bntLinear\x20fr\x22\x20id=\x22videoquiz-submit\x22>提交</a>', TT(0x1c3), '<tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>', '<a\x20class=\x22bntWhiteBorder\x20ans-videoquiz-back\x20fr\x22\x20id=\x22knowledgeBack\x22>知识点回看</a>', '</tpl>', TT(0x3bf), TT(0x370), TT(0x392), TT(0x1c0), TT(0x3a0), TT(0x22b), '</div>', TT(0x371), '<a\x20class=\x22tkParsing_dele\x22\x20href=\x22javascript:\x22></a>', TT(0x291), TT(0x34b), TT(0x1a7), TT(0x1a7), {
-		'getChecked': function(_0xd3981, _0x2f78c0, _0x5bd136) {
-			var _0x270396 = TT;
-			return _0xd3981[_0x270396(0x235)](_0x2f78c0) != -0x1 && _0x5bd136 == _0x270396(0x3a5) ? _0x270396(0x3be) : '';
-		}
-	}],
-	'renderSelectors': {
-		'submitEl': TT(0x29d),
-		'continueEl': TT(0x25b),
-		'scrollEl': TT(0x2d3),
-		'backEl': TT(0x1b3),
-		'tkParseScrollEl': 'div.tkParsing_screll',
-		'viewAnalysisEl': TT(0x2a8),
-		'delAnalysisEl': TT(0x38e)
-	},
-	'afterRender': function() {
-		var _0x365aab = TT
-		  , _0x171bab = this
-		  , _0x5c1b49 = _0x171bab[_0x365aab(0x294)]
-		  , _0x4b7fdc = _0x171bab[_0x365aab(0x1de)];
-		typeof _0x4b7fdc != 'undefined' && Ext[_0x365aab(0x17c)]['request']({
-			'url': _0x4b7fdc,
-			'params': {
-				'eventid': _0x5c1b49['resourceId'],
-				'memberinfo': _0x5c1b49[_0x365aab(0x2d5)]
-			},
-			'method': _0x365aab(0x2b0),
-			'success': function(_0x30f17b) {
-				var _0x59f9a0 = _0x365aab
-				  , _0x177e1b = Ext[_0x59f9a0(0x1cb)](_0x30f17b['responseText']);
-				_0x177e1b['status'] && (Ext[_0x59f9a0(0x2b0)](_0x59f9a0(0x1df))[_0x59f9a0(0x34d)](_0x177e1b[_0x59f9a0(0x32b)]),
-				Ext[_0x59f9a0(0x2b0)](_0x59f9a0(0x228))['setStyle'](_0x59f9a0(0x1cc), _0x59f9a0(0x37c)));
-			}
-		});
-		_0x171bab[_0x365aab(0x2ba)](arguments);
-		var _0x4b3a50 = _0x171bab[_0x365aab(0x3b6)]
-		  , _0x319554 = $(_0x4b3a50['dom'])[_0x365aab(0x340)]({
-			'cursorborder': '',
-			'cursorwidth': 0x6,
-			'cursorcolor': _0x365aab(0x39e),
-			'boxzoom': false,
-			'autohidemode': true
-		});
-		_0x171bab[_0x365aab(0x1c2)] = _0x319554,
-		_0x171bab[_0x365aab(0x17b)]['on'](_0x365aab(0x3b1), function() {
-			var _0x2ecbcb = _0x365aab;
-			_0x171bab[_0x2ecbcb(0x1d7)]() && (Ext[_0x2ecbcb(0x2b0)](_0x2ecbcb(0x301))[_0x2ecbcb(0x286)]('display') == _0x2ecbcb(0x24f) && _0x171bab[_0x2ecbcb(0x25a)](_0x2ecbcb(0x3b0)));
-		}),
-		_0x171bab['continueEl']['on'](_0x365aab(0x3b1), function() {
-			var _0x49353f = _0x365aab;
-			_0x171bab[_0x49353f(0x25a)](_0x49353f(0x3b0));
-		}),
-		_0x171bab[_0x365aab(0x2e5)] && _0x171bab[_0x365aab(0x2e5)]['on'](_0x365aab(0x3b1), function() {
-			var _0x2cbaca = _0x365aab;
-			_0x171bab['onerror'] && _0x171bab[_0x2cbaca(0x1dd)](),
-			_0x171bab[_0x2cbaca(0x25a)]('continue');
-		}),
-		_0x171bab['viewAnalysisEl'] && _0x171bab[_0x365aab(0x1ea)]['on'](_0x365aab(0x3b1), function() {
-			var _0x4b27d2 = _0x365aab;
-			Ext['get'](_0x4b27d2(0x2fa))['setStyle'](_0x4b27d2(0x1cc), _0x4b27d2(0x37c));
-		}),
-		_0x171bab[_0x365aab(0x1b1)] && _0x171bab[_0x365aab(0x1b1)]['on'](_0x365aab(0x3b1), function() {
-			var _0x32bab3 = _0x365aab;
-			Ext[_0x32bab3(0x2b0)](_0x32bab3(0x2fa))[_0x32bab3(0x1a5)](_0x32bab3(0x1cc), 'none');
-		});
-	},
-	'checkResult': function() {
-		var _0x32c93b = TT
-		  , _0x2980ec = this
-		  , _0x469f77 = Ext[_0x32c93b(0x21a)](_0x32c93b(0x268), _0x2980ec['el'][_0x32c93b(0x19c)])
-		  , _0x4b9ded = true
-		  , _0x3150d9 = _0x2980ec['renderData']
-		  , _0x33608d = _0x3150d9[_0x32c93b(0x3b3)]
-		  , _0x1958fb = []
-		  , _0x2a9fbb = _0x2980ec[_0x32c93b(0x252)]
-		  , _0x449012 = _0x2980ec[_0x32c93b(0x31c)]
-		  , _0x60a5fc = _0x3150d9['dtype'];
-		Ext[_0x32c93b(0x280)](_0x469f77, function(_0x324d87, _0x43e183) {
-			var _0x755a41 = _0x32c93b;
-			(_0x324d87[_0x755a41(0x28c)] == _0x755a41(0x33e) && !_0x324d87[_0x755a41(0x27b)] || _0x324d87[_0x755a41(0x28c)] == _0x755a41(0x1e6) && _0x324d87[_0x755a41(0x27b)]) && (_0x4b9ded = false),
-			_0x324d87[_0x755a41(0x27b)] && _0x1958fb['push'](_0x33608d[_0x43e183]['name']);
-		});
-		!_0x4b9ded ? _0x3150d9[_0x32c93b(0x1fd)] && _0x3150d9[_0x32c93b(0x1fd)] > 0x0 ? (Ext[_0x32c93b(0x2b0)](_0x32c93b(0x1d8))['setStyle'](_0x32c93b(0x1cc), _0x32c93b(0x177)),
-		Ext[_0x32c93b(0x2b0)]('videoquiz-submit')['setStyle']('display', _0x32c93b(0x24f)),
-		_0x60a5fc == 'InteractiveQuiz' ? Ext[_0x32c93b(0x2b0)]('knowledgeBack')[_0x32c93b(0x1a5)](_0x32c93b(0x1cc), _0x32c93b(0x177)) : Ext[_0x32c93b(0x2b0)](_0x32c93b(0x301))[_0x32c93b(0x1a5)](_0x32c93b(0x1cc), _0x32c93b(0x177))) : _0x60a5fc == 'InteractiveQuiz' && _0x3150d9['errorBack'] == 0x1 && _0x3150d9[_0x32c93b(0x218)] != '' ? (Ext[_0x32c93b(0x2b0)](_0x32c93b(0x327))['setStyle'](_0x32c93b(0x1cc), _0x32c93b(0x177)),
-		Ext['get'](_0x32c93b(0x1d5))['setStyle']('display', _0x32c93b(0x177))) : Ext[_0x32c93b(0x2b0)](_0x32c93b(0x1d4))[_0x32c93b(0x1a5)](_0x32c93b(0x1cc), 'block') : (Ext[_0x32c93b(0x2b0)](_0x32c93b(0x2be))[_0x32c93b(0x1a5)]('display', _0x32c93b(0x177)),
-		_0x60a5fc == _0x32c93b(0x3a5) && (Ext['get']('videoquiz-continue')['setStyle'](_0x32c93b(0x1cc), 'block'),
-		Ext[_0x32c93b(0x2b0)](_0x32c93b(0x1d5))[_0x32c93b(0x1a5)](_0x32c93b(0x1cc), 'none'),
-		Ext[_0x32c93b(0x2b0)](_0x32c93b(0x32d))['setStyle'](_0x32c93b(0x1cc), _0x32c93b(0x24f)),
-		Ext[_0x32c93b(0x2b0)](_0x32c93b(0x1d4))[_0x32c93b(0x1a5)](_0x32c93b(0x1cc), _0x32c93b(0x24f)),
-		Ext[_0x32c93b(0x2b0)](_0x32c93b(0x1d8))[_0x32c93b(0x1a5)](_0x32c93b(0x1cc), 'none'),
-		Ext[_0x32c93b(0x2b0)](_0x32c93b(0x327))['setStyle'](_0x32c93b(0x1cc), _0x32c93b(0x24f))));
-		if (typeof _0x449012 != 'undefined') {
-			var _0x582840 = _0x1958fb['join'](',');
-			Ext[_0x32c93b(0x17c)][_0x32c93b(0x3bc)]({
-				'url': _0x449012,
-				'params': {
-					'eventid': _0x3150d9[_0x32c93b(0x1f5)],
-					'isRight': _0x4b9ded,
-					'memberinfo': _0x3150d9[_0x32c93b(0x2d5)],
-					'answerContent': _0x582840
-				},
-				'method': _0x32c93b(0x2b0),
-				'success': function(_0x4e736d) {
-					var _0x32c932 = _0x32c93b;
-					_0x3150d9[_0x32c932(0x1ff)] = _0x582840;
-					var _0x36353c = Ext[_0x32c932(0x1cb)](_0x4e736d[_0x32c932(0x1ce)]);
-					if (_0x36353c[_0x32c932(0x36c)]) {
-						_0x60a5fc == _0x32c932(0x3a5) && (Ext[_0x32c932(0x2b0)](_0x32c932(0x1df))[_0x32c932(0x34d)](_0x36353c[_0x32c932(0x32b)]),
-						Ext['get'](_0x32c932(0x228))['setStyle']('display', 'inline-block'));
-						if (_0x36353c[_0x32c932(0x2a7)] && _0x60a5fc == _0x32c932(0x3a5)) {
-							typeof _0x36353c['showTip'] != _0x32c932(0x239) && _0x36353c['showTip'] ? Ext[_0x32c932(0x2b0)](_0x32c932(0x2be))[_0x32c932(0x34d)]('<span\x20class=\x22spanHas\x20fr\x22\x20style=\x27display:block\x27><span\x20id=\x22InteractiveQuizTip\x22>恭喜你，答对了！你的答题水准超过了' + _0x36353c[_0x32c932(0x3c3)] + _0x32c932(0x303)) : Ext[_0x32c932(0x2b0)](_0x32c932(0x2be))[_0x32c932(0x34d)]('<span\x20class=\x22spanHas\x20fr\x22\x20style=\x27display:block\x27><span\x20id=\x22InteractiveQuizTip\x22>恭喜你，答对了！</span></span>');
-							if (_0x36353c['testAnalysis']) {
-								Ext[_0x32c932(0x2b0)]('tkParsing_con')[_0x32c932(0x34d)]('解析：' + _0x36353c[_0x32c932(0x385)]),
-								Ext[_0x32c932(0x2b0)](_0x32c932(0x2fa))[_0x32c932(0x1a5)]('display', _0x32c932(0x37c)),
-								Ext['get'](_0x32c932(0x302))['setStyle'](_0x32c932(0x1cc), 'block');
-								var _0x364492 = _0x2980ec[_0x32c932(0x201)]
-								  , _0x4da7c7 = $(_0x364492['dom'])[_0x32c932(0x340)]({
-									'cursorborder': '',
-									'cursorwidth': 0x6,
-									'cursorcolor': _0x32c932(0x39e),
-									'boxzoom': false,
-									'autohidemode': true
-								});
-								_0x2980ec[_0x32c932(0x20e)] = _0x4da7c7;
-							}
-						}
-					}
-				}
-			}),
-			!_0x4b9ded && _0x2980ec[_0x32c93b(0x1dd)] && _0x60a5fc != _0x32c93b(0x3a5) && _0x2980ec[_0x32c93b(0x1dd)]();
-		} else
-			!_0x4b9ded && (Ext['Ajax'][_0x32c93b(0x3bc)]({
-				'url': _0x2a9fbb,
-				'params': {
-					'eventid': _0x3150d9[_0x32c93b(0x1f5)],
-					'memberinfo': _0x3150d9['memberinfo'],
-					'answerContent': _0x1958fb['join'](',')
-				},
-				'method': _0x32c93b(0x2b0)
-			}),
-			_0x2980ec[_0x32c93b(0x1dd)] && _0x60a5fc != 'InteractiveQuiz' && _0x2980ec[_0x32c93b(0x1dd)]());
-		return !_0x4b9ded && _0x3150d9[_0x32c93b(0x2de)] == 0x1 && (_0x4b9ded = true,
-		Ext['get'](_0x32c93b(0x32d))[_0x32c93b(0x1a5)](_0x32c93b(0x1cc), _0x32c93b(0x24f)),
-		Ext['get'](_0x32c93b(0x301))[_0x32c93b(0x1a5)](_0x32c93b(0x1cc), 'block')),
-		_0x4b9ded;
-	},
-	'continueFun': function() {
-		var _0x21484d = this;
-		_0x21484d['fireEvent']('continue');
-	}
-}),
-Ext[TT(0x31f)]('ans.videojs.VideoImg', {
-	'extend': 'Ext.Component',
-	'xtype': TT(0x257),
-	'renderTpl': [TT(0x188), TT(0x1af), TT(0x3a1), TT(0x1a7)],
-	'renderSelectors': {
-		'closeEl': TT(0x31b)
-	},
-	'afterRender': function() {
-		var _0x5844ce = TT
-		  , _0xdca3cb = this;
-		_0xdca3cb['callParent'](arguments),
-		_0xdca3cb['el']['on']('click', function() {
-			var _0x25b8e3 = TT;
-			_0xdca3cb[_0x25b8e3(0x25a)](_0x25b8e3(0x3b0));
-		}),
-		_0xdca3cb[_0x5844ce(0x2bc)]['on']('click', function() {
-			_0xdca3cb['fireEvent']('continue');
-		});
-	}
-}),
-Ext['define'](TT(0x212), {
-	'extend': TT(0x381),
-	'xtype': 'videoannotation',
-	'cls': TT(0x22f),
-	'renderTpl': [TT(0x20d), TT(0x2f9), '<div\x20class=\x22vidNota_con\x22\x20id=\x22pizhuScroll\x22\x20tabindex=\x221\x22\x20style=\x22overflow:\x20hidden;\x20outline:\x20none;\x22>', TT(0x2ea), TT(0x1a7), TT(0x1a7)],
-	'renderSelectors': {
-		'closeEl': TT(0x333),
-		'contentEl': TT(0x339)
-	},
-	'afterRender': function() {
-		var _0x58b6a2 = TT
-		  , _0x33ecb3 = this
-		  , _0x4a2f51 = _0x33ecb3[_0x58b6a2(0x338)];
-		_0x33ecb3[_0x58b6a2(0x2ba)](arguments),
-		_0x33ecb3[_0x58b6a2(0x2bc)]['on'](_0x58b6a2(0x3b1), function() {
-			var _0x143ed2 = _0x58b6a2;
-			_0x33ecb3[_0x143ed2(0x25a)](_0x143ed2(0x3b0));
-		});
-		var _0x3e95b2 = $(_0x4a2f51[_0x58b6a2(0x19c)])[_0x58b6a2(0x340)]({
-			'cursorborder': '',
-			'cursorwidth': 0x6,
-			'cursorcolor': _0x58b6a2(0x190),
-			'boxzoom': false,
-			'autohidemode': true
-		});
-		_0x33ecb3['scroller'] = _0x3e95b2;
-	}
-}),
-Ext[TT(0x31f)]('ans.videojs.VideoPpt', {
-	'extend': TT(0x381),
-	'xtype': TT(0x2e9),
-	'cls': 'ans-videoppt',
-	'width': '100%',
-	'model': false,
-	'renderTpl': [TT(0x33b), TT(0x1f6), TT(0x31e), TT(0x1da), TT(0x1a7)],
-	'renderSelectors': {
-		'pptPicEl': TT(0x38b),
-		'sizeBigEl': TT(0x25f),
-		'sizeSmallEl': TT(0x27f)
-	},
-	'afterRender': function() {
-		var _0x40cd2d = TT
-		  , _0x15ba29 = this;
-		_0x15ba29[_0x40cd2d(0x2ba)](arguments),
-		_0x15ba29[_0x40cd2d(0x36a)]['on'](_0x40cd2d(0x3b1), function(_0x5a6468) {
-			var _0x45c83a = _0x40cd2d;
-			_0x5a6468[_0x45c83a(0x33d)](),
-			_0x15ba29[_0x45c83a(0x36a)][_0x45c83a(0x22a)](_0x45c83a(0x244));
-			if (_0x15ba29[_0x45c83a(0x36a)][_0x45c83a(0x233)](_0x45c83a(0x244))) {
-				Ext['get'](_0x45c83a(0x225))['setStyle'](_0x45c83a(0x1cc), _0x45c83a(0x24f)),
-				Ext[_0x45c83a(0x2b0)](_0x45c83a(0x237))[_0x45c83a(0x1a5)](_0x45c83a(0x1cc), 'block');
-				var _0x1b3b46 = Ext[_0x45c83a(0x2b0)]('video')[_0x45c83a(0x286)](_0x45c83a(0x258))
-				  , _0x27b931 = Ext['get'](_0x45c83a(0x174))['getStyle'](_0x45c83a(0x258))
-				  , _0x33c1c2 = (parseInt(_0x1b3b46) - 0x3c - parseInt(_0x27b931)) / 0x2;
-				Ext['get'](_0x45c83a(0x174))[_0x45c83a(0x1a5)](_0x45c83a(0x393), _0x33c1c2 + 'px'),
-				Ext[_0x45c83a(0x2b0)]('sp_video_ppt_pic')[_0x45c83a(0x1a5)]('left', '0');
-			} else
-				Ext[_0x45c83a(0x2b0)]('sp_size_big')['setStyle']('display', _0x45c83a(0x177)),
-				Ext[_0x45c83a(0x2b0)](_0x45c83a(0x237))['setStyle']('display', 'none'),
-				Ext[_0x45c83a(0x2b0)](_0x45c83a(0x174))[_0x45c83a(0x1a5)]('top', _0x45c83a(0x376)),
-				Ext['get']('sp_video_ppt_pic')['setStyle']('left', _0x45c83a(0x376));
-		}),
-		_0x15ba29[_0x40cd2d(0x21e)]['on']('click', function(_0x4b65e0) {
-			var _0x5858d5 = _0x40cd2d;
-			_0x4b65e0[_0x5858d5(0x33d)](),
-			_0x15ba29[_0x5858d5(0x36a)][_0x5858d5(0x22a)](_0x5858d5(0x244)),
-			Ext[_0x5858d5(0x2b0)](_0x5858d5(0x225))[_0x5858d5(0x1a5)](_0x5858d5(0x1cc), _0x5858d5(0x24f)),
-			Ext[_0x5858d5(0x2b0)](_0x5858d5(0x237))[_0x5858d5(0x1a5)](_0x5858d5(0x1cc), _0x5858d5(0x177));
-			var _0xe1ca7c = Ext[_0x5858d5(0x2b0)](_0x5858d5(0x324))[_0x5858d5(0x286)](_0x5858d5(0x258))
-			  , _0xbaa067 = Ext[_0x5858d5(0x2b0)]('sp_video_ppt_pic')[_0x5858d5(0x286)](_0x5858d5(0x258))
-			  , _0x298aca = (parseInt(_0xe1ca7c) - 0x3c - parseInt(_0xbaa067)) / 0x2;
-			Ext[_0x5858d5(0x2b0)](_0x5858d5(0x174))[_0x5858d5(0x1a5)]('top', _0x298aca + 'px'),
-			Ext[_0x5858d5(0x2b0)](_0x5858d5(0x174))['setStyle'](_0x5858d5(0x2ab), '0');
-		}),
-		_0x15ba29[_0x40cd2d(0x38a)]['on']('click', function(_0x1c0266) {
-			var _0x4259cd = _0x40cd2d;
-			_0x1c0266['stopPropagation'](),
-			_0x15ba29[_0x4259cd(0x36a)][_0x4259cd(0x22a)](_0x4259cd(0x244)),
-			Ext['get'](_0x4259cd(0x225))[_0x4259cd(0x1a5)]('display', _0x4259cd(0x177)),
-			Ext['get']('sp_size_small')[_0x4259cd(0x1a5)](_0x4259cd(0x1cc), _0x4259cd(0x24f)),
-			Ext['get'](_0x4259cd(0x174))[_0x4259cd(0x1a5)](_0x4259cd(0x393), _0x4259cd(0x376)),
-			Ext['get'](_0x4259cd(0x174))[_0x4259cd(0x1a5)](_0x4259cd(0x2ab), _0x4259cd(0x376));
-		});
-	}
-}),
-Ext['define'](TT(0x35b), {
-	'extend': TT(0x276),
-	'cls': 'ans-timelineobjects',
-	'autoScroll': true,
-	'hidden': true,
-	'hideMode': TT(0x251),
-	'constructor': function(_0x10519b) {
-		var _0x449e05 = TT
-		  , _0x8d810e = this;
-		_0x8d810e[_0x449e05(0x2ba)](arguments),
-		_0x8d810e['bg'] = Ext[_0x449e05(0x2cf)](_0x449e05(0x2f6), {
-			'renderTo': _0x10519b['renderTo']
-		}),
-		_0x8d810e['objects'] = _0x10519b['objects'] && _0x10519b[_0x449e05(0x322)][_0x449e05(0x308)] ? _0x8d810e[_0x449e05(0x240)](_0x10519b[_0x449e05(0x322)]) : [],
-		_0x8d810e[_0x449e05(0x194)] = 0x0;
-	},
-	'showObject': function(_0xb34e06, _0xd73ee2, _0x552fa0) {
-		var _0x82e246 = TT, _0x1ff906 = this, _0x356e7b = _0x1ff906['getBox'](), _0x2a121c = _0x1ff906[_0x82e246(0x2fe)][_0x82e246(0x35f)](0x0), _0x22fe42, _0x84b84 = function() {
-			var _0x580482 = _0x82e246;
-			_0x22fe42[_0x580482(0x1f9)](),
-			_0x1ff906[_0x580482(0x2a4)](),
-			_0xb34e06[_0x580482(0x1a9)]();
-		};
-		_0x2a121c != null && _0x2a121c['destroy']();
-		if (_0xd73ee2 == 'IMG') {
-			var _0x124441 = {
-				'src': _0x552fa0[_0x82e246(0x193)][_0x82e246(0x216)](/origin/, _0x356e7b['width'] + '_' + _0x356e7b[_0x82e246(0x258)])
-			};
-			_0x22fe42 = _0x1ff906[_0x82e246(0x30a)]({
-				'xtype': _0x82e246(0x257),
-				'renderData': _0x124441
-			});
-		}
-		if (_0xd73ee2 == _0x82e246(0x1c7)) {
-			var _0x25c86a = function() {};
-			if (_0x552fa0['errorBackTime'] && _0x552fa0['errorBackTime'] > 0x0) {
-				var _0x4acc3a = _0x552fa0[_0x82e246(0x1fd)] * 0x3c;
-				_0x25c86a = function() {
-					var _0xbcd002 = _0x82e246
-					  , _0x404a18 = Math[_0xbcd002(0x39d)](_0xb34e06[_0xbcd002(0x32c)]() - _0x4acc3a, 0x0);
-					_0xb34e06[_0xbcd002(0x300)] = true,
-					_0xb34e06['currentTime'](_0x404a18);
-				}
-				;
-			}
-			_0x22fe42 = _0x1ff906[_0x82e246(0x30a)]({
-				'xtype': 'videoquiz',
-				'renderData': _0x552fa0,
-				'quizErrorReportUrl': _0x1ff906['quizErrorReportUrl'],
-				'validationUrl2': _0x1ff906['validationUrl2'],
-				'onerror': _0x25c86a
-			});
-		}
-		if (_0xd73ee2 == 'InteractiveQuiz') {
-			var _0x25c86a = function() {};
-			if (_0x552fa0[_0x82e246(0x1fd)] && _0x552fa0[_0x82e246(0x1fd)] > 0x0) {
-				var _0x4acc3a = _0x552fa0[_0x82e246(0x1fd)] * 0x3c;
-				_0x25c86a = function() {
-					var _0x36dbd9 = _0x82e246
-					  , _0x40c2c7 = Math[_0x36dbd9(0x39d)](_0xb34e06[_0x36dbd9(0x32c)]() - _0x4acc3a, 0x0);
-					_0xb34e06[_0x36dbd9(0x300)] = true,
-					_0xb34e06['currentTime'](_0x40c2c7);
-				}
-				;
-			}
-			if (_0x552fa0[_0x82e246(0x236)] == 0x1 && _0x552fa0[_0x82e246(0x218)] != '') {
-				var _0x4acc3a = 0x0
-				  , _0x42eab9 = _0x552fa0[_0x82e246(0x218)][_0x82e246(0x39c)](':')
-				  , _0x2b626c = _0x42eab9[_0x82e246(0x345)];
-				_0x2b626c > 0x0 && (_0x2b626c == 0x1 ? _0x4acc3a = parseInt(_0x42eab9[0x0]) * 0x3c : _0x2b626c == 0x2 && (_0x4acc3a = parseInt(_0x42eab9[0x0]) * 0x3c + parseInt(_0x42eab9[0x1]))),
-				_0x25c86a = function() {
-					var _0x43fc8e = _0x82e246;
-					_0xb34e06[_0x43fc8e(0x300)] = true,
-					_0xb34e06[_0x43fc8e(0x32c)](_0x4acc3a);
-				}
-				;
-			}
-			_0x552fa0[_0x82e246(0x2b7)] = _0x82e246(0x3a5),
-			_0x22fe42 = _0x1ff906[_0x82e246(0x30a)]({
-				'xtype': 'videoquiz',
-				'renderData': _0x552fa0,
-				'quizErrorReportUrl': _0x1ff906[_0x82e246(0x252)],
-				'validationUrl2': _0x1ff906['validationUrl2'],
-				'quizRightCountUrl': _0x1ff906[_0x82e246(0x1de)],
-				'onerror': _0x25c86a
-			});
-		}
-		if (_0xd73ee2 == _0x82e246(0x36f)) {
-			if (_0x552fa0['fp'] == 0x0)
-				return;
-			var _0x49ab6e = _0x552fa0[_0x82e246(0x193)];
-			_0x552fa0['thumb'] ? _0x49ab6e = _0x552fa0[_0x82e246(0x1b7)] + _0x552fa0[_0x82e246(0x182)] + _0x82e246(0x369) : _0x49ab6e = _0x49ab6e[_0x82e246(0x216)](/swfv2\/.*$/, _0x82e246(0x1b8) + _0x552fa0['fp'] + _0x82e246(0x369));
-			var _0x124441 = {
-				'src': _0x49ab6e
-			};
-			_0x22fe42 = _0x1ff906['add']({
-				'xtype': 'videoppt',
-				'renderData': _0x124441
-			});
-		}
-		_0xd73ee2 == _0x82e246(0x3c7) && (_0x22fe42 = _0x1ff906['add']({
-			'xtype': _0x82e246(0x199),
-			'renderData': _0x552fa0
-		}));
-		if (!_0x22fe42)
-			return;
-		_0x22fe42['on'](_0x82e246(0x3b0), function() {
-			_0x84b84();
-		});
-		var _0xa8a615 = !(_0x22fe42[_0x82e246(0x314)] === false);
-		_0x1ff906[_0x82e246(0x2ec)](_0xa8a615),
-		_0xa8a615 && _0xb34e06[_0x82e246(0x34c)]();
-	},
-	'showModel': function(_0x1590a2) {
-		var _0xe706e2 = TT
-		  , _0x470845 = this;
-		_0x470845[_0xe706e2(0x220)](),
-		_0x1590a2 ? (_0x470845[_0xe706e2(0x23b)](_0xe706e2(0x2c4)),
-		_0x470845[_0xe706e2(0x3ab)](true),
-		_0x470845['bg'][_0xe706e2(0x220)]()) : (_0x470845[_0xe706e2(0x2d6)]('ans-timelineobjects-autosize'),
-		_0x470845[_0xe706e2(0x3ab)](false));
-	},
-	'hide': function() {
-		var _0x25c771 = TT;
-		this['callParent'](arguments),
-		this['bg']['hide'][_0x25c771(0x1fb)](this['bg'], arguments);
-	},
-	'updateTime': function(_0x15b638, _0x135a29) {
-		var _0xb11638 = TT;
-		if (this['current'] >= this['objects'][_0xb11638(0x345)] || _0x15b638['scrubbing']())
-			return;
-		var _0x51cb9d = this
-		  , _0x345e4b = _0x51cb9d['objects'][_0x51cb9d[_0xb11638(0x194)]]
-		  , _0x1b6aad = _0x345e4b['style']
-		  , _0x5b0124 = _0x345e4b[_0xb11638(0x35a)][0x0];
-		_0x135a29 >= _0x5b0124[_0xb11638(0x360)] && (_0x51cb9d[_0xb11638(0x194)]++,
-		_0x51cb9d['showObject'](_0x15b638, _0x1b6aad, _0x5b0124));
-	},
-	'resetTime': function(_0x41d40b, _0x47d363) {
-		var _0x29869a = TT, _0x4f0746 = this, _0x1ae72b;
-		for (_0x1ae72b = 0x0; _0x1ae72b < _0x4f0746['objects'][_0x29869a(0x345)]; _0x1ae72b++) {
-			var _0x1e5d27 = _0x4f0746['objects'][_0x1ae72b][_0x29869a(0x35a)][0x0][_0x29869a(0x360)];
-			if (_0x47d363 <= _0x1e5d27)
-				break;
-		}
-		_0x4f0746[_0x29869a(0x194)] = _0x1ae72b;
-	},
-	'sort_': function(_0x136297) {
-		var _0x4a3bef = TT;
-		return _0x136297 && _0x136297[_0x4a3bef(0x308)] && _0x136297[_0x4a3bef(0x308)](function(_0x1d20d9, _0x5bfa38) {
-			var _0xa2a3f6 = _0x4a3bef
-			  , _0x2ef75a = _0x1d20d9[_0xa2a3f6(0x35a)][0x0][_0xa2a3f6(0x360)]
-			  , _0x63c1eb = _0x5bfa38[_0xa2a3f6(0x35a)][0x0][_0xa2a3f6(0x360)];
-			return _0x2ef75a - _0x63c1eb;
-		});
-	}
-}),
-(function() {
-	var _0x207b3e = TT
-	  , _0x2d6e58 = videojs[_0x207b3e(0x341)](_0x207b3e(0x3a3))
-	  , _0x5efcd9 = videojs[_0x207b3e(0x1ee)](_0x2d6e58, {
-		'constructor': function(_0x582c6e, _0x48b010) {
-			var _0x62cffa = _0x207b3e;
-			_0x2d6e58[_0x62cffa(0x325)](this, _0x582c6e, _0x48b010);
-			if (!_0x48b010['url'])
-				return;
-			var _0x47ee74 = this;
-			_0x582c6e[_0x62cffa(0x2c8)] = [],
-			Ext[_0x62cffa(0x17c)][_0x62cffa(0x3bc)]({
-				'url': _0x48b010[_0x62cffa(0x193)],
-				'async': false,
-				'success': function(_0x58534c) {
-					var _0x39f0fc = _0x62cffa;
-					if (_0x58534c[_0x39f0fc(0x36c)] != 0xc8)
-						return;
-					eval('var\x20data=' + _0x58534c['responseText']);
-					if (data && data[_0x39f0fc(0x345)] > 0x0) {
-						var _0x12b0d3 = [];
-						for (var _0x3dd757 = 0x0; _0x3dd757 < data[_0x39f0fc(0x345)]; _0x3dd757++) {
-							var _0x17f070 = data[_0x3dd757];
-							if (_0x17f070['style'] == _0x39f0fc(0x3a5)) {
-								var _0x4cb95b = _0x17f070[_0x39f0fc(0x35a)];
-								if (_0x4cb95b && _0x4cb95b[_0x39f0fc(0x345)] > 0x0)
-									var _0x139a9c = {
-										'time': _0x4cb95b[0x0][_0x39f0fc(0x360)],
-										'text': _0x39f0fc(0x299)
-									};
-								_0x12b0d3[_0x39f0fc(0x335)](_0x139a9c);
-							}
-						}
-						_0x582c6e[_0x39f0fc(0x2c8)] = _0x12b0d3;
-					}
-					var _0xe592e1 = Ext['create']('ans.videojs.TimelineObjects', {
-						'renderTo': _0x582c6e['el_'],
-						'quizErrorReportUrl': _0x48b010[_0x39f0fc(0x252)],
-						'validationUrl2': _0x48b010[_0x39f0fc(0x31c)],
-						'quizRightCountUrl': _0x48b010[_0x39f0fc(0x1de)],
-						'objects': data
-					});
-					_0x582c6e['on'](_0x39f0fc(0x1a9), function() {
-						var _0x41eb41 = _0x39f0fc;
-						_0xe592e1[_0x41eb41(0x39b)](_0x582c6e, _0x582c6e[_0x41eb41(0x32c)]());
+					Ext.fly(j).on("mouseout", function (k) {
+						k = k ? k : window[TT(0x397)];
+						var l = k[TT(0x33c)] || k[TT(0x2fc)];
+						!l && (i != 0x1 && f.pause());
 					}),
-					_0x582c6e['on'](_0x39f0fc(0x24c), function() {
-						var _0x5435b0 = _0x39f0fc;
-						_0xe592e1[_0x5435b0(0x39b)](_0x582c6e, _0x582c6e[_0x5435b0(0x32c)]());
+						g.singleton(f);
+				},
+				"singleton": function (c) {
+					var f = this
+						, e = parseInt(Math[TT(0x1ae)]() * 0x98967f);
+					c.on(TT(0x1a9), function () {
+						Ext["setCookie"](TT(0x259), e);
 					}),
-					_0x582c6e['on'](_0x39f0fc(0x3a9), function() {
-						var _0x457f97 = _0x39f0fc;
-						!_0x582c6e[_0x457f97(0x3c8)]() && _0xe592e1[_0x457f97(0x2c0)](_0x582c6e, _0x582c6e[_0x457f97(0x32c)]());
-					});
+						c.setInterval(function () {
+							var g = Ext.getCookie("videojs_id");
+							typeof g != "undefined" && g != e && c[TT(0x34c)]();
+						}, 0x3e8);
 				}
 			});
-		}
-	});
-	videojs[_0x207b3e(0x2c3)](_0x207b3e(0x34a), _0x5efcd9);
-}()),
-(function() {
-	var _0x9a2cfc = TT
-	  , _0x2e56b5 = videojs['getPlugin'](_0x9a2cfc(0x3a3))
-	  , _0xe70a18 = videojs['extend'](_0x2e56b5, {
-		'constructor': function(_0xcc48eb, _0x4306ef) {
-			var _0x3a0412 = _0x9a2cfc;
-			_0x2e56b5[_0x3a0412(0x325)](this, _0xcc48eb, _0x4306ef);
-			if (!_0x4306ef[_0x3a0412(0x193)])
-				return;
-			var _0x94838c = this;
-			Ext[_0x3a0412(0x17c)]['request']({
-				'url': _0x4306ef['url'],
-				'async': false,
-				'success': function(_0x477781) {
-					var _0x455bb5 = _0x3a0412;
-					if (_0x477781[_0x455bb5(0x36c)] != 0xc8)
-						return;
-					eval(_0x455bb5(0x283) + _0x477781[_0x455bb5(0x1ce)]);
-					if (!data['status'])
-						return;
-					var _0x3713db = videojs('video');
-					if (_0x3713db && typeof _0x3713db['markers'] === _0x455bb5(0x29b)) {
-						var _0xbecc66 = _0xcc48eb[_0x455bb5(0x2c8)];
-						_0xbecc66[_0x455bb5(0x335)][_0x455bb5(0x1fb)](_0xbecc66, data[_0x455bb5(0x30b)]),
-						_0x3713db[_0x455bb5(0x272)]({
-							'markerTip': {
-								'display': true,
-								'text': function(_0xa13fff) {
-									return _0xa13fff['text'];
-								}
-							},
-							'markers': _0xbecc66,
-							'onMarkerClick': function(_0x43c675) {
-								var _0x1f196f = _0x455bb5;
-								if (_0x4306ef['ff'] != 0x1)
-									return false;
-								var _0x1337eb = $(this)[_0x1f196f(0x2e7)](_0x1f196f(0x1cf));
-								return _0xcc48eb['currentTime'](_0x43c675[_0x1f196f(0x354)]),
-								false;
-							}
-						});
-					}
-					if (data['list'] && data['list'][_0x455bb5(0x345)] > 0x0) {
-						var _0x119922 = []
-						  , _0x41bd91 = {};
-						for (var _0x43c948 = 0x0; _0x43c948 < data[_0x455bb5(0x30b)][_0x455bb5(0x345)]; _0x43c948++) {
-							var _0x1b655f = data[_0x455bb5(0x30b)][_0x43c948]
-							  , _0x1524c8 = _0x1b655f[_0x455bb5(0x35d)];
-							if (!_0x41bd91[_0x1524c8]) {
-								var _0x21c4e6 = [];
-								_0x21c4e6[_0x455bb5(0x335)](_0x1b655f),
-								_0x41bd91[_0x1524c8] = _0x21c4e6,
-								_0x119922['push'](_0x1524c8);
-							} else {
-								var _0x514caa = _0x41bd91[_0x1524c8];
-								_0x514caa[_0x455bb5(0x335)](_0x1b655f),
-								_0x41bd91[_0x1524c8] = _0x514caa;
-							}
+		videojs[TT(0x2c3)](TT(0x357), a);
+	}()),
+	(function () {
+		var a = videojs[TT(0x227)]("SeekBar")
+			, b = videojs[TT(0x1ee)](a, {
+				"constructor": function (e, c) {
+					a.call(this, e, c);
+					var f = this;
+					e[TT(0x2e1)] = false,
+						e[TT(0x2ae)] = function (g) {
+							f[TT(0x2ae)](g);
 						}
-						function _0x41fed4(_0x3540c0) {
-							var _0x3ad9bc = _0x455bb5
-							  , _0x10baad = '<div\x20class=\x22zsCloud_box\x22><h2\x20class=\x22zsCloud_seltime\x22>选择时间</h2><div\x20class=\x22zsCloud_div\x22><div\x20class=\x22zsCloud_div_list\x22>';
-							for (var _0x26cdba = 0x0; _0x26cdba < _0x3540c0['length']; _0x26cdba++) {
-								var _0x5f20ce = _0x3540c0[_0x26cdba]
-								  , _0x4db83e = Ext[_0x3ad9bc(0x1cd)](_0x1b7fc4[_0x3ad9bc(0x391)][0x0])['select'](_0x3ad9bc(0x288) + _0x5f20ce[_0x3ad9bc(0x2ff)] + ':not(.markertime)')
-								  , _0x482701 = videojs[_0x3ad9bc(0x375)](_0x5f20ce[_0x3ad9bc(0x354)]);
-								_0x4db83e && _0x4db83e[_0x3ad9bc(0x391)][0x0] && _0x4db83e[_0x3ad9bc(0x391)][0x0][_0x3ad9bc(0x184)][_0x3ad9bc(0x26e)](),
-								_0x10baad += _0x3ad9bc(0x2c7) + _0x5f20ce[_0x3ad9bc(0x2ff)] + _0x3ad9bc(0x20b) + _0x5f20ce['time'] + '\x22\x20title=\x22' + _0x482701 + '\x22\x20onclick=\x22markersPlayer(this)\x22>' + _0x482701 + '</div>';
-							}
-							return _0x10baad += _0x3ad9bc(0x262),
-							_0x10baad;
+						,
+						e.onlyBackward = function (g) {
+							f[TT(0x245)](g);
 						}
-						Ext[_0x455bb5(0x269)](_0x455bb5(0x353))['setStyle']('display', _0x455bb5(0x177));
-						var _0x1b7fc4 = Ext[_0x455bb5(0x269)](_0x455bb5(0x243));
-						if (_0x1b7fc4 && _0x1b7fc4[_0x455bb5(0x391)][0x0]) {
-							var _0x560648;
-							for (var _0x511b7c = 0x0; _0x511b7c < _0x119922['length']; _0x511b7c++) {
-								var _0x4a098e = _0x119922[_0x511b7c]
-								  , _0x150fa1 = _0x41bd91[_0x4a098e]
-								  , _0x22c3f1 = '';
-								if (_0x150fa1) {
-									if (_0x150fa1['length'] == 0x1) {
-										var _0x41f08d = _0x150fa1[0x0]
-										  , _0x4d7316 = Ext[_0x455bb5(0x1cd)](_0x1b7fc4['elements'][0x0])[_0x455bb5(0x269)]('.topicId' + _0x41f08d[_0x455bb5(0x2ff)] + _0x455bb5(0x1c8))
-										  , _0x354049 = videojs[_0x455bb5(0x375)](_0x41f08d['time']);
-										_0x4d7316 && _0x4d7316['elements'][0x0] && _0x4d7316[_0x455bb5(0x391)][0x0][_0x455bb5(0x184)]['remove'](),
-										_0x22c3f1 = _0x455bb5(0x24b) + _0x41f08d[_0x455bb5(0x2ff)] + '\x20markertime\x27\x20data-marker-time=\x27' + _0x41f08d[_0x455bb5(0x354)] + _0x455bb5(0x195) + _0x354049 + '\x27\x20onclick=\x27markersPlayer(this)\x27>' + _0x41f08d['text'] + _0x455bb5(0x290);
-									} else
-										_0x22c3f1 = _0x455bb5(0x1bc) + _0x4a098e + _0x455bb5(0x374),
-										_0x150fa1 && _0x150fa1['length'] > 0x0 ? _0x22c3f1 += _0x41fed4(_0x150fa1) : _0x22c3f1 += _0x455bb5(0x28a);
-								}
-								_0x560648 ? _0x560648 = Ext['DomHelper'][_0x455bb5(0x31d)](_0x455bb5(0x2e0), _0x560648[_0x455bb5(0x391)][0x0], _0x22c3f1) : _0x560648 = Ext[_0x455bb5(0x214)][_0x455bb5(0x31d)](_0x455bb5(0x2aa), _0x1b7fc4[_0x455bb5(0x391)][0x0], _0x22c3f1),
-								_0x560648 = Ext[_0x455bb5(0x1cd)](_0x560648)['select']('');
-							}
+						,
+						e[TT(0x363)] = function () {
+							return f;
 						}
-						_0x4306ef[_0x455bb5(0x32a)] && _0x4306ef[_0x455bb5(0x32a)] == 0x1 && (Ext[_0x455bb5(0x269)](_0x455bb5(0x2b3))[_0x455bb5(0x1a5)](_0x455bb5(0x1cc), 'block'),
-						Ext[_0x455bb5(0x269)](_0x455bb5(0x2e3))['setStyle'](_0x455bb5(0x1cc), 'block'));
-					}
-					var _0x4f9b66 = new Map()
-					  , _0x20b970 = new Array();
-					if (data[_0x455bb5(0x30b)] && data[_0x455bb5(0x30b)][_0x455bb5(0x345)] > 0x0)
-						for (var _0x43c948 = 0x0; _0x43c948 < data['list'][_0x455bb5(0x345)]; _0x43c948++) {
-							var _0x2c84a9 = data[_0x455bb5(0x30b)][_0x43c948][_0x455bb5(0x2ff)]
-							  , _0x82a984 = _0x4f9b66['get'](_0x2c84a9);
-							!_0x82a984 && (_0x82a984 = {},
-							_0x82a984[_0x455bb5(0x35d)] = data[_0x455bb5(0x30b)][_0x43c948][_0x455bb5(0x35d)],
-							_0x82a984[_0x455bb5(0x354)] = data[_0x455bb5(0x30b)][_0x43c948][_0x455bb5(0x354)],
-							_0x82a984['topicid'] = data[_0x455bb5(0x30b)][_0x43c948][_0x455bb5(0x2ff)],
-							_0x82a984[_0x455bb5(0x266)] = 0x0,
-							_0x82a984[_0x455bb5(0x1e8)] = {
-								'data-marker-time': data[_0x455bb5(0x30b)][_0x43c948]['time'],
-								'onclick': 'markersPlayer(this)'
-							},
-							_0x4f9b66['set'](_0x2c84a9, _0x82a984),
-							_0x20b970['push'](_0x82a984)),
-							_0x82a984['weight'] += 0x1;
-						}
-					$(function() {
-						var _0x37b033 = _0x455bb5;
-						_0x20b970[_0x37b033(0x345)] != 0x0 && $(_0x37b033(0x229))[_0x37b033(0x2b9)](_0x20b970);
-						function _0x5ee33e(_0x5bffea) {
-							var _0x1cee3e = _0x37b033;
-							$(_0x5bffea)[_0x1cee3e(0x340)]({
-								'cursorborder': '',
-								'cursorwidth': 0x8,
-								'cursorcolor': _0x1cee3e(0x3c6),
-								'boxzoom': false,
-								'autohidemode': true
-							}),
-							setInterval(function() {
-								var _0x561d65 = _0x1cee3e;
-								$(_0x5bffea)[_0x561d65(0x211)]()[_0x561d65(0x22d)]();
-							}, 0x12c);
-						}
-						$(_0x37b033(0x28b))[_0x37b033(0x280)](function(_0x28a993) {
-							var _0x2cb0e5 = _0x37b033;
-							$(this)[_0x2cb0e5(0x396)](_0x2cb0e5(0x21f))[_0x2cb0e5(0x31a)]('id', _0x2cb0e5(0x2fb) + _0x28a993),
-							_0x5ee33e(_0x2cb0e5(0x3ca) + _0x28a993);
-						});
-					}),
-					$('.zsCloud_down')[_0x455bb5(0x3b1)](function() {
-						var _0x24a70e = _0x455bb5
-						  , _0x561ae4 = $(_0x24a70e(0x2e3));
-						_0x561ae4['is'](_0x24a70e(0x22e)) ? (_0x561ae4[_0x24a70e(0x2a4)](),
-						$(this)[_0x24a70e(0x34e)]('zsCloud_up'),
-						$(this)[_0x24a70e(0x35d)]('展开')) : (_0x561ae4['show'](),
-						$(this)[_0x24a70e(0x398)]('zsCloud_up'),
-						$(this)[_0x24a70e(0x35d)]('收起'));
-					});
-				}
-			});
-		}
-	});
-	videojs[_0x9a2cfc(0x2c3)](_0x9a2cfc(0x263), _0xe70a18);
-}()),
-(function() {
-	var _0x151ce9 = TT
-	  , _0x53ea91 = videojs[_0x151ce9(0x341)](_0x151ce9(0x3a3))
-	  , _0x2c8a37 = videojs['extend'](_0x53ea91, {
-		'constructor': function(_0x22d5bf, _0x54aacb) {
-			var _0x3ccab2 = _0x151ce9;
-			_0x53ea91[_0x3ccab2(0x325)](this, _0x22d5bf, _0x54aacb);
-			var _0x2cee10 = this
-			  , _0x43bb90 = _0x54aacb[_0x3ccab2(0x348)]
-			  , _0x3b5dc7 = function(_0x28fdf4) {
-				var _0x3385ad = _0x3ccab2
-				  , _0x1c2fbd = _0x28fdf4[_0x3385ad(0x3c5)](/support\/(\w+).\w+/);
-				if (_0x1c2fbd)
-					return ServerHosts['PARENT_HOST'] + _0x3385ad(0x3ba) + _0x1c2fbd[0x1];
-			}
-			  , _0x139341 = function(_0x255673, _0x4906fd, _0x40cd15) {
-				var _0x2219f1 = _0x3ccab2;
-				_0x22d5bf['addRemoteTextTrack']({
-					'kind': _0x2219f1(0x2a1),
-					'srclang': 'cn',
-					'label': _0x255673,
-					'src': _0x4906fd,
-					'default': _0x40cd15
-				}, true);
-			};
-			_0x22d5bf[_0x3ccab2(0x20c)](function() {
-				var _0x1bc03e = _0x3ccab2;
-				_0x43bb90 && Ext['Ajax'][_0x1bc03e(0x3bc)]({
-					'url': _0x43bb90,
-					'success': function(_0x504f5e) {
-						var _0xf3c9e3 = _0x1bc03e;
-						if (_0x504f5e[_0xf3c9e3(0x36c)] != 0xc8)
-							return;
-						eval(_0xf3c9e3(0x379) + _0x504f5e[_0xf3c9e3(0x1ce)]);
-						var _0x38edbf = 0x0
-						  , _0x50dbd5 = 0x0;
-						subs[_0xf3c9e3(0x345)] > 0x0 && Ext[_0xf3c9e3(0x280)](subs, function(_0x482b7f) {
-							var _0x5dc933 = _0xf3c9e3;
-							_0x54aacb[_0x5dc933(0x2b1)] == 0x1 && _0x482b7f[_0x5dc933(0x2ad)] == 'English' ? (_0x482b7f['selected'] = true,
-							_0x50dbd5 = _0x38edbf) : _0x482b7f[_0x5dc933(0x33f)] = false,
-							_0x139341(_0x482b7f['name'], _0x3b5dc7(_0x482b7f[_0x5dc933(0x193)]), _0x482b7f[_0x5dc933(0x33f)]),
-							_0x38edbf++;
+						,
+						f.on(TT(0x342), function () {
+							e[TT(0x3bd)]("seekstart"),
+								e[TT(0x2e1)] = true,
+								e[TT(0x2a5)] = true,
+								e[TT(0x3b7)] = false;
 						}),
-						_0x54aacb[_0xf3c9e3(0x2b1)] == 0x1 && (Ext['select']('.vjs-subs-caps-button\x20.vjs-icon-placeholder')[_0xf3c9e3(0x34d)]('翻译'),
-						Ext[_0xf3c9e3(0x269)]('.vjs-subs-caps-button\x20.vjs-icon-placeholder')['addCls'](_0xf3c9e3(0x1e0))),
-						setTimeout(function() {
-							var _0x263491 = _0xf3c9e3
-							  , _0x24a00d = _0x22d5bf['textTracks']();
-							_0x54aacb[_0x263491(0x2b1)] == 0x1 ? _0x24a00d && _0x24a00d[_0x50dbd5] ? _0x24a00d[_0x50dbd5]['mode'] = _0x263491(0x206) : _0x24a00d && _0x24a00d[0x0] && (_0x24a00d[0x0][_0x263491(0x1c4)] = 'showing') : _0x24a00d && _0x24a00d[0x0] && (_0x24a00d[0x0][_0x263491(0x1c4)] = _0x263491(0x206));
-						}, 0x1f4);
-					}
-				});
-				var _0x3ea797 = _0x22d5bf[_0x1bc03e(0x3a4)];
-				_0x3ea797[_0x1bc03e(0x311)]({
-					'backgroundColor': _0x1bc03e(0x19b),
-					'backgroundOpacity': '0',
-					'edgeStyle': _0x1bc03e(0x21c)
-				}),
-				_0x3ea797[_0x1bc03e(0x1ad)]();
-			});
-		}
-	});
-	videojs[_0x151ce9(0x2c3)](_0x151ce9(0x2d4), _0x2c8a37);
-}()),
-Ext['define'](TT(0x2cb), {
-	'extend': 'Ext.Component',
-	'xtype': TT(0x361),
-	'cls': TT(0x1d6),
-	'renderTpl': [TT(0x22c), TT(0x334), TT(0x2dd), TT(0x295), TT(0x39a), TT(0x39f), TT(0x30f), TT(0x1d3), TT(0x35c), TT(0x3ae)],
-	'renderSelectors': {
-		'errorMsgEl': TT(0x2f2)
-	},
-	'afterRender': function() {
-		var _0x393dc0 = TT
-		  , _0x5496c9 = this;
-		_0x5496c9['callParent'](arguments);
-		var _0x146799 = Ext[_0x393dc0(0x21a)]('input', _0x5496c9['el']['dom']);
-		Ext[_0x393dc0(0x280)](_0x146799, function(_0x4c1a0e, _0x32bcda) {
-			var _0x4e6ab0 = _0x393dc0;
-			Ext['fly'](_0x4c1a0e)['on'](_0x4e6ab0(0x3b1), function() {
-				var _0x5685cc = _0x4e6ab0;
-				_0x5496c9[_0x5685cc(0x2bd)](_0x32bcda);
-			});
-		});
-		try {
-			typeof createVideoTask === _0x393dc0(0x29b) ? createVideoTask() : console[_0x393dc0(0x189)](_0x393dc0(0x1b2));
-		} catch (_0x7115d) {}
-	},
-	'setErrorMsg': function(_0x402a1b) {
-		var _0x170446 = TT;
-		Ext[_0x170446(0x1cd)](this[_0x170446(0x1bb)])[_0x170446(0x34d)](_0x402a1b);
-	}
-}),
-Ext[TT(0x31f)]('ans.videojs.ErrorNote', {
-	'extend': 'Ext.Component',
-	'cls': 'ans-vjserrdisplay',
-	'renderTpl': [TT(0x38c)]
-}),
-(function() {
-	var _0x4988b3 = TT
-	  , _0x1ecc00 = videojs[_0x4988b3(0x227)](_0x4988b3(0x17e))
-	  , _0x2d9163 = videojs[_0x4988b3(0x1ee)](_0x1ecc00, {
-		'constructor': function(_0x8474ed, _0x158ca8) {
-			_0x1ecc00['call'](this, _0x8474ed, _0x158ca8);
-		},
-		'colse': function() {
-			var _0xdbf3ca = _0x4988b3;
-			_0x1ecc00[_0xdbf3ca(0x2d2)][_0xdbf3ca(0x1ba)]['call'](this),
-			me[_0xdbf3ca(0x3c0)] && (me[_0xdbf3ca(0x3c0)][_0xdbf3ca(0x1f9)](),
-			me[_0xdbf3ca(0x3c0)] = null);
-		},
-		'fill': function() {
-			var _0x176551 = _0x4988b3;
-			_0x1ecc00[_0x176551(0x2d2)][_0x176551(0x2ed)][_0x176551(0x325)](this);
-			var _0xa5542c = this
-			  , _0x179df9 = _0xa5542c[_0x176551(0x2bb)]
-			  , _0x5e4126 = _0x179df9[_0x176551(0x273)][_0x176551(0x312)]
-			  , _0x5111f6 = Ext['query'](_0x176551(0x2a3), _0xa5542c['el_'])[0x0];
-			_0xa5542c[_0x176551(0x3c0)] && (_0xa5542c[_0x176551(0x3c0)][_0x176551(0x1f9)](),
-			delete _0xa5542c[_0x176551(0x3c0)]);
-			if (!_0x179df9[_0x176551(0x2b5)] || !_0x5e4126) {
-				_0xa5542c[_0x176551(0x3c0)] = Ext[_0x176551(0x2cf)](_0x176551(0x351), {
-					'renderTo': _0xa5542c[_0x176551(0x254)]
-				});
-				return;
-			}
-			var _0x1fd3e = _0x179df9[_0x176551(0x352)]()
-			  , _0xdd7be0 = 0x0;
-			Ext[_0x176551(0x280)](_0x5e4126, function(_0x4daea8, _0x214788) {
-				_0x1fd3e == _0x4daea8 && (_0xdd7be0 = _0x214788);
-			}),
-			_0xa5542c[_0x176551(0x3c0)] = Ext[_0x176551(0x2cf)](_0x176551(0x2cb), {
-				'renderTo': _0xa5542c[_0x176551(0x254)],
-				'onSelected': function(_0x4b5180) {
-					var _0x35c111 = _0x176551;
-					_0x179df9['selectCDN'](_0x4b5180),
-					_0xa5542c[_0x35c111(0x1f1)]();
+						f.on(TT(0x28e), function () {
+							e[TT(0x3bd)]("seekend"),
+								e[TT(0x3b7)] = false;
+						}),
+						f.maxPercent = 0,
+						e.on("timeupdate", function () {
+							f.maxPercent = Math[TT(0x39d)](f[TT(0x230)](), f[TT(0x21d)]);
+						});
 				},
-				'renderData': {
-					'playlines': _0x5e4126,
-					'errorMsg': _0xa5542c['content'](),
-					'selectedIndex': _0xdd7be0
+				"getCurrentTime_": function () {
+					return this.player_[TT(0x32c)]();
+				},
+				"getMaxPercent": function () {
+					return this[TT(0x21d)];
+				},
+				"isBackward": function (c) {
+					return this[TT(0x21d)] > this[TT(0x3c1)](c);
+				},
+				"handleMouseDown": function (c) {
+					if (this[TT(0x3ac)]) {
+						if (!this[TT(0x2cd)](c))
+							return;
+					}
+					if (this[TT(0x2f0)] === true)
+						return;
+					a[TT(0x2d2)][TT(0x1a2)].call(this, c);
+				},
+				"handleMouseMove": function (c) {
+					if (this._disableSeek === true)
+						return;
+					if (this[TT(0x3ac)]) {
+						if (!this[TT(0x2cd)](c))
+							return;
+					}
+					a[TT(0x2d2)][TT(0x1a6)].call(this, c);
+				},
+				"handleMouseUp": function (c) {
+					if (this[TT(0x2f0)] === true)
+						return;
+					if (this[TT(0x3ac)]) {
+						if (!this[TT(0x2cd)](c))
+							return;
+					}
+					a[TT(0x2d2)].handleMouseUp.call(this, c);
+				},
+				"disableSeek": function (c) {
+					var e = this;
+					e[TT(0x2f0)] = c !== false,
+						e._disableSeek ? e["disable"]() : e[TT(0x337)]();
+				},
+				"onlyBackward": function (e) {
+					var c = this;
+					c[TT(0x3ac)] = e !== false;
 				}
 			});
-		}
-	});
-	videojs[_0x4988b3(0x310)](_0x4988b3(0x17e), _0x2d9163);
-}()),
-(function() {
-	var _0x4c5ae3 = TT
-	  , _0x3640b9 = null;
-	typeof window['videojs'] === _0x4c5ae3(0x239) && typeof require === _0x4c5ae3(0x29b) ? _0x3640b9 = require(_0x4c5ae3(0x330)) : _0x3640b9 = window['videojs'],
-	function(_0x5598c0, _0x1c475a) {
-		var _0x1bd4a6 = _0x4c5ae3, _0xe8e829 = {}, _0x275cdf, _0x379c4a = {}, _0x38eb24 = {};
-		function _0x5417b5(_0x483c43, _0x23561b, _0x28a1de, _0x2e49d2) {
-			var _0x3e3555 = TT;
-			_0x379c4a = {
-				'label': _0x28a1de,
-				'sources': _0x23561b
-			};
-			if (typeof _0x2e49d2 === _0x3e3555(0x29b))
-				return _0x2e49d2(_0x483c43, _0x23561b, _0x28a1de);
-			return _0x483c43[_0x3e3555(0x213)](_0x23561b[_0x3e3555(0x23a)](function(_0x2559d3) {
-				var _0x42972c = _0x3e3555;
-				return {
-					'src': _0x2559d3[_0x42972c(0x213)],
-					'type': _0x2559d3[_0x42972c(0x205)],
-					'res': _0x2559d3[_0x42972c(0x368)]
-				};
-			})),
-			_0x483c43;
-		}
-		var _0x14699d = _0x1c475a['getComponent'](_0x1bd4a6(0x18a))
-		  , _0x32f6bd = _0x1c475a[_0x1bd4a6(0x1ee)](_0x14699d, {
-			'constructor': function(_0x3804d4, _0x2b0565, _0x106987, _0x259ebc) {
-				var _0x354870 = _0x1bd4a6;
-				this['onClickListener'] = _0x106987,
-				this['label'] = _0x259ebc,
-				_0x14699d[_0x354870(0x325)](this, _0x3804d4, _0x2b0565),
-				this[_0x354870(0x213)] = _0x2b0565[_0x354870(0x213)],
-				this['on']('click', this[_0x354870(0x3b8)]),
-				this['on']('touchstart', this[_0x354870(0x3b8)]),
-				_0x2b0565[_0x354870(0x271)] && (this[_0x354870(0x267)](),
-				this[_0x354870(0x33f)](true),
-				this[_0x354870(0x34e)](_0x354870(0x241)));
-			},
-			'showAsLabel': function() {
-				var _0x2e504d = _0x1bd4a6;
-				this[_0x2e504d(0x234)] && (this['label'][_0x2e504d(0x1b5)] = this[_0x2e504d(0x273)][_0x2e504d(0x234)]);
-			},
-			'onClick': function(_0x1735e8) {
-				var _0x5ba952 = _0x1bd4a6;
-				this[_0x5ba952(0x1c1)](this);
-				var _0x27d624 = this[_0x5ba952(0x2bb)][_0x5ba952(0x32c)]()
-				  , _0x23fac2 = this[_0x5ba952(0x2bb)][_0x5ba952(0x3c8)]();
-				this[_0x5ba952(0x267)](),
-				this[_0x5ba952(0x34e)](_0x5ba952(0x241));
-				!_0x23fac2 && this[_0x5ba952(0x2bb)][_0x5ba952(0x265)][_0x5ba952(0x2a4)]();
-				typeof _0x1735e8 !== _0x5ba952(0x29b) && typeof this[_0x5ba952(0x273)]['customSourcePicker'] === 'function' && (_0x1735e8 = this['options_'][_0x5ba952(0x191)]);
-				var _0x188adb = 'loadeddata';
-				this[_0x5ba952(0x2bb)][_0x5ba952(0x373)] !== _0x5ba952(0x315) && this['player_'][_0x5ba952(0x1bd)]() === _0x5ba952(0x24f) && this[_0x5ba952(0x2bb)][_0x5ba952(0x373)] !== 'Flash' && (_0x188adb = _0x5ba952(0x3a9)),
-				_0x5417b5(this[_0x5ba952(0x2bb)], this[_0x5ba952(0x213)], this[_0x5ba952(0x273)][_0x5ba952(0x234)], _0x1735e8)[_0x5ba952(0x196)](_0x188adb, function() {
-					var _0x2a7140 = _0x5ba952
-					  , _0x50cece = this[_0x2a7140(0x2bb)];
-					_0x50cece['switchStatus'] = true,
-					_0x50cece[_0x2a7140(0x32c)](_0x27d624),
-					!_0x23fac2 && _0x50cece['play'](),
-					_0x50cece['trigger']('resolutionchange');
-				});
-			}
-		});
-		_0x1c475a[_0x1bd4a6(0x310)](_0x1bd4a6(0x3b5), _0x32f6bd);
-		var _0x24cb71 = _0x1c475a[_0x1bd4a6(0x227)](_0x1bd4a6(0x260))
-		  , _0xbb177d = _0x1c475a['extend'](_0x24cb71, {
-			'constructor': function(_0x425d0d, _0x19edbc, _0x5e0093, _0xa58cc7) {
-				var _0x5bd81a = _0x1bd4a6;
-				this[_0x5bd81a(0x219)] = _0x19edbc[_0x5bd81a(0x219)],
-				this[_0x5bd81a(0x234)] = _0xa58cc7,
-				this[_0x5bd81a(0x234)]['innerHTML'] = _0x19edbc[_0x5bd81a(0x332)],
-				_0x24cb71[_0x5bd81a(0x325)](this, _0x425d0d, _0x19edbc, _0x5e0093),
-				this[_0x5bd81a(0x29f)](_0x5bd81a(0x1e7));
-				if (_0x5e0093[_0x5bd81a(0x3aa)])
-					this['el']()[_0x5bd81a(0x275)](_0xa58cc7);
-				else {
-					var _0x533748 = document[_0x5bd81a(0x1f4)]('span');
-					_0x1c475a[_0x5bd81a(0x19c)][_0x5bd81a(0x34e)](_0x533748, _0x5bd81a(0x2e8)),
-					this['el']()[_0x5bd81a(0x275)](_0x533748);
-				}
-			},
-			'createItems': function() {
-				var _0x1aa4a5 = _0x1bd4a6
-				  , _0x4664b9 = []
-				  , _0x46f9be = this[_0x1aa4a5(0x219)] && this[_0x1aa4a5(0x219)]['label'] || {}
-				  , _0x253d5d = function(_0x495f16) {
-					var _0xb9a698 = _0x1aa4a5;
-					_0x4664b9[_0xb9a698(0x23a)](function(_0x204153) {
-						var _0x309573 = _0xb9a698;
-						_0x204153[_0x309573(0x33f)](_0x204153 === _0x495f16),
-						_0x204153[_0x309573(0x398)]('vjs-selected');
-					});
-				};
-				for (var _0x10e2ca in _0x46f9be) {
-					_0x46f9be[_0x1aa4a5(0x23d)](_0x10e2ca) && (_0x4664b9['push'](new _0x32f6bd(this[_0x1aa4a5(0x2bb)],{
-						'label': _0x10e2ca,
-						'src': _0x46f9be[_0x10e2ca],
-						'initialySelected': _0x10e2ca === this[_0x1aa4a5(0x273)][_0x1aa4a5(0x332)],
-						'customSourcePicker': this[_0x1aa4a5(0x273)][_0x1aa4a5(0x191)]
-					},_0x253d5d,this[_0x1aa4a5(0x234)])),
-					_0x38eb24[_0x10e2ca] = _0x4664b9[_0x4664b9[_0x1aa4a5(0x345)] - 0x1]);
-				}
-				return _0x4664b9;
-			}
-		});
-		_0x275cdf = function(_0x14958f) {
-			var _0xe1b466 = _0x1bd4a6
-			  , _0x483658 = _0x1c475a[_0xe1b466(0x200)](_0xe8e829, _0x14958f)
-			  , _0x1d3470 = this
-			  , _0x152400 = document[_0xe1b466(0x1f4)](_0xe1b466(0x19e))
-			  , _0xcb2f1e = {};
-			_0x1c475a[_0xe1b466(0x19c)][_0xe1b466(0x34e)](_0x152400, _0xe1b466(0x26c)),
-			_0x1d3470['updateSrc'] = function(_0x5c36f2) {
-				var _0x11d2f9 = _0xe1b466;
-				if (!_0x5c36f2)
-					return _0x1d3470[_0x11d2f9(0x213)]();
-				_0x1d3470[_0x11d2f9(0x1a4)]['resolutionSwitcher'] && (_0x1d3470['controlBar'][_0x11d2f9(0x2d9)][_0x11d2f9(0x2b4)](),
-				delete _0x1d3470['controlBar']['resolutionSwitcher']);
-				_0x5c36f2 = _0x5c36f2[_0x11d2f9(0x308)](_0x55a302),
-				_0xcb2f1e = _0x1201df(_0x5c36f2);
-				var _0x41db6f = _0x101fd6(_0xcb2f1e, _0x5c36f2)
-				  , _0x328a4d = new _0xbb177d(_0x1d3470,{
-					'sources': _0xcb2f1e,
-					'initialySelectedLabel': _0x41db6f['label'],
-					'initialySelectedRes': _0x41db6f[_0x11d2f9(0x368)],
-					'customSourcePicker': _0x483658[_0x11d2f9(0x191)]
-				},_0x483658,_0x152400);
-				return _0x1c475a[_0x11d2f9(0x19c)][_0x11d2f9(0x34e)](_0x328a4d['el'](), 'vjs-resolution-button'),
-				_0x1d3470[_0x11d2f9(0x1a4)][_0x11d2f9(0x2d9)] = _0x1d3470[_0x11d2f9(0x1a4)]['el_'][_0x11d2f9(0x285)](_0x328a4d[_0x11d2f9(0x254)], _0x1d3470['controlBar'][_0x11d2f9(0x208)](_0x11d2f9(0x1db))[_0x11d2f9(0x254)]),
-				_0x1d3470[_0x11d2f9(0x1a4)][_0x11d2f9(0x2d9)][_0x11d2f9(0x2b4)] = function() {
-					var _0x35e694 = _0x11d2f9;
-					this[_0x35e694(0x355)][_0x35e694(0x261)](this);
-				}
-				,
-				_0x5417b5(_0x1d3470, _0x41db6f['sources'], _0x41db6f['label'], _0x483658['customSourcePicker']);
-			}
-			,
-			_0x1d3470[_0xe1b466(0x399)] = function(_0x2de093, _0x38a587) {
-				var _0x13b701 = _0xe1b466;
-				if (_0x2de093 == null)
-					return _0x379c4a;
-				return _0x38eb24[_0x2de093] != null && _0x38eb24[_0x2de093][_0x13b701(0x3b8)](_0x38a587),
-				_0x1d3470;
-			}
-			,
-			_0x1d3470[_0xe1b466(0x3c9)] = function() {
-				return _0xcb2f1e;
-			}
-			;
-			function _0x55a302(_0x55a889, _0x14ee0b) {
-				var _0x4919f9 = _0xe1b466;
-				if (!_0x55a889[_0x4919f9(0x368)] || !_0x14ee0b[_0x4919f9(0x368)])
-					return 0x0;
-				return +_0x14ee0b[_0x4919f9(0x368)] - +_0x55a889[_0x4919f9(0x368)];
-			}
-			function _0x1201df(_0x441ff7) {
-				var _0x4f9183 = _0xe1b466
-				  , _0x66f054 = {
-					'label': {},
-					'res': {},
-					'type': {}
-				};
-				return _0x441ff7[_0x4f9183(0x23a)](function(_0x2f1a31) {
-					var _0x283b61 = _0x4f9183;
-					_0x218774(_0x66f054, _0x283b61(0x234), _0x2f1a31),
-					_0x218774(_0x66f054, _0x283b61(0x368), _0x2f1a31),
-					_0x218774(_0x66f054, 'type', _0x2f1a31),
-					_0x138eb9(_0x66f054, 'label', _0x2f1a31),
-					_0x138eb9(_0x66f054, _0x283b61(0x368), _0x2f1a31),
-					_0x138eb9(_0x66f054, 'type', _0x2f1a31);
-				}),
-				_0x66f054;
-			}
-			function _0x218774(_0x502ab8, _0x2c7c48, _0x47358e) {
-				_0x502ab8[_0x2c7c48][_0x47358e[_0x2c7c48]] == null && (_0x502ab8[_0x2c7c48][_0x47358e[_0x2c7c48]] = []);
-			}
-			function _0x138eb9(_0x4afa9c, _0x498c20, _0x226993) {
-				_0x4afa9c[_0x498c20][_0x226993[_0x498c20]]['push'](_0x226993);
-			}
-			function _0x101fd6(_0x7fbb37, _0x3c468) {
-				var _0x51890b = _0xe1b466
-				  , _0x53a74a = _0x483658['default']
-				  , _0x2a8f8f = '';
-				return _0x53a74a === 'high' ? (_0x53a74a = _0x3c468[0x0][_0x51890b(0x368)],
-				_0x2a8f8f = _0x3c468[0x0][_0x51890b(0x234)]) : _0x53a74a === _0x51890b(0x1fe) || _0x53a74a == null || !_0x7fbb37[_0x51890b(0x368)][_0x53a74a] ? (_0x53a74a = _0x3c468[_0x3c468[_0x51890b(0x345)] - 0x1]['res'],
-				_0x2a8f8f = _0x3c468[_0x3c468[_0x51890b(0x345)] - 0x1]['label']) : _0x7fbb37[_0x51890b(0x368)][_0x53a74a] && (_0x2a8f8f = _0x7fbb37[_0x51890b(0x368)][_0x53a74a][0x0]['label']),
-				{
-					'res': _0x53a74a,
-					'label': _0x2a8f8f,
-					'sources': _0x7fbb37[_0x51890b(0x368)][_0x53a74a]
-				};
-			}
-			_0x1d3470[_0xe1b466(0x20c)](function() {
-				var _0x4f33b4 = _0xe1b466;
-				_0x1d3470['options_'][_0x4f33b4(0x219)][_0x4f33b4(0x345)] > 0x0 && _0x1d3470[_0x4f33b4(0x20a)](function() {
-					var _0x1f2624 = _0x4f33b4;
-					_0x1d3470[_0x1f2624(0x297)](_0x1d3470[_0x1f2624(0x273)][_0x1f2624(0x219)]);
-				}, 0x1);
-			});
-		}
-		,
-		_0x1c475a[_0x1bd4a6(0x2c3)](_0x1bd4a6(0x380), _0x275cdf);
-	}(window, _0x3640b9);
-}()),
-(function() {
-	(function(_0x598a25, _0x5eb00e) {
-		var _0x62fe0e = TT, _0x3d7271 = {}, _0x2baaa8, _0x38a913 = {}, _0x11590b = {};
-		function _0x17a761(_0x581cd8, _0x70e5bb, _0x4746ec, _0x54a941) {
-			_0x38a913 = _0x70e5bb;
-			if (typeof _0x54a941 === 'function')
-				return _0x54a941(_0x581cd8, _0x70e5bb, _0x4746ec);
-			return _0x581cd8;
-		}
-		var _0x1b1b9e = _0x5eb00e[_0x62fe0e(0x227)](_0x62fe0e(0x3b5))
-		  , _0x18af2e = _0x5eb00e[_0x62fe0e(0x1ee)](_0x1b1b9e, {
-			'onClick': function(_0x2d2f9f) {
-				var _0x41a6f0 = _0x62fe0e;
-				this[_0x41a6f0(0x1c1)](this);
-				var _0x405bab = this[_0x41a6f0(0x2bb)][_0x41a6f0(0x32c)]()
-				  , _0x4b9d66 = this[_0x41a6f0(0x2bb)][_0x41a6f0(0x3c8)]();
-				this[_0x41a6f0(0x267)](),
-				this['addClass']('vjs-selected');
-				!_0x4b9d66 && this['player_'][_0x41a6f0(0x265)][_0x41a6f0(0x2a4)]();
-				typeof _0x2d2f9f !== 'function' && typeof this[_0x41a6f0(0x273)][_0x41a6f0(0x191)] === _0x41a6f0(0x29b) && (_0x2d2f9f = this[_0x41a6f0(0x273)][_0x41a6f0(0x191)]);
-				var _0x52370b = 'loadeddata';
-				this['player_'][_0x41a6f0(0x373)] !== _0x41a6f0(0x315) && this[_0x41a6f0(0x2bb)][_0x41a6f0(0x1bd)]() === _0x41a6f0(0x24f) && this['player_'][_0x41a6f0(0x373)] !== 'Flash' && (_0x52370b = 'timeupdate');
-				var _0x3f48f7 = _0x17a761(this[_0x41a6f0(0x2bb)], this[_0x41a6f0(0x213)], this[_0x41a6f0(0x273)]['label'], _0x2d2f9f);
-				_0x3f48f7 && _0x3f48f7['one'](_0x52370b, function() {
-					var _0x15843e = _0x41a6f0;
-					_0x3f48f7[_0x15843e(0x300)] = true,
-					_0x3f48f7[_0x15843e(0x32c)](_0x405bab),
-					!_0x4b9d66 && _0x3f48f7[_0x15843e(0x1a9)](),
-					_0x3f48f7[_0x15843e(0x3bd)](_0x15843e(0x19d));
-				});
-			}
-		})
-		  , _0x4b2e6a = _0x5eb00e[_0x62fe0e(0x227)](_0x62fe0e(0x260))
-		  , _0x422ce6 = _0x5eb00e[_0x62fe0e(0x1ee)](_0x4b2e6a, {
-			'constructor': function(_0x122041, _0x3a0952, _0x757ff1, _0x3ce790) {
-				var _0x5528c4 = _0x62fe0e;
-				this[_0x5528c4(0x312)] = _0x3a0952['playlines'],
-				this['label'] = _0x3ce790,
-				this['label']['innerHTML'] = _0x3a0952[_0x5528c4(0x332)],
-				_0x4b2e6a[_0x5528c4(0x325)](this, _0x122041, _0x3a0952, _0x757ff1),
-				this[_0x5528c4(0x29f)](_0x5528c4(0x181));
-				if (_0x757ff1[_0x5528c4(0x3aa)])
-					this['el']()[_0x5528c4(0x275)](_0x3ce790);
-				else {
-					var _0x52ebdb = document[_0x5528c4(0x1f4)](_0x5528c4(0x19e));
-					_0x5eb00e[_0x5528c4(0x34e)](_0x52ebdb, _0x5528c4(0x2e8)),
-					this['el']()[_0x5528c4(0x275)](_0x52ebdb);
-				}
-			},
-			'createItems': function() {
-				var _0x1e3293 = _0x62fe0e
-				  , _0x424e1d = []
-				  , _0x47a58a = this[_0x1e3293(0x312)] || []
-				  , _0x1fcb53 = function(_0x1edf44) {
-					_0x424e1d['map'](function(_0x3e1030) {
-						var _0x383d16 = TT;
-						_0x3e1030[_0x383d16(0x33f)](_0x3e1030 === _0x1edf44),
-						_0x3e1030[_0x383d16(0x398)](_0x383d16(0x241));
-					});
-				};
-				for (var _0x54089f = 0x0; _0x54089f < _0x47a58a[_0x1e3293(0x345)]; _0x54089f++) {
-					var _0x303d97 = _0x47a58a[_0x54089f][_0x1e3293(0x234)];
-					_0x424e1d[_0x1e3293(0x335)](new _0x18af2e(this['player_'],{
-						'label': _0x303d97,
-						'src': _0x47a58a[_0x54089f],
-						'initialySelected': _0x303d97 === this[_0x1e3293(0x273)]['initialySelectedLabel'],
-						'customSourcePicker': this[_0x1e3293(0x273)][_0x1e3293(0x191)]
-					},_0x1fcb53,this['label'])),
-					_0x11590b[_0x303d97] = _0x424e1d[_0x424e1d['length'] - 0x1];
-				}
-				return _0x424e1d;
-			}
-		});
-		_0x2baaa8 = function(_0x36ca52) {
-			var _0x20cff0 = _0x62fe0e
-			  , _0x1a92aa = _0x5eb00e[_0x20cff0(0x200)](_0x3d7271, _0x36ca52)
-			  , _0x5d9c3f = this
-			  , _0x389069 = document[_0x20cff0(0x1f4)]('span')
-			  , _0x2b80a3 = _0x5d9c3f[_0x20cff0(0x273)][_0x20cff0(0x312)];
-			_0x5eb00e[_0x20cff0(0x19c)]['addClass'](_0x389069, 'vjs-resolution-button-label');
-			var _0x2c97f2 = new _0x422ce6(_0x5d9c3f,{
-				'playlines': _0x2b80a3,
-				'initialySelectedLabel': _0x2b80a3[0x0]['label'],
-				'initialySelectedUrl': _0x2b80a3[0x0]['url'],
-				'customSourcePicker': _0x1a92aa[_0x20cff0(0x191)]
-			},_0x1a92aa,_0x389069);
-			_0x5eb00e[_0x20cff0(0x19c)][_0x20cff0(0x34e)](_0x2c97f2['el'](), 'vjs-resolution-button'),
-			_0x5eb00e['dom'][_0x20cff0(0x34e)](_0x2c97f2['el'](), _0x20cff0(0x26f)),
-			_0x2c97f2[_0x20cff0(0x220)](),
-			_0x5d9c3f['selectCDN'] = function(_0x105289) {
-				var _0x50aa88 = _0x20cff0;
-				_0x2c97f2[_0x50aa88(0x2fe)][_0x105289][_0x50aa88(0x3b8)](_0x1a92aa[_0x50aa88(0x191)]),
-				_0x5d9c3f['play']();
-			}
-			,
-			_0x2b80a3[_0x20cff0(0x345)] > 0x0 && (_0x38a913 = _0x2b80a3[0x0]),
-			_0x5d9c3f['currentPlayline'] = function() {
-				return _0x38a913;
-			}
-			,
-			_0x5d9c3f[_0x20cff0(0x20c)](function() {
-				var _0x1dade2 = _0x20cff0;
-				_0x5d9c3f[_0x1dade2(0x1a4)]['videoJsPlayLine'] = _0x5d9c3f[_0x1dade2(0x1a4)][_0x1dade2(0x254)][_0x1dade2(0x285)](_0x2c97f2[_0x1dade2(0x254)], _0x5d9c3f[_0x1dade2(0x1a4)][_0x1dade2(0x208)](_0x1dade2(0x1db))[_0x1dade2(0x254)]),
-				_0x5d9c3f[_0x1dade2(0x1a4)][_0x1dade2(0x331)][_0x1dade2(0x2b4)] = function() {
-					var _0x745443 = _0x1dade2;
-					this[_0x745443(0x355)]['removeChild'](this);
-				}
-				;
-			});
-		}
-		,
-		_0x5eb00e['registerPlugin']('videoJsPlayLine', _0x2baaa8);
-	}(window, videojs));
-}()),
-Ext['define'](TT(0x246), {
-	'videoJs': null,
-	'mixins': {
-		'observable': TT(0x17d)
-	},
-	'constructor': function(_0x4bb582) {
-		var _0x3af119 = TT;
-		_0x4bb582 = _0x4bb582 || {};
-		var _0x371990 = this;
-		_0x371990[_0x3af119(0x384)]([_0x3af119(0x2fd)]),
-		_0x371990[_0x3af119(0x1e5)]['observable'][_0x3af119(0x175)][_0x3af119(0x325)](_0x371990, _0x4bb582);
-		var _0x28a382 = videojs(_0x4bb582[_0x3af119(0x202)], _0x371990[_0x3af119(0x37a)](_0x4bb582[_0x3af119(0x37f)]), function() {});
-		Ext[_0x3af119(0x1cd)](_0x4bb582[_0x3af119(0x202)])['on'](_0x3af119(0x356), function(_0x5334c4) {
-			var _0x293dea = _0x3af119;
-			_0x5334c4[_0x293dea(0x185)]();
-		}),
-		Ext[_0x3af119(0x1cd)](_0x4bb582['videojs'])['on'](_0x3af119(0x2e6), function(_0x274a65) {
-			var _0x3b434b = _0x3af119;
-			(_0x274a65['keyCode'] == 0x20 || _0x274a65[_0x3b434b(0x3b2)] == 0x25 || _0x274a65[_0x3b434b(0x3b2)] == 0x27) && _0x274a65[_0x3b434b(0x185)]();
-		});
-	},
-	'params2VideoOpt': function(_0x2aeede) {
-		var _0x2edf27 = TT
-		  , _0x2b0635 = [];
-		!_0x2aeede[_0x2edf27(0x35e)] && (_0x2aeede[_0x2edf27(0x35e)] = '');
-		_0x2aeede[_0x2edf27(0x36e)] && _0x2b0635[_0x2edf27(0x335)]({
-			'src': _0x2aeede[_0x2edf27(0x36e)],
-			'type': _0x2edf27(0x2d8)
-		});
-		var _0x508929 = function(_0x1b1c52, _0x60e60a, _0x5b67f8) {
-			var _0x41546f = _0x2edf27
-			  , _0x20cefe = this;
-			!_0x20cefe[_0x41546f(0x1ec)] && (_0x20cefe['logCount'] = 0x0),
-			videojs[_0x41546f(0x19f)]({
-				'uri': _0x60e60a,
-				'headers': {
-					'Content-Type': 'application/json'
-				}
-			}, function(_0x3a1fe5, _0x5ec5e0) {
-				var _0x4396fe = _0x41546f;
-				_0x20cefe[_0x4396fe(0x1ec)]++;
-				if (_0x5ec5e0['statusCode'] == 0xc8) {
-					_0x20cefe[_0x4396fe(0x1ec)] = 0x0;
-					if (_0x5ec5e0[_0x4396fe(0x3c4)][_0x4396fe(0x235)]('isPassed') < 0x0) {
-						window[_0x4396fe(0x2c9)] && window[_0x4396fe(0x2c9)][_0x4396fe(0x18e)][_0x4396fe(0x3a6)]();
+		videojs[TT(0x310)](TT(0x249), b);
+	}()),
+	(function () {
+		var a = videojs[TT(0x341)](TT(0x3a3))
+			, b = videojs.extend(a, {
+				"constructor": function (g, f) {
+					a.call(this, g, f);
+					var h = this;
+					h[TT(0x386)] = true,
+						h.isSendLog_ = !!f[TT(0x293)],
+						h[TT(0x1ef)] = !!f[TT(0x2df)],
+						h[TT(0x274)] = 0,
+						h[TT(0x366)] = 0,
+						h.isPlay = false,
+						h.isEnd = false,
+						(h[TT(0x394)],
+							h[TT(0x1f2)] = f.chapterCapture || 0),
+						h[TT(0x1ac)] = f.captureInterval * 0x3c || 0x258,
+						h[TT(0x2f5)] = f[TT(0x2f5)] || 0,
+						h["isSupportFace"] = f["isSupportFace"],
+						h[TT(0x1ca)] = false,
+						h.startCapture = f.startCapture,
+						h.endCapture = f.endCapture,
+						h[TT(0x287)] = f.playAginCapture,
+						h[TT(0x296)] = f.playingCapture,
+						h[TT(0x319)] = f[TT(0x319)],
+						h[TT(0x2b6)] = f[TT(0x2b6)],
+						h.duration = f.duration,
+						h[TT(0x306)] = false,
+						h[TT(0x1a8)] = Math.floor(Math[TT(0x1ae)]() * (parseInt(h.duration) - 0) + 1),
+						h[TT(0x318)] = false,
+						h[TT(0x359)] = 0,
+						h[TT(0x29c)] = f[TT(0x29c)],
+						g.on(TT(0x20c), function () {
+							f["enableFastForward"] != 0x1 && g[TT(0x2ae)]();
+						});
+					!f[TT(0x395)] && (f[TT(0x395)] = function () { }
+					);
+					f[TT(0x223)] && g.currentTime(f[TT(0x223)]);
+					var k = 0x0
+						, c = 0x0
+						, e = f.reportTimeInterval || 0x3c
+						, j = e * 0x3e8
+						, i = function (l, m, o) {
+							if (!h[TT(0x25e)])
+								return;
+							var n = h[TT(0x1a1)]() - k;
+							(n > j || m === true) && (typeof o != TT(0x239) ? (f.sendLog(g, l, o, h),
+								h[TT(0x394)] && clearInterval(h[TT(0x394)])) : f.sendLog(g, l, h[TT(0x2ce)](g), h),
+								k = h[TT(0x1a1)]());
+						};
+					g.on(TT(0x1a9), function () {
+						try {
+							if (typeof top[TT(0x347)] != "undefined" && top[TT(0x347)] === true && h[TT(0x386)] && isUnFinishJob()) {
+								h.firstClick = false,
+									g[TT(0x34c)](),
+									checkJobCountLimit(g);
+								return;
+							}
+						} catch (eee) {
+							console.log(eee);
+						}
+						h.isAlertTip = false,
+							h[TT(0x1f2)] == 0x0 || !h["isSupportFace"] ? (!g[TT(0x2a5)] ? (i(TT(0x1a9), true),
+								g.ignoreSeek = true) : (g[TT(0x2a5)] = false,
+									g.ignoreSeek = false),
+								h[TT(0x2c5)]("play"),
+								h.receiveStudyLog(),
+								h[TT(0x1a3)](TT(0x1a9), g)) : h.chapterCapture == 0x1 && (h[TT(0x366)] == 0x0 ? h.isShowFaceCollection && !h[TT(0x1ab)] && (h.startCapture == 0x1 || typeof h[TT(0x2af)] == TT(0x239)) ? (h[TT(0x25c)](TT(0x1a9), g, h[TT(0x2f5)]),
+									g[TT(0x34c)]()) : (!g[TT(0x2a5)] ? (i(TT(0x1a9), true),
+										g[TT(0x3b7)] = true) : (g[TT(0x2a5)] = false,
+											g[TT(0x3b7)] = false),
+										h[TT(0x2c5)](TT(0x1a9)),
+										h.receiveStudyLog(),
+										h[TT(0x1a3)]("play", g),
+										(h.isShowFaceCollection && typeof h[TT(0x296)] == TT(0x239) || h.playingCapture == 0x1 && h[TT(0x319)] == 0) && h[TT(0x305)](g),
+										h[TT(0x2b6)] && h[TT(0x287)] == 0x1 && g[TT(0x2a5)] && !h[TT(0x318)] && (h.faceCollection(TT(0x20f), g, h[TT(0x2f5)]),
+											g[TT(0x34c)]())) : ((h.isShowFaceCollection && typeof h[TT(0x296)] == TT(0x239) || h[TT(0x296)] == 0x1 && h[TT(0x319)] == 1) && h[TT(0x305)](g),
+												h[TT(0x2b6)] && h.playAginCapture == 0x1 && !g[TT(0x2a5)] && !h[TT(0x318)] && (h.faceCollection(TT(0x20f), g, h[TT(0x2f5)]),
+													g.pause(),
+													h[TT(0x359)] = h.sec_(g))));
+					}),
+						g.on(TT(0x36b), function () {
+							if (f["enableFastForward"] != 0x1 && !g.switchStatus) {
+								var l = g[TT(0x32c)]()
+									, m = f[TT(0x223)] ? f[TT(0x223)] : 0;
+								l != 0x0 && l > m && g[TT(0x32c)](m);
+							}
+							!g[TT(0x3b7)] ? i(TT(0x378), true, c + "-" + h.sec_(g)) : g.ignoreSeek = false,
+								c = h[TT(0x2ce)](g),
+								g.ignorePlay = true,
+								delete g.switchStatus;
+						}),
+						g.on("pause", function () {
+							!g[TT(0x2e1)] ? (i("pause", true),
+								g.ignorePlay = false,
+								g[TT(0x3b7)] = false) : g[TT(0x2e1)] = false,
+								h.sendDataLog(TT(0x34c)),
+								h.getDanmuList("pause", g);
+						}),
+						g.on("timeupdate", function () {
+							h[TT(0x2ce)](g) - h[TT(0x359)] > 0x2 && (h[TT(0x318)] = false);
+							h[TT(0x2b6)] && h[TT(0x1f2)] == 0x1 && h[TT(0x296)] == 0x1 && h[TT(0x319)] == 0x1 && h[TT(0x2ce)](g) == h.loopCaptureInterval && !h[TT(0x306)] && (h.faceCollection(TT(0x210), g, h.chapterCollectionType),
+								g[TT(0x34c)]());
+							if (typeof parent[TT(0x248)] != "undefined" && parent[TT(0x248)] != "-1") {
+								var l = parseInt(parent[TT(0x248)]) * 0x3c;
+								if (l < h[TT(0x2ce)](g) && !h.isAlertTip) {
+									g[TT(0x34c)](),
+										alert(TT(0x238) + parent[TT(0x248)] + "分钟"),
+										h[TT(0x1ca)] = true;
+									return;
+								}
+							}
+							parseInt(g.currentTime()) >= this.damuLastGetTime && h[TT(0x1a3)](TT(0x3a9), g);
+							h.danmuDisplay(g);
+							if (k == 0)
+								return;
+							h[TT(0x2ce)](g) - c <= 0x1 && !g[TT(0x2a5)] && (c = h.sec_(g)),
+								i(TT(0x210));
+						}),
+						g.on(TT(0x1f8), function () {
+							h.playTimer && clearInterval(h.playTimer),
+								h[TT(0x2b6)] && !h[TT(0x1b0)] && h.chapterCapture == 0x1 && h.endCapture == 0x1 && h.faceCollection(TT(0x1f8), g, h.chapterCollectionType),
+								i(TT(0x1f8), true);
+						});
+				},
+				"sec_": function (c) {
+					return parseInt(c[TT(0x32c)]());
+				},
+				"now_": function () {
+					return new Date()[TT(0x1ed)]();
+				},
+				"isSendLog": function (c) {
+					return c && (this[TT(0x25e)] = !!c),
+						this.isSendLog_;
+				},
+				"sendDataLog": function (e) {
+					var c = e == TT(0x34c) || e == TT(0x2bf) ? 0x2 : 1;
+					typeof sendReadZTMediaLog != TT(0x239) && sendReadZTMediaLog(c);
+				},
+				"receiveStudyLog": function () {
+					typeof receiveStudyLog != TT(0x239) && setTimeout(function () {
+						receiveStudyLog();
+					}, 0x32);
+				},
+				"getDanmuList": function (e, c) {
+					if (!this[TT(0x1ef)])
+						return;
+					var f = this.sec_(c);
+					if (e == "pause") {
+						this[TT(0x274)] = 0,
+							setTimeout(function () {
+								getDanmuByTime(e, 0);
+							}, 0xc8);
 						return;
 					}
-					eval('var\x20d=' + _0x5ec5e0[_0x4396fe(0x3c4)]);
-					d['isPassed'] && _0x5b67f8();
-					return;
-				}
-				_0x20cefe[_0x4396fe(0x1ec)] >= 0x4 && (_0x20cefe[_0x4396fe(0x1ec)] = 0x0,
-				_0x1b1c52[_0x4396fe(0x34c)](),
-				_0x5ec5e0[_0x4396fe(0x343)] != 0x0 ? alert(_0x4396fe(0x37b) + _0x5ec5e0[_0x4396fe(0x343)] + ')') : alert(_0x4396fe(0x264)));
-			});
-		}
-		  , _0x483e07 = function(_0x3fe5bb, _0x538362, _0x314173, _0x39011c) {
-			var _0xe96042 = _0x2edf27;
-			if (!_0x2aeede[_0xe96042(0x203)])
-				return;
-			var _0x24356d = '[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]', _0x204b14 = (_0x2aeede[_0xe96042(0x360)] || '0') + '_' + (_0x2aeede[_0xe96042(0x2eb)] || _0x2aeede['duration']), _0x1e7694 = 0x0, _0x5bdda7;
-			_0x314173[_0xe96042(0x367)]()[_0xe96042(0x235)]('-') != -0x1 ? (_0x5bdda7 = _0x314173[_0xe96042(0x39c)]('-'),
-			_0x5bdda7['length'] == 0x2 && (_0x1e7694 = parseInt(_0x5bdda7[0x1]) * 0x3e8)) : _0x1e7694 = _0x314173 * 0x3e8;
-			if (_0x1e7694 == _0x2aeede[_0xe96042(0x387)] * 0x3e8 && _0x538362 == 0x2)
-				return;
-			var _0x34bc26 = Ext[_0xe96042(0x1d2)]['format'](_0x24356d, _0x2aeede[_0xe96042(0x224)], _0x2aeede[_0xe96042(0x187)], _0x2aeede[_0xe96042(0x19a)] ? _0x2aeede[_0xe96042(0x19a)] : '', _0x2aeede[_0xe96042(0x183)], _0x1e7694, _0xe96042(0x1c5), _0x2aeede['duration'] * 0x3e8, _0x204b14)
-			  , _0x25a1c1 = [_0x2aeede['reportUrl'], '/', _0x2aeede['dtoken'], _0xe96042(0x3a7), _0x2aeede[_0xe96042(0x224)], _0xe96042(0x1aa), _0x314173, '&duration=', _0x2aeede['duration'], _0xe96042(0x372), _0x204b14, _0xe96042(0x2f7), _0x2aeede[_0xe96042(0x183)], _0xe96042(0x3b4), _0x2aeede['otherInfo'], _0xe96042(0x256), _0x2aeede[_0xe96042(0x19a)], _0xe96042(0x304), _0x2aeede[_0xe96042(0x187)], _0xe96042(0x32e), _0x538362, _0xe96042(0x25d), _0xe96042(0x231), md5(_0x34bc26), '&rt=', _0x2aeede['rt'], _0xe96042(0x3cc), _0xe96042(0x2e2), new Date()[_0xe96042(0x1ed)]()][_0xe96042(0x29a)]('');
-			_0x508929(_0x3fe5bb, _0x25a1c1, _0x39011c);
-		};
-		return {
-			'language': _0x2edf27(0x1f0),
-			'controls': true,
-			'preload': _0x2edf27(0x27a),
-			'bigPlayButton': false,
-			'sources': _0x2b0635,
-			'textTrackDisplay': true,
-			'controlBar': {
-				'volumePanel': {
-					'inline': true
+					typeof getDanmuByTime != TT(0x239) && setTimeout(function () {
+						getDanmuByTime(e, f);
+					}, 0xc8);
+					if (f < this[TT(0x274)])
+						return;
+					this[TT(0x274)] = f + 0x3b;
 				},
-				'children': ['playToggle', _0x2edf27(0x33a), 'timeDivider', _0x2edf27(0x23f), _0x2edf27(0x242), 'volumePanel']
-			},
-			'plugins': {
-				'audioNote': {
-					'title': _0x2aeede[_0x2edf27(0x3ad)]
+				"danmuDisplay": function (c) {
+					if (!this.isShowDanmu_)
+						return;
+					var e = this[TT(0x2ce)](c);
+					typeof danmuPlay != TT(0x239) && danmuPlay(e);
 				},
-				'studyControl': {
-					'enableSwitchWindow': 0x1
+				"timer": function (c) {
+					var e = this;
+					this[TT(0x394)] = setInterval(function () {
+						e[TT(0x366)]++,
+							e[TT(0x366)] >= e.captureInterval && (e[TT(0x1ab)] = false,
+								c.pause(),
+								e[TT(0x25c)](TT(0x34c), c, e.chapterCollectionType));
+					}, 0x3e8);
 				},
-				'seekBarControl': {
-					'headOffset': _0x2aeede[_0x2edf27(0x223)],
-					'enableFastForward': _0x2aeede['enableFastForward'],
-					'isSendLog': true,
-					'reportTimeInterval': _0x2aeede[_0x2edf27(0x3bb)],
-					'sendLog': function(_0xee312f, _0x3a3766, _0x6cd859) {
-						var _0x3aa2e0 = _0x2edf27;
-						if (this[_0x3aa2e0(0x293)] !== true)
+				"faceCollection": function (e, c, f) {
+					e == "play" && this.timeCount == 0x0 ? typeof startFaceCollection != TT(0x239) && startFaceCollection(c, f, this) : e == TT(0x34c) ? (this[TT(0x394)] && clearInterval(this[TT(0x394)]),
+						!this[TT(0x1ab)] && this[TT(0x366)] >= this[TT(0x1ac)] && (typeof startFaceCollection != "undefined" && startFaceCollection(c, f, this),
+							this[TT(0x366)] = 0)) : e == TT(0x1f8) ? (this.playTimer && clearInterval(this[TT(0x394)]),
+								typeof startFaceCollection != TT(0x239) && (startFaceCollection(c, f, this),
+									this[TT(0x1b0)] = true),
+								this[TT(0x366)] = 0) : e == TT(0x210) ? typeof startFaceCollection != TT(0x239) && (startFaceCollection(c, f, this),
+									this.playingFace = true) : e == TT(0x20f) && (typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
+										this[TT(0x318)] = true));
+				},
+				"playNextVideo": function (c) {
+					if (typeof chapterPlayNextVideo != TT(0x239)) {
+						if (typeof top[TT(0x247)] != TT(0x239) && top[TT(0x247)] === false) {
+							top[TT(0x313)]();
 							return;
-						var _0x1c8bda = 0x0;
-						switch (_0x3a3766) {
-						case _0x3aa2e0(0x1a9):
-							_0x1c8bda = 0x3;
-							break;
-						case _0x3aa2e0(0x34c):
-							_0x1c8bda = 0x2;
-							break;
-						case _0x3aa2e0(0x1f8):
-							_0x1c8bda = 0x4;
-							break;
 						}
-						_0x483e07(_0xee312f, _0x1c8bda, _0x6cd859, function() {
-							var _0x33c809 = _0x3aa2e0;
-							window[_0x33c809(0x2ca)] && window['proxy_completed']();
-						});
+						chapterPlayNextVideo(c);
 					}
 				}
+			});
+		videojs[TT(0x2c3)](TT(0x27d), b);
+	}()),
+	Ext.define(TT(0x2f6), {
+		"extend": TT(0x381),
+		"cls": TT(0x2ef),
+		"hidden": true
+	}),
+	Ext.define(TT(0x2c1), {
+		"extend": TT(0x381),
+		"xtype": TT(0x388),
+		"cls": "ans-videoquiz",
+		"renderTpl": [TT(0x37d), "<tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>", TT(0x2a6), "</tpl>\x20", "<div\x20class=\x22tkTopic_title\x22>[{questionType}]</div>", TT(0x281), TT(0x1dc), "<div\x20class=\x22tkItem_title\x22>{description}</div>", TT(0x1b9), "<tpl\x20for=\x22options\x22>", TT(0x307), TT(0x24d), "{name}、{description}", TT(0x1d3), "</tpl>\x20", TT(0x3ae), TT(0x1a7), TT(0x1a7), TT(0x362), "<a\x20class=\x22ans-videoquiz-submit\x20bntLinear\x20fr\x22\x20id=\x22videoquiz-submit\x22>提交</a>", TT(0x1c3), "<tpl\x20if=\x22dtype==\x27InteractiveQuiz\x27\x22>", "<a\x20class=\x22bntWhiteBorder\x20ans-videoquiz-back\x20fr\x22\x20id=\x22knowledgeBack\x22>知识点回看</a>", "</tpl>", TT(0x3bf), TT(0x370), TT(0x392), TT(0x1c0), TT(0x3a0), TT(0x22b), "</div>", TT(0x371), "<a\x20class=\x22tkParsing_dele\x22\x20href=\x22javascript:\x22></a>", TT(0x291), TT(0x34b), TT(0x1a7), TT(0x1a7), {
+			"getChecked": function (a, b, c) {
+				return a.indexOf(b) != -0x1 && c == TT(0x3a5) ? TT(0x3be) : "";
 			}
-		};
-	}
-}),
-Ext[TT(0x31f)](TT(0x26d), {
-	'extend': 'Ext.Component',
-	'cls': TT(0x2cc)
-}),
-(function() {
-	var _0x214b1f = TT
-	  , _0x337f27 = videojs[_0x214b1f(0x341)](_0x214b1f(0x3a3))
-	  , _0x36665d = videojs[_0x214b1f(0x1ee)](_0x337f27, {
-		'constructor': function(_0x5fc48e, _0x1bc837) {
-			var _0x31bd7e = _0x214b1f;
-			_0x337f27[_0x31bd7e(0x325)](this, _0x5fc48e, _0x1bc837),
-			Ext[_0x31bd7e(0x2cf)](_0x31bd7e(0x26d), {
-				'renderTo': _0x5fc48e[_0x31bd7e(0x254)],
-				'html': _0x1bc837[_0x31bd7e(0x1e9)]
+		}],
+		"renderSelectors": {
+			"submitEl": TT(0x29d),
+			"continueEl": TT(0x25b),
+			"scrollEl": TT(0x2d3),
+			"backEl": TT(0x1b3),
+			"tkParseScrollEl": "div.tkParsing_screll",
+			"viewAnalysisEl": TT(0x2a8),
+			"delAnalysisEl": TT(0x38e)
+		},
+		"afterRender": function () {
+			var b = this
+				, aaaa = b[TT(0x294)]
+				, bbbb = b[TT(0x1de)];
+			typeof bbbb != "undefined" && Ext["Ajax"].request({
+				"url": bbbb,
+				"params": {
+					"eventid": aaaa.resourceId,
+					"memberinfo": aaaa[TT(0x2d5)]
+				},
+				"method": TT(0x2b0),
+				"success": function (cccc) {
+					var dddd = Ext[TT(0x1cb)](cccc.responseText);
+					dddd.status && (Ext[TT(0x2b0)](TT(0x1df))[TT(0x34d)](dddd[TT(0x32b)]),
+						Ext[TT(0x2b0)](TT(0x228)).setStyle(TT(0x1cc), TT(0x37c)));
+				}
+			});
+			b.callParent(arguments);
+			var c = b[TT(0x3b6)]
+				, a = $(c.dom)[TT(0x340)]({
+					"cursorborder": "",
+					"cursorwidth": 0x6,
+					"cursorcolor": TT(0x39e),
+					"boxzoom": false,
+					"autohidemode": true
+				});
+			b[TT(0x1c2)] = a,
+				b["submitEl"].on(TT(0x3b1), function () {
+					b[TT(0x1d7)]() && (Ext[TT(0x2b0)](TT(0x301))[TT(0x286)]("display") == TT(0x24f) && b[TT(0x25a)](TT(0x3b0)));
+				}),
+				b.continueEl.on(TT(0x3b1), function () {
+					b[TT(0x25a)](TT(0x3b0));
+				}),
+				b[TT(0x2e5)] && b[TT(0x2e5)].on(TT(0x3b1), function () {
+					b.onerror && b[TT(0x1dd)](),
+						b[TT(0x25a)]("continue");
+				}),
+				b.viewAnalysisEl && b[TT(0x1ea)].on(TT(0x3b1), function () {
+					Ext.get(TT(0x2fa)).setStyle(TT(0x1cc), TT(0x37c));
+				}),
+				b[TT(0x1b1)] && b[TT(0x1b1)].on(TT(0x3b1), function () {
+					Ext[TT(0x2b0)](TT(0x2fa))[TT(0x1a5)](TT(0x1cc), "none");
+				});
+		},
+		"checkResult": function () {
+			var f = this
+				, i = Ext[TT(0x21a)](TT(0x268), f.el[TT(0x19c)])
+				, e = true
+				, g = f.renderData
+				, b = g[TT(0x3b3)]
+				, c = []
+				, h = f[TT(0x252)]
+				, a = f[TT(0x31c)]
+				, dtype_dtype = g.dtype;
+			Ext[TT(0x280)](i, function (k, j) {
+				(k[TT(0x28c)] == TT(0x33e) && !k[TT(0x27b)] || k[TT(0x28c)] == TT(0x1e6) && k[TT(0x27b)]) && (e = false),
+					k[TT(0x27b)] && c.push(b[j].name);
+			});
+			!e ? g[TT(0x1fd)] && g[TT(0x1fd)] > 0x0 ? (Ext[TT(0x2b0)](TT(0x1d8)).setStyle(TT(0x1cc), "block"),
+				Ext[TT(0x2b0)]("videoquiz-submit").setStyle("display", TT(0x24f)),
+				dtype_dtype == "InteractiveQuiz" ? Ext[TT(0x2b0)]("knowledgeBack")[TT(0x1a5)](TT(0x1cc), "block") : Ext[TT(0x2b0)](TT(0x301))[TT(0x1a5)](TT(0x1cc), "block")) : dtype_dtype == "InteractiveQuiz" && g.errorBack == 0x1 && g[TT(0x218)] != "" ? (Ext[TT(0x2b0)](TT(0x327)).setStyle(TT(0x1cc), "block"),
+					Ext.get(TT(0x1d5)).setStyle("display", "block")) : Ext[TT(0x2b0)](TT(0x1d4))[TT(0x1a5)](TT(0x1cc), "block") : (Ext[TT(0x2b0)](TT(0x2be))[TT(0x1a5)]("display", "block"),
+						dtype_dtype == TT(0x3a5) && (Ext.get("videoquiz-continue").setStyle(TT(0x1cc), "block"),
+							Ext[TT(0x2b0)](TT(0x1d5))[TT(0x1a5)](TT(0x1cc), "none"),
+							Ext[TT(0x2b0)](TT(0x32d)).setStyle(TT(0x1cc), TT(0x24f)),
+							Ext[TT(0x2b0)](TT(0x1d4))[TT(0x1a5)](TT(0x1cc), TT(0x24f)),
+							Ext[TT(0x2b0)](TT(0x1d8))[TT(0x1a5)](TT(0x1cc), "none"),
+							Ext[TT(0x2b0)](TT(0x327)).setStyle(TT(0x1cc), TT(0x24f))));
+			if (typeof a != "undefined") {
+				var answerContent_answerContent = c.join(",");
+				Ext["Ajax"][TT(0x3bc)]({
+					"url": a,
+					"params": {
+						"eventid": g[TT(0x1f5)],
+						"isRight": e,
+						"memberinfo": g[TT(0x2d5)],
+						"answerContent": answerContent_answerContent
+					},
+					"method": TT(0x2b0),
+					"success": function (aaaa) {
+						g[TT(0x1ff)] = answerContent_answerContent;
+						var bbbbb = Ext[TT(0x1cb)](aaaa[TT(0x1ce)]);
+						if (bbbbb[TT(0x36c)]) {
+							dtype_dtype == TT(0x3a5) && (Ext[TT(0x2b0)](TT(0x1df))[TT(0x34d)](bbbbb[TT(0x32b)]),
+								Ext.get(TT(0x228)).setStyle("display", "inline-block"));
+							if (bbbbb[TT(0x2a7)] && dtype_dtype == TT(0x3a5)) {
+								typeof bbbbb.showTip != TT(0x239) && bbbbb.showTip ? Ext[TT(0x2b0)](TT(0x2be))[TT(0x34d)]("<span\x20class=\x22spanHas\x20fr\x22\x20style=\x27display:block\x27><span\x20id=\x22InteractiveQuizTip\x22>恭喜你，答对了！你的答题水准超过了" + bbbbb[TT(0x3c3)] + TT(0x303)) : Ext[TT(0x2b0)](TT(0x2be))[TT(0x34d)]("<span\x20class=\x22spanHas\x20fr\x22\x20style=\x27display:block\x27><span\x20id=\x22InteractiveQuizTip\x22>恭喜你，答对了！</span></span>");
+								if (bbbbb.testAnalysis) {
+									Ext[TT(0x2b0)]("tkParsing_con")[TT(0x34d)]("解析：" + bbbbb[TT(0x385)]),
+										Ext[TT(0x2b0)](TT(0x2fa))[TT(0x1a5)]("display", TT(0x37c)),
+										Ext.get(TT(0x302)).setStyle(TT(0x1cc), "block");
+									var ccccc = f[TT(0x201)]
+										, ddddd = $(ccccc.dom)[TT(0x340)]({
+											"cursorborder": "",
+											"cursorwidth": 0x6,
+											"cursorcolor": TT(0x39e),
+											"boxzoom": false,
+											"autohidemode": true
+										});
+									f[TT(0x20e)] = ddddd;
+								}
+							}
+						}
+					}
+				}),
+					!e && f[TT(0x1dd)] && dtype_dtype != TT(0x3a5) && f[TT(0x1dd)]();
+			} else
+				!e && (Ext.Ajax[TT(0x3bc)]({
+					"url": h,
+					"params": {
+						"eventid": g[TT(0x1f5)],
+						"memberinfo": g.memberinfo,
+						"answerContent": c.join(",")
+					},
+					"method": TT(0x2b0)
+				}),
+					f[TT(0x1dd)] && dtype_dtype != "InteractiveQuiz" && f[TT(0x1dd)]());
+			return !e && g[TT(0x2de)] == 0x1 && (e = true,
+				Ext.get(TT(0x32d))[TT(0x1a5)](TT(0x1cc), TT(0x24f)),
+				Ext.get(TT(0x301))[TT(0x1a5)](TT(0x1cc), "block")),
+				e;
+		},
+		"continueFun": function () {
+			var a = this;
+			a.fireEvent("continue");
+		}
+	}),
+	Ext.define("ans.videojs.VideoImg", {
+		"extend": "Ext.Component",
+		"xtype": TT(0x257),
+		"renderTpl": ['<div class="sp_video_pic">', TT(0x1af), TT(0x3a1), TT(0x1a7)],
+		"renderSelectors": {
+			"closeEl": TT(0x31b)
+		},
+		"afterRender": function () {
+			var a = this;
+			a.callParent(arguments),
+				a.el.on("click", function () {
+					a[TT(0x25a)](TT(0x3b0));
+				}),
+				a[TT(0x2bc)].on("click", function () {
+					a.fireEvent("continue");
+				});
+		}
+	}),
+	Ext.define(TT(0x212), {
+		"extend": TT(0x381),
+		"xtype": "videoannotation",
+		"cls": TT(0x22f),
+		"renderTpl": [TT(0x20d), TT(0x2f9), "<div class=\x22vidNota_con  id=\x22pizhuScroll\x22 tabindex=\x221\x22 style=\x22overflow: hidden; outline: none;\x22>", TT(0x2ea), TT(0x1a7), TT(0x1a7)],
+		"renderSelectors": {
+			"closeEl": TT(0x333),
+			"contentEl": TT(0x339)
+		},
+		"afterRender": function () {
+			var c = this
+				, b = c[TT(0x338)];
+			c.callParent(arguments),
+				c[TT(0x2bc)].on(TT(0x3b1), function () {
+					c[TT(0x25a)](TT(0x3b0));
+				});
+			var a = $(b[TT(0x19c)])[TT(0x340)]({
+				"cursorborder": "",
+				"cursorwidth": 0x6,
+				"cursorcolor": "#e0e0e0",
+				"boxzoom": false,
+				"autohidemode": true
+			});
+			c.scroller = a;
+		}
+	}),
+	Ext.define("ans.videojs.VideoPpt", {
+		"extend": TT(0x381),
+		"xtype": TT(0x2e9),
+		"cls": "ans-videoppt",
+		"width": "100%",
+		"model": false,
+		"renderTpl": [TT(0x33b), TT(0x1f6), TT(0x31e), TT(0x1da), TT(0x1a7)],
+		"renderSelectors": {
+			"pptPicEl": TT(0x38b),
+			"sizeBigEl": TT(0x25f),
+			"sizeSmallEl": TT(0x27f)
+		},
+		"afterRender": function () {
+			var a = this;
+			a.callParent(arguments),
+				a[TT(0x36a)].on(TT(0x3b1), function (g) {
+					g[TT(0x33d)](),
+						a[TT(0x36a)][TT(0x22a)](TT(0x244));
+					if (a[TT(0x36a)][TT(0x233)](TT(0x244))) {
+						Ext.get(TT(0x225)).setStyle(TT(0x1cc), TT(0x24f)),
+							Ext[TT(0x2b0)](TT(0x237))[TT(0x1a5)](TT(0x1cc), "block");
+						var b = Ext[TT(0x2b0)]("video")[TT(0x286)](TT(0x258))
+							, f = Ext.get("sp_video_ppt_pic").getStyle(TT(0x258))
+							, c = (parseInt(b) - 0x3c - parseInt(f)) / 0x2;
+						Ext.get("sp_video_ppt_pic")[TT(0x1a5)](TT(0x393), c + "px"),
+							Ext[TT(0x2b0)]("sp_video_ppt_pic")[TT(0x1a5)]("left", "0");
+					} else
+						Ext[TT(0x2b0)]("sp_size_big").setStyle("display", "block"),
+							Ext[TT(0x2b0)](TT(0x237)).setStyle("display", "none"),
+							Ext[TT(0x2b0)]("sp_video_ppt_pic")[TT(0x1a5)]("top", TT(0x376)),
+							Ext.get("sp_video_ppt_pic").setStyle("left", TT(0x376));
+				}),
+				a[TT(0x21e)].on("click", function (g) {
+					g[TT(0x33d)](),
+						a[TT(0x36a)][TT(0x22a)](TT(0x244)),
+						Ext[TT(0x2b0)](TT(0x225))[TT(0x1a5)](TT(0x1cc), TT(0x24f)),
+						Ext[TT(0x2b0)](TT(0x237))[TT(0x1a5)](TT(0x1cc), "block");
+					var b = Ext[TT(0x2b0)](TT(0x324))[TT(0x286)](TT(0x258))
+						, f = Ext[TT(0x2b0)]("sp_video_ppt_pic")[TT(0x286)](TT(0x258))
+						, c = (parseInt(b) - 0x3c - parseInt(f)) / 0x2;
+					Ext[TT(0x2b0)]("sp_video_ppt_pic")[TT(0x1a5)]("top", c + "px"),
+						Ext[TT(0x2b0)]("sp_video_ppt_pic").setStyle(TT(0x2ab), "0");
+				}),
+				a[TT(0x38a)].on("click", function (b) {
+					b.stopPropagation(),
+						a[TT(0x36a)][TT(0x22a)](TT(0x244)),
+						Ext.get(TT(0x225))[TT(0x1a5)]("display", "block"),
+						Ext.get("sp_size_small")[TT(0x1a5)](TT(0x1cc), TT(0x24f)),
+						Ext.get("sp_video_ppt_pic")[TT(0x1a5)](TT(0x393), TT(0x376)),
+						Ext.get("sp_video_ppt_pic")[TT(0x1a5)](TT(0x2ab), TT(0x376));
+				});
+		}
+	}),
+	Ext.define(TT(0x35b), {
+		"extend": TT(0x276),
+		"cls": "ans-timelineobjects",
+		"autoScroll": true,
+		"hidden": true,
+		"hideMode": TT(0x251),
+		"constructor": function (a) {
+			var b = this;
+			b.callParent(arguments),
+				b.bg = Ext[TT(0x2cf)](TT(0x2f6), {
+					"renderTo": a.renderTo
+				}),
+				b.objects = a.objects && a[TT(0x322)].sort ? b[TT(0x240)](a[TT(0x322)]) : [],
+				b["current"] = 0;
+		},
+		"showObject": function (m, b, e) {
+			var j = this,
+				h = j.getBox(),
+				c = j[TT(0x2fe)][TT(0x35f)](0x0),
+				l,
+				i = function () {
+					l[TT(0x1f9)](),
+						j[TT(0x2a4)](),
+						m[TT(0x1a9)]();
+				};
+			c != null && c.destroy();
+			if (b == "IMG") {
+				var f = {
+					"src": e.url.replace(/origin/, h.width + "_" + h[TT(0x258)])
+				};
+				l = j[TT(0x30a)]({
+					"xtype": TT(0x257),
+					"renderData": f
+				});
+			}
+			if (b == TT(0x1c7)) {
+				var k = function () { };
+				if (e.errorBackTime && e.errorBackTime > 0) {
+					var n = e[TT(0x1fd)] * 0x3c;
+					k = function () {
+						var o = Math[TT(0x39d)](m[TT(0x32c)]() - n, 0);
+						m[TT(0x300)] = true,
+							m.currentTime(o);
+					}
+						;
+				}
+				l = j[TT(0x30a)]({
+					"xtype": "videoquiz",
+					"renderData": e,
+					"quizErrorReportUrl": j.quizErrorReportUrl,
+					"validationUrl2": j.validationUrl2,
+					"onerror": k
+				});
+			}
+			if (b == "InteractiveQuiz") {
+				var k = function () { };
+				if (e[TT(0x1fd)] && e[TT(0x1fd)] > 0) {
+					var n = e[TT(0x1fd)] * 0x3c;
+					k = function () {
+						var o = Math[TT(0x39d)](m[TT(0x32c)]() - n, 0);
+						m[TT(0x300)] = true,
+							m.currentTime(o);
+					}
+						;
+				}
+				if (e[TT(0x236)] == 0x1 && e[TT(0x218)] != "") {
+					var n = 0
+						, pppp = e[TT(0x218)][TT(0x39c)](":")
+						, qqqq = pppp.length;
+					qqqq > 0x0 && (qqqq == 0x1 ? n = parseInt(pppp[0]) * 0x3c : qqqq == 0x2 && (n = parseInt(pppp[0]) * 0x3c + parseInt(pppp[1]))),
+						k = function () {
+							m[TT(0x300)] = true,
+								m[TT(0x32c)](n);
+						}
+						;
+				}
+				e[TT(0x2b7)] = TT(0x3a5),
+					l = j[TT(0x30a)]({
+						"xtype": "videoquiz",
+						"renderData": e,
+						"quizErrorReportUrl": j[TT(0x252)],
+						"validationUrl2": j.validationUrl2,
+						"quizRightCountUrl": j[TT(0x1de)],
+						"onerror": k
+					});
+			}
+			if (b == TT(0x36f)) {
+				if (e.fp == 0)
+					return;
+				var a = e.url;
+				e.thumb ? a = e[TT(0x1b7)] + e["pageNo"] + TT(0x369) : a = a.replace(/swfv2\/.*$/, TT(0x1b8) + e.fp + TT(0x369));
+				var f = {
+					"src": a
+				};
+				l = j.add({
+					"xtype": "videoppt",
+					"renderData": f
+				});
+			}
+			b == TT(0x3c7) && (l = j.add({
+				"xtype": TT(0x199),
+				"renderData": e
+			}));
+			if (!l)
+				return;
+			l.on(TT(0x3b0), function () {
+				i();
+			});
+			var g = !(l[TT(0x314)] === false);
+			j[TT(0x2ec)](g),
+				g && m[TT(0x34c)]();
+		},
+		"showModel": function (a) {
+			var c = this;
+			c[TT(0x220)](),
+				a ? (c[TT(0x23b)](TT(0x2c4)),
+					c[TT(0x3ab)](true),
+					c.bg[TT(0x220)]()) : (c[TT(0x2d6)]("ans-timelineobjects-autosize"),
+						c[TT(0x3ab)](false));
+		},
+		"hide": function () {
+			this.callParent(arguments),
+				this.bg.hide.apply(this.bg, arguments);
+		},
+		"updateTime": function (a, e) {
+			if (this.current >= this.objects.length || a.scrubbing())
+				return;
+			var c = this;
+			var f = c.objects[c["current"]];
+			var b = f.style;
+			var g = f.datas[0];
+			e >= g.startTime && (c["current"]++,
+				c.showObject(a, b, g));
+		},
+		"resetTime": function (b, e) {
+			var c = this;
+			var a;
+			for (a = 0; a < c.objects.length; a++) {
+				var f = c.objects[a].datas[0].startTime;
+				if (e <= f)
+					break;
+			}
+			c["current"] = a;
+		},
+		"sort_": function (a) {
+			return a && a.sort && a.sort(function (f, e) {
+				var c = f.datas[0].startTime
+					, b = e.datas[0].startTime;
+				return c - b;
 			});
 		}
-	});
-	videojs[_0x214b1f(0x2c3)](_0x214b1f(0x221), _0x36665d);
-}()));
+	}),
+	(function () {
+		var Plugin = videojs[TT(0x341)](TT(0x3a3))
+			, TimelineObjects = videojs[TT(0x1ee)](Plugin, {
+				"constructor": function (player, options) {
+					Plugin.call(this, player, options);
+					if (!options.url)
+						return;
+					var me = this;
+					player[TT(0x2c8)] = [],
+						Ext["Ajax"][TT(0x3bc)]({
+							"url": options.url,
+							"async": false,
+							"success": function (resp) {
+								if (resp[TT(0x36c)] != 0xc8)
+									return;
+								eval("var data=" + resp.responseText);
+								if (data && data.length > 0) {
+									var hhh = [];
+									for (var iii = 0; iii < data.length; iii++) {
+										var jjj = data[iii];
+										if (jjj.style == TT(0x3a5)) {
+											var kkk = jjj.datas;
+											if (kkk && kkk.length > 0)
+												var lll = {
+													"time": kkk[0].startTime,
+													"text": TT(0x299)
+												};
+											hhh[TT(0x335)](lll);
+										}
+									}
+									player[TT(0x2c8)] = hhh;
+								}
+								var timeline = Ext.create("ans.videojs.TimelineObjects", {
+									"renderTo": player.el_,
+									"quizErrorReportUrl": options[TT(0x252)],
+									"validationUrl2": options[TT(0x31c)],
+									"quizRightCountUrl": options[TT(0x1de)],
+									"objects": data
+								});
+								player.on(TT(0x1a9), function () {
+									timeline[TT(0x39b)](player, player[TT(0x32c)]());
+								}),
+									player.on(TT(0x24c), function () {
+										timeline[TT(0x39b)](player, player[TT(0x32c)]());
+									}),
+									player.on(TT(0x3a9), function () {
+										!player[TT(0x3c8)]() && timeline[TT(0x2c0)](player, player[TT(0x32c)]());
+									});
+							}
+						});
+				}
+			});
+		videojs[TT(0x2c3)](TT(0x34a), TimelineObjects);
+	}()),
+	(function () {
+		var Plugin = videojs.getPlugin(TT(0x3a3));
+		var Marker = videojs.extend(Plugin, {
+			"constructor": function (player, options) {
+				Plugin.call(this, player, options);
+				if (!options.url)
+					return;
+				var me = this;
+				Ext["Ajax"].request({
+					"url": options.url,
+					"async": false,
+					"success": function (resp) {
+						if (resp[TT(0x36c)] != 0xc8)
+							return;
+						eval(TT(0x283) + resp[TT(0x1ce)]);
+						if (!data.status)
+							return;
+						var videoPlayer = videojs("video");
+						if (videoPlayer && typeof videoPlayer.markers === TT(0x29b)) {
+							var markers_markers = player[TT(0x2c8)];
+							markers_markers[TT(0x335)].apply(markers_markers, data[TT(0x30b)]),
+								videoPlayer[TT(0x272)]({
+									"markerTip": {
+										"display": true,
+										"text": function (marker) {
+											return marker.text;
+										}
+									},
+									"markers": markers_markers,
+									"onMarkerClick": function (marker) {
+										if (options.ff != 1)
+											return false;
+										var key = $(this)[TT(0x2e7)](TT(0x1cf));
+										return player.currentTime(marker[TT(0x354)]),
+											false;
+									}
+								});
+						}
+						if (data.list && data.list.length > 0) {
+							var aa = [];
+							var bb = {};
+							for (var i = 0; i < data[TT(0x30b)].length; i++) {
+								var marker = data[TT(0x30b)][i];
+								var cc = marker[TT(0x35d)];
+								if (!bb[cc]) {
+									var dd = [];
+									dd[TT(0x335)](marker),
+										bb[cc] = dd,
+										aa.push(cc);
+								} else {
+									var ee = bb[cc];
+									ee[TT(0x335)](marker),
+										bb[cc] = ee;
+								}
+							}
+							function ff1(aaa) {
+								var bbb = "<div\x20class=\x22zsCloud_box\x22><h2\x20class=\x22zsCloud_seltime\x22>选择时间</h2><div\x20class=\x22zsCloud_div\x22><div\x20class=\x22zsCloud_div_list\x22>";
+								for (var i = 0; i < aaa.length; i++) {
+									var ccc = aaa[i]
+										, ddd = Ext.fly(fff[TT(0x391)][0]).select(TT(0x288) + ccc[TT(0x2ff)] + ":not(.markertime)")
+										, eee = videojs[TT(0x375)](ccc[TT(0x354)]);
+									ddd && ddd[TT(0x391)][0] && ddd[TT(0x391)][0]["parentElement"][TT(0x26e)](),
+										bbb += TT(0x2c7) + ccc[TT(0x2ff)] + TT(0x20b) + ccc.time + "\x22\x20title=\x22" + eee + "\x22\x20onclick=\x22markersPlayer(this)\x22>" + eee + "</div>";
+								}
+								return bbb += TT(0x262),
+									bbb;
+							}
+							Ext[TT(0x269)](TT(0x353)).setStyle("display", "block");
+							var fff = Ext[TT(0x269)](TT(0x243));
+							if (fff && fff[TT(0x391)][0]) {
+								var ggg;
+								for (var i = 0; i < aa.length; i++) {
+									var hhh = aa[i]
+										, iii = bb[hhh]
+										, jjj = "";
+									if (iii) {
+										if (iii.length == 1) {
+											var kkk = iii[0]
+												, lll = Ext.fly(fff.elements[0])[TT(0x269)](".topicId" + kkk[TT(0x2ff)] + TT(0x1c8))
+												, mmm = videojs[TT(0x375)](kkk.time);
+											lll && lll.elements[0] && lll[TT(0x391)][0]["parentElement"].remove(),
+												jjj = TT(0x24b) + kkk[TT(0x2ff)] + "\x20markertime\x27\x20data-marker-time=\x27" + kkk[TT(0x354)] + "ERYA_TSK_HOST" + mmm + "\x27\x20onclick=\x27markersPlayer(this)\x27>" + kkk.text + TT(0x290);
+										} else
+											jjj = TT(0x1bc) + hhh + TT(0x374),
+												iii && iii.length > 0x0 ? jjj += ff1(iii) : jjj += TT(0x28a);
+									}
+									ggg ? ggg = Ext.DomHelper[TT(0x31d)](TT(0x2e0), ggg[TT(0x391)][0], jjj) : ggg = Ext[TT(0x214)][TT(0x31d)](TT(0x2aa), fff[TT(0x391)][0], jjj),
+										ggg = Ext.fly(ggg).select("");
+								}
+							}
+							options[TT(0x32a)] && options[TT(0x32a)] == 1 && (Ext[TT(0x269)](TT(0x2b3))[TT(0x1a5)](TT(0x1cc), "block"),
+								Ext[TT(0x269)](TT(0x2e3)).setStyle(TT(0x1cc), "block"));
+						}
+						var dataMap = new Map();
+						var wordList = new Array();
+						if (data[TT(0x30b)] && data[TT(0x30b)].length > 0)
+							for (var i = 0; i < data.list.length; i++) {
+								var topicid = data[TT(0x30b)][i][TT(0x2ff)];
+								var item = dataMap.get(topicid);
+								!item && (item = {},
+									item[TT(0x35d)] = data[TT(0x30b)][i][TT(0x35d)],
+									item[TT(0x354)] = data[TT(0x30b)][i][TT(0x354)],
+									item.topicid = data[TT(0x30b)][i][TT(0x2ff)],
+									item[TT(0x266)] = 0,
+									item[TT(0x1e8)] = {
+										"data-marker-time": data[TT(0x30b)][i].time,
+										"onclick": "markersPlayer(this)"
+									},
+									dataMap.set(topicid, item),
+									wordList.push(item)),
+									item.weight += 1;
+							}
+						$(function () {
+							wordList.length != 0x0 && $(TT(0x229))[TT(0x2b9)](wordList);
+							function nnn(ooo) {
+								$(ooo)[TT(0x340)]({
+									"cursorborder": "",
+									"cursorwidth": 0x8,
+									"cursorcolor": TT(0x3c6),
+									"boxzoom": false,
+									"autohidemode": true
+								}),
+									setInterval(function () {
+										$(ooo)[TT(0x211)]()[TT(0x22d)]();
+									}, 0x12c);
+							}
+							$(TT(0x28b))[TT(0x280)](function (ppp) {
+								$(this)[TT(0x396)](TT(0x21f))[TT(0x31a)]("id", TT(0x2fb) + ppp),
+									nnn(TT(0x3ca) + ppp);
+							});
+						}),
+							$(".zsCloud_down")[TT(0x3b1)](function () {
+								var con = $(TT(0x2e3));
+								con.is(TT(0x22e)) ? (con[TT(0x2a4)](),
+									$(this)[TT(0x34e)]("zsCloud_up"),
+									$(this)[TT(0x35d)]("展开")) : (con.show(),
+										$(this)[TT(0x398)]("zsCloud_up"),
+										$(this)[TT(0x35d)]("收起"));
+							});
+					}
+				});
+			}
+		});
+		videojs[TT(0x2c3)](TT(0x263), Marker);
+	}()),
+	(function () {
+		var Plugin = videojs[TT(0x341)](TT(0x3a3))
+			, Subtitle = videojs.extend(Plugin, {
+				"constructor": function (player, options) {
+					Plugin.call(this, player, options);
+					var me = this
+						, subtitleUrl = options[TT(0x348)]
+						, toVtt = function (srt) {
+							var m = srt[TT(0x3c5)](/support\/(\w+).\w+/);
+							if (m)
+								return ServerHosts.PARENT_HOST + TT(0x3ba) + m[1];
+						}
+						, addSub = function (name, src, isdefault) {
+							player.addRemoteTextTrack({
+								"kind": TT(0x2a1),
+								"srclang": "cn",
+								"label": name,
+								"src": src,
+								"default": isdefault
+							}, true);
+						};
+					player[TT(0x20c)](function () {
+						subtitleUrl && Ext.Ajax[TT(0x3bc)]({
+							"url": subtitleUrl,
+							"success": function (resp) {
+								if (resp[TT(0x36c)] != 0xc8)
+									return;
+								eval(TT(0x379) + resp[TT(0x1ce)]);
+								var index = 0x0
+									, enIndex = 0;
+								subs.length > 0x0 && Ext[TT(0x280)](subs, function (o) {
+									options[TT(0x2b1)] == 0x1 && o[TT(0x2ad)] == "English" ? (o.selected = true,
+										enIndex = index) : o[TT(0x33f)] = false,
+										addSub(o.name, toVtt(o.url), o[TT(0x33f)]),
+										index++;
+								}),
+									options[TT(0x2b1)] == 0x1 && (Ext.select(".vjs-subs-caps-button\x20.vjs-icon-placeholder")[TT(0x34d)]("翻译"),
+										Ext[TT(0x269)](".vjs-subs-caps-button\x20.vjs-icon-placeholder").addCls(TT(0x1e0))),
+									setTimeout(function () {
+										var tracks = player.textTracks();
+										options[TT(0x2b1)] == 0x1 ? tracks && tracks[enIndex] ? tracks[enIndex].mode = TT(0x206) : tracks && tracks[0] && (tracks[0][TT(0x1c4)] = "showing") : tracks && tracks[0] && (tracks[0][TT(0x1c4)] = TT(0x206));
+									}, 0x1f4);
+							}
+						});
+						var settings = player[TT(0x3a4)];
+						settings[TT(0x311)]({
+							"backgroundColor": TT(0x19b),
+							"backgroundOpacity": "0",
+							"edgeStyle": TT(0x21c)
+						}),
+							settings[TT(0x1ad)]();
+					});
+				}
+			});
+		videojs[TT(0x2c3)](TT(0x2d4), Subtitle);
+	}()),
+	Ext.define(TT(0x2cb), {
+		"extend": "Ext.Component",
+		"xtype": TT(0x361),
+		"cls": TT(0x1d6),
+		"renderTpl": [TT(0x22c), TT(0x334), TT(0x2dd), TT(0x295), TT(0x39a), TT(0x39f), TT(0x30f), TT(0x1d3), TT(0x35c), TT(0x3ae)],
+		"renderSelectors": {
+			"errorMsgEl": TT(0x2f2)
+		},
+		"afterRender": function () {
+			var b = this;
+			b.callParent(arguments);
+			var a = Ext[TT(0x21a)]("input", b.el.dom);
+			Ext[TT(0x280)](a, function (f, e) {
+				Ext.fly(f).on(TT(0x3b1), function () {
+					b[TT(0x2bd)](e);
+				});
+			});
+			try {
+				typeof createVideoTask === TT(0x29b) ? createVideoTask() : console.log(TT(0x1b2));
+			} catch (c) { }
+		},
+		"setErrorMsg": function (a) {
+			Ext.fly(this[TT(0x1bb)])[TT(0x34d)](a);
+		}
+	}),
+	Ext.define("ans.videojs.ErrorNote", {
+		"extend": "Ext.Component",
+		"cls": "ans-vjserrdisplay",
+		"renderTpl": [TT(0x38c)]
+	}),
+	(function () {
+		var b = videojs[TT(0x227)]("ErrorDisplay")
+			, a = videojs[TT(0x1ee)](b, {
+				"constructor": function (e, c) {
+					b.call(this, e, c);
+				},
+				"colse": function () {
+					b[TT(0x2d2)][TT(0x1ba)].call(this),
+						me[TT(0x3c0)] && (me[TT(0x3c0)][TT(0x1f9)](),
+							me[TT(0x3c0)] = null);
+				},
+				"fill": function () {
+					b[TT(0x2d2)][TT(0x2ed)].call(this);
+					var g = this
+						, i = g[TT(0x2bb)]
+						, h = i[TT(0x273)][TT(0x312)]
+						, e = Ext.query(TT(0x2a3), g.el_)[0];
+					g[TT(0x3c0)] && (g[TT(0x3c0)][TT(0x1f9)](),
+						delete g[TT(0x3c0)]);
+					if (!i[TT(0x2b5)] || !h) {
+						g[TT(0x3c0)] = Ext[TT(0x2cf)](TT(0x351), {
+							"renderTo": g[TT(0x254)]
+						});
+						return;
+					}
+					var f = i[TT(0x352)]()
+						, c = 0;
+					Ext[TT(0x280)](h, function (k, j) {
+						f == k && (c = j);
+					}),
+						g[TT(0x3c0)] = Ext[TT(0x2cf)](TT(0x2cb), {
+							"renderTo": g[TT(0x254)],
+							"onSelected": function (j) {
+								i.selectCDN(j),
+									g[TT(0x1f1)]();
+							},
+							"renderData": {
+								"playlines": h,
+								"errorMsg": g.content(),
+								"selectedIndex": c
+							}
+						});
+				}
+			});
+		videojs[TT(0x310)]("ErrorDisplay", a);
+	}()),
+	(function () {
+		var a = null;
+		typeof window.videojs === TT(0x239) && typeof require === TT(0x29b) ? a = require(TT(0x330)) : a = window.videojs,
+			function (i, h) {
+				var g = {}, c, k = {}, b = {};
+				function f(p, o, n, q) {
+					k = {
+						"label": n,
+						"sources": o
+					};
+					if (typeof q === TT(0x29b))
+						return q(p, o, n);
+					return p.src(o[TT(0x23a)](function (r) {
+						return {
+							"src": r.src,
+							"type": r[TT(0x205)],
+							"res": r.res
+						};
+					})),
+						p;
+				}
+				var l = h.getComponent("MenuItem")
+					, m = h[TT(0x1ee)](l, {
+						"constructor": function (p, o, q, n) {
+							this.onClickListener = q,
+								this.label = n,
+								l.call(this, p, o),
+								this.src = o.src,
+								this.on("click", this[TT(0x3b8)]),
+								this.on("touchstart", this[TT(0x3b8)]),
+								o[TT(0x271)] && (this[TT(0x267)](),
+									this[TT(0x33f)](true),
+									this[TT(0x34e)](TT(0x241)));
+						},
+						"showAsLabel": function () {
+							this.label && (this.label[TT(0x1b5)] = this[TT(0x273)].label);
+						},
+						"onClick": function (q) {
+							this[TT(0x1c1)](this);
+							var p = this[TT(0x2bb)][TT(0x32c)]()
+								, n = this[TT(0x2bb)][TT(0x3c8)]();
+							this[TT(0x267)](),
+								this[TT(0x34e)](TT(0x241));
+							!n && this[TT(0x2bb)][TT(0x265)][TT(0x2a4)]();
+							typeof q !== TT(0x29b) && typeof this[TT(0x273)].customSourcePicker === "function" && (q = this.options_["customSourcePicker"]);
+							var o = "loadeddata";
+							this[TT(0x2bb)][TT(0x373)] !== TT(0x315) && this.player_[TT(0x1bd)]() === TT(0x24f) && this[TT(0x2bb)][TT(0x373)] !== "Flash" && (o = TT(0x3a9)),
+								f(this[TT(0x2bb)], this.src, this[TT(0x273)].label, q)["drag"](o, function () {
+									var r = this[TT(0x2bb)];
+									r.switchStatus = true,
+										r[TT(0x32c)](p),
+										!n && r.play(),
+										r.trigger("resolutionchange");
+								});
+						}
+					});
+				h[TT(0x310)](TT(0x3b5), m);
+				var j = h[TT(0x227)](TT(0x260))
+					, e = h.extend(j, {
+						"constructor": function (q, o, r, n) {
+							this[TT(0x219)] = o[TT(0x219)],
+								this.label = n,
+								this.label.innerHTML = o[TT(0x332)],
+								j.call(this, q, o, r),
+								this[TT(0x29f)](TT(0x1e7));
+							if (r[TT(0x3aa)])
+								this.el()[TT(0x275)](n);
+							else {
+								var p = document[TT(0x1f4)]("span");
+								h[TT(0x19c)][TT(0x34e)](p, TT(0x2e8)),
+									this.el()[TT(0x275)](p);
+							}
+						},
+						"createItems": function () {
+							var o = []
+								, q = this[TT(0x219)] && this[TT(0x219)].label || {}
+								, p = function (r) {
+									o[TT(0x23a)](function (s) {
+										s[TT(0x33f)](s === r),
+											s[TT(0x398)]("vjs-selected");
+									});
+								};
+							for (var n in q) {
+								q[TT(0x23d)](n) && (o.push(new m(this[TT(0x2bb)], {
+									"label": n,
+									"src": q[n],
+									"initialySelected": n === this[TT(0x273)][TT(0x332)],
+									"customSourcePicker": this[TT(0x273)]["customSourcePicker"]
+								}, p, this.label)),
+									b[n] = o[o.length - 0x1]);
+							}
+							return o;
+						}
+					});
+				c = function (w) {
+					var p = h[TT(0x200)](g, w)
+						, u = this
+						, t = document[TT(0x1f4)](TT(0x19e))
+						, s = {};
+					h[TT(0x19c)][TT(0x34e)](t, TT(0x26c)),
+						u.updateSrc = function (y) {
+							if (!y)
+								return u.src();
+							u[TT(0x1a4)].resolutionSwitcher && (u.controlBar[TT(0x2d9)][TT(0x2b4)](),
+								delete u.controlBar.resolutionSwitcher);
+							y = y.sort(r),
+								s = q(y);
+							var z = o(s, y)
+								, x = new e(u, {
+									"sources": s,
+									"initialySelectedLabel": z.label,
+									"initialySelectedRes": z.res,
+									"customSourcePicker": p["customSourcePicker"]
+								}, p, t);
+							return h[TT(0x19c)][TT(0x34e)](x.el(), "vjs-resolution-button"),
+								u[TT(0x1a4)][TT(0x2d9)] = u[TT(0x1a4)].el_[TT(0x285)](x[TT(0x254)], u.controlBar[TT(0x208)](TT(0x1db))[TT(0x254)]),
+								u[TT(0x1a4)][TT(0x2d9)][TT(0x2b4)] = function () {
+									this[TT(0x355)][TT(0x261)](this);
+								}
+								,
+								f(u, z.sources, z.label, p.customSourcePicker);
+						}
+						,
+						u[TT(0x399)] = function (x, y) {
+							if (x == null)
+								return k;
+							return b[x] != null && b[x][TT(0x3b8)](y),
+								u;
+						}
+						,
+						u[TT(0x3c9)] = function () {
+							return s;
+						}
+						;
+					function r(y, x) {
+						if (!y.res || !x.res)
+							return 0;
+						return +x.res - +y.res;
+					}
+					function q(y) {
+						var x = {
+							"label": {},
+							"res": {},
+							"type": {}
+						};
+						return y[TT(0x23a)](function (z) {
+							n(x, TT(0x234), z),
+								n(x, TT(0x368), z),
+								n(x, "type", z),
+								v(x, "label", z),
+								v(x, TT(0x368), z),
+								v(x, "type", z);
+						}),
+							x;
+					}
+					function n(x, y, x) {
+						x[y][x[y]] == null && (x[y][x[y]] = []);
+					}
+					function v(x, y, z) {
+						x[y][z[y]].push(z);
+					}
+					function o(z, A) {
+						var y = p.default
+							, x = "";
+						return y === "high" ? (y = A[0].res,
+							x = A[0].label) : y === TT(0x1fe) || y == null || !z.res[y] ? (y = A[A.length - 0x1].res,
+								x = A[A.length - 0x1].label) : z.res[y] && (x = z.res[y][0].label),
+						{
+							"res": y,
+							"label": x,
+							"sources": z.res[y]
+						};
+					}
+					u[TT(0x20c)](function () {
+						u.options_[TT(0x219)].length > 0x0 && u[TT(0x20a)](function () {
+							u[TT(0x297)](u[TT(0x273)][TT(0x219)]);
+						}, 1);
+					});
+				}
+					,
+					h[TT(0x2c3)](TT(0x380), c);
+			}(window, a);
+	}()),
+	(function () {
+		(function (i, h) {
+			var f = {}, b, g = {}, a = {};
+			function c(o, n, m, p) {
+				g = n;
+				if (typeof p === "function")
+					return p(o, n, m);
+				return o;
+			}
+			var l = h[TT(0x227)](TT(0x3b5))
+				, e = h[TT(0x1ee)](l, {
+					"onClick": function (q) {
+						this[TT(0x1c1)](this);
+						var p = this[TT(0x2bb)][TT(0x32c)]()
+							, m = this[TT(0x2bb)][TT(0x3c8)]();
+						this[TT(0x267)](),
+							this.addClass("vjs-selected");
+						!m && this.player_[TT(0x265)][TT(0x2a4)]();
+						typeof q !== "function" && typeof this[TT(0x273)]["customSourcePicker"] === TT(0x29b) && (q = this[TT(0x273)]["customSourcePicker"]);
+						var o = "loadeddata";
+						this.player_[TT(0x373)] !== TT(0x315) && this[TT(0x2bb)][TT(0x1bd)]() === TT(0x24f) && this.player_[TT(0x373)] !== "Flash" && (o = "timeupdate");
+						var n = c(this[TT(0x2bb)], this.src, this[TT(0x273)].label, q);
+						n && n.one(o, function () {
+							n[TT(0x300)] = true,
+								n[TT(0x32c)](p),
+								!m && n[TT(0x1a9)](),
+								n[TT(0x3bd)](TT(0x19d));
+						});
+					}
+				})
+				, j = h[TT(0x227)](TT(0x260))
+				, k = h[TT(0x1ee)](j, {
+					"constructor": function (p, n, q, m) {
+						this[TT(0x312)] = n.playlines,
+							this.label = m,
+							this.label.innerHTML = n[TT(0x332)],
+							j.call(this, p, n, q),
+							this[TT(0x29f)]("Playline");
+						if (q[TT(0x3aa)])
+							this.el()[TT(0x275)](m);
+						else {
+							var o = document[TT(0x1f4)](TT(0x19e));
+							h[TT(0x34e)](o, TT(0x2e8)),
+								this.el()[TT(0x275)](o);
+						}
+					},
+					"createItems": function () {
+						var o = []
+							, q = this[TT(0x312)] || []
+							, p = function (r) {
+								o.map(function (s) {
+									s[TT(0x33f)](s === r),
+										s[TT(0x398)](TT(0x241));
+								});
+							};
+						for (var n = 0; n < q.length; n++) {
+							var m = q[n].label;
+							o[TT(0x335)](new e(this.player_, {
+								"label": m,
+								"src": q[n],
+								"initialySelected": m === this[TT(0x273)].initialySelectedLabel,
+								"customSourcePicker": this[TT(0x273)]["customSourcePicker"]
+							}, p, this.label)),
+								a[m] = o[o.length - 0x1];
+						}
+						return o;
+					}
+				});
+			b = function (o) {
+				var q = h[TT(0x200)](f, o)
+					, p = this
+					, n = document[TT(0x1f4)]("span")
+					, r = p[TT(0x273)][TT(0x312)];
+				h[TT(0x19c)].addClass(n, "vjs-resolution-button-label");
+				var m = new k(p, {
+					"playlines": r,
+					"initialySelectedLabel": r[0].label,
+					"initialySelectedUrl": r[0].url,
+					"customSourcePicker": q["customSourcePicker"]
+				}, q, n);
+				h[TT(0x19c)][TT(0x34e)](m.el(), "vjs-resolution-button"),
+					h.dom[TT(0x34e)](m.el(), TT(0x26f)),
+					m[TT(0x220)](),
+					p.selectCDN = function (s) {
+						m[TT(0x2fe)][s][TT(0x3b8)](q["customSourcePicker"]),
+							p.play();
+					}
+					,
+					r.length > 0 && (g = r[0]),
+					p.currentPlayline = function () {
+						return g;
+					}
+					,
+					p[TT(0x20c)](function () {
+						p[TT(0x1a4)].videoJsPlayLine = p[TT(0x1a4)][TT(0x254)][TT(0x285)](m[TT(0x254)], p[TT(0x1a4)][TT(0x208)](TT(0x1db))[TT(0x254)]),
+							p[TT(0x1a4)][TT(0x331)][TT(0x2b4)] = function () {
+								this[TT(0x355)].removeChild(this);
+							}
+							;
+					});
+			}
+				,
+				h.registerPlugin("videoJsPlayLine", b);
+		}(window, videojs));
+	}()),
+	Ext.define(TT(0x246), {
+		"videoJs": null,
+		"mixins": {
+			"observable": "Ext.util.Observable"
+		},
+		"constructor": function (a) {
+			a = a || {};
+			var c = this;
+			c.addEvents([TT(0x2fd)]),
+				c.mixins.observable.constructor.call(c, a);
+			var b = videojs(a.videojs, c[TT(0x37a)](a[TT(0x37f)]), function () { });
+			Ext.fly(a.videojs).on(TT(0x356), function (f) {
+				f["preventDefault"]();
+			}),
+				Ext.fly(a.videojs).on(TT(0x2e6), function (f) {
+					(f.keyCode == 0x20 || f.keyCode == 0x25 || f.keyCode == 0x27) && f["preventDefault"]();
+				});
+		},
+		"params2VideoOpt": function (params) {
+			var sources = [];
+			!params[TT(0x35e)] && (params[TT(0x35e)] = "");
+			params[TT(0x36e)] && sources[TT(0x335)]({
+				"src": params[TT(0x36e)],
+				"type": TT(0x2d8)
+			});
+			var logFunc = function (player, url, callback) {
+				var me = this;
+				!me.logCount && (me.logCount = 0),
+					videojs.xhr({
+						"uri": url,
+						"headers": {
+							"Content-Type": "application/json"
+						}
+					}, function (err, resp) {
+						me.logCount++;
+						if (resp.statusCode == 0xc8) {
+							me.logCount = 0;
+							if (resp.body.indexOf("isPassed") < 0) {
+								window.parent && window.parent.location[TT(0x3a6)]();
+								return;
+							}
+							eval("var d=" + resp.body);
+							d.isPassed && callback();
+							return;
+						}
+						me.logCount >= 0x4 && (me.logCount = 0,
+							player[TT(0x34c)](),
+							resp.statusCode != 0x0 ? alert(TT(0x37b) + resp.statusCode + ")") : alert(TT(0x264)));
+					});
+			}
+				, sendLog_ = function (player, isdrag, currentTimeSec, callback) {
+					if (!params.reportUrl)
+						return;
+					var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]",
+						clipTime = (params.startTime || "0") + "_" + (params[TT(0x2eb)] || params.duration),
+						aaa = 0,
+						bbb;
+					currentTimeSec[TT(0x367)]().indexOf("-") != -0x1 ? (bbb = currentTimeSec[TT(0x39c)]("-"),
+						bbb.length == 0x2 && (aaa = parseInt(bbb[1]) * 0x3e8)) : aaa = currentTimeSec * 0x3e8;
+					if (aaa == params.duration * 0x3e8 && isdrag == 0x2)
+						return;
+					var enc = Ext[TT(0x1d2)].format(format, params[TT(0x224)], params["userid"], params[TT(0x19a)] ? params[TT(0x19a)] : "", params.objectId, aaa, TT(0x1c5), params.duration * 0x3e8, clipTime)
+						, rurl = [params.reportUrl, "/", params.dtoken, TT(0x3a7), params[TT(0x224)], TT(0x1aa), currentTimeSec, "&duration=", params.duration, TT(0x372), clipTime, TT(0x2f7), params.objectId, TT(0x3b4), params.otherInfo, TT(0x256), params[TT(0x19a)], TT(0x304), params["userid"], TT(0x32e), isdrag, TT(0x25d), TT(0x231), md5(enc), "&rt=", params.rt, TT(0x3cc), TT(0x2e2), new Date()[TT(0x1ed)]()][TT(0x29a)]("");
+					logFunc(player, rurl, callback);
+				};
+			return {
+				"language": TT(0x1f0),
+				"controls": true,
+				"preload": TT(0x27a),
+				"bigPlayButton": false,
+				"sources": sources,
+				"textTrackDisplay": true,
+				"controlBar": {
+					"volumePanel": {
+						"inline": true
+					},
+					"children": .playToggle", TT(0x33a), "timeDivider", TT(0x23f), TT(0x242), "volumePanel
+				},
+				"plugins": {
+					"audioNote": {
+						"title": params[TT(0x3ad)]
+					},
+					"studyControl": {
+						"enableSwitchWindow": 0x1
+					},
+					"seekBarControl": {
+						"headOffset": params[TT(0x223)],
+						"enableFastForward": params.enableFastForward,
+						"isSendLog": true,
+						"reportTimeInterval": params[TT(0x3bb)],
+						"sendLog": function (player, evt, sec) {
+							if (this[TT(0x293)] !== true)
+								return;
+							var isdrag = 0;
+							switch (evt) {
+								case TT(0x1a9):
+									isdrag = 0x3;
+									break;
+								case TT(0x34c):
+									isdrag = 0x2;
+									break;
+								case TT(0x1f8):
+									isdrag = 0x4;
+									break;
+							}
+							sendLog_(player, isdrag, sec, function () {
+								window[TT(0x2ca)] && window.proxy_completed();
+							});
+						}
+					}
+				}
+			};
+		}
+	}),
+	Ext.define(TT(0x26d), {
+		"extend": "Ext.Component",
+		"cls": TT(0x2cc)
+	}),
+	(function () {
+		var b = videojs[TT(0x341)](TT(0x3a3))
+			, a = videojs[TT(0x1ee)](b, {
+				"constructor": function (e, c) {
+					b.call(this, e, c),
+						Ext[TT(0x2cf)](TT(0x26d), {
+							"renderTo": e[TT(0x254)],
+							"html": c[TT(0x1e9)]
+						});
+				}
+			});
+		videojs[TT(0x2c3)](TT(0x221), a);
+	}()));
+
+/*
+372 sp_video_ppt_pic
+373 constructor
+374 resolution
+375 block
+376 enableFastForward
+377 mouseout
+378 isSupportFace
+379 submitEl
+380 Ajax
+381 Ext.util.Observable
+382 ErrorDisplay
+383 PARENT_HOST
+384 httpshd
+385 Playline
+386 pageNo
+387 objectId
+388 parentElement
+389 preventDefault
+390 setCookie
+391 userid
+392 <div class="sp_video_pic">
+393 log
+394 MenuItem
+395 chapterVideoTranslate
+396 control
+397 danmaku
+398 location
+399 http://cxlive.
+400 #e0e0e0
+401 customSourcePicker
+402 disable
+403 url
+404 current
+405 " title="
+406 one
+407 1090yHOeaS
+408 ispublic
+409 videoannotation
+410 jobid
+411 #000
+412 dom
+413 playlinechange
+414 span
+415 xhr
+416 https://zhibo.chaoxing.com
+417 now_
+418 handleMouseDown
+419 getDanmuList
+420 controlBar
+421 setStyle
+422 handleMouseMove
+423 </div>
+424 loopCaptureInterval
+425 play
+426 &playingTime=
+427 isPlay
+428 captureInterval
+429 updateDisplay
+430 random
+431 <img src="{src}" class="sp_video_img" />
+432 isEnd
+433 delAnalysisEl
+434 createVideoTask函数不存在！
+435 a.ans-videoquiz-back
+436 s2_HOST
+437 innerHTML
+438 &rt=
+439 thumb
+440 thumb/
+441 <ul class="tkItem_ul">
+442 colse
+443 errorMsgEl
+444 <li class="zsCloud_select"><span class="zsCloud_span">
+445 preload
+446 FX_HOST
+447 host
+448 <tpl if="dtype=="InteractiveQuiz"">
+449 onClickListener
+450 scroller
+451 <a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue"><tpl if="dtype=="InteractiveQuiz"">继续学习<tpl else>继续</tpl></a>
+452 mode
+453 d_yHJ!$pdA~5
+454 ananas.ServerHosts
+455 QUIZ
+456 :not(.markertime)
+457 http://surveyapp.fy.
+458 isAlertTip
+459 decode
+460 display
+461 fly
+462 responseText
+463 marker-key
+464 ans.VideoJs
+465 //s2.ananas.chaoxing.com
+466 String
+467 </label></li>
+468 spanNot
+469 knowledgeBack
+470 ans-vjserrdisplay
+471 checkResult
+472 spanNotBack
+473 endCapture
+474 <a class="sp_size_small" href="javascript:;" style="display:none;" id="sp_size_small"></a>
+475 fullscreenToggle
+476 <div class="tkItem">
+477 onerror
+478 quizRightCountUrl
+479 rightNum
+480 vjs-hide-content
+481 s1_HOST
+482 mid
+483 &dtype=Video
+484 freeze
+485 mixins
+486 false
+487 Quality
+488 html
+489 title
+490 viewAnalysisEl
+491 volumePanel
+492 logCount
+493 getTime
+494 extend
+495 isShowDanmu_
+496 zh-CN
+497 close
+498 chapterCapture
+499 &cpi=
+500 createElement
+501 resourceId
+502 <img src="{src}" class="sp_video_img" style="width: 100%;"/>
+503 ; domain=
+504 ended
+505 destroy
+506 ; secure
+507 apply
+508 &classid=
+509 errorBackTime
+510 low
+511 answerContent
+512 mergeOptions
+513 tkParseScrollEl
+514 videojs
+515 reportUrl
+516 http://hls-ans.chaoxing.com/hls/m3u8/
+517 type
+518 showing
+519 playbackRate
+520 getChild
+521 355027JGcfaP
+522 setTimeout
+523 " data-marker-time="
+524 ready
+525 <div class="vidNota">
+526 tkParseScroll
+527 aginPlay
+528 playing
+529 getNiceScroll
+530 ans.videojs.VideoAnnotation
+531 src
+532 DomHelper
+533 480384EPOSua
+534 replace
+535 playToggle
+536 eBstartPoint
+537 sources
+538 query
+539 playbackRateMenuButton
+540 uniform
+541 maxPercent
+542 sizeBigEl
+543 .zsCloud_div
+544 show
+545 audioNote
+546 enableSwitchWindow
+547 headOffset
+548 clazzId
+549 sp_size_big
+550 &courseid=
+551 getComponent
+552 rightAnswerNum
+553 #word_cloud
+554 toggleCls
+555 <a class="spanHref fl" href="javascript:" id="viewAnalysis">查看解析</a>
+556 <div class="ans-vjserrdisplay-title">{errorMsg}</div>
+557 resize
+558 :visible
+559 ans-videoannotation
+560 getPercent
+561 &enc=
+562 subsCapsButton
+563 hasCls
+564 label
+565 indexOf
+566 errorBack
+567 sp_size_small
+568 视频只允许试看
+569 undefined
+570 map
+571 removeCls
+572 CS_HOST
+573 hasOwnProperty
+574 md5
+575 durationDisplay
+576 sort_
+577 vjs-selected
+578 progressControl
+579 .zsCloud_ul
+580 sp_ppt_pic_fullScreen
+581 onlyBackward
+582 ans.AudioJs
+583 allowNextVideo
+584 videoTrialDuration
+585 SeekBar
+586 /richvideo/initdatawithviewer?mid=
+587 <li><span class="topicId
+588 seekend
+589 <span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" <tpl if="parent.dtype=="InteractiveQuiz"">{[this.getChecked(parent.answerContent, values.name, parent.dtype)]}</tpl> name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>
+590 AttachmentSetting
+591 none
+592 isAndroid
+593 visibility
+594 quizErrorReportUrl
+595 getCookie
+596 el_
+597 .m3u8?cdn=
+598 &jobid=
+599 videoimg
+600 height
+601 videojs_id
+602 fireEvent
+603 a.ans-videoquiz-continue
+604 faceCollection
+605 &view=pc
+606 isSendLog_
+607 a.sp_size_big
+608 MenuButton
+609 removeChild
+610 </div></div></div>
+611 marker
+612 您的网络不稳定，请您稍后继续...
+613 bigPlayButton
+614 weight
+615 showAsLabel
+616 input
+617 select
+618 ZHIBO_HOST
+619 CHAOXING_CLASS_HOST
+620 vjs-resolution-button-label
+621 ans.videojs.AudioNote
+622 remove
+623 vjs-playline-button
+624 //cs.ananas.
+625 initialySelected
+626 markers
+627 options_
+628 damuLastGetTime
+629 appendChild
+630 Ext.container.Container
+631 playNextVideo
+632 subobjectid
+633 substr
+634 auto
+635 checked
+636 816OfLHLE
+637 seekBarControl
+638 &objectid=
+639 a.sp_size_small
+640 each
+641 <div class="tkTopic_con tkScroll">
+642 courseid
+643 var data=
+644 P_HOST
+645 insertBefore
+646 getStyle
+647 playAginCapture
+648 .topicId
+649 公网2
+650 </li>
+651 .zsCloud_box
+652 value
+653 http://cloud.ananas.
+654 sliderinactive
+655 indexorder
+656 </span></li>
+657 <div class="tkParsing_screll tkParsing_con" id="tkParsing_con"></div>
+658 screenshot
+659 isSendLog
+660 renderData
+661 <tpl for="playlines">
+662 playingCapture
+663 updateSrc
+664 charCodeAt
+665 互动测验
+666 join
+667 function
+668 attachmentId
+669 a.ans-videoquiz-submit
+670 //appcd.chaoxing.com
+671 controlText
+672 cpi
+673 subtitles
+674 protocol
+675 .vjs-modal-dialog-content
+676 hide
+677 ignorePlay
+678 <div class="tkTopic_numbar fr">共 {interactiveQuestionCount} 题<span id="rightAnswerNum">，已答对 <i id="rightNum"></i> 题</span></div>
+679 isRight
+680 a.spanHref
+681 LIVE_HOST
+682 afterBegin
+683 left
+684 //pan-yz.chaoxing.com
+685 name
+686 disableSeek
+687 startCapture
+688 get
+689 translate
+690 httpmd
+691 .zsCloud_down
+692 dispose
+693 selectCDN
+694 isShowFaceCollection
+695 dtype
+696 window
+697 jQCloud
+698 callParent
+699 player_
+700 closeEl
+701 onSelected
+702 spanHas
+703 end
+704 updateTime
+705 ans.videojs.VideoQuiz
+706 ServerHosts
+707 registerPlugin
+708 ans-timelineobjects-autosize
+709 sendDataLog
+710 getCookieVal
+711 <div class="zsCloud_item topicId
+712 eventPoints
+713 parent
+714 proxy_completed
+715 ans.videojs.ErrorDisplay
+716 ans-audionote
+717 isBackward
+718 sec_
+719 create
+720 resolutionchange
+721 /question/quiz-rightcount?classid=
+722 prototype
+723 div.tkScroll
+724 subtitle
+725 memberinfo
+726 addCls
+727 ratechange
+728 audio/mp3
+729 resolutionSwitcher
+730 8339292VgTlxJ
+731 observable
+732 http:/
+733 您可以尝试其他线路: 
+734 errorContinue
+735 isShowDanmu
+736 afterEnd
+737 ignorePause
+738 &_t=
+739 .zsCloud_body
+740 4iWRajd
+741 backEl
+742 keydown
+743 data
+744 vjs-resolution-button-staticlabel
+745 videoppt
+746 <p>{description}</p>
+747 endTime
+748 showModel
+749 fill
+750 amd
+751 ans-timelineobjectsbg
+752 _disableSeek
+753 /ananas/getpoints?courseid=
+754 div.ans-vjserrdisplay-title
+755 https://k.chaoxing.com
+756 aId
+757 chapterCollectionType
+758 ans.videojs.TimelineObjectsBg
+759 &objectId=
+760 application/x-mpegURL
+761 <div class="vidNota_title"><h2 class="vidNota_h2">[批注]</h2><a class="vidNota_close" href="javascript:;"></a></div>
+762 tkParsing
+763 zsCloud_div_
+764 toElement
+765 seekstart
+766 items
+767 topicid
+768 switchStatus
+769 videoquiz-continue
+770 viewAnalysis
+771 %的同学</span></span>
+772 &userid=
+773 timer
+774 playingFace
+775 <li class="ans-videoquiz-opt"><label>
+776 sort
+777 CXLIVE_HOST
+778 add
+779 list
+780 doublespeed
+781 PHONE_ZT_HOST
+782 substring
+783 {label}
+784 registerComponent
+785 setValues
+786 playlines
+787 showJobLimitTip
+788 model
+789 Youtube
+790 isChaoxing
+791 251292XJrAay
+792 isAginFace
+793 playingLoopCapture
+794 attr
+795 a.sp_video_pic_dele
+796 validationUrl2
+797 insertHtml
+798 <a class="sp_size_big" id="sp_size_big" href="javascript:;"></a>
+799 define
+800 exports
+801 MASTER_HOST
+802 objects
+803 http://erya.tsk.
+804 video
+805 call
+806 isFiled
+807 spanNotBackPoint
+808 video/mp4
+809 fromCharCode
+810 videoTopicCloud
+811 rightAnswerCount
+812 currentTime
+813 videoquiz-submit
+814 &isdrag=
+815 isPassed
+816 video.js
+817 videoJsPlayLine
+818 initialySelectedLabel
+819 a.vidNota_close
+820 <ul class="ans-vjserrdisplay-opts">
+821 push
+822 ; expires=
+823 enable
+824 contentEl
+825 div.vidNota_con
+826 currentTimeDisplay
+827 <div class="sp_video_ppt_pic" id="sp_video_ppt_pic">
+828 relatedTarget
+829 stopPropagation
+830 true
+831 selected
+832 niceScroll
+833 getPlugin
+834 slideractive
+835 statusCode
+836 QUESTIONNAIRE_HOST
+837 length
+838 1904512uZIWQs
+839 hasJobLimit
+840 subtitleUrl
+841 state
+842 timelineObjects
+843 </tpl>
+844 pause
+845 setHTML
+846 addClass
+847 toGMTString
+848 /question/quiz-validation?classid=
+849 ans.videojs.ErrorNote
+850 currentPlayline
+851 .zsCloud
+852 time
+853 parentNode
+854 contextmenu
+855 studyControl
+856 VideoJs
+857 againStartTime
+858 datas
+859 ans.videojs.TimelineObjects
+860 </tpl> 
+861 text
+862 rootPath
+863 getAt
+864 startTime
+865 vjserrdisplay
+866 <div class="tkTopic_oper">
+867 getSeekBar
+868 httphd
+869 document
+870 timeCount
+871 toString
+872 res
+873 .png
+874 pptPicEl
+875 seeked
+876 status
+877 http://pan.ananas.
+878 http
+879 PPT
+880 <span class="spanNot fr" id="spanNot"><tpl if="dtype=="InteractiveQuiz"">真遗憾，再接再厉！<tpl else>回答错误</tpl></span>
+881 <div class="tkParsing" id="tkParsing">
+882 &clipTime=
+883 techName_
+884 </span>
+885 formatTime
+886 0px
+887 ERYA_TSK_HOST
+888 drag
+889 var subs=
+890 params2VideoOpt
+891 服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e: 
+892 inline-block
+893 <div class="tkTopic">
+894 textTrackButton
+895 params
+896 videoJsResolutionSwitcher
+897 Ext.Component
+898 defineProperty
+899 cdn
+900 addEvents
+901 testAnalysis
+902 firstClick
+903 duration
+904 videoquiz
+905 isIos
+906 sizeSmallEl
+907 div.sp_video_ppt_pic
+908 <div class="ans-vjserrdisplay-title">播放出现异常。</div>
+909 超高清
+910 a.tkParsing_dele
+911 cookie
+912 object
+913 elements
+914 <span class="spanNotBack fr" id="spanNotBack"><tpl if="dtype=="InteractiveQuiz"">真遗憾，再接再厉！<tpl else>回答错误，</tpl>回看 {errorBackTime} 分钟</span>
+915 top
+916 playTimer
+917 sendLog
+918 find
+919 event
+920 removeClass
+921 currentResolution
+922 <li class="ans-vjserrdisplay-opt"><label>
+923 resetTime
+924 split
+925 max
+926 #A5A5A5
+927 <input type="radio" name="ans-vjserrdisplay-opt" {[xindex-1 === parent.selectedIndex ? "checked disabled":""]}>
+928 <span class="spanNotBack fr" id="spanNotBackPoint">真遗憾，再接再厉！</span>
+929 <a class="sp_video_pic_dele" href="javascript:;"></a>
+930 app
+931 plugin
+932 textTrackSettings
+933 InteractiveQuiz
+934 reload
+935 ?clazzId=
+936 dtoken
+937 timeupdate
+938 dynamicLabel
+939 setAutoScroll
+940 _onlyBackward
+941 filename
+942 </ul>
+943 shd
+944 continue
+945 click
+946 keyCode
+947 options
+948 &otherInfo=
+949 ResolutionMenuItem
+950 scrollEl
+951 ignoreSeek
+952 onClick
+953 公网1
+954 /ananas/video-editor/sub?objectid=
+955 reportTimeInterval
+956 request
+957 trigger
+958 checked="checked"
+959 <tpl if="dtype=="InteractiveQuiz""><span id="spanHas"></span><tpl else><span class="spanHas fr" id="spanHas">回答正确</span></tpl>
+960 ansErrorDisplay
+961 calculateDistance
+962 concat
+963 percent
+964 body
+965 match
+966 #DADFE6
+967 SyncAnnotationEvent
+968 paused
+969 getGroupedSrc
+970 #zsCloud_div_
+971 2154747qihZEI
+972 &dtype=Audio
+973 [{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]
+*/

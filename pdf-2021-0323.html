@@ -424,7 +424,6 @@
 			color: #A2A2A2
 		}
 	</style>
-
 	<script type="text/javascript" src="/static/js/domain.js"></script>
 	<script type="text/javascript" src="/ananas/ext-4.2.0.663/all-classes.js?v=2021-0401-1110"></script>
 	<script type="text/javascript" src="/ananas/swfobject/flashchecker.js"></script>
@@ -436,7 +435,6 @@
 	<script type="text/javascript" src="/ananas/screenfull/screenfull.min.js"></script>
 	<script type="text/javascript">
 		Ext.Ajax.autoAbort = true;
-
 		var timer, percent = 0;
 		var downloadNum = window.frameElement.getAttribute('download');
 		function getCookie(objname) {
@@ -468,21 +466,15 @@
 				Ext.select('body').setHTML(tipImg);
 				return;
 			}
-
-
 			var setting = parent.AttachmentSetting,
 				data = Ext.decode(window.frameElement.getAttribute('data'));
-
 			if (setting && setting.control) {
-
 				var attachments = setting.attachments,
 					spec = data.objectid,
 					s = '',
 					m = {};
-
 				for (var i = 0; i < attachments.length; i++) {
 					m = attachments[i];
-
 					if (m.property && m.property.objectid) {
 						s = m.property.objectid;
 						if (spec == s) {
@@ -495,40 +487,31 @@
 					}
 				}
 			}
-
 			request();
 			//timer = setInterval(request, 5000);
-
 			if (checkJobFinish()) {
 				greenligth();
 			} /* else if (hasJobToFinish()) {
 			mask();
 		} */
 		});
-
 		function request() {
 			var objectid = window.frameElement.getAttribute('objectid'),
 				note = Ext.get('note'),
 				hl = Ext.get('hl'),
 				note1Wrap = Ext.get('note1-wrap'),
 				note1 = Ext.get('note1');
-
 			if (percent <= 100) {
 				hl.setWidth((percent += 5) + "%");
 			}
-
 			if (!objectid) {
 				return;
 			}
-
 			//Ext.get('objectid').setHTML('(文件ID:' + objectid + ')');
-
 			Ext.Ajax.request({
 				url: '/ananas/status/' + objectid + '?flag=normal',
-
 				success: function (response) {
 					eval("var data = " + response.responseText);
-
 					switch (data.status) {
 						case 'success':
 							note1Wrap.remove();
@@ -542,17 +525,13 @@
 							bindReport(data);
 							if (timer)
 								clearInterval(timer);
-
 							break;
 						case 'failed':
-
 							if (timer)
 								clearInterval(timer);
-
 							note1Wrap.remove();
 							note.show();
 							break;
-
 						case 'waiting':
 							note1Wrap.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle making">文件正在转码，您无需在此页面等待【9001】</p>');
 							break;
@@ -561,9 +540,7 @@
 							note1Wrap.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">文件上传中【9002】</p>');
 							break;
 					}
-
 					Ext.get('loading').hide();
-
 				},
 				failure: function (resp) {
 					if (resp.status == 0) {
@@ -578,7 +555,6 @@
 				}
 			});
 		}
-
 		function renderSWF(data) {
 			var objectid = data.objectid;
 			var page = data.pagenum;
@@ -589,7 +565,6 @@
 				Ext.get(Ext.query("#reader")).setHTML('您没有安装flashplayer，请到<a href="' + href + '" target="_blank">www.adobe.com</a>下载安装。');
 				return false;
 			}
-
 			var swfUrl = '/flexreader/FlexReader.swf';
 			/* if(document.domain=="haust.edu.cn"){
 				swfUrl='http://mooc1.haust.edu.cn/flexreader/FlexReader.swf';
@@ -612,7 +587,6 @@
 			data.openStyle = 'flash';
 			return true;
 		}
-
 		function renderOfficeOnline(data) {
 			if (Ext.isIE && Ext.isIE8m) {
 				Ext.get('toggleBtn').hide();
@@ -643,7 +617,6 @@
 			data.openStyle = 'officeonline';
 			return true;
 		}
-
 		function renderImg(data) {
 			var controlLook = docReadControl();
 			var containerTpl = "";
@@ -713,14 +686,12 @@
 				Ext.select('#downloadUrl').set({ "href": data.download });
 			}
 			var pagenum = data.pagenum;
-
 			var iframedata = window.data;
 			// var btime = iframedata.btime;
 			// var timing = iframedata.timing;
 			var jobid = iframedata.jobid;
 			// var start = iframedata.start || 1;
 			var end = pagenum;
-
 			var url = data.thumb;
 			//var limitTime = btime ? (timing || 1) : 1;
 			var tpl = '';
@@ -738,7 +709,6 @@
 			}
 			Ext.select('.all').setHTML(pagenum);
 			new Ext.XTemplate(tpl).insertBefore('navigation');
-
 			if (controlLook) {
 				initChangeControl();
 			} else {
@@ -772,7 +742,6 @@
 			data.openStyle = 'imglook';
 			fullscreenEvent();
 			return true;
-
 			function limitReadTime(page) {
 				if (page == end) {
 					!checkJobFinish() && finishJob();
@@ -784,7 +753,6 @@
 					Ext.select('.nextBtn').show();
 				}
 			}
-
 			function changePage(offset) {
 				var nowPage = Ext.select('.num').first().getHTML();
 				var nextPage = Number(nowPage) + Number(offset);
@@ -809,7 +777,6 @@
 				}
 				limitReadTime(nextPage);
 			}
-
 			function initChangeControl() {
 				changePage(0);
 				Ext.select('.preBtn').on('click', function (ele) {
@@ -822,7 +789,6 @@
 					"display": "none"
 				});
 			}
-
 			function whichPage(scrollTop) {
 				if (scrollTop == 0) {
 					return 1;
@@ -843,7 +809,6 @@
 				return -1;
 			}
 		}
-
 		function fullscreenEvent() {
 			if (!screenfull.enabled) {
 				Ext.select('.fullscreen, .fullsrceen').first().remove();
@@ -888,14 +853,12 @@
 					"right": "0px"
 				});
 			});
-
 			Ext.select('.OtherOpen').on('mouseleave', function (ele) {
 				Ext.select('.RightArrow').show();
 				Ext.get(this).setStyle({
 					"right": "-127px"
 				});
 			});
-
 			Ext.select('.OtherOpen, .otherOpen').on('click', function (ele) {
 				var openStyle = data.openStyle;
 				if (openStyle == 'imglook') {
@@ -923,13 +886,11 @@
 			});
 		}
 	</script>
-
 	<script type="text/javascript">
 		function mask() {
 			document.getElementById('popWindow').style.display = 'block';
 			document.getElementById('maskLayer').style.display = 'block';
 		}
-
 		function unMaskAndFinishJob() {
 			document.getElementById('popWindow').style.display = 'none';
 			document.getElementById('maskLayer').style.display = 'none';

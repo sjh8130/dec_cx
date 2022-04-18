@@ -206,19 +206,19 @@
 Ext.apply(Ext, {
 	setCookie: function (c, f) {
 		var a = arguments,
-		i = arguments.length,
-		b = (i > 2) ? a[2] : null,
-		h = (i > 3) ? a[3] : "/",
-		e = (i > 4) ? a[4] : null,
-		g = (i > 5) ? a[5] : false;
+			i = arguments.length,
+			b = (i > 2) ? a[2] : null,
+			h = (i > 3) ? a[3] : "/",
+			e = (i > 4) ? a[4] : null,
+			g = (i > 5) ? a[5] : false;
 		document.cookie = c + "=" + escape(f) + ((b === null) ? "" : ("; expires=" + b.toGMTString())) + ((h === null) ? "" : ("; path=" + h)) + ((e === null) ? "" : ("; domain=" + e)) + ((g === true) ? "; secure" : "")
 	},
 	getCookie: function (e, h) {
 		var b = e + "=",
-		g = b.length,
-		a = document.cookie.length,
-		f = 0,
-		c = 0;
+			g = b.length,
+			a = document.cookie.length,
+			f = 0,
+			c = 0;
 		while (f < a) {
 			c = f + g;
 			if (document.cookie.substring(f, c) == b) {
@@ -249,7 +249,7 @@ Ext.define("ans.VideoJs", {
 		var c = this;
 		c.addEvents(["seekstart"]);
 		c.mixins.observable.constructor.call(c, a);
-		var b = videojs(a.videojs, c.params2VideoOpt(a.params), function () {});
+		var b = videojs(a.videojs, c.params2VideoOpt(a.params), function () { });
 		Ext.fly(a.videojs).on("contextmenu", function (f) {
 			f.preventDefault()
 		});
@@ -261,7 +261,7 @@ Ext.define("ans.VideoJs", {
 		if (b.videoJsResolutionSwitcher) {
 			b.on("resolutionchange", function () {
 				var f = b.currentResolution(),
-				e = f.sources ? f.sources[0].res : false;
+					e = f.sources ? f.sources[0].res : false;
 				Ext.setCookie("resolution", e)
 			})
 		}
@@ -269,16 +269,16 @@ Ext.define("ans.VideoJs", {
 	params2VideoOpt: function (params) {
 		var useM3u8 = false;
 		var cdn = [{
-				indexorder: 0,
-				label: "公网1",
-				url: "https://s1.ananas.chaoxing.com",
-				ispublic: true
-			}, {
-				indexorder: 1,
-				label: "公网2",
-				url: "https://s2.ananas.chaoxing.com",
-				ispublic: true
-			}
+			indexorder: 0,
+			label: "公网1",
+			url: "https://s1.ananas.chaoxing.com",
+			ispublic: true
+		}, {
+			indexorder: 1,
+			label: "公网2",
+			url: "https://s2.ananas.chaoxing.com",
+			ispublic: true
+		}
 		];
 		if (params.cdn) {
 			try {
@@ -298,33 +298,33 @@ Ext.define("ans.VideoJs", {
 		}
 		function makeSource(src, r) {
 			var start = src.src.indexOf("/s1.ananas.chaoxing.com") + "/s1.ananas.chaoxing.com".length,
-			file = src.src.substr(start);
+				file = src.src.substr(start);
 			if (r.ispublic) {
 				return useM3u8 ? {
 					src: m3u8(params.objectId, src.resolution, r.url),
 					type: "application/x-mpegURL",
 					res: src.res
 				}
-				 : {
-					src: r.url + file,
-					type: "video/mp4",
-					res: src.res
-				}
+					: {
+						src: r.url + file,
+						type: "video/mp4",
+						res: src.res
+					}
 			} else {
 				return useM3u8 ? {
 					src: m3u8(params.objectId, src.resolution, r.url + "/s1.ananas.chaoxing.com"),
 					type: "application/x-mpegURL",
 					res: src.res
 				}
-				 : {
-					src: r.url + "/s1.ananas.chaoxing.com" + file,
-					type: "video/mp4",
-					res: src.res
-				}
+					: {
+						src: r.url + "/s1.ananas.chaoxing.com" + file,
+						type: "video/mp4",
+						res: src.res
+					}
 			}
 		}
 		var sources = [],
-		defaultRes = Ext.getCookie("resolution", 360);
+			defaultRes = Ext.getCookie("resolution", 360);
 		if (!params.rootPath) {
 			params.rootPath = ""
 		}
@@ -423,7 +423,7 @@ Ext.define("ans.VideoJs", {
 				return
 			}
 			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]",
-			clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
+				clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
 			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid || "", params.objectId, currentTimeSec * 1000, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
 			var rurl = [params.reportUrl, "/", params.dtoken, "?clazzId=", params.clazzId, "&playingTime=", currentTimeSec, "&duration=", params.duration, "&clipTime=", clipTime, "&objectId=", params.objectId, "&otherInfo=", params.otherInfo, "&jobid=", params.jobid, "&userid=", params.userid, "&isdrag=", isdrag, "&view=pc", "&enc=", md5(enc), "&rt=", params.rt, "&dtype=Video", "&_t=", new Date().getTime()].join("");
 			logFunc(player, rurl, callback)
@@ -450,8 +450,8 @@ Ext.define("ans.VideoJs", {
 					customSourcePicker: function (player, sources, label) {
 						var r = player.currentPlayline();
 						player.src(sources.map(function (src) {
-								return makeSource(src, r)
-							}));
+							return makeSource(src, r)
+						}));
 						return player
 					}
 				},
@@ -478,15 +478,15 @@ Ext.define("ans.VideoJs", {
 						}
 						var isdrag = 0;
 						switch (evt) {
-						case "play":
-							isdrag = 3;
-							break;
-						case "pause":
-							isdrag = 2;
-							break;
-						case "ended":
-							isdrag = 4;
-							break
+							case "play":
+								isdrag = 3;
+								break;
+							case "pause":
+								isdrag = 2;
+								break;
+							case "ended":
+								isdrag = 4;
+								break
 						}
 						sendLog_(player, isdrag, sec, function () {
 							window.proxy_completed && window.proxy_completed()
@@ -511,8 +511,8 @@ Ext.define("ans.VideoJs", {
 		constructor: function (f, c) {
 			b.call(this, f, c);
 			var g = this,
-			j = c.mouseElTarget,
-			i = 1;
+				j = c.mouseElTarget,
+				i = 1;
 			if (c.enableSwitchWindow !== 1) {
 				i = 0
 			}
@@ -527,20 +527,20 @@ Ext.define("ans.VideoJs", {
 				k = k ? k : window.event;
 				var l = k.relatedTarget || k.toElement;
 				if (!l) {
-					if (i != 1) {}
+					if (i != 1) { }
 				}
 			});
 			g.singleton(f)
 		},
 		singleton: function (c) {
 			var f = this,
-			e = parseInt(Math.random() * 9999999);
+				e = parseInt(Math.random() * 9999999);
 			c.on("play", function () {
 				Ext.setCookie("videojs_id", e)
 			});
 			c.setInterval(function () {
 				var g = Ext.getCookie("videojs_id");
-				if (typeof g != "undefined" && g != e) {}
+				if (typeof g != "undefined" && g != e) { }
 			}, 1000)
 		}
 	});
@@ -645,14 +645,14 @@ Ext.define("ans.VideoJs", {
 				}
 			});
 			if (!e.sendLog) {
-				e.sendLog = function () {}
+				e.sendLog = function () { }
 			}
 			if (e.headOffset) {
 				f.currentTime(e.headOffset)
 			}
 			var j = 0,
-			c = e.reportTimeInterval || 60,
-			i = c * 1000;
+				c = e.reportTimeInterval || 60,
+				i = c * 1000;
 			var h = function (k, l) {
 				if (!g.isSendLog_) {
 					return
@@ -672,7 +672,7 @@ Ext.define("ans.VideoJs", {
 			f.on("seeked", function () {
 				if (e.enableFastForward != 1 && !f.switchStatus) {
 					var k = f.currentTime(),
-					l = e.headOffset ? e.headOffset : 0;
+						l = e.headOffset ? e.headOffset : 0;
 					if (k != 0 && k > l) {
 						f.currentTime(l)
 					}
@@ -713,12 +713,12 @@ Ext.define("ans.VideoJs", {
 		},
 		sendDataLog: function (e) {
 			var c = (e == "pause" || e == "end") ? 2 : 1;
-			if (typeof(sendReadZTMediaLog) != "undefined") {
+			if (typeof (sendReadZTMediaLog) != "undefined") {
 				sendReadZTMediaLog(c)
 			}
 		},
 		receiveStudyLog: function () {
-			if (typeof(receiveStudyLog) != "undefined") {
+			if (typeof (receiveStudyLog) != "undefined") {
 				receiveStudyLog()
 			}
 		},
@@ -735,7 +735,7 @@ Ext.define("ans.VideoJs", {
 			if (f < this.damuLastGetTime) {
 				return
 			}
-			if (typeof(getDanmuByTime) != "undefined") {
+			if (typeof (getDanmuByTime) != "undefined") {
 				getDanmuByTime(e, f);
 				this.damuLastGetTime = f + 59
 			}
@@ -745,7 +745,7 @@ Ext.define("ans.VideoJs", {
 				return
 			}
 			var e = this.sec_(c);
-			if (typeof(danmuPlay) != "undefined") {
+			if (typeof (danmuPlay) != "undefined") {
 				danmuPlay(e)
 			}
 		}
@@ -776,12 +776,12 @@ Ext.define("ans.videojs.VideoQuiz", {
 	},
 	checkResult: function () {
 		var e = this,
-		h = Ext.query("input", e.el.dom),
-		c = true,
-		f = e.renderData,
-		a = f.options,
-		b = [],
-		g = e.quizErrorReportUrl;
+			h = Ext.query("input", e.el.dom),
+			c = true,
+			f = e.renderData,
+			a = f.options,
+			b = [],
+			g = e.quizErrorReportUrl;
 		Ext.each(h, function (k, j) {
 			if ((k.value == "true" && !k.checked) || (k.value == "false" && k.checked)) {
 				c = false;
@@ -850,14 +850,14 @@ Ext.define("ans.videojs.TimelineObjects", {
 	},
 	showObject: function (l, b, e) {
 		var i = this,
-		g = i.getBox(),
-		c = i.items.getAt(0),
-		k,
-		h = function () {
-			k.destroy();
-			i.hide();
-			l.play()
-		};
+			g = i.getBox(),
+			c = i.items.getAt(0),
+			k,
+			h = function () {
+				k.destroy();
+				i.hide();
+				l.play()
+			};
 		if (c != null) {
 			c.destroy()
 		}
@@ -868,7 +868,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 			})
 		}
 		if (b == "QUIZ") {
-			var j = function () {};
+			var j = function () { };
 			if (e.errorBackTime && e.errorBackTime > 0) {
 				var m = e.errorBackTime * 60;
 				j = function () {
@@ -907,7 +907,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 		});
 		var f = !(k.model === false);
 		i.showModel(f);
-		if (f) {}
+		if (f) { }
 	},
 	showModel: function (a) {
 		var c = this;
@@ -930,9 +930,9 @@ Ext.define("ans.videojs.TimelineObjects", {
 			return
 		}
 		var c = this,
-		f = c.objects[c.current],
-		b = f.style,
-		g = f.datas[0];
+			f = c.objects[c.current],
+			b = f.style,
+			g = f.datas[0];
 		if (e >= g.startTime) {
 			c.current++;
 			c.showObject(a, b, g)
@@ -940,7 +940,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 	},
 	resetTime: function (b, e) {
 		var c = this,
-		a;
+			a;
 		for (a = 0; a < c.objects.length; a++) {
 			var f = c.objects[a].datas[0].startTime;
 			if (e < f) {
@@ -1002,22 +1002,22 @@ Ext.define("ans.videojs.TimelineObjects", {
 		constructor: function (player, options) {
 			Plugin.call(this, player, options);
 			var me = this,
-			subtitleUrl = options.subtitleUrl,
-			toVtt = function (srt) {
-				var m = srt.match(/support\/(\w+).\w+/);
-				if (m) {
-					return "https://cs-ans.chaoxing.com/support/sub/" + m[1] + ".vtt"
-				}
-			},
-			addSub = function (name, src, isdefault) {
-				player.addRemoteTextTrack({
-					kind: "subtitles",
-					srclang: "cn",
-					label: name,
-					src: src,
-					"default": isdefault
-				}, true)
-			};
+				subtitleUrl = options.subtitleUrl,
+				toVtt = function (srt) {
+					var m = srt.match(/support\/(\w+).\w+/);
+					if (m) {
+						return "https://cs-ans.chaoxing.com/support/sub/" + m[1] + ".vtt"
+					}
+				},
+				addSub = function (name, src, isdefault) {
+					player.addRemoteTextTrack({
+						kind: "subtitles",
+						srclang: "cn",
+						label: name,
+						src: src,
+						"default": isdefault
+					}, true)
+				};
 			player.ready(function () {
 				if (subtitleUrl) {
 					Ext.Ajax.request({
@@ -1071,12 +1071,12 @@ Ext.define("ans.videojs.ErrorDisplay", {
 			})
 		});
 		try {
-			if (typeof(createVideoTask) === "function") {
+			if (typeof (createVideoTask) === "function") {
 				createVideoTask()
 			} else {
 				console.log("createVideoTask函数不存在！")
 			}
-		} catch (c) {}
+		} catch (c) { }
 	},
 	setErrorMsg: function (a) {
 		Ext.fly(this.errorMsgEl).setHTML(a)
@@ -1103,9 +1103,9 @@ Ext.define("ans.videojs.ErrorNote", {
 		fill: function () {
 			b.prototype.fill.call(this);
 			var g = this,
-			i = g.player_,
-			h = i.options_.playlines,
-			e = Ext.query(".vjs-modal-dialog-content", g.el_)[0];
+				i = g.player_,
+				h = i.options_.playlines,
+				e = Ext.query(".vjs-modal-dialog-content", g.el_)[0];
 			if (g.ansErrorDisplay) {
 				g.ansErrorDisplay.destroy();
 				delete g.ansErrorDisplay
@@ -1117,7 +1117,7 @@ Ext.define("ans.videojs.ErrorNote", {
 				return
 			}
 			var f = i.currentPlayline(),
-			c = 0;
+				c = 0;
 			Ext.each(h, function (k, j) {
 				if (f == k) {
 					c = j
@@ -1148,9 +1148,9 @@ Ext.define("ans.videojs.ErrorNote", {
 	}
 	(function (i, h) {
 		var g = {},
-		c,
-		k = {},
-		b = {};
+			c,
+			k = {},
+			b = {};
 		function f(p, o, n, q) {
 			k = {
 				label: n,
@@ -1160,12 +1160,12 @@ Ext.define("ans.videojs.ErrorNote", {
 				return q(p, o, n)
 			}
 			p.src(o.map(function (r) {
-					return {
-						src: r.src,
-						type: r.type,
-						res: r.res
-					}
-				}));
+				return {
+					src: r.src,
+					type: r.type,
+					res: r.res
+				}
+			}));
 			return p
 		}
 		var l = h.getComponent("MenuItem");
@@ -1244,11 +1244,11 @@ Ext.define("ans.videojs.ErrorNote", {
 				for (var n in q) {
 					if (q.hasOwnProperty(n)) {
 						o.push(new m(this.player_, {
-								label: n,
-								src: q[n],
-								initialySelected: n === this.options_.initialySelectedLabel,
-								customSourcePicker: this.options_.customSourcePicker
-							}, p, this.label));
+							label: n,
+							src: q[n],
+							initialySelected: n === this.options_.initialySelectedLabel,
+							customSourcePicker: this.options_.customSourcePicker
+						}, p, this.label));
 						b[n] = o[o.length - 1]
 					}
 				}
@@ -1257,9 +1257,9 @@ Ext.define("ans.videojs.ErrorNote", {
 		});
 		c = function (w) {
 			var p = h.mergeOptions(g, w),
-			u = this,
-			t = document.createElement("span"),
-			s = {};
+				u = this,
+				t = document.createElement("span"),
+				s = {};
 			h.dom.addClass(t, "vjs-resolution-button-label");
 			u.updateSrc = function (y) {
 				if (!y) {
@@ -1363,9 +1363,9 @@ Ext.define("ans.videojs.ErrorNote", {
 (function () {
 	(function (i, h) {
 		var f = {},
-		b,
-		g = {},
-		a = {};
+			b,
+			g = {},
+			a = {};
 		function c(o, n, m, p) {
 			g = n;
 			if (typeof p === "function") {
@@ -1432,11 +1432,11 @@ Ext.define("ans.videojs.ErrorNote", {
 				for (var n = 0; n < q.length; n++) {
 					var m = q[n].label;
 					o.push(new e(this.player_, {
-							label: m,
-							src: q[n],
-							initialySelected: m === this.options_.initialySelectedLabel,
-							customSourcePicker: this.options_.customSourcePicker
-						}, p, this.label));
+						label: m,
+						src: q[n],
+						initialySelected: m === this.options_.initialySelectedLabel,
+						customSourcePicker: this.options_.customSourcePicker
+					}, p, this.label));
 					a[m] = o[o.length - 1]
 				}
 				return o
@@ -1444,9 +1444,9 @@ Ext.define("ans.videojs.ErrorNote", {
 		});
 		b = function (o) {
 			var q = h.mergeOptions(f, o),
-			p = this,
-			n = document.createElement("span"),
-			r = p.options_.playlines;
+				p = this,
+				n = document.createElement("span"),
+				r = p.options_.playlines;
 			h.dom.addClass(n, "vjs-resolution-button-label");
 			var m = new k(p, {
 				playlines: r,
@@ -1487,7 +1487,7 @@ Ext.define("ans.AudioJs", {
 		var c = this;
 		c.addEvents(["seekstart"]);
 		c.mixins.observable.constructor.call(c, a);
-		var b = videojs(a.videojs, c.params2VideoOpt(a.params), function () {});
+		var b = videojs(a.videojs, c.params2VideoOpt(a.params), function () { });
 		Ext.fly(a.videojs).on("contextmenu", function (f) {
 			f.preventDefault()
 		});
@@ -1550,7 +1550,7 @@ Ext.define("ans.AudioJs", {
 				return
 			}
 			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]",
-			clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
+				clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
 			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, currentTimeSec * 1000, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
 			var rurl = [params.reportUrl, "/", params.dtoken, "?clazzId=", params.clazzId, "&playingTime=", currentTimeSec, "&duration=", params.duration, "&clipTime=", clipTime, "&objectId=", params.objectId, "&otherInfo=", params.otherInfo, "&jobid=", params.jobid, "&userid=", params.userid, "&isdrag=", isdrag, "&view=pc", "&enc=", md5(enc), "&rt=", params.rt, "&dtype=Audio", "&_t=", new Date().getTime()].join("");
 			logFunc(player, rurl, callback)
@@ -1586,15 +1586,15 @@ Ext.define("ans.AudioJs", {
 						}
 						var isdrag = 0;
 						switch (evt) {
-						case "play":
-							isdrag = 3;
-							break;
-						case "pause":
-							isdrag = 2;
-							break;
-						case "ended":
-							isdrag = 4;
-							break
+							case "play":
+								isdrag = 3;
+								break;
+							case "pause":
+								isdrag = 2;
+								break;
+							case "ended":
+								isdrag = 4;
+								break
 						}
 						sendLog_(player, isdrag, sec, function () {
 							window.proxy_completed && window.proxy_completed()

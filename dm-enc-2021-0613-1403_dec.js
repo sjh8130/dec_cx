@@ -19,7 +19,7 @@
 					var E = D.prop('onclick');
 					if (E && typeof (E) == 'function') {
 						E = E.toString();
-						// E = decode(E);
+						E = decode(E);
 						if (E.indexOf('createElement') > 0 && E.indexOf('appendChild') > 0 && E.indexOf('iframe') > 0) {
 							D.hide()
 						}
