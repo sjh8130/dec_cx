@@ -314,8 +314,7 @@ Ext.define("ans.VideoJs", {
 			label: "公网2",
 			url: ServerHosts.s2_HOST,
 			ispublic: true
-		}
-		];
+		}];
 		if (params.cdn) {
 			try {
 				if (top.window.app && top.window.app == 2) {
