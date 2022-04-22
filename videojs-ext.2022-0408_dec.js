@@ -463,8 +463,10 @@ Ext.define("ans.VideoJs", {
 					eval("var d=" + resp.body);
 					if (d.isPassed) {
 						try {
-							typeof d.hasJobLimit != "undefined" && d.hasJobLimit === true && (top.allowNextVideo = false,
-								top.hasJobLimit = true);
+							if (typeof d.hasJobLimit != "undefined" && d.hasJobLimit === true) {
+								top.allowNextVideo = false;
+								top.hasJobLimit = true;
+							}
 						} catch (e) {
 							console.log(e);
 						}
@@ -563,7 +565,7 @@ Ext.define("ans.VideoJs", {
 					isSupportFace: params.isSupportFace || false,
 					isShowFaceCollection: params.isShowFaceCollection,
 					attachmentId: params.aId,
-					sendLog: function (player, evt, sec, Tmp_1) {
+					sendLog: function (player, evt, sec, tmp_AA) {
 						if (this.isSendLog !== true) {
 							return
 						}
@@ -585,16 +587,18 @@ Ext.define("ans.VideoJs", {
 								isdrag = 4;
 								break
 						}
-						var ccc = this;
+						var tmp_BB = this;
 						sendLog_(player, isdrag, sec, function () {
 							try {
-								isdrag === 4 && typeof Tmp_1 != "undefined" && (Tmp_1.sendDataLog("ended"),
-									Tmp_1.playNextVideo(ccc.attachmentId));
+								if (isdrag === 4 && typeof tmp_AA != "undefined") {
+									tmp_AA.sendDataLog("ended");
+									tmp_AA.playNextVideo(tmp_BB.attachmentId);
+								}
 							} catch (e) {
-								console.log(e);
+								console.log(e)
 							}
-							window.proxy_completed && window.proxy_completed();
-						});
+							window.proxy_completed && window.proxy_completed()
+						})
 					}
 				},
 				timelineObjects: {
@@ -670,7 +674,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 (function () {
 	var a = videojs.getComponent("SeekBar");
 	var b = videojs.extend(a, {
-		"constructor": function (e, c) {
+		constructor: function (e, c) {
 			a.call(this, e, c);
 			var f = this;
 			e.ignorePause = false;
@@ -698,16 +702,16 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				f.maxPercent = Math.max(f.getPercent(), f.maxPercent)
 			})
 		},
-		"getCurrentTime_": function () {
+		getCurrentTime_: function () {
 			return this.player_.currentTime()
 		},
-		"getMaxPercent": function () {
+		getMaxPercent: function () {
 			return this.maxPercent
 		},
-		"isBackward": function (c) {
+		isBackward: function (c) {
 			return this.maxPercent > this.calculateDistance(c)
 		},
-		"handleMouseDown": function (c) {
+		handleMouseDown: function (c) {
 			if (this._onlyBackward) {
 				if (!this.isBackward(c)) {
 					return
@@ -718,7 +722,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			}
 			a.prototype.handleMouseDown.call(this, c)
 		},
-		"handleMouseMove": function (c) {
+		handleMouseMove: function (c) {
 			if (this._disableSeek === true) {
 				return
 			}
@@ -729,7 +733,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			}
 			a.prototype.handleMouseMove.call(this, c)
 		},
-		"handleMouseUp": function (c) {
+		handleMouseUp: function (c) {
 			if (this._disableSeek === true) {
 				return
 			}
@@ -740,12 +744,16 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			}
 			a.prototype.handleMouseUp.call(this, c)
 		},
-		"disableSeek": function (c) {
+		disableSeek: function (c) {
 			var e = this;
 			e._disableSeek = c !== false;
-			e._disableSeek ? e.disable() : e.enable();
+			if (e._disableSeek) {
+				e.disable()
+			} else {
+				e.enable()
+			}
 		},
-		"onlyBackward": function (e) {
+		onlyBackward: function (e) {
 			var c = this;
 			c._onlyBackward = e !== false
 		}
@@ -817,32 +825,62 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				try {
 					if (typeof top.hasJobLimit != "undefined" && top.hasJobLimit === true && h.firstClick && isUnFinishJob()) {
 						h.firstClick = false;
-						g.pause(),
-							checkJobCountLimit(g);
+						g.pause();
+						checkJobCountLimit(g);
 						return;
 					}
 				} catch (e) {
 					console.log(e);
 				}
 				h.isAlertTip = false;
-				h.chapterCapture == 0 || !h.isSupportFace ? (!g.ignorePlay ? (i("play", true),
-					g.ignoreSeek = true) : (g.ignorePlay = false,
-						g.ignoreSeek = false),
-					h.sendDataLog("play"),
-					h.receiveStudyLog(),
-					h.getDanmuList("play", g)) : h.chapterCapture == 1 && (h.timeCount == 0 ? h.isShowFaceCollection && !h.isPlay && (h.startCapture == 1 || typeof h.startCapture == "undefined") ? (h.faceCollection("play", g, h.chapterCollectionType),
-						g.pause()) : (!g.ignorePlay ? (i("play", true),
-							g.ignoreSeek = true) : (g.ignorePlay = false,
-								g.ignoreSeek = false),
-							h.sendDataLog("play"),
-							h.receiveStudyLog(),
-							h.getDanmuList("play", g),
-							(h.isShowFaceCollection && typeof h.playingCapture == "undefined" || h.playingCapture == 1 && h.playingLoopCapture == 0) && h.timer(g),
-							h.isShowFaceCollection && h.playAginCapture == 1 && g.ignorePlay && !h.isAginFace && (h.faceCollection("aginPlay", g, h.chapterCollectionType),
-								g.pause())) : ((h.isShowFaceCollection && typeof h.playingCapture == "undefined" || h.playingCapture == 1 && h.playingLoopCapture == 1) && h.timer(g),
-									h.isShowFaceCollection && h.playAginCapture == 1 && !g.ignorePlay && !h.isAginFace && (h.faceCollection("aginPlay", g, h.chapterCollectionType),
-										g.pause(),
-										h.againStartTime = h.sec_(g))));
+				if (h.chapterCapture == 0 || !h.isSupportFace) {
+					if (!g.ignorePlay) {
+						i("play", true);
+						g.ignoreSeek = true
+					} else {
+						g.ignorePlay = false;
+						g.ignoreSeek = false
+					}
+					h.sendDataLog("play");
+					h.receiveStudyLog();
+					h.getDanmuList("play", g)
+				} else {
+					if (h.chapterCapture == 1) {
+						if (h.timeCount == 0) {
+							if (h.isShowFaceCollection && !h.isPlay && (h.startCapture == 1 || typeof h.startCapture == "undefined")) {
+								h.faceCollection("play", g, h.chapterCollectionType);
+								g.pause()
+							} else {
+								if (!g.ignorePlay) {
+									i("play", true);
+									g.ignoreSeek = true
+								} else {
+									g.ignorePlay = false;
+									g.ignoreSeek = false
+								}
+								h.sendDataLog("play");
+								h.receiveStudyLog();
+								h.getDanmuList("play", g);
+								if (h.isShowFaceCollection && typeof h.playingCapture == "undefined" || (h.playingCapture == 1 && h.playingLoopCapture == 0)) {
+									h.timer(g)
+								}
+								if (h.isShowFaceCollection && h.playAginCapture == 1 && g.ignorePlay && !h.isAginFace) {
+									h.faceCollection("aginPlay", g, h.chapterCollectionType);
+									g.pause()
+								}
+							}
+						} else {
+							if (h.isShowFaceCollection && typeof h.playingCapture == "undefined" || (h.playingCapture == 1 && h.playingLoopCapture == 1)) {
+								h.timer(g)
+							}
+							if (h.isShowFaceCollection && h.playAginCapture == 1 && !g.ignorePlay && !h.isAginFace) {
+								h.faceCollection("aginPlay", g, h.chapterCollectionType);
+								g.pause();
+								h.againStartTime = h.sec_(g)
+							}
+						}
+					}
+				}
 			});
 			g.on("seeked", function () {
 				if (f.enableFastForward != 1 && !g.switchStatus) {
@@ -873,9 +911,13 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				h.getDanmuList("pause", g)
 			});
 			g.on("timeupdate", function () {
-				h.sec_(g) - h.againStartTime > 2 && (h.isAginFace = false);
-				h.isShowFaceCollection && h.chapterCapture == 1 && h.playingCapture == 1 && h.playingLoopCapture == 1 && h.sec_(g) == h.loopCaptureInterval && !h.playingFace && (h.faceCollection("playing", g, h.chapterCollectionType),
-					g.pause());
+				if (h.sec_(g) - h.againStartTime > 2) {
+					h.isAginFace = false
+				}
+				if (h.isShowFaceCollection && h.chapterCapture == 1 && h.playingCapture == 1 && h.playingLoopCapture == 1 && h.sec_(g) == h.loopCaptureInterval && !h.playingFace) {
+					h.faceCollection("playing", g, h.chapterCollectionType);
+					g.pause()
+				}
 				if (typeof parent.videoTrialDuration != "undefined" && parent.videoTrialDuration != "-1") {
 					var l = parseInt(parent.videoTrialDuration) * 60;
 					if (l < h.sec_(g) && !h.isAlertTip) {
@@ -899,9 +941,11 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			});
 			g.on("ended", function () {
 				h.playTimer && clearInterval(h.playTimer);
-				h.isShowFaceCollection && !h.isEnd && h.chapterCapture == 1 && h.endCapture == 1 && h.faceCollection("ended", g, h.chapterCollectionType),
-					i("ended", true);
-			});
+				if (h.isShowFaceCollection && !h.isEnd && h.chapterCapture == 1 && h.endCapture == 1) {
+					h.faceCollection("ended", g, h.chapterCollectionType)
+				}
+				i("ended", true);
+			})
 		},
 		sec_: function (c) {
 			return parseInt(c.currentTime())
@@ -910,17 +954,23 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			return new Date().getTime()
 		},
 		isSendLog: function (c) {
-			return c && (this.isSendLog_ = !!c),
-				this.isSendLog_;
+			if (c) {
+				this.isSendLog_ = !!c
+			}
+			return this.isSendLog_
 		},
 		sendDataLog: function (e) {
-			var c = e == "pause" || e == "end" ? 2 : 1;
-			typeof sendReadZTMediaLog != "undefined" && sendReadZTMediaLog(c);
+			var c = (e == "pause" || e == "end") ? 2 : 1;
+			if (typeof (sendReadZTMediaLog) != "undefined") {
+				sendReadZTMediaLog(c)
+			}
 		},
 		receiveStudyLog: function () {
-			typeof receiveStudyLog != "undefined" && setTimeout(function () {
-				receiveStudyLog();
-			}, 50);
+			if (typeof (receiveStudyLog) != "undefined") {
+				setTimeout(function () {
+					receiveStudyLog()
+				}, 50)
+			}
 		},
 		getDanmuList: function (e, c) {
 			if (!this.isShowDanmu_) {
@@ -934,9 +984,11 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				}, 200);
 				return
 			}
-			typeof getDanmuByTime != "undefined" && setTimeout(function () {
-				getDanmuByTime(e, f);
-			}, 200);
+			if (typeof (getDanmuByTime) != "undefined") {
+				setTimeout(function () {
+					getDanmuByTime(e, f)
+				}, 200);
+			}
 			if (f < this.damuLastGetTime) {
 				return
 			}
@@ -951,168 +1003,242 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				danmuPlay(e)
 			}
 		},
-		"timer": function (c) {
+		timer: function (c) {
 			var e = this;
 			this.playTimer = setInterval(function () {
 				e.timeCount++;
-				e.timeCount >= e.captureInterval && (e.isPlay = false,
-					c.pause(),
-					e.faceCollection("pause", c, e.chapterCollectionType));
-			}, 1000);
-		},
-		"faceCollection": function (e, c, f) {
-			e == "play" && this.timeCount == 0 ? typeof startFaceCollection != "undefined" && startFaceCollection(c, f, this) : e == "pause" ? (this.playTimer && clearInterval(this.playTimer),
-				!this.isPlay && this.timeCount >= this.captureInterval && (typeof startFaceCollection != "undefined" && startFaceCollection(c, f, this),
-					this.timeCount = 0)) : e == "ended" ? (this.playTimer && clearInterval(this.playTimer),
-						typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
-							this.isEnd = true),
-						this.timeCount = 0) : e == "playing" ? typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
-							this.playingFace = true) : e == "aginPlay" && (typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
-								this.isAginFace = true));
-		},
-		"playNextVideo": function (c) {
-			if (typeof chapterPlayNextVideo != "undefined") {
-				if (typeof top.allowNextVideo != "undefined" && top.allowNextVideo === false) {
-					top.showJobLimitTip();
-					return;
+				if (e.timeCount >= e.captureInterval) {
+					e.isPlay = false;
+					e.faceCollection("pause", c, e.chapterCollectionType)
 				}
-				chapterPlayNextVideo(c);
-			}
-		}
-	});
-	videojs.registerPlugin("seekBarControl", b);
-}()),
-	Ext.define("ans.videojs.TimelineObjectsBg", {
-		"extend": "Ext.Component",
-		"cls": "ans-timelineobjectsbg",
-		"hidden": true
-	}),
-	Ext.define("ans.videojs.VideoQuiz", {
-		"extend": "Ext.Component",
-		"xtype": "videoquiz",
-		"cls": "ans-videoquiz",
-		"renderTpl": ['<div class="tkTopic">', '<div class="tkTopic_title">[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', "{name}、{description}", "</label></li>", "</tpl> ", "</ul>", "</div>", "</div>", '<div class="tkTopic_oper">', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submit">提交</a>', '<a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue">继续</a>', '<span class="spanHas fr" id="spanHas">回答正确</span>', '<span class="spanNot fr" id="spanNot">回答错误</span>', '<span class="spanNotBack fr" id="spanNotBack">回答错误，回看 {errorBackTime} 分钟</span>', "</div>", "</div>", {
-			"getChecked": function (a, b, c) {
-				return a.indexOf(b) != -1 && c == "InteractiveQuiz" ? "checked" = "checked" : "";
-			}
-		}],
-		"renderSelectors": {
-			"submitEl": "a.ans-videoquiz-submit",
-			"continueEl": "a.ans-videoquiz-continue",
-			"scrollEl": "div.tkScroll",
-			"backEl": "a.ans-videoquiz-back",
-			"tkParseScrollEl": "div.tkParsing_screll",
-			"viewAnalysisEl": "a.spanHref",
-			"delAnalysisEl": "a.tkParsing_dele"
+			}, 1000)
 		},
-		"afterRender": function () {
-			var b = this;
-			var aaaa = b.renderData;
-			var bbbb = b.quizRightCountUrl;
-			typeof bbbb != "undefined" && Ext.Ajax.request({
-				"url": bbbb,
-				"params": {
-					"eventid": aaaa.resourceId,
-					"memberinfo": aaaa.memberinfo
-				},
-				"method": "get",
-				"success": function (cccc) {
-					var dddd = Ext.decode(cccc.responseText);
-					dddd.status && (Ext.get("rightNum").setHTML(dddd.rightAnswerCount),
-						Ext.get("rightAnswerNum").setStyle("display", "inline-block"));
+		faceCollection: function (e, c, f) {
+			if (e == "play" && this.timeCount == 0) {
+				if (typeof (startFaceCollection) != "undefined") {
+					startFaceCollection(c, f, this)
 				}
-			});
-			b.callParent(arguments);
-			var c = b.scrollEl;
-			var a = $(c.dom).niceScroll({
-				cursorborder: "",
-				cursorwidth: 6,
-				cursorcolor: "#A5A5A5",
-				boxzoom: false,
-				autohidemode: true
-			});
-			b.scroller = a;
-			b.submitEl.on("click", function () {
-				b.checkResult() && (Ext.get("videoquiz-continue").getStyle("display") == "none" && b.fireEvent("continue"));
-			});
-			b.continueEl.on("click", function () {
-				b.fireEvent("continue");
-			});
-			b.backEl && b.backEl.on("click", function () {
-				b.onerror && b.onerror(),
-					b.fireEvent("continue");
-			});
-			b.viewAnalysisEl && b.viewAnalysisEl.on("click", function () {
-				Ext.get("tkParsing").setStyle("display", "inline-block");
-			});
-			b.delAnalysisEl && b.delAnalysisEl.on("click", function () {
-				Ext.get("tkParsing").setStyle("display", "none");
-			});
-		},
-		"checkResult": function () {
-			var f = this,
-				i = Ext.query("input", f.el.dom),
-				e = true,
-				g = f.renderData,
-				b = g.options,
-				c = [],
-				h = f.quizErrorReportUrl,
-				a = f.validationUrl2;
-			var TMP_dtype = g.dtype;
-			Ext.each(i, function (k, j) {
-				(k.value == "true" && !k.checked || k.value == "false" && k.checked) && (e = false),
-					k.checked && c.push(b[j].name);
-			});
-			!e ? g.errorBackTime && g.errorBackTime > 0 ? (Ext.get("spanNotBack").setStyle("display", "block"),
-				Ext.get("videoquiz-submit").setStyle("display", "none"),
-				TMP_dtype == "InteractiveQuiz" ? Ext.get("knowledgeBack").setStyle("display", "block") : Ext.get("videoquiz-continue").setStyle("display", "block")) : TMP_dtype == "InteractiveQuiz" && g.errorBack == 1 && g.eBstartPoint != "" ? (Ext.get("spanNotBackPoint").setStyle("display", "block"),
-					Ext.get("knowledgeBack").setStyle("display", "block")) : Ext.get("spanNot").setStyle("display", "block") : (Ext.get("spanHas").setStyle("display", "block"),
-						TMP_dtype == "InteractiveQuiz" && (Ext.get("videoquiz-continue").setStyle("display", "block"),
-							Ext.get("knowledgeBack").setStyle("display", "none"),
-							Ext.get("videoquiz-submit").setStyle("display", "none"),
-							Ext.get("spanNot").setStyle("display", "none"),
-							Ext.get("spanNotBack").setStyle("display", "none"),
-							Ext.get("spanNotBackPoint").setStyle("display", "none")));
-			if (typeof a != "undefined") {
-				var TMP_answerContent = c.join(",");
-				Ext.Ajax.request({
-					url: a,
-					params: {
-						eventid: g.resourceId,
-						isRight: e,
-						memberinfo: g.memberinfo,
-						answerContent: TMP_answerContent
-					},
-					method: "get",
-					success: function (aaaa) {
-						g.answerContent = TMP_answerContent;
-						var bbbbb = Ext.decode(aaaa.responseText);
-						if (bbbbb.status) {
-							TMP_dtype == "InteractiveQuiz" && (Ext.get("rightNum").setHTML(bbbbb.rightAnswerCount),
-								Ext.get("rightAnswerNum").setStyle("display", "inline-block"));
-							if (bbbbb.isRight && TMP_dtype == "InteractiveQuiz") {
-								typeof bbbbb.showTip != "undefined" && bbbbb.showTip ? Ext.get("spanHas").setHTML("<span class='spanHas fr' style='display:block'><span id='InteractiveQuizTip'>恭喜你，答对了！你的答题水准超过了" + bbbbb.percent + "%的同学</span></span>") : Ext.get("spanHas").setHTML("<span class='spanHas fr' style='display:block'><span id='InteractiveQuizTip'>恭喜你，答对了！</span></span>");
-								if (bbbbb.testAnalysis) {
-									Ext.get("tkParsing_con").setHTML("解析：" + bbbbb.testAnalysis),
-										Ext.get("tkParsing").setStyle("display", "inline-block"),
-										Ext.get("viewAnalysis").setStyle("display", "block");
-									var ccccc = f.tkParseScrollEl
-										, ddddd = $(ccccc.dom).niceScroll({
-											"cursorborder": "",
-											"cursorwidth": 6,
-											"cursorcolor": "#A5A5A5",
-											"boxzoom": false,
-											"autohidemode": true
-										});
-									f.tkParseScroll = ddddd;
+			} else {
+				if (e == "pause") {
+					this.playTimer && clearInterval(this.playTimer);
+					if (!this.isPlay && this.timeCount >= this.captureInterval) {
+						if (typeof (startFaceCollection) != "undefined") {
+							startFaceCollection(c, f, this)
+						}
+						this.timeCount = 0
+					}
+				} else {
+					if (e == "ended") {
+						this.playTimer && clearInterval(this.playTimer);
+						if (typeof (startFaceCollection) != "undefined") {
+							startFaceCollection(c, f, this);
+							this.isEnd = true
+						}
+						this.timeCount = 0
+					} else {
+						if (e == "playing") {
+							if (typeof (startFaceCollection) != "undefined") {
+								startFaceCollection(c, f, this);
+								this.playingFace = true
+							}
+						} else {
+							if (e == "aginPlay") {
+								if (typeof (startFaceCollection) != "undefined") {
+									startFaceCollection(c, f, this);
+									this.isAginFace = true
 								}
 							}
 						}
 					}
-				}),
-					!e && f.onerror && TMP_dtype != "InteractiveQuiz" && f.onerror();
-			} else
-				!e && (Ext.Ajax.request({
+				}
+			}
+		},
+		playNextVideo: function (c) {
+			if (typeof (chapterPlayNextVideo) != "undefined") {
+				if (typeof top.allowNextVideo != "undefined" && top.allowNextVideo === false) {
+					top.showJobLimitTip();
+					return
+				}
+				chapterPlayNextVideo(c)
+			}
+		}
+	});
+	videojs.registerPlugin("seekBarControl", b)
+})();
+Ext.define("ans.videojs.TimelineObjectsBg", {
+	extend: "Ext.Component",
+	cls: "ans-timelineobjectsbg",
+	hidden: true
+});
+Ext.define("ans.videojs.VideoQuiz", {
+	extend: "Ext.Component",
+	xtype: "videoquiz",
+	cls: "ans-videoquiz",
+	renderTpl: ['<div class="tkTopic">', '<div class="tkTopic_title">[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', "{name}、{description}", "</label></li>", "</tpl> ", "</ul>", "</div>", "</div>", '<div class="tkTopic_oper">', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submit">提交</a>', '<a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue">继续</a>', '<span class="spanHas fr" id="spanHas">回答正确</span>', '<span class="spanNot fr" id="spanNot">回答错误</span>', '<span class="spanNotBack fr" id="spanNotBack">回答错误，回看 {errorBackTime} 分钟</span>', "</div>", "</div>", {
+		"getChecked": function (a, b, c) {
+			return a.indexOf(b) != -1 && c == "InteractiveQuiz" ? "checked" = "checked" : "";
+		}
+	}],
+	renderSelectors: {
+		submitEl: "a.ans-videoquiz-submit",
+		continueEl: "a.ans-videoquiz-continue",
+		scrollEl: "div.tkScroll",
+		backEl: "a.ans-videoquiz-back",
+		tkParseScrollEl: "div.tkParsing_screll",
+		viewAnalysisEl: "a.spanHref",
+		delAnalysisEl: "a.tkParsing_dele"
+	},
+	afterRender: function () {
+		var b = this;
+		var tmp_aaa = b.renderData;
+		var tmp_bbb = b.quizRightCountUrl;
+		typeof tmp_bbb != "undefined" && Ext.Ajax.request({
+			url: tmp_bbb,
+			params: {
+				"eventid": tmp_aaa.resourceId,
+				"memberinfo": tmp_aaa.memberinfo
+			},
+			method: "get",
+			success: function (tmp_ccc) {
+				var tmp_ddd = Ext.decode(tmp_ccc.responseText);
+				if (tmp_ddd.status) {
+					Ext.get("rightNum").setHTML(tmp_ddd.rightAnswerCount);
+					Ext.get("rightAnswerNum").setStyle("display", "inline-block")
+				}
+			}
+		});
+		b.callParent(arguments);
+		var c = b.scrollEl;
+		var a = $(c.dom).niceScroll({
+			cursorborder: "",
+			cursorwidth: 6,
+			cursorcolor: "#A5A5A5",
+			boxzoom: false,
+			autohidemode: true
+		});
+		b.scroller = a;
+		b.submitEl.on("click", function () {
+			if (b.checkResult()) {
+				if (Ext.get("videoquiz-continue").getStyle("display") == "none") {
+					b.fireEvent("continue")
+				}
+			}
+		});
+		b.continueEl.on("click", function () {
+			b.fireEvent("continue")
+		})
+		if (b.backEl) {
+			b.backEl.on("click", function () {
+				b.onerror && b.onerror();
+				b.fireEvent("continue")
+			})
+		}
+		if (b.viewAnalysisEl) {
+			b.viewAnalysisEl.on("click", function () {
+				Ext.get("tkParsing").setStyle("display", "inline-block")
+			})
+		}
+		if (b.delAnalysisEl) {
+			b.delAnalysisEl.on("click", function () {
+				Ext.get("tkParsing").setStyle("display", "none")
+			})
+		}
+	},
+	checkResult: function () {
+		var f = this,
+			i = Ext.query("input", f.el.dom),
+			e = true,
+			g = f.renderData,
+			b = g.options,
+			c = [],
+			h = f.quizErrorReportUrl,
+			a = f.validationUrl2;
+		var tmp_AAAA = g.dtype;
+		Ext.each(i, function (k, j) {
+			if ((k.value == "true" && !k.checked) || (k.value == "false" && k.checked)) {
+				e = false
+			}
+			if (k.checked) {
+				c.push(b[j].name)
+			}
+		});
+		if (!e) {
+			if (g.errorBackTime && g.errorBackTime > 0) {
+				Ext.get("spanNotBack").setStyle("display", "block");
+				Ext.get("videoquiz-submit").setStyle("display", "none")
+				if (tmp_AAAA == "InteractiveQuiz") {
+					Ext.get("knowledgeBack").setStyle("display", "block")
+				} else {
+					Ext.get("videoquiz-continue").setStyle("display", "block")
+				}
+			} else {
+				if (tmp_AAAA == "InteractiveQuiz" && g.errorBack == 1 && g.eBstartPoint != "") {
+					Ext.get("spanNotBackPoint").setStyle("display", "block");
+					Ext.get("knowledgeBack").setStyle("display", "block")
+				} else {
+					Ext.get("spanNot").setStyle("display", "block")
+				}
+			}
+		} else {
+			Ext.get("spanHas").setStyle("display", "block")
+			if (tmp_AAAA == "InteractiveQuiz") {
+				Ext.get("videoquiz-continue").setStyle("display", "block");
+				Ext.get("knowledgeBack").setStyle("display", "none");
+				Ext.get("videoquiz-submit").setStyle("display", "none");
+				Ext.get("spanNot").setStyle("display", "none");
+				Ext.get("spanNotBack").setStyle("display", "none");
+				Ext.get("spanNotBackPoint").setStyle("display", "none")
+			}
+		}
+		if (typeof a != "undefined") {
+			var tmp_BBBB = c.join(",");
+			Ext.Ajax.request({
+				url: a,
+				params: {
+					eventid: g.resourceId,
+					isRight: e,
+					memberinfo: g.memberinfo,
+					answerContent: tmp_BBBB
+				},
+				method: "get",
+				success: function (tmp_CCC) {
+					g.answerContent = tmp_BBBB;
+					var tmp_DDDD = Ext.decode(tmp_CCC.responseText);
+					if (tmp_DDDD.status) {
+						if (tmp_AAAA == "InteractiveQuiz") {
+							Ext.get("rightNum").setHTML(tmp_DDDD.rightAnswerCount);
+							Ext.get("rightAnswerNum").setStyle("display", "inline-block")
+						};
+						if (tmp_DDDD.isRight && tmp_AAAA == "InteractiveQuiz") {
+							if (typeof tmp_DDDD.showTip != "undefined" && tmp_DDDD.showTip) {
+								Ext.get("spanHas").setHTML("<span class='spanHas fr' style='display:block'><span id='InteractiveQuizTip'>恭喜你，答对了！你的答题水准超过了" + tmp_DDDD.percent + "%的同学</span></span>")
+							} else {
+								Ext.get("spanHas").setHTML("<span class='spanHas fr' style='display:block'><span id='InteractiveQuizTip'>恭喜你，答对了！</span></span>")
+							}
+							if (tmp_DDDD.testAnalysis) {
+								Ext.get("tkParsing_con").setHTML("解析：" + tmp_DDDD.testAnalysis);
+								Ext.get("tkParsing").setStyle("display", "inline-block");
+								Ext.get("viewAnalysis").setStyle("display", "block");
+								var tmp_0007 = f.tkParseScrollEl;
+								var tmp_0008 = $(tmp_0007.dom).niceScroll({
+									"cursorborder": "",
+									"cursorwidth": 6,
+									"cursorcolor": "#A5A5A5",
+									"boxzoom": false,
+									"autohidemode": true
+								});
+								f.tkParseScroll = tmp_0008
+							}
+						}
+					}
+				}
+			});
+			if (!e && f.onerror && tmp_AAAA != "InteractiveQuiz") {
+				f.onerror()
+			}
+		} else {
+			if (!e) {
+				Ext.Ajax.request({
 					url: h,
 					params: {
 						eventid: g.resourceId,
@@ -1120,26 +1246,32 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 						answerContent: c.join(",")
 					},
 					method: "get"
-				}),
-					f.onerror && TMP_dtype != "InteractiveQuiz" && f.onerror());
-			return !e && g.errorContinue == 1 && (e = true,
-				Ext.get("videoquiz-submit").setStyle("display", "none"),
-				Ext.get("videoquiz-continue").setStyle("display", "block")),
-				e;
-		},
-		"continueFun": function () {
-			var a = this;
-			a.fireEvent("continue")
+				});
+				if (f.onerror && tmp_AAAA != "InteractiveQuiz") {
+					f.onerror()
+				}
+			}
 		}
-	});
-Ext.define("ans.videojs.VideoImg", {
-	"extend": "Ext.Component",
-	"xtype": "videoimg",
-	"renderTpl": ['<div class="sp_video_pic">', '<img src="{src}" class="sp_video_img"/>', '<a class="sp_video_pic_dele" href="javascript:;"></a>', "</div>"],
-	"renderSelectors": {
-		"closeEl": "a.sp_video_pic_dele"
+		if (!e && g.errorContinue == 1) {
+			e = true;
+			Ext.get("videoquiz-submit").setStyle("display", "none");
+			Ext.get("videoquiz-continue").setStyle("display", "block")
+		}
+		return e
 	},
-	"afterRender": function () {
+	continueFun: function () {
+		var a = this;
+		a.fireEvent("continue")
+	}
+});
+Ext.define("ans.videojs.VideoImg", {
+	extend: "Ext.Component",
+	xtype: "videoimg",
+	renderTpl: ['<div class="sp_video_pic">', '<img src="{src}" class="sp_video_img" />', '<a class="sp_video_pic_dele" href="javascript:;"></a>', "</div>"],
+	renderSelectors: {
+		closeEl: "a.sp_video_pic_dele"
+	},
+	afterRender: function () {
 		var a = this;
 		a.callParent(arguments);
 		a.el.on("click", function () {
@@ -1151,44 +1283,44 @@ Ext.define("ans.videojs.VideoImg", {
 	}
 });
 Ext.define("ans.videojs.VideoAnnotation", {
-	"extend": "Ext.Component",
-	"xtype": "videoannotation",
-	"cls": "ans-videoannotation",
-	"renderTpl": ['<div class="vidNota">', '<div class="vidNota_title"><h2 class="vidNota_h2">[批注]</h2><a class="vidNota_close" href="javascript:;"></a></div>', '<div class="vidNota_con" id ="pizhuScroll" tabindex ="1" style ="overflow: hidden;outline: none;">', "<p>{description}</p>", "</div>", "</div>"],
-	"renderSelectors": {
-		"closeEl": "a.vidNota_close",
-		"contentEl": "div.vidNota_con"
+	extend: "Ext.Component",
+	xtype: "videoannotation",
+	cls: "ans-videoannotation",
+	renderTpl: ['<div class="vidNota">', '<div class="vidNota_title"><h2 class="vidNota_h2">[批注]</h2><a class="vidNota_close" href="javascript:;"></a></div>', '<div class="vidNota_con" id="pizhuScroll" tabindex="1" style="overflow: hidden; outline: none;">', "<p>{description}</p>", "</div>", "</div>"],
+	renderSelectors: {
+		closeEl: "a.vidNota_close",
+		contentEl: "div.vidNota_con"
 	},
-	"afterRender": function () {
+	afterRender: function () {
 		var c = this,
 			b = c.contentEl;
 		c.callParent(arguments);
 		c.closeEl.on("click", function () {
-			c.fireEvent("continue");
+			c.fireEvent("continue")
 		});
 		var a = $(b.dom).niceScroll({
-			"cursorborder": "",
-			"cursorwidth": 6,
-			"cursorcolor": "#e0e0e0",
-			"boxzoom": false,
-			"autohidemode": true
+			cursorborder: "",
+			cursorwidth: 6,
+			cursorcolor: "#e0e0e0",
+			boxzoom: false,
+			autohidemode: true
 		});
-		c.scroller = a;
+		c.scroller = a
 	}
 });
 Ext.define("ans.videojs.VideoPpt", {
-	"extend": "Ext.Component",
-	"xtype": "videoppt",
-	"cls": "ans-videoppt",
-	"width": "100%",
-	"model": false,
-	"renderTpl": ['<div class="sp_video_ppt_pic" id="sp_video_ppt_pic">', '<img src="{src}" class="sp_video_img" style="width: 100%;"/>', '<a class="sp_size_big" id="sp_size_big" href="javascript:;"></a>', '<a class="sp_size_small" href="javascript:;" style="display:none;" id="sp_size_small"></a>', "</div>"],
-	"renderSelectors": {
-		"pptPicEl": "div.sp_video_ppt_pic",
-		"sizeBigEl": "a.sp_size_big",
-		"sizeSmallEl": "a.sp_size_small"
+	extend: "Ext.Component",
+	xtype: "videoppt",
+	cls: "ans-videoppt",
+	width: "100%",
+	model: false,
+	renderTpl: ['<div class="sp_video_ppt_pic" id="sp_video_ppt_pic">', '<img src="{src}" class="sp_video_img" style="width: 100%;"/>', '<a class="sp_size_big" id="sp_size_big" href="javascript:;"></a>', '<a class="sp_size_small" href="javascript:;" style="display:none;" id="sp_size_small"></a>', "</div>"],
+	renderSelectors: {
+		pptPicEl: "div.sp_video_ppt_pic",
+		sizeBigEl: "a.sp_size_big",
+		sizeSmallEl: "a.sp_size_small"
 	},
-	"afterRender": function () {
+	afterRender: function () {
 		var a = this;
 		a.callParent(arguments);
 		a.pptPicEl.on("click", function (g) {
@@ -1231,21 +1363,21 @@ Ext.define("ans.videojs.VideoPpt", {
 	}
 });
 Ext.define("ans.videojs.TimelineObjects", {
-	"extend": "Ext.container.Container",
-	"cls": "ans-timelineobjects",
-	"autoScroll": true,
-	"hidden": true,
-	"hideMode": "visibility",
-	"constructor": function (a) {
+	extend: "Ext.container.Container",
+	cls: "ans-timelineobjects",
+	autoScroll: true,
+	hidden: true,
+	hideMode: "visibility",
+	constructor: function (a) {
 		var b = this;
 		b.callParent(arguments);
 		b.bg = Ext.create("ans.videojs.TimelineObjectsBg", {
-			"renderTo": a.renderTo
+			renderTo: a.renderTo
 		});
 		b.objects = a.objects && a.objects.sort ? b.sort_(a.objects) : [];
 		b.current = 0
 	},
-	"showObject": function (m, b, e) {
+	showObject: function (m, b, e) {
 		var j = this,
 			h = j.getBox(),
 			c = j.items.getAt(0),
@@ -1288,7 +1420,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 		if (b == "InteractiveQuiz") {
 			var k = function () { };
 			if (e.errorBackTime && e.errorBackTime > 0) {
-				var n = e.errorBackTime * 0x3c;
+				var n = e.errorBackTime * 60;
 				k = function () {
 					var o = Math.max(m.currentTime() - n, 0);
 					m.switchStatus = true;
@@ -1297,23 +1429,28 @@ Ext.define("ans.videojs.TimelineObjects", {
 			}
 			if (e.errorBack == 1 && e.eBstartPoint != "") {
 				var n = 0;
-				var pppp = e.eBstartPoint.split(":");
-				var qqqq = pppp.length;
-				qqqq > 0 && (qqqq == 1 ? n = parseInt(pppp[0]) * 0x3c : qqqq == 2 && (n = parseInt(pppp[0]) * 0x3c + parseInt(pppp[1]))),
-					k = function () {
-						m.switchStatus = true;
-						m.currentTime(n);
-					};
+				var tmp_0009 = e.eBstartPoint.split(":");
+				var tmp_0010 = tmp_0009.length;
+				if (tmp_0010 > 0) {
+					if (tmp_0010 == 1)
+						n = parseInt(tmp_0009[0]) * 60
+					else if (tmp_0010 == 2)
+						n = parseInt(tmp_0009[0]) * 60 + parseInt(tmp_0009[1])
+				}
+				k = function () {
+					m.switchStatus = true;
+					m.currentTime(n);
+				};
 			}
-			e.dtype = "InteractiveQuiz",
-				l = j.add({
-					xtype: "videoquiz",
-					renderData: e,
-					quizErrorReportUrl: j.quizErrorReportUrl,
-					validationUrl2: j.validationUrl2,
-					quizRightCountUrl: j.quizRightCountUrl,
-					onerror: k
-				});
+			e.dtype = "InteractiveQuiz";
+			l = j.add({
+				xtype: "videoquiz",
+				renderData: e,
+				quizErrorReportUrl: j.quizErrorReportUrl,
+				validationUrl2: j.validationUrl2,
+				quizRightCountUrl: j.quizRightCountUrl,
+				onerror: k
+			});
 		}
 		if (b == "PPT") {
 			if (e.fp == 0) {
@@ -1368,15 +1505,19 @@ Ext.define("ans.videojs.TimelineObjects", {
 		this.bg.hide.apply(this.bg, arguments)
 	},
 	updateTime: function (a, e) {
-		if (this.current >= this.objects.length || a.scrubbing())
-			return;
-		var c = this;
-		var f = c.objects[c.current];
-		var b = f.style;
-		var g = f.datas[0];
-		e >= g.startTime && (c.current++, c.showObject(a, b, g));
+		if (this.current >= this.objects.length || a.scrubbing()) {
+			return
+		}
+		var c = this,
+			f = c.objects[c.current],
+			b = f.style,
+			g = f.datas[0];
+		if (e >= g.startTime) {
+			c.current++;
+			c.showObject(a, b, g)
+		}
 	},
-	"resetTime": function (b, e) {
+	resetTime: function (b, e) {
 		var c = this,
 			a;
 		for (a = 0; a < c.objects.length; a++) {
@@ -1387,7 +1528,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 		}
 		c.current = a
 	},
-	"sort_": function (a) {
+	sort_: function (a) {
 		return a && a.sort && a.sort(function (f, e) {
 			var c = f.datas[0].startTime;
 			var b = e.datas[0].startTime;
@@ -1414,20 +1555,20 @@ Ext.define("ans.videojs.TimelineObjects", {
 					}
 					eval("var data=" + resp.responseText);
 					if (data && data.length > 0) {
-						var hhh = [];
-						for (var iii = 0; iii < data.length; iii++) {
-							var jjj = data[iii];
-							if (jjj.style == "InteractiveQuiz") {
-								var kkk = jjj.datas;
-								if (kkk && kkk.length > 0)
-									var lll = {
-										"time": kkk[0].startTime,
+						var tmp_0011 = [];
+						for (var i = 0; i < data.length; i++) {
+							var j = data[i];
+							if (j.style == "InteractiveQuiz") {
+								var k = j.datas;
+								if (k && k.length > 0)
+									var l = {
+										"time": k[0].startTime,
 										"text": "互动测验"
 									};
-								hhh.push(lll);
+								tmp_0011.push(l);
 							}
 						}
-						player.eventPoints = hhh;
+						player.eventPoints = tmp_0011;
 					}
 					var timeline = Ext.create("ans.videojs.TimelineObjects", {
 						renderTo: player.el_,
@@ -1475,8 +1616,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 					}
 					var videoPlayer = videojs("video");
 					if (videoPlayer && typeof videoPlayer.markers === "function") {
-						var Tmp_markers = player.eventPoints;
-						Tmp_markers.push.apply(Tmp_markers, data.list);
+						var tmp_A = player.eventPoints;
+						tmp_A.push.apply(tmp_A, data.list);
 						videoPlayer.markers({
 							markerTip: {
 								display: true,
@@ -1484,7 +1625,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 									return marker.text
 								}
 							},
-							markers: Tmp_markers,
+							markers: tmp_A,
 							onMarkerClick: function (marker) {
 								if (options.ff != 1) {
 									return false
@@ -1496,56 +1637,66 @@ Ext.define("ans.videojs.TimelineObjects", {
 						})
 					}
 					if (data.list && data.list.length > 0) {
-						var aa = [];
-						var bb = {};
+						var tmp_B = [];
+						var tmp_C = {};
 						for (var i = 0; i < data.list.length; i++) {
-							var marker = data.list[i];
-							var cc = marker.text;
-							if (!bb[cc]) {
-								var dd = [];
-								dd.push(marker),
-									bb[cc] = dd,
-									aa.push(cc);
+							var tmp_D = data.list[i];
+							var tmp_E = tmp_D.text;
+							if (!tmp_C[tmp_E]) {
+								var tmp_F = [];
+								tmp_F.push(tmp_D);
+								tmp_C[tmp_E] = tmp_F;
+								tmp_B.push(tmp_E);
 							} else {
-								var ee = bb[cc];
-								ee.push(marker),
-									bb[cc] = ee;
+								var tmp_G = tmp_C[tmp_E];
+								tmp_G.push(tmp_D);
+								tmp_C[tmp_E] = tmp_G;
 							}
 						}
-						function ff1(aaa) {
-							var bbb = '<div class="zsCloud_box"><h2 class="zsCloud_seltime">选择时间</h2><div class="zsCloud_div"><div class="zsCloud_div_list">';
-							for (var i = 0; i < aaa.length; i++) {
-								var ccc = aaa[i]
-									, ddd = Ext.fly(topicContent.elements[0]).select(".topicId" + ccc.topicid + ":not(.markertime)")
-									, eee = videojs.formatTime(ccc.time);
-								ddd && ddd.elements[0] && ddd.elements[0].parentElement.remove(),
-									bbb += '<div class="zsCloud_item topicId" + ccc.topicid + "" data-marker-time="" + ccc.time + "" title ="" + eee + "" onclick ="markersPlayer(this)">' + eee + "</div>";
+						function tmp_F1(tmp_H) {
+							var tmp_K = '<div class="zsCloud_box"><h2 class="zsCloud_seltime">选择时间</h2><div class="zsCloud_div"><div class="zsCloud_div_list">';
+							for (var i = 0; i < tmp_H.length; i++) {
+								var tmp_I = tmp_H[i],
+									tmp_topic = Ext.fly(topicContent.elements[0]).select(".topicId" + tmp_I.topicid + ":not(.markertime)"),
+									tmp_J = videojs.formatTime(tmp_I.time);
+								tmp_topic && tmp_topic.elements[0] && tmp_topic.elements[0].parentElement.remove(),
+									tmp_K += '<div class="zsCloud_item topicId" + ccc.topicid + "" data-marker-time="" + ccc.time + "" title ="" + eee + "" onclick ="markersPlayer(this)">' + tmp_J + "</div>";
 							}
-							return bbb += "</div></div></div>",
-								bbb;
+							tmp_K += "</div></div></div>";
+							return tmp_K;
 						}
 						Ext.select(".zsCloud").setStyle("display", "block");
 						var topicContent = Ext.select(".zsCloud_ul");
 						if (topicContent && topicContent.elements[0]) {
 							var insertLocaltion;
-							for (var i = 0; i < aa.length; i++) {
-								var hhh = aa[i];
-								var iii = bb[hhh];
+							for (var i = 0; i < tmp_B.length; i++) {
+								var tmp_L = tmp_B[i];
+								var tmp_M = tmp_C[tmp_L];
 								var markerHtml = "";
-								if (iii) {
-									if (iii.length == 1) {
-										var kkk = iii[0]
-											, lll = Ext.fly(topicContent.elements[0]).select(".topicId" + kkk.topicid + ":not(.markertime)")
-											, mmm = videojs.formatTime(kkk.time);
-										lll && lll.elements[0] && lll.elements[0].parentElement.remove(),
-											markerHtml = '<li><span class="topicId" + kkk.topicid + " markertime" data-marker-time="" + kkk.time + "ERYA_TSK_HOST" + mmm + "" onclick ="markersPlayer(this)">' + kkk.text + "</span></li>";
+								if (tmp_M) {
+									if (tmp_M.length == 1) {
+										var marker = tmp_M[0];
+										var topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)");
+										var title = videojs.formatTime(marker.time);
+										if (topic && topic.elements[0]) {
+											topic.elements[0].parentElement.remove()
+										}
+										markerHtml = '<li><span class="topicId" + kkk.topicid + " markertime" data-marker-time="" + kkk.time + "ERYA_TSK_HOST" + mmm + "" onclick ="markersPlayer(this)">' + marker.text + "</span></li>";
 									} else {
 										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">" + hhh + "</span>';
-										iii && iii.length > 0 ? markerHtml += ff1(iii) : markerHtml += "</li>";
+										if (tmp_M && tmp_M.length > 0) {
+											markerHtml += tmp_F1(tmp_M)
+										} else {
+											markerHtml += "</li>"
+										}
 									}
 								}
-								insertLocaltion ? insertLocaltion = Ext.DomHelper.insertHtml("afterEnd", insertLocaltion.elements[0], markerHtml) : insertLocaltion = Ext.DomHelper.insertHtml("afterBegin", topicContent.elements[0], markerHtml);
-								insertLocaltion = Ext.fly(insertLocaltion).select("");
+								if (insertLocaltion) {
+									insertLocaltion = Ext.DomHelper.insertHtml("afterEnd", insertLocaltion.elements[0], markerHtml)
+								} else {
+									insertLocaltion = Ext.DomHelper.insertHtml("afterBegin", topicContent.elements[0], markerHtml)
+								}
+								insertLocaltion = Ext.fly(insertLocaltion).select("")
 							}
 						}
 						if (options.videoTopicCloud && options.videoTopicCloud == 1) {
@@ -1559,24 +1710,28 @@ Ext.define("ans.videojs.TimelineObjects", {
 						for (var i = 0; i < data.list.length; i++) {
 							var topicid = data.list[i].topicid;
 							var item = dataMap.get(topicid);
-							!item && (item = {},
-								item.text = data.list[i].text,
-								item.time = data.list[i].time,
-								item.topicid = data.list[i].topicid,
-								item.weight = 0,
+							if (!item) {
+								item = {};
+								item.text = data.list[i].text;
+								item.time = data.list[i].time;
+								item.topicid = data.list[i].topicid;
+								item.weight = 0;
 								item.html = {
 									"data-marker-time": data.list[i].time,
-									"onclick": "markersPlayer(this)"
-								},
-								dataMap.set(topicid, item),
-								wordList.push(item)),
-								item.weight += 1;
+									onclick: "markersPlayer(this)"
+								};
+								dataMap.set(topicid, item);
+								wordList.push(item)
+							}
+							item.weight += 1
 						}
 					}
 					$(function () {
-						wordList.length != 0 && $("#word_cloud").jQCloud(wordList);
-						function nnn(a) {
-							$(a).niceScroll({
+						if (wordList.length != 0) {
+							$("#word_cloud").jQCloud(wordList)
+						}
+						function tmp_F2(tmp_a) {
+							$(tmp_a).niceScroll({
 								"cursorborder": "",
 								"cursorwidth": 8,
 								"cursorcolor": "#DADFE6",
@@ -1584,12 +1739,12 @@ Ext.define("ans.videojs.TimelineObjects", {
 								"autohidemode": true
 							}),
 								setInterval(function () {
-									$(a).getNiceScroll().resize();
+									$(tmp_a).getNiceScroll().resize()
 								}, 300);
 						}
 						$(".zsCloud_box").each(function (a) {
 							$(this).find(".zsCloud_div").attr("id", "zsCloud_div_" + a);
-							nnn("#zsCloud_div_" + a);
+							tmp_F2("#zsCloud_div_" + a);
 						});
 					});
 					$(".zsCloud_down").click(function () {
@@ -1613,7 +1768,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 (function () {
 	var Plugin = videojs.getPlugin("plugin");
 	var Subtitle = videojs.extend(Plugin, {
-		"constructor": function (player, options) {
+		constructor: function (player, options) {
 			Plugin.call(this, player, options);
 			var me = this,
 				subtitleUrl = options.subtitleUrl,
@@ -1622,46 +1777,69 @@ Ext.define("ans.videojs.TimelineObjects", {
 					if (m) {
 						return ServerHosts.PARENT_HOST + "/ananas/video-editor/sub?objectid=" + m[1]
 					}
-				}
-				, addSub = function (name, src, isdefault) {
+				},
+				addSub = function (name, src, isdefault) {
 					player.addRemoteTextTrack({
-						"kind": "subtitles",
-						"srclang": "cn",
+						kind: "subtitles",
+						srclang: "cn",
 						label: name,
 						src: src,
 						"default": isdefault
 					}, true)
 				};
 			player.ready(function () {
-				subtitleUrl && Ext.Ajax.request({
-					"url": subtitleUrl,
-					"success": function (resp) {
-						if (resp.status != 200)
-							return;
-						eval("var subs=" + resp.responseText);
-						var index = 0,
-							enIndex = 0;
-						subs.length > 0 && Ext.each(subs, function (o) {
-							options.translate == 1 && o.name == "English" ? (o.selected = true,
-								enIndex = index) : o.selected = false,
-								addSub(o.name, toVtt(o.url), o.selected),
-								index++;
-						}),
-							options.translate == 1 && (Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").setHTML("翻译"),
-								Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").addCls("vjs-hide-content")),
+				if (subtitleUrl) {
+					Ext.Ajax.request({
+						url: subtitleUrl,
+						success: function (resp) {
+							if (resp.status != 200) {
+								return
+							}
+							eval("var subs=" + resp.responseText);
+							var index = 0,
+								enIndex = 0;
+							if (subs.length > 0) {
+								Ext.each(subs, function (o) {
+									if (options.translate == 1 && o.name == "English") {
+										o.selected = true;
+										enIndex = index
+									} else {
+										o.selected = false
+									}
+									addSub(o.name, toVtt(o.url), o.selected);
+									index++
+								})
+							}
+							if (options.translate == 1) {
+								Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").setHTML("翻译");
+								Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").addCls("vjs-hide-content")
+							}
 							setTimeout(function () {
 								var tracks = player.textTracks();
-								options.translate == 1 ? tracks && tracks[enIndex] ? tracks[enIndex].mode = "showing" : tracks && tracks[0] && (tracks[0].mode = "showing") : tracks && tracks[0] && (tracks[0].mode = "showing");
-							}, 500);
-					}
-				});
+								if (options.translate == 1) {
+									if (tracks && tracks[enIndex]) {
+										tracks[enIndex].mode = "showing"
+									} else {
+										if (tracks && tracks[0]) {
+											tracks[0].mode = "showing"
+										}
+									}
+								} else {
+									if (tracks && tracks[0]) {
+										tracks[0].mode = "showing"
+									}
+								}
+							}, 500)
+						}
+					})
+				}
 				var settings = player.textTrackSettings;
 				settings.setValues({
 					backgroundColor: "#000",
 					backgroundOpacity: "0",
 					edgeStyle: "uniform"
 				});
-				settings.updateDisplay();
+				settings.updateDisplay()
 			})
 		}
 	});
@@ -1692,244 +1870,287 @@ Ext.define("ans.videojs.ErrorDisplay", {
 			}
 		} catch (c) { }
 	},
-	"setErrorMsg": function (a) {
+	setErrorMsg: function (a) {
 		Ext.fly(this.errorMsgEl).setHTML(a)
 	}
 });
 Ext.define("ans.videojs.ErrorNote", {
-	"extend": "Ext.Component",
-	"cls": "ans-vjserrdisplay",
-	"renderTpl": ['<div class="ans-vjserrdisplay-title">播放出现异常。</div>']
+	extend: "Ext.Component",
+	cls: "ans-vjserrdisplay",
+	renderTpl: ['<div class="ans-vjserrdisplay-title">播放出现异常。</div>']
 });
 (function () {
 	var b = videojs.getComponent("ErrorDisplay");
 	var a = videojs.extend(b, {
-		"constructor": function (e, c) {
-			b.call(this, e, c);
+		constructor: function (e, c) {
+			b.call(this, e, c)
 		},
-		"colse": function () {
-			b.prototype.colse.call(this),
-				me.ansErrorDisplay && (me.ansErrorDisplay.destroy(),
-					me.ansErrorDisplay = null);
+		colse: function () {
+			b.prototype.colse.call(this);
+			if (me.ansErrorDisplay) {
+				me.ansErrorDisplay.destroy();
+				me.ansErrorDisplay = null
+			}
 		},
-		"fill": function () {
+		fill: function () {
 			b.prototype.fill.call(this);
 			var g = this,
 				i = g.player_,
 				h = i.options_.playlines,
 				e = Ext.query(".vjs-modal-dialog-content", g.el_)[0];
-			g.ansErrorDisplay && (g.ansErrorDisplay.destroy(),
-				delete g.ansErrorDisplay);
+			if (g.ansErrorDisplay) {
+				g.ansErrorDisplay.destroy();
+				delete g.ansErrorDisplay
+			}
 			if (!i.selectCDN || !h) {
 				g.ansErrorDisplay = Ext.create("ans.videojs.ErrorNote", {
-					"renderTo": g.el_
+					renderTo: g.el_
 				});
-				return;
+				return
 			}
 			var f = i.currentPlayline(),
 				c = 0;
 			Ext.each(h, function (k, j) {
-				f == k && (c = j);
-			});
-			g.ansErrorDisplay = Ext.create("ans.videojs.ErrorDisplay", {
-				"renderTo": g.el_,
-				"onSelected": function (j) {
-					i.selectCDN(j);
-					g.close();
-				},
-				"renderData": {
-					"playlines": h,
-					"errorMsg": g.content(),
-					"selectedIndex": c
+				if (f == k) {
+					c = j
 				}
 			});
+			g.ansErrorDisplay = Ext.create("ans.videojs.ErrorDisplay", {
+				renderTo: g.el_,
+				onSelected: function (j) {
+					i.selectCDN(j);
+					g.close()
+				},
+				renderData: {
+					playlines: h,
+					errorMsg: g.content(),
+					selectedIndex: c
+				}
+			})
 		}
 	});
-	videojs.registerComponent("ErrorDisplay", a);
+	videojs.registerComponent("ErrorDisplay", a)
 })();
 (function () {
 	var a = null;
-	typeof window.videojs === "undefined" && typeof require === "function" ? a = require("video.js") : a = window.videojs,
-		function (i, h) {
-			var g = {},
-				c,
-				k = {},
-				b = {};
-			function f(p, o, n, q) {
-				k = {
-					label: n,
-					sources: o
-				};
-				if (typeof q === "function") {
-					return q(p, o, n)
-				}
-				p.src(o.map(function (r) {
-					return {
-						src: r.src,
-						type: r.type,
-						res: r.res
-					}
-				}));
-				return p
+	if (typeof window.videojs === "undefined" && typeof require === "function") {
+		a = require("video.js")
+	} else {
+		a = window.videojs
+	}
+	(function (i, h) {
+		var g = {},
+			c,
+			k = {},
+			b = {};
+		function f(p, o, n, q) {
+			k = {
+				label: n,
+				sources: o
+			};
+			if (typeof q === "function") {
+				return q(p, o, n)
 			}
-			var l = h.getComponent("MenuItem");
-			var m = h.extend(l, {
-				"constructor": function (p, o, q, n) {
-					this.onClickListener = q,
-						this.label = n,
-						l.call(this, p, o),
-						this.src = o.src,
-						this.on("click", this.onClick),
-						this.on("touchstart", this.onClick),
-						o.initialySelected && (this.showAsLabel(),
-							this.selected(true),
-							this.addClass("vjs-selected"));
-				},
-				"showAsLabel": function () {
-					this.label && (this.label.innerHTML = this.options_.label);
-				},
-				"onClick": function (q) {
-					this.onClickListener(this);
-					var p = this.player_.currentTime()
-						, n = this.player_.paused();
-					this.showAsLabel(),
-						this.addClass("vjs-selected");
-					!n && this.player_.bigPlayButton.hide();
-					typeof q !== "function" && typeof this.options_.customSourcePicker === "function" && (q = this.options_.customSourcePicker);
-					var o = "loadeddata";
-					this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash" && (o = "timeupdate"),
-						f(this.player_, this.src, this.options_.label, q).drag(o, function () {
-							var r = this.player_;
-							r.switchStatus = true;
-							r.currentTime(p);
-							if (!n) {
-								r.play()
-							}
-							r.trigger("resolutionchange")
-						})
+			p.src(o.map(function (r) {
+				return {
+					src: r.src,
+					type: r.type,
+					res: r.res
 				}
-			});
-			h.registerComponent("ResolutionMenuItem", m);
-			var j = h.getComponent("MenuButton");
-			var e = h.extend(j, {
-				"constructor": function (q, o, r, n) {
-					this.sources = o.sources;
-					this.label = n;
-					this.label.innerHTML = o.initialySelectedLabel;
-					j.call(this, q, o, r);
-					this.controlText("Quality");
-					if (r.dynamicLabel)
-						this.el().appendChild(n);
-					else {
-						var p = document.createElement("span");
-						h.dom.addClass(p, "vjs-resolution-button-staticlabel"),
-							this.el().appendChild(p);
+			}));
+			return p
+		}
+		var l = h.getComponent("MenuItem");
+		var m = h.extend(l, {
+			constructor: function (p, o, q, n) {
+				this.onClickListener = q;
+				this.label = n;
+				l.call(this, p, o);
+				this.src = o.src;
+				this.on("click", this.onClick);
+				this.on("touchstart", this.onClick);
+				if (o.initialySelected) {
+					this.showAsLabel();
+					this.selected(true);
+					this.addClass("vjs-selected")
+				}
+			},
+			showAsLabel: function () {
+				if (this.label) {
+					this.label.innerHTML = this.options_.label
+				}
+			},
+			onClick: function (q) {
+				this.onClickListener(this);
+				var p = this.player_.currentTime();
+				var n = this.player_.paused();
+				this.showAsLabel();
+				this.addClass("vjs-selected");
+				if (!n) {
+					this.player_.bigPlayButton.hide()
+				}
+				if (typeof q !== "function" && typeof this.options_.customSourcePicker === "function") {
+					q = this.options_.customSourcePicker
+				}
+				var o = "loadeddata";
+				if (this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash") {
+					o = "timeupdate"
+				}
+				f(this.player_, this.src, this.options_.label, q).one(o, function () {
+					var r = this.player_;
+					r.switchStatus = true;
+					r.currentTime(p);
+					if (!n) {
+						r.play()
 					}
-				},
-				"createItems": function () {
-					var o = [];
-					var q = (this.sources && this.sources.label) || {};
-					var p = function (r) {
-						o.map(function (s) {
-							s.selected(s === r);
-							s.removeClass("vjs-selected");
-						});
-					};
-					for (var n in q) {
-						q.hasOwnProperty(n) && (o.push(new m(this.player_, {
+					r.trigger("resolutionchange")
+				})
+			}
+		});
+		h.registerComponent("ResolutionMenuItem", m);
+		var j = h.getComponent("MenuButton");
+		var e = h.extend(j, {
+			constructor: function (q, o, r, n) {
+				this.sources = o.sources;
+				this.label = n;
+				this.label.innerHTML = o.initialySelectedLabel;
+				j.call(this, q, o, r);
+				this.controlText("Quality");
+				if (r.dynamicLabel) {
+					this.el().appendChild(n)
+				} else {
+					var p = document.createElement("span");
+					h.dom.addClass(p, "vjs-resolution-button-staticlabel");
+					this.el().appendChild(p)
+				}
+			},
+			createItems: function () {
+				var o = [];
+				var q = (this.sources && this.sources.label) || {};
+				var p = function (r) {
+					o.map(function (s) {
+						s.selected(s === r);
+						s.removeClass("vjs-selected")
+					})
+				};
+				for (var n in q) {
+					if (q.hasOwnProperty(n)) {
+						o.push(new m(this.player_, {
 							label: n,
 							src: q[n],
-							"initialySelected": n === this.options_.initialySelectedLabel,
-							"customSourcePicker": this.options_.customSourcePicker
-						}, p, this.label)),
-							b[n] = o[o.length - 1]);
+							initialySelected: n === this.options_.initialySelectedLabel,
+							customSourcePicker: this.options_.customSourcePicker
+						}, p, this.label));
+						b[n] = o[o.length - 1]
 					}
-					return o;
 				}
-			});
-			c = function (w) {
-				var p = h.mergeOptions(g, w),
-					u = this,
-					t = document.createElement("span"),
-					s = {};
-				h.dom.addClass(t, "vjs-resolution-button-label"),
-					u.updateSrc = function (y) {
-						if (!y)
-							return u.src();
-						u.controlBar.resolutionSwitcher && (u.controlBar.resolutionSwitcher.dispose(),
-							delete u.controlBar.resolutionSwitcher);
-						y = y.sort(r);
-						s = q(y);
-						var z = o(s, y);
-						var x = new e(u, {
-							"sources": s,
-							"initialySelectedLabel": z.label,
-							"initialySelectedRes": z.res,
-							"customSourcePicker": p.customSourcePicker
-						}, p, t);
-						return h.dom.addClass(x.el(), "vjs-resolution-button"),
-							u.controlBar.resolutionSwitcher = u.controlBar.el_.insertBefore(x.el_, u.controlBar.getChild("fullscreenToggle").el_),
-							u.controlBar.resolutionSwitcher.dispose = function () {
-								this.parentNode.removeChild(this);
-							},
-							f(u, z.sources, z.label, p.customSourcePicker);
-					},
-					u.currentResolution = function (x, y) {
-						if (x == null)
-							return k;
-						return b[x] != null && b[x].onClick(y),
-							u;
-					},
-					u.getGroupedSrc = function () {
-						return s;
-					};
-				function r(y, x) {
-					if (!y.res || !x.res)
-						return 0;
-					return +x.res - +y.res;
+				return o
+			}
+		});
+		c = function (w) {
+			var p = h.mergeOptions(g, w),
+				u = this,
+				t = document.createElement("span"),
+				s = {};
+			h.dom.addClass(t, "vjs-resolution-button-label");
+			u.updateSrc = function (y) {
+				if (!y) {
+					return u.src()
 				}
-				function q(y) {
-					var x = {
-						label: {},
-						res: {},
-						type: {}
-					};
-					return y.map(function (z) {
-						n(x, "label", z),
-							n(x, "res", z),
-							n(x, "type", z),
-							v(x, "label", z),
-							v(x, "res", z),
-							v(x, "type", z);
-					}),
-						x;
+				if (u.controlBar.resolutionSwitcher) {
+					u.controlBar.resolutionSwitcher.dispose();
+					delete u.controlBar.resolutionSwitcher
 				}
-				function n(x, y, x) {
-					x[y][x[y]] == null && (x[y][x[y]] = []);
+				y = y.sort(r);
+				s = q(y);
+				var z = o(s, y);
+				var x = new e(u, {
+					sources: s,
+					initialySelectedLabel: z.label,
+					initialySelectedRes: z.res,
+					customSourcePicker: p.customSourcePicker
+				}, p, t);
+				h.dom.addClass(x.el(), "vjs-resolution-button");
+				u.controlBar.resolutionSwitcher = u.controlBar.el_.insertBefore(x.el_, u.controlBar.getChild("fullscreenToggle").el_);
+				u.controlBar.resolutionSwitcher.dispose = function () {
+					this.parentNode.removeChild(this)
+				};
+				return f(u, z.sources, z.label, p.customSourcePicker)
+			};
+			u.currentResolution = function (x, y) {
+				if (x == null) {
+					return k
 				}
-				function v(x, y, z) {
-					x[y][z[y]].push(z);
+				if (b[x] != null) {
+					b[x].onClick(y)
 				}
-				function o(z, A) {
-					var y = p["default"];
-					var x = "";
-					return y === "high" ? (y = A[0].res,
-						x = A[0].label) : y === "low" || y == null || !z.res[y] ? (y = A[A.length - 1].res,
-							x = A[A.length - 1].label) : z.res[y] && (x = z.res[y][0].label),
-					{
-						res: y,
-						label: x,
-						"sources": z.res[y]
-					};
+				return u
+			};
+			u.getGroupedSrc = function () {
+				return s
+			};
+			function r(y, x) {
+				if (!y.res || !x.res) {
+					return 0
 				}
-				u.ready(function () {
-					u.options_.sources.length > 0 && u.setTimeout(function () {
-						u.updateSrc(u.options_.sources);
-					}, 1);
+				return (+x.res) - (+y.res)
+			}
+			function q(y) {
+				var x = {
+					label: {},
+					res: {},
+					type: {}
+				};
+				y.map(function (z) {
+					n(x, "label", z);
+					n(x, "res", z);
+					n(x, "type", z);
+					v(x, "label", z);
+					v(x, "res", z);
+					v(x, "type", z)
 				});
-			},
-				h.registerPlugin("videoJsResolutionSwitcher", c);
-		}(window, a);
+				return x
+			}
+			function n(x, y, z) {
+				if (x[y][z[y]] == null) {
+					x[y][z[y]] = []
+				}
+			}
+			function v(x, y, z) {
+				x[y][z[y]].push(z)
+			}
+			function o(z, A) {
+				var y = p["default"];
+				var x = "";
+				if (y === "high") {
+					y = A[0].res;
+					x = A[0].label
+				} else {
+					if (y === "low" || y == null || !z.res[y]) {
+						y = A[A.length - 1].res;
+						x = A[A.length - 1].label
+					} else {
+						if (z.res[y]) {
+							x = z.res[y][0].label
+						}
+					}
+				}
+				return {
+					res: y,
+					label: x,
+					sources: z.res[y]
+				}
+			}
+			u.ready(function () {
+				if (u.options_.sources.length > 0) {
+					u.setTimeout(function () {
+						u.updateSrc(u.options_.sources)
+					}, 1)
+				}
+			})
+		};
+		h.registerPlugin("videoJsResolutionSwitcher", c)
+	})(window, a)
 })();
 (function () {
 	(function (i, h) {
@@ -1939,67 +2160,78 @@ Ext.define("ans.videojs.ErrorNote", {
 			a = {};
 		function c(o, n, m, p) {
 			g = n;
-			if (typeof p === "function")
-				return p(o, n, m);
-			return o;
+			if (typeof p === "function") {
+				return p(o, n, m)
+			}
+			return o
 		}
 		var l = h.getComponent("ResolutionMenuItem");
 		var e = h.extend(l, {
-			"onClick": function (q) {
+			onClick: function (q) {
 				this.onClickListener(this);
 				var p = this.player_.currentTime();
 				var m = this.player_.paused();
 				this.showAsLabel();
 				this.addClass("vjs-selected");
-				!m && this.player_.bigPlayButton.hide();
-				typeof q !== "function" && typeof this.options_.customSourcePicker === "function" && (q = this.options_.customSourcePicker);
+				if (!m) {
+					this.player_.bigPlayButton.hide()
+				}
+				if (typeof q !== "function" && typeof this.options_.customSourcePicker === "function") {
+					q = this.options_.customSourcePicker
+				}
 				var o = "loadeddata";
-				this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash" && (o = "timeupdate");
+				if (this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash") {
+					o = "timeupdate"
+				}
 				var n = c(this.player_, this.src, this.options_.label, q);
-				n && n.one(o, function () {
-					n.switchStatus = true,
-						n.currentTime(p),
-						!m && n.play(),
-						n.trigger("playlinechange");
-				});
+				if (n) {
+					n.one(o, function () {
+						n.switchStatus = true;
+						n.currentTime(p);
+						if (!m) {
+							n.play()
+						}
+						n.trigger("playlinechange")
+					})
+				}
 			}
-		})
+		});
 		var j = h.getComponent("MenuButton");
 		var k = h.extend(j, {
-			"constructor": function (p, n, q, m) {
+			constructor: function (p, n, q, m) {
 				this.playlines = n.playlines;
 				this.label = m;
 				this.label.innerHTML = n.initialySelectedLabel;
 				j.call(this, p, n, q);
 				this.controlText("Playline");
-				if (q.dynamicLabel)
-					this.el().appendChild(m);
-				else {
+				if (q.dynamicLabel) {
+					this.el().appendChild(m)
+				} else {
 					var o = document.createElement("span");
 					h.addClass(o, "vjs-resolution-button-staticlabel");
-					this.el().appendChild(o);
+					this.el().appendChild(o)
 				}
 			},
-			"createItems": function () {
+			createItems: function () {
 				var o = [];
 				var q = this.playlines || [];
 				var p = function (r) {
 					o.map(function (s) {
 						s.selected(s === r);
-						s.removeClass("vjs-selected");
-					});
+						s.removeClass("vjs-selected")
+					})
 				};
 				for (var n = 0; n < q.length; n++) {
 					var m = q[n].label;
 					o.push(new e(this.player_, {
 						label: m,
 						src: q[n],
-						"initialySelected": m === this.options_.initialySelectedLabel,
-						"customSourcePicker": this.options_.customSourcePicker
-					}, p, this.label)),
-						a[m] = o[o.length - 1];
+						initialySelected: m === this.options_.initialySelectedLabel,
+						customSourcePicker: this.options_.customSourcePicker
+					}, p, this.label));
+					a[m] = o[o.length - 1]
 				}
-				return o;
+				return o
 			}
 		});
 		b = function (o) {
@@ -2009,124 +2241,150 @@ Ext.define("ans.videojs.ErrorNote", {
 				r = p.options_.playlines;
 			h.dom.addClass(n, "vjs-resolution-button-label");
 			var m = new k(p, {
-				"playlines": r,
-				"initialySelectedLabel": r[0].label,
-				"initialySelectedUrl": r[0].url,
-				"customSourcePicker": q.customSourcePicker
+				playlines: r,
+				initialySelectedLabel: r[0].label,
+				initialySelectedUrl: r[0].url,
+				customSourcePicker: q.customSourcePicker
 			}, q, n);
 			h.dom.addClass(m.el(), "vjs-resolution-button");
 			h.dom.addClass(m.el(), "vjs-playline-button");
-			m.show(),
-				p.selectCDN = function (s) {
-					m.items[s].onClick(q.customSourcePicker);
-					p.play();
-				},
-				r.length > 0 && (g = r[0]),
-				p.currentPlayline = function () {
-					return g;
-				},
-				p.ready(function () {
-					p.controlBar.videoJsPlayLine = p.controlBar.el_.insertBefore(m.el_, p.controlBar.getChild("fullscreenToggle").el_),
-						p.controlBar.videoJsPlayLine.dispose = function () {
-							this.parentNode.removeChild(this);
-						};
-				});
-		},
-			h.registerPlugin("videoJsPlayLine", b);
-	}(window, videojs));
+			m.show();
+			p.selectCDN = function (s) {
+				m.items[s].onClick(q.customSourcePicker);
+				p.play()
+			};
+			if (r.length > 0) {
+				g = r[0]
+			}
+			p.currentPlayline = function () {
+				return g
+			};
+			p.ready(function () {
+				p.controlBar.videoJsPlayLine = p.controlBar.el_.insertBefore(m.el_, p.controlBar.getChild("fullscreenToggle").el_);
+				p.controlBar.videoJsPlayLine.dispose = function () {
+					this.parentNode.removeChild(this)
+				}
+			})
+		};
+		h.registerPlugin("videoJsPlayLine", b)
+	})(window, videojs)
 })();
 Ext.define("ans.AudioJs", {
-	"videoJs": null,
-	"mixins": {
-		"observable": "Ext.util.Observable"
+	videoJs: null,
+	mixins: {
+		observable: "Ext.util.Observable"
 	},
-	"constructor": function (a) {
+	constructor: function (a) {
 		a = a || {};
 		var c = this;
 		c.addEvents(["seekstart"]);
 		c.mixins.observable.constructor.call(c, a);
 		var b = videojs(a.videojs, c.params2VideoOpt(a.params), function () { });
 		Ext.fly(a.videojs).on("contextmenu", function (f) {
-			f.preventDefault();
+			f.preventDefault()
 		});
 		Ext.fly(a.videojs).on("keydown", function (f) {
-			(f.keyCode == 32 || f.keyCode == 37 || f.keyCode == 39) && f.preventDefault();
-		});
+			if (f.keyCode == 32 || f.keyCode == 37 || f.keyCode == 39) {
+				f.preventDefault()
+			}
+		})
 	},
 	params2VideoOpt: function (params) {
 		var sources = [];
-		!params.rootPath && (params.rootPath = "");
-		params.http && sources.push({
-			src: params.http,
-			type: "audio/mp3"
-		});
+		if (!params.rootPath) {
+			params.rootPath = ""
+		}
+		if (params.http) {
+			sources.push({
+				src: params.http,
+				type: "audio/mp3"
+			})
+		}
 		var logFunc = function (player, url, callback) {
 			var me = this;
-			!me.logCount && (me.logCount = 0),
-				videojs.xhr({
-					"uri": url,
-					"headers": {
-						"Content-Type": "application/json"
-					}
-				}, function (err, resp) {
-					me.logCount++;
-					if (resp.statusCode == 200) {
-						me.logCount = 0;
-						if (resp.body.indexOf("isPassed") < 0) {
-							window.parent && window.parent.location.reload();
-							return;
+			if (!me.logCount) {
+				me.logCount = 0
+			}
+			videojs.xhr({
+				uri: url,
+				headers: {
+					"Content-Type": "application/json"
+				}
+			}, function (err, resp) {
+				me.logCount++;
+				if (resp.statusCode == 200) {
+					me.logCount = 0;
+					if (resp.body.indexOf("isPassed") < 0) {
+						if (window.parent) {
+							window.parent.location.reload()
 						}
-						eval("var d=" + resp.body);
-						d.isPassed && callback();
 						return
 					}
-					me.logCount >= 4 && (me.logCount = 0,
-						player.pause(),
-						resp.statusCode != 0 ? alert("服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e: " + resp.statusCode + ")") : alert("您的网络不稳定，请您稍后继续..."))
-				})
+					eval("var d=" + resp.body);
+					if (d.isPassed) {
+						callback()
+					}
+					return
+				}
+				if (me.logCount >= 4) {
+					me.logCount = 0;
+					player.pause();
+					if (resp.statusCode != 0) {
+						alert("服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e: " + resp.statusCode + ")")
+					} else {
+						alert("您的网络不稳定，请您稍后继续...")
+					}
+				}
+			})
 		};
 		var sendLog_ = function (player, isdrag, currentTimeSec, callback) {
 			if (!params.reportUrl) {
 				return
 			}
 			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]",
-				clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration),
-				aaa = 0,
-				bbb;
-			currentTimeSec.toString().indexOf("-") != -1 ? (bbb = currentTimeSec.split("-"),
-				bbb.length == 2 && (aaa = parseInt(bbb[1]) * 1000)) : aaa = currentTimeSec * 1000;
-			if (aaa == params.duration * 1000 && isdrag == 2)
+				clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
+			var tmp_aa = 0,
+				tmp_bb;
+			if (currentTimeSec.toString().indexOf("-") != -1) {
+				tmp_bb = currentTimeSec.split("-");
+				if (tmp_bb.length == 2) {
+					tmp_aa = parseInt(tmp_bb[1]) * 1000
+				}
+			} else {
+				tmp_aa = currentTimeSec * 1000;
+			}
+			if (tmp_aa == params.duration * 1000 && isdrag == 2)
 				return;
-			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, aaa, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
+			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, tmp_aa, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
 			var rurl = [params.reportUrl, "/", params.dtoken, "?clazzId=", params.clazzId, "&playingTime=", currentTimeSec, "&duration=", params.duration, "&clipTime=", clipTime, "&objectId=", params.objectId, "&otherInfo=", params.otherInfo, "&jobid=", params.jobid, "&userid=", params.userid, "&isdrag=", isdrag, "&view=pc", "&enc=", md5(enc), "&rt=", params.rt, "&dtype=Audio", "&_t=", new Date().getTime()].join("");
 			logFunc(player, rurl, callback)
 		};
 		return {
-			"language": "zh-CN",
-			"controls": true,
-			"preload": "auto",
-			"bigPlayButton": false,
-			"sources": sources,
-			"textTrackDisplay": true,
-			"controlBar": {
-				"volumePanel": {
-					"inline": true
+			language: "zh-CN",
+			controls: true,
+			preload: "auto",
+			bigPlayButton: false,
+			sources: sources,
+			textTrackDisplay: true,
+			controlBar: {
+				volumePanel: {
+					inline: true
 				},
-				"children": ["playToggle", "currentTimeDisplay", "timeDivider", "durationDisplay", "progressControl", "volumePanel"]
+				children: ["playToggle", "currentTimeDisplay", "timeDivider", "durationDisplay", "progressControl", "volumePanel"]
 			},
-			"plugins": {
-				"audioNote": {
-					"title": params.filename
+			plugins: {
+				audioNote: {
+					title: params.filename
 				},
-				"studyControl": {
-					"enableSwitchWindow": 1
+				studyControl: {
+					enableSwitchWindow: 1
 				},
-				"seekBarControl": {
-					"headOffset": params.headOffset,
-					"enableFastForward": params.enableFastForward,
-					"isSendLog": true,
-					"reportTimeInterval": params.reportTimeInterval,
-					"sendLog": function (player, evt, sec) {
+				seekBarControl: {
+					headOffset: params.headOffset,
+					enableFastForward: params.enableFastForward,
+					isSendLog: true,
+					reportTimeInterval: params.reportTimeInterval,
+					sendLog: function (player, evt, sec) {
 						if (this.isSendLog !== true) {
 							return
 						}

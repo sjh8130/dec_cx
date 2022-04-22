@@ -9,41 +9,39 @@
  * Available under Apache License Version 2.0
  * <https://github.com/mozilla/vtt.js/blob/master/LICENSE>
  */
-function a0_0x3ffc(_0xf3628b, _0x19b3a9) {
-	var _0x53fe0f = a0_0x53fe();
-	return a0_0x3ffc = function (_0x3ffc55, _0x4f6c6f) {
-		_0x3ffc55 = _0x3ffc55 - 0xfd;
-		var _0x1795ee = _0x53fe0f[_0x3ffc55];
-		return _0x1795ee;
+function TT(a, b) {
+	var c = TTTT();
+	TT = function (d, e) {
+		d = d - 0xfd;
+		var f = c[d];
+		return f;
 	}
-		,
-		a0_0x3ffc(_0xf3628b, _0x19b3a9);
+	return TT(a, b);
 }
-function a0_0x53fe() {
-	var _0xe4325 = ['webkitDisplayingFullscreen', 'bufferedPercent', 'menuitemradio', 'port', 'syncPoint_', 'modechange', 'playlistEnd', 'createItems', 'BASE_', 'responseText', 'clientLeft', 'texttrackchange', '#F00', 'currentTime:', '</fieldset>', 'depressed', 'groupEnd', 'webkitExitFullScreen', '_component_', 'isPrototypeOf', 'checkBuffer_', 'data', '1.5%', 'captions-font-family-%s', 'Position\x20must\x20be\x20between\x200\x20and\x20100.', '</legend>', 'playerresize', 'span', 'temporary', 'getBoundingClientRect', 'getUint16', 'parseCaptionPackets', 'trim', 'stsd', 'subtitlesTrack_', 'APPEND_BUFFER_ERR', 'findChaptersTrack', 'levels', './decrypter-worker.worker.js', 'resizeHandler', 'string', 'aria-hidden', 'isEnabled', 'fixesBadSeeks_', 'defineProperties', 'defaulting\x20segment\x20duration\x20to\x20the\x20target\x20duration', 'vjs-using-native-controls', 'MouseTimeDisplay', 'parseSei', 'processJob_', 'owner', 'opts', 'dinf', 'vdata', 'some', 'parseURL', 'modalfill', 'stopTrackingCurrentTime', 'Audio\x20Player', 'volumePanel', 'MenuItem', 'tech_', 'Initialization', 'TransportParseStream', 'reportTouchActivity', 'players', 'focus', 'hls-fmp4', 'VERSION', 'skipBits', 'host', 'accept', 'selectSyncPoint_', 'terminate', 'pauseLoading', 'DocumentTouch', 'media', 'aria-checked', 'Unknown\x20playlist\x20URI:\x20', 'cueOut', 'onabort', 'casual', '#ccc', 'lastVolume', 'contentEl_', 'mp4a', 'probeSegmentInfo', ',\x20seeking\x20', 'eventBusEl_', '7.2.2', 'controls', 'READY', 'mediaRequestsAborted', 'vjs-spacer\x20', 'regionAnchorY', 'isNewInit', 'localName', 'shim', 'exec', 'calculateSegmentTimeMapping_', 'handleTechReady_', 'region', 'TransportPacketStream', 'Encountered\x20a\x20gap\x20in\x20video\x20from\x20', 'getPlugin', 'lastControlCode_', 'Content-Type', 'hasBeenFilled_', 'sort', 'createElControls_', 'handleTechWaiting_', 'sliderInactive_', 'Super\x20expression\x20must\x20either\x20be\x20null\x20or\x20a\x20function,\x20not\x20', 'initSegment', 'captions-text-legend-', 'abort_', 'http:', 'sourceType_', 'updateSourceCaches_', 'vjs-playback-rate\x20', 'HAVE_MASTER', 'mousemove', 'SyncController', 'Pause', 'plugins', 'getCueById', 'setCues_', ']\x20from\x20playlist\x20[', 'Error\x20-\x20expected\x20string\x20data.', 'item', 'setTimestamp', 'freeze', 'Current\x20Time', 'stsz', 'videoCodec', 'stream', 'processSegmentResponse_', 'descEl_', 'findBox', 'updateForTrack', '\x20settings\x20dialog', 'videoCodec_', 'HTMLIFrameElement', 'URL', 'SegmentURL', 'Video\x20found\x20in\x20segment\x20when\x20we\x20expected\x20only\x20audio.', 'isColorPAC', 'creationTime', ')\x20is\x20non-numeric\x20or\x20out\x20of\x20bounds\x20(0-', 'close', 'unlockShowing', 'activeElement', 'flushDisplayed', 'mouseleave', '1nEGRHP', 'restoreSettings', 'any', 'canMuteVolume', 'captions-foreground-opacity-%s', 'vjs_video_', 'defineProperty', 'source_', 'TIMEOUT', 'currentSource', 'detachEvent', 'saveDiscontinuitySyncInfo_', ',\x200\x200\x204px\x20', 'masterPlaylistController_', 'bufferedEnd', 'volume', 'scrollLeft', 'ClickableComponent', 'captions-background-opacity-%s', 'move', 'NO_BASE_URL', 'vjs-volume-panel\x20vjs-control\x20', 'Color', 'create', 'ListClass', 'HLS\x20playlist\x20request\x20error\x20at\x20URL:\x20', 'defaultMessages', 'NalByteStream', 'mvex', 'concatenateNalData', 'Remaining\x20Time', 'metadataTrack_', '124159PeKjXC', 'VIDEOJS:', 'function', 'styleSheet', 'suspend', 'MenuButton', 'vjs-waiting', 'handleFocus', 'Timed\x20Metadata', 'lastPlaybackRate', 'changing_', 'vjs-poster', 'loadeddata', 'fontFamily', 'init', 'adts', 'keyCode', 'ccData', 'ccStreams_', 'bufferUpdating_', 'currentSrc', 'layerX', 'seekablechanged', 'Component\x20', 'requestTime', 'event', 'replace', 'processPes_', 'addTechControlsListeners_', ')\x20is\x20not\x20supported;\x20use\x20a\x20ClickableComponent\x20instead.', 'webkitEnterFullScreen', 'removeTechControlsListeners_', 'adEndTime', 'featuresPlaybackRate', 'mozFlexBasis', 'mouseup', '[lang]', 'reduce', 'btrt', 'setDateTimeMapping', 'baseUrl', ';\x20codecs=\x22', 'addCue', 'Aborted\x20early\x20because\x20there\x20isn\x27t\x20enough\x20bandwidth\x20to\x20complete\x20the\x20', 'path', 'Seeking\x20to\x20current\x20time\x20', 'Error\x20trying\x20to\x20parse\x20base\x20URL.', 'TextDecoder', '24iacWoe', 'body', 'No\x20compatible\x20SourceBuffer\x20configuration\x20for\x20the\x20variant\x20stream:', 'CONTROL_', 'getCache', 'tkhd', 'addWebVttScript_', 'activeCues', 'legend', 'supportsFullScreen', 'byteLength', 'entries', 'abs', 'seekTo', 'allowed', 'featuresNativeAudioTracks', 'aria-describedby', 'previouslyActiveEl_', 'HLS\x20playlist.\x20Trying\x20again\x20since\x20it\x20is\x20the\x20final\x20playlist.', 'loaded', 'selector', 'getTrackElementByTrack_', 'webkitFullscreenEnabled', 'rollUp', 'handleTechRateChange_', 'Video\x20Player', 'abortRequestEarly_', 'getValues', 'customParsers', 'https:', 'request', 'video', 'setTimestampOffset', 'Failed\x20to\x20create\x20SourceBuffers', 'videoUnderflow_', 'videoPacketContainsKeyFrame', 'vjs-menu-button', 'payload', 'unloadTech_', 'UTCTiming', 'cancelAnimationFrame', 'audioTimestampRolloverStream', 'The\x20media\x20is\x20encrypted\x20and\x20we\x20do\x20not\x20have\x20the\x20keys\x20to\x20decrypt\x20it.', 'resizeManager', 'pat', 'reset', 'horizontal-tb', 'video/ogg', 'probeMp4Segment_', 'dash', 'DOMParser', 'SegmentTimeline', 'discontinuity-sequence', 'Done', 'handleTechTextData_', 'availabilityStartTime', 'createEvent', 'conditionalFocus_', 'storedMode', 'selectPlaylist', 'addChild', 'handleAction', '6BvoeKd', 'vjs-track-settings-controls', 'seeked', 'skipLeadingZeros', 'BigPlayButton', 'small-caps', 'Skipping\x20unrecognized\x20metadata\x20packet', 'objURL', 'srclang', 'techs\x20must\x20be\x20registered\x20using\x20Tech.registerTech()', 'data_', 'handleSourceOpen_', 'segment-loader-', 'Close\x20Modal\x20Dialog', 'handleKeyDown', 'slideractive', 'PRIV', 'pow', 'initEvent', 'beforemodalopen', 'inBandMetadataTrackDispatchType', 'usage', 'setEventHandlers_', 'video/', '\x27\x20exists!\x20\x27', 'dataChannel_', 'vjs-styles-dimensions', 'removetrack', 'HAVE_CURRENT_METADATA', 'Switching\x20back\x20to\x20default.', 'className', 'DASH_INVALID_XML', 'waiting', 'audioinfo', 'samples', 'styleEl_', 'timeout', 'VOD', 'waiting_', 'slider', '-popup', 'displayState', 'use', 'addTextTrack', 'sliderActive_', 'slice', 'getChildById', 'ContentProtection', 'dispatchType', 'getExpiredTime', 'calculateDistance', 'maxSegmentDts', 'timescales', 'ControlBar', 'mediaRequests_', 'setupSourceBuffers_', 'flushStream', 'isEl', 'vjs-raf-', 'children', 'featuresNativeTextTracks', 'pendingSegment_', '196172vyRatU', 'BUFFER_LOW_WATER_LINE', 'descriptions', 'setBaseMediaDecodeTime', 'timeStamp', 'webkitfullscreenerror', 'controlsenabled', 'AES-128', '\x20=>\x20', 'ResizeManager', 'mediaSequence', 'playToggle', 'mp4a.40.2', '.vjs-control-bar,\x20.vjs-modal-dialog', 'positionAlign', 'blob:vjs-media-source/', 'video/mpegurl', '(^|\x5cs)', 'manualTimeUpdates', 'subtitles', 'json', '\x22[^\x22]*\x22|[^,]*', 'toLowerCase', 'vjs_track_', 'selectedchange', 'innerHTML', 'playlist\x20update\x20[', 'splice', 'MSFullscreenError', 'plaintext', '\x20To\x20get\x20rid\x20of\x20this\x20message,\x20please\x20add\x20codec\x20information\x20to\x20the\x20manifest.', 'userLanguage', 'insertAdjacentHTML', 'text', 'cue-out-cont', 'remove', 'isMidRowCode', 'mapping', 'Time', 'returnValue', 'vjs-menu-button\x20', 'ResizeObserver', 'dispatcher', 'vjs-text-track-settings', 'earlyabort', 'getComponent', 'updateActiveSourceBuffers_', 'Empty\x20HLS\x20segment\x20content\x20at\x20URL:\x20', 'emptied', 'initialization', 'onHlsSegmentTimeMapping_', 'startOfSegment', 'gapFromVideoUnderflow_', 'monospaceSansSerif', 'isSpecialCharacter', 'state_', 'range', 'canplay', 'isInitialized', 'config', 'xhrOptions_', 'Video\x20is\x20not\x20ready.\x20(Video.js)', 'Seeked', 'debug', 'avc', 'flush', 'handleUpdateEnd_', 'childNameIndex_', 'setsChannel1Active', 'defaultSampleFlags', 'refreshXml_', 'addSegmentMetadataCue_', 'params', 'keyLocation', 'inspectCache_', 'addSeekableRange_', 'A\x20non-empty\x20playlist\x20URL\x20is\x20required', 'align', 'fullscreenToggle', 'rebufferingImpact', 'metadataStream', 'nativeMediaSource_', 'TIME-OFFSET', 'segmentIndex', 'getAttribute', 'webkitbeginfullscreen', 'tabIndex', 'cancelTimer_', 'mediaSource', 'manualProgressOn', 'querySelector', 'buildCSSClass', 'EXT_', 'sourceended', 'isTargetingSelf', 'ignoring\x20incomplete\x20or\x20missing\x20media\x20group', 'getInt32', 'requestOptions_', 'AUDIO', 'INITIAL', 'TimeTooltip', 'timeout_', 'resetSourceset_', 'vjs-fullscreen-control\x20', 'vjs-subs-caps-button\x20', 'textTracksJson_', 'substr', 'value\x20of\x20Hls.', 'vjs-label', 'discontinuitySequence', 'responseHeaders', 'tracks_', 'return', 'checkBufferTimeout_', 'dispose', 'minPTS', ']\x20of\x20[', '$Number$', 'clientY', 'urn:mpeg:dash:utc:sntp:2014', 'programMapTable', 'featuresNativeVideoTracks', 'catch', 'onload', ',\x203px\x203px\x20', 'buttons', 'seekable\x20updated\x20[', 'alignGopsAtStart_', 'DescriptionsButton', 'isDependedOn', 'usingPlugin', 'generateSegmentInfo_', 'timeupdate', 'Transparency', 'closest', 'one', 'durationDisplay', 'getPrototypeOf', 'sqrt', 'mode_', 'setAudioAppendStart', 'ViewportAnchorY\x20must\x20be\x20between\x200\x20and\x20100.', 'Adding\x20an\x20actionable\x20(user\x20controllable)\x20child\x20to\x20a\x20Button\x20(', 'modalempty', 'timeUntilRebuffer', 'preventDefault', 'kind_', 'playerElIngest_', 'Chapters', 'vjs-play-control\x20', '.vjs-edge-style\x20>\x20select', 'patchCanPlayType', 'getOwnPropertyNames', 'BYTERANGE', 'MEDIA_ERR_DECODE', 'frames', 'Mute', 'warn|error', 'getUint8', 'cue.frame.id\x20is\x20deprecated.\x20Use\x20cue.value.key\x20instead.', 'audio/mp4', 'onmessage', 'defaultState', 'An\x20invalid\x20number\x20or\x20illegal\x20string\x20was\x20specified.', '</option>', '175%', 'restoreMetadataTracksInIOSNativePlayer_', 'videoTrackIds', 'statusCode', 'vjs-track-settings-colors', 'end', 'vttjs\x20failed\x20to\x20load,\x20stopping\x20trying\x20to\x20process\x20', '151570repHOE', 'pendingMetadata', 'stringify', 'DurationDisplay', 'vjs-volume-panel-horizontal', 'script', 'createElement', 'discontinuities', 'captionStream', 'sourceUpdater_', 'techGet_', 'instreamId', 'skipEmptySegments_', 'USER_DATA_REGISTERED_ITU_T_T35', 'loadSegment_', 'table', 'urn:mpeg:dash:utc:http-iso:2012', 'indexOf', 'WAITING', 'TextTrackSettings', 'sourceType', 'dimension', 'symbol', 'resetStats_', '#0FF', 'template', 'tap', 'manualAutoplay_', 'remoteTextEl', 'probeTsSegment_', '/mp4;codecs=\x22', 'delete', 'RemoteText', 'getMenuCaption', 'mediaSecondsLoaded_', 'rafId_', 'handleTechSeeking_', 'ignoring\x20start\x20declaration\x20without\x20appropriate\x20attribute\x20list', 'seeking_', 'combined', 'click', 'using\x20Hls.', 'updating\x20zero\x20segment\x20duration\x20to\x20a\x20small\x20value', 'toUpperCase', 'hls_', 'ElementaryStream', 'snapToLines', 'parsererror', 'timeMapping_', 'handleMouseSeek', 'networkState', 'playlist-type', 'AudioTrackMenuItem', 'currentTimeDisplay', 'consecutiveUpdates', 'charAt', 'supportsNativeDash', 'getSimpleBoxPosition', 'remoteTextTracks_', 'paused', 'precise', '\x0a\x20\x20\x20\x20\x20\x20.video-js\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:\x20300px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:\x20150px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20.vjs-fluid\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding-top:\x2056.25%\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20', 'removeEventListener', 'fastQualityChange_', 'data-vjs-player', 'role', 'groupFramesIntoGops', 'discontinuityStarts', 'payloadSize', 'player', ']:\x20[time:', 'extendFirstKeyFrame', '\x20\x20>', 'onerror', 'com.adobe.primetime', 'liveDisplay', '\x22\x20supplied\x20for\x20for\x20', 'inf', 'unshift', 'statechanged', 'PlaybackRateMenuButton', 'playlist\x20refresh\x20sync:\x20[time:', 'setTimeout', 'join', ',\x20-1px\x20-1px\x20', 'DASH_EMPTY_MANIFEST', 'seekable', 'fullWindowOnEscKey', 'LOCAL', 'id_', 'nonIconControl', 'isSelected_', '1076880znazSg', 'BadTimeStamp', 'createModal', 'createElWinColor_', 'nalCount', 'fontPercent', 'cues', 'haveMetadata', 'every', 'Yellow', 'trackProgress', 'mdhd', 'SegmentLoader[', 'getPlugins', 'nextTrackId', 'DEFAULT', 'Illegal\x20plugin\x20name,\x20\x22', 'Fullscreen', 'gopCache_', 'isView', 'moof', 'parseAdtsSize', 'assertive', 'videoTimestampRolloverStream', 'channelcount', 'ERASE_DISPLAYED_MEMORY_', 'position', '\x20id=\x22', 'smhd', 'disable', 'createTimeRange', 'TextTrack', 'subarray', 'docOrigOverflow', 'pluginsetup', 'com.widevine.alpha', 'excludeUntil', 'main-desc', 'set', 'inbandTextTracks_', 'METADATA_STREAM_TYPE', 'addSourceBuffer', 'abortRequests', 'relatedTarget', 'goalBufferLength_', '400%', 'playbackRateSupported', 'deregisterPlugin', 'hls-demuxed', 'size', 'alignGopsWith', 'STANDARD_PLAYLIST_SELECTOR', 'live\x20point\x20(seekable\x20end)\x20', 'playerEvent', 'Font\x20Family', 'latestDts_', 'webkitCurrentFullScreenElement', 'hls-rendition-enabled', 'touches', 'remoteTextTrackEls', 'pathname', 'aacStream', 'HTMLEmbedElement', 'streamType', 'live\x20window\x20shift\x20[', 'keepOriginalTimestamps', 'isThisThread', 'isFullscreen', 'SeekBar', 'Cannot\x20use\x20create\x20a\x20virtual\x20MediaSource\x20for\x20this\x20video', 'Invalid\x20listener;\x20must\x20be\x20a\x20function.', 'volumechange', 'false', 'segmentUrls', 'dblclick', 'Slider', 'last_section_number', '\x20vjs-text-track-settings', 'debouncedHandler_', 'endPts', '\x22Monotype\x20Corsiva\x22,\x20cursive', 'readyQueue_', 'blacklistplaylist', 'isExtCharacter', 'Failed\x20to\x20create\x20Source\x20Buffers', 'scrubbing', 'groups', 'selectedIndex', 'monitorBuffer_', 'An\x20invalid\x20or\x20illegal\x20string\x20was\x20specified.', 'appendGopInfo_', 'TEST_VID', 'content-type', 'currentTimeInterval', 'supportsNativeVideoTracks', 'usingNativeControls_', 'modalclose', 'mediaIndex', 'BaseURL', 'trex', '\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:\x20', 'bufferLowWaterLine', 'skipTheGap_', 'ProgressControl', 'cloneNode', 'setSource', '\x20playback\x20technology.', 'characteristics', 'touchmove', 'center', 'prototype', 'createTimeRanges', 'xhr', 'nodeName', 'sign', '100%', 'video/mp4', 'popOn', 'vjs-progress-control\x20vjs-control', 'formattedTime_', 'setupAacPipeline', 'avc1.4d400d', 'isLeading', 'performance', 'MPEGT', 'options', 'Video', 'webkitFlexBasis', 'adtsStream', 'adStartTime', 'manifestUri', 'viewportAnchorY', 'startPts', 'arraybuffer', '\x20segmentIndex:', 'opened', 'audioobjecttype', 'registerTech', 'children_', 'keySystems', 'configureLoaderMimeTypes_', 'round', 'manualTimeUpdatesOn', 'updateFormattedTime_', 'cueTagsTrack_', 'MAX_BUFFER_LOW_WATER_LINE', 'crossorigin', 'dialog', 'capitalName', 'webkitRequestFullscreen', 'removeCue', 'vjs-modal-dialog', 'timeTooltip', 'WebKitDataCue', 'handleProgress_', 'pid', 'response', 'href', 'Malformed\x20WebVTT\x20signature.', 'Text\x20Tracks\x20are\x20being\x20loaded\x20from\x20another\x20origin\x20but\x20the\x20crossorigin\x20attribute\x20isn\x27t\x20used.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20This\x20may\x20prevent\x20text\x20tracks\x20from\x20loading.', 'timeToSamples', 'audioTrackButton', 'Depressed', 'clearFormatting', 'Problem\x20encountered\x20loading\x20the\x20subtitle\x20track.', 'supportsNativeAudioTracks', 'loaderType', '\x22>x</a>', 'blacklistCurrentPlaylist', 'src', 'playback\x20by\x20seeking\x20to\x20the\x20current\x20time.', 'master', 'Tracks', 'keydown', 'Start\x20time\x20must\x20be\x20set\x20to\x20a\x20number.', 'date', 'options_', 'onUpdateendCallback_', 'application/xml', 'smoothQualityChange_', '\x20to\x20', 'TrackClass', 'left', 'getSource', 'Number', 'addtrack', 'localStorage', 'urn:mpeg:dash:utc:ntp:2014', 'Text\x20Edge\x20Style', 'sourceHandler_', '#00F', 'The\x20media\x20playback\x20was\x20aborted\x20due\x20to\x20a\x20corruption\x20problem\x20or\x20because\x20the\x20media\x20used\x20features\x20your\x20browser\x20did\x20not\x20support.', 'syncPoint', 'PlayProgressBar', 'goalBufferLength', 'Accept', 'vttjserror', 'components_', 'displayed_', 'segmenttimemapping', 'StringDecoder', 'userAgent', 'notSupportedMessage', 'triggerSourceset', 'beforeSeekableWindow_', 'vjs-interval-', 'match', 'rollUpRows_', 'overrideNative', 'tabIndex_', '56OwRPcr', 'createRemoteTextTrack', 'blur', 'autoplay-success', 'bandwidthupdate', 'getComputedStyle', 'GOAL_BUFFER_LENGTH_RATE', 'disposeSourceHandler', 'Cannot\x20call\x20a\x20class\x20as\x20a\x20function', 'handleFullscreenChange', 'timeline', 'onEndOfStream', 'vjs-lock-showing', 'true', 'callback\x20argument\x20missing', 'pendingCaptions', 'handleMouseDown', 'vjs-controls-disabled', 'GA94', 'guid', 'videoTsToAudioTs', 'dateTimeObject', 'Descriptions', 'mediaRequestsTimedout', 'droppedVideoFrames', 'mediaSource_', 'offsetTop', 'languages', 'updateLabel', 'custom', 'MediaLoader', 'flexNotSupported_', 'playlist', 'nodeType', 'segment', 'SubsCapsButton', 'decrypted', 'nalUnitType', 'profileIdc', 'pendingTracks', 'menuButton', 'handleTechPosterChange_', 'MediaSource', 'buffered_', 'parseUserData', 'playlist_', 'fetchAtBuffer_', 'MAX_GOAL_BUFFER_LENGTH', 'bitsAvailable', 'Player\x20\x22', '_description', '[object\x20Function]', 'changingSrc_', 'END_OF_CAPTION_', 'emitTapEvents', 'mp4', 'avc1.', 'application/dash+xml', 'getSyncSegmentCandidate_', 'autoRemoteTextTracks_', 'loadWord', 'setCurrentTime', 'empty', 'appendChild', 'DIRECT', 'mediaSources', 'handleSubmenuKeyPress', '\x22Andale\x20Mono\x22,\x20\x22Lucida\x20Console\x22,\x20monospace', 'seekTo_', '\x20must\x20be\x20greater\x20than\x20or\x20equal\x20to\x200', 'video-js', 'application/json', '_tables', 'removeTrackElement_', 'FORCED', 'selectSourceHandler', 'vjs-audio-button\x20', 'A\x20network\x20error\x20caused\x20the\x20media\x20download\x20to\x20fail\x20part-way.', 'timescale', 'warn', 'audioBuffer_', 'track', '.vjs-done-button', 'formatting_', 'com.apple.streaming.transportStreamTimestamp', 'hls-live-resync', 'cue.frame.value\x20is\x20deprecated.\x20Use\x20cue.value.data\x20instead.', 'playing', 'Invalid\x20playlist\x20STREAM-INF\x20detected.\x20Missing\x20BANDWIDTH\x20attribute.', 'button', 'textTrackSettings', 'resetCaptionStream', 'Opaque', 'EventTarget', 'Unmute', 'VTTRegion', 'samplerate', 'seekable\x20range\x20', 'uncloseable', 'NONE', 'Illegal\x20plugin\x20for\x20\x22', 'Subtitles', 'loadingSpinner', 'handleMouseUp', 'controlsdisabled', '\x20off', 'featuresVolumeControl', 'this\x20hasn\x27t\x20been\x20initialised\x20-\x20super()\x20hasn\x27t\x20been\x20called', 'Error\x20trying\x20to\x20parse\x20relative\x20URL.', 'resizeObserver_', 'mediaTypes', 'vjs-error-display\x20', 'responseType', 'tag', 'setVolume', 'menu', 'Malformed\x20timestamp:\x20', 'applyStyles', 'Malformed\x20time\x20stamp\x20(time\x20stamps\x20must\x20be\x20separated\x20by\x20\x27-->\x27):\x20', 'Replay', 'alignGopsAtEnd', 'Menu', '-inline', 'info', 'Setting\x20attributes\x20in\x20the\x20second\x20argument\x20of\x20createEl()\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20has\x20been\x20deprecated.\x20Use\x20the\x20third\x20argument\x20instead.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20createEl(type,\x20properties,\x20attributes).\x20Attempting\x20to\x20set\x20', 'playliststuck', 'hls-timestamp-offset', 'ABORTED', 'Tech', 'segments', 'onSyncInfoUpdate_', 'focusableEls_', 'setRequestHeader', 'program-date-time', 'isSupported', 'init_', 'count', 'Tracks_', 'video/mp4;\x20codecs=\x22', 'playlistunchanged', 'processPendingSegments_', 'handleTechFullscreenChange_', 'flexBasis', 'MuteToggle', 'dimensions-', 'timeDivider', 'vmhd', 'trackId', 'vjs-resize-manager', 'createElFgColor_', 'h264Stream', 'registerComponent', 'setsChannel2Active', '3.00', '<button\x20class=\x22vjs-default-button\x22\x20title=\x22', 'HTMLObjectElement', 'vjs-ended', 'formatTime_', 'language', 'setDefaults', 'remuxTracks', 'vjs-has-started', 'componentresize', 'aborted', 'style', 'stbl', 'hookOnce', 'isTech', 'network', 'ERROR:\x20reloadSourceOnError\x20-\x20The\x20option\x20getSource\x20must\x20be\x20a\x20function!', 'initTrackListeners', 'getTagSettings', 'tagAttributes', 'vjs-event-bus', 'vjs-full-window', '\x20vjs-hidden\x20', 'isDisabled', 'parseFromString', 'textify', 'onflush', 'videoBuffer_', 'parsePat', 'main', 'url', 'encrypted', 'vjs-slider-vertical', 'contains', 'parseHdlr', 'file:', 'getClientRects', 'mouseused_', 'ignoreNextEqualDts_', 'percent', ']\x20[mapping:\x20', 'createRealSourceBuffers_', 'videoObjectTypeIndicator', 'Listeners_', 'mode', 'rgba(', 'Techs\x20must\x20have\x20a\x20static\x20canPlayType\x20method\x20on\x20them', 'sourceopen', 'levelIdc', 'LOADING', 'msFullscreenEnabled', 'pageY', 'endTime', 'remainingTime', 'serif', 'userWasActive', 'Monospace\x20Serif', 'overlaps', 'LOADED', 'hooks_', 'createProcessingInstruction', 'paintOn', 'activeTrack', 'labelEl_', 'checkCurrentTime_', 'durationchange', 'closeable_', 'bytes=', 'type_', 'Cannot\x20de-register\x20base\x20plugin.', '\x22></a>', 'dateTimeString', '.4d400d', 'childIndex_', 'techOrder', 'allowedEvents_', 'endList', 'restore\x20all\x20settings\x20to\x20the\x20default\x20values', 'duration', 'progress', 'ROLL_UP_4_ROWS_', 'next', 'masterPlaylistLoader_', 'history', 'cue-in', 'done', 'firstChild', 'defaultSampleDuration', 'throughput', 'hls-segment-time-mapping', 'message', 'ftyp', 'overrideNativeAudioTracks', 'which', 'sps', 'CaptionSettingsMenuItem', '<fieldset\x20class=\x22vjs-edge-style\x20vjs-track-setting\x22>', 'play_', 'currentTimeline_', 'Failed\x20to\x20execute\x20\x27', 'MediaSource.addSeekableRange()\x20can\x20only\x20be\x20invoked\x20', 'videoSegmentStream', 'APPENDING', 'syncController', 'bytesReceived', 'dtsTime', 'update_', 'selectedLanguage', 'manualTimeUpdatesOff', 'activeCues_', 'containsAudio', 'MetadataStream', ',\x20selected', 'nativeSourceHandler', '#222', 'slice_layer_without_partitioning_rbsp', 'qualityLevels', 'references', 'setEarliestDts', '#000', 'handleTracksChange', '\x20->\x20', 'setupTsPipeline', 'alignGopsAtEnd_', ']\x20in\x20timeline\x20[', '.vjs-window-color\x20>\x20select', 'SUBTITLES', 'clearTracks', 'degradationPriority', 'VideoTrack', 'listener', 'parseVTTCues_', 'mediaRequestsTimedout_', 'handleTechTouchStart_', 'reportOrThrowError', 'sampleToChunks', 'escapedRBSP', 'H264_STREAM_TYPE', 'canOverrideAttributes', 'content_', 'isImmediatePropagationStopped', 'removeAttribute', 'MISSING_SEGMENT_INFORMATION', 'Disabling\x20subtitle\x20track.', 'checkMuted', 'initNetworkState_', 'mediaTransferDuration_', 'volumeBar', 'abort', 'hasAttribute', 'End\x20of\x20dialog\x20window.', 'overlapsOppositeAxis', 'lastVolume_', 'captions-window-opacity-%s', 'allow-cache', 'handleStateChanged', 'currentTime_', '\x20mediaSequence:\x20', 'vjs-styles-defaults', 'buffered\x20[', 'vjs-close-button\x20', 'stageclick', 'HEAD', 'Creating\x20a\x20ClickableComponent\x20with\x20an\x20HTML\x20element\x20of\x20', 'usingNativeControls', 'cleanupAutoTextTracks', 'parseId3TagSize', 'regionanchorY', 'mediaTypes_', 'offset', 'removeRemoteTextTrack', 'Reset', 'post', 'TOUCH_ENABLED', 'request\x20without\x20rebuffering.', 'initChildren', 'TextTrackDisplay', 'fillBuffer_', 'handleSegment_', '0.75', 'autoplay', 'amd', 'trimBackBuffer_', 'endlist', 'contentEl', '<span\x20class=\x22vjs-text-opacity\x20vjs-opacity\x22>', 'width', 'English', 'loadTech_', 'Non-Fullscreen', 'autoplay-failure', 'isPosterFromTech_', 'stco', 'isArray', 'textNode_', 'localize', 'CaptionsButton', 'The\x20media\x20could\x20not\x20be\x20loaded,\x20either\x20because\x20the\x20server\x20or\x20network\x20failed\x20or\x20because\x20the\x20format\x20is\x20not\x20supported.', '(?:^|,)(', 'insertContent', 'stepBack', '<fieldset\x20class=\x22vjs-window-color\x20vjs-track-setting\x22>', 'posterchange', 'audioDisabled_', 'vjs-error', 'vjs-no-flex', 'setPreload', '#FF0', 'groupNalsIntoFrames', 'calculateTrackBaseMediaDecodeTime', 'showing', 'maxTouchPoints', 'tech', 'length_', 'profileCompatibility', 'Transmuxer', 'setSrc', 'readExpGolomb', 'addFormatting', 'TYPE', 'toUnsigned', '<fieldset\x20class=\x22vjs-bg-color\x20vjs-track-setting\x22>', 'your\x20player\x27s\x20techOrder.', 'progressInterval', 'browser', 'clearInterval', 'clientOffset', 'Close', 'reverse', 'defaultPlaybackRate', '\x22,\x20cannot\x20share\x20a\x20name\x20with\x20an\x20existing\x20player\x20method!', 'access_unit_delimiter_rbsp', 'alt', 'handleClick', 'line', 'cuechange', 'createMenu', 'canPlaySource', '<span\x20class=\x22vjs-bg-opacity\x20vjs-opacity\x22>', 'layer', 'encryptedBytes', 'triggerPresenceUsage_', 'handlers', 'sourceOrder', 'removeHook', 'transmuxer_', 'removeItem', 'addQualityLevel', 'canplaythrough', 'videoTracks', 'insertBefore', 'activePlaylistLoader', 'overlapsAny', '\x22,\x20must\x20be\x20a\x20string,\x20was\x20', 'SourceUpdater[', 'PlaybackRateMenuItem', 'endOfAllRequests', 'NOW', 'seq_parameter_set_rbsp', 'username', 'constructor', 'readBits', 'UNSUPPORTED_UTC_TIMING_SCHEME', 'baseDataOffset', 'currentDimension', 'resetLoader', 'captions-background-', 'setTech', 'dataOffset', 'ontimeout', 'shiftKey', 'roundTripTime', 'PADDING_', 'reportUserActivity', 'compatibleBrands', 'readUnsignedExpGolomb', 'minimumUpdatePeriod', 'recordThroughput_', 'esds', 'callbacks_', 'stopTrackingProgress', 'setAttributes', 'integer', 'absolute', 'vttjsloaded', 'trak', 'hasChildNodes', 'urn:mpeg:dash:utc:http-head:2012', 'setupMasterPlaylistLoaderListeners_', 'vjs-vol-', 'PRECISE', 'audioSegmentLoader_', 'monospace', 'setPoster', 'canPlayType', 'Audio', 'setTrack', 'textTracksToJson', 'activePlugins_', 'preload', 'middle', 'vjs-time-control\x20vjs-time-divider', 'GET', 'Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance', 'RegionAnchorX\x20must\x20be\x20between\x200\x20and\x20100.', 'Html5', 'packetLength', 'vjs-loading-spinner', 'updateControlText_', 'vjs-captions-button\x20', 'mimeType_', 'minSegmentDts', 'parsePayloadUnitStartIndicator', 'sourceset', 'defaultSampleSize', 'traf', 'append', 'vertical-rl', 'tagName', '.vjs-fluid\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding-top:\x20', 'language_', 'roundTrip', 'none', 'callback', 'Trying\x20to\x20seek\x20outside\x20of\x20seekable\x20at\x20time\x20', 'decode', 'requestOptions', 'aria-live', 'mergeOptions', 'Period', 'windowOpacity', 'parseTrun', 'Problem\x20encountered\x20with\x20the\x20current\x20', 'mediaRequestsAborted_', 'getCueAsHTML', 'decryptChunk_', 'throttledHandleMouseSeek', '_api', 'beforemodalfill', 'stalled', '2px\x202px\x203px\x20', 'avc1', 'HLS\x20request\x20aborted\x20at\x20URL:\x20', 'enabled_', 'captions-foreground-color-%s', 'buffered', 'mediaPresentationDuration', 'kind', 'conditionalBlur_', 'src_', 'ready', 'hls-unknown-waiting', 'fmp4Captions', '_key', 'sei_rbsp', 'minf', 'exports', 'section_number', 'triggerReady', 'createEl', '.vjs-fg-color\x20>\x20select', 'endDialog', 'transmuxer', 'hideThreshold_', 'mozfullscreenerror', 'ltr', 'maybe', 'NAME', 'bottom', 'discontinuity', 'cueDiv', 'contentElType', 'test', 'techName_', 'parsePmt', 'playerId', 'asyncStream_', 'run', 'trackCurrentTime', 'supportsNativeHls', 'INIT', '-dimensions', 'Illegal\x20component,\x20\x22', 'pageX', 'initialize', 'canHandleSource', 'msRequestFullscreen', 'expression', 'concatenateFrameData_', 'pes', 'target', 'parentNode', 'trigger', 'sourceURL', 'clientOffset_', 'decrypt', 'application/javascript', 'vjs-slider-active', 'pressButton', 'timelineStartInfo', 'vjs-user-active', 'HLS\x20request\x20errored\x20at\x20URL:\x20', 'RepresentationID', 'syncPoint\x20for\x20[', 'map', 'BlobBuilder', 'fluid_', 'playWaitingForReady_', 'querySelectorAll', 'getCurrentTime_', 'setupSegmentLoaderListeners_', 'setDefaultPlaybackRate', 'OFFSET_', 'vjs-play-progress\x20vjs-slider-bar', 'VIDEOJS_NO_DYNAMIC_STYLE', 'org.w3.clearkey', 'WebVTT', 'masterPlaylistLoader', 'fullscreenchange', 'disabled', 'pre-line', 'location', 'activeCea608Channel_', 'ROLL_UP_3_ROWS_', 'remux', 'syncClientServerClock_', 'time', 'RESOLUTION', 'clear', 'webkitDecodedFrameCount', 'URI', 'error', '\x20We\x20can\x27t\x20switch\x20to\x20audio\x20only\x20from\x20a\x20stream\x20that\x20had\x20video.', 'readUnsignedByte', 'updateTextNode_', 'level', 'isBasic', 'MEDIA_ERR_ABORTED', 'no_player', 'A\x20non-empty\x20playlist\x20URL\x20or\x20playlist\x20is\x20required', 'offsetWidth', 'selectable', 'privateName', 'logger_', 'updateLastVolume_', 'enumerable', 'lineAlign', 'canControlVolume', 'contentType', 'VolumeBar', 'revokeObjectURL', 'captionParser_', 'keyup', '<span\x20class=\x22vjs-control-text\x22></span>', 'Invalid\x20aes\x20key\x20size', 'featuresSourceset', 'pmtPid', 'Play\x20Video', 'errorDisplay', 'jobs', 'techCall_', 'WAITING_ON_TIMELINE', 'modalopen', 'bigPlayButton', 'syncInfo', 'fr-ca', ',\x200\x20-1px\x20', 'excludeUnsupportedVariants_', 'ChaptersTrackMenuItem', 'The\x20\x22systemBandwidth\x22\x20property\x20is\x20read-only', 'CARRIAGE_RETURN_', 'tracks', 'eventBusKey', 'vjs-volume-horizontal', '\x22\x20tech\x20is\x20undefined.\x20Skipped\x20browser\x20support\x20check\x20for\x20that\x20tech.', 'ended_', 'overflow', 'mimeType', ',\x200\x201px\x20', 'trackchange', 'mozfullscreenchange', 'sourceHandlers', 'manualProgress', 'seeking', 'cors', 'collectDtsInfo', 'mousedown', 'datetimeToDisplayTime', 'containsVideo', 'lockShowing', 'vjs-sliding', 'loadProgressBar', 'buildAbsoluteURL', 'mp2t', 'createElSelect_', 'throttledHandleMouseMove', 'toString', 'byterange', 'vjs-seeking', 'changedTouches', 'remainingTimeDisplay', 'trackElements_', 'startPts_', 'enableLowInitialPlaylist', 'sourceDuration', 'cache_', 'packetsWaitingForPmt', 'MPC', 'right', 'isPropagationStopped', 'SubsCapsMenuItem', 'chapters', 'getVideoPlaybackQuality', 'defaultMuted', 'controlText', 'unpressButton', 'SegmentList', '<a\x20href=\x22', 'AudioTrackButton', 'normalizePath', 'playbackRateMenuButton', '<div><span>/</span></div>', 'get', 'Only\x20audio\x20found\x20in\x20segment\x20when\x20we\x20expected\x20video.', 'vjs-subtitles-button\x20', 'LIVE', 'exitFullScreen', 'mediachanging', 'contenteditable', 'alternative', 'videoHeight', 'Errors', 'pssh', 'plugin\x20\x22', 'listenForUserActivity_', 'pts', 'onGroupChanged', 'vjs-volume-level', '</button>', 'iframe', 'initialMedia_', 'mdia', 'videojs.options\x20instead\x20of\x20just\x20changing\x20the\x20', 'getEventHash', 'XMLHttpRequest', 'subsCapsButton', 'mediaRequestsErrored', 'gop', 'barName', 'byteOffset', 'skipExpGolomb', 'vjs-menu-content', 'observe', 'ruby', 'Player', 'vjs-chapters-button\x20', 'firstBytesReceivedAt', 'load', 'parameters', 'MAX_VALUE', 'labelText_', 'now', 'handleTechSourceset_', 'updateShowing', 'checkCurrentTimeTimeout_', 'cueOutCont', 'targetDuration', 'addEventListener', 'overrideNativeVideoTracks', 'isIncompatible', 'inspect', 'runCallback_', 'inactivityTimeout', 'charCode', 'HTMLButtonElement', 'disposeMediaElement', 'vjs-time-tooltip', 'isAudio', 'vjs-remaining-time', 'isSyncRequest', 'loadedplaylist', 'handleTechPlaying_', 'handleTechFirstPlay_', 'captionStreams', 'change', 'vjs-control-text', 'handleMouseMove', 'tfdt', 'pop', 'RemoteTextTrackEls', 'row_', 'addItem', 'Illegal\x20component\x20name,\x20\x22', 'errorTypes', 'getPropertyValue', 'hash', 'retryplaylist', 'webkitExitFullscreen', 'handleSource', 'hasBeenOpened_', 'pause', 'registerSourceHandler', 'filter', 'Semi-Transparent', 'mediachange', '\x20vjs-slider', 'payloadType', 'urn:mpeg:dash:utc:http-ntp:2014', 'HLS\x20is\x20no\x20longer\x20a\x20tech.\x20Please\x20remove\x20it\x20from\x20', '[object\x20Object]', 'resetStream_', 'hls-gap-skip', 'captions-window-', 'type', 'Headers\x20cannot\x20be\x20set\x20on\x20an\x20XDomainRequest\x20object', 'px\x20', 'url(\x22', 'LOCA', 'push', 'when\x20the\x20duration\x20is\x20Infinity', 'updateVisibility', 'seekBar', 'minSegmentPts', 'scroll', 'vhs', 'msFullscreenElement', 'buffer', 'documentElement', 'defaulting\x20key\x20method\x20to\x20AES-128', 'mvhd', 'audioTsToVideoTs', 'manifest', 'Cyan', 'substring', 'resolvedUri', 'ended', 'player_', 'hls-webvtt', 'vjs-progress-holder', 'audioProfile', '<span\x20aria-hidden=\x22true\x22\x20class=\x22vjs-icon-placeholder\x22></span>', 'ignoring\x20invalid\x20target\x20duration:\x20', 'This\x20modal\x20can\x20be\x20closed\x20by\x20pressing\x20the\x20Escape\x20key\x20or\x20activating\x20the\x20close\x20button.', 'fromCharCode', 'setUint32', 'mediaRequestsErrored_', 'aspectRatio', 'handleFullscreenChange_', 'MEDIA_ERR_SRC_NOT_SUPPORTED', 'iterator', 'vjs-disabled', 'webkitFullscreenElement', 'name_', 'isTypeSupported', 'dispatchCea608Packet', '#0F0', 'controls_', 'ignoring\x20key\x20declaration\x20without\x20attribute\x20list', 'readyState', 'field_', 'vjs-paused', 'getAllResponseHeaders', '16:9', 'addRemoteTextTrack', 'Worker', 'bandwidth', 'resizeObserver', 'TextTrack\x20kind\x20is\x20required\x20but\x20was\x20not\x20provided', 'audio/x-mpegurl', 'resetMediaElement', 'playProgressBar', 'Modal\x20Window', 'Malformed\x20time\x20stamp.', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20aria-hidden=\x22true\x22\x20class=\x22vjs-icon-placeholder\x22></span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22vjs-control-text\x22>\x20', 'closeable', 'hasBeenReset', 'setPlaybackRate', 'bubbles', 'hasPlayed_', 'windowColor', 'getItem', 'log', 'createElFont_', 'Text\x20Track\x20parsing\x20errors\x20for\x20', 'hook', 'MPEGTS', 'resyncLoader', 'elementaryStream', 'Text', 'NOTE', '\x22,\x20must\x20be\x20a\x20function,\x20was\x20', '38919LEscuF', 'DASH\x20playlist\x20request\x20error\x20at\x20URL:\x20', 'queuedCallbacks_', 'Size\x20must\x20be\x20between\x200\x20and\x20100.', 'BANDWIDTH_VARIANCE', 'decrypter', 'resetSourceWatch_', 'playlistType', 'label', 'Casual', 'audioTrack', 'reseteverything', 'userActive_', 'currentDimensions', 'static', 'setAutoplay', 'lineStream', 'hasStarted_', 'Button', '0.50', 'title', 'mediaBytesTransferred', 'masterLoaded_', 'beforeSend', 'netLoc', 'volumeLevel', 'vjs-volume-panel-vertical', 'CaptionStream', 'px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20.', '()\x20instead', 'Discontinuity', 'complete', 'pmt', '300%', 'reloadSourceOnError', 'playbackRate', 'No\x20compatible\x20source\x20was\x20found\x20for\x20this\x20media.', 'appendBuffer', ',\x202px\x202px\x20', 'setAttribute', 'getPlayer', 'sans-serif', 'blacklistDuration', 'requestAnimationFrame', 'scrollTop', 'currentType', 'bar', 'loop', 'segmentLoaders', 'hls-error-reload-initialized', 'vjs-controls-enabled', 'wasPlaying_', 'getPlayers', 'unpatchCanPlayType', 'timed-metadata', 'pipe', 'BANDWIDTH', 'GROUP-ID', 'nativeTextTracks', 'aria-label', 'innerText', 'queueTrigger', 'Playlist', 'HAVE_METADATA', 'attributes', 'vjs-menu-title', 'videoTrack', 'parsePesTime', 'autoselect', 'createElColors_', 'menuitem', 'Multiple\x20audio\x20tracks\x20present\x20but\x20no\x20audio\x20codec\x20string\x20is\x20specified.\x20', 'samplingfrequencyindex', 'periodIndex', 'pendingCallback_', '\x27\x20on\x20\x27TimeRanges\x27:\x20The\x20index\x20provided\x20(', 'getPercent', 'vjs-menu', 'within', 'decoder', 'application/x-mpegURL', 'currentSource_', 'Caption\x20Settings\x20Dialog', 'Promise', 'mozFullScreenEnabled', 'webkitDroppedFrameCount', 'textTracks', 'TextTrackButton', 'setupSourcesetHandling_', 'aria-haspopup', 'activeSourceBuffers_', 'Window', 'afterSeekableWindow_', '.vjs-text-opacity\x20>\x20select', 'backgroundOpacity', 'requestId', 'setRollUp', 'proxyNativeTracksForType_', 'shiftRowsUp_', 'isNormalChar', 'hls-rendition-blacklisted', 'fillWith', 'Magenta', 'useCueTags_', '-display', 'compositionTimeOffset', '__proto__', 'touchstart', 'Hls', 'handleTechEnded_', 'processCues', 'playerOptions', 'appendContent', 'setLoop', 'msExitFullscreen', 'min', 'resize', 'appendAudioInitSegment_', 'gopBuffer_', 'packetStream', 'userActive', 'Background', 'HTMLAnchorElement', 'buildURLFromParts', 'Cannot\x20switch\x20media\x20playlist\x20from\x20', 'timelines', 'progress\x20bar\x20timing:\x20currentTime={1}\x20duration={2}', 'tfhd', '1354639KCZKNA', 'hasPlayed', 'action', 'flags', 'method', 'coalesceStream', 'closed', 'raised', 'getTech', 'clearTimeout', 'selectSource', 'max', 'started', 'createDocumentFragment', 'onHlsReset_', 'utf8', 'getChild', 'comment', 'text/vtt', 'updateTimeMapping_', 'fontSize', 'keys', 'status', 'paddingValue', 'updateStyleEl_', 'self', '\x20tech\x20was\x20added\x20to\x20the\x20videojs\x20object\x20when\x20it\x20should\x20be\x20registered\x20using\x20videojs.registerTech(name,\x20tech)', 'rate', 'defaultTechOrder_', 'totalDuration', '_html5_api', '1.25', 'isReady_', 'isCrossOrigin', 'handleKeyPress', 'samplesize', 'webkitMovementY', '-menu-item', 'hadControls_', 'dynamic', 'sourceBuffers', 'segmentMetadataTrack_', 'Problem\x20encountered\x20with\x20the\x20current\x20HLS\x20playlist.', 'HLS\x20request\x20timed-out\x20at\x20URL:\x20', 'TERMINATOR', 'HTMLTextAreaElement', 'prompt', 'log|warn|error', 'updateIcon_', 'vjs-fullscreen', 'cenc:pssh', 'schemeIdUri', 'toggleDisplay', 'setupQualityLevels_', 'Date', 'enterFullWindow', 'contentWindow', 'Unknown\x20XMLHttpRequest\x20Error', 'volumePanelState_', 'Raised', 'el_', 'sourceBuffer_', 'videoTsToSeconds', 'ROLL_UP_2_ROWS_', 'Progress', 'skipUnsignedExpGolomb', 'mediaUpdateTimeout', 'picture-in-picture', 'presortIndex', 'mp4a.40.', 'webkitendfullscreen', '.vjs-bg-color\x20>\x20select', 'requestFullscreen', 'TextTrackMenuItem', 'Event', 'audioTracks', 'defaultPrevented', 'seekable_', 'com.microsoft.playready', 'handleTechDurationChange_', 'please\x20return\x20an\x20object\x20in\x20beforesetup\x20hooks', 'navigationStart', 'parseType', 'overrideNative_', 'vjs-tech', 'renditiondisabled', 'object', 'attachEvent', 'onparsingerror', '.vjs-styles-defaults', 'updateContent', 'No\x20Tech\x20named\x20\x27', 'Internal\x20XMLHttpRequest\x20Error', 'vjs-slider-horizontal', 'Unknown', '\x20is\x20UNSAFE\x20be\x20sure\x20you\x20know\x20what\x20you\x20are\x20doing', 'currentTime', '.vjs-font-family\x20>\x20select', '{1}\x20is\x20loading.', 'vjs-selected', 'The\x20\x22', 'WebKitBlobBuilder', 'shift', 'CODECS', ',\x202px\x202px\x204px\x20', 'totalduration', '\x20Switching\x20to\x20another\x20playlist.', 'setPlaysinline', 'INITIAL_PLAYLIST_SELECTOR', '.vjs-bg-opacity\x20>\x20select', 'responseTime', 'discardEmulationPreventionBytes', 'totalVideoFrames', 'Component', '\x22\x20already\x20exists.\x20You\x20may\x20want\x20to\x20avoid\x20re-registering\x20plugins!', 'proxyWebkitFullscreen_', 'generateSampleTable_', 'currentSources', 'toElement', 'apply', 'VideoSegmentStream', 'timestamp', 'setupFirstPlay', 'languages_', 'navigator', 'Black', 'touchcancel', 'seiNals', 'parseMasterXml', 'nativeCaptions', 'getMediaInfoForTime', 'playlistLoader', 'handleTechTouchEnd_', '__GLOBAL_DOCUMENT_CACHE@4', '[^=]*', 'metadata', 'srcUrl', 'class', 'clientX', 'track_', 'useCueTags', '<span\x20class=\x22vjs-control-text\x22><span>', 'getSyncPoint', 'CLOSED-CAPTIONS', 'clearAllCaptions', 'captions-font-size-%s', 'segmentMetadataTrack', 'send', 'video/x-matroska', 'codecs', 'resetCaptions', 'intersectPercentage', '-description\x20vjs-control-text', 'headers', 'error_', 'Transparent', 'webkitCancelFullScreen', 'BADCUE', 'vjs-hidden', 'timestampoffset', 'initSegments_', 'application/mpegurl', 'Invalid\x20color\x20code\x20provided,\x20', 'cues_', 'beforeRequest', 'remoteTextTrackEls_', '__target', 'postMessage', 'label_', 'oncue', 'Invalid\x20event\x20type;\x20must\x20be\x20a\x20non-empty\x20string\x20or\x20array.', 'concatAndAppendSegments_', 'stopRequest', 'vjs-live', 'getTime', '\x20playback\x20technology\x20element.', 'https://vjs.zencdn.net/vttjs/0.14.1/vtt.min.js', 'See\x20https://git.io/vMpjB', '\x20unavailable\x20on\x20', 'handleTech', 'closeButton', 'sourceBufferEmitter_', 'sources', 'inbandTextTracks', 'updateDisplay', 'Overriding\x20native\x20HLS\x20requires\x20emulated\x20tracks.\x20', 'column_', 'numberOfTracks', 'clearDisplay', 'videojs-http-streaming', 'setValues', 'fullscreenEnabled', '<option\x20id=\x22', 'throttledUpdateContent', 'audio', 'nonDisplayed_', 'captionPackets_', 'End\x20time\x20must\x20be\x20set\x20to\x20a\x20number.', 'plugin', 'queueCallback_', 'concat', 'masterXml_', 'isPAC', 'LiveDisplay', 'before', 'pendingBoxes', '\x22Comic\x20Sans\x20MS\x22,\x20Impact,\x20fantasy', 'ceil', 'vertical', 'onClientServerClockSync_', '[object\x20RegExp]', 'stepForward', 'BADWEBVTT', 'CustomControlSpacer', 'toCSSCompatValues', 'off', 'extend', 'proportionalSerif', 'buttonPressed_', 'TrackButton', 'Spacer', 'nativeControlsForTouch', 'CUE', 'baseDataOffsetIsMoof', 'selected', 'manualProgressOff', 'subtitleSegmentLoader_', 'application', 'selectedlanguagechange', 'setMuted', 'data-setup', 'resetEverything', 'The\x20', 'screenY', 'raw', 'bytes', 'touchend', 'stopPropagation', 'mainSegmentLoader_', 'Loaded', 'IE_VERSION', 'default', 'Unknown\x20Tech', 'query', 'urn:mpeg:dash:utc:http-iso:2014', '\u00a0</span>', 'videojs', 'syncController_', 'pps', '].\x20Attempting\x20to\x20resume\x20', 'screenX', 'url_', 'protocol', 'maxSegmentPts', 'Progress\x20Bar', 'subs', 'relative', 'syncinfoupdate', 'representations', 'menuButton_', 'estimateSegmentRequestTime', 'customType', 'disconnect', 'captions', 'vjs-mouse-display', 'customControlSpacer', 'Red', 'poster_', '\x22\x20in\x20not\x20a\x20valid\x20log\x20level', 'useXDR', 'defaulting\x20media\x20sequence\x20to\x20zero', 'stream-inf', 'generateSampleTable', 'setOptions_', '</span>', 'HlsSourceHandler', 'show', 'segmentRequestFinished_', 'hls-video-underflow', 'ontimestampmap', '\x20does\x20not\x20exist', 'ErrorDisplay', 'endOfStream', 'Error\x20encountered\x20when\x20parsing\x20cues:\x20', 'lastRecordedTime', '[time:\x20', 'hasStarted', 'controlBar', 'getUint32', 'updateARIAAttributes', 'transmuxPipeline_', 'lang', 'setPrototypeOf', 'featuresNative', 'vjs-mute-control\x20', 'addParser', 'CurrentTimeDisplay', 'start_', 'password', 'alternateGroup', 'MozBlobBuilder', 'startingMedia_', 'edgeStyle', 'No\x20currentTime\x20getter\x20specified', 'this.options()\x20has\x20been\x20deprecated\x20and\x20will\x20be\x20moved\x20to\x20the\x20constructor\x20in\x206.0', 'uniform', 'activeGroup', 'parsePesType', 'charCodeAt', 'ptsTime', 'GOAL_BUFFER_LENGTH', 'Monospace\x20Sans-Serif', 'stsc', 'vtt.js', 'Stopped\x20at\x20', 'enable', 'getGopForFusion_', 'proxyNativeTracks_', 'names', 'parseUrl', 'timedMetadataTimestampRolloverStream', '2.00', 'beforesetup', 'onselectstart', 'has', 'call', 'pic_parameter_set_rbsp', '</select>', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20Using\x20the\x20tech\x20directly\x20can\x20be\x20dangerous.\x20I\x20hope\x20you\x20know\x20what\x20you\x27re\x20doing.\x0a\x20\x20\x20\x20\x20\x20\x20\x20See\x20https://github.com/videojs/video.js/issues/2617\x20for\x20more\x20info.\x0a\x20\x20\x20\x20\x20\x20', 'fluid', '[object\x20Array]', 'commentary', 'handleSeeked', 'vjs-scrubbing', 'INVALID_NUMBER_OF_PERIOD', 'CloseButton', '<span\x20class=\x22vjs-control-text\x22>\x20', 'addClass', 'uri', 'console', 'onTrackChanged', 'clearDtsInfo', 'dataParser', 'textShadow', 'Playlist\x20no\x20longer\x20updating.', 'ERASE_NON_DISPLAYED_MEMORY_', 'vjs-volume-bar\x20vjs-slider-bar', 'techs_', 'played', 'Parser', 'createSourceBuffer_', 'Proportional\x20Serif', 'configurable', 'mozFullScreenElement', 'PosterImage', 'vjs-control', './transmuxer-worker.worker.js', 'scheme', 'height_', 'aria-', '{1}\x20of\x20{2}', 'parseSampleRate', 'BadSignature', 'del', 'handleBlur', 'setDefaultMuted', 'supportsNativeTextTracks', '<span\x20class=\x22vjs-menu-item-text\x22>', 'playlistRequestError', 'updating', 'vjs-user-inactive', 'isAudio_', 'supportsTypeNatively', 'Width\x20must\x20be\x20between\x200\x20and\x20100.', 'Attempting\x20to\x20use\x20the\x20default\x20audio\x20codec\x20(mp4a.40.2)', 'selectedinitialmedia', 'Passing\x20the\x20`starttime`\x20option\x20to\x20the\x20player\x20will\x20be\x20deprecated\x20in\x206.0', 'mediaRequests', 'top', 'sdtp', 'autoSetup', 'handleTechLoadStart_', 'gopsToAlignWith', 'Buffer_', 'aria-expanded', 'HAVE_NOTHING', 'getterName', 'audio/aac', 'hasOwnProperty', 'This\x20TimeRanges\x20object\x20is\x20empty', 'VolumeLevel', 'isFullWindow', 'HTMLInputElement', 'LANGUAGE', 'viewportanchor', 'ChaptersButton', 'enterFullScreen', 'segment-metadata', 'safeAppend_', 'ignoring\x20unknown\x20playlist\x20type:\x20', 'aac', 'accuracy', 'BASE_PLUGIN_NAME', 'Cea608Stream', 'originalCue_', 'vertical_', 'timestampOffset', 'cue', 'vjs-fluid', '-->', ',\x20setting\x20timer\x20for\x20', 'appendWindowStart', 'loaded_', 'head', 'bufferedPercent_', 'onDurationChange', 'mediaupdatetimeout', '<span\x20class=\x22vjs-control-text\x22>', 'updateHandler_', 'split', 'hls-608', 'frame', 'firstplay', 'addLanguage', 'TimestampRolloverStream', 'mediaElement', 'featuresProgressEvents', 'audioTsToSeconds', 'vjs-workinghover', 'hls-error-reload', 'Playing', 'isFullscreen_', 'formatTime', 'remoteTextTracks', 'slice_layer_without_partitioning_rbsp_idr', '(?:', 'audioCodec_', 'toFixed', 'dispatchEvent', ',\x20opens\x20', 'hasRedundancy', 'monitorBufferTick_', 'document', 'Green', 'No\x20MediaSource\x20specified', 'handlePlay', 'BACKSPACE_', 'key', 'fontVariant', '<span\x20style=\x27color:red;\x27>MALFORMED\x20DATA</span>', '\x20settings', 'aria-valuetext', 'selectedIndex_', 'controlTextEl_', 'OffTextTrackMenuItem', 'setInterval', 'value', 'application/x-mpegurl', 'loadedmetadata', ':focus', 'couldBeginLoading_', 'fromElement', 'VolumePanel', '\x20We\x20can\x27t\x20switch\x20to\x20a\x20stream\x20with\x20video\x20from\x20an\x20audio\x20only\x20stream.', 'media_', 'supportsRaf_', 'buildWrapperCSSClass', 'muted', 'parseTfdt', 'volumeControl', 'scheduled\x20currentTime:', 'allowCache', 'childNodes', 'STREAM_TYPES', 'stats', 'gopInfo', 'playOnLoadstart_', 'webkitRequestFullScreen', 'addTrack', 'kinds_', 'Captions', '.\x20Seeking\x20to\x20', 'ADTS_STREAM_TYPE', 'headOfPipeline', 'mediaLoader', 'messageHandlers', 'hls-error-reload-canceled', 'withCredentials', '-content', 'activeSourceBuffers', 'pauseOnOpen', 'cueTime', 'random', 'urn:mpeg:dash:utc:direct:2012', 'onreadystatechange', 'state', 'modificationTime', 'pushNals', 'result', 'currentWidth', 'backgroundColor', 'H264Stream', 'hasClass', 'textTrackDisplay', 'bind', 'audio/mpeg', 'height', 'VTTCue', 'width_', 'RESUME_CAPTION_LOADING_', 'HEADER', 'enableTouchActivity', '($|\x5cs)', 'handleTechCanPlay_', 'listeners', 'Element', 'unobserve', 'started_', 'qualityLevels_', 'fragment', 'playsinline', 'XDomainRequest', 'partEls_', 'groupCollapsed', 'muteToggle', 'emptyEl', 'handleEnded', 'exitFullscreen', 'urn:mpeg:dash:utc:direct:2014', 'realBuffer_', ',\x202px\x202px\x205px\x20', 'topRow_', 'AUDIO_PROPERTIES', 'ratechange', 'addTrackElement_', 'stopImmediatePropagation', 'removeTrack', 'HTMLSelectElement', 'loadstart', 'baseMediaDecodeTime', 'inline', '<select\x20aria-labelledby=\x22', 'monitorCurrentTime_', 'starttime', 'touchleave', 'Improper\x20value\x20\x22', 'forEach', 'emittedTracks', 'handleTechPlay_', 'dependsOn', 'backgroundImage', 'mediaSecondsLoaded', 'textContent', 'getTrackById', 'processedAppend_', 'boxes', '812817nlBOgK', '%;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20', 'PROGRAM-ID', 'updateend', 'dataAlignmentIndicator', 'ownerDocument', 'CHARACTERISTICS', 'codecs_', '\x22\x20is\x20already\x20initialised.\x20Options\x20will\x20not\x20be\x20applied.', 'boolean', 'avcC', '\x0a\x20\x20\x20\x20\x20\x20.', 'aria-valuenow', 'None', 'kinds', 'excludeIncompatibleVariants_', 'offsetHeight', 'ViewportAnchorX\x20must\x20be\x20between\x200\x20and\x20100.', '1.75', 'mediaGroups', 'getAllPlayers', 'timestampOffsetForTimeline', 'urn:mpeg:dash:utc:http-xsdate:2014', 'componentClass', 'getOwnPropertyDescriptor', 'codecCount', 'removeClass', 'handleSelectedLanguageChange', 'vjs-timeout-', 'METHOD', 'playbackWatcher_', 'then', ')=(?:', 'fillAlways', 'content', 'mouseTimeDisplay', 'opened_', 'auto', 'timestampOffset_', 'streamDescriptor', 'lines', 'ignoring\x20invalid\x20total\x20duration:\x20', 'lastIndexOf', 'setConstants', 'posterImage', 'playlists', 'readBoolean', 'startNumber', 'start', '0.5', 'base', 'InvalidStateError', 'nextSibling', 'delay', 'aspectRatio_', 'createSimplifiedSegmentObj_', 'moov', 'classList', 'firstKeyFrame', 'color', '</span>\x0a\x20\x20\x20\x20\x20\x20', 'STEP', 'loadListener_', 'Lines\x20must\x20be\x20set\x20to\x20a\x20number.', '<button\x20class=\x22vjs-done-button\x22>', 'onchange', 'vttjs', 'assign', 'Video.js:\x20', 'handlePause', 'X-TIMESTAMP-MAP', 'Audio\x20Track', 'decrypter_', 'featuresMuteControl', 'description', 'parseStream', 'msFlexOrder', 'middleware_', 'textdata', 'dref', 'values', 'pendingBuffers_', '\x20with\x20', 'webkitMovementX', 'floor', 'TracksListeners_', 'techCanOverridePoster', 'handleTechDoubleClick_', '</span>:\x200%</span>', 'prefixWithSilence_', 'cueIn', 'Segment', 'handleTechPause_', 'removeChild', 'dts', 'hls-reset', 'A\x20plugin\x20named\x20\x22', 'onPlayerMediachange_', 'focusedChild_', 'Play', 'A\x20tech\x20was\x20not\x20provided.', 'scrubbing_', 'sourceclose', 'instance', 'refreshMedia_', 'placeholder-uri-', 'controlText_', 'time\x20mapping\x20for\x20timeline\x20', 'sync', 'multiSelectable', 'BUFFER_LOW_WATER_LINE_RATE', 'stts', 'Dropshadow', 'tabindex', 'timedout', 'sliderinactive', 'activeInitSegmentId_', 'renditionenabled', 'cancel', 'enabled', 'hide', 'duration_', 'AudioTrack', 'handleTechCanPlayThrough_', 'Region', 'handleStageClick_', 'saveSettings', 'isNonSyncSample', 'isFmp4', 'parse', 'secondsToAudioTs', 'lineHeight', 'updateDuration', 'handleTechTap_', 'timer_', 'fullscreenElement', 'techWaiting_', 'mdat', 'supportsNativeMediaSources', 'parseTfhd', 'Script', 'audioSegmentStream', 'open', 'aria-disabled', 'HTMLMediaElement', 'timestampmap', 'captionsButton', 'fullscreenerror', 'registerPlugin', 'window', 'textTrackList', 'TimeDivider', 'rgba(255,\x20255,\x20255,\x201)', '\x27\x20should\x20be\x20registered\x20using\x20videojs.registerTech()\x27', 'contentProtection', 'trun', 'menuitemcheckbox', 'restore', 'application/vnd.apple.mpegurl', '1px\x201px\x20', 'public.accessibility.describes-video', 'responseXML', 'strategy', 'handleTechClick_', 'vjs-volume-control\x20vjs-control\x20', 'div', 'exitFullWindow', 'm3u', 'processedGopsInfo', '\x22Courier\x20New\x22,\x20monospace', 'No\x20techOrder\x20specified.\x20Did\x20you\x20overwrite\x20', 'hls-audio-change', 'undefined', 'vjs-playing', 'XMLHttpRequest\x20timeout', 'loaderType_', '\x22Andale\x20Mono\x22,\x20\x22Lucida\x20Console\x22,\x20monospace,\x20sans-serif', 'handleLateInit_', 'LoadProgressBar', 'payloadUnitStartIndicator', 'source', 'vertical-lr', 'Blue', 'convertCueToDOMTree', 'numSameDts_', 'Object.create\x20shim\x20only\x20accepts\x20one\x20parameter.', 'persistTextTrackSettings', 'webkitfullscreenchange', 'startTime', 'vjs-duration', 'ontouchstart', 'hooks', 'writable', 'descriptor', 'fill', 'clientTop', 'videoWasPlaying', 'userActivity_', 'createObjectURL', 'update', 'mfhd', 'Malformed\x20ID3\x20frame\x20encountered.\x20Skipping\x20metadata\x20parsing.', 'pageXOffset', 'Problem\x20encountered\x20loading\x20the\x20alternate\x20audio\x20track.', 'timing', 'items', 'debug|log|warn|error', 'updateInterval', 'ParsingError', 'ignoring\x20empty\x20stream-inf\x20attributes', '\x22\x20does\x20not\x20exist', 'forced', 'updateAdCues_', 'isOffsetControlCode', 'clearParsedCaptions', 'pendingBytes', 'no\x20bytes\x20available', '\x22\x20does\x20not\x20refer\x20to\x20an\x20element.', 'sampleDescriptionIndex', 'regionAnchorX', 'featuresFullscreenResize', 'AudioSegmentStream', 'number', 'list', 'name', 'vjs-control-bar', 'indexRange', 'setup', 'trimAdtsFramesByEarliestDts_', 'privateData', 'textOpacity', 'parseFloat', 'handleTechTouchMove_', '1.00', 'ERROR', 'created\x20SourceBuffer', 'appending\x20[', 'middleware', '0\x200\x204px\x20', 'mappingForTimeline', 'hls', 'en-ca', 'code', 'length', 'getElementsByTagName', 'FAILURE', 'runStrategies_', 'version', 'hostname', 'featuresTimeupdateEvents', 'stuckAtPlaylistEnd_', 'hdlr', 'polite', 'keyFrame', 'Techs\x20must\x20have\x20a\x20static\x20canPlaySource\x20method\x20on\x20them', 'hidden', 'play', 'defaulting\x20discontinuity\x20sequence\x20to\x20zero', 'setControls', 'toggleClass', 'enableSourceset', 'SWITCHING_MEDIA', 'poster', 'playbackRates', 'PlayToggle', 'Fell\x20out\x20of\x20live\x20window\x20at\x20time\x20', 'Infinity', 'Font\x20Size', 'controlsvisible', 'formatStyle', 'MEDIA_ERR_ENCRYPTED', 'SubtitlesButton', 'setVideoBaseMediaDecodeTime', 'videoWidth', '150%', '<legend\x20id=\x22'];
-	a0_0x53fe = function () {
-		return _0xe4325;
-	}
-		;
-	return a0_0x53fe();
+function TTTT() {
+	var a = ['webkitDisplayingFullscreen', 'bufferedPercent', 'menuitemradio', 'port', 'syncPoint_', 'modechange', 'playlistEnd', 'createItems', 'BASE_', 'responseText', 'clientLeft', 'texttrackchange', '#F00', 'currentTime:', '</fieldset>', 'depressed', 'groupEnd', 'webkitExitFullScreen', '_component_', 'isPrototypeOf', 'checkBuffer_', 'data', '1.5%', 'captions-font-family-%s', 'Position\x20must\x20be\x20between\x200\x20and\x20100.', '</legend>', 'playerresize', 'span', 'temporary', 'getBoundingClientRect', 'getUint16', 'parseCaptionPackets', 'trim', 'stsd', 'subtitlesTrack_', 'APPEND_BUFFER_ERR', 'findChaptersTrack', 'levels', './decrypter-worker.worker.js', 'resizeHandler', 'string', 'aria-hidden', 'isEnabled', 'fixesBadSeeks_', 'defineProperties', 'defaulting\x20segment\x20duration\x20to\x20the\x20target\x20duration', 'vjs-using-native-controls', 'MouseTimeDisplay', 'parseSei', 'processJob_', 'owner', 'opts', 'dinf', 'vdata', 'some', 'parseURL', 'modalfill', 'stopTrackingCurrentTime', 'Audio\x20Player', 'volumePanel', 'MenuItem', 'tech_', 'Initialization', 'TransportParseStream', 'reportTouchActivity', 'players', 'focus', 'hls-fmp4', 'VERSION', 'skipBits', 'host', 'accept', 'selectSyncPoint_', 'terminate', 'pauseLoading', 'DocumentTouch', 'media', 'aria-checked', 'Unknown\x20playlist\x20URI:\x20', 'cueOut', 'onabort', 'casual', '#ccc', 'lastVolume', 'contentEl_', 'mp4a', 'probeSegmentInfo', ',\x20seeking\x20', 'eventBusEl_', '7.2.2', 'controls', 'READY', 'mediaRequestsAborted', 'vjs-spacer\x20', 'regionAnchorY', 'isNewInit', 'localName', 'shim', 'exec', 'calculateSegmentTimeMapping_', 'handleTechReady_', 'region', 'TransportPacketStream', 'Encountered\x20a\x20gap\x20in\x20video\x20from\x20', 'getPlugin', 'lastControlCode_', 'Content-Type', 'hasBeenFilled_', 'sort', 'createElControls_', 'handleTechWaiting_', 'sliderInactive_', 'Super\x20expression\x20must\x20either\x20be\x20null\x20or\x20a\x20function,\x20not\x20', 'initSegment', 'captions-text-legend-', 'abort_', 'http:', 'sourceType_', 'updateSourceCaches_', 'vjs-playback-rate\x20', 'HAVE_MASTER', 'mousemove', 'SyncController', 'Pause', 'plugins', 'getCueById', 'setCues_', ']\x20from\x20playlist\x20[', 'Error\x20-\x20expected\x20string\x20data.', 'item', 'setTimestamp', 'freeze', 'Current\x20Time', 'stsz', 'videoCodec', 'stream', 'processSegmentResponse_', 'descEl_', 'findBox', 'updateForTrack', '\x20settings\x20dialog', 'videoCodec_', 'HTMLIFrameElement', 'URL', 'SegmentURL', 'Video\x20found\x20in\x20segment\x20when\x20we\x20expected\x20only\x20audio.', 'isColorPAC', 'creationTime', ')\x20is\x20non-numeric\x20or\x20out\x20of\x20bounds\x20(0-', 'close', 'unlockShowing', 'activeElement', 'flushDisplayed', 'mouseleave', '1nEGRHP', 'restoreSettings', 'any', 'canMuteVolume', 'captions-foreground-opacity-%s', 'vjs_video_', 'defineProperty', 'source_', 'TIMEOUT', 'currentSource', 'detachEvent', 'saveDiscontinuitySyncInfo_', ',\x200\x200\x204px\x20', 'masterPlaylistController_', 'bufferedEnd', 'volume', 'scrollLeft', 'ClickableComponent', 'captions-background-opacity-%s', 'move', 'NO_BASE_URL', 'vjs-volume-panel\x20vjs-control\x20', 'Color', 'create', 'ListClass', 'HLS\x20playlist\x20request\x20error\x20at\x20URL:\x20', 'defaultMessages', 'NalByteStream', 'mvex', 'concatenateNalData', 'Remaining\x20Time', 'metadataTrack_', '124159PeKjXC', 'VIDEOJS:', 'function', 'styleSheet', 'suspend', 'MenuButton', 'vjs-waiting', 'handleFocus', 'Timed\x20Metadata', 'lastPlaybackRate', 'changing_', 'vjs-poster', 'loadeddata', 'fontFamily', 'init', 'adts', 'keyCode', 'ccData', 'ccStreams_', 'bufferUpdating_', 'currentSrc', 'layerX', 'seekablechanged', 'Component\x20', 'requestTime', 'event', 'replace', 'processPes_', 'addTechControlsListeners_', ')\x20is\x20not\x20supported;\x20use\x20a\x20ClickableComponent\x20instead.', 'webkitEnterFullScreen', 'removeTechControlsListeners_', 'adEndTime', 'featuresPlaybackRate', 'mozFlexBasis', 'mouseup', '[lang]', 'reduce', 'btrt', 'setDateTimeMapping', 'baseUrl', ';\x20codecs=\x22', 'addCue', 'Aborted\x20early\x20because\x20there\x20isn\x27t\x20enough\x20bandwidth\x20to\x20complete\x20the\x20', 'path', 'Seeking\x20to\x20current\x20time\x20', 'Error\x20trying\x20to\x20parse\x20base\x20URL.', 'TextDecoder', '24iacWoe', 'body', 'No\x20compatible\x20SourceBuffer\x20configuration\x20for\x20the\x20variant\x20stream:', 'CONTROL_', 'getCache', 'tkhd', 'addWebVttScript_', 'activeCues', 'legend', 'supportsFullScreen', 'byteLength', 'entries', 'abs', 'seekTo', 'allowed', 'featuresNativeAudioTracks', 'aria-describedby', 'previouslyActiveEl_', 'HLS\x20playlist.\x20Trying\x20again\x20since\x20it\x20is\x20the\x20final\x20playlist.', 'loaded', 'selector', 'getTrackElementByTrack_', 'webkitFullscreenEnabled', 'rollUp', 'handleTechRateChange_', 'Video\x20Player', 'abortRequestEarly_', 'getValues', 'customParsers', 'https:', 'request', 'video', 'setTimestampOffset', 'Failed\x20to\x20create\x20SourceBuffers', 'videoUnderflow_', 'videoPacketContainsKeyFrame', 'vjs-menu-button', 'payload', 'unloadTech_', 'UTCTiming', 'cancelAnimationFrame', 'audioTimestampRolloverStream', 'The\x20media\x20is\x20encrypted\x20and\x20we\x20do\x20not\x20have\x20the\x20keys\x20to\x20decrypt\x20it.', 'resizeManager', 'pat', 'reset', 'horizontal-tb', 'video/ogg', 'probeMp4Segment_', 'dash', 'DOMParser', 'SegmentTimeline', 'discontinuity-sequence', 'Done', 'handleTechTextData_', 'availabilityStartTime', 'createEvent', 'conditionalFocus_', 'storedMode', 'selectPlaylist', 'addChild', 'handleAction', '6BvoeKd', 'vjs-track-settings-controls', 'seeked', 'skipLeadingZeros', 'BigPlayButton', 'small-caps', 'Skipping\x20unrecognized\x20metadata\x20packet', 'objURL', 'srclang', 'techs\x20must\x20be\x20registered\x20using\x20Tech.registerTech()', 'data_', 'handleSourceOpen_', 'segment-loader-', 'Close\x20Modal\x20Dialog', 'handleKeyDown', 'slideractive', 'PRIV', 'pow', 'initEvent', 'beforemodalopen', 'inBandMetadataTrackDispatchType', 'usage', 'setEventHandlers_', 'video/', '\x27\x20exists!\x20\x27', 'dataChannel_', 'vjs-styles-dimensions', 'removetrack', 'HAVE_CURRENT_METADATA', 'Switching\x20back\x20to\x20default.', 'className', 'DASH_INVALID_XML', 'waiting', 'audioinfo', 'samples', 'styleEl_', 'timeout', 'VOD', 'waiting_', 'slider', '-popup', 'displayState', 'use', 'addTextTrack', 'sliderActive_', 'slice', 'getChildById', 'ContentProtection', 'dispatchType', 'getExpiredTime', 'calculateDistance', 'maxSegmentDts', 'timescales', 'ControlBar', 'mediaRequests_', 'setupSourceBuffers_', 'flushStream', 'isEl', 'vjs-raf-', 'children', 'featuresNativeTextTracks', 'pendingSegment_', '196172vyRatU', 'BUFFER_LOW_WATER_LINE', 'descriptions', 'setBaseMediaDecodeTime', 'timeStamp', 'webkitfullscreenerror', 'controlsenabled', 'AES-128', '\x20=>\x20', 'ResizeManager', 'mediaSequence', 'playToggle', 'mp4a.40.2', '.vjs-control-bar,\x20.vjs-modal-dialog', 'positionAlign', 'blob:vjs-media-source/', 'video/mpegurl', '(^|\x5cs)', 'manualTimeUpdates', 'subtitles', 'json', '\x22[^\x22]*\x22|[^,]*', 'toLowerCase', 'vjs_track_', 'selectedchange', 'innerHTML', 'playlist\x20update\x20[', 'splice', 'MSFullscreenError', 'plaintext', '\x20To\x20get\x20rid\x20of\x20this\x20message,\x20please\x20add\x20codec\x20information\x20to\x20the\x20manifest.', 'userLanguage', 'insertAdjacentHTML', 'text', 'cue-out-cont', 'remove', 'isMidRowCode', 'mapping', 'Time', 'returnValue', 'vjs-menu-button\x20', 'ResizeObserver', 'dispatcher', 'vjs-text-track-settings', 'earlyabort', 'getComponent', 'updateActiveSourceBuffers_', 'Empty\x20HLS\x20segment\x20content\x20at\x20URL:\x20', 'emptied', 'initialization', 'onHlsSegmentTimeMapping_', 'startOfSegment', 'gapFromVideoUnderflow_', 'monospaceSansSerif', 'isSpecialCharacter', 'state_', 'range', 'canplay', 'isInitialized', 'config', 'xhrOptions_', 'Video\x20is\x20not\x20ready.\x20(Video.js)', 'Seeked', 'debug', 'avc', 'flush', 'handleUpdateEnd_', 'childNameIndex_', 'setsChannel1Active', 'defaultSampleFlags', 'refreshXml_', 'addSegmentMetadataCue_', 'params', 'keyLocation', 'inspectCache_', 'addSeekableRange_', 'A\x20non-empty\x20playlist\x20URL\x20is\x20required', 'align', 'fullscreenToggle', 'rebufferingImpact', 'metadataStream', 'nativeMediaSource_', 'TIME-OFFSET', 'segmentIndex', 'getAttribute', 'webkitbeginfullscreen', 'tabIndex', 'cancelTimer_', 'mediaSource', 'manualProgressOn', 'querySelector', 'buildCSSClass', 'EXT_', 'sourceended', 'isTargetingSelf', 'ignoring\x20incomplete\x20or\x20missing\x20media\x20group', 'getInt32', 'requestOptions_', 'AUDIO', 'INITIAL', 'TimeTooltip', 'timeout_', 'resetSourceset_', 'vjs-fullscreen-control\x20', 'vjs-subs-caps-button\x20', 'textTracksJson_', 'substr', 'value\x20of\x20Hls.', 'vjs-label', 'discontinuitySequence', 'responseHeaders', 'tracks_', 'return', 'checkBufferTimeout_', 'dispose', 'minPTS', ']\x20of\x20[', '$Number$', 'clientY', 'urn:mpeg:dash:utc:sntp:2014', 'programMapTable', 'featuresNativeVideoTracks', 'catch', 'onload', ',\x203px\x203px\x20', 'buttons', 'seekable\x20updated\x20[', 'alignGopsAtStart_', 'DescriptionsButton', 'isDependedOn', 'usingPlugin', 'generateSegmentInfo_', 'timeupdate', 'Transparency', 'closest', 'one', 'durationDisplay', 'getPrototypeOf', 'sqrt', 'mode_', 'setAudioAppendStart', 'ViewportAnchorY\x20must\x20be\x20between\x200\x20and\x20100.', 'Adding\x20an\x20actionable\x20(user\x20controllable)\x20child\x20to\x20a\x20Button\x20(', 'modalempty', 'timeUntilRebuffer', 'preventDefault', 'kind_', 'playerElIngest_', 'Chapters', 'vjs-play-control\x20', '.vjs-edge-style\x20>\x20select', 'patchCanPlayType', 'getOwnPropertyNames', 'BYTERANGE', 'MEDIA_ERR_DECODE', 'frames', 'Mute', 'warn|error', 'getUint8', 'cue.frame.id\x20is\x20deprecated.\x20Use\x20cue.value.key\x20instead.', 'audio/mp4', 'onmessage', 'defaultState', 'An\x20invalid\x20number\x20or\x20illegal\x20string\x20was\x20specified.', '</option>', '175%', 'restoreMetadataTracksInIOSNativePlayer_', 'videoTrackIds', 'statusCode', 'vjs-track-settings-colors', 'end', 'vttjs\x20failed\x20to\x20load,\x20stopping\x20trying\x20to\x20process\x20', '151570repHOE', 'pendingMetadata', 'stringify', 'DurationDisplay', 'vjs-volume-panel-horizontal', 'script', 'createElement', 'discontinuities', 'captionStream', 'sourceUpdater_', 'techGet_', 'instreamId', 'skipEmptySegments_', 'USER_DATA_REGISTERED_ITU_T_T35', 'loadSegment_', 'table', 'urn:mpeg:dash:utc:http-iso:2012', 'indexOf', 'WAITING', 'TextTrackSettings', 'sourceType', 'dimension', 'symbol', 'resetStats_', '#0FF', 'template', 'tap', 'manualAutoplay_', 'remoteTextEl', 'probeTsSegment_', '/mp4;codecs=\x22', 'delete', 'RemoteText', 'getMenuCaption', 'mediaSecondsLoaded_', 'rafId_', 'handleTechSeeking_', 'ignoring\x20start\x20declaration\x20without\x20appropriate\x20attribute\x20list', 'seeking_', 'combined', 'click', 'using\x20Hls.', 'updating\x20zero\x20segment\x20duration\x20to\x20a\x20small\x20value', 'toUpperCase', 'hls_', 'ElementaryStream', 'snapToLines', 'parsererror', 'timeMapping_', 'handleMouseSeek', 'networkState', 'playlist-type', 'AudioTrackMenuItem', 'currentTimeDisplay', 'consecutiveUpdates', 'charAt', 'supportsNativeDash', 'getSimpleBoxPosition', 'remoteTextTracks_', 'paused', 'precise', '\x0a\x20\x20\x20\x20\x20\x20.video-js\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:\x20300px;\x0a\x20\x20\x20\x20\x20\x20\x20\x20height:\x20150px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20.vjs-fluid\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding-top:\x2056.25%\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20', 'removeEventListener', 'fastQualityChange_', 'data-vjs-player', 'role', 'groupFramesIntoGops', 'discontinuityStarts', 'payloadSize', 'player', ']:\x20[time:', 'extendFirstKeyFrame', '\x20\x20>', 'onerror', 'com.adobe.primetime', 'liveDisplay', '\x22\x20supplied\x20for\x20for\x20', 'inf', 'unshift', 'statechanged', 'PlaybackRateMenuButton', 'playlist\x20refresh\x20sync:\x20[time:', 'setTimeout', 'join', ',\x20-1px\x20-1px\x20', 'DASH_EMPTY_MANIFEST', 'seekable', 'fullWindowOnEscKey', 'LOCAL', 'id_', 'nonIconControl', 'isSelected_', '1076880znazSg', 'BadTimeStamp', 'createModal', 'createElWinColor_', 'nalCount', 'fontPercent', 'cues', 'haveMetadata', 'every', 'Yellow', 'trackProgress', 'mdhd', 'SegmentLoader[', 'getPlugins', 'nextTrackId', 'DEFAULT', 'Illegal\x20plugin\x20name,\x20\x22', 'Fullscreen', 'gopCache_', 'isView', 'moof', 'parseAdtsSize', 'assertive', 'videoTimestampRolloverStream', 'channelcount', 'ERASE_DISPLAYED_MEMORY_', 'position', '\x20id=\x22', 'smhd', 'disable', 'createTimeRange', 'TextTrack', 'subarray', 'docOrigOverflow', 'pluginsetup', 'com.widevine.alpha', 'excludeUntil', 'main-desc', 'set', 'inbandTextTracks_', 'METADATA_STREAM_TYPE', 'addSourceBuffer', 'abortRequests', 'relatedTarget', 'goalBufferLength_', '400%', 'playbackRateSupported', 'deregisterPlugin', 'hls-demuxed', 'size', 'alignGopsWith', 'STANDARD_PLAYLIST_SELECTOR', 'live\x20point\x20(seekable\x20end)\x20', 'playerEvent', 'Font\x20Family', 'latestDts_', 'webkitCurrentFullScreenElement', 'hls-rendition-enabled', 'touches', 'remoteTextTrackEls', 'pathname', 'aacStream', 'HTMLEmbedElement', 'streamType', 'live\x20window\x20shift\x20[', 'keepOriginalTimestamps', 'isThisThread', 'isFullscreen', 'SeekBar', 'Cannot\x20use\x20create\x20a\x20virtual\x20MediaSource\x20for\x20this\x20video', 'Invalid\x20listener;\x20must\x20be\x20a\x20function.', 'volumechange', 'false', 'segmentUrls', 'dblclick', 'Slider', 'last_section_number', '\x20vjs-text-track-settings', 'debouncedHandler_', 'endPts', '\x22Monotype\x20Corsiva\x22,\x20cursive', 'readyQueue_', 'blacklistplaylist', 'isExtCharacter', 'Failed\x20to\x20create\x20Source\x20Buffers', 'scrubbing', 'groups', 'selectedIndex', 'monitorBuffer_', 'An\x20invalid\x20or\x20illegal\x20string\x20was\x20specified.', 'appendGopInfo_', 'TEST_VID', 'content-type', 'currentTimeInterval', 'supportsNativeVideoTracks', 'usingNativeControls_', 'modalclose', 'mediaIndex', 'BaseURL', 'trex', '\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20width:\x20', 'bufferLowWaterLine', 'skipTheGap_', 'ProgressControl', 'cloneNode', 'setSource', '\x20playback\x20technology.', 'characteristics', 'touchmove', 'center', 'prototype', 'createTimeRanges', 'xhr', 'nodeName', 'sign', '100%', 'video/mp4', 'popOn', 'vjs-progress-control\x20vjs-control', 'formattedTime_', 'setupAacPipeline', 'avc1.4d400d', 'isLeading', 'performance', 'MPEGT', 'options', 'Video', 'webkitFlexBasis', 'adtsStream', 'adStartTime', 'manifestUri', 'viewportAnchorY', 'startPts', 'arraybuffer', '\x20segmentIndex:', 'opened', 'audioobjecttype', 'registerTech', 'children_', 'keySystems', 'configureLoaderMimeTypes_', 'round', 'manualTimeUpdatesOn', 'updateFormattedTime_', 'cueTagsTrack_', 'MAX_BUFFER_LOW_WATER_LINE', 'crossorigin', 'dialog', 'capitalName', 'webkitRequestFullscreen', 'removeCue', 'vjs-modal-dialog', 'timeTooltip', 'WebKitDataCue', 'handleProgress_', 'pid', 'response', 'href', 'Malformed\x20WebVTT\x20signature.', 'Text\x20Tracks\x20are\x20being\x20loaded\x20from\x20another\x20origin\x20but\x20the\x20crossorigin\x20attribute\x20isn\x27t\x20used.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20This\x20may\x20prevent\x20text\x20tracks\x20from\x20loading.', 'timeToSamples', 'audioTrackButton', 'Depressed', 'clearFormatting', 'Problem\x20encountered\x20loading\x20the\x20subtitle\x20track.', 'supportsNativeAudioTracks', 'loaderType', '\x22>x</a>', 'blacklistCurrentPlaylist', 'src', 'playback\x20by\x20seeking\x20to\x20the\x20current\x20time.', 'master', 'Tracks', 'keydown', 'Start\x20time\x20must\x20be\x20set\x20to\x20a\x20number.', 'date', 'options_', 'onUpdateendCallback_', 'application/xml', 'smoothQualityChange_', '\x20to\x20', 'TrackClass', 'left', 'getSource', 'Number', 'addtrack', 'localStorage', 'urn:mpeg:dash:utc:ntp:2014', 'Text\x20Edge\x20Style', 'sourceHandler_', '#00F', 'The\x20media\x20playback\x20was\x20aborted\x20due\x20to\x20a\x20corruption\x20problem\x20or\x20because\x20the\x20media\x20used\x20features\x20your\x20browser\x20did\x20not\x20support.', 'syncPoint', 'PlayProgressBar', 'goalBufferLength', 'Accept', 'vttjserror', 'components_', 'displayed_', 'segmenttimemapping', 'StringDecoder', 'userAgent', 'notSupportedMessage', 'triggerSourceset', 'beforeSeekableWindow_', 'vjs-interval-', 'match', 'rollUpRows_', 'overrideNative', 'tabIndex_', '56OwRPcr', 'createRemoteTextTrack', 'blur', 'autoplay-success', 'bandwidthupdate', 'getComputedStyle', 'GOAL_BUFFER_LENGTH_RATE', 'disposeSourceHandler', 'Cannot\x20call\x20a\x20class\x20as\x20a\x20function', 'handleFullscreenChange', 'timeline', 'onEndOfStream', 'vjs-lock-showing', 'true', 'callback\x20argument\x20missing', 'pendingCaptions', 'handleMouseDown', 'vjs-controls-disabled', 'GA94', 'guid', 'videoTsToAudioTs', 'dateTimeObject', 'Descriptions', 'mediaRequestsTimedout', 'droppedVideoFrames', 'mediaSource_', 'offsetTop', 'languages', 'updateLabel', 'custom', 'MediaLoader', 'flexNotSupported_', 'playlist', 'nodeType', 'segment', 'SubsCapsButton', 'decrypted', 'nalUnitType', 'profileIdc', 'pendingTracks', 'menuButton', 'handleTechPosterChange_', 'MediaSource', 'buffered_', 'parseUserData', 'playlist_', 'fetchAtBuffer_', 'MAX_GOAL_BUFFER_LENGTH', 'bitsAvailable', 'Player\x20\x22', '_description', '[object\x20Function]', 'changingSrc_', 'END_OF_CAPTION_', 'emitTapEvents', 'mp4', 'avc1.', 'application/dash+xml', 'getSyncSegmentCandidate_', 'autoRemoteTextTracks_', 'loadWord', 'setCurrentTime', 'empty', 'appendChild', 'DIRECT', 'mediaSources', 'handleSubmenuKeyPress', '\x22Andale\x20Mono\x22,\x20\x22Lucida\x20Console\x22,\x20monospace', 'seekTo_', '\x20must\x20be\x20greater\x20than\x20or\x20equal\x20to\x200', 'video-js', 'application/json', '_tables', 'removeTrackElement_', 'FORCED', 'selectSourceHandler', 'vjs-audio-button\x20', 'A\x20network\x20error\x20caused\x20the\x20media\x20download\x20to\x20fail\x20part-way.', 'timescale', 'warn', 'audioBuffer_', 'track', '.vjs-done-button', 'formatting_', 'com.apple.streaming.transportStreamTimestamp', 'hls-live-resync', 'cue.frame.value\x20is\x20deprecated.\x20Use\x20cue.value.data\x20instead.', 'playing', 'Invalid\x20playlist\x20STREAM-INF\x20detected.\x20Missing\x20BANDWIDTH\x20attribute.', 'button', 'textTrackSettings', 'resetCaptionStream', 'Opaque', 'EventTarget', 'Unmute', 'VTTRegion', 'samplerate', 'seekable\x20range\x20', 'uncloseable', 'NONE', 'Illegal\x20plugin\x20for\x20\x22', 'Subtitles', 'loadingSpinner', 'handleMouseUp', 'controlsdisabled', '\x20off', 'featuresVolumeControl', 'this\x20hasn\x27t\x20been\x20initialised\x20-\x20super()\x20hasn\x27t\x20been\x20called', 'Error\x20trying\x20to\x20parse\x20relative\x20URL.', 'resizeObserver_', 'mediaTypes', 'vjs-error-display\x20', 'responseType', 'tag', 'setVolume', 'menu', 'Malformed\x20timestamp:\x20', 'applyStyles', 'Malformed\x20time\x20stamp\x20(time\x20stamps\x20must\x20be\x20separated\x20by\x20\x27-->\x27):\x20', 'Replay', 'alignGopsAtEnd', 'Menu', '-inline', 'info', 'Setting\x20attributes\x20in\x20the\x20second\x20argument\x20of\x20createEl()\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20has\x20been\x20deprecated.\x20Use\x20the\x20third\x20argument\x20instead.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20createEl(type,\x20properties,\x20attributes).\x20Attempting\x20to\x20set\x20', 'playliststuck', 'hls-timestamp-offset', 'ABORTED', 'Tech', 'segments', 'onSyncInfoUpdate_', 'focusableEls_', 'setRequestHeader', 'program-date-time', 'isSupported', 'init_', 'count', 'Tracks_', 'video/mp4;\x20codecs=\x22', 'playlistunchanged', 'processPendingSegments_', 'handleTechFullscreenChange_', 'flexBasis', 'MuteToggle', 'dimensions-', 'timeDivider', 'vmhd', 'trackId', 'vjs-resize-manager', 'createElFgColor_', 'h264Stream', 'registerComponent', 'setsChannel2Active', '3.00', '<button\x20class=\x22vjs-default-button\x22\x20title=\x22', 'HTMLObjectElement', 'vjs-ended', 'formatTime_', 'language', 'setDefaults', 'remuxTracks', 'vjs-has-started', 'componentresize', 'aborted', 'style', 'stbl', 'hookOnce', 'isTech', 'network', 'ERROR:\x20reloadSourceOnError\x20-\x20The\x20option\x20getSource\x20must\x20be\x20a\x20function!', 'initTrackListeners', 'getTagSettings', 'tagAttributes', 'vjs-event-bus', 'vjs-full-window', '\x20vjs-hidden\x20', 'isDisabled', 'parseFromString', 'textify', 'onflush', 'videoBuffer_', 'parsePat', 'main', 'url', 'encrypted', 'vjs-slider-vertical', 'contains', 'parseHdlr', 'file:', 'getClientRects', 'mouseused_', 'ignoreNextEqualDts_', 'percent', ']\x20[mapping:\x20', 'createRealSourceBuffers_', 'videoObjectTypeIndicator', 'Listeners_', 'mode', 'rgba(', 'Techs\x20must\x20have\x20a\x20static\x20canPlayType\x20method\x20on\x20them', 'sourceopen', 'levelIdc', 'LOADING', 'msFullscreenEnabled', 'pageY', 'endTime', 'remainingTime', 'serif', 'userWasActive', 'Monospace\x20Serif', 'overlaps', 'LOADED', 'hooks_', 'createProcessingInstruction', 'paintOn', 'activeTrack', 'labelEl_', 'checkCurrentTime_', 'durationchange', 'closeable_', 'bytes=', 'type_', 'Cannot\x20de-register\x20base\x20plugin.', '\x22></a>', 'dateTimeString', '.4d400d', 'childIndex_', 'techOrder', 'allowedEvents_', 'endList', 'restore\x20all\x20settings\x20to\x20the\x20default\x20values', 'duration', 'progress', 'ROLL_UP_4_ROWS_', 'next', 'masterPlaylistLoader_', 'history', 'cue-in', 'done', 'firstChild', 'defaultSampleDuration', 'throughput', 'hls-segment-time-mapping', 'message', 'ftyp', 'overrideNativeAudioTracks', 'which', 'sps', 'CaptionSettingsMenuItem', '<fieldset\x20class=\x22vjs-edge-style\x20vjs-track-setting\x22>', 'play_', 'currentTimeline_', 'Failed\x20to\x20execute\x20\x27', 'MediaSource.addSeekableRange()\x20can\x20only\x20be\x20invoked\x20', 'videoSegmentStream', 'APPENDING', 'syncController', 'bytesReceived', 'dtsTime', 'update_', 'selectedLanguage', 'manualTimeUpdatesOff', 'activeCues_', 'containsAudio', 'MetadataStream', ',\x20selected', 'nativeSourceHandler', '#222', 'slice_layer_without_partitioning_rbsp', 'qualityLevels', 'references', 'setEarliestDts', '#000', 'handleTracksChange', '\x20->\x20', 'setupTsPipeline', 'alignGopsAtEnd_', ']\x20in\x20timeline\x20[', '.vjs-window-color\x20>\x20select', 'SUBTITLES', 'clearTracks', 'degradationPriority', 'VideoTrack', 'listener', 'parseVTTCues_', 'mediaRequestsTimedout_', 'handleTechTouchStart_', 'reportOrThrowError', 'sampleToChunks', 'escapedRBSP', 'H264_STREAM_TYPE', 'canOverrideAttributes', 'content_', 'isImmediatePropagationStopped', 'removeAttribute', 'MISSING_SEGMENT_INFORMATION', 'Disabling\x20subtitle\x20track.', 'checkMuted', 'initNetworkState_', 'mediaTransferDuration_', 'volumeBar', 'abort', 'hasAttribute', 'End\x20of\x20dialog\x20window.', 'overlapsOppositeAxis', 'lastVolume_', 'captions-window-opacity-%s', 'allow-cache', 'handleStateChanged', 'currentTime_', '\x20mediaSequence:\x20', 'vjs-styles-defaults', 'buffered\x20[', 'vjs-close-button\x20', 'stageclick', 'HEAD', 'Creating\x20a\x20ClickableComponent\x20with\x20an\x20HTML\x20element\x20of\x20', 'usingNativeControls', 'cleanupAutoTextTracks', 'parseId3TagSize', 'regionanchorY', 'mediaTypes_', 'offset', 'removeRemoteTextTrack', 'Reset', 'post', 'TOUCH_ENABLED', 'request\x20without\x20rebuffering.', 'initChildren', 'TextTrackDisplay', 'fillBuffer_', 'handleSegment_', '0.75', 'autoplay', 'amd', 'trimBackBuffer_', 'endlist', 'contentEl', '<span\x20class=\x22vjs-text-opacity\x20vjs-opacity\x22>', 'width', 'English', 'loadTech_', 'Non-Fullscreen', 'autoplay-failure', 'isPosterFromTech_', 'stco', 'isArray', 'textNode_', 'localize', 'CaptionsButton', 'The\x20media\x20could\x20not\x20be\x20loaded,\x20either\x20because\x20the\x20server\x20or\x20network\x20failed\x20or\x20because\x20the\x20format\x20is\x20not\x20supported.', '(?:^|,)(', 'insertContent', 'stepBack', '<fieldset\x20class=\x22vjs-window-color\x20vjs-track-setting\x22>', 'posterchange', 'audioDisabled_', 'vjs-error', 'vjs-no-flex', 'setPreload', '#FF0', 'groupNalsIntoFrames', 'calculateTrackBaseMediaDecodeTime', 'showing', 'maxTouchPoints', 'tech', 'length_', 'profileCompatibility', 'Transmuxer', 'setSrc', 'readExpGolomb', 'addFormatting', 'TYPE', 'toUnsigned', '<fieldset\x20class=\x22vjs-bg-color\x20vjs-track-setting\x22>', 'your\x20player\x27s\x20techOrder.', 'progressInterval', 'browser', 'clearInterval', 'clientOffset', 'Close', 'reverse', 'defaultPlaybackRate', '\x22,\x20cannot\x20share\x20a\x20name\x20with\x20an\x20existing\x20player\x20method!', 'access_unit_delimiter_rbsp', 'alt', 'handleClick', 'line', 'cuechange', 'createMenu', 'canPlaySource', '<span\x20class=\x22vjs-bg-opacity\x20vjs-opacity\x22>', 'layer', 'encryptedBytes', 'triggerPresenceUsage_', 'handlers', 'sourceOrder', 'removeHook', 'transmuxer_', 'removeItem', 'addQualityLevel', 'canplaythrough', 'videoTracks', 'insertBefore', 'activePlaylistLoader', 'overlapsAny', '\x22,\x20must\x20be\x20a\x20string,\x20was\x20', 'SourceUpdater[', 'PlaybackRateMenuItem', 'endOfAllRequests', 'NOW', 'seq_parameter_set_rbsp', 'username', 'constructor', 'readBits', 'UNSUPPORTED_UTC_TIMING_SCHEME', 'baseDataOffset', 'currentDimension', 'resetLoader', 'captions-background-', 'setTech', 'dataOffset', 'ontimeout', 'shiftKey', 'roundTripTime', 'PADDING_', 'reportUserActivity', 'compatibleBrands', 'readUnsignedExpGolomb', 'minimumUpdatePeriod', 'recordThroughput_', 'esds', 'callbacks_', 'stopTrackingProgress', 'setAttributes', 'integer', 'absolute', 'vttjsloaded', 'trak', 'hasChildNodes', 'urn:mpeg:dash:utc:http-head:2012', 'setupMasterPlaylistLoaderListeners_', 'vjs-vol-', 'PRECISE', 'audioSegmentLoader_', 'monospace', 'setPoster', 'canPlayType', 'Audio', 'setTrack', 'textTracksToJson', 'activePlugins_', 'preload', 'middle', 'vjs-time-control\x20vjs-time-divider', 'GET', 'Invalid\x20attempt\x20to\x20destructure\x20non-iterable\x20instance', 'RegionAnchorX\x20must\x20be\x20between\x200\x20and\x20100.', 'Html5', 'packetLength', 'vjs-loading-spinner', 'updateControlText_', 'vjs-captions-button\x20', 'mimeType_', 'minSegmentDts', 'parsePayloadUnitStartIndicator', 'sourceset', 'defaultSampleSize', 'traf', 'append', 'vertical-rl', 'tagName', '.vjs-fluid\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20padding-top:\x20', 'language_', 'roundTrip', 'none', 'callback', 'Trying\x20to\x20seek\x20outside\x20of\x20seekable\x20at\x20time\x20', 'decode', 'requestOptions', 'aria-live', 'mergeOptions', 'Period', 'windowOpacity', 'parseTrun', 'Problem\x20encountered\x20with\x20the\x20current\x20', 'mediaRequestsAborted_', 'getCueAsHTML', 'decryptChunk_', 'throttledHandleMouseSeek', '_api', 'beforemodalfill', 'stalled', '2px\x202px\x203px\x20', 'avc1', 'HLS\x20request\x20aborted\x20at\x20URL:\x20', 'enabled_', 'captions-foreground-color-%s', 'buffered', 'mediaPresentationDuration', 'kind', 'conditionalBlur_', 'src_', 'ready', 'hls-unknown-waiting', 'fmp4Captions', '_key', 'sei_rbsp', 'minf', 'exports', 'section_number', 'triggerReady', 'createEl', '.vjs-fg-color\x20>\x20select', 'endDialog', 'transmuxer', 'hideThreshold_', 'mozfullscreenerror', 'ltr', 'maybe', 'NAME', 'bottom', 'discontinuity', 'cueDiv', 'contentElType', 'test', 'techName_', 'parsePmt', 'playerId', 'asyncStream_', 'run', 'trackCurrentTime', 'supportsNativeHls', 'INIT', '-dimensions', 'Illegal\x20component,\x20\x22', 'pageX', 'initialize', 'canHandleSource', 'msRequestFullscreen', 'expression', 'concatenateFrameData_', 'pes', 'target', 'parentNode', 'trigger', 'sourceURL', 'clientOffset_', 'decrypt', 'application/javascript', 'vjs-slider-active', 'pressButton', 'timelineStartInfo', 'vjs-user-active', 'HLS\x20request\x20errored\x20at\x20URL:\x20', 'RepresentationID', 'syncPoint\x20for\x20[', 'map', 'BlobBuilder', 'fluid_', 'playWaitingForReady_', 'querySelectorAll', 'getCurrentTime_', 'setupSegmentLoaderListeners_', 'setDefaultPlaybackRate', 'OFFSET_', 'vjs-play-progress\x20vjs-slider-bar', 'VIDEOJS_NO_DYNAMIC_STYLE', 'org.w3.clearkey', 'WebVTT', 'masterPlaylistLoader', 'fullscreenchange', 'disabled', 'pre-line', 'location', 'activeCea608Channel_', 'ROLL_UP_3_ROWS_', 'remux', 'syncClientServerClock_', 'time', 'RESOLUTION', 'clear', 'webkitDecodedFrameCount', 'URI', 'error', '\x20We\x20can\x27t\x20switch\x20to\x20audio\x20only\x20from\x20a\x20stream\x20that\x20had\x20video.', 'readUnsignedByte', 'updateTextNode_', 'level', 'isBasic', 'MEDIA_ERR_ABORTED', 'no_player', 'A\x20non-empty\x20playlist\x20URL\x20or\x20playlist\x20is\x20required', 'offsetWidth', 'selectable', 'privateName', 'logger_', 'updateLastVolume_', 'enumerable', 'lineAlign', 'canControlVolume', 'contentType', 'VolumeBar', 'revokeObjectURL', 'captionParser_', 'keyup', '<span\x20class=\x22vjs-control-text\x22></span>', 'Invalid\x20aes\x20key\x20size', 'featuresSourceset', 'pmtPid', 'Play\x20Video', 'errorDisplay', 'jobs', 'techCall_', 'WAITING_ON_TIMELINE', 'modalopen', 'bigPlayButton', 'syncInfo', 'fr-ca', ',\x200\x20-1px\x20', 'excludeUnsupportedVariants_', 'ChaptersTrackMenuItem', 'The\x20\x22systemBandwidth\x22\x20property\x20is\x20read-only', 'CARRIAGE_RETURN_', 'tracks', 'eventBusKey', 'vjs-volume-horizontal', '\x22\x20tech\x20is\x20undefined.\x20Skipped\x20browser\x20support\x20check\x20for\x20that\x20tech.', 'ended_', 'overflow', 'mimeType', ',\x200\x201px\x20', 'trackchange', 'mozfullscreenchange', 'sourceHandlers', 'manualProgress', 'seeking', 'cors', 'collectDtsInfo', 'mousedown', 'datetimeToDisplayTime', 'containsVideo', 'lockShowing', 'vjs-sliding', 'loadProgressBar', 'buildAbsoluteURL', 'mp2t', 'createElSelect_', 'throttledHandleMouseMove', 'toString', 'byterange', 'vjs-seeking', 'changedTouches', 'remainingTimeDisplay', 'trackElements_', 'startPts_', 'enableLowInitialPlaylist', 'sourceDuration', 'cache_', 'packetsWaitingForPmt', 'MPC', 'right', 'isPropagationStopped', 'SubsCapsMenuItem', 'chapters', 'getVideoPlaybackQuality', 'defaultMuted', 'controlText', 'unpressButton', 'SegmentList', '<a\x20href=\x22', 'AudioTrackButton', 'normalizePath', 'playbackRateMenuButton', '<div><span>/</span></div>', 'get', 'Only\x20audio\x20found\x20in\x20segment\x20when\x20we\x20expected\x20video.', 'vjs-subtitles-button\x20', 'LIVE', 'exitFullScreen', 'mediachanging', 'contenteditable', 'alternative', 'videoHeight', 'Errors', 'pssh', 'plugin\x20\x22', 'listenForUserActivity_', 'pts', 'onGroupChanged', 'vjs-volume-level', '</button>', 'iframe', 'initialMedia_', 'mdia', 'videojs.options\x20instead\x20of\x20just\x20changing\x20the\x20', 'getEventHash', 'XMLHttpRequest', 'subsCapsButton', 'mediaRequestsErrored', 'gop', 'barName', 'byteOffset', 'skipExpGolomb', 'vjs-menu-content', 'observe', 'ruby', 'Player', 'vjs-chapters-button\x20', 'firstBytesReceivedAt', 'load', 'parameters', 'MAX_VALUE', 'labelText_', 'now', 'handleTechSourceset_', 'updateShowing', 'checkCurrentTimeTimeout_', 'cueOutCont', 'targetDuration', 'addEventListener', 'overrideNativeVideoTracks', 'isIncompatible', 'inspect', 'runCallback_', 'inactivityTimeout', 'charCode', 'HTMLButtonElement', 'disposeMediaElement', 'vjs-time-tooltip', 'isAudio', 'vjs-remaining-time', 'isSyncRequest', 'loadedplaylist', 'handleTechPlaying_', 'handleTechFirstPlay_', 'captionStreams', 'change', 'vjs-control-text', 'handleMouseMove', 'tfdt', 'pop', 'RemoteTextTrackEls', 'row_', 'addItem', 'Illegal\x20component\x20name,\x20\x22', 'errorTypes', 'getPropertyValue', 'hash', 'retryplaylist', 'webkitExitFullscreen', 'handleSource', 'hasBeenOpened_', 'pause', 'registerSourceHandler', 'filter', 'Semi-Transparent', 'mediachange', '\x20vjs-slider', 'payloadType', 'urn:mpeg:dash:utc:http-ntp:2014', 'HLS\x20is\x20no\x20longer\x20a\x20tech.\x20Please\x20remove\x20it\x20from\x20', '[object\x20Object]', 'resetStream_', 'hls-gap-skip', 'captions-window-', 'type', 'Headers\x20cannot\x20be\x20set\x20on\x20an\x20XDomainRequest\x20object', 'px\x20', 'url(\x22', 'LOCA', 'push', 'when\x20the\x20duration\x20is\x20Infinity', 'updateVisibility', 'seekBar', 'minSegmentPts', 'scroll', 'vhs', 'msFullscreenElement', 'buffer', 'documentElement', 'defaulting\x20key\x20method\x20to\x20AES-128', 'mvhd', 'audioTsToVideoTs', 'manifest', 'Cyan', 'substring', 'resolvedUri', 'ended', 'player_', 'hls-webvtt', 'vjs-progress-holder', 'audioProfile', '<span\x20aria-hidden=\x22true\x22\x20class=\x22vjs-icon-placeholder\x22></span>', 'ignoring\x20invalid\x20target\x20duration:\x20', 'This\x20modal\x20can\x20be\x20closed\x20by\x20pressing\x20the\x20Escape\x20key\x20or\x20activating\x20the\x20close\x20button.', 'fromCharCode', 'setUint32', 'mediaRequestsErrored_', 'aspectRatio', 'handleFullscreenChange_', 'MEDIA_ERR_SRC_NOT_SUPPORTED', 'iterator', 'vjs-disabled', 'webkitFullscreenElement', 'name_', 'isTypeSupported', 'dispatchCea608Packet', '#0F0', 'controls_', 'ignoring\x20key\x20declaration\x20without\x20attribute\x20list', 'readyState', 'field_', 'vjs-paused', 'getAllResponseHeaders', '16:9', 'addRemoteTextTrack', 'Worker', 'bandwidth', 'resizeObserver', 'TextTrack\x20kind\x20is\x20required\x20but\x20was\x20not\x20provided', 'audio/x-mpegurl', 'resetMediaElement', 'playProgressBar', 'Modal\x20Window', 'Malformed\x20time\x20stamp.', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20aria-hidden=\x22true\x22\x20class=\x22vjs-icon-placeholder\x22></span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22vjs-control-text\x22>\x20', 'closeable', 'hasBeenReset', 'setPlaybackRate', 'bubbles', 'hasPlayed_', 'windowColor', 'getItem', 'log', 'createElFont_', 'Text\x20Track\x20parsing\x20errors\x20for\x20', 'hook', 'MPEGTS', 'resyncLoader', 'elementaryStream', 'Text', 'NOTE', '\x22,\x20must\x20be\x20a\x20function,\x20was\x20', '38919LEscuF', 'DASH\x20playlist\x20request\x20error\x20at\x20URL:\x20', 'queuedCallbacks_', 'Size\x20must\x20be\x20between\x200\x20and\x20100.', 'BANDWIDTH_VARIANCE', 'decrypter', 'resetSourceWatch_', 'playlistType', 'label', 'Casual', 'audioTrack', 'reseteverything', 'userActive_', 'currentDimensions', 'static', 'setAutoplay', 'lineStream', 'hasStarted_', 'Button', '0.50', 'title', 'mediaBytesTransferred', 'masterLoaded_', 'beforeSend', 'netLoc', 'volumeLevel', 'vjs-volume-panel-vertical', 'CaptionStream', 'px;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x0a\x20\x20\x20\x20\x20\x20.', '()\x20instead', 'Discontinuity', 'complete', 'pmt', '300%', 'reloadSourceOnError', 'playbackRate', 'No\x20compatible\x20source\x20was\x20found\x20for\x20this\x20media.', 'appendBuffer', ',\x202px\x202px\x20', 'setAttribute', 'getPlayer', 'sans-serif', 'blacklistDuration', 'requestAnimationFrame', 'scrollTop', 'currentType', 'bar', 'loop', 'segmentLoaders', 'hls-error-reload-initialized', 'vjs-controls-enabled', 'wasPlaying_', 'getPlayers', 'unpatchCanPlayType', 'timed-metadata', 'pipe', 'BANDWIDTH', 'GROUP-ID', 'nativeTextTracks', 'aria-label', 'innerText', 'queueTrigger', 'Playlist', 'HAVE_METADATA', 'attributes', 'vjs-menu-title', 'videoTrack', 'parsePesTime', 'autoselect', 'createElColors_', 'menuitem', 'Multiple\x20audio\x20tracks\x20present\x20but\x20no\x20audio\x20codec\x20string\x20is\x20specified.\x20', 'samplingfrequencyindex', 'periodIndex', 'pendingCallback_', '\x27\x20on\x20\x27TimeRanges\x27:\x20The\x20index\x20provided\x20(', 'getPercent', 'vjs-menu', 'within', 'decoder', 'application/x-mpegURL', 'currentSource_', 'Caption\x20Settings\x20Dialog', 'Promise', 'mozFullScreenEnabled', 'webkitDroppedFrameCount', 'textTracks', 'TextTrackButton', 'setupSourcesetHandling_', 'aria-haspopup', 'activeSourceBuffers_', 'Window', 'afterSeekableWindow_', '.vjs-text-opacity\x20>\x20select', 'backgroundOpacity', 'requestId', 'setRollUp', 'proxyNativeTracksForType_', 'shiftRowsUp_', 'isNormalChar', 'hls-rendition-blacklisted', 'fillWith', 'Magenta', 'useCueTags_', '-display', 'compositionTimeOffset', '__proto__', 'touchstart', 'Hls', 'handleTechEnded_', 'processCues', 'playerOptions', 'appendContent', 'setLoop', 'msExitFullscreen', 'min', 'resize', 'appendAudioInitSegment_', 'gopBuffer_', 'packetStream', 'userActive', 'Background', 'HTMLAnchorElement', 'buildURLFromParts', 'Cannot\x20switch\x20media\x20playlist\x20from\x20', 'timelines', 'progress\x20bar\x20timing:\x20currentTime={1}\x20duration={2}', 'tfhd', '1354639KCZKNA', 'hasPlayed', 'action', 'flags', 'method', 'coalesceStream', 'closed', 'raised', 'getTech', 'clearTimeout', 'selectSource', 'max', 'started', 'createDocumentFragment', 'onHlsReset_', 'utf8', 'getChild', 'comment', 'text/vtt', 'updateTimeMapping_', 'fontSize', 'keys', 'status', 'paddingValue', 'updateStyleEl_', 'self', '\x20tech\x20was\x20added\x20to\x20the\x20videojs\x20object\x20when\x20it\x20should\x20be\x20registered\x20using\x20videojs.registerTech(name,\x20tech)', 'rate', 'defaultTechOrder_', 'totalDuration', '_html5_api', '1.25', 'isReady_', 'isCrossOrigin', 'handleKeyPress', 'samplesize', 'webkitMovementY', '-menu-item', 'hadControls_', 'dynamic', 'sourceBuffers', 'segmentMetadataTrack_', 'Problem\x20encountered\x20with\x20the\x20current\x20HLS\x20playlist.', 'HLS\x20request\x20timed-out\x20at\x20URL:\x20', 'TERMINATOR', 'HTMLTextAreaElement', 'prompt', 'log|warn|error', 'updateIcon_', 'vjs-fullscreen', 'cenc:pssh', 'schemeIdUri', 'toggleDisplay', 'setupQualityLevels_', 'Date', 'enterFullWindow', 'contentWindow', 'Unknown\x20XMLHttpRequest\x20Error', 'volumePanelState_', 'Raised', 'el_', 'sourceBuffer_', 'videoTsToSeconds', 'ROLL_UP_2_ROWS_', 'Progress', 'skipUnsignedExpGolomb', 'mediaUpdateTimeout', 'picture-in-picture', 'presortIndex', 'mp4a.40.', 'webkitendfullscreen', '.vjs-bg-color\x20>\x20select', 'requestFullscreen', 'TextTrackMenuItem', 'Event', 'audioTracks', 'defaultPrevented', 'seekable_', 'com.microsoft.playready', 'handleTechDurationChange_', 'please\x20return\x20an\x20object\x20in\x20beforesetup\x20hooks', 'navigationStart', 'parseType', 'overrideNative_', 'vjs-tech', 'renditiondisabled', 'object', 'attachEvent', 'onparsingerror', '.vjs-styles-defaults', 'updateContent', 'No\x20Tech\x20named\x20\x27', 'Internal\x20XMLHttpRequest\x20Error', 'vjs-slider-horizontal', 'Unknown', '\x20is\x20UNSAFE\x20be\x20sure\x20you\x20know\x20what\x20you\x20are\x20doing', 'currentTime', '.vjs-font-family\x20>\x20select', '{1}\x20is\x20loading.', 'vjs-selected', 'The\x20\x22', 'WebKitBlobBuilder', 'shift', 'CODECS', ',\x202px\x202px\x204px\x20', 'totalduration', '\x20Switching\x20to\x20another\x20playlist.', 'setPlaysinline', 'INITIAL_PLAYLIST_SELECTOR', '.vjs-bg-opacity\x20>\x20select', 'responseTime', 'discardEmulationPreventionBytes', 'totalVideoFrames', 'Component', '\x22\x20already\x20exists.\x20You\x20may\x20want\x20to\x20avoid\x20re-registering\x20plugins!', 'proxyWebkitFullscreen_', 'generateSampleTable_', 'currentSources', 'toElement', 'apply', 'VideoSegmentStream', 'timestamp', 'setupFirstPlay', 'languages_', 'navigator', 'Black', 'touchcancel', 'seiNals', 'parseMasterXml', 'nativeCaptions', 'getMediaInfoForTime', 'playlistLoader', 'handleTechTouchEnd_', '__GLOBAL_DOCUMENT_CACHE@4', '[^=]*', 'metadata', 'srcUrl', 'class', 'clientX', 'track_', 'useCueTags', '<span\x20class=\x22vjs-control-text\x22><span>', 'getSyncPoint', 'CLOSED-CAPTIONS', 'clearAllCaptions', 'captions-font-size-%s', 'segmentMetadataTrack', 'send', 'video/x-matroska', 'codecs', 'resetCaptions', 'intersectPercentage', '-description\x20vjs-control-text', 'headers', 'error_', 'Transparent', 'webkitCancelFullScreen', 'BADCUE', 'vjs-hidden', 'timestampoffset', 'initSegments_', 'application/mpegurl', 'Invalid\x20color\x20code\x20provided,\x20', 'cues_', 'beforeRequest', 'remoteTextTrackEls_', '__target', 'postMessage', 'label_', 'oncue', 'Invalid\x20event\x20type;\x20must\x20be\x20a\x20non-empty\x20string\x20or\x20array.', 'concatAndAppendSegments_', 'stopRequest', 'vjs-live', 'getTime', '\x20playback\x20technology\x20element.', 'https://vjs.zencdn.net/vttjs/0.14.1/vtt.min.js', 'See\x20https://git.io/vMpjB', '\x20unavailable\x20on\x20', 'handleTech', 'closeButton', 'sourceBufferEmitter_', 'sources', 'inbandTextTracks', 'updateDisplay', 'Overriding\x20native\x20HLS\x20requires\x20emulated\x20tracks.\x20', 'column_', 'numberOfTracks', 'clearDisplay', 'videojs-http-streaming', 'setValues', 'fullscreenEnabled', '<option\x20id=\x22', 'throttledUpdateContent', 'audio', 'nonDisplayed_', 'captionPackets_', 'End\x20time\x20must\x20be\x20set\x20to\x20a\x20number.', 'plugin', 'queueCallback_', 'concat', 'masterXml_', 'isPAC', 'LiveDisplay', 'before', 'pendingBoxes', '\x22Comic\x20Sans\x20MS\x22,\x20Impact,\x20fantasy', 'ceil', 'vertical', 'onClientServerClockSync_', '[object\x20RegExp]', 'stepForward', 'BADWEBVTT', 'CustomControlSpacer', 'toCSSCompatValues', 'off', 'extend', 'proportionalSerif', 'buttonPressed_', 'TrackButton', 'Spacer', 'nativeControlsForTouch', 'CUE', 'baseDataOffsetIsMoof', 'selected', 'manualProgressOff', 'subtitleSegmentLoader_', 'application', 'selectedlanguagechange', 'setMuted', 'data-setup', 'resetEverything', 'The\x20', 'screenY', 'raw', 'bytes', 'touchend', 'stopPropagation', 'mainSegmentLoader_', 'Loaded', 'IE_VERSION', 'default', 'Unknown\x20Tech', 'query', 'urn:mpeg:dash:utc:http-iso:2014', '\u00a0</span>', 'videojs', 'syncController_', 'pps', '].\x20Attempting\x20to\x20resume\x20', 'screenX', 'url_', 'protocol', 'maxSegmentPts', 'Progress\x20Bar', 'subs', 'relative', 'syncinfoupdate', 'representations', 'menuButton_', 'estimateSegmentRequestTime', 'customType', 'disconnect', 'captions', 'vjs-mouse-display', 'customControlSpacer', 'Red', 'poster_', '\x22\x20in\x20not\x20a\x20valid\x20log\x20level', 'useXDR', 'defaulting\x20media\x20sequence\x20to\x20zero', 'stream-inf', 'generateSampleTable', 'setOptions_', '</span>', 'HlsSourceHandler', 'show', 'segmentRequestFinished_', 'hls-video-underflow', 'ontimestampmap', '\x20does\x20not\x20exist', 'ErrorDisplay', 'endOfStream', 'Error\x20encountered\x20when\x20parsing\x20cues:\x20', 'lastRecordedTime', '[time:\x20', 'hasStarted', 'controlBar', 'getUint32', 'updateARIAAttributes', 'transmuxPipeline_', 'lang', 'setPrototypeOf', 'featuresNative', 'vjs-mute-control\x20', 'addParser', 'CurrentTimeDisplay', 'start_', 'password', 'alternateGroup', 'MozBlobBuilder', 'startingMedia_', 'edgeStyle', 'No\x20currentTime\x20getter\x20specified', 'this.options()\x20has\x20been\x20deprecated\x20and\x20will\x20be\x20moved\x20to\x20the\x20constructor\x20in\x206.0', 'uniform', 'activeGroup', 'parsePesType', 'charCodeAt', 'ptsTime', 'GOAL_BUFFER_LENGTH', 'Monospace\x20Sans-Serif', 'stsc', 'vtt.js', 'Stopped\x20at\x20', 'enable', 'getGopForFusion_', 'proxyNativeTracks_', 'names', 'parseUrl', 'timedMetadataTimestampRolloverStream', '2.00', 'beforesetup', 'onselectstart', 'has', 'call', 'pic_parameter_set_rbsp', '</select>', '\x0a\x20\x20\x20\x20\x20\x20\x20\x20Using\x20the\x20tech\x20directly\x20can\x20be\x20dangerous.\x20I\x20hope\x20you\x20know\x20what\x20you\x27re\x20doing.\x0a\x20\x20\x20\x20\x20\x20\x20\x20See\x20https://github.com/videojs/video.js/issues/2617\x20for\x20more\x20info.\x0a\x20\x20\x20\x20\x20\x20', 'fluid', '[object\x20Array]', 'commentary', 'handleSeeked', 'vjs-scrubbing', 'INVALID_NUMBER_OF_PERIOD', 'CloseButton', '<span\x20class=\x22vjs-control-text\x22>\x20', 'addClass', 'uri', 'console', 'onTrackChanged', 'clearDtsInfo', 'dataParser', 'textShadow', 'Playlist\x20no\x20longer\x20updating.', 'ERASE_NON_DISPLAYED_MEMORY_', 'vjs-volume-bar\x20vjs-slider-bar', 'techs_', 'played', 'Parser', 'createSourceBuffer_', 'Proportional\x20Serif', 'configurable', 'mozFullScreenElement', 'PosterImage', 'vjs-control', './transmuxer-worker.worker.js', 'scheme', 'height_', 'aria-', '{1}\x20of\x20{2}', 'parseSampleRate', 'BadSignature', 'del', 'handleBlur', 'setDefaultMuted', 'supportsNativeTextTracks', '<span\x20class=\x22vjs-menu-item-text\x22>', 'playlistRequestError', 'updating', 'vjs-user-inactive', 'isAudio_', 'supportsTypeNatively', 'Width\x20must\x20be\x20between\x200\x20and\x20100.', 'Attempting\x20to\x20use\x20the\x20default\x20audio\x20codec\x20(mp4a.40.2)', 'selectedinitialmedia', 'Passing\x20the\x20`starttime`\x20option\x20to\x20the\x20player\x20will\x20be\x20deprecated\x20in\x206.0', 'mediaRequests', 'top', 'sdtp', 'autoSetup', 'handleTechLoadStart_', 'gopsToAlignWith', 'Buffer_', 'aria-expanded', 'HAVE_NOTHING', 'getterName', 'audio/aac', 'hasOwnProperty', 'This\x20TimeRanges\x20object\x20is\x20empty', 'VolumeLevel', 'isFullWindow', 'HTMLInputElement', 'LANGUAGE', 'viewportanchor', 'ChaptersButton', 'enterFullScreen', 'segment-metadata', 'safeAppend_', 'ignoring\x20unknown\x20playlist\x20type:\x20', 'aac', 'accuracy', 'BASE_PLUGIN_NAME', 'Cea608Stream', 'originalCue_', 'vertical_', 'timestampOffset', 'cue', 'vjs-fluid', '-->', ',\x20setting\x20timer\x20for\x20', 'appendWindowStart', 'loaded_', 'head', 'bufferedPercent_', 'onDurationChange', 'mediaupdatetimeout', '<span\x20class=\x22vjs-control-text\x22>', 'updateHandler_', 'split', 'hls-608', 'frame', 'firstplay', 'addLanguage', 'TimestampRolloverStream', 'mediaElement', 'featuresProgressEvents', 'audioTsToSeconds', 'vjs-workinghover', 'hls-error-reload', 'Playing', 'isFullscreen_', 'formatTime', 'remoteTextTracks', 'slice_layer_without_partitioning_rbsp_idr', '(?:', 'audioCodec_', 'toFixed', 'dispatchEvent', ',\x20opens\x20', 'hasRedundancy', 'monitorBufferTick_', 'document', 'Green', 'No\x20MediaSource\x20specified', 'handlePlay', 'BACKSPACE_', 'key', 'fontVariant', '<span\x20style=\x27color:red;\x27>MALFORMED\x20DATA</span>', '\x20settings', 'aria-valuetext', 'selectedIndex_', 'controlTextEl_', 'OffTextTrackMenuItem', 'setInterval', 'value', 'application/x-mpegurl', 'loadedmetadata', ':focus', 'couldBeginLoading_', 'fromElement', 'VolumePanel', '\x20We\x20can\x27t\x20switch\x20to\x20a\x20stream\x20with\x20video\x20from\x20an\x20audio\x20only\x20stream.', 'media_', 'supportsRaf_', 'buildWrapperCSSClass', 'muted', 'parseTfdt', 'volumeControl', 'scheduled\x20currentTime:', 'allowCache', 'childNodes', 'STREAM_TYPES', 'stats', 'gopInfo', 'playOnLoadstart_', 'webkitRequestFullScreen', 'addTrack', 'kinds_', 'Captions', '.\x20Seeking\x20to\x20', 'ADTS_STREAM_TYPE', 'headOfPipeline', 'mediaLoader', 'messageHandlers', 'hls-error-reload-canceled', 'withCredentials', '-content', 'activeSourceBuffers', 'pauseOnOpen', 'cueTime', 'random', 'urn:mpeg:dash:utc:direct:2012', 'onreadystatechange', 'state', 'modificationTime', 'pushNals', 'result', 'currentWidth', 'backgroundColor', 'H264Stream', 'hasClass', 'textTrackDisplay', 'bind', 'audio/mpeg', 'height', 'VTTCue', 'width_', 'RESUME_CAPTION_LOADING_', 'HEADER', 'enableTouchActivity', '($|\x5cs)', 'handleTechCanPlay_', 'listeners', 'Element', 'unobserve', 'started_', 'qualityLevels_', 'fragment', 'playsinline', 'XDomainRequest', 'partEls_', 'groupCollapsed', 'muteToggle', 'emptyEl', 'handleEnded', 'exitFullscreen', 'urn:mpeg:dash:utc:direct:2014', 'realBuffer_', ',\x202px\x202px\x205px\x20', 'topRow_', 'AUDIO_PROPERTIES', 'ratechange', 'addTrackElement_', 'stopImmediatePropagation', 'removeTrack', 'HTMLSelectElement', 'loadstart', 'baseMediaDecodeTime', 'inline', '<select\x20aria-labelledby=\x22', 'monitorCurrentTime_', 'starttime', 'touchleave', 'Improper\x20value\x20\x22', 'forEach', 'emittedTracks', 'handleTechPlay_', 'dependsOn', 'backgroundImage', 'mediaSecondsLoaded', 'textContent', 'getTrackById', 'processedAppend_', 'boxes', '812817nlBOgK', '%;\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20', 'PROGRAM-ID', 'updateend', 'dataAlignmentIndicator', 'ownerDocument', 'CHARACTERISTICS', 'codecs_', '\x22\x20is\x20already\x20initialised.\x20Options\x20will\x20not\x20be\x20applied.', 'boolean', 'avcC', '\x0a\x20\x20\x20\x20\x20\x20.', 'aria-valuenow', 'None', 'kinds', 'excludeIncompatibleVariants_', 'offsetHeight', 'ViewportAnchorX\x20must\x20be\x20between\x200\x20and\x20100.', '1.75', 'mediaGroups', 'getAllPlayers', 'timestampOffsetForTimeline', 'urn:mpeg:dash:utc:http-xsdate:2014', 'componentClass', 'getOwnPropertyDescriptor', 'codecCount', 'removeClass', 'handleSelectedLanguageChange', 'vjs-timeout-', 'METHOD', 'playbackWatcher_', 'then', ')=(?:', 'fillAlways', 'content', 'mouseTimeDisplay', 'opened_', 'auto', 'timestampOffset_', 'streamDescriptor', 'lines', 'ignoring\x20invalid\x20total\x20duration:\x20', 'lastIndexOf', 'setConstants', 'posterImage', 'playlists', 'readBoolean', 'startNumber', 'start', '0.5', 'base', 'InvalidStateError', 'nextSibling', 'delay', 'aspectRatio_', 'createSimplifiedSegmentObj_', 'moov', 'classList', 'firstKeyFrame', 'color', '</span>\x0a\x20\x20\x20\x20\x20\x20', 'STEP', 'loadListener_', 'Lines\x20must\x20be\x20set\x20to\x20a\x20number.', '<button\x20class=\x22vjs-done-button\x22>', 'onchange', 'vttjs', 'assign', 'Video.js:\x20', 'handlePause', 'X-TIMESTAMP-MAP', 'Audio\x20Track', 'decrypter_', 'featuresMuteControl', 'description', 'parseStream', 'msFlexOrder', 'middleware_', 'textdata', 'dref', 'values', 'pendingBuffers_', '\x20with\x20', 'webkitMovementX', 'floor', 'TracksListeners_', 'techCanOverridePoster', 'handleTechDoubleClick_', '</span>:\x200%</span>', 'prefixWithSilence_', 'cueIn', 'Segment', 'handleTechPause_', 'removeChild', 'dts', 'hls-reset', 'A\x20plugin\x20named\x20\x22', 'onPlayerMediachange_', 'focusedChild_', 'Play', 'A\x20tech\x20was\x20not\x20provided.', 'scrubbing_', 'sourceclose', 'instance', 'refreshMedia_', 'placeholder-uri-', 'controlText_', 'time\x20mapping\x20for\x20timeline\x20', 'sync', 'multiSelectable', 'BUFFER_LOW_WATER_LINE_RATE', 'stts', 'Dropshadow', 'tabindex', 'timedout', 'sliderinactive', 'activeInitSegmentId_', 'renditionenabled', 'cancel', 'enabled', 'hide', 'duration_', 'AudioTrack', 'handleTechCanPlayThrough_', 'Region', 'handleStageClick_', 'saveSettings', 'isNonSyncSample', 'isFmp4', 'parse', 'secondsToAudioTs', 'lineHeight', 'updateDuration', 'handleTechTap_', 'timer_', 'fullscreenElement', 'techWaiting_', 'mdat', 'supportsNativeMediaSources', 'parseTfhd', 'Script', 'audioSegmentStream', 'open', 'aria-disabled', 'HTMLMediaElement', 'timestampmap', 'captionsButton', 'fullscreenerror', 'registerPlugin', 'window', 'textTrackList', 'TimeDivider', 'rgba(255,\x20255,\x20255,\x201)', '\x27\x20should\x20be\x20registered\x20using\x20videojs.registerTech()\x27', 'contentProtection', 'trun', 'menuitemcheckbox', 'restore', 'application/vnd.apple.mpegurl', '1px\x201px\x20', 'public.accessibility.describes-video', 'responseXML', 'strategy', 'handleTechClick_', 'vjs-volume-control\x20vjs-control\x20', 'div', 'exitFullWindow', 'm3u', 'processedGopsInfo', '\x22Courier\x20New\x22,\x20monospace', 'No\x20techOrder\x20specified.\x20Did\x20you\x20overwrite\x20', 'hls-audio-change', 'undefined', 'vjs-playing', 'XMLHttpRequest\x20timeout', 'loaderType_', '\x22Andale\x20Mono\x22,\x20\x22Lucida\x20Console\x22,\x20monospace,\x20sans-serif', 'handleLateInit_', 'LoadProgressBar', 'payloadUnitStartIndicator', 'source', 'vertical-lr', 'Blue', 'convertCueToDOMTree', 'numSameDts_', 'Object.create\x20shim\x20only\x20accepts\x20one\x20parameter.', 'persistTextTrackSettings', 'webkitfullscreenchange', 'startTime', 'vjs-duration', 'ontouchstart', 'hooks', 'writable', 'descriptor', 'fill', 'clientTop', 'videoWasPlaying', 'userActivity_', 'createObjectURL', 'update', 'mfhd', 'Malformed\x20ID3\x20frame\x20encountered.\x20Skipping\x20metadata\x20parsing.', 'pageXOffset', 'Problem\x20encountered\x20loading\x20the\x20alternate\x20audio\x20track.', 'timing', 'items', 'debug|log|warn|error', 'updateInterval', 'ParsingError', 'ignoring\x20empty\x20stream-inf\x20attributes', '\x22\x20does\x20not\x20exist', 'forced', 'updateAdCues_', 'isOffsetControlCode', 'clearParsedCaptions', 'pendingBytes', 'no\x20bytes\x20available', '\x22\x20does\x20not\x20refer\x20to\x20an\x20element.', 'sampleDescriptionIndex', 'regionAnchorX', 'featuresFullscreenResize', 'AudioSegmentStream', 'number', 'list', 'name', 'vjs-control-bar', 'indexRange', 'setup', 'trimAdtsFramesByEarliestDts_', 'privateData', 'textOpacity', 'parseFloat', 'handleTechTouchMove_', '1.00', 'ERROR', 'created\x20SourceBuffer', 'appending\x20[', 'middleware', '0\x200\x204px\x20', 'mappingForTimeline', 'hls', 'en-ca', 'code', 'length', 'getElementsByTagName', 'FAILURE', 'runStrategies_', 'version', 'hostname', 'featuresTimeupdateEvents', 'stuckAtPlaylistEnd_', 'hdlr', 'polite', 'keyFrame', 'Techs\x20must\x20have\x20a\x20static\x20canPlaySource\x20method\x20on\x20them', 'hidden', 'play', 'defaulting\x20discontinuity\x20sequence\x20to\x20zero', 'setControls', 'toggleClass', 'enableSourceset', 'SWITCHING_MEDIA', 'poster', 'playbackRates', 'PlayToggle', 'Fell\x20out\x20of\x20live\x20window\x20at\x20time\x20', 'Infinity', 'Font\x20Size', 'controlsvisible', 'formatStyle', 'MEDIA_ERR_ENCRYPTED', 'SubtitlesButton', 'setVideoBaseMediaDecodeTime', 'videoWidth', '150%', '<legend\x20id=\x22'];
+	TTTT = function () {
+		return a;
+	};
+	return TTTT();
 }
-(function (_0x5521cf, _0x5b8147) {
-	var _0x48267a = a0_0x3ffc
-		, _0x4eeddb = _0x5521cf();
+(function (AA, a) {
+	var TT = TT
+		, b = AA();
 	while (!![]) {
 		try {
-			var _0x35638b = -parseInt(_0x48267a(0xaac)) / 0x1 * (parseInt(_0x48267a(0x12c)) / 0x2) + parseInt(_0x48267a(0x652)) / 0x3 * (parseInt(_0x48267a(0x306)) / 0x4) + parseInt(_0x48267a(0x1d8)) / 0x5 + -parseInt(_0x48267a(0xb3a)) / 0x6 * (parseInt(_0x48267a(0xacc)) / 0x7) + parseInt(_0x48267a(0xafc)) / 0x8 * (parseInt(_0x48267a(0x8fe)) / 0x9) + -parseInt(_0x48267a(0x234)) / 0xa + -parseInt(_0x48267a(0x6d2)) / 0xb;
-			if (_0x35638b === _0x5b8147)
+			var _0x35638b = -parseInt(TT(0xaac)) / 0x1 * (parseInt(TT(0x12c)) / 0x2) + parseInt(TT(0x652)) / 0x3 * (parseInt(TT(0x306)) / 0x4) + parseInt(TT(0x1d8)) / 0x5 + -parseInt(TT(0xb3a)) / 0x6 * (parseInt(TT(0xacc)) / 0x7) + parseInt(TT(0xafc)) / 0x8 * (parseInt(TT(0x8fe)) / 0x9) + -parseInt(TT(0x234)) / 0xa + -parseInt(TT(0x6d2)) / 0xb;
+			if (_0x35638b === a)
 				break;
 			else
-				_0x4eeddb['push'](_0x4eeddb['shift']());
+				b['push'](b['shift']());
 		} catch (_0x2d1f47) {
-			_0x4eeddb['push'](_0x4eeddb['shift']());
+			b['push'](b['shift']());
 		}
 	}
-}(a0_0x53fe, 0x21417),
+}(TTTT, 0x21417),
 	function (_0x236e5b, _0x46e2b8) {
-		var _0x10795d = a0_0x3ffc;
+		var _0x10795d = TT;
 		typeof exports === _0x10795d(0x728) && typeof module !== _0x10795d(0x9aa) ? module[_0x10795d(0x503)] = _0x46e2b8() : typeof define === _0x10795d(0xace) && define[_0x10795d(0x454)] ? define(_0x46e2b8) : (_0x236e5b[_0x10795d(0x7c8)] = _0x46e2b8(),
 			Object[_0x10795d(0xab2)](Object, 'defineProperty', {
 				'configurable': ![],
@@ -55,7 +53,7 @@ function a0_0x53fe() {
 			}),
 			Object[_0x10795d(0xa95)](_0x236e5b[_0x10795d(0x7c8)]));
 	}(this, function () {
-		var _0x2eac47 = a0_0x3ffc
+		var _0x2eac47 = TT
 			, _0x4aafcf = _0x2eac47(0xa6b)
 			, _0x260c1f = typeof window !== _0x2eac47(0x9aa) ? window : typeof global !== _0x2eac47(0x9aa) ? global : typeof self !== _0x2eac47(0x9aa) ? self : {};
 		function _0x3b14ad(_0x3e13ff, _0x9890f) {
@@ -501,7 +499,7 @@ function a0_0x53fe() {
 		}
 		function _0x2b2d7a(_0x4d99c7, _0x2e191f) {
 			return _0x95a104(_0x2e191f)['forEach'](function (_0x353494) {
-				var _0x441d80 = a0_0x3ffc;
+				var _0x441d80 = TT;
 				return _0x4d99c7[_0x441d80(0x345)](_0x353494);
 			}),
 				_0x4d99c7;
@@ -865,7 +863,7 @@ function a0_0x53fe() {
 							, _0x251059 = this
 							, _0x53f7de = arguments
 							, _0x33f82c = function _0x41ae94() {
-								var _0x9bf570 = a0_0x3ffc;
+								var _0x9bf570 = TT;
 								_0xbf62b = null,
 									_0x33f82c = null,
 									!_0x30965d && _0x4f8133[_0x9bf570(0x749)](_0x251059, _0x53f7de);
@@ -1152,7 +1150,7 @@ function a0_0x53fe() {
 		var _0x197ed7 = (function () {
 			var _0x3693af = _0x2eac47;
 			function _0x5ef75a(_0x5286d1, _0x2684d0, _0x39cdb6) {
-				var _0x2a1479 = a0_0x3ffc;
+				var _0x2a1479 = TT;
 				_0x2ab3d2(this, _0x5ef75a);
 				!_0x5286d1 && this[_0x2a1479(0x9fe)] ? this['player_'] = _0x5286d1 = this : this[_0x2a1479(0x61b)] = _0x5286d1;
 				this[_0x2a1479(0x2e4)] = _0x47ec58({}, this[_0x2a1479(0x2e4)]),
@@ -1559,7 +1557,7 @@ function a0_0x53fe() {
 						, _0x2ca883 = 0xc8
 						, _0x49accb = void 0x0;
 					this['on']('touchstart', function (_0xf80e70) {
-						var _0x432cf4 = a0_0x3ffc;
+						var _0x432cf4 = TT;
 						_0xf80e70[_0x432cf4(0x26e)][_0x432cf4(0x9f1)] === 0x1 && (_0x193b84 = {
 							'pageX': _0xf80e70[_0x432cf4(0x26e)][0x0]['pageX'],
 							'pageY': _0xf80e70[_0x432cf4(0x26e)][0x0][_0x432cf4(0x3d2)]
@@ -1651,7 +1649,7 @@ function a0_0x53fe() {
 					_0x4e7759 = _0x2e578a(this, _0x4e7759);
 					var _0x2dc4d0 = _0x562c10['setInterval'](_0x4e7759, _0x28c975)
 						, _0x4c7355 = function _0x2a99eb() {
-							var _0x15a0a3 = a0_0x3ffc;
+							var _0x15a0a3 = TT;
 							return _0x3e330a[_0x15a0a3(0x480)](_0x2dc4d0);
 						};
 					return _0x4c7355[_0x51df41(0x319)] = _0x51df41(0x301) + _0x2dc4d0,
@@ -1978,7 +1976,7 @@ function a0_0x53fe() {
 				var _0x27d77f = _0x2eac47;
 				_0x24aed7(_0xb17d48, _0x362722);
 				function _0xb17d48(_0x578da1, _0x2747fc) {
-					var _0x401c4e = a0_0x3ffc;
+					var _0x401c4e = TT;
 					_0x2ab3d2(this, _0xb17d48);
 					var _0xba86cd = _0x245593(this, _0x362722[_0x401c4e(0x817)](this, _0x578da1, _0x2747fc));
 					return _0xba86cd['opened_'] = _0xba86cd[_0x401c4e(0x5f6)] = _0xba86cd[_0x401c4e(0xa7d)] = ![],
@@ -2198,7 +2196,7 @@ function a0_0x53fe() {
 			var _0x21dfd6 = _0x2eac47;
 			_0x24aed7(_0x4854aa, _0x540bf6);
 			function _0x4854aa() {
-				var _0x345a46 = a0_0x3ffc
+				var _0x345a46 = TT
 					, _0x1b98b1 = arguments[_0x345a46(0x9f1)] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : [];
 				_0x2ab3d2(this, _0x4854aa);
 				var _0x1aa777 = _0x245593(this, _0x540bf6['call'](this));
@@ -2283,7 +2281,7 @@ function a0_0x53fe() {
 			, _0x49f1e9 = function (_0x2712a4) {
 				_0x24aed7(_0x4284d1, _0x2712a4);
 				function _0x4284d1() {
-					var _0x396253 = a0_0x3ffc
+					var _0x396253 = TT
 						, _0x5e73f5 = arguments[_0x396253(0x9f1)] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : [];
 					_0x2ab3d2(this, _0x4284d1);
 					for (var _0xe99c44 = _0x5e73f5[_0x396253(0x9f1)] - 0x1; _0xe99c44 >= 0x0; _0xe99c44--) {
@@ -2297,7 +2295,7 @@ function a0_0x53fe() {
 						_0x2f5645;
 				}
 				return _0x4284d1['prototype']['addTrack'] = function _0x15cbed(_0x13f080) {
-					var _0x1f8bea = a0_0x3ffc
+					var _0x1f8bea = TT
 						, _0x21542f = this;
 					_0x13f080['enabled'] && _0x4e36ef(this, _0x13f080);
 					_0x2712a4['prototype'][_0x1f8bea(0x8b0)][_0x1f8bea(0x817)](this, _0x13f080);
@@ -2328,7 +2326,7 @@ function a0_0x53fe() {
 				var _0x37e3fe = _0x2eac47;
 				_0x24aed7(_0x1dfaa3, _0x2c25fe);
 				function _0x1dfaa3() {
-					var _0xef4225 = a0_0x3ffc
+					var _0xef4225 = TT
 						, _0x1759e7 = arguments[_0xef4225(0x9f1)] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : [];
 					_0x2ab3d2(this, _0x1dfaa3);
 					for (var _0x309134 = _0x1759e7[_0xef4225(0x9f1)] - 0x1; _0x309134 >= 0x0; _0x309134--) {
@@ -2376,7 +2374,7 @@ function a0_0x53fe() {
 				var _0xbafe87 = _0x2eac47;
 				_0x24aed7(_0x57e439, _0x3d6848);
 				function _0x57e439() {
-					var _0xe64df1 = a0_0x3ffc;
+					var _0xe64df1 = TT;
 					return _0x2ab3d2(this, _0x57e439),
 						_0x245593(this, _0x3d6848[_0xe64df1(0x749)](this, arguments));
 				}
@@ -2399,7 +2397,7 @@ function a0_0x53fe() {
 			, _0x57da68 = (function () {
 				var _0x54cfd3 = _0x2eac47;
 				function _0x1e687f() {
-					var _0x44b643 = a0_0x3ffc
+					var _0x44b643 = TT
 						, _0x213a6c = arguments[_0x44b643(0x9f1)] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : [];
 					_0x2ab3d2(this, _0x1e687f),
 						this[_0x44b643(0x594)] = [],
@@ -2452,7 +2450,7 @@ function a0_0x53fe() {
 			, _0x4c3a31 = (function () {
 				var _0x10091d = _0x2eac47;
 				function _0x567d7d(_0x635409) {
-					var _0x3d2657 = a0_0x3ffc;
+					var _0x3d2657 = TT;
 					_0x2ab3d2(this, _0x567d7d),
 						_0x567d7d['prototype'][_0x3d2657(0xa90)][_0x3d2657(0x817)](this, _0x635409),
 						Object[_0x3d2657(0xab2)](this, _0x3d2657(0x9f1), {
@@ -2532,7 +2530,7 @@ function a0_0x53fe() {
 			, _0x3f4ed5 = function (_0x2ee664) {
 				_0x24aed7(_0x563c52, _0x2ee664);
 				function _0x563c52() {
-					var _0x14ecc4 = a0_0x3ffc
+					var _0x14ecc4 = TT
 						, _0x12f4bf = arguments[_0x14ecc4(0x9f1)] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : {};
 					_0x2ab3d2(this, _0x563c52);
 					var _0x2ed5b9 = _0x245593(this, _0x2ee664[_0x14ecc4(0x817)](this))
@@ -2950,7 +2948,7 @@ function a0_0x53fe() {
 				var _0x10a7d5 = _0x2eac47;
 				_0x24aed7(_0x29265a, _0x35e2cd);
 				function _0x29265a() {
-					var _0x186ca3 = a0_0x3ffc
+					var _0x186ca3 = TT
 						, _0x5766db = arguments['length'] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : {};
 					_0x2ab3d2(this, _0x29265a);
 					if (!_0x5766db['tech'])
@@ -3086,7 +3084,7 @@ function a0_0x53fe() {
 		var _0x1336a9 = function (_0xc5ed51) {
 			_0x24aed7(_0x5aed8f, _0xc5ed51);
 			function _0x5aed8f() {
-				var _0xf781cc = a0_0x3ffc
+				var _0xf781cc = TT
 					, _0x431605 = arguments[_0xf781cc(0x9f1)] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : {};
 				_0x2ab3d2(this, _0x5aed8f);
 				var _0x490ef3 = _0x47ec58(_0x431605, {
@@ -3115,7 +3113,7 @@ function a0_0x53fe() {
 			, _0x140294 = function (_0x1d6bc3) {
 				_0x24aed7(_0x1ff578, _0x1d6bc3);
 				function _0x1ff578() {
-					var _0x4c16bb = a0_0x3ffc
+					var _0x4c16bb = TT
 						, _0x5ed030 = arguments['length'] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : {};
 					_0x2ab3d2(this, _0x1ff578);
 					var _0x2abcb5 = _0x47ec58(_0x5ed030, {
@@ -3147,7 +3145,7 @@ function a0_0x53fe() {
 			, _0x4979c1 = function (_0x4a436d) {
 				_0x24aed7(_0x4ecd4a, _0x4a436d);
 				function _0x4ecd4a() {
-					var _0x1fff72 = a0_0x3ffc
+					var _0x1fff72 = TT
 						, _0x43ce74 = arguments[_0x1fff72(0x9f1)] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : {};
 					_0x2ab3d2(this, _0x4ecd4a);
 					var _0x522c05 = _0x245593(this, _0x4a436d['call'](this))
@@ -3235,7 +3233,7 @@ function a0_0x53fe() {
 		var _0x1d9ef1 = Object[_0x2eac47(0xac3)] || (function () {
 			function _0x5c1295() { }
 			return function (_0x1c220d) {
-				var _0x465200 = a0_0x3ffc;
+				var _0x465200 = TT;
 				if (arguments[_0x465200(0x9f1)] !== 0x1)
 					throw new Error(_0x465200(0x9b7));
 				return _0x5c1295[_0x465200(0x2a2)] = _0x1c220d,
@@ -3334,7 +3332,7 @@ function a0_0x53fe() {
 			var _0x56bd75 = _0x2eac47
 				, _0x5e8f97 = _0xa1376;
 			function _0x40e17a() {
-				var _0x5e4fd6 = a0_0x3ffc
+				var _0x5e4fd6 = TT
 					, _0x10272e = _0x5a6f5f(_0xa1376);
 				if (_0x10272e === null)
 					throw new _0x4e0746(_0x4e0746[_0x5e4fd6(0x5b2)][_0x5e4fd6(0x235)], _0x5e4fd6(0x37a) + _0x5e8f97);
@@ -3342,10 +3340,10 @@ function a0_0x53fe() {
 					_0x10272e;
 			}
 			function _0x3fbf17(_0x5f2f21, _0x430126) {
-				var _0x3ea190 = a0_0x3ffc
+				var _0x3ea190 = TT
 					, _0x24f59b = new _0x86bcec();
 				_0x22a3a8(_0x5f2f21, function (_0x1fc48d, _0x4a5537) {
-					var _0x18e700 = a0_0x3ffc;
+					var _0x18e700 = TT;
 					switch (_0x1fc48d) {
 						case _0x18e700(0xa77):
 							for (var _0x5f623c = _0xd5e58d[_0x18e700(0x9f1)] - 0x1; _0x5f623c >= 0x0; _0x5f623c--) {
@@ -3402,7 +3400,7 @@ function a0_0x53fe() {
 					}, _0x430126[_0x3ea190(0x179)]);
 			}
 			function _0x20199b() {
-				var _0x1db8ac = a0_0x3ffc;
+				var _0x1db8ac = TT;
 				_0xa1376 = _0xa1376[_0x1db8ac(0xae6)](/^\s+/, '');
 			}
 			_0x20199b(),
@@ -3444,11 +3442,11 @@ function a0_0x53fe() {
 		function _0x34f2e1(_0x3aea5f, _0x38c931) {
 			var _0xee26e3 = _0x2eac47;
 			function _0x2b5128() {
-				var _0x49a73b = a0_0x3ffc;
+				var _0x49a73b = TT;
 				if (!_0x38c931)
 					return null;
 				function _0x2e94c8(_0x340aa6) {
-					var _0x2abbf0 = a0_0x3ffc;
+					var _0x2abbf0 = TT;
 					return _0x38c931 = _0x38c931[_0x2abbf0(0x196)](_0x340aa6[_0x2abbf0(0x9f1)]),
 						_0x340aa6;
 				}
@@ -3459,18 +3457,18 @@ function a0_0x53fe() {
 				return _0x20fbb0[_0x4425b3];
 			}
 			function _0xfb53ae(_0x3754d1) {
-				var _0x3298d9 = a0_0x3ffc;
+				var _0x3298d9 = TT;
 				while (_0x49b91d = _0x3754d1[_0x3298d9(0x302)](/&(amp|lt|gt|lrm|rlm|nbsp);/)) {
 					_0x3754d1 = _0x3754d1[_0x3298d9(0xae6)](_0x49b91d[0x0], _0x23f7c4);
 				}
 				return _0x3754d1;
 			}
 			function _0x58cec5(_0xfe61cd, _0x1f3c0c) {
-				var _0x111686 = a0_0x3ffc;
+				var _0x111686 = TT;
 				return !_0x475a90[_0x1f3c0c[_0x111686(0xa72)]] || _0x475a90[_0x1f3c0c[_0x111686(0xa72)]] === _0xfe61cd['localName'];
 			}
 			function _0x52251a(_0x3b3f6a, _0x4184a8) {
-				var _0x48adfa = a0_0x3ffc
+				var _0x48adfa = TT
 					, _0x3e7ef9 = _0x4a4b9f[_0x3b3f6a];
 				if (!_0x3e7ef9)
 					return null;
@@ -3766,7 +3764,7 @@ function a0_0x53fe() {
 		function _0x5c8542(_0x2dbdc2, _0x3ecdc9, _0x4b9f90, _0x3caa0e) {
 			var _0x3d38e4 = _0x2eac47;
 			function _0xdf20fe(_0x4460c2, _0x5ea0f4) {
-				var _0x179db9 = a0_0x3ffc, _0x103d7c, _0x48f7fc = new _0x15b975(_0x4460c2), _0x482351 = 0x1;
+				var _0x179db9 = TT, _0x103d7c, _0x48f7fc = new _0x15b975(_0x4460c2), _0x482351 = 0x1;
 				for (var _0x5cfd2f = 0x0; _0x5cfd2f < _0x5ea0f4[_0x179db9(0x9f1)]; _0x5cfd2f++) {
 					while (_0x4460c2[_0x179db9(0x436)](_0x4b9f90, _0x5ea0f4[_0x5cfd2f]) || _0x4460c2[_0x179db9(0x6a0)](_0x4b9f90) && _0x4460c2['overlapsAny'](_0x3caa0e)) {
 						_0x4460c2[_0x179db9(0xabf)](_0x5ea0f4[_0x5cfd2f]);
@@ -3846,7 +3844,7 @@ function a0_0x53fe() {
 		_0x24c4b7[_0x2eac47(0x2fc)] = function () {
 			return {
 				'decode': function _0x3149b8(_0x3e3118) {
-					var _0x53e4cc = a0_0x3ffc;
+					var _0x53e4cc = TT;
 					if (!_0x3e3118)
 						return '';
 					if (typeof _0x3e3118 !== _0x53e4cc(0xa3a))
@@ -3957,7 +3955,7 @@ function a0_0x53fe() {
 						var _0x2be94f = _0x4000b7
 							, _0x446069 = new _0x86bcec();
 						_0x22a3a8(_0x489c69, function (_0x4207a5, _0x41f7f0) {
-							var _0x181bda = a0_0x3ffc;
+							var _0x181bda = TT;
 							switch (_0x4207a5) {
 								case 'id':
 									_0x446069['set'](_0x4207a5, _0x41f7f0);
@@ -4006,7 +4004,7 @@ function a0_0x53fe() {
 						var _0x100d45 = _0x4000b7
 							, _0x307f69 = new _0x86bcec();
 						_0x22a3a8(_0x3c2470, function (_0x42210d, _0x1d3cdd) {
-							var _0x49df86 = a0_0x3ffc;
+							var _0x49df86 = TT;
 							switch (_0x42210d) {
 								case _0x49df86(0x2b0):
 									_0x307f69[_0x49df86(0x4b9)](_0x42210d + 'S', _0x1d3cdd);
@@ -4023,14 +4021,14 @@ function a0_0x53fe() {
 					}
 					function _0x14ddc6(_0x2da28e) {
 						_0x2da28e['match'](/X-TIMESTAMP-MAP/) ? _0x22a3a8(_0x2da28e, function (_0xd9b7b6, _0x31a7c9) {
-							var _0x38a925 = a0_0x3ffc;
+							var _0x38a925 = TT;
 							switch (_0xd9b7b6) {
 								case _0x38a925(0x944):
 									_0x42325e(_0x31a7c9);
 									break;
 							}
 						}, /=/) : _0x22a3a8(_0x2da28e, function (_0x17451a, _0x2e1a6e) {
-							var _0x468d2d = a0_0x3ffc;
+							var _0x468d2d = TT;
 							switch (_0x17451a) {
 								case _0x468d2d(0x97a):
 									_0x48e1da(_0x2e1a6e);
@@ -4393,7 +4391,7 @@ function a0_0x53fe() {
 						return _0x332557;
 					},
 					'set': function _0x2b3395(_0x185f72) {
-						var _0x6f353c = a0_0x3ffc;
+						var _0x6f353c = TT;
 						if (!_0x16e94a(_0x185f72))
 							throw new Error(_0x6f353c(0x847));
 						_0x332557 = _0x185f72;
@@ -4405,7 +4403,7 @@ function a0_0x53fe() {
 						return _0x55dfc8;
 					},
 					'set': function _0x248a8a(_0xadbac4) {
-						var _0x38681c = a0_0x3ffc;
+						var _0x38681c = TT;
 						if (typeof _0xadbac4 !== _0x38681c(0x9dc))
 							throw new TypeError(_0x38681c(0x93d));
 						_0x55dfc8 = _0xadbac4;
@@ -4417,7 +4415,7 @@ function a0_0x53fe() {
 						return _0x584090;
 					},
 					'set': function _0x22065f(_0x55ec5e) {
-						var _0x5bb1cf = a0_0x3ffc;
+						var _0x5bb1cf = TT;
 						if (!_0x16e94a(_0x55ec5e))
 							throw new Error(_0x5bb1cf(0x4cf));
 						_0x584090 = _0x55ec5e;
@@ -4440,7 +4438,7 @@ function a0_0x53fe() {
 						return _0xadd015;
 					},
 					'set': function _0x2ca786(_0xd7d36a) {
-						var _0x22e585 = a0_0x3ffc;
+						var _0x22e585 = TT;
 						if (!_0x16e94a(_0xd7d36a))
 							throw new Error(_0x22e585(0x1b9));
 						_0xadd015 = _0xd7d36a;
@@ -4452,7 +4450,7 @@ function a0_0x53fe() {
 						return _0x259813;
 					},
 					'set': function _0x2135f6(_0x3f094a) {
-						var _0x187550 = a0_0x3ffc;
+						var _0x187550 = TT;
 						if (!_0x16e94a(_0x3f094a))
 							throw new Error(_0x187550(0x90f));
 						_0x259813 = _0x3f094a;
@@ -4464,7 +4462,7 @@ function a0_0x53fe() {
 						return _0x2fc9f5;
 					},
 					'set': function _0x42be0d(_0xcbb98a) {
-						var _0x225012 = a0_0x3ffc
+						var _0x225012 = TT
 							, _0x19b71b = _0x4b39c3(_0xcbb98a);
 						if (_0x19b71b === ![])
 							throw new SyntaxError(_0x225012(0x28d));
@@ -4527,7 +4525,7 @@ function a0_0x53fe() {
 			var _0x1f3e27 = _0x2eac47;
 			_0x24aed7(_0x3bac4e, _0x33ef49);
 			function _0x3bac4e() {
-				var _0x399cad = a0_0x3ffc
+				var _0x399cad = TT
 					, _0x5c4d36 = arguments[_0x399cad(0x9f1)] > 0x0 && arguments[0x0] !== undefined ? arguments[0x0] : {}
 					, _0x25bcc3 = arguments[_0x399cad(0x9f1)] > 0x1 && arguments[0x1] !== undefined ? arguments[0x1] : function () { }
 					;
@@ -4728,7 +4726,7 @@ function a0_0x53fe() {
 						var _0x592e95 = _0x1308da
 							, _0x561caf = _0x2edb32[_0x1600a3]
 							, _0x42b5b7 = function _0x95a382() {
-								var _0x390b02 = a0_0x3ffc;
+								var _0x390b02 = TT;
 								_0x5d0a3f[_0x390b02(0x527)](_0x1600a3 + _0x390b02(0x57e));
 							}
 							, _0xea4974 = _0x5d0a3f[_0x561caf[_0x592e95(0x854)]]();
@@ -4944,7 +4942,7 @@ function a0_0x53fe() {
 			_0x3ed9ba['withSourceHandlers'] = function (_0xabd82c) {
 				var _0x48e615 = _0x2eac47;
 				_0xabd82c['registerSourceHandler'] = function (_0x6474c8, _0x565631) {
-					var _0x4ae7e8 = a0_0x3ffc
+					var _0x4ae7e8 = TT
 						, _0x3c34dd = _0xabd82c['sourceHandlers'];
 					!_0x3c34dd && (_0x3c34dd = _0xabd82c[_0x4ae7e8(0x580)] = []),
 						_0x565631 === undefined && (_0x565631 = _0x3c34dd[_0x4ae7e8(0x9f1)]),
@@ -4952,7 +4950,7 @@ function a0_0x53fe() {
 				}
 					,
 					_0xabd82c['canPlayType'] = function (_0xc8a3af) {
-						var _0x265ba4 = a0_0x3ffc
+						var _0x265ba4 = TT
 							, _0x20d300 = _0xabd82c[_0x265ba4(0x580)] || []
 							, _0x43e8f8 = void 0x0;
 						for (var _0x3d261e = 0x0; _0x3d261e < _0x20d300[_0x265ba4(0x9f1)]; _0x3d261e++) {
@@ -4989,7 +4987,7 @@ function a0_0x53fe() {
 					if (typeof _0x4f209d !== 'function')
 						return;
 					this[_0x48c664] = function () {
-						var _0x7d5e20 = a0_0x3ffc;
+						var _0x7d5e20 = TT;
 						if (this[_0x7d5e20(0x2f1)] && this['sourceHandler_'][_0x48c664])
 							return this[_0x7d5e20(0x2f1)][_0x48c664][_0x7d5e20(0x749)](this[_0x7d5e20(0x2f1)], arguments);
 						return _0x4f209d['apply'](this, arguments);
@@ -5038,7 +5036,7 @@ function a0_0x53fe() {
 		}
 		function _0x1f3438(_0x5c2174, _0x4a75e4) {
 			_0x5c2174['forEach'](function (_0x4b31ae) {
-				var _0x4fa013 = a0_0x3ffc;
+				var _0x4fa013 = TT;
 				return _0x4b31ae[_0x4fa013(0x4aa)] && _0x4b31ae['setTech'](_0x4a75e4);
 			});
 		}
@@ -5218,7 +5216,7 @@ function a0_0x53fe() {
 		var _0x382380 = function (_0x2421a4) {
 			_0x24aed7(_0x1d9532, _0x2421a4);
 			function _0x1d9532(_0x54012e, _0x42b209, _0x5065cd) {
-				var _0x4d8619 = a0_0x3ffc;
+				var _0x4d8619 = TT;
 				_0x2ab3d2(this, _0x1d9532);
 				var _0x54ae39 = _0x47ec58({
 					'createEl': ![]
@@ -5245,7 +5243,7 @@ function a0_0x53fe() {
 			var _0x26efc9 = _0x2eac47;
 			_0x24aed7(_0x5d0a71, _0x2c5fed);
 			function _0x5d0a71(_0x377166, _0x38a9ab) {
-				var _0x337c3a = a0_0x3ffc;
+				var _0x337c3a = TT;
 				_0x2ab3d2(this, _0x5d0a71);
 				var _0x439984 = _0x245593(this, _0x2c5fed[_0x337c3a(0x817)](this, _0x377166, _0x38a9ab));
 				return _0x439984[_0x337c3a(0x33c)](),
@@ -5356,7 +5354,7 @@ function a0_0x53fe() {
 			var _0x58ee63 = _0x2eac47;
 			_0x24aed7(_0x1fca15, _0x36d069);
 			function _0x1fca15(_0x3e8d86, _0x3e9d9f) {
-				var _0x6e76f3 = a0_0x3ffc;
+				var _0x6e76f3 = TT;
 				_0x2ab3d2(this, _0x1fca15);
 				var _0x2c9175 = _0x245593(this, _0x36d069[_0x6e76f3(0x817)](this, _0x3e8d86, _0x3e9d9f));
 				return _0x2c9175[_0x6e76f3(0x9c5)](),
@@ -5441,7 +5439,7 @@ function a0_0x53fe() {
 			var _0x5f2518 = _0x2eac47;
 			_0x24aed7(_0x3f3be6, _0x36e6df);
 			function _0x3f3be6(_0x3b36aa, _0x1673d5, _0x2b79d2) {
-				var _0x30392e = a0_0x3ffc;
+				var _0x30392e = TT;
 				_0x2ab3d2(this, _0x3f3be6);
 				var _0x22aab9 = _0x245593(this, _0x36e6df[_0x30392e(0x817)](this, _0x3b36aa, _0x1673d5, _0x2b79d2));
 				return _0x3b36aa['on'](_0x30392e(0x8ec), _0x2e578a(_0x22aab9, _0x22aab9[_0x30392e(0x706)])),
@@ -5599,7 +5597,7 @@ function a0_0x53fe() {
 			var _0x11e93a = _0x2eac47;
 			_0x24aed7(_0x53b98e, _0x12717d);
 			function _0x53b98e() {
-				var _0x524667 = a0_0x3ffc;
+				var _0x524667 = TT;
 				return _0x2ab3d2(this, _0x53b98e),
 					_0x245593(this, _0x12717d[_0x524667(0x749)](this, arguments));
 			}
@@ -5626,7 +5624,7 @@ function a0_0x53fe() {
 			var _0x228ddd = _0x2eac47;
 			_0x24aed7(_0x3d26bb, _0x21abf1);
 			function _0x3d26bb() {
-				var _0x4fd9ac = a0_0x3ffc;
+				var _0x4fd9ac = TT;
 				return _0x2ab3d2(this, _0x3d26bb),
 					_0x245593(this, _0x21abf1[_0x4fd9ac(0x749)](this, arguments));
 			}
@@ -5681,7 +5679,7 @@ function a0_0x53fe() {
 			var _0x3f484c = _0x2eac47;
 			_0x24aed7(_0x5d101e, _0x4fbf8b);
 			function _0x5d101e(_0x1e8b12, _0x21c1a2) {
-				var _0x582b3e = a0_0x3ffc;
+				var _0x582b3e = TT;
 				_0x2ab3d2(this, _0x5d101e);
 				var _0xd37c71 = _0x245593(this, _0x4fbf8b['call'](this, _0x1e8b12, _0x21c1a2));
 				return _0xd37c71['mouseused_'] = ![],
@@ -5731,14 +5729,14 @@ function a0_0x53fe() {
 			var _0x9d40fe = _0x2eac47;
 			_0x24aed7(_0x5fac48, _0x43a656);
 			function _0x5fac48(_0xec4c6d, _0x385c3e) {
-				var _0x5840f1 = a0_0x3ffc;
+				var _0x5840f1 = TT;
 				_0x2ab3d2(this, _0x5fac48);
 				var _0x7b6c5a = _0x245593(this, _0x43a656['call'](this, _0xec4c6d, _0x385c3e));
 				return _0x7b6c5a['controlText'](_0x385c3e && _0x385c3e[_0x5840f1(0x5a1)] || _0x7b6c5a[_0x5840f1(0x462)](_0x5840f1(0x482))),
 					_0x7b6c5a;
 			}
 			return _0x5fac48['prototype']['buildCSSClass'] = function _0x39ff90() {
-				var _0x1b9b01 = a0_0x3ffc;
+				var _0x1b9b01 = TT;
 				return _0x1b9b01(0x43f) + _0x43a656[_0x1b9b01(0x2a2)][_0x1b9b01(0x187)][_0x1b9b01(0x817)](this);
 			}
 				,
@@ -5757,7 +5755,7 @@ function a0_0x53fe() {
 			var _0x2ed390 = _0x2eac47;
 			_0x24aed7(_0x44212a, _0x5e0351);
 			function _0x44212a(_0x1c6dd2, _0x5dd34f) {
-				var _0x51e64a = a0_0x3ffc;
+				var _0x51e64a = TT;
 				_0x2ab3d2(this, _0x44212a);
 				var _0xc38522 = _0x245593(this, _0x5e0351[_0x51e64a(0x817)](this, _0x1c6dd2, _0x5dd34f));
 				return _0xc38522['on'](_0x1c6dd2, _0x51e64a(0x9fe), _0xc38522[_0x51e64a(0x88f)]),
@@ -5837,7 +5835,7 @@ function a0_0x53fe() {
 			var _0x285bf1 = _0x2eac47;
 			_0x24aed7(_0x33b71d, _0x451e13);
 			function _0x33b71d(_0x541384, _0x646606) {
-				var _0x4caa77 = a0_0x3ffc;
+				var _0x4caa77 = TT;
 				_0x2ab3d2(this, _0x33b71d);
 				var _0x5c0176 = _0x245593(this, _0x451e13[_0x4caa77(0x817)](this, _0x541384, _0x646606));
 				return _0x5c0176[_0x4caa77(0x793)] = _0x3b73a1(_0x2e578a(_0x5c0176, _0x5c0176[_0x4caa77(0x72c)]), 0x19),
@@ -5903,7 +5901,7 @@ function a0_0x53fe() {
 			var _0x4f35d3 = _0x2eac47;
 			_0x24aed7(_0x2fbbbc, _0x2fcafa);
 			function _0x2fbbbc(_0x5dba2f, _0x3eff39) {
-				var _0x492266 = a0_0x3ffc;
+				var _0x492266 = TT;
 				_0x2ab3d2(this, _0x2fbbbc);
 				var _0x23f7ba = _0x245593(this, _0x2fcafa['call'](this, _0x5dba2f, _0x3eff39));
 				return _0x23f7ba['on'](_0x5dba2f, 'ended', _0x23f7ba[_0x492266(0x8e0)]),
@@ -5935,7 +5933,7 @@ function a0_0x53fe() {
 			var _0x15c3b0 = _0x2eac47;
 			_0x24aed7(_0x437ca1, _0x21a309);
 			function _0x437ca1(_0x34e862, _0x40c9fc) {
-				var _0x17d786 = a0_0x3ffc;
+				var _0x17d786 = TT;
 				_0x2ab3d2(this, _0x437ca1);
 				var _0x15a38c = _0x245593(this, _0x21a309['call'](this, _0x34e862, _0x40c9fc));
 				return _0x15a38c['on'](_0x34e862, _0x17d786(0x3e0), _0x15a38c[_0x17d786(0x72c)]),
@@ -5963,7 +5961,7 @@ function a0_0x53fe() {
 			var _0x4e0f8e = _0x2eac47;
 			_0x24aed7(_0x1e7a61, _0x29df17);
 			function _0x1e7a61() {
-				var _0x24f6d7 = a0_0x3ffc;
+				var _0x24f6d7 = TT;
 				return _0x2ab3d2(this, _0x1e7a61),
 					_0x245593(this, _0x29df17[_0x24f6d7(0x749)](this, arguments));
 			}
@@ -5982,7 +5980,7 @@ function a0_0x53fe() {
 			var _0x6953a9 = _0x2eac47;
 			_0x24aed7(_0x37ac6e, _0x10d8ff);
 			function _0x37ac6e(_0x176d34, _0x4e2e9b) {
-				var _0x56973d = a0_0x3ffc;
+				var _0x56973d = TT;
 				_0x2ab3d2(this, _0x37ac6e);
 				var _0x3cb1fc = _0x245593(this, _0x10d8ff[_0x56973d(0x817)](this, _0x176d34, _0x4e2e9b));
 				return _0x3cb1fc['on'](_0x176d34, _0x56973d(0x3e0), _0x3cb1fc[_0x56973d(0x793)]),
@@ -6022,7 +6020,7 @@ function a0_0x53fe() {
 			var _0x10068c = _0x2eac47;
 			_0x24aed7(_0x5b2955, _0x4b9ca0);
 			function _0x5b2955(_0xf3f6b9, _0x630b74) {
-				var _0x4889ec = a0_0x3ffc;
+				var _0x4889ec = TT;
 				_0x2ab3d2(this, _0x5b2955);
 				var _0x813673 = _0x245593(this, _0x4b9ca0[_0x4889ec(0x817)](this, _0xf3f6b9, _0x630b74));
 				return _0x813673[_0x4889ec(0x5d2)](),
@@ -6062,7 +6060,7 @@ function a0_0x53fe() {
 			var _0x2ac26c = _0x2eac47;
 			_0x24aed7(_0x420daf, _0x3208dd);
 			function _0x420daf(_0x2002f1, _0x18b1d5) {
-				var _0x2ee122 = a0_0x3ffc;
+				var _0x2ee122 = TT;
 				_0x2ab3d2(this, _0x420daf);
 				var _0x206263 = _0x245593(this, _0x3208dd[_0x2ee122(0x817)](this, _0x2002f1, _0x18b1d5));
 				return _0x206263[_0x2ee122(0x680)] = _0x206263[_0x2ee122(0x6e2)](_0x206263[_0x2ee122(0x2e4)][_0x2ee122(0x5c3)]),
@@ -6224,7 +6222,7 @@ function a0_0x53fe() {
 			var _0x49c5b7 = _0x2eac47;
 			_0x24aed7(_0x1eddaf, _0x16d1e3);
 			function _0x1eddaf(_0x1a4848, _0x36bef8) {
-				var _0x4c41bd = a0_0x3ffc;
+				var _0x4c41bd = TT;
 				_0x2ab3d2(this, _0x1eddaf);
 				var _0x43a609 = _0x245593(this, _0x16d1e3[_0x4c41bd(0x817)](this, _0x1a4848, _0x36bef8));
 				return _0x43a609[_0x4c41bd(0x8dc)] = [],
@@ -6278,7 +6276,7 @@ function a0_0x53fe() {
 			var _0x2e5308 = _0x2eac47;
 			_0x24aed7(_0x319886, _0x4bed2b);
 			function _0x319886() {
-				var _0x15aa60 = a0_0x3ffc;
+				var _0x15aa60 = TT;
 				return _0x2ab3d2(this, _0x319886),
 					_0x245593(this, _0x4bed2b[_0x15aa60(0x749)](this, arguments));
 			}
@@ -6318,7 +6316,7 @@ function a0_0x53fe() {
 			var _0x166811 = _0x2eac47;
 			_0x24aed7(_0x13e546, _0x482cdd);
 			function _0x13e546() {
-				var _0x4af962 = a0_0x3ffc;
+				var _0x4af962 = TT;
 				return _0x2ab3d2(this, _0x13e546),
 					_0x245593(this, _0x482cdd[_0x4af962(0x749)](this, arguments));
 			}
@@ -6354,7 +6352,7 @@ function a0_0x53fe() {
 			var _0x38fbdd = _0x2eac47;
 			_0x24aed7(_0xac341e, _0x2688b1);
 			function _0xac341e(_0x47dea5, _0x44c370) {
-				var _0xa93177 = a0_0x3ffc;
+				var _0xa93177 = TT;
 				_0x2ab3d2(this, _0xac341e);
 				var _0x5cc56d = _0x245593(this, _0x2688b1['call'](this, _0x47dea5, _0x44c370));
 				return _0x5cc56d[_0xa93177(0x9c5)] = _0x3b73a1(_0x2e578a(_0x5cc56d, _0x5cc56d[_0xa93177(0x9c5)]), 0x19),
@@ -6392,7 +6390,7 @@ function a0_0x53fe() {
 				var _0xd86e23 = _0x2eac47;
 				_0x24aed7(_0x19b413, _0x4b52e3);
 				function _0x19b413(_0x271149, _0x19bce5) {
-					var _0x5e49dc = a0_0x3ffc;
+					var _0x5e49dc = TT;
 					_0x2ab3d2(this, _0x19b413);
 					var _0x38161f = _0x245593(this, _0x4b52e3[_0x5e49dc(0x817)](this, _0x271149, _0x19bce5));
 					return _0x38161f[_0x5e49dc(0x104)](),
@@ -6410,7 +6408,7 @@ function a0_0x53fe() {
 							_0x52c24a[_0x3ca1cb(0x480)](_0x52c24a[_0x3ca1cb(0x9cd)]),
 								_0x52c24a[_0x3ca1cb(0x9cd)] = _0x52c24a[_0x3ca1cb(0x899)](function () {
 									_0x52c24a['requestAnimationFrame'](function () {
-										var _0x1d9736 = a0_0x3ffc;
+										var _0x1d9736 = TT;
 										_0x52c24a[_0x1d9736(0x9c5)]();
 									});
 								}, _0x211221);
@@ -6550,7 +6548,7 @@ function a0_0x53fe() {
 			var _0x562617 = _0x2eac47;
 			_0x24aed7(_0x5062ba, _0x41a3b2);
 			function _0x5062ba(_0x42fb5e, _0x46db00) {
-				var _0x2471b2 = a0_0x3ffc;
+				var _0x2471b2 = TT;
 				_0x2ab3d2(this, _0x5062ba);
 				var _0x4cfd43 = _0x245593(this, _0x41a3b2[_0x2471b2(0x817)](this, _0x42fb5e, _0x46db00));
 				return _0x4cfd43[_0x2471b2(0x5e9)] = _0x3b73a1(_0x2e578a(_0x4cfd43, _0x4cfd43[_0x2471b2(0x5e9)]), 0x19),
@@ -6653,7 +6651,7 @@ function a0_0x53fe() {
 			var _0x3f03d9 = _0x2eac47;
 			_0x24aed7(_0xff0779, _0x57256b);
 			function _0xff0779(_0x17aaca, _0x2e4c68) {
-				var _0x3fd47a = a0_0x3ffc;
+				var _0x3fd47a = TT;
 				_0x2ab3d2(this, _0xff0779);
 				var _0x16d905 = _0x245593(this, _0x57256b[_0x3fd47a(0x817)](this, _0x17aaca, _0x2e4c68));
 				return _0x16d905['on'](_0x17aaca, _0x3fd47a(0x541), _0x16d905['handleFullscreenChange']),
@@ -6709,7 +6707,7 @@ function a0_0x53fe() {
 			var _0x3b252d = _0x2eac47;
 			_0x24aed7(_0x1388a9, _0x4acfeb);
 			function _0x1388a9(_0x4d3406, _0x525363) {
-				var _0x351cd9 = a0_0x3ffc;
+				var _0x351cd9 = TT;
 				_0x2ab3d2(this, _0x1388a9);
 				var _0x14efd2 = _0x245593(this, _0x4acfeb[_0x351cd9(0x817)](this, _0x4d3406, _0x525363));
 				return _0x14efd2['on'](_0x351cd9(0xfd), _0x14efd2[_0x351cd9(0x55b)]),
@@ -6802,7 +6800,7 @@ function a0_0x53fe() {
 			var _0x38b69d = _0x2eac47;
 			_0x24aed7(_0xedda6b, _0x4391ea);
 			function _0xedda6b(_0x2f0fc5) {
-				var _0x2b68e6 = a0_0x3ffc
+				var _0x2b68e6 = TT
 					, _0x356c58 = arguments[_0x2b68e6(0x9f1)] > 0x1 && arguments[0x1] !== undefined ? arguments[0x1] : {};
 				_0x2ab3d2(this, _0xedda6b),
 					_0x356c58['vertical'] = _0x356c58['vertical'] || ![];
@@ -6877,7 +6875,7 @@ function a0_0x53fe() {
 				var _0x1e8dcb = _0x2eac47;
 				_0x24aed7(_0xe0f282, _0x31e5ad);
 				function _0xe0f282(_0x28d22a, _0x42d386) {
-					var _0x5b9761 = a0_0x3ffc;
+					var _0x5b9761 = TT;
 					_0x2ab3d2(this, _0xe0f282);
 					var _0x1d0fc5 = _0x245593(this, _0x31e5ad[_0x5b9761(0x817)](this, _0x28d22a, _0x42d386));
 					return _0x1060ac(_0x1d0fc5, _0x28d22a),
@@ -6941,7 +6939,7 @@ function a0_0x53fe() {
 			var _0x32b538 = _0x2eac47;
 			_0x24aed7(_0x1f7354, _0x3066fc);
 			function _0x1f7354(_0x887f23) {
-				var _0x5cce28 = a0_0x3ffc
+				var _0x5cce28 = TT
 					, _0x1a6357 = arguments[_0x5cce28(0x9f1)] > 0x1 && arguments[0x1] !== undefined ? arguments[0x1] : {};
 				_0x2ab3d2(this, _0x1f7354);
 				typeof _0x1a6357[_0x5cce28(0x8ee)] !== _0x5cce28(0x9aa) ? _0x1a6357[_0x5cce28(0x8ee)] = _0x1a6357[_0x5cce28(0x8ee)] : _0x1a6357[_0x5cce28(0x8ee)] = !![];
@@ -6988,7 +6986,7 @@ function a0_0x53fe() {
 			var _0x15ba7e = _0x2eac47;
 			_0x24aed7(_0x112531, _0x50fed6);
 			function _0x112531(_0x341833, _0x40c136) {
-				var _0x3a3d3a = a0_0x3ffc;
+				var _0x3a3d3a = TT;
 				_0x2ab3d2(this, _0x112531);
 				var _0x1df649 = _0x245593(this, _0x50fed6['call'](this, _0x341833, _0x40c136));
 				return _0x40c136 && (_0x1df649[_0x3a3d3a(0x7d5)] = _0x40c136[_0x3a3d3a(0x32e)]),
@@ -7079,7 +7077,7 @@ function a0_0x53fe() {
 			var _0x317ad8 = _0x2eac47;
 			_0x24aed7(_0x1a1d1f, _0x3a5783);
 			function _0x1a1d1f(_0x28a35a) {
-				var _0x26537d = a0_0x3ffc
+				var _0x26537d = TT
 					, _0x93023f = arguments['length'] > 0x1 && arguments[0x1] !== undefined ? arguments[0x1] : {};
 				_0x2ab3d2(this, _0x1a1d1f);
 				var _0x66d482 = _0x245593(this, _0x3a5783[_0x26537d(0x817)](this, _0x28a35a, _0x93023f));
@@ -7253,7 +7251,7 @@ function a0_0x53fe() {
 		var _0x3be544 = function (_0x199e88) {
 			_0x24aed7(_0x5b3f27, _0x199e88);
 			function _0x5b3f27(_0x4be7b7, _0x171296) {
-				var _0x33d708 = a0_0x3ffc;
+				var _0x33d708 = TT;
 				_0x2ab3d2(this, _0x5b3f27);
 				var _0xae0220 = _0x171296[_0x33d708(0x576)]
 					, _0x11fe09 = _0x245593(this, _0x199e88[_0x33d708(0x817)](this, _0x4be7b7, _0x171296));
@@ -7278,7 +7276,7 @@ function a0_0x53fe() {
 			var _0x493a27 = _0x2eac47;
 			_0x24aed7(_0xb77ff8, _0x212a8d);
 			function _0xb77ff8(_0x4540d8, _0x923595) {
-				var _0x11b27f = a0_0x3ffc;
+				var _0x11b27f = TT;
 				_0x2ab3d2(this, _0xb77ff8);
 				var _0x197c83 = _0x245593(this, _0x212a8d[_0x11b27f(0x817)](this, _0x4540d8, _0x923595));
 				return _0x197c83['selectable'] = _0x923595['selectable'],
@@ -7321,7 +7319,7 @@ function a0_0x53fe() {
 			var _0x11fd98 = _0x2eac47;
 			_0x24aed7(_0x120a28, _0x6d1a4a);
 			function _0x120a28(_0x11205c, _0x4f7899) {
-				var _0x216ddc = a0_0x3ffc;
+				var _0x216ddc = TT;
 				_0x2ab3d2(this, _0x120a28);
 				var _0xc8269b = _0x4f7899[_0x216ddc(0x357)]
 					, _0x35f275 = _0x11205c[_0x216ddc(0x6a8)]();
@@ -7419,7 +7417,7 @@ function a0_0x53fe() {
 			var _0x290ba5 = _0x2eac47;
 			_0x24aed7(_0x22f60f, _0x5b716e);
 			function _0x22f60f(_0x4fe9d6, _0x413124) {
-				var _0x19ba2d = a0_0x3ffc;
+				var _0x19ba2d = TT;
 				return _0x2ab3d2(this, _0x22f60f),
 					_0x413124[_0x19ba2d(0x357)] = {
 						'player': _0x4fe9d6,
@@ -7435,7 +7433,7 @@ function a0_0x53fe() {
 					_0x245593(this, _0x5b716e['call'](this, _0x4fe9d6, _0x413124));
 			}
 			return _0x22f60f['prototype']['handleTracksChange'] = function _0x1ec5b7(_0x28db55) {
-				var _0x278f97 = a0_0x3ffc
+				var _0x278f97 = TT
 					, _0x5eadeb = this['player']()[_0x278f97(0x6a8)]()
 					, _0x391fb3 = !![];
 				for (var _0x5af0c0 = 0x0, _0x5c4e67 = _0x5eadeb[_0x278f97(0x9f1)]; _0x5af0c0 < _0x5c4e67; _0x5af0c0++) {
@@ -7471,7 +7469,7 @@ function a0_0x53fe() {
 			var _0x5f035d = _0x2eac47;
 			_0x24aed7(_0x574bf9, _0x47bdb7);
 			function _0x574bf9(_0x1ff115) {
-				var _0x9b7df9 = a0_0x3ffc
+				var _0x9b7df9 = TT
 					, _0x22f946 = arguments['length'] > 0x1 && arguments[0x1] !== undefined ? arguments[0x1] : {};
 				return _0x2ab3d2(this, _0x574bf9),
 					_0x22f946[_0x9b7df9(0x576)] = _0x1ff115[_0x9b7df9(0x6a8)](),
@@ -7513,7 +7511,7 @@ function a0_0x53fe() {
 			var _0x5c35b8 = _0x2eac47;
 			_0x24aed7(_0x48c96c, _0x13e0b6);
 			function _0x48c96c(_0x3a5c70, _0x124db2) {
-				var _0x2cca01 = a0_0x3ffc;
+				var _0x2cca01 = TT;
 				_0x2ab3d2(this, _0x48c96c);
 				var _0x314a3b = _0x124db2[_0x2cca01(0x357)]
 					, _0x213d94 = _0x124db2[_0x2cca01(0x869)]
@@ -7549,7 +7547,7 @@ function a0_0x53fe() {
 			var _0x369945 = _0x2eac47;
 			_0x24aed7(_0x46ac82, _0x1eb38d);
 			function _0x46ac82(_0x33a7bd, _0x12ac5a, _0x174915) {
-				var _0x5f282a = a0_0x3ffc;
+				var _0x5f282a = TT;
 				return _0x2ab3d2(this, _0x46ac82),
 					_0x245593(this, _0x1eb38d[_0x5f282a(0x817)](this, _0x33a7bd, _0x12ac5a, _0x174915));
 			}
@@ -7638,7 +7636,7 @@ function a0_0x53fe() {
 			var _0x329782 = _0x2eac47;
 			_0x24aed7(_0x20a964, _0x4ecf70);
 			function _0x20a964(_0x15b74d, _0x2bdf67, _0x44180d) {
-				var _0x3021d3 = a0_0x3ffc;
+				var _0x3021d3 = TT;
 				_0x2ab3d2(this, _0x20a964);
 				var _0x34725a = _0x245593(this, _0x4ecf70['call'](this, _0x15b74d, _0x2bdf67, _0x44180d))
 					, _0x2206c2 = _0x15b74d[_0x3021d3(0x6a8)]()
@@ -7683,7 +7681,7 @@ function a0_0x53fe() {
 			var _0x56dcf1 = _0x2eac47;
 			_0x24aed7(_0x2b8a3a, _0x7d767a);
 			function _0x2b8a3a(_0x2a68e, _0x30da4e, _0x15d2af) {
-				var _0x24511c = a0_0x3ffc;
+				var _0x24511c = TT;
 				return _0x2ab3d2(this, _0x2b8a3a),
 					_0x245593(this, _0x7d767a[_0x24511c(0x817)](this, _0x2a68e, _0x30da4e, _0x15d2af));
 			}
@@ -7706,7 +7704,7 @@ function a0_0x53fe() {
 			var _0x5abbd6 = _0x2eac47;
 			_0x24aed7(_0x4ea6ab, _0x4721c3);
 			function _0x4ea6ab(_0x534eeb, _0x31f698) {
-				var _0x4fbb97 = a0_0x3ffc;
+				var _0x4fbb97 = TT;
 				_0x2ab3d2(this, _0x4ea6ab),
 					_0x31f698[_0x4fbb97(0x357)] = {
 						'player': _0x534eeb,
@@ -7735,7 +7733,7 @@ function a0_0x53fe() {
 			var _0x5f1ed1 = _0x2eac47;
 			_0x24aed7(_0x457feb, _0xed9f5a);
 			function _0x457feb(_0xa010b5, _0x14ade0, _0xa0b394) {
-				var _0x4e90d5 = a0_0x3ffc;
+				var _0x4e90d5 = TT;
 				return _0x2ab3d2(this, _0x457feb),
 					_0x245593(this, _0xed9f5a[_0x4e90d5(0x817)](this, _0xa010b5, _0x14ade0, _0xa0b394));
 			}
@@ -7768,7 +7766,7 @@ function a0_0x53fe() {
 			var _0x55cf1b = _0x2eac47;
 			_0x24aed7(_0x5c894c, _0x3a2190);
 			function _0x5c894c() {
-				var _0xb63b3 = a0_0x3ffc;
+				var _0xb63b3 = TT;
 				return _0x2ab3d2(this, _0x5c894c),
 					_0x245593(this, _0x3a2190[_0xb63b3(0x749)](this, arguments));
 			}
@@ -7790,7 +7788,7 @@ function a0_0x53fe() {
 			var _0x46b7ab = _0x2eac47;
 			_0x24aed7(_0x5ae33c, _0x5d5a7d);
 			function _0x5ae33c(_0x37e35d) {
-				var _0x2a27c1 = a0_0x3ffc
+				var _0x2a27c1 = TT
 					, _0x4cc67f = arguments[_0x2a27c1(0x9f1)] > 0x1 && arguments[0x1] !== undefined ? arguments[0x1] : {};
 				_0x2ab3d2(this, _0x5ae33c);
 				var _0x51e18d = _0x245593(this, _0x5d5a7d[_0x2a27c1(0x817)](this, _0x37e35d, _0x4cc67f));
@@ -7829,7 +7827,7 @@ function a0_0x53fe() {
 			var _0x2636ec = _0x2eac47;
 			_0x24aed7(_0x9694b8, _0x4d7331);
 			function _0x9694b8(_0x39e7dc, _0x34d476) {
-				var _0x190bf5 = a0_0x3ffc;
+				var _0x190bf5 = TT;
 				_0x2ab3d2(this, _0x9694b8);
 				var _0xb91a10 = _0x34d476[_0x190bf5(0x357)]
 					, _0x1234a9 = _0x39e7dc['audioTracks']();
@@ -7853,7 +7851,7 @@ function a0_0x53fe() {
 					_0x3a392f;
 			}
 			return _0x9694b8['prototype']['createEl'] = function _0x3d93f2(_0x1028cc, _0x7fe1b1, _0x4dcdb9) {
-				var _0x196bdf = a0_0x3ffc
+				var _0x196bdf = TT
 					, _0x1f8402 = _0x196bdf(0x841) + this[_0x196bdf(0x462)](this[_0x196bdf(0x2e4)][_0x196bdf(0x65a)]);
 				this[_0x196bdf(0x2e4)][_0x196bdf(0x357)][_0x196bdf(0x4fa)] === _0x196bdf(0x259) && (_0x1f8402 += _0x196bdf(0x640) + this[_0x196bdf(0x462)](_0x196bdf(0x31c)) + '</span>\x0a\x20\x20\x20\x20\x20\x20');
 				_0x1f8402 += _0x196bdf(0x7e4);
@@ -7885,7 +7883,7 @@ function a0_0x53fe() {
 			var _0x38a8f3 = _0x2eac47;
 			_0x24aed7(_0x2f0fce, _0x51d415);
 			function _0x2f0fce(_0x1261a1) {
-				var _0x67367d = a0_0x3ffc
+				var _0x67367d = TT
 					, _0x47dd8a = arguments['length'] > 0x1 && arguments[0x1] !== undefined ? arguments[0x1] : {};
 				return _0x2ab3d2(this, _0x2f0fce),
 					_0x47dd8a['tracks'] = _0x1261a1[_0x67367d(0x71d)](),
@@ -7925,7 +7923,7 @@ function a0_0x53fe() {
 			var _0x33bf69 = _0x2eac47;
 			_0x24aed7(_0x54442f, _0x56f1fd);
 			function _0x54442f(_0x278ea5, _0x1c051d) {
-				var _0x333ae2 = a0_0x3ffc;
+				var _0x333ae2 = TT;
 				_0x2ab3d2(this, _0x54442f);
 				var _0x418be8 = _0x1c051d[_0x333ae2(0x6ed)]
 					, _0x871994 = parseFloat(_0x418be8, 0xa);
@@ -7958,7 +7956,7 @@ function a0_0x53fe() {
 			var _0x500bb9 = _0x2eac47;
 			_0x24aed7(_0x4a7e04, _0x5b75b9);
 			function _0x4a7e04(_0x24b572, _0x32fa19) {
-				var _0x54164e = a0_0x3ffc;
+				var _0x54164e = TT;
 				_0x2ab3d2(this, _0x4a7e04);
 				var _0x2038b2 = _0x245593(this, _0x5b75b9[_0x54164e(0x817)](this, _0x24b572, _0x32fa19));
 				return _0x2038b2[_0x54164e(0x60b)](),
@@ -8054,7 +8052,7 @@ function a0_0x53fe() {
 			var _0x1a371c = _0x2eac47;
 			_0x24aed7(_0x2b0162, _0x4d7716);
 			function _0x2b0162() {
-				var _0x20b09e = a0_0x3ffc;
+				var _0x20b09e = TT;
 				return _0x2ab3d2(this, _0x2b0162),
 					_0x245593(this, _0x4d7716[_0x20b09e(0x749)](this, arguments));
 			}
@@ -8101,7 +8099,7 @@ function a0_0x53fe() {
 			var _0x206920 = _0x2eac47;
 			_0x24aed7(_0x366c16, _0x2fcb90);
 			function _0x366c16() {
-				var _0x1dc59f = a0_0x3ffc;
+				var _0x1dc59f = TT;
 				return _0x2ab3d2(this, _0x366c16),
 					_0x245593(this, _0x2fcb90[_0x1dc59f(0x749)](this, arguments));
 			}
@@ -8123,7 +8121,7 @@ function a0_0x53fe() {
 			var _0x360313 = _0x2eac47;
 			_0x24aed7(_0x1f3ca9, _0x4710fc);
 			function _0x1f3ca9(_0x223cc1, _0x400c44) {
-				var _0x55c0ca = a0_0x3ffc;
+				var _0x55c0ca = TT;
 				_0x2ab3d2(this, _0x1f3ca9);
 				var _0x6d9f9d = _0x245593(this, _0x4710fc[_0x55c0ca(0x817)](this, _0x223cc1, _0x400c44));
 				return _0x6d9f9d['on'](_0x223cc1, _0x55c0ca(0x54e), _0x6d9f9d['open']),
@@ -8248,7 +8246,7 @@ function a0_0x53fe() {
 			var _0x3ef704 = _0x2eac47;
 			_0x24aed7(_0x4192d1, _0x57d2f1);
 			function _0x4192d1(_0x2b25f9, _0x5903c1) {
-				var _0x3cdcfb = a0_0x3ffc;
+				var _0x3cdcfb = TT;
 				_0x2ab3d2(this, _0x4192d1),
 					_0x5903c1[_0x3cdcfb(0xa2e)] = ![];
 				var _0x5b98e3 = _0x245593(this, _0x57d2f1[_0x3cdcfb(0x817)](this, _0x2b25f9, _0x5903c1));
@@ -8382,7 +8380,7 @@ function a0_0x53fe() {
 				_0x4192d1['prototype']['setDefaults'] = function _0x364d50() {
 					var _0x4b5598 = this;
 					_0x5e2c44(_0xdab2f0, function (_0x33cb2b) {
-						var _0x474953 = a0_0x3ffc
+						var _0x474953 = TT
 							, _0x23520c = _0x33cb2b[_0x474953(0x856)](_0x474953(0x7c3)) ? _0x33cb2b[_0x474953(0x7c3)] : 0x0;
 						_0x4b5598['$'](_0x33cb2b['selector'])[_0x474953(0x28b)] = _0x23520c;
 					});
@@ -8437,7 +8435,7 @@ function a0_0x53fe() {
 			var _0x4d47a3 = _0x2eac47;
 			_0x24aed7(_0x169f1c, _0x360bb5);
 			function _0x169f1c(_0x20ad4b, _0x1c9e6c) {
-				var _0x1c9724 = a0_0x3ffc;
+				var _0x1c9724 = TT;
 				_0x2ab3d2(this, _0x169f1c);
 				var _0xcd280c = _0x1c9e6c[_0x1c9724(0x155)] || _0x562c10[_0x1c9724(0x155)];
 				_0x1c9e6c[_0x1c9724(0x155)] === null && (_0xcd280c = ![]);
@@ -8556,7 +8554,7 @@ function a0_0x53fe() {
 					, _0x217189 = _0x3c50ba(_0x4dc841)
 					, _0x32604e = function _0x1925ae(_0x1c0a15) {
 						return function () {
-							var _0x263302 = a0_0x3ffc;
+							var _0x263302 = TT;
 							for (var _0x1e5f22 = arguments[_0x263302(0x9f1)], _0x3bd9a1 = Array(_0x1e5f22), _0x2327d7 = 0x0; _0x2327d7 < _0x1e5f22; _0x2327d7++) {
 								_0x3bd9a1[_0x2327d7] = arguments[_0x2327d7];
 							}
@@ -8655,7 +8653,7 @@ function a0_0x53fe() {
 				var _0x411b29 = _0x2eac47;
 				_0x24aed7(_0x2191e3, _0x3e1d2d);
 				function _0x2191e3(_0x7e0fa8, _0x4713a8) {
-					var _0x36e4ee = a0_0x3ffc;
+					var _0x36e4ee = TT;
 					_0x2ab3d2(this, _0x2191e3);
 					var _0x154f9f = _0x245593(this, _0x3e1d2d[_0x36e4ee(0x817)](this, _0x7e0fa8, _0x4713a8))
 						, _0x3cc044 = _0x7e0fa8[_0x36e4ee(0x9b2)]
@@ -9328,7 +9326,7 @@ function a0_0x53fe() {
 				var _0x1b6667 = _0x2eac47;
 				_0x24aed7(_0x128fcf, _0x42f77e);
 				function _0x128fcf(_0x57c13e, _0xf73894, _0x5ca968) {
-					var _0x2ba6ae = a0_0x3ffc;
+					var _0x2ba6ae = TT;
 					_0x2ab3d2(this, _0x128fcf),
 						_0x57c13e['id'] = _0x57c13e['id'] || _0xf73894['id'] || _0x2ba6ae(0xab1) + _0x32cfd7(),
 						_0xf73894 = _0x2476f0(_0x128fcf[_0x2ba6ae(0x3b1)](_0x57c13e), _0xf73894),
@@ -9732,7 +9730,7 @@ function a0_0x53fe() {
 						if (!this['tech_'] || typeof _0x13dd7b !== 'string')
 							return;
 						var _0x3a1b1e = function _0x37a9ce() {
-							var _0x3860bd = a0_0x3ffc
+							var _0x3860bd = TT
 								, _0x530719 = _0x1207dd['muted']();
 							_0x1207dd['muted'](!![]);
 							var _0x4ac4d9 = _0x1207dd[_0x3860bd(0x9fe)]();
@@ -10588,19 +10586,19 @@ function a0_0x53fe() {
 							, _0x11aa0c = void 0x0
 							, _0x17aab9 = _0x2e578a(this, this['reportUserActivity'])
 							, _0x553e21 = function _0x10e38d(_0x46bb81) {
-								var _0x3b6bab = a0_0x3ffc;
+								var _0x3b6bab = TT;
 								(_0x46bb81[_0x3b6bab(0x7cc)] !== _0x5a5d9e || _0x46bb81[_0x3b6bab(0x7bb)] !== _0x11aa0c) && (_0x5a5d9e = _0x46bb81[_0x3b6bab(0x7cc)],
 									_0x11aa0c = _0x46bb81[_0x3b6bab(0x7bb)],
 									_0x17aab9());
 							}
 							, _0x3058d0 = function _0x15d4a9() {
-								var _0x456db5 = a0_0x3ffc;
+								var _0x456db5 = TT;
 								_0x17aab9(),
 									this[_0x456db5(0x480)](_0x3181a8),
 									_0x3181a8 = this[_0x456db5(0x899)](_0x17aab9, 0xfa);
 							}
 							, _0x216b45 = function _0x19e5f4(_0x53fb4c) {
-								var _0x1096a8 = a0_0x3ffc;
+								var _0x1096a8 = TT;
 								_0x17aab9(),
 									this[_0x1096a8(0x480)](_0x3181a8);
 							};
@@ -10774,7 +10772,7 @@ function a0_0x53fe() {
 		_0x39a6af[_0x2eac47(0x810)][_0x2eac47(0x8f4)](function (_0x438d82) {
 			var _0x419090 = _0x39a6af[_0x438d82];
 			_0x18b894['prototype'][_0x419090['getterName']] = function () {
-				var _0x5f3547 = a0_0x3ffc;
+				var _0x5f3547 = TT;
 				if (this['tech_'])
 					return this[_0x5f3547(0xa4f)][_0x419090[_0x5f3547(0x854)]]();
 				return this[_0x419090[_0x5f3547(0x559)]] = this[_0x419090[_0x5f3547(0x559)]] || new _0x419090[(_0x5f3547(0xac4))](),
@@ -10881,7 +10879,7 @@ function a0_0x53fe() {
 			, _0x50ba6b = (function () {
 				var _0x361140 = _0x2eac47;
 				function _0x556d73(_0x3f183e) {
-					var _0x2ed8fe = a0_0x3ffc;
+					var _0x2ed8fe = TT;
 					_0x2ab3d2(this, _0x556d73);
 					if (this[_0x2ed8fe(0x4a3)] === _0x556d73)
 						throw new Error('Plugin\x20must\x20be\x20sub-classed;\x20not\x20directly\x20instantiated.');
@@ -11007,7 +11005,7 @@ function a0_0x53fe() {
 				var _0xd93a25 = _0x2eac47
 					, _0xe65dcd = arguments['length'] > 0x1 && arguments[0x1] !== undefined ? arguments[0x1] : {}
 					, _0x115f91 = function _0x3574a3() {
-						var _0x319d95 = a0_0x3ffc;
+						var _0x319d95 = TT;
 						_0x365ac2[_0x319d95(0x749)](this, arguments);
 					}
 					, _0x51e8cf = {};
@@ -11073,7 +11071,7 @@ function a0_0x53fe() {
 				var _0xb7ab06 = _0x2eac47;
 				_0x1dff89[_0xb7ab06(0x9bd)](_0x3e85b4, []['concat'](_0x1b7423)['map'](function (_0x358f42) {
 					var _0x31104e = function _0x5191ed() {
-						var _0x3ea8d7 = a0_0x3ffc;
+						var _0x3ea8d7 = TT;
 						return _0x1dff89['removeHook'](_0x3e85b4, _0x5191ed),
 							_0x358f42[_0x3ea8d7(0x749)](undefined, arguments);
 					};
@@ -11201,7 +11199,7 @@ function a0_0x53fe() {
 			_0x1dff89[_0x2eac47(0x420)] = _0x140294,
 			[_0x2eac47(0x127), 'isTextNode', _0x2eac47(0x506), 'hasClass', _0x2eac47(0x823), 'removeClass', _0x2eac47(0xa01), _0x2eac47(0x4b8), 'getAttributes', _0x2eac47(0x8df), _0x2eac47(0x6c2), _0x2eac47(0x466)][_0x2eac47(0x8f4)](function (_0x4c8847) {
 				_0x1dff89[_0x4c8847] = function () {
-					var _0x167822 = a0_0x3ffc;
+					var _0x167822 = TT;
 					return _0x50330f['warn']('videojs.' + _0x4c8847 + '()\x20is\x20deprecated;\x20use\x20videojs.dom.' + _0x4c8847 + _0x167822(0x66f)),
 						_0x561a5e[_0x4c8847][_0x167822(0x749)](null, arguments);
 				}
@@ -11212,14 +11210,14 @@ function a0_0x53fe() {
 			_0x1dff89['url'] = _0x2177ed;
 		var _0xd42db6 = _0x3b14ad(function (_0x42c61a, _0x308c53) {
 			(function (_0x1b7133) {
-				var _0x27a67b = a0_0x3ffc
+				var _0x27a67b = TT
 					, _0x4dabc3 = /^((?:[a-zA-Z0-9+\-.]+:)?)(\/\/[^\/\;?#]*)?(.*?)??(;.*?)?(\?.*?)?(#.*?)?$/
 					, _0x2151e0 = /^([^\/;?#]*)(.*)$/
 					, _0x1d5323 = /(?:\/|^)\.(?=\/)/g
 					, _0x313d9f = /(?:\/|^)\.\.\/(?!\.\.\/).*?(?=\/)/g
 					, _0x135455 = {
 						'buildAbsoluteURL': function _0x2322fe(_0x3d77b1, _0x3d85d4, _0x145f26) {
-							var _0x1da754 = a0_0x3ffc;
+							var _0x1da754 = TT;
 							_0x145f26 = _0x145f26 || {},
 								_0x3d77b1 = _0x3d77b1[_0x1da754(0xa32)](),
 								_0x3d85d4 = _0x3d85d4['trim']();
@@ -11289,13 +11287,13 @@ function a0_0x53fe() {
 							};
 						},
 						'normalizePath': function _0x4ff014(_0x1eeaa9) {
-							var _0x208b4c = a0_0x3ffc;
+							var _0x208b4c = TT;
 							_0x1eeaa9 = _0x1eeaa9[_0x208b4c(0x875)]('')['reverse']()[_0x208b4c(0x22b)]('')['replace'](_0x1d5323, '');
 							while (_0x1eeaa9[_0x208b4c(0x9f1)] !== (_0x1eeaa9 = _0x1eeaa9[_0x208b4c(0xae6)](_0x313d9f, ''))[_0x208b4c(0x9f1)]) { }
 							return _0x1eeaa9['split']('')[_0x208b4c(0x483)]()[_0x208b4c(0x22b)]('');
 						},
 						'buildURLFromParts': function _0x3c0d1a(_0x18be70) {
-							var _0x49afce = a0_0x3ffc;
+							var _0x49afce = TT;
 							return _0x18be70[_0x49afce(0x837)] + _0x18be70[_0x49afce(0x66a)] + _0x18be70[_0x49afce(0xaf8)] + _0x18be70['params'] + _0x18be70[_0x49afce(0x7c5)] + _0x18be70[_0x49afce(0x8d9)];
 						}
 					};
@@ -11340,7 +11338,7 @@ function a0_0x53fe() {
 			, _0x2f48b8 = (function () {
 				var _0x2a0e72 = _0x2eac47;
 				function _0x5cb544() {
-					var _0xc6d18d = a0_0x3ffc;
+					var _0xc6d18d = TT;
 					_0x2ad457(this, _0x5cb544),
 						this[_0xc6d18d(0x8d4)] = {};
 				}
@@ -11400,7 +11398,7 @@ function a0_0x53fe() {
 				var _0x286ade = _0x2eac47;
 				_0xb6641(_0x424acf, _0x1fde39);
 				function _0x424acf() {
-					var _0x1832af = a0_0x3ffc;
+					var _0x1832af = TT;
 					_0x2ad457(this, _0x424acf);
 					var _0x3a7dc5 = _0x1b1b55(this, _0x1fde39[_0x1832af(0x817)](this));
 					return _0x3a7dc5['buffer'] = '',
@@ -11447,7 +11445,7 @@ function a0_0x53fe() {
 				var _0xa0248 = _0x2eac47;
 				_0xb6641(_0x2d45d2, _0x89a1ae);
 				function _0x2d45d2() {
-					var _0x228d7c = a0_0x3ffc;
+					var _0x228d7c = TT;
 					_0x2ad457(this, _0x2d45d2);
 					var _0x4a3c85 = _0x1b1b55(this, _0x89a1ae[_0x228d7c(0x817)](this));
 					return _0x4a3c85[_0x228d7c(0xb18)] = [],
@@ -11754,7 +11752,7 @@ function a0_0x53fe() {
 				var _0x3e93d7 = _0x2eac47;
 				_0xb6641(_0xc35ee7, _0x547437);
 				function _0xc35ee7() {
-					var _0x53563f = a0_0x3ffc;
+					var _0x53563f = TT;
 					_0x2ad457(this, _0xc35ee7);
 					var _0x5278ca = _0x1b1b55(this, _0x547437[_0x53563f(0x817)](this));
 					_0x5278ca[_0x53563f(0x662)] = new _0x4169cd(),
@@ -11784,10 +11782,10 @@ function a0_0x53fe() {
 								, _0x22083d = void 0x0;
 							({
 								'tag': function _0x52ab29() {
-									var _0x50f44d = a0_0x3ffc;
+									var _0x50f44d = TT;
 									({
 										'allow-cache': function _0x4b5ac4() {
-											var _0x5bd411 = a0_0x3ffc;
+											var _0x5bd411 = TT;
 											this['manifest'][_0x5bd411(0x8a9)] = _0x12a1b5['allowed'],
 												!(_0x5bd411(0xb0a) in _0x12a1b5) && (this[_0x5bd411(0x527)](_0x5bd411(0x381), {
 													'message': 'defaulting\x20allowCache\x20to\x20YES'
@@ -11795,7 +11793,7 @@ function a0_0x53fe() {
 													this[_0x5bd411(0x616)][_0x5bd411(0x8a9)] = !![]);
 										},
 										'byterange': function _0x4d7a8b() {
-											var _0x451a0a = a0_0x3ffc
+											var _0x451a0a = TT
 												, _0x4fd3ce = {};
 											_0x451a0a(0x9f1) in _0x12a1b5 && (_0x42a344[_0x451a0a(0x590)] = _0x4fd3ce,
 												_0x4fd3ce[_0x451a0a(0x9f1)] = _0x12a1b5['length'],
@@ -11807,11 +11805,11 @@ function a0_0x53fe() {
 													_0x4fd3ce[_0x451a0a(0x448)] = _0x12a1b5[_0x451a0a(0x448)]);
 										},
 										'endlist': function _0x1a92e8() {
-											var _0x84045c = a0_0x3ffc;
+											var _0x84045c = TT;
 											this[_0x84045c(0x616)][_0x84045c(0x3eb)] = !![];
 										},
 										'inf': function _0x1d8059() {
-											var _0x5e63f6 = a0_0x3ffc;
+											var _0x5e63f6 = TT;
 											!(_0x5e63f6(0x136) in this[_0x5e63f6(0x616)]) && (this['manifest'][_0x5e63f6(0x136)] = 0x0,
 												this['trigger']('info', {
 													'message': _0x5e63f6(0x7e0)
@@ -11828,7 +11826,7 @@ function a0_0x53fe() {
 												this[_0x5e63f6(0x616)][_0x5e63f6(0x387)] = _0x3365a1;
 										},
 										'key': function _0xe638b9() {
-											var _0x38a3dc = a0_0x3ffc;
+											var _0x38a3dc = TT;
 											if (!_0x12a1b5['attributes']) {
 												this[_0x38a3dc(0x527)](_0x38a3dc(0x355), {
 													'message': _0x38a3dc(0x630)
@@ -11855,7 +11853,7 @@ function a0_0x53fe() {
 												typeof _0x12a1b5['attributes']['IV'] !== _0x38a3dc(0x9aa) && (_0x4887cc['iv'] = _0x12a1b5[_0x38a3dc(0x692)]['IV']);
 										},
 										'media-sequence': function _0x3f1037() {
-											var _0x436a9d = a0_0x3ffc;
+											var _0x436a9d = TT;
 											if (!isFinite(_0x12a1b5[_0x436a9d(0x9dc)])) {
 												this[_0x436a9d(0x527)](_0x436a9d(0x355), {
 													'message': 'ignoring\x20invalid\x20media\x20sequence:\x20' + _0x12a1b5[_0x436a9d(0x9dc)]
@@ -11865,7 +11863,7 @@ function a0_0x53fe() {
 											this[_0x436a9d(0x616)][_0x436a9d(0x136)] = _0x12a1b5[_0x436a9d(0x9dc)];
 										},
 										'discontinuity-sequence': function _0x1c99d7() {
-											var _0x8ec7c = a0_0x3ffc;
+											var _0x8ec7c = TT;
 											if (!isFinite(_0x12a1b5[_0x8ec7c(0x9dc)])) {
 												this[_0x8ec7c(0x527)](_0x8ec7c(0x355), {
 													'message': 'ignoring\x20invalid\x20discontinuity\x20sequence:\x20' + _0x12a1b5[_0x8ec7c(0x9dc)]
@@ -11876,7 +11874,7 @@ function a0_0x53fe() {
 												_0x5b8430 = _0x12a1b5['number'];
 										},
 										'playlist-type': function _0x4755b0() {
-											var _0x5355c7 = a0_0x3ffc;
+											var _0x5355c7 = TT;
 											if (!/VOD|EVENT/[_0x5355c7(0x513)](_0x12a1b5['playlistType'])) {
 												this['trigger'](_0x5355c7(0x355), {
 													'message': _0x5355c7(0x861) + _0x12a1b5[_0x5355c7(0x326)]
@@ -11886,13 +11884,13 @@ function a0_0x53fe() {
 											this[_0x5355c7(0x616)]['playlistType'] = _0x12a1b5[_0x5355c7(0x659)];
 										},
 										'map': function _0x48690d() {
-											var _0x2045bf = a0_0x3ffc;
+											var _0x2045bf = TT;
 											_0x5e8ae8 = {},
 												_0x12a1b5['uri'] && (_0x5e8ae8['uri'] = _0x12a1b5[_0x2045bf(0x824)]),
 												_0x12a1b5['byterange'] && (_0x5e8ae8[_0x2045bf(0x590)] = _0x12a1b5[_0x2045bf(0x590)]);
 										},
 										'stream-inf': function _0x5ea141() {
-											var _0x684e46 = a0_0x3ffc;
+											var _0x684e46 = TT;
 											this[_0x684e46(0x616)]['playlists'] = _0x3365a1,
 												this[_0x684e46(0x616)][_0x684e46(0x911)] = this[_0x684e46(0x616)]['mediaGroups'] || _0x1b4e73;
 											if (!_0x12a1b5[_0x684e46(0x692)]) {
@@ -11905,7 +11903,7 @@ function a0_0x53fe() {
 												_0xbbf3c7(_0x42a344['attributes'], _0x12a1b5[_0x684e46(0x692)]);
 										},
 										'media': function _0x190dd8() {
-											var _0x2e1a3f = a0_0x3ffc;
+											var _0x2e1a3f = TT;
 											this[_0x2e1a3f(0x616)][_0x2e1a3f(0x911)] = this['manifest'][_0x2e1a3f(0x911)] || _0x1b4e73;
 											if (!(_0x12a1b5[_0x2e1a3f(0x692)] && _0x12a1b5[_0x2e1a3f(0x692)][_0x2e1a3f(0x47a)] && _0x12a1b5[_0x2e1a3f(0x692)][_0x2e1a3f(0x68b)] && _0x12a1b5[_0x2e1a3f(0x692)]['NAME'])) {
 												this[_0x2e1a3f(0x527)](_0x2e1a3f(0x355), {
@@ -11928,20 +11926,20 @@ function a0_0x53fe() {
 												_0x4d2479[_0x12a1b5[_0x2e1a3f(0x692)][_0x2e1a3f(0x50e)]] = _0x22083d;
 										},
 										'discontinuity': function _0xcf0cd1() {
-											var _0x33936b = a0_0x3ffc;
+											var _0x33936b = TT;
 											_0x5b8430 += 0x1,
 												_0x42a344[_0x33936b(0x510)] = !![],
 												this['manifest'][_0x33936b(0x21b)][_0x33936b(0x609)](_0x3365a1[_0x33936b(0x9f1)]);
 										},
 										'program-date-time': function _0x503972() {
-											var _0x1b9d59 = a0_0x3ffc;
+											var _0x1b9d59 = TT;
 											typeof this[_0x1b9d59(0x616)][_0x1b9d59(0x3e6)] === _0x1b9d59(0x9aa) && (this[_0x1b9d59(0x616)]['dateTimeString'] = _0x12a1b5[_0x1b9d59(0x3e6)],
 												this[_0x1b9d59(0x616)][_0x1b9d59(0x31b)] = _0x12a1b5[_0x1b9d59(0x31b)]),
 												_0x42a344['dateTimeString'] = _0x12a1b5['dateTimeString'],
 												_0x42a344[_0x1b9d59(0x31b)] = _0x12a1b5[_0x1b9d59(0x31b)];
 										},
 										'targetduration': function _0x5e7975() {
-											var _0x9cfd39 = a0_0x3ffc;
+											var _0x9cfd39 = TT;
 											if (!isFinite(_0x12a1b5['duration']) || _0x12a1b5[_0x9cfd39(0x3ed)] < 0x0) {
 												this[_0x9cfd39(0x527)](_0x9cfd39(0x355), {
 													'message': _0x9cfd39(0x620) + _0x12a1b5['duration']
@@ -11951,7 +11949,7 @@ function a0_0x53fe() {
 											this[_0x9cfd39(0x616)][_0x9cfd39(0x5d5)] = _0x12a1b5[_0x9cfd39(0x3ed)];
 										},
 										'totalduration': function _0x10d9b4() {
-											var _0x1f5700 = a0_0x3ffc;
+											var _0x1f5700 = TT;
 											if (!isFinite(_0x12a1b5[_0x1f5700(0x3ed)]) || _0x12a1b5[_0x1f5700(0x3ed)] < 0x0) {
 												this[_0x1f5700(0x527)](_0x1f5700(0x355), {
 													'message': _0x1f5700(0x927) + _0x12a1b5[_0x1f5700(0x3ed)]
@@ -11961,7 +11959,7 @@ function a0_0x53fe() {
 											this[_0x1f5700(0x616)]['totalDuration'] = _0x12a1b5[_0x1f5700(0x3ed)];
 										},
 										'start': function _0x46e488() {
-											var _0xf0f4bd = a0_0x3ffc;
+											var _0xf0f4bd = TT;
 											if (!_0x12a1b5[_0xf0f4bd(0x692)] || isNaN(_0x12a1b5[_0xf0f4bd(0x692)]['TIME-OFFSET'])) {
 												this[_0xf0f4bd(0x527)](_0xf0f4bd(0x355), {
 													'message': _0xf0f4bd(0x1fd)
@@ -11974,21 +11972,21 @@ function a0_0x53fe() {
 											};
 										},
 										'cue-out': function _0x275d03() {
-											var _0x4cc14b = a0_0x3ffc;
+											var _0x4cc14b = TT;
 											_0x42a344[_0x4cc14b(0xa61)] = _0x12a1b5[_0x4cc14b(0xa27)];
 										},
 										'cue-out-cont': function _0x19f23c() {
-											var _0x42416a = a0_0x3ffc;
+											var _0x42416a = TT;
 											_0x42a344[_0x42416a(0x5d4)] = _0x12a1b5[_0x42416a(0xa27)];
 										},
 										'cue-in': function _0x2f3220() {
-											var _0x574133 = a0_0x3ffc;
+											var _0x574133 = TT;
 											_0x42a344[_0x574133(0x958)] = _0x12a1b5[_0x574133(0xa27)];
 										}
 									}[_0x12a1b5['tagType']] || _0x587b69)[_0x50f44d(0x817)](_0x384dac);
 								},
 								'uri': function _0x3cdeba() {
-									var _0x4bfc33 = a0_0x3ffc;
+									var _0x4bfc33 = TT;
 									_0x42a344[_0x4bfc33(0x824)] = _0x12a1b5[_0x4bfc33(0x824)],
 										_0x3365a1[_0x4bfc33(0x609)](_0x42a344),
 										this[_0x4bfc33(0x616)][_0x4bfc33(0x5d5)] && !(_0x4bfc33(0x3ed) in _0x42a344) && (this[_0x4bfc33(0x527)]('warn', {
@@ -12002,7 +12000,7 @@ function a0_0x53fe() {
 								},
 								'comment': function _0x198aa0() { },
 								'custom': function _0x2e4609() {
-									var _0x542fc5 = a0_0x3ffc;
+									var _0x542fc5 = TT;
 									_0x12a1b5[_0x542fc5(0x328)] ? (_0x42a344[_0x542fc5(0x323)] = _0x42a344[_0x542fc5(0x323)] || {},
 										_0x42a344[_0x542fc5(0x323)][_0x12a1b5[_0x542fc5(0x7d7)]] = _0x12a1b5[_0x542fc5(0xa27)]) : (this[_0x542fc5(0x616)]['custom'] = this['manifest']['custom'] || {},
 											this[_0x542fc5(0x616)][_0x542fc5(0x323)][_0x12a1b5[_0x542fc5(0x7d7)]] = _0x12a1b5['data']);
@@ -12369,7 +12367,7 @@ function a0_0x53fe() {
 			}
 			, _0x565c24 = function _0x5c8af4(_0x5dc847) {
 				return function (_0x1c9fd1, _0x22c10f) {
-					var _0x2a3c0a = a0_0x3ffc
+					var _0x2a3c0a = TT
 						, _0x24a761 = _0x5dc847[_0x2a3c0a(0x3ed)]
 						, _0x1dd868 = _0x5dc847[_0x2a3c0a(0x354)]
 						, _0x58cfe7 = _0x1dd868 === undefined ? 0x1 : _0x1dd868
@@ -12406,7 +12404,7 @@ function a0_0x53fe() {
 			, _0x335135 = /\$([A-z]*)(?:(%0)([0-9]+)d)?\$/g
 			, _0xa881aa = function _0x46515d(_0x241ecd) {
 				return function (_0x5c8687, _0x52e0d8, _0x4c146f, _0x5c21b6) {
-					var _0x1d0ddd = a0_0x3ffc;
+					var _0x1d0ddd = TT;
 					if (_0x5c8687 === '$$')
 						return '$';
 					if (typeof _0x241ecd[_0x52e0d8] === _0x1d0ddd(0x9aa))
@@ -12798,7 +12796,7 @@ function a0_0x53fe() {
 			}, {});
 		}, _0x299e3c = function _0x20c27a(_0x3f2dcb, _0x1e5ffa, _0x1d5ae1) {
 			return function (_0x5d3d7c) {
-				var _0x3f8915 = a0_0x3ffc
+				var _0x3f8915 = TT
 					, _0x456268 = _0x51f7bd(_0x5d3d7c)
 					, _0x917141 = _0x31bca2(_0x1e5ffa, _0x205db0(_0x5d3d7c, _0x3f8915(0x296)))
 					, _0x23e299 = _0x205db0(_0x5d3d7c, 'Role')[0x0]
@@ -12818,7 +12816,7 @@ function a0_0x53fe() {
 				;
 		}, _0x339137 = function _0x326635(_0x280244, _0x9718c9) {
 			return function (_0x300fec, _0x3bfd0d) {
-				var _0x288940 = a0_0x3ffc
+				var _0x288940 = TT
 					, _0x1139ed = _0x31bca2(_0x9718c9, _0x205db0(_0x300fec, _0x288940(0x296)))
 					, _0xa2568b = _0x51f7bd(_0x300fec)
 					, _0x1db1d7 = _0x1ca609(_0x280244, _0xa2568b, {
@@ -13180,12 +13178,12 @@ function a0_0x53fe() {
 			(function () {
 				var _0x378b14, _0x2bdca7;
 				_0x4ee4c3 = function _0x53088d(_0xff2e0) {
-					var _0x1b0c0e = a0_0x3ffc;
+					var _0x1b0c0e = TT;
 					return _0x540350(_0x49c070['stsd'], new Uint8Array([0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1]), _0xff2e0[_0x1b0c0e(0x604)] === _0x1b0c0e(0xb1b) ? _0x378b14(_0xff2e0) : _0x2bdca7(_0xff2e0));
 				}
 					,
 					_0x378b14 = function _0x51385b(_0xe7264b) {
-						var _0x39078b = a0_0x3ffc, _0x4ed07d = _0xe7264b[_0x39078b(0x3fd)] || [], _0x139ee2 = _0xe7264b[_0x39078b(0x7ca)] || [], _0x245ca4 = [], _0x63ad07 = [], _0x11acf2;
+						var _0x39078b = TT, _0x4ed07d = _0xe7264b[_0x39078b(0x3fd)] || [], _0x139ee2 = _0xe7264b[_0x39078b(0x7ca)] || [], _0x245ca4 = [], _0x63ad07 = [], _0x11acf2;
 						for (_0x11acf2 = 0x0; _0x11acf2 < _0x4ed07d[_0x39078b(0x9f1)]; _0x11acf2++) {
 							_0x245ca4[_0x39078b(0x609)]((_0x4ed07d[_0x11acf2]['byteLength'] & 0xff00) >>> 0x8),
 								_0x245ca4['push'](_0x4ed07d[_0x11acf2]['byteLength'] & 0xff),
@@ -13200,7 +13198,7 @@ function a0_0x53fe() {
 					}
 					,
 					_0x2bdca7 = function _0x18948a(_0x19c795) {
-						var _0x14cc1c = a0_0x3ffc;
+						var _0x14cc1c = TT;
 						return _0x540350(_0x49c070['mp4a'], new Uint8Array([0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, (_0x19c795[_0x14cc1c(0x24c)] & 0xff00) >> 0x8, _0x19c795['channelcount'] & 0xff, (_0x19c795[_0x14cc1c(0x6f5)] & 0xff00) >> 0x8, _0x19c795[_0x14cc1c(0x6f5)] & 0xff, 0x0, 0x0, 0x0, 0x0, (_0x19c795[_0x14cc1c(0x366)] & 0xff00) >> 0x8, _0x19c795[_0x14cc1c(0x366)] & 0xff, 0x0, 0x0]), _0x44804f(_0x19c795));
 					}
 					;
@@ -13242,7 +13240,7 @@ function a0_0x53fe() {
 			(function () {
 				var _0x24cd98, _0x3fee42, _0x300ba5;
 				_0x300ba5 = function _0xb7d1af(_0x5c47ff, _0x56c808) {
-					var _0x2b237a = a0_0x3ffc
+					var _0x2b237a = TT
 						, _0x4ebba1 = 0x0
 						, _0x4ed136 = 0x0
 						, _0x7995e4 = 0x0
@@ -13255,7 +13253,7 @@ function a0_0x53fe() {
 				}
 					,
 					_0x3fee42 = function _0x3bc266(_0x28cc21, _0x198109) {
-						var _0x34881e = a0_0x3ffc, _0x21e911, _0x415a98, _0x43354a, _0xff8e5d;
+						var _0x34881e = TT, _0x21e911, _0x415a98, _0x43354a, _0xff8e5d;
 						_0x415a98 = _0x28cc21[_0x34881e(0x110)] || [],
 							_0x198109 += 0x8 + 0xc + 0x10 * _0x415a98['length'],
 							_0x21e911 = _0x300ba5(_0x415a98, _0x198109);
@@ -13267,7 +13265,7 @@ function a0_0x53fe() {
 					}
 					,
 					_0x24cd98 = function _0x12ec62(_0x57edf9, _0x54f1dc) {
-						var _0x4df1e3 = a0_0x3ffc, _0x1df2c3, _0x104d0f, _0x499d97, _0x15dbcd;
+						var _0x4df1e3 = TT, _0x1df2c3, _0x104d0f, _0x499d97, _0x15dbcd;
 						_0x104d0f = _0x57edf9['samples'] || [],
 							_0x54f1dc += 0x8 + 0xc + 0x8 * _0x104d0f[_0x4df1e3(0x9f1)],
 							_0x1df2c3 = _0x300ba5(_0x104d0f, _0x54f1dc);
@@ -13279,7 +13277,7 @@ function a0_0x53fe() {
 					}
 					,
 					_0x4d3fd8 = function _0x4dc9e4(_0x12e50a, _0x194e22) {
-						var _0x5e64a5 = a0_0x3ffc;
+						var _0x5e64a5 = TT;
 						if (_0x12e50a[_0x5e64a5(0x604)] === _0x5e64a5(0x794))
 							return _0x24cd98(_0x12e50a, _0x194e22);
 						return _0x3fee42(_0x12e50a, _0x194e22);
@@ -13319,7 +13317,7 @@ function a0_0x53fe() {
 					var _0x325986 = _0xa3b107
 						, _0x52e745 = {};
 					this['on'] = function (_0x2a2cba, _0x3265c3) {
-						var _0x149b29 = a0_0x3ffc;
+						var _0x149b29 = TT;
 						!_0x52e745[_0x2a2cba] && (_0x52e745[_0x2a2cba] = []),
 							_0x52e745[_0x2a2cba] = _0x52e745[_0x2a2cba][_0x149b29(0x79a)](_0x3265c3);
 					}
@@ -14524,7 +14522,7 @@ function a0_0x53fe() {
 						'size': 0x0
 					}
 					, _0x541c23 = function _0x5daa55(_0x447bb3, _0x5063a6) {
-						var _0x32b73f = a0_0x3ffc, _0x3592a4;
+						var _0x32b73f = TT, _0x3592a4;
 						_0x5063a6[_0x32b73f(0x4d1)] = 0x6 + (_0x447bb3[0x4] << 0x8 | _0x447bb3[0x5]),
 							_0x5063a6['dataAlignmentIndicator'] = (_0x447bb3[0x6] & 0x4) !== 0x0,
 							_0x3592a4 = _0x447bb3[0x7],
@@ -14538,7 +14536,7 @@ function a0_0x53fe() {
 							_0x5063a6['data'] = _0x447bb3[_0x32b73f(0x254)](0x9 + _0x447bb3[0x8]);
 					}
 					, _0x2d8e30 = function _0x407119(_0x509a75, _0x5e1a7c, _0x4d5fd9) {
-						var _0xca8f77 = a0_0x3ffc, _0x70edb0 = new Uint8Array(_0x509a75[_0xca8f77(0x265)]), _0xb2f86c = {
+						var _0xca8f77 = TT, _0x70edb0 = new Uint8Array(_0x509a75[_0xca8f77(0x265)]), _0xb2f86c = {
 							'type': _0x5e1a7c
 						}, _0xbd9569 = 0x0, _0x467489 = 0x0, _0x3f8001 = ![], _0x4ec1be;
 						if (!_0x509a75[_0xca8f77(0xa27)][_0xca8f77(0x9f1)] || _0x509a75[_0xca8f77(0x265)] < 0x9)
@@ -14561,7 +14559,7 @@ function a0_0x53fe() {
 						({
 							'pat': function _0x1116ec() { },
 							'pes': function _0x3a3ad5() {
-								var _0xc602fb = a0_0x3ffc, _0x2832d0, _0x3cce68;
+								var _0xc602fb = TT, _0x2832d0, _0x3cce68;
 								switch (_0x1d7319['streamType']) {
 									case _0x16877c[_0xc602fb(0x428)]:
 									case _0x16877c[_0xc602fb(0x428)]:
@@ -14584,7 +14582,7 @@ function a0_0x53fe() {
 									_0x2832d0[_0xc602fb(0x265)] += _0x1d7319[_0xc602fb(0xa27)][_0xc602fb(0xb06)];
 							},
 							'pmt': function _0x48b7a5() {
-								var _0x2d6faf = a0_0x3ffc
+								var _0x2d6faf = TT
 									, _0x1b6719 = {
 										'type': _0x2d6faf(0x759),
 										'tracks': []
@@ -17319,7 +17317,7 @@ function a0_0x53fe() {
 		}
 			, _0x6bf7d7 = (function () {
 				function _0x21ef42(_0x2e5279, _0x4de455) {
-					var _0x1e84df = a0_0x3ffc;
+					var _0x1e84df = TT;
 					for (var _0x141499 = 0x0; _0x141499 < _0x4de455[_0x1e84df(0x9f1)]; _0x141499++) {
 						var _0x3e8a90 = _0x4de455[_0x141499];
 						_0x3e8a90['enumerable'] = _0x3e8a90[_0x1e84df(0x55c)] || ![],
@@ -17404,7 +17402,7 @@ function a0_0x53fe() {
 			, _0x2d9098 = (function () {
 				var _0x38f1b5 = _0x2eac47;
 				function _0x328d4c(_0x276f75) {
-					var _0xa40806 = a0_0x3ffc;
+					var _0xa40806 = TT;
 					_0x5ce5d7(this, _0x328d4c);
 					!_0x3b01dc && (_0x3b01dc = _0x28a791());
 					this['_tables'] = [[_0x3b01dc[0x0][0x0][_0xa40806(0x11b)](), _0x3b01dc[0x0][0x1]['slice'](), _0x3b01dc[0x0][0x2]['slice'](), _0x3b01dc[0x0][0x3]['slice'](), _0x3b01dc[0x0][0x4][_0xa40806(0x11b)]()], [_0x3b01dc[0x1][0x0][_0xa40806(0x11b)](), _0x3b01dc[0x1][0x1][_0xa40806(0x11b)](), _0x3b01dc[0x1][0x2][_0xa40806(0x11b)](), _0x3b01dc[0x1][0x3][_0xa40806(0x11b)](), _0x3b01dc[0x1][0x4][_0xa40806(0x11b)]()]];
@@ -17479,7 +17477,7 @@ function a0_0x53fe() {
 			, _0x194397 = (function () {
 				var _0x578811 = _0x2eac47;
 				function _0x141179() {
-					var _0x3ab8c4 = a0_0x3ffc;
+					var _0x3ab8c4 = TT;
 					_0x5ce5d7(this, _0x141179),
 						this[_0x3ab8c4(0x8d4)] = {};
 				}
@@ -17536,7 +17534,7 @@ function a0_0x53fe() {
 				var _0x28e568 = _0x2eac47;
 				_0x1bb651(_0x37d33c, _0x27db4b);
 				function _0x37d33c() {
-					var _0x425c03 = a0_0x3ffc;
+					var _0x425c03 = TT;
 					_0x5ce5d7(this, _0x37d33c);
 					var _0x120bca = _0x3f689a(this, _0x27db4b[_0x425c03(0x817)](this, _0x194397));
 					return _0x120bca[_0x425c03(0x56a)] = [],
@@ -17600,7 +17598,7 @@ function a0_0x53fe() {
 			, _0x15a30c = (function () {
 				var _0x3b45e4 = _0x2eac47;
 				function _0x47835d(_0x439d0a, _0x3c3a12, _0x364db8, _0x4143c5) {
-					var _0x47b2b6 = a0_0x3ffc;
+					var _0x47b2b6 = TT;
 					_0x5ce5d7(this, _0x47835d);
 					var _0xaab2f4 = _0x47835d['STEP']
 						, _0x4dcacb = new Int32Array(_0x439d0a[_0x47b2b6(0x611)])
@@ -17618,7 +17616,7 @@ function a0_0x53fe() {
 				}
 				return _0x47835d[_0x3b45e4(0x2a2)][_0x3b45e4(0x4ee)] = function _0x1b626a(_0x14a89d, _0x14bd03, _0x59a6ae, _0x5362bb) {
 					return function () {
-						var _0x51c58f = a0_0x3ffc
+						var _0x51c58f = TT
 							, _0x492810 = _0x1f23b6(_0x14a89d, _0x14bd03, _0x59a6ae);
 						_0x5362bb[_0x51c58f(0x25a)](_0x492810, _0x14a89d[_0x51c58f(0x5c4)]);
 					}
@@ -17647,7 +17645,7 @@ function a0_0x53fe() {
 			}
 			, _0x1430d3 = (function () {
 				function _0x4cccef(_0x4f013d, _0x1ef006) {
-					var _0x128726 = a0_0x3ffc;
+					var _0x128726 = TT;
 					for (var _0x42eea8 = 0x0; _0x42eea8 < _0x1ef006[_0x128726(0x9f1)]; _0x42eea8++) {
 						var _0x5ef5cf = _0x1ef006[_0x42eea8];
 						_0x5ef5cf['enumerable'] = _0x5ef5cf[_0x128726(0x55c)] || ![],
@@ -17658,7 +17656,7 @@ function a0_0x53fe() {
 					}
 				}
 				return function (_0x2ddfc9, _0x52c26d, _0x4eafa9) {
-					var _0x41326a = a0_0x3ffc;
+					var _0x41326a = TT;
 					if (_0x52c26d)
 						_0x4cccef(_0x2ddfc9[_0x41326a(0x2a2)], _0x52c26d);
 					if (_0x4eafa9)
@@ -17709,7 +17707,7 @@ function a0_0x53fe() {
 			}
 			, _0xf8c145 = (function () {
 				function _0x52bebf(_0x21b0cf, _0x24d6b0) {
-					var _0x5a904d = a0_0x3ffc
+					var _0x5a904d = TT
 						, _0x184659 = []
 						, _0x408174 = !![]
 						, _0x10df43 = ![]
@@ -17735,7 +17733,7 @@ function a0_0x53fe() {
 					return _0x184659;
 				}
 				return function (_0x4ccfe6, _0x4bf690) {
-					var _0xd3f8cd = a0_0x3ffc;
+					var _0xd3f8cd = TT;
 					if (Array[_0xd3f8cd(0x460)](_0x4ccfe6))
 						return _0x4ccfe6;
 					else {
@@ -17812,7 +17810,7 @@ function a0_0x53fe() {
 			}
 			, _0x44bfbf = function _0x113993(_0x734b38) {
 				_0xbd030b(_0x734b38, function (_0x6bbb78) {
-					var _0x362f56 = a0_0x3ffc;
+					var _0x362f56 = TT;
 					_0x6bbb78[_0x362f56(0x824)] && (_0x6bbb78['resolvedUri'] = _0x1ef660(_0x734b38['uri'], _0x6bbb78[_0x362f56(0x824)]));
 				});
 			}
@@ -17827,7 +17825,7 @@ function a0_0x53fe() {
 				var _0xcd714d = _0x2eac47;
 				_0x2b5e46(_0x508eaa, _0x80a7c4);
 				function _0x508eaa(_0x19f20d, _0x4e602d, _0x14ba5b) {
-					var _0x329011 = a0_0x3ffc;
+					var _0x329011 = TT;
 					_0x2f247f(this, _0x508eaa);
 					var _0x23ce2d = _0x42d6e2(this, (_0x508eaa['__proto__'] || Object['getPrototypeOf'](_0x508eaa))[_0x329011(0x817)](this));
 					_0x23ce2d[_0x329011(0x75a)] = _0x19f20d,
@@ -18336,7 +18334,7 @@ function a0_0x53fe() {
 			, _0x50cc67 = _0x1dff89[_0x2eac47(0x4e7)]
 			, _0x4a26ec = function _0x7932a6() {
 				var _0x2325b5 = function _0x478d7c(_0x38b74f, _0x592867) {
-					var _0x37314b = a0_0x3ffc;
+					var _0x37314b = TT;
 					_0x38b74f = _0x50cc67({
 						'timeout': 0xafc8
 					}, _0x38b74f);
@@ -18615,7 +18613,7 @@ function a0_0x53fe() {
 							var _0x1297b5 = _0xee5d27[_0x299cfb]
 								, _0x35a5b4 = Number(_0x22518b[_0x4b27c6 + 0x1]) || _0x43bcf9;
 							_0x1297b5['forEach'](function (_0x40197e) {
-								var _0x12e7a6 = a0_0x3ffc;
+								var _0x12e7a6 = TT;
 								_0x40197e[_0x12e7a6(0x3d3)] = _0x35a5b4;
 							});
 						});
@@ -18630,7 +18628,7 @@ function a0_0x53fe() {
 			, _0x3a79db = _0x893044[_0x2eac47(0x637)];
 		function _0x1ab5f4(_0x37d650, _0x10ef70) {
 			return function _0xa8ba5f(_0x358dd9) {
-				var _0x59971c = a0_0x3ffc
+				var _0x59971c = TT
 					, _0x1e7761 = this;
 				if (!_0x10ef70)
 					return new _0x3a79db(_0x37d650);
@@ -18657,7 +18655,7 @@ function a0_0x53fe() {
 						_0x10ef70[_0x59971c(0x817)](_0x1bd7d4),
 							this[_0x59971c(0x779)] = function (_0x2c30c6) {
 								setTimeout(function () {
-									var _0x3f8a36 = a0_0x3ffc;
+									var _0x3f8a36 = TT;
 									_0x1bd7d4[_0x3f8a36(0x1cd)]({
 										'data': _0x2c30c6,
 										'target': _0x1e7761
@@ -18712,7 +18710,7 @@ function a0_0x53fe() {
 		var _0x268fc0 = new _0x1ab5f4(_0x2eac47(0x836), function (_0x619d3a, _0x8ffd1) {
 			var _0x3187e8 = this
 				, _0x570939 = (function () {
-					var _0x4b69f2 = a0_0x3ffc, _0x34f589 = Math[_0x4b69f2(0xff)](0x2, 0x20) - 0x1, _0x4e9dda, _0x158099, _0x1aa347, _0xb4fbb7, _0x8273f3, _0x512346, _0x591f54, _0x41ab38, _0x4e848e, _0x572ab9, _0x2b59ba, _0x5e45ad, _0x3f8090, _0xb4f07, _0x3e9793, _0x1ab656, _0x445b9b, _0x141659, _0x2f54fe, _0x314f6c, _0xfab131, _0x2c2262, _0x39e4b4, _0x2cd91e, _0x90b289, _0xf62a74, _0x58fa7e, _0x4be6fc, _0x359705, _0x3291a2, _0x1fee7b, _0x5a3e81, _0x3a7b0c, _0x2b5ab8, _0x403518, _0x4a9f6d;
+					var _0x4b69f2 = TT, _0x34f589 = Math[_0x4b69f2(0xff)](0x2, 0x20) - 0x1, _0x4e9dda, _0x158099, _0x1aa347, _0xb4fbb7, _0x8273f3, _0x512346, _0x591f54, _0x41ab38, _0x4e848e, _0x572ab9, _0x2b59ba, _0x5e45ad, _0x3f8090, _0xb4f07, _0x3e9793, _0x1ab656, _0x445b9b, _0x141659, _0x2f54fe, _0x314f6c, _0xfab131, _0x2c2262, _0x39e4b4, _0x2cd91e, _0x90b289, _0xf62a74, _0x58fa7e, _0x4be6fc, _0x359705, _0x3291a2, _0x1fee7b, _0x5a3e81, _0x3a7b0c, _0x2b5ab8, _0x403518, _0x4a9f6d;
 					(function () {
 						var _0x23f01b = _0x4b69f2, _0x15a146;
 						_0x39e4b4 = {
@@ -18897,12 +18895,12 @@ function a0_0x53fe() {
 						(function () {
 							var _0x234035, _0x770e5f;
 							_0x2f54fe = function _0x52684f(_0x515943) {
-								var _0x2a1c84 = a0_0x3ffc;
+								var _0x2a1c84 = TT;
 								return _0x4e9dda(_0x39e4b4[_0x2a1c84(0xa33)], new Uint8Array([0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1]), _0x515943[_0x2a1c84(0x604)] === _0x2a1c84(0xb1b) ? _0x234035(_0x515943) : _0x770e5f(_0x515943));
 							}
 								,
 								_0x234035 = function _0x2f2585(_0x1c6e53) {
-									var _0x493ba2 = a0_0x3ffc, _0x5e9252 = _0x1c6e53[_0x493ba2(0x3fd)] || [], _0x662036 = _0x1c6e53[_0x493ba2(0x7ca)] || [], _0x38f2a3 = [], _0x4f66c5 = [], _0x5b0d05;
+									var _0x493ba2 = TT, _0x5e9252 = _0x1c6e53[_0x493ba2(0x3fd)] || [], _0x662036 = _0x1c6e53[_0x493ba2(0x7ca)] || [], _0x38f2a3 = [], _0x4f66c5 = [], _0x5b0d05;
 									for (_0x5b0d05 = 0x0; _0x5b0d05 < _0x5e9252[_0x493ba2(0x9f1)]; _0x5b0d05++) {
 										_0x38f2a3['push']((_0x5e9252[_0x5b0d05][_0x493ba2(0xb06)] & 0xff00) >>> 0x8),
 											_0x38f2a3['push'](_0x5e9252[_0x5b0d05]['byteLength'] & 0xff),
@@ -18917,7 +18915,7 @@ function a0_0x53fe() {
 								}
 								,
 								_0x770e5f = function _0xbd5b53(_0x2119b0) {
-									var _0x3f3321 = a0_0x3ffc;
+									var _0x3f3321 = TT;
 									return _0x4e9dda(_0x39e4b4[_0x3f3321(0xa67)], new Uint8Array([0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, (_0x2119b0[_0x3f3321(0x24c)] & 0xff00) >> 0x8, _0x2119b0[_0x3f3321(0x24c)] & 0xff, (_0x2119b0[_0x3f3321(0x6f5)] & 0xff00) >> 0x8, _0x2119b0['samplesize'] & 0xff, 0x0, 0x0, 0x0, 0x0, (_0x2119b0[_0x3f3321(0x366)] & 0xff00) >> 0x8, _0x2119b0['samplerate'] & 0xff, 0x0, 0x0]), _0x1aa347(_0x2119b0));
 								}
 								;
@@ -18958,7 +18956,7 @@ function a0_0x53fe() {
 						(function () {
 							var _0x1384fc, _0x3c0f11, _0x24d8ee;
 							_0x24d8ee = function _0x3ede20(_0x340302, _0x1cacac) {
-								var _0x1ffc70 = a0_0x3ffc
+								var _0x1ffc70 = TT
 									, _0x3d03d1 = 0x0
 									, _0xfed87f = 0x0
 									, _0x45bf7b = 0x0
@@ -18971,7 +18969,7 @@ function a0_0x53fe() {
 							}
 								,
 								_0x3c0f11 = function _0x21a1ed(_0x22e3ef, _0x1aaeb1) {
-									var _0x10ed11 = a0_0x3ffc, _0x1e598b, _0xe3064b, _0x5b3345, _0x312a9a;
+									var _0x10ed11 = TT, _0x1e598b, _0xe3064b, _0x5b3345, _0x312a9a;
 									_0xe3064b = _0x22e3ef[_0x10ed11(0x110)] || [],
 										_0x1aaeb1 += 0x8 + 0xc + 0x10 * _0xe3064b[_0x10ed11(0x9f1)],
 										_0x1e598b = _0x24d8ee(_0xe3064b, _0x1aaeb1);
@@ -18983,7 +18981,7 @@ function a0_0x53fe() {
 								}
 								,
 								_0x1384fc = function _0x23b5fd(_0xcf3129, _0x49479b) {
-									var _0x34f617 = a0_0x3ffc, _0x24c783, _0x4c9bf7, _0x4bb6aa, _0x35591c;
+									var _0x34f617 = TT, _0x24c783, _0x4c9bf7, _0x4bb6aa, _0x35591c;
 									_0x4c9bf7 = _0xcf3129[_0x34f617(0x110)] || [],
 										_0x49479b += 0x8 + 0xc + 0x8 * _0x4c9bf7[_0x34f617(0x9f1)],
 										_0x24c783 = _0x24d8ee(_0x4c9bf7, _0x49479b);
@@ -18995,7 +18993,7 @@ function a0_0x53fe() {
 								}
 								,
 								_0x2c2262 = function _0x115e65(_0x249327, _0x4ef3cd) {
-									var _0x3f40c1 = a0_0x3ffc;
+									var _0x3f40c1 = TT;
 									if (_0x249327[_0x3f40c1(0x604)] === 'audio')
 										return _0x1384fc(_0x249327, _0x4ef3cd);
 									return _0x3c0f11(_0x249327, _0x4ef3cd);
@@ -19119,16 +19117,16 @@ function a0_0x53fe() {
 					}
 						, _0x404071 = function _0x164b32() {
 							this['init'] = function () {
-								var _0x47dc38 = a0_0x3ffc
+								var _0x47dc38 = TT
 									, _0x39c7f8 = {};
 								this['on'] = function (_0x40eb20, _0x46b075) {
-									var _0x2c4c2a = a0_0x3ffc;
+									var _0x2c4c2a = TT;
 									!_0x39c7f8[_0x40eb20] && (_0x39c7f8[_0x40eb20] = []),
 										_0x39c7f8[_0x40eb20] = _0x39c7f8[_0x40eb20][_0x2c4c2a(0x79a)](_0x46b075);
 								}
 									,
 									this['off'] = function (_0x55c009, _0x28a4cf) {
-										var _0x5cef88 = a0_0x3ffc, _0x374b97;
+										var _0x5cef88 = TT, _0x374b97;
 										if (!_0x39c7f8[_0x55c009])
 											return ![];
 										return _0x374b97 = _0x39c7f8[_0x55c009][_0x5cef88(0x1e9)](_0x28a4cf),
@@ -19170,7 +19168,7 @@ function a0_0x53fe() {
 					_0x404071['prototype'][_0x4b69f2(0x689)] = function (_0x198e2f) {
 						var _0x31cf89 = _0x4b69f2;
 						return this['on']('data', function (_0x3ef790) {
-							var _0x16150f = a0_0x3ffc;
+							var _0x16150f = TT;
 							_0x198e2f[_0x16150f(0x609)](_0x3ef790);
 						}),
 							this['on'](_0x31cf89(0x3f4), function (_0x8da03d) {
@@ -20258,7 +20256,7 @@ function a0_0x53fe() {
 									'size': 0x0
 								}
 								, _0xfc1a15 = function _0x12b259(_0x1ffbf3, _0x1b5f8) {
-									var _0x4dec0e = a0_0x3ffc, _0xadf39a;
+									var _0x4dec0e = TT, _0xadf39a;
 									_0x1b5f8[_0x4dec0e(0x4d1)] = 0x6 + (_0x1ffbf3[0x4] << 0x8 | _0x1ffbf3[0x5]),
 										_0x1b5f8[_0x4dec0e(0x902)] = (_0x1ffbf3[0x6] & 0x4) !== 0x0,
 										_0xadf39a = _0x1ffbf3[0x7],
@@ -20272,7 +20270,7 @@ function a0_0x53fe() {
 										_0x1b5f8['data'] = _0x1ffbf3[_0x4dec0e(0x254)](0x9 + _0x1ffbf3[0x8]);
 								}
 								, _0x5c65e7 = function _0x59e500(_0x49af9a, _0x1b05e2, _0x162f99) {
-									var _0x51993f = a0_0x3ffc, _0x31ab88 = new Uint8Array(_0x49af9a['size']), _0x5145b6 = {
+									var _0x51993f = TT, _0x31ab88 = new Uint8Array(_0x49af9a['size']), _0x5145b6 = {
 										'type': _0x1b05e2
 									}, _0x1a008f = 0x0, _0x2be2d2 = 0x0, _0x48560e = ![], _0x149c90;
 									if (!_0x49af9a[_0x51993f(0xa27)]['length'] || _0x49af9a['size'] < 0x9)
@@ -20294,7 +20292,7 @@ function a0_0x53fe() {
 									({
 										'pat': function _0x1a35cd() { },
 										'pes': function _0xfa003a() {
-											var _0x5ca2f3 = a0_0x3ffc, _0x459944, _0x17c955;
+											var _0x5ca2f3 = TT, _0x459944, _0x17c955;
 											switch (_0x2fb1a7[_0x5ca2f3(0x273)]) {
 												case _0x308632['H264_STREAM_TYPE']:
 												case _0x308632[_0x5ca2f3(0x428)]:
@@ -20317,7 +20315,7 @@ function a0_0x53fe() {
 												_0x459944[_0x5ca2f3(0x265)] += _0x2fb1a7[_0x5ca2f3(0xa27)][_0x5ca2f3(0xb06)];
 										},
 										'pmt': function _0x66374c() {
-											var _0x1ec5fb = a0_0x3ffc
+											var _0x1ec5fb = TT
 												, _0x2dcdad = {
 													'type': 'metadata',
 													'tracks': []
@@ -22396,7 +22394,7 @@ function a0_0x53fe() {
 						}
 						, _0x2873c6 = (function () {
 							function _0x478839(_0x3a2953, _0x4b97c8) {
-								var _0x442d67 = a0_0x3ffc;
+								var _0x442d67 = TT;
 								for (var _0x15bde0 = 0x0; _0x15bde0 < _0x4b97c8[_0x442d67(0x9f1)]; _0x15bde0++) {
 									var _0x5658f5 = _0x4b97c8[_0x15bde0];
 									_0x5658f5[_0x442d67(0x55c)] = _0x5658f5['enumerable'] || ![],
@@ -22407,7 +22405,7 @@ function a0_0x53fe() {
 								}
 							}
 							return function (_0x3cf64e, _0x4cc007, _0x497dad) {
-								var _0x3a27e9 = a0_0x3ffc;
+								var _0x3a27e9 = TT;
 								if (_0x4cc007)
 									_0x478839(_0x3cf64e[_0x3a27e9(0x2a2)], _0x4cc007);
 								if (_0x497dad)
@@ -22458,7 +22456,7 @@ function a0_0x53fe() {
 						, _0x361a23 = (function () {
 							var _0x3ab1a4 = _0x4b69f2;
 							function _0x5a1c6c(_0x12a37b, _0x1ebf1a) {
-								var _0x32d6cd = a0_0x3ffc;
+								var _0x32d6cd = TT;
 								_0x66af58(this, _0x5a1c6c),
 									this['options'] = _0x1ebf1a || {},
 									this[_0x32d6cd(0x6eb)] = _0x12a37b,
@@ -22467,7 +22465,7 @@ function a0_0x53fe() {
 							return _0x2873c6(_0x5a1c6c, [{
 								'key': 'init',
 								'value': function _0xd747b7() {
-									var _0x157781 = a0_0x3ffc;
+									var _0x157781 = TT;
 									this[_0x157781(0x509)] && this[_0x157781(0x509)]['dispose'](),
 										this['transmuxer'] = new _0x138ef8[(_0x157781(0x476))](this['options']),
 										_0x805dbc(this[_0x157781(0x6eb)], this['transmuxer']);
@@ -22816,7 +22814,7 @@ function a0_0x53fe() {
 				var _0x317829 = _0x2eac47;
 				_0x2b5e46(_0x50fb40, _0x44d7e8);
 				function _0x50fb40(_0x27796a, _0x29bb9f) {
-					var _0x1776aa = a0_0x3ffc;
+					var _0x1776aa = TT;
 					_0x2f247f(this, _0x50fb40);
 					var _0x4c99c8 = _0x42d6e2(this, (_0x50fb40[_0x1776aa(0x6bc)] || Object[_0x1776aa(0x1b5)](_0x50fb40))[_0x1776aa(0x817)](this, _0x1dff89[_0x1776aa(0x363)]));
 					_0x4c99c8[_0x1776aa(0x924)] = 0x0,
@@ -23112,7 +23110,7 @@ function a0_0x53fe() {
 				var _0x3b036e = _0x2eac47;
 				_0x2b5e46(_0x52e1c9, _0x522d09);
 				function _0x52e1c9() {
-					var _0x56f3ba = a0_0x3ffc;
+					var _0x56f3ba = TT;
 					_0x2f247f(this, _0x52e1c9);
 					var _0x262984 = _0x42d6e2(this, (_0x52e1c9[_0x56f3ba(0x6bc)] || Object['getPrototypeOf'](_0x52e1c9))[_0x56f3ba(0x817)](this))
 						, _0x3fafb4 = void 0x0;
@@ -23385,7 +23383,7 @@ function a0_0x53fe() {
 				var _0x5aa714 = _0x2eac47;
 				_0x2b5e46(_0x16fde4, _0xfeee70);
 				function _0x16fde4(_0x143ef3, _0xdc6b6, _0x190995, _0x227036) {
-					var _0x31a96a = a0_0x3ffc;
+					var _0x31a96a = TT;
 					_0x2f247f(this, _0x16fde4);
 					var _0x5f08a9 = _0x42d6e2(this, (_0x16fde4[_0x31a96a(0x6bc)] || Object['getPrototypeOf'](_0x16fde4))[_0x31a96a(0x817)](this));
 					_0x5f08a9[_0x31a96a(0x204)] = _0xdc6b6,
@@ -23635,7 +23633,7 @@ function a0_0x53fe() {
 		var _0x51a0d0 = (function () {
 			var _0x205493 = _0x2eac47;
 			function _0x400de6(_0x27a2fb, _0x4bcde9, _0x5654a8, _0x3526b7) {
-				var _0x5304aa = a0_0x3ffc;
+				var _0x5304aa = TT;
 				_0x2f247f(this, _0x400de6),
 					this[_0x5304aa(0x4b6)] = [],
 					this[_0x5304aa(0x69c)] = null,
@@ -23700,7 +23698,7 @@ function a0_0x53fe() {
 					var _0x314458 = this;
 					this['processedAppend_'] = !![],
 						this['queueCallback_'](function () {
-							var _0x290e9d = a0_0x3ffc;
+							var _0x290e9d = TT;
 							_0x314458[_0x290e9d(0x70f)][_0x290e9d(0x677)](_0x14e04a);
 						}, _0x1f1da4);
 				}
@@ -23851,7 +23849,7 @@ function a0_0x53fe() {
 			}
 			, _0x52d96f = function _0x120969(_0x3a1488, _0x5e5a6c) {
 				return function (_0x2267ad, _0x5501d9) {
-					var _0x11e41d = a0_0x3ffc
+					var _0x11e41d = TT
 						, _0x46c84e = _0x5501d9[_0x11e41d(0x2d0)]
 						, _0x334662 = _0x2adc71(_0x2267ad, _0x5501d9);
 					if (_0x334662)
@@ -23871,7 +23869,7 @@ function a0_0x53fe() {
 			}
 			, _0x343de9 = function _0x30203f(_0x23bab8, _0x288a3d, _0x19913b) {
 				return function (_0x12d653, _0x5b082e) {
-					var _0x4a1093 = a0_0x3ffc
+					var _0x4a1093 = TT
 						, _0x11e41c = _0x5b082e[_0x4a1093(0x2d0)]
 						, _0x7e8f79 = _0x2adc71(_0x12d653, _0x5b082e);
 					if (_0x7e8f79)
@@ -23893,7 +23891,7 @@ function a0_0x53fe() {
 			}
 			, _0x375d1a = function _0x3f7693(_0x102070, _0x4aba75, _0x196265) {
 				return function (_0x3638b4, _0x290df3) {
-					var _0x8988a8 = a0_0x3ffc
+					var _0x8988a8 = TT
 						, _0x4e81df = _0x290df3['response']
 						, _0xc6183f = _0x2adc71(_0x3638b4, _0x290df3)
 						, _0xf0da7b = void 0x0;
@@ -23919,7 +23917,7 @@ function a0_0x53fe() {
 			, _0x56317e = function _0x2676ef(_0x5c8d37, _0x250c69, _0x3ec347) {
 				var _0x18404f = _0x2eac47
 					, _0x227ea0 = function _0x311c38(_0x4a61d8) {
-						var _0x34e7ce = a0_0x3ffc;
+						var _0x34e7ce = TT;
 						if (_0x4a61d8[_0x34e7ce(0xa27)][_0x34e7ce(0x9b2)] === _0x250c69['requestId']) {
 							_0x5c8d37[_0x34e7ce(0x216)](_0x34e7ce(0x3f9), _0x311c38);
 							var _0x99dcde = _0x4a61d8['data'][_0x34e7ce(0x32a)];
@@ -23946,7 +23944,7 @@ function a0_0x53fe() {
 				var _0x1a591b = []
 					, _0x34407d = 0x0;
 				return function (_0x208577, _0x2dfa3f) {
-					var _0x5d1e69 = a0_0x3ffc;
+					var _0x5d1e69 = TT;
 					_0x208577 && (_0x5b0b74(_0x1d2200),
 						_0x1a591b[_0x5d1e69(0x609)](_0x208577));
 					_0x34407d += 0x1;
@@ -23965,7 +23963,7 @@ function a0_0x53fe() {
 			}
 			, _0x1a0474 = function _0x73ff7c(_0x31395a, _0x2b3e55) {
 				return function (_0x549509) {
-					var _0x63875d = a0_0x3ffc;
+					var _0x63875d = TT;
 					return _0x31395a[_0x63875d(0x8ac)] = _0x1dff89['mergeOptions'](_0x31395a[_0x63875d(0x8ac)], _0x1c62bf(_0x549509)),
 						!_0x31395a[_0x63875d(0x8ac)][_0x63875d(0x5cb)] && _0x31395a[_0x63875d(0x8ac)][_0x63875d(0x407)] && (_0x31395a[_0x63875d(0x8ac)][_0x63875d(0x5cb)] = Date[_0x63875d(0x5d0)]()),
 						_0x2b3e55(_0x549509, _0x31395a);
@@ -24277,7 +24275,7 @@ function a0_0x53fe() {
 				var _0x1f50a3 = _0x2eac47;
 				_0x2b5e46(_0x256a30, _0x3f3d41);
 				function _0x256a30(_0x137c7d) {
-					var _0x91a173 = a0_0x3ffc;
+					var _0x91a173 = TT;
 					_0x2f247f(this, _0x256a30);
 					var _0x493b8a = _0x42d6e2(this, (_0x256a30[_0x91a173(0x6bc)] || Object[_0x91a173(0x1b5)](_0x256a30))[_0x91a173(0x817)](this));
 					if (!_0x137c7d)
@@ -24936,7 +24934,7 @@ function a0_0x53fe() {
 				var _0x22a794 = _0x2eac47;
 				_0x2b5e46(_0x4f4f34, _0x135459);
 				function _0x4f4f34(_0x120f91) {
-					var _0x29fa93 = a0_0x3ffc
+					var _0x29fa93 = TT
 						, _0x419496 = arguments[_0x29fa93(0x9f1)] > 0x1 && arguments[0x1] !== undefined ? arguments[0x1] : {};
 					_0x2f247f(this, _0x4f4f34);
 					var _0x1584e7 = _0x42d6e2(this, (_0x4f4f34['__proto__'] || Object[_0x29fa93(0x1b5)](_0x4f4f34))[_0x29fa93(0x817)](this, _0x120f91, _0x419496));
@@ -25321,7 +25319,7 @@ function a0_0x53fe() {
 				var _0x3cc39e = _0x2eac47;
 				_0x2b5e46(_0x365607, _0x5cc463);
 				function _0x365607() {
-					var _0x58eafd = a0_0x3ffc;
+					var _0x58eafd = TT;
 					_0x2f247f(this, _0x365607);
 					var _0x31ab86 = _0x42d6e2(this, (_0x365607['__proto__'] || Object[_0x58eafd(0x1b5)](_0x365607))['call'](this));
 					return _0x31ab86['inspectCache_'] = undefined,
@@ -25552,7 +25550,7 @@ function a0_0x53fe() {
 				var _0x270da4 = this
 					, _0x374736 = (function () {
 						function _0x68b2b4(_0x5b2801) {
-							var _0x22a715 = a0_0x3ffc;
+							var _0x22a715 = TT;
 							return _0x5b2801[_0x22a715(0x254)](0x0, _0x5b2801[_0x22a715(0xb06)] - _0x5b2801[_0x5b2801[_0x22a715(0xb06)] - 0x1]);
 						}
 						var _0x3b217d = function _0x4acd1b(_0x581f81, _0x269602) {
@@ -25561,7 +25559,7 @@ function a0_0x53fe() {
 						}
 							, _0x2a7f88 = (function () {
 								function _0x2a1f63(_0x4afc6a, _0x4be495) {
-									var _0x92766a = a0_0x3ffc;
+									var _0x92766a = TT;
 									for (var _0x49cd75 = 0x0; _0x49cd75 < _0x4be495[_0x92766a(0x9f1)]; _0x49cd75++) {
 										var _0x530b19 = _0x4be495[_0x49cd75];
 										_0x530b19[_0x92766a(0x55c)] = _0x530b19[_0x92766a(0x55c)] || ![],
@@ -25572,7 +25570,7 @@ function a0_0x53fe() {
 									}
 								}
 								return function (_0xcab289, _0x1c0287, _0x43ea4a) {
-									var _0x22ce12 = a0_0x3ffc;
+									var _0x22ce12 = TT;
 									if (_0x1c0287)
 										_0x2a1f63(_0xcab289[_0x22ce12(0x2a2)], _0x1c0287);
 									if (_0x43ea4a)
@@ -25582,7 +25580,7 @@ function a0_0x53fe() {
 									;
 							}())
 							, _0x29e189 = function _0x3cc6ab(_0x172c13, _0x31736b) {
-								var _0x293020 = a0_0x3ffc;
+								var _0x293020 = TT;
 								if (typeof _0x31736b !== 'function' && _0x31736b !== null)
 									throw new TypeError(_0x293020(0xa82) + (typeof _0x31736b === 'undefined' ? _0x293020(0x9aa) : _0x65b994(_0x31736b)));
 								_0x172c13[_0x293020(0x2a2)] = Object[_0x293020(0xac3)](_0x31736b && _0x31736b['prototype'], {
@@ -25597,13 +25595,13 @@ function a0_0x53fe() {
 									Object[_0x293020(0x7f6)] ? Object[_0x293020(0x7f6)](_0x172c13, _0x31736b) : _0x172c13[_0x293020(0x6bc)] = _0x31736b;
 							}
 							, _0x389698 = function _0x2d8310(_0x2d1c3d, _0x20bf89) {
-								var _0x55c704 = a0_0x3ffc;
+								var _0x55c704 = TT;
 								if (!_0x2d1c3d)
 									throw new ReferenceError(_0x55c704(0x371));
 								return _0x20bf89 && ((typeof _0x20bf89 === 'undefined' ? _0x55c704(0x9aa) : _0x65b994(_0x20bf89)) === _0x55c704(0x728) || typeof _0x20bf89 === _0x55c704(0xace)) ? _0x20bf89 : _0x2d1c3d;
 							}
 							, _0x37bd01 = function _0x540951() {
-								var _0x530880 = a0_0x3ffc
+								var _0x530880 = TT
 									, _0x5ba795 = [[[], [], [], [], []], [[], [], [], [], []]]
 									, _0x46854f = _0x5ba795[0x0]
 									, _0x46132f = _0x5ba795[0x1]
@@ -25645,9 +25643,9 @@ function a0_0x53fe() {
 							}
 							, _0x5edd88 = null
 							, _0x3c0266 = (function () {
-								var _0x16e184 = a0_0x3ffc;
+								var _0x16e184 = TT;
 								function _0x588fc4(_0x5e3072) {
-									var _0x3feb8f = a0_0x3ffc;
+									var _0x3feb8f = TT;
 									_0x3b217d(this, _0x588fc4);
 									!_0x5edd88 && (_0x5edd88 = _0x37bd01());
 									this[_0x3feb8f(0x34e)] = [[_0x5edd88[0x0][0x0][_0x3feb8f(0x11b)](), _0x5edd88[0x0][0x1][_0x3feb8f(0x11b)](), _0x5edd88[0x0][0x2][_0x3feb8f(0x11b)](), _0x5edd88[0x0][0x3][_0x3feb8f(0x11b)](), _0x5edd88[0x0][0x4]['slice']()], [_0x5edd88[0x1][0x0][_0x3feb8f(0x11b)](), _0x5edd88[0x1][0x1][_0x3feb8f(0x11b)](), _0x5edd88[0x1][0x2][_0x3feb8f(0x11b)](), _0x5edd88[0x1][0x3]['slice'](), _0x5edd88[0x1][0x4][_0x3feb8f(0x11b)]()]];
@@ -25720,9 +25718,9 @@ function a0_0x53fe() {
 									_0x588fc4;
 							}())
 							, _0x384b38 = (function () {
-								var _0x1b705d = a0_0x3ffc;
+								var _0x1b705d = TT;
 								function _0x7279d0() {
-									var _0x397019 = a0_0x3ffc;
+									var _0x397019 = TT;
 									_0x3b217d(this, _0x7279d0),
 										this[_0x397019(0x8d4)] = {};
 								}
@@ -25775,10 +25773,10 @@ function a0_0x53fe() {
 									_0x7279d0;
 							}())
 							, _0x959767 = function (_0x4aebed) {
-								var _0x57c4b3 = a0_0x3ffc;
+								var _0x57c4b3 = TT;
 								_0x29e189(_0x573629, _0x4aebed);
 								function _0x573629() {
-									var _0x8b6cab = a0_0x3ffc;
+									var _0x8b6cab = TT;
 									_0x3b217d(this, _0x573629);
 									var _0x4dd190 = _0x389698(this, _0x4aebed[_0x8b6cab(0x817)](this, _0x384b38));
 									return _0x4dd190[_0x8b6cab(0x56a)] = [],
@@ -25804,7 +25802,7 @@ function a0_0x53fe() {
 								return _0x8729f9 << 0x18 | (_0x8729f9 & 0xff00) << 0x8 | (_0x8729f9 & 0xff0000) >> 0x8 | _0x8729f9 >>> 0x18;
 							}
 							, _0x5a2c2c = function _0xd2b8dd(_0x468f58, _0x4b20aa, _0x8f88da) {
-								var _0x5546a9 = a0_0x3ffc
+								var _0x5546a9 = TT
 									, _0x161acc = new Int32Array(_0x468f58[_0x5546a9(0x611)], _0x468f58['byteOffset'], _0x468f58['byteLength'] >> 0x2)
 									, _0x11d656 = new _0x3c0266(Array['prototype']['slice'][_0x5546a9(0x817)](_0x4b20aa))
 									, _0xb4e6d9 = new Uint8Array(_0x468f58['byteLength'])
@@ -25840,9 +25838,9 @@ function a0_0x53fe() {
 								return _0xb4e6d9;
 							}
 							, _0x3cb653 = (function () {
-								var _0x3871af = a0_0x3ffc;
+								var _0x3871af = TT;
 								function _0x2b127e(_0x2d5f26, _0x10ec59, _0x35aa2b, _0x54f3a5) {
-									var _0x257909 = a0_0x3ffc;
+									var _0x257909 = TT;
 									_0x3b217d(this, _0x2b127e);
 									var _0x2de914 = _0x2b127e[_0x257909(0x93b)]
 										, _0x40ca53 = new Int32Array(_0x2d5f26[_0x257909(0x611)])
@@ -25860,7 +25858,7 @@ function a0_0x53fe() {
 								}
 								return _0x2b127e[_0x3871af(0x2a2)][_0x3871af(0x4ee)] = function _0x200a3c(_0x4cf247, _0x5759b6, _0x575a1a, _0x5a2487) {
 									return function () {
-										var _0x1cd560 = a0_0x3ffc
+										var _0x1cd560 = TT
 											, _0x3c77cf = _0x5a2c2c(_0x4cf247, _0x5759b6, _0x575a1a);
 										_0x5a2487[_0x1cd560(0x25a)](_0x3c77cf, _0x4cf247[_0x1cd560(0x5c4)]);
 									}
@@ -25878,7 +25876,7 @@ function a0_0x53fe() {
 							, _0x95a5b = function _0x478b01(_0x4b8d89) {
 								var _0x2d3f6b = {};
 								return Object['keys'](_0x4b8d89)['forEach'](function (_0x3f9e96) {
-									var _0x1c3708 = a0_0x3ffc
+									var _0x1c3708 = TT
 										, _0x23d729 = _0x4b8d89[_0x3f9e96];
 									ArrayBuffer[_0x1c3708(0x247)](_0x23d729) ? _0x2d3f6b[_0x3f9e96] = {
 										'bytes': _0x23d729['buffer'],
@@ -25889,7 +25887,7 @@ function a0_0x53fe() {
 									_0x2d3f6b;
 							}
 							, _0x42a790 = function _0x168019(_0x4948da) {
-								var _0x36fda9 = a0_0x3ffc;
+								var _0x36fda9 = TT;
 								_0x4948da[_0x36fda9(0x1cd)] = function (_0x4cd029) {
 									var _0x551622 = _0x36fda9
 										, _0x35d605 = _0x4cd029[_0x551622(0xa27)]
@@ -25932,7 +25930,7 @@ function a0_0x53fe() {
 			}
 			, _0x1d90b6 = function _0x4499a8(_0xbe230f, _0x566567) {
 				return function () {
-					var _0x1ca2c4 = a0_0x3ffc
+					var _0x1ca2c4 = TT
 						, _0x3387de = _0x566567[_0x1ca2c4(0x682)]
 						, _0x5c6bea = _0x3387de[_0xbe230f]
 						, _0x5b4751 = _0x3387de[_0x1ca2c4(0x3bc)]
@@ -25954,7 +25952,7 @@ function a0_0x53fe() {
 			}
 			, _0x1204ac = function _0x308d86(_0x3696cf, _0x281379) {
 				return function () {
-					var _0x49c6bd = a0_0x3ffc
+					var _0x49c6bd = TT
 						, _0x324551 = _0x281379[_0x49c6bd(0x682)]
 						, _0x3e5d89 = _0x324551[_0x3696cf]
 						, _0xb7eb70 = _0x324551[_0x49c6bd(0x3bc)]
@@ -25982,7 +25980,7 @@ function a0_0x53fe() {
 			, _0x3928f5 = {
 				'AUDIO': function _0x274f2c(_0x8c4985, _0x51314c) {
 					return function () {
-						var _0x5be8af = a0_0x3ffc
+						var _0x5be8af = TT
 							, _0x167baf = _0x51314c[_0x5be8af(0x682)][_0x8c4985]
 							, _0x3b1df9 = _0x51314c['mediaTypes'][_0x8c4985]
 							, _0x55b7d4 = _0x51314c[_0x5be8af(0x2dc)];
@@ -26009,7 +26007,7 @@ function a0_0x53fe() {
 				},
 				'SUBTITLES': function _0xe3ec5f(_0x15092e, _0x4bdb2f) {
 					return function () {
-						var _0x5c240b = a0_0x3ffc
+						var _0x5c240b = TT
 							, _0x48a9af = _0x4bdb2f[_0x5c240b(0x682)][_0x15092e]
 							, _0x5a7c30 = _0x4bdb2f[_0x5c240b(0x374)][_0x15092e];
 						_0x1dff89[_0x5c240b(0x648)]['warn'](_0x5c240b(0x2d8) + _0x5c240b(0x42e)),
@@ -26065,7 +26063,7 @@ function a0_0x53fe() {
 			}
 			, _0xca6d7b = function _0x369023(_0xb444a4, _0x41ae54) {
 				return function (_0x80c755) {
-					var _0xa14451 = a0_0x3ffc;
+					var _0xa14451 = TT;
 					return _0x80c755[_0xa14451(0x692)][_0xb444a4] === _0x41ae54;
 				}
 					;
@@ -26205,7 +26203,7 @@ function a0_0x53fe() {
 			}
 			, _0x43e4cb = function _0x357ec0(_0x3e976f, _0x2437cc) {
 				return function (_0x35130a) {
-					var _0x27c485 = a0_0x3ffc
+					var _0x27c485 = TT
 						, _0x1211a7 = _0x2437cc[_0x27c485(0x540)]
 						, _0x5e35a2 = _0x2437cc[_0x27c485(0x374)][_0x3e976f][_0x27c485(0x28a)]
 						, _0x4f73dc = _0x1211a7['media']();
@@ -26227,7 +26225,7 @@ function a0_0x53fe() {
 			, _0x588136 = {
 				'AUDIO': function _0x50d4b1(_0x25cf85, _0xeda9d7) {
 					return function () {
-						var _0x54f8ba = a0_0x3ffc
+						var _0x54f8ba = TT
 							, _0x5d9c82 = _0xeda9d7['mediaTypes'][_0x25cf85][_0x54f8ba(0x576)];
 						for (var _0x2269b6 in _0x5d9c82) {
 							if (_0x5d9c82[_0x2269b6]['enabled'])
@@ -26239,7 +26237,7 @@ function a0_0x53fe() {
 				},
 				'SUBTITLES': function _0x9c2591(_0x38343b, _0xdef291) {
 					return function () {
-						var _0x22e1df = a0_0x3ffc
+						var _0x22e1df = TT
 							, _0x5e87cb = _0xdef291[_0x22e1df(0x374)][_0x38343b]['tracks'];
 						for (var _0x208e02 in _0x5e87cb) {
 							if (_0x5e87cb[_0x208e02][_0x22e1df(0x3cb)] === _0x22e1df(0x471))
@@ -26327,7 +26325,7 @@ function a0_0x53fe() {
 				var _0x40d375 = _0x2eac47;
 				_0x2b5e46(_0x2ec892, _0x591650);
 				function _0x2ec892(_0x2669ad) {
-					var _0x5a0816 = a0_0x3ffc;
+					var _0x5a0816 = TT;
 					_0x2f247f(this, _0x2ec892);
 					var _0xb0c4e0 = _0x42d6e2(this, (_0x2ec892[_0x5a0816(0x6bc)] || Object[_0x5a0816(0x1b5)](_0x2ec892))['call'](this))
 						, _0x2a477c = _0x2669ad[_0x5a0816(0x3bd)]
@@ -26426,7 +26424,7 @@ function a0_0x53fe() {
 				return _0x1430d3(_0x2ec892, [{
 					'key': 'setupMasterPlaylistLoaderListeners_',
 					'value': function _0xb0975() {
-						var _0x465899 = a0_0x3ffc
+						var _0x465899 = TT
 							, _0x3c81ba = this;
 						this[_0x465899(0x3f1)]['on'](_0x465899(0x89c), function () {
 							var _0x211e6b = _0x465899
@@ -27010,7 +27008,7 @@ function a0_0x53fe() {
 			}(_0x1dff89[_0x2eac47(0x363)])
 			, _0x4de6d4 = function _0x4c80cc(_0x56e30c, _0xba599, _0x55a380) {
 				return function (_0x1592b8) {
-					var _0x1de206 = a0_0x3ffc
+					var _0x1de206 = TT
 						, _0x4d46d5 = _0x56e30c[_0x1de206(0x2df)]['playlists'][_0xba599]
 						, _0x2b8616 = _0x54c586(_0x4d46d5)
 						, _0x3736a7 = _0x57fd3c(_0x4d46d5);
@@ -27054,7 +27052,7 @@ function a0_0x53fe() {
 			, _0xf84b63 = (function () {
 				var _0x2eefc5 = _0x2eac47;
 				function _0x923813(_0x5dcc7a) {
-					var _0x2156b6 = a0_0x3ffc
+					var _0x2156b6 = TT
 						, _0x1d2dbc = this;
 					_0x2f247f(this, _0x923813),
 						this[_0x2156b6(0xa4f)] = _0x5dcc7a['tech'],
@@ -27363,7 +27361,7 @@ function a0_0x53fe() {
 					_0x12de84(null, _0x328388);
 				},
 				'setCurrentTime': function _0x5c84bb(_0x120ab6) {
-					var _0xb42105 = a0_0x3ffc;
+					var _0xb42105 = TT;
 					return _0x2c2a71['vhs'] && _0x2c2a71[_0xb42105(0xab5)]()[_0xb42105(0x2dd)] === _0x2c2a71['vhs'][_0xb42105(0xab3)]['src'] && _0x2c2a71[_0xb42105(0x60f)][_0xb42105(0x343)](_0x120ab6),
 						_0x120ab6;
 				}
@@ -27502,7 +27500,7 @@ function a0_0x53fe() {
 				var _0x43c074 = _0x2eac47;
 				_0x2b5e46(_0x4899d6, _0x55ad10);
 				function _0x4899d6(_0x59ea7e, _0x28ad63, _0x423f02) {
-					var _0x1148ce = a0_0x3ffc;
+					var _0x1148ce = TT;
 					_0x2f247f(this, _0x4899d6);
 					var _0x1a8691 = _0x42d6e2(this, (_0x4899d6[_0x1148ce(0x6bc)] || Object[_0x1148ce(0x1b5)](_0x4899d6))[_0x1148ce(0x817)](this, _0x28ad63, _0x423f02['hls']));
 					if (_0x28ad63[_0x1148ce(0x2e4)] && _0x28ad63[_0x1148ce(0x2e4)][_0x1148ce(0x516)]) {
