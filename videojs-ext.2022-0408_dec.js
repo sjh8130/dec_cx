@@ -1014,43 +1014,29 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			}, 1000)
 		},
 		faceCollection: function (e, c, f) {
-			if (e == "play" && this.timeCount == 0) {
+			if (e == "play" && this.timeCount == 0 && typeof (startFaceCollection) != "undefined") {
+				startFaceCollection(c, f, this)
+			} else if (e == "pause") {
+				this.playTimer && clearInterval(this.playTimer);
+				if (!this.isPlay && this.timeCount >= this.captureInterval) {
+					if (typeof (startFaceCollection) != "undefined") {
+						startFaceCollection(c, f, this)
+					}
+					this.timeCount = 0
+				}
+			} else if (e == "ended") {
+				this.playTimer && clearInterval(this.playTimer);
 				if (typeof (startFaceCollection) != "undefined") {
-					startFaceCollection(c, f, this)
+					startFaceCollection(c, f, this);
+					this.isEnd = true
 				}
-			} else {
-				if (e == "pause") {
-					this.playTimer && clearInterval(this.playTimer);
-					if (!this.isPlay && this.timeCount >= this.captureInterval) {
-						if (typeof (startFaceCollection) != "undefined") {
-							startFaceCollection(c, f, this)
-						}
-						this.timeCount = 0
-					}
-				} else {
-					if (e == "ended") {
-						this.playTimer && clearInterval(this.playTimer);
-						if (typeof (startFaceCollection) != "undefined") {
-							startFaceCollection(c, f, this);
-							this.isEnd = true
-						}
-						this.timeCount = 0
-					} else {
-						if (e == "playing") {
-							if (typeof (startFaceCollection) != "undefined") {
-								startFaceCollection(c, f, this);
-								this.playingFace = true
-							}
-						} else {
-							if (e == "aginPlay") {
-								if (typeof (startFaceCollection) != "undefined") {
-									startFaceCollection(c, f, this);
-									this.isAginFace = true
-								}
-							}
-						}
-					}
-				}
+				this.timeCount = 0
+			} else if (e == "playing" && typeof (startFaceCollection) != "undefined") {
+				startFaceCollection(c, f, this);
+				this.playingFace = true
+			} else if (e == "aginPlay" && typeof (startFaceCollection) != "undefined") {
+				startFaceCollection(c, f, this);
+				this.isAginFace = true
 			}
 		},
 		playNextVideo: function (c) {
@@ -1092,21 +1078,23 @@ Ext.define("ans.videojs.VideoQuiz", {
 		var b = this;
 		var tmp_aaa = b.renderData;
 		var tmp_bbb = b.quizRightCountUrl;
-		typeof tmp_bbb != "undefined" && Ext.Ajax.request({
-			url: tmp_bbb,
-			params: {
-				"eventid": tmp_aaa.resourceId,
-				"memberinfo": tmp_aaa.memberinfo
-			},
-			method: "get",
-			success: function (tmp_ccc) {
-				var tmp_ddd = Ext.decode(tmp_ccc.responseText);
-				if (tmp_ddd.status) {
-					Ext.get("rightNum").setHTML(tmp_ddd.rightAnswerCount);
-					Ext.get("rightAnswerNum").setStyle("display", "inline-block")
+		if (typeof tmp_bbb != "undefined") {
+			Ext.Ajax.request({
+				url: tmp_bbb,
+				params: {
+					"eventid": tmp_aaa.resourceId,
+					"memberinfo": tmp_aaa.memberinfo
+				},
+				method: "get",
+				success: function (tmp_ccc) {
+					var tmp_ddd = Ext.decode(tmp_ccc.responseText);
+					if (tmp_ddd.status) {
+						Ext.get("rightNum").setHTML(tmp_ddd.rightAnswerCount);
+						Ext.get("rightAnswerNum").setStyle("display", "inline-block")
+					}
 				}
-			}
-		});
+			});
+		}
 		b.callParent(arguments);
 		var c = b.scrollEl;
 		var a = $(c.dom).niceScroll({
@@ -1660,7 +1648,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 									tmp_topic = Ext.fly(topicContent.elements[0]).select(".topicId" + tmp_I.topicid + ":not(.markertime)"),
 									tmp_J = videojs.formatTime(tmp_I.time);
 								tmp_topic && tmp_topic.elements[0] && tmp_topic.elements[0].parentElement.remove(),
-									tmp_K += '<div class="zsCloud_item topicId" + ccc.topicid + "" data-marker-time="" + ccc.time + "" title ="" + eee + "" onclick ="markersPlayer(this)">' + tmp_J + "</div>";
+									tmp_K += '<div class="zsCloud_item topicId' + tmp_I.topicid + '" data-marker-time="' + tmp_I.time + '" title="' + tmp_J + '"onclick ="markersPlayer(this)">' + tmp_J + "</div>";
 							}
 							tmp_K += "</div></div></div>";
 							return tmp_K;
@@ -1681,9 +1669,9 @@ Ext.define("ans.videojs.TimelineObjects", {
 										if (topic && topic.elements[0]) {
 											topic.elements[0].parentElement.remove()
 										}
-										markerHtml = '<li><span class="topicId" + kkk.topicid + " markertime" data-marker-time="" + kkk.time + "ERYA_TSK_HOST" + mmm + "" onclick ="markersPlayer(this)">' + marker.text + "</span></li>";
+										markerHtml = '<li><span class="topicId' + marker.topicid + 'markertime" data-marker-time="' + marker.time + "ERYA_TSK_HOST" + title + '"onclick="markersPlayer(this)">' + marker.text + "</span></li>";
 									} else {
-										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">" + hhh + "</span>';
+										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">' + tmp_L + '</span>';
 										if (tmp_M && tmp_M.length > 0) {
 											markerHtml += tmp_F1(tmp_M)
 										} else {
@@ -1842,7 +1830,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 				settings.updateDisplay()
 			})
 		}
-	});
+	})
 	videojs.registerPlugin("subtitle", Subtitle)
 })();
 Ext.define("ans.videojs.ErrorDisplay", {
