@@ -196,7 +196,7 @@ setInterval(F7(), 4000);
 						var bw;
 						try {
 							bw = Function('return (function() ' + '{}.constructor("return this")( )' + ');')();
-						} catch (_0x512690) {
+						} catch (xxx) {
 							bw = window;
 						}
 						return bw;
@@ -267,7 +267,7 @@ setInterval(F7(), 4000);
 							};
 					}
 				}
-			} catch (_0x42bbec) {
+			} catch (xxx) {
 				bl = {};
 				bl.x = -2;
 				bl.y = -2;
@@ -296,7 +296,7 @@ setInterval(F7(), 4000);
 						return null;
 					}
 					var da = Math.random(),
-						db = Math.round(1000000000 * da) % 100000000;
+						db = Math.round(1e9 * da) % 1e8;
 					if (10 < (cu += db).length) {
 						cu = parseInt(cu.substring(0, 10)).toString()
 					}
@@ -304,7 +304,7 @@ setInterval(F7(), 4000);
 					var dc = '',
 						dd = '';
 					for (cv = 0; cv < cr.length; cv++) {
-						dd += (dc = parseInt(cr.charCodeAt(cv) ^ Math.floor(cu / cz * 255))) < 16 ? '0' + dc.toString(16) : dc.toString(0x10);
+						dd += (dc = parseInt(cr.charCodeAt(cv) ^ Math.floor(cu / cz * 255))) < 16 ? '0' + dc.toString(16) : dc.toString(16);
 						cu = (cx * cu + cy) % cz;
 					}
 					for (db = db.toString(16); db.length < 8;) {
@@ -323,7 +323,7 @@ setInterval(F7(), 4000);
 function F7(de) {
 	function F26(df) {
 		if (typeof df === 'string') {
-			return function (dg) { }
+			return function (xxxx) { }
 				.constructor('while (true) {}').apply('counter');
 		} else {
 			if ('ynkOu' !== 'OqQrG') {
@@ -368,7 +368,7 @@ function F7(de) {
 					return null;
 				}
 				var dt = Math.random(),
-					du = Math.round(1000000000 * dt) % 100000000;
+					du = Math.round(1e9 * dt) % 1e8;
 				10 < (dm += du).length && (dm = parseInt(dm.substring(0, 10)).toString());
 				dm = (dq * dm + dr) % ds;
 				var dv = '',
@@ -401,5 +401,5 @@ function F7(de) {
 			}
 				.constructor('debu' + 'gger').call('action'));
 		}
-	} catch (_0x237387) { }
+	} catch (xxx) { }
 }
