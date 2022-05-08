@@ -1,9 +1,9 @@
 Ext.Ajax.autoAbort = true;
-Ext.isIpad = navigator.userAgent.indexOf('iPad') > -1;
-Ext.isIos = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-Ext.isAndroid = navigator.userAgent.indexOf("Android") > -1;
+Ext.isIpad = (navigator.userAgent.indexOf('iPad') > -1);
+Ext.isIos = (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/));
+Ext.isAndroid = (navigator.userAgent.indexOf("Android") > -1);
 Ext.isSogou = !!navigator.userAgent.match(/metasr/i);
-Ext.isChaoxing = navigator.userAgent.indexOf("ChaoXingStudy") > -1;
+Ext.isChaoxing = (navigator.userAgent.indexOf("ChaoXingStudy") > -1);
 function greenligth() {
 	Ext.fly(window.frameElement).parent().addCls('ans-job-finished');
 }
@@ -194,8 +194,9 @@ function loadVideo() {
 						videoName = data && data.name || '';
 						if (isVideoVisibleName != "false") {
 							if (Ext.fly(window.frameElement).parent().first('.ans-job-icon') != null) {
-								if (top.location.href.indexOf("nodedetailcontroller/visitnodedetail") > -1)
+								if (top.location.href.indexOf("nodedetailcontroller/visitnodedetail") > -1) {
 									Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title="' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div >')
+								}
 								else
 									Ext.fly(window.frameElement).parent().first('.ans-job-icon').insertHtml('beforeEnd', '<span title="' + videoName + '" style="width: 500px;margin-left: 120px;display: inline-block;height: 23px;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</span>');
 							} else {
@@ -770,7 +771,7 @@ function reSizeIframe() {
 	try {
 		var height = Ext.fly(Ext.select(".main").elements[0]).getHeight();
 		Ext.fly(window.frameElement).setHeight(height + "px");
-	} catch (ex) { console.log(e.message) }
+	} catch (e) { console.log(e.message) }
 }
 function removeDownloadBtn() {
 	Ext.select(".xl-chrome-ext-bar").remove();

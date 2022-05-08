@@ -467,7 +467,7 @@
 					tp: b.totalPage,
 					wc: b.wordCount || e,
 					ic: b.imgCount || f,
-					v: 0x2,
+					v: 2,
 					s: ap,
 					h: Arr2.G(_0x3cabab)
 				};
@@ -715,7 +715,7 @@
 					MD5_oldb = MD5_B;
 					MD5_oldc = MD5_C;
 					MD5_oldd = MD5_D;
-					MDA_A = MD5_md5ff(MDA_A, MD5_B, MD5_C, MD5_D, bi[MD5_i + 0x0], 0x7, -0x28955b88);
+					MDA_A = MD5_md5ff(MDA_A, MD5_B, MD5_C, MD5_D, bi[MD5_i + 0], 0x7, -0x28955b88);
 					MD5_D = MD5_md5ff(MD5_D, MDA_A, MD5_B, MD5_C, bi[MD5_i + 0x1], 0xc, -0x173848aa);
 					MD5_C = MD5_md5ff(MD5_C, MD5_D, MDA_A, MD5_B, bi[MD5_i + 0x2], 0x11, 0x242070db);
 					MD5_B = MD5_md5ff(MD5_B, MD5_C, MD5_D, MDA_A, bi[MD5_i + 0x3], 0x16, -0x3e423112);
@@ -734,7 +734,7 @@
 					MDA_A = MD5_md5gg(MDA_A, MD5_B, MD5_C, MD5_D, bi[MD5_i + 0x1], 0x5, -0x9e1da9e);
 					MD5_D = MD5_md5gg(MD5_D, MDA_A, MD5_B, MD5_C, bi[MD5_i + 0x6], 0x9, -0x3fbf4cc0);
 					MD5_C = MD5_md5gg(MD5_C, MD5_D, MDA_A, MD5_B, bi[MD5_i + 0xb], 0xe, 0x265e5a51);
-					MD5_B = MD5_md5gg(MD5_B, MD5_C, MD5_D, MDA_A, bi[MD5_i + 0x0], 0x14, -0x16493856);
+					MD5_B = MD5_md5gg(MD5_B, MD5_C, MD5_D, MDA_A, bi[MD5_i + 0], 0x14, -0x16493856);
 					MDA_A = MD5_md5gg(MDA_A, MD5_B, MD5_C, MD5_D, bi[MD5_i + 0x5], 0x5, -0x29d0efa3);
 					MD5_D = MD5_md5gg(MD5_D, MDA_A, MD5_B, MD5_C, bi[MD5_i + 0xa], 0x9, 0x2441453);
 					MD5_C = MD5_md5gg(MD5_C, MD5_D, MDA_A, MD5_B, bi[MD5_i + 0xf], 0xe, -0x275e197f);
@@ -756,14 +756,14 @@
 					MD5_C = MD5_md5hh(MD5_C, MD5_D, MDA_A, MD5_B, bi[MD5_i + 0x7], 0x10, -0x944b4a0);
 					MD5_B = MD5_md5hh(MD5_B, MD5_C, MD5_D, MDA_A, bi[MD5_i + 0xa], 0x17, -0x41404390);
 					MDA_A = MD5_md5hh(MDA_A, MD5_B, MD5_C, MD5_D, bi[MD5_i + 0xd], 0x4, 0x289b7ec6);
-					MD5_D = MD5_md5hh(MD5_D, MDA_A, MD5_B, MD5_C, bi[MD5_i + 0x0], 0xb, -0x155ed806);
+					MD5_D = MD5_md5hh(MD5_D, MDA_A, MD5_B, MD5_C, bi[MD5_i + 0], 0xb, -0x155ed806);
 					MD5_C = MD5_md5hh(MD5_C, MD5_D, MDA_A, MD5_B, bi[MD5_i + 0x3], 0x10, -0x2b10cf7b);
 					MD5_B = MD5_md5hh(MD5_B, MD5_C, MD5_D, MDA_A, bi[MD5_i + 0x6], 0x17, 0x4881d05);
 					MDA_A = MD5_md5hh(MDA_A, MD5_B, MD5_C, MD5_D, bi[MD5_i + 0x9], 0x4, -0x262b2fc7);
 					MD5_D = MD5_md5hh(MD5_D, MDA_A, MD5_B, MD5_C, bi[MD5_i + 0xc], 0xb, -0x1924661b);
 					MD5_C = MD5_md5hh(MD5_C, MD5_D, MDA_A, MD5_B, bi[MD5_i + 0xf], 0x10, 0x1fa27cf8);
 					MD5_B = MD5_md5hh(MD5_B, MD5_C, MD5_D, MDA_A, bi[MD5_i + 0x2], 0x17, -0x3b53a99b);
-					MDA_A = MD5_md5ii(MDA_A, MD5_B, MD5_C, MD5_D, bi[MD5_i + 0x0], 0x6, -0xbd6ddbc);
+					MDA_A = MD5_md5ii(MDA_A, MD5_B, MD5_C, MD5_D, bi[MD5_i + 0], 0x6, -0xbd6ddbc);
 					MD5_D = MD5_md5ii(MD5_D, MDA_A, MD5_B, MD5_C, bi[MD5_i + 0x7], 0xa, 0x432aff97);
 					MD5_C = MD5_md5ii(MD5_C, MD5_D, MDA_A, MD5_B, bi[MD5_i + 0xe], 0xf, -0x546bdc59);
 					MD5_B = MD5_md5ii(MD5_B, MD5_C, MD5_D, MDA_A, bi[MD5_i + 0x5], 0x15, -0x36c5fc7);
@@ -860,7 +860,7 @@
 								}
 								continue;
 							case "2":
-								bz[Arr15.Q(bw.length >> 0x2, 0x1)] = undefined;
+								bz[Arr15.Q(bw.length >> 2, 0x1)] = undefined;
 								continue;
 							case "3":
 								return bz;
