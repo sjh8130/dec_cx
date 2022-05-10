@@ -304,22 +304,22 @@ function loadVideo() {
 					case 'failed':
 						_0x1b67ac && clearInterval(_0x1b67ac),
 							_0xbb7e6b.remove(),
-							_0x1191ff.show();
+							_0x1191ff['show']();
 						break;
 					case 'waiting':
-						_0xbb7e6b.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle making">视频正在转码，您无需在此页面等待【9001】</p>');
+						_0xbb7e6b['update']('<div class="line1"><div class="line3"></div></div><p class="tipStyle making">视频正在转码，您无需在此页面等待【9001】</p>');
 						break;
 					case 'converting':
 					case 'transfer':
-						_0xbb7e6b.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频上传中【9002】</p>');
+						_0xbb7e6b['update']('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频上传中【9002】</p>');
 						break;
 				}
 			},
 			'failure': function (_0x22bf0c) {
 				_0x22bf0c.status == 0 ? (_0x1b67ac && clearInterval(_0x1b67ac),
-					_0xbb7e6b.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频加载超时，请刷新页面重试【9003】</p>'),
+					_0xbb7e6b['update']('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频加载超时，请刷新页面重试【9003】</p>'),
 					Ext.get('loading')['hide']()) : (_0x1b67ac && clearInterval(_0x1b67ac),
-						_0xbb7e6b.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle">视频加载失败，请稍后再试【9004】</p>'),
+						_0xbb7e6b['update']('<div class="line1"><div class="line3"></div></div><p class="tipStyle">视频加载失败，请稍后再试【9004】</p>'),
 						Ext.get('loading')['hide']());
 			}
 		});

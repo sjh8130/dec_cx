@@ -1168,10 +1168,10 @@ Ext.define('ans.VideoJs', {
 		},
 		'showModel': function (_0x1fbfc9) {
 			var _0x314015 = this;
-			_0x314015.show(),
+			_0x314015['show'](),
 				_0x1fbfc9 ? (_0x314015['removeCls']('ans-timelineobjects-autosize'),
 					_0x314015['setAutoScroll'](true),
-					_0x314015['bg'].show()) : (_0x314015['addCls']('ans-timelineobjects-autosize'),
+					_0x314015['bg']['show']()) : (_0x314015['addCls']('ans-timelineobjects-autosize'),
 						_0x314015['setAutoScroll'](false));
 		},
 		'hide': function () {
@@ -1347,7 +1347,7 @@ Ext.define('ans.VideoJs', {
 									var _0x4836e8 = $('.zsCloud_body');
 									_0x4836e8['is'](':visible') ? (_0x4836e8['hide'](),
 										$(this)['addClass']('zsCloud_up'),
-										$(this)['text']('展开')) : (_0x4836e8.show(),
+										$(this)['text']('展开')) : (_0x4836e8['show'](),
 											$(this)['removeClass']('zsCloud_up'),
 											$(this)['text']('收起'));
 								});
@@ -1754,7 +1754,7 @@ Ext.define('ans.VideoJs', {
 				}, q, n);
 				h['dom']['addClass'](m['el'](), 'vjs-resolution-button'),
 					h['dom']['addClass'](m['el'](), 'vjs-playline-button'),
-					m.show(),
+					m['show'](),
 					p['selectCDN'] = function (s) {
 						m['items'][s]['onClick'](q['customSourcePicker']),
 							p['play']();

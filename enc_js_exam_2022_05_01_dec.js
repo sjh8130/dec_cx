@@ -245,8 +245,7 @@
 										}
 									}
 									return bd;
-								}
-							;
+								};
 					} else {
 						that = window;
 					}

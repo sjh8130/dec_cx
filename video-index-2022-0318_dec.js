@@ -304,22 +304,22 @@ function loadVideo() {
 					case 'failed':
 						timer && clearInterval(timer),
 							note1Wrap.remove(),
-							note.show();
+							note['show']();
 						break;
 					case 'waiting':
-						note1Wrap.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle making">视频正在转码，您无需在此页面等待【9001】</p>');
+						note1Wrap['update']('<div class="line1"><div class="line3"></div></div><p class="tipStyle making">视频正在转码，您无需在此页面等待【9001】</p>');
 						break;
 					case 'converting':
 					case 'transfer':
-						note1Wrap.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频上传中【9002】</p>');
+						note1Wrap['update']('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频上传中【9002】</p>');
 						break;
 				}
 			},
 			'failure': function (resp) {
 				resp.status == 0 ? (timer && clearInterval(timer),
-					note1Wrap.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频加载超时，请刷新页面重试【9003】</p>'),
+					note1Wrap['update']('<div class="line1"><div class="line2"></div></div><p class="tipStyle">视频加载超时，请刷新页面重试【9003】</p>'),
 					Ext.get('loading')['hide']()) : (timer && clearInterval(timer),
-						note1Wrap.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle">视频加载失败，请稍后再试【9004】</p>'),
+						note1Wrap['update']('<div class="line1"><div class="line3"></div></div><p class="tipStyle">视频加载失败，请稍后再试【9004】</p>'),
 						Ext.get('loading')['hide']());
 			}
 		});
