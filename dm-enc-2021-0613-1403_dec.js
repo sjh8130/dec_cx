@@ -50,10 +50,7 @@
 					})
 				})
 			}, 30);
-			setTimeout(function () {
-				clearInterval(C)
-			}, 60000)
+			setTimeout(clearInterval(C), 60000)
 		}
 	} catch (err) { }
-}
-)();
+})();

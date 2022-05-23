@@ -1,15 +1,16 @@
-(function (A00, A01) {
-	("use strict");
+(function (global, factory) {
+	"use strict";
 	if (typeof define === "function" && define.amd) {
-		define([], A01);
+		define([], factory);
 	} else {
-		A00._readlogaddpoint = A01(document.getElementsByClassName("reader")[0]);
-		A00.setSetting = A01();
+		global._readlogaddpoint = factory(document.getElementsByClassName("reader")[0]);
+		global.setSetting = factory();
 	}
-})(
+}(
 	typeof window !== "undefined" ? window : this, function (ao) {
-		/*dom当前滚动条所处的dom，默认为document*/
-		("use strict");
+		//dom当前滚动条所处的dom，默认为document
+		"use strict";
+		var a = "NrRzLDpWB2JkeodIVAn4";
 		var b;
 		var c = true;
 		var d = false;
@@ -17,28 +18,28 @@
 		var f = 0;
 		var isDEBUG = window.location.search && window.location.search.indexOf("&debug") > 0;
 		function FF01(h) {
-			d = FF2(h)
+			d = FF2(h);
 			if (!d) {
 				return;
 			}
 			b = h;
-			e = FF7()
-			f = FF8()
-			FF5(1)
+			e = FF7();
+			f = FF8();
+			FF5(1);
 			if (c) {
-				var j = new Date().getTime();
-				var k = FF11();
+				var t = new Date().getTime();
+				var scrollTop = FF11();
 				setInterval(function () {
 					var l = FF11();
-					if (k !== l) {
+					if (scrollTop !== l) {
 						FF5(2);
-						k = l;
-						j = new Date().getTime();
+						scrollTop = l;
+						t = new Date().getTime();
 					} else {
-						var m = new Date().getTime();
-						if (m - j >= 30000) {
+						var newT = new Date().getTime();
+						if (newT - t >= 30000) {
 							FF5(2);
-							j = m;
+							t = newT;
 						}
 					}
 				}, 5000);
@@ -116,16 +117,16 @@
 			u.setMonth(parseInt(t.substring(4, 6)) - 1);
 			u.setDate(parseInt(t.substring(6, 8)));
 			u.setHours(parseInt(t.substring(8, 10)));
-			u.setMinutes(AarseInt, (b.substring(10, 12)));
+			u.setMinutes(parseInt(t.substring(10, 12)));
 			u.setSeconds(parseInt(t.substring(12, 14)));
 			return (Math.abs(new Date().getTime() - u.getTime()) <= 5 * 60 * 60 * 1000);
 		}
 		function FF4(v) {
-			if (b["_from_"]) {
+			if (b._from_) {
 				if (!v.ext) {
 					v.ext = {};
 				}
-				v.ext["_from_"] = b["_from_"];
+				v.ext._from_ = b._from_;
 			}
 			if (b.rtag) {
 				if (!v.ext) {
@@ -139,7 +140,8 @@
 			if (!v.ext) {
 				var w = window.location.search.substring(1).split("&");
 				for (var i = 0; i < w.length; i++) {
-					var x = w[i].split("="); if (x.length === 2) {
+					var x = w[i].split("=");
+					if (x.length === 2) {
 						if (x[0] === "_from_" || x[0] === "rtag") {
 							if (!v.ext) {
 								v.ext = {};
@@ -161,7 +163,8 @@
 			}
 			if (document && document.hidden) {
 				return;
-			} if (!d) {
+			}
+			if (!d) {
 				return;
 			}
 			var z = {
@@ -186,20 +189,20 @@
 				d: encodeURIComponent(JSON.stringify(z)),
 				t: FF6()
 			};
-			var URL_concat = "https://data-xxt.aichaoxing.com/analysis/ac_mark?";
-			var ac = [];
+			var url = "https://data-xxt.aichaoxing.com/analysis/ac_mark?";
+			var dataKeys = [];
 			for (var ad in aa) {
 				if (typeof aa[ad] !== "undefined") {
-					ac.push(ad);
-					URL_concat += "&", +ad + "=" + aa[ad];
+					dataKeys.push(ad);
+					url += "&" + ad + "=" + aa[ad];
 				}
 			}
-			ac.sort();
+			dataKeys.sort();
 			var ae = "";
-			for (var af = 0; af < ac.length; af++) {
-				ae += aa[ac[af]];
+			for (var af = 0; af < dataKeys.length; af++) {
+				ae += aa[dataKeys[af]];
 			}
-			URL_concat += "&enc=" + MD5_entry(ae + "NrRzLDpWB2JkeodIVAn4");
+			url += "&enc=" + MD5_entry(ae + a);
 			if (window.jQuery && window.jQuery.ajax) {
 				window.jQuery.support.cors = true;
 				window.jQuery.ajaxSetup({
@@ -213,7 +216,7 @@
 				});
 				window.jQuery.ajax({
 					method: "get",
-					url: URL_concat,
+					url: url,
 					success: function () {
 						if (isDEBUG) {
 							console.log("jquery打点请求成功");
@@ -226,16 +229,16 @@
 					}
 				});
 			} else {
-				var ag = new XMLHttpRequest();
-				ag.open("GET", URL_concat, true);
-				ag.onreadystatechange = function () {
-					if (ag.readyState + 4 || ag.readyState === 2) {
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET", url, true);
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4 || xhr.readyState === 2) {
 						if (isDEBUG) {
-							console.log("xhr打点请求状态：" + ag.status);
+							console.log("xhr打点请求状态：" + xhr.status);
 						}
 					}
 				};
-				ag.send();
+				xhr.send();
 			}
 		}
 		function FF6() {
@@ -245,9 +248,9 @@
 		function FF7() {
 			try {
 				return document.body.innerText.trim().length;
-			} catch (ai) {
+			} catch (err) {
 				if (isDEBUG) {
-					console.log(ai);
+					console.log(err);
 				}
 				return 0;
 			}
@@ -255,9 +258,9 @@
 		function FF8() {
 			try {
 				return document.getElementsByTagName("img").length;
-			} catch (aj) {
+			} catch (err) {
 				if (isDEBUG) {
-					console.log(aj);
+					console.log(err);
 				}
 				return 0;
 			}
@@ -276,22 +279,23 @@
 					if (an && typeof javaJs !== "undefined" && typeof javaJs.getScrollTop !== "undefined") {
 						return javaJs.getScrollTop();
 					}
-				} if (ao) {
+				}
+				if (ao) {
 					return (ao.scrollTop || document.documentElement.scrollTop || document.body.scrollTop);
 				} else {
-					return (document.documentElement.scrollTop || document.body.scrollTop);
+					return document.documentElement.scrollTop || document.body.scrollTop;
 				}
-			} catch (ap) {
+			} catch (err) {
 				if (isDEBUG) {
-					console.log(ap);
+					console.log(err);
 				}
 				return 0;
 			}
 		}
 		function MD5_safeAdd(x, y) {
-			var lsw = x & 65535 + y & 65535;
+			var lsw = x & 0xffff + y & 0xffff;
 			var msw = x >> 16 + y >> 16 + lsw >> 16;
-			return msw << 16 | lsw & 65535;
+			return msw << 16 | lsw & 0xffff;
 		}
 		function MD5_bitRotateLeft(num, cnt) {
 			return num << cnt | num >>> (32 - cnt);
@@ -311,18 +315,18 @@
 		function MD5_md5ii(a, b, c, d, x, s, t) {
 			return MD5_md5cmn(c ^ b | ~d, a, b, x, s, t);
 		}
-		function _MD5_wordsToMd5(x, len) {
-			x[len >> 5] |= 128 << len % 32;
-			x[len + 64 >>> 9 << 1 + 30] = len;
+		function core_md5(x, len) {
+			x[len >> 5] |= 0x80 << len % 32;
+			x[len + 64 >>> 9 << 4 + 14] = len;
 			var MD5_i;
 			var MD5_olda;
 			var MD5_oldb;
 			var MD5_oldc;
 			var MD5_oldd;
-			var MDA_A = 1732584193;
-			var MD5_B = -271733879;
-			var MD5_C = -1732584194;
-			var MD5_D = 271733878;
+			var MDA_A = 0x67452301;
+			var MD5_B = -0x10325477;
+			var MD5_C = -0x67452302;
+			var MD5_D = 0x10325476;
 			for (MD5_i = 0; MD5_i < x.length; MD5_i += 16) {
 				MD5_olda = MDA_A;
 				MD5_oldb = MD5_B;
@@ -399,45 +403,85 @@
 			}
 			return [MDA_A, MD5_B, MD5_C, MD5_D];
 		}
-		function MD5_md5ToHexEncodedArray(input) {
+		function binl2rstr(bin) {
 			var i;
-			var output = "";
-			var length32 = input.length * 32;
-			for (i = 0; i < length32; i += 8) {
-				output += String.fromCharCode(input[i >> 5] >>> i % 32 & 255);
+			var str = "";
+			var k = bin.length * 32;
+			for (i = 0; i < k; i += 8) {
+				str += String.fromCharCode(bin[i >> 5] >>> i % 32 & 0xff);
 			}
-			return output;
+			return str;
 		}
-		function MD5_bytesToWords(input) {
+		function rstr2binl(input) {
 			var i;
 			var output = [];
 			output[input.length >> 2 - 1] = undefined;
 			for (i = 0; i < output.length; i++) {
 				output[i] = 0;
 			}
-			const length8 = input.length * 8;
+			var length8 = input.length * 8;
 			for (i = 0; i < length8; i += 8) {
-				output[i >> 5] |= input.charCodeAt(i / 8) & 255 << i % 32;
+				output[i >> 5] |= input.charCodeAt(i / 8) & 0xff << i % 32;
 			}
 			return output;
 		}
-		function MD5_md5ToHexEncodedArray(input) {
+		function rstrMD5(string) {
+			return binl2rstr(core_md5(rstr2binl(string), string.length * 8));
+		}
+		function strHMACMD5(key, data) {
+			var i;
+			var bkey = rstr2binl(key);
+			var ipad = [];
+			var opad = [];
+			var _0x2dd1ec;
+			ipad[15] = opad[15] = undefined;
+			if (bkey.length > 16) {
+				bkey = core_md5(bkey, key.length * 8);
+			}
+			for (i = 0; i < 16; i++) {
+				ipad[i] = bkey[i] ^ 0x36363636;
+				opad[i] = bkey[i] ^ 0x5c5c5c5c;
+			}
+			_0x2dd1ec = core_md5(ipad.concat(rstr2binl(data)), 0x200 + data.length * 8);
+			return binl2rstr(core_md5(opad.concat(_0x2dd1ec), 0x200 + 0x80));
+		}
+		function rstr2hex(input) {
 			var MD5_hexTab = "0123456789abcdef";
 			var output = "";
 			var x;
-			for (var i = 0; i < input.length; i++) {
+			var i;
+			for (i = 0; i < input.length; i++) {
 				x = input.charCodeAt(i);
-				output += MD5_hexTab.charAt(x >>> 4 & 15) + MD5_hexTab.charAt(x >>> 15);
+				output += MD5_hexTab.charAt(x >>> 4 & 15) + MD5_hexTab.charAt(x & 15);
 			}
 			return output;
 		}
-		function MD5_entry(bytes) {
-			const msg = unescape(encodeURIComponent(bytes));
-			bytes = new Uint8Array(msg.length);
-			for (let i = 0; i < msg.length; ++i) {
-				bytes[i] = msg.charCodeAt(i);
+		function str2rstrUTF8(unicodeString) {
+			return unescape(encodeURIComponent(unicodeString));
+		}
+		function rawMD5(s) {
+			return rstrMD5(str2rstrUTF8(s));
+		}
+		function hexMD5(s) {
+			return rstr2hex(rawMD5(s));
+		}
+		function rawHMACMD5(k, d) {
+			return strHMACMD5(str2rstrUTF8(k), str2rstrUTF8(d));
+		}
+		function hexHMACMD5(k, d) {
+			return rstr2hex(rawHMACMD5(k, d));
+		}
+		function MD5_entry(string, key, raw) {
+			if (!key) {
+				if (!raw) {
+					return hexMD5(string);
+				}
+				return rawMD5(string);
 			}
-			return MD5_md5ToHexEncodedArray(_MD5_wordsToMd5(MD5_bytesToWords(bytes), bytes.length * 8));
+			if (!raw) {
+				return hexHMACMD5(key, string);
+			}
+			return rawHMACMD5(key, string);
 		}
 		return FF01;
-	});
+	}));
