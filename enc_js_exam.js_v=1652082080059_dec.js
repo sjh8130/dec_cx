@@ -104,23 +104,23 @@
 		if (!ac.console) {
 			ac.console = function (af) {
 				var ae = {};
-				ae['log'] = af;
-				ae['warn'] = af;
-				ae['debug'] = af;
-				ae['info'] = af;
-				ae['error'] = af;
-				ae['exception'] = af;
-				ae['trace'] = af;
+				ae.log = af;
+				ae.warn = af;
+				ae.debug = af;
+				ae.info = af;
+				ae.error = af;
+				ae.exception = af;
+				ae.trace = af;
 				return ae;
 			}(F19);
 		} else {
-			ac.console['log'] = F19;
-			ac.console['warn'] = F19;
-			ac.console['debug'] = F19;
-			ac.console['info'] = F19;
-			ac.console['error'] = F19;
-			ac.console['exception'] = F19;
-			ac.console['trace'] = F19;
+			ac.console.log = F19;
+			ac.console.warn = F19;
+			ac.console.debug = F19;
+			ac.console.info = F19;
+			ac.console.error = F19;
+			ac.console.exception = F19;
+			ac.console.trace = F19;
 		}
 	});
 	F18();
@@ -138,8 +138,8 @@
 			an = F20(),
 			ao = F20(),
 			ap = aj;
-		ah['x'] = -0x1;
-		ah['y'] = -0x1;
+		ah.x = -0x1;
+		ah.y = -0x1;
 		function F22(aq) {
 			return void 0 === aq.isTrusted || !(aq.isTrusted = !0x1) === aq.isTrusted;
 		}
@@ -147,15 +147,15 @@
 			0x2 == an && (an = 0x3),
 			null != ak && (ap = aj + '_' + (al = ak.value));
 		try {
-			var ar = window['event'];
+			var ar = window.event;
 			if (void 0 === ar) {
-				for (var as = arguments.callee['caller'], at = as; null != as;) as = (at = as)['caller'];
+				for (var as = arguments.callee.caller, at = as; null != as;) as = (at = as).caller;
 				ar = at.arguments[0];
 			}
 			if (null != ar) {
-				var au = document['documentElement']['scrollLeft'] || document['body']['scrollLeft'],
-					av = document['documentElement']['scrollTop'] || document['body']['scrollTop'];
-				ah['x'] = ar['pageX'] || ar['clientX'] + au, ah['y'] = ar['pageY'] || ar['clientY'] + av, !0 !== ar.isTrusted && void 0 !== ar.isTrusted || (an = 0x2), ag = F22(ar) ? 0x2 != an ? function (aw) {
+				var au = document.documentElement.scrollLeft || document.body.scrollLeft,
+					av = document.documentElement.scrollTop || document.body.scrollTop;
+				ah.x = ar.pageX || ar.clientX + au, ah.y = ar.pageY || ar.clientY + av, !0 !== ar.isTrusted && void 0 !== ar.isTrusted || (an = 0x2), ag = F22(ar) ? 0x2 != an ? function (aw) {
 					for (var ax = 0, ay = 0, az = F22(ar), ba = 0, bb = aw.length; ba < bb; ba++) 0 != (ay = 0x70000000 & (ax = (ax << 0x4) + aw.charCodeAt(ba))) && (ax ^= ay >> (az ? 0x18 : 0x10), ax &= ~ay);
 					return 0x7fffffff & ax;
 				} : function (bc) {
@@ -175,11 +175,11 @@
 			}
 		} catch (xxx) {
 			ah = {};
-			ah['x'] = -0x2;
-			ah['y'] = -0x2;
+			ah.x = -0x2;
+			ah.y = -0x2;
 		}
-		an = '' + an + ao + ag(be['join']('') + am.substring(0x4) + an + ao + al) % 0xa;
-		var bh = '(' + Math.ceil(ah['x']) + '|' + Math.ceil(ah['y']) + ')';
+		an = '' + an + ao + ag(be.join('') + am.substring(0x4) + an + ao + al) % 0xa;
+		var bh = '(' + Math.ceil(ah.x) + '|' + Math.ceil(ah.y) + ')';
 		return function (bi, bj) {
 			if (null == bj || bj.length <= 0)
 				return null;
@@ -188,7 +188,7 @@
 			var bm = Math.floor(bk.length / 0x5),
 				bn = parseInt(bk.charAt(bm) + bk.charAt(0x2 * bm) + bk.charAt(0x3 * bm) + bk.charAt(0x4 * bm)),
 				bo = Math.ceil(bj.length / 0x2),
-				bp = Math['pow'](0x2, 0x1f) - 0x1;
+				bp = Math.pow(0x2, 0x1f) - 0x1;
 			if (bn < 0x2)
 				return null;
 			var bq = Math.random(),
@@ -202,7 +202,7 @@
 		}(bh, ap = ap + '|' + an) + '&value=' + bh + '&qid=' + al + '&_edt=' + (am + an);
 	}
 	var be = ['f', '0', '4', '2', 'f', 'c', 'f', '1', 'f', '4', '8', '3', 'b', '0', '5', 'a', 'e', '5', 'f', '3', '1', '6', 'd', '0', '2', 'c', 'd', 'd', '0', '2', 'd', '6'];
-	window['getEnc'] = function () {
+	window.getEnc = function () {
 		return F21();
 	};
 }();
@@ -218,7 +218,7 @@ function F22(a) {
 			if (('' + b / b).length !== 1 || b % 0x14 === 0) {
 				(function () {
 					return true;
-				}['constructor']('debugger')['call']('action'));
+				}['constructor']('debugger').call('action'));
 			} else {
 				(function () {
 					return false;

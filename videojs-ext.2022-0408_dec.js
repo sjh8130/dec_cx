@@ -1207,15 +1207,15 @@ Ext.define("ans.videojs.VideoQuiz", {
 								Ext.get("tkParsing_con").setHTML("解析：" + tmp_DDDD.testAnalysis);
 								Ext.get("tkParsing").setStyle("display", "inline-block");
 								Ext.get("viewAnalysis").setStyle("display", "block");
-								var tmp_0007 = f.tkParseScrollEl;
-								var tmp_0008 = $(tmp_0007.dom).niceScroll({
+								var tmp_EEEE = f.tkParseScrollEl;
+								var tmp_FFFF = $(tmp_EEEE.dom).niceScroll({
 									"cursorborder": "",
 									"cursorwidth": 6,
 									"cursorcolor": "#A5A5A5",
 									"boxzoom": false,
 									"autohidemode": true
 								});
-								f.tkParseScroll = tmp_0008
+								f.tkParseScroll = tmp_FFFF
 							}
 						}
 					}

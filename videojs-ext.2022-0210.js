@@ -237,8 +237,7 @@ Ext.define("ananas.ServerHosts", {
 			g.md5 = f
 		}
 	}
-}
-	(this));
+}(this));
 Ext.apply(Ext, {
 	setCookie: function (c, f) {
 		var a = arguments,
