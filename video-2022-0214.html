@@ -1409,8 +1409,7 @@
 					var logRequest = function () {
 						Ext.Ajax.request({
 							url: logUrl,
-							success: function (response) {
-							}
+							success: function (response) { }
 						});
 					};
 					logRequest();
@@ -1479,8 +1478,7 @@
 						method: 'post',
 						url: url,
 						params: { "log": JSON.stringify(log), "enc": monitorEnc },
-						success: function (data) {
-						}
+						success: function (data) { }
 					});
 				}
 			} catch (err) { }
@@ -1497,8 +1495,7 @@
 				url: taskUrl,
 				dataType: "jsonp",
 				jsonp: "jsoncallback",
-				success: function (response) {
-				},
+				success: function (response) { },
 				failure: function (resp) {
 					console.log("创建任务失败");
 				}

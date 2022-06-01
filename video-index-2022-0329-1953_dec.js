@@ -9,9 +9,10 @@ function greenligth() {
 }
 function isUnFinishJob() {
 	try {
-		var a = Ext.fly(window.frameElement).prev();
-		if (a && a.hasCls("ans-job-icon"))
-			return !Ext.fly(window.frameElement).parent().hasCls("ans-job-finished");
+		var AAAA = Ext.fly(window.frameElement).prev();
+		if (AAAA && AAAA.hasCls('ans-job-icon')) {
+			return !Ext.fly(window.frameElement).parent().hasCls('ans-job-finished');
+		}
 		return false;
 	} catch (e) {
 		console.log(e);
@@ -97,7 +98,7 @@ function showHTML5Player(paras) {
 		$(".vjs-subs-caps-button .vjs-icon-placeholder").hover(function () {
 			if ($(".vjs-subs-caps-button .vjs-menu-content").length > 0) {
 				$(".vjs-subs-caps-button .vjs-menu-content").niceScroll({ cursorborder: "", cursorwidth: 8, cursorcolor: "#CAD5E6", boxzoom: false, autohidemode: true });
-				$(".vjs-subs-caps-button .vjs-menu-content").getNiceScroll().resize();
+				$(".vjs-subs-caps-button .vjs-menu-content").getNiceScroll().resize()
 			}
 		})
 	})
@@ -253,7 +254,7 @@ function loadVideo() {
 						paras.rt = rt;
 						paras.control = setting && setting.control;
 						if (isTeacher) {
-							paras.control = false
+							paras.control = false;
 						}
 						var m = {}, s, vb, ve;
 						if (setting && setting.control) {
@@ -298,7 +299,7 @@ function loadVideo() {
 									}
 									var schoolDoubleSpeed = paras.schooldoublespeed;
 									if (typeof schoolDoubleSpeed == "undefined" || (typeof schoolDoubleSpeed != "undefined" && schoolDoubleSpeed == 2)) {
-										paras.doublespeed = doublespeed;
+										paras.doublespeed = doublespeed
 									} else {
 										paras.doublespeed = schoolDoubleSpeed;
 									}
@@ -483,14 +484,11 @@ function sendReadZTMediaLog(st) {
 					}
 				}
 			}
-			var logUrl = location.protocol + '//data-xxt.aichaoxing.com/analysis/datalog?s='
-				+ courseId + '&c=' + chapterId + '&o=' + objectId + '&st='
-				+ st + '&m=' + type + '&d=' + duration * 1000 + '&u=' + uid + '&_from_=' + _from_ + "&enc=" + enc;
+			var logUrl = location.protocol + '//data-xxt.aichaoxing.com/analysis/datalog?s=' + courseId + '&c=' + chapterId + '&o=' + objectId + '&st=' + st + '&m=' + type + '&d=' + duration * 1000 + '&u=' + uid + '&_from_=' + _from_ + "&enc=" + enc;
 			var logRequest = function () {
 				Ext.Ajax.request({
 					url: logUrl,
-					success: function (response) {
-					}
+					success: function (response) { }
 				});
 			};
 			logRequest();
@@ -559,8 +557,7 @@ function receiveStudyLog() {
 				method: 'post',
 				url: url,
 				params: { "log": JSON.stringify(log), "enc": monitorEnc },
-				success: function (data) {
-				}
+				success: function (data) { }
 			});
 		}
 	} catch (err) { }
@@ -577,8 +574,7 @@ function createVideoTask() {
 		url: taskUrl,
 		dataType: "jsonp",
 		jsonp: "jsoncallback",
-		success: function (response) {
-		},
+		success: function (response) { },
 		failure: function (resp) {
 			console.log("创建任务失败");
 		}
@@ -670,7 +666,7 @@ function danmuPlay(time) {
 	if (!list) {
 		return;
 	}
-	if (!$(".mui-switch").hasClass("checked")) {
+	if (!$('.mui-switch').hasClass("checked")) {
 		return;
 	}
 	var content = '<div class="danmuItem right">';
@@ -705,19 +701,18 @@ function clearStateInterval() {
 }
 var playStateV2;
 function clearStateV2Interval() {
-	if (playStateV2)
-		clearInterval(playStateV2);
+	playStateV2 && clearInterval(playStateV2);
 }
-function checkJobCountLimit(a) {
+function checkJobCountLimit(AAAA) {
 	if (/\/studentstudy/.test(top.location.pathname)) {
 		top.showJobLimitTip();
 		playStateV2 = setInterval(function () {
 			if (top.resumePlay) {
 				clearStateV2Interval();
-				a.play();
-				top.resumePlay = false
+				AAAA.play();
+				top.resumePlay = false;
 			}
-		}, 300)
+		}, 300);
 	}
 }
 function startFaceCollection(player, collectionType, obj) {
