@@ -10,11 +10,6 @@ Ext.define("ananas.ServerHosts", {
 		} catch (c) {
 			a.MASTER_HOST = location.protocol + "//" + location.host
 		}
-		try {
-			a.PARENT_HOST = location.protocol + "//" + parent.location.host
-		} catch (c) {
-			a.MASTER_HOST = location.protocol + "//" + location.host
-		}
 		a.P_HOST = location.protocol + "//p.ananas.chaoxing.com";
 		a.s1_HOST = location.protocol + "//s1.ananas.chaoxing.com";
 		a.s2_HOST = location.protocol + "//s2.ananas.chaoxing.com";
@@ -279,35 +274,27 @@ Ext.define("ans.VideoJs", {
 	mixins: {
 		observable: "Ext.util.Observable"
 	},
-	constructor: function (b) {
-		b = b || {};
-		var e = this;
-		e.addEvents(["seekstart"]);
-		e.mixins.observable.constructor.call(e, b);
-		var c = videojs(b.videojs, e.params2VideoOpt(b.params), function () { });
-		Ext.fly(b.videojs).on("contextmenu", function (f) {
+	constructor: function (a) {
+		a = a || {};
+		var c = this;
+		c.addEvents(["seekstart"]);
+		c.mixins.observable.constructor.call(c, a);
+		var b = videojs(a.videojs, c.params2VideoOpt(a.params), function () { });
+		Ext.fly(a.videojs).on("contextmenu", function (f) {
 			f.preventDefault()
 		});
-		Ext.fly(b.videojs).on("keydown", function (f) {
+		Ext.fly(a.videojs).on("keydown", function (f) {
 			if (f.keyCode == 32 || f.keyCode == 37 || f.keyCode == 39 || f.keyCode == 107) {
 				f.preventDefault()
 			}
 		});
-		if (c.videoJsResolutionSwitcher) {
-			c.on("resolutionchange", function () {
-				var g = c.currentResolution()
-					, f = g.sources ? g.sources[0].res : false;
-				Ext.setCookie("resolution", f)
+		if (b.videoJsResolutionSwitcher) {
+			b.on("resolutionchange", function () {
+				var f = b.currentResolution()
+					, e = f.sources ? f.sources[0].res : false;
+				Ext.setCookie("resolution", e)
 			})
 		}
-		// var a = b.params && b.params.doublespeed ? 2 : 1;
-		// c.on("ratechange", function() {
-		//     var f = c.playbackRate();
-		//     if (f > a) {
-		//         c.pause();
-		//         c.playbackRate(1)
-		//     }
-		// })
 	},
 	params2VideoOpt: function (params) {
 		var useM3u8 = false;
@@ -556,7 +543,7 @@ Ext.define("ans.VideoJs", {
 				subtitle: {
 					translate: params.chapterVideoTranslate,
 					subtitleUrl: params.rootPath + "/richvideo/allsubtitle?mid=" + params.mid + "&objectid=" + params.objectId + "&courseid=" + params.courseid,
-					subtitle: params.rootPath + +"/ananas/video-editor/sub?objectid=" + params.subobjectid
+					subtitle: params.subobjectid ? ServerHosts.CS_HOST + "/support/sub/" + params.subobjectid + ".vtt" : false
 				}
 			}
 		}
@@ -743,6 +730,7 @@ Ext.define("ans.VideoJs", {
 						if (g.timeCount == 0) {
 							if (!g.isPlay) {
 								g.faceCollection("play", f, g.chapterCollectionType);
+								f.pause();
 							} else {
 								h("log");
 								g.sendDataLog("play");
@@ -1045,6 +1033,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 		});
 		var f = !(k.model === false);
 		i.showModel(f);
+		if (f) { }
 	},
 	showModel: function (a) {
 		var c = this;
@@ -1144,7 +1133,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 				, toVtt = function (srt) {
 					var m = srt.match(/support\/(\w+).\w+/);
 					if (m) {
-						return ServerHosts.PARENT_HOST + "/ananas/video-editor/sub?objectid=" + m[1]
+						return ServerHosts.CS_HOST + "/support/sub/" + m[1] + ".vtt"
 					}
 				}
 				, addSub = function (name, src, isdefault) {

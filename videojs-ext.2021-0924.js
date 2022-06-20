@@ -10,11 +10,6 @@ Ext.define("ananas.ServerHosts", {
 		} catch (c) {
 			a.MASTER_HOST = location.protocol + "//" + location.host
 		}
-		try {
-			a.PARENT_HOST = location.protocol + "//" + parent.location.host
-		} catch (c) {
-			a.MASTER_HOST = location.protocol + "//" + location.host
-		}
 		a.P_HOST = location.protocol + "//p.ananas.chaoxing.com";
 		a.s1_HOST = location.protocol + "//s1.ananas.chaoxing.com";
 		a.s2_HOST = location.protocol + "//s2.ananas.chaoxing.com";
@@ -300,14 +295,13 @@ Ext.define("ans.VideoJs", {
 				Ext.setCookie("resolution", f)
 			})
 		}
-		// var a = b.params && b.params.doublespeed ? 2 : 1;
-		// c.on("ratechange", function() {
-		//     var f = c.playbackRate();
-		//     if (f > a) {
-		//         c.pause();
-		//         c.playbackRate(1)
-		//     }
-		// })
+		var a = b.params && b.params.doublespeed ? 2 : 1;
+		c.on("ratechange", function () {
+			var f = c.playbackRate();
+			if (f > a) {
+				c.playbackRate(1)
+			}
+		})
 	},
 	params2VideoOpt: function (params) {
 		var useM3u8 = false;
@@ -556,7 +550,7 @@ Ext.define("ans.VideoJs", {
 				subtitle: {
 					translate: params.chapterVideoTranslate,
 					subtitleUrl: params.rootPath + "/richvideo/allsubtitle?mid=" + params.mid + "&objectid=" + params.objectId + "&courseid=" + params.courseid,
-					subtitle: params.rootPath + +"/ananas/video-editor/sub?objectid=" + params.subobjectid
+					subtitle: params.subobjectid ? ServerHosts.CS_HOST + "/support/sub/" + params.subobjectid + ".vtt" : false
 				}
 			}
 		}
@@ -743,6 +737,7 @@ Ext.define("ans.VideoJs", {
 						if (g.timeCount == 0) {
 							if (!g.isPlay) {
 								g.faceCollection("play", f, g.chapterCollectionType);
+								f.pause();
 							} else {
 								h("log");
 								g.sendDataLog("play");
@@ -1045,6 +1040,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 		});
 		var f = !(k.model === false);
 		i.showModel(f);
+		if (f) { }
 	},
 	showModel: function (a) {
 		var c = this;
@@ -1144,7 +1140,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 				, toVtt = function (srt) {
 					var m = srt.match(/support\/(\w+).\w+/);
 					if (m) {
-						return ServerHosts.PARENT_HOST + "/ananas/video-editor/sub?objectid=" + m[1]
+						return ServerHosts.CS_HOST + "/support/sub/" + m[1] + ".vtt"
 					}
 				}
 				, addSub = function (name, src, isdefault) {
