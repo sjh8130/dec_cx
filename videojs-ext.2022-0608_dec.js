@@ -1,4 +1,4 @@
-// https://mooc1-2.chaoxing.com/ananas/videojs-ext/videojs-ext.min.js?v=2022-0528-1801
+// https://mooc1-2.chaoxing.com/ananas/videojs-ext/videojs-ext.min.js?v=2022-0608-1801
 Ext.define("ananas.ServerHosts", {
 	alternateClassName: "ServerHosts",
 	singleton: true,
@@ -325,13 +325,9 @@ Ext.define("ans.VideoJs", {
 		];
 		if (params.cdn) {
 			try {
-				if (top.window.app && top.window.app == 2) {
-					cdn = cdn.concat(params.cdn)
-				} else {
-					cdn = cdn.concat(params.cdn).sort(function (o1, o2) {
-						return o1.indexorder - o2.indexorder
-					})
-				}
+				top.window.app && top.window.app == 2 ? cdn = cdn.concat(params.cdn) : cdn = cdn.concat(params.cdn).sort(function (o1, o2) {
+					return o1.indexorder - o2.indexorder
+				})
 			} catch (e) {
 				cdn = cdn.concat(params.cdn)
 			}
@@ -353,28 +349,22 @@ Ext.define("ans.VideoJs", {
 					res: src.res
 				}
 			}
-			if (r.ispublic) {
-				return useM3u8 ? {
-					src: m3u8(params.objectId, src.resolution, r.url),
-					type: "application/x-mpegURL",
-					res: src.res
-				}
-					: {
-						src: r.url + file,
-						type: "video/mp4",
-						res: src.res
-					}
-			} else {
-				return useM3u8 ? {
-					src: m3u8(params.objectId, src.resolution, r.url + sdomain),
-					type: "application/x-mpegURL",
-					res: src.res
-				}
-					: {
-						src: r.url + sdomain + file,
-						type: "video/mp4",
-						res: src.res
-					}
+			return r.ispublic ? useM3u8 ? {
+				src: m3u8(params.objectId, src.resolution, r.url),
+				type: "application/x-mpegURL",
+				res: src.res
+			} : {
+				src: r.url + file,
+				type: "video/mp4",
+				res: src.res
+			} : useM3u8 ? {
+				src: m3u8(params.objectId, src.resolution, r.url + sdomain),
+				type: "application/x-mpegURL",
+				res: src.res
+			} : {
+				src: r.url + sdomain + file,
+				type: "video/mp4",
+				res: src.res
 			}
 		}
 		var sources = [],
@@ -382,42 +372,34 @@ Ext.define("ans.VideoJs", {
 		if (!params.rootPath) {
 			params.rootPath = ""
 		}
-		if (params.http) {
-			sources.push({
-				src: params.http,
-				type: "video/mp4",
-				label: "标清",
-				resolution: "sd",
-				res: 360
-			})
-		}
-		if (params.httphd) {
-			sources.push({
-				src: params.httphd,
-				type: "video/mp4",
-				label: "高清",
-				resolution: "hd",
-				res: 720
-			})
-		}
-		if (params.httpshd) {
-			sources.push({
-				src: params.httpshd,
-				type: "video/mp4",
-				label: "超高清",
-				resolution: "shd",
-				res: 1080
-			})
-		}
-		if (params.httpmd) {
-			sources.push({
-				src: params.httpmd,
-				type: "video/mp4",
-				label: "极速",
-				resolution: "md",
-				res: 240
-			})
-		}
+		params.http && sources.push({
+			src: params.http,
+			type: "video/mp4",
+			label: "标清",
+			resolution: "sd",
+			res: 360
+		})
+		params.httphd && sources.push({
+			src: params.httphd,
+			type: "video/mp4",
+			label: "高清",
+			resolution: "hd",
+			res: 720
+		})
+		params.httpshd && sources.push({
+			src: params.httpshd,
+			type: "video/mp4",
+			label: "超高清",
+			resolution: "shd",
+			res: 1080
+		})
+		params.httpmd && sources.push({
+			src: params.httpmd,
+			type: "video/mp4",
+			label: "极速",
+			resolution: "md",
+			res: 240
+		})
 		if (sources.length == 1) {
 			var cdnItem = sources[0];
 			cdnItem.label = "高清"
@@ -436,6 +418,9 @@ Ext.define("ans.VideoJs", {
 		var logFunc = function (player, url, callback) {
 			try {
 				if (typeof top.hasJobLimit != "undefined" && top.hasJobLimit === true && isUnFinishJob()) {
+					return
+				}
+				if (typeof top.videoTimeLimit != "undefined" && top.videoTimeLimit === true && isUnFinishJob()) {
 					return
 				}
 			} catch (e) {
@@ -469,6 +454,10 @@ Ext.define("ans.VideoJs", {
 							if (typeof d.hasJobLimit != "undefined" && d.hasJobLimit === true) {
 								top.allowNextVideo = false;
 								top.hasJobLimit = true
+							}
+							if (typeof d.videoTimeLimit != "undefined" && d.videoTimeLimit === true) {
+								top.allowNextVideo = false;
+								top.videoTimeLimit = true
 							}
 						} catch (e) {
 							console.log(e)
@@ -504,6 +493,8 @@ Ext.define("ans.VideoJs", {
 				if (timeArr.length == 2) {
 					playTime = parseInt(timeArr[1]) * 1000
 				}
+			} else {
+				playTime = currentTimeSec * 1000;
 			}
 			if (playTime == params.duration * 1000 && isdrag == 2) {
 				return
@@ -660,7 +651,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 		},
 		singleton: function (c) {
 			var f = this,
-				e = parseInt(Math.random() * 9999999);
+				e = parseInt(Math.random() * 0x98967f);
 			c.on("play", function () {
 				Ext.setCookie("videojs_id", e)
 			});
@@ -834,61 +825,37 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 					if (typeof top.hasJobLimit != "undefined" && top.hasJobLimit === true && h.firstClick && isUnFinishJob()) {
 						h.firstClick = false;
 						g.pause();
-						checkJobCountLimit(g);
+						checkJobCountLimit(g, 0);
+						return
+					}
+					if (typeof top.videoTimeLimit != "undefined" && top.videoTimeLimit === true && h.firstClick && isUnFinishJob()) {
+						h.firstClick = false;
+						g.pause();
+						checkJobCountLimit(g, 1);
 						return;
 					}
 				} catch (e) {
 					console.log(e);
 				}
 				h.isAlertTip = false;
-				if (h.chapterCapture == 0 || !h.isSupportFace) {
-					if (!g.ignorePlay) {
-						i("play", true);
-						g.ignoreSeek = true
-					} else {
-						g.ignorePlay = false;
-						g.ignoreSeek = false
-					}
-					h.sendDataLog("play");
-					h.receiveStudyLog();
-					h.getDanmuList("play", g)
-				} else {
-					if (h.chapterCapture == 1) {
-						if (h.timeCount == 0) {
-							if (h.isShowFaceCollection && !h.isPlay && (h.startCapture == 1 || typeof h.startCapture == "undefined")) {
-								h.faceCollection("play", g, h.chapterCollectionType);
-								g.pause()
-							} else {
-								if (!g.ignorePlay) {
-									i("play", true);
-									g.ignoreSeek = true
-								} else {
-									g.ignorePlay = false;
-									g.ignoreSeek = false
-								}
-								h.sendDataLog("play");
-								h.receiveStudyLog();
-								h.getDanmuList("play", g);
-								if (h.isShowFaceCollection && typeof h.playingCapture == "undefined" || (h.playingCapture == 1 && h.playingLoopCapture == 0)) {
-									h.timer(g)
-								}
-								if (h.isShowFaceCollection && h.playAginCapture == 1 && g.ignorePlay && !h.isAginFace) {
-									h.faceCollection("aginPlay", g, h.chapterCollectionType);
-									g.pause()
-								}
-							}
-						} else {
-							if (h.isShowFaceCollection && typeof h.playingCapture == "undefined" || (h.playingCapture == 1 && h.playingLoopCapture == 1)) {
-								h.timer(g)
-							}
-							if (h.isShowFaceCollection && h.playAginCapture == 1 && !g.ignorePlay && !h.isAginFace) {
-								h.faceCollection("aginPlay", g, h.chapterCollectionType);
-								g.pause();
-								h.againStartTime = h.sec_(g)
-							}
-						}
-					}
-				}
+				h.chapterCapture == 0 || !h.isSupportFace ? (!g.ignorePlay ? (i("play", true),
+					g.ignoreSeek = true) : (g.ignorePlay = false,
+						g.ignoreSeek = false),
+					h.sendDataLog("play"),
+					h.receiveStudyLog(),
+					h.getDanmuList("play", g)) : h.chapterCapture == 1 && (h.timeCount == 0 ? h.isShowFaceCollection && !h.isPlay && (h.startCapture == 1 || typeof h.startCapture == "undefined") ? (h.faceCollection("play", g, h.chapterCollectionType),
+						g.pause()) : (!g.ignorePlay ? (i("play", true),
+							g.ignoreSeek = true) : (g.ignorePlay = false,
+								g.ignoreSeek = false),
+							h.sendDataLog("play"),
+							h.receiveStudyLog(),
+							h.getDanmuList("play", g),
+							(h.isShowFaceCollection && typeof h.playingCapture == "undefined" || h.playingCapture == 1 && h.playingLoopCapture == 0) && h.timer(g),
+							h.isShowFaceCollection && h.playAginCapture == 1 && g.ignorePlay && !h.isAginFace && (h.faceCollection("aginPlay", g, h.chapterCollectionType),
+								g.pause())) : ((h.isShowFaceCollection && typeof h.playingCapture == "undefined" || h.playingCapture == 1 && h.playingLoopCapture == 1) && h.timer(g),
+									h.isShowFaceCollection && h.playAginCapture == 1 && !g.ignorePlay && !h.isAginFace && (h.faceCollection("aginPlay", g, h.chapterCollectionType),
+										g.pause(),
+										h.againStartTime = h.sec_(g))));
 			});
 			g.on("seeked", function () {
 				if (f.enableFastForward != 1 && !g.switchStatus) {
@@ -898,34 +865,22 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 						g.currentTime(m)
 					}
 				}
-				if (!g.ignoreSeek) {
-					i("drag", true, c + "-" + h.sec_(g))
-				} else {
-					g.ignoreSeek = false
-				}
-				c = h.sec_(g);
-				g.ignorePlay = true;
-				delete g.switchStatus
+				!g.ignoreSeek ? i("drag", true, c + "-" + h.sec_(g)) : g.ignoreSeek = false,
+					c = h.sec_(g),
+					g.ignorePlay = true,
+					delete g.switchStatus;
 			});
 			g.on("pause", function () {
-				if (!g.ignorePause) {
-					i("pause", true);
-					g.ignorePlay = false;
-					g.ignoreSeek = false
-				} else {
-					g.ignorePause = false
-				}
-				h.sendDataLog("pause");
-				h.getDanmuList("pause", g)
+				!g.ignorePause ? (i("pause", true),
+					g.ignorePlay = false,
+					g.ignoreSeek = false) : g.ignorePause = false,
+					h.sendDataLog("pause"),
+					h.getDanmuList("pause", g);
 			});
 			g.on("timeupdate", function () {
-				if (h.sec_(g) - h.againStartTime > 2) {
-					h.isAginFace = false
-				}
-				if (h.isShowFaceCollection && h.chapterCapture == 1 && h.playingCapture == 1 && h.playingLoopCapture == 1 && h.sec_(g) == h.loopCaptureInterval && !h.playingFace) {
-					h.faceCollection("playing", g, h.chapterCollectionType);
-					g.pause()
-				}
+				h.sec_(g) - h.againStartTime > 2 && (h.isAginFace = false);
+				h.isShowFaceCollection && h.chapterCapture == 1 && h.playingCapture == 1 && h.playingLoopCapture == 1 && h.sec_(g) == h.loopCaptureInterval && !h.playingFace && (h.faceCollection("playing", g, h.chapterCollectionType),
+					g.pause());
 				if (typeof parent.videoTrialDuration != "undefined" && parent.videoTrialDuration != "-1") {
 					var l = parseInt(parent.videoTrialDuration) * 60;
 					if (l < h.sec_(g) && !h.isAlertTip) {
@@ -949,9 +904,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			});
 			g.on("ended", function () {
 				h.playTimer && clearInterval(h.playTimer);
-				if (h.isShowFaceCollection && !h.isEnd && h.chapterCapture == 1 && h.endCapture == 1) {
-					h.faceCollection("ended", g, h.chapterCollectionType)
-				}
+				h.isShowFaceCollection && !h.isEnd && h.chapterCapture == 1 && h.endCapture == 1 && h.faceCollection("ended", g, h.chapterCollectionType)
 				i("ended", true);
 			})
 		},
@@ -962,23 +915,17 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			return new Date().getTime()
 		},
 		isSendLog: function (c) {
-			if (c) {
-				this.isSendLog_ = !!c
-			}
+			c && (this.isSendLog_ = !!c);
 			return this.isSendLog_
 		},
 		sendDataLog: function (e) {
-			var c = (e == "pause" || e == "end") ? 2 : 1;
-			if (typeof (sendReadZTMediaLog) != "undefined") {
-				sendReadZTMediaLog(c)
-			}
+			var c = e == "pause" || e == "end" ? 2 : 1;
+			typeof sendReadZTMediaLog != "undefined" && sendReadZTMediaLog(c)
 		},
 		receiveStudyLog: function () {
-			if (typeof (receiveStudyLog) != "undefined") {
-				setTimeout(function () {
-					receiveStudyLog()
-				}, 50)
-			}
+			typeof receiveStudyLog != "undefined" && setTimeout(function () {
+				receiveStudyLog()
+			}, 50)
 		},
 		getDanmuList: function (e, c) {
 			if (!this.isShowDanmu_) {
@@ -992,11 +939,9 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				}, 200);
 				return
 			}
-			if (typeof (getDanmuByTime) != "undefined") {
-				setTimeout(function () {
-					getDanmuByTime(e, f)
-				}, 200);
-			}
+			typeof getDanmuByTime != "undefined" && setTimeout(function () {
+				getDanmuByTime(e, f)
+			}, 200);
 			if (f < this.damuLastGetTime) {
 				return
 			}
@@ -1007,50 +952,36 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				return
 			}
 			var e = this.sec_(c);
-			if (typeof (danmuPlay) != "undefined") {
-				danmuPlay(e)
-			}
+			typeof danmuPlay != "undefined" && danmuPlay(e)
 		},
 		timer: function (c) {
 			var e = this;
 			this.playTimer = setInterval(function () {
 				e.timeCount++;
-				if (e.timeCount >= e.captureInterval) {
-					e.isPlay = false;
-					e.faceCollection("pause", c, e.chapterCollectionType)
-				}
+				e.timeCount >= e.captureInterval && (e.isPlay = false,
+					c.pause(),
+					e.faceCollection("pause", c, e.chapterCollectionType));
 			}, 1000)
 		},
 		faceCollection: function (e, c, f) {
-			if (e == "play" && this.timeCount == 0 && typeof (startFaceCollection) != "undefined") {
-				startFaceCollection(c, f, this)
-			} else if (e == "pause") {
-				this.playTimer && clearInterval(this.playTimer);
-				if (!this.isPlay && this.timeCount >= this.captureInterval) {
-					if (typeof (startFaceCollection) != "undefined") {
-						startFaceCollection(c, f, this)
-					}
-					this.timeCount = 0
-				}
-			} else if (e == "ended") {
-				this.playTimer && clearInterval(this.playTimer);
-				if (typeof (startFaceCollection) != "undefined") {
-					startFaceCollection(c, f, this);
-					this.isEnd = true
-				}
-				this.timeCount = 0
-			} else if (e == "playing" && typeof (startFaceCollection) != "undefined") {
-				startFaceCollection(c, f, this);
-				this.playingFace = true
-			} else if (e == "aginPlay" && typeof (startFaceCollection) != "undefined") {
-				startFaceCollection(c, f, this);
-				this.isAginFace = true
-			}
+			e == "play" && this.timeCount == 0 ? typeof startFaceCollection != "undefined" && startFaceCollection(c, f, this) : e == "pause" ? (this.playTimer && clearInterval(this.playTimer),
+				!this.isPlay && this.timeCount >= this.captureInterval && (typeof startFaceCollection != "undefined" && startFaceCollection(c, f, this),
+					this.timeCount = 0)) : e == "ended" ? (this.playTimer && clearInterval(this.playTimer),
+						typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
+							this.isEnd = true),
+						this.timeCount = 0) : e == "playing" ? typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
+							this.playingFace = true) : e == "aginPlay" && (typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
+								this.isAginFace = true));
 		},
 		playNextVideo: function (c) {
-			if (typeof (chapterPlayNextVideo) != "undefined") {
+			if (typeof chapterPlayNextVideo != "undefined") {
 				if (typeof top.allowNextVideo != "undefined" && top.allowNextVideo === false) {
-					top.showJobLimitTip();
+					if (top.hasJobLimit === true) {
+						top.showJobLimitTip()
+					}
+					else {
+						top.showVideoTimeLimitTip()
+					}
 					return
 				}
 				chapterPlayNextVideo(c)
@@ -1068,7 +999,7 @@ Ext.define("ans.videojs.VideoQuiz", {
 	extend: "Ext.Component",
 	xtype: "videoquiz",
 	cls: "ans-videoquiz",
-	renderTpl: ['<div class="tkTopic">', '<tpl if="dtype==\x27InteractiveQuiz\x27">', '<div class="tkTopic_numbar fr">共 {interactiveQuestionCount} 题<span id="rightAnswerNum">，已答对 <i id="rightNum"></i> 题</span></div>', '</tpl>', '<div class="tkTopic_title">[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" <tpl if="parent.dtype==\x27InteractiveQuiz\x27">{[this.getChecked(parent.answerContent, values.name, parent.dtype)]}</tpl> name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', '{name}、{description}', '</label></li>', '</tpl>', '</ul>', '</div>', '</div>', '<div class="tkTopic_oper">', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submit">提交</a>', '<a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue"><tpl if="dtype==\x27InteractiveQuiz\x27">继续学习<tpl else>继续</tpl></a>', '<tpl if="dtype==\x27InteractiveQuiz\x27">', '<a class="bntWhiteBorder ans-videoquiz-back fr" id="knowledgeBack">知识点回看</a>', '</tpl>', '<tpl if="dtype==\x27InteractiveQuiz\x27"><span id="spanHas"></span><tpl else><span class="spanHas fr" id="spanHas">回答正确</span></tpl>', '<span class="spanNot fr" id="spanNot"><tpl if="dtype==\x27InteractiveQuiz\x27">真遗憾，再接再厉！<tpl else>回答错误</tpl></span>', '<span class="spanNotBack fr" id="spanNotBack"><tpl if="dtype==\x27InteractiveQuiz\x27">真遗憾，再接再厉！<tpl else>回答错误，</tpl>回看 {errorBackTime} 分钟</span>', '<tpl if="dtype==\x27InteractiveQuiz\x27">', '<span class="spanNotBack fr" id="spanNotBackPoint">真遗憾，再接再厉！</span>', '<a class="spanHref fl" href="javascript:" id="viewAnalysis">查看解析</a>', '</div>', '<div class="tkParsing" id="tkParsing">', '<a class="tkParsing_dele" href="javascript:"></a>', '<div class="tkParsing_screll tkParsing_con" id="tkParsing_con"></div>', '</tpl>', '</div>', '</div>', {
+	renderTpl: ['<div class="tkTopic">', '<tpl if="dtype==\x27InteractiveQuiz\x27">', '<div class="tkTopic_numbar fr">共 {interactiveQuestionCount} 题<span id="rightAnswerNum">，已答对 <i id="rightNum"></i> 题</span></div>', '</tpl>', '<div class="tkTopic_title">[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" <tpl if="parent.dtype==\x27InteractiveQuiz\x27">{[this.getChecked(parent.answerContent, values.name, parent.dtype)]}</tpl> name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', '{name}、{description}', "</label></li>", "</tpl>", '</ul>', "</div>", '</div>', '<div class="tkTopic_oper">', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submit">提交</a>', `<a class="ans-videoquiz -continue bntLinear fr" id="videoquiz -continue"><tpl if="dtype=='InteractiveQuiz'">继续学习<tpl else>继续</tpl></a>`, `<tpl if="dtype=='InteractiveQuiz'">`, '<a class=\x22bntWhiteBorder ans-videoquiz-back fr\x22 id=\x22knowledgeBack\x22>知识点回看</a>', '</tpl>', '<tpl if=\x22dtype==\x27InteractiveQuiz\x27\x22><span id=\x22spanHas\x22 class=\x22rightInfo\x22></span><tpl else><span class=\x22spanHas fr\x22 id=\x22spanHas\x22>回答正确</span></tpl>', '<span class=\x22spanNot fr\x22 id=\x22spanNot\x22><tpl if=\x22dtype==\x27InteractiveQuiz\x27\x22>真遗憾，再接再厉！<tpl else>回答错误</tpl></span>', `<span class="spanNotBack fr" id="spanNotBack"><tpl if="dtype=="InteractiveQuiz"">真遗憾，再接再厉！<tpl else>回答错误，</tpl>回看 {errorBackTime} 分钟</span>`, `<tpl if="dtype=="InteractiveQuiz"">`, `<span class="spanNotBack fr" id="spanNotBackPoint">真遗憾，再接再厉！</span>`, `<a class="spanHref fl" href="javascript:" id="viewAnalysis">查看解析</a>`, "</div>", `<div class="tkParsing" id="tkParsing">`, `<a class="tkParsing_dele" href="javascript:"></a>`, `<div class="tkParsing_screll tkParsing_con" id="tkParsing_con"></div>`, "</tpl>", "</div>", "</div>", {
 		getChecked: function (q, w, e) {
 			return q.indexOf(w) != -1 && e == "InteractiveQuiz" ? 'checked="checked"' : "";
 		}
@@ -1086,23 +1017,21 @@ Ext.define("ans.videojs.VideoQuiz", {
 		var b = this;
 		var d = b.renderData;
 		var e = b.quizRightCountUrl;
-		if (typeof e != "undefined") {
-			Ext.Ajax.request({
-				url: e,
-				params: {
-					eventid: d.resourceId,
-					"memberinfo": d.memberinfo
-				},
-				method: "get",
-				success: function (f) {
-					var g = Ext.decode(f.responseText);
-					if (g.status) {
-						Ext.get("rightNum").setHTML(g.rightAnswerCount);
-						Ext.get("rightAnswerNum").setStyle("display", "inline-block")
-					}
+		typeof e != "undefined" && Ext.Ajax.request({
+			url: e,
+			params: {
+				eventid: d.resourceId,
+				"memberinfo": d.memberinfo
+			},
+			method: "get",
+			success: function (f) {
+				var g = Ext.decode(f.responseText);
+				if (g.status) {
+					Ext.get("rightNum").setHTML(g.rightAnswerCount);
+					Ext.get("rightAnswerNum").setStyle("display", "inline-block")
 				}
-			});
-		}
+			}
+		});
 		b.callParent(arguments);
 		var c = b.scrollEl;
 		var a = $(c.dom).niceScroll({
@@ -1158,34 +1087,16 @@ Ext.define("ans.videojs.VideoQuiz", {
 			(k.value == "true" && !k.checked) || (k.value == "false" && k.checked) && (e = false);
 			k.checked && c.push(b[j].name);
 		});
-		if (!e) {
-			if (g.errorBackTime && g.errorBackTime > 0) {
-				Ext.get("spanNotBack").setStyle("display", "block");
-				Ext.get("videoquiz-submit").setStyle("display", "none");
-				if (d == "InteractiveQuiz") {
-					Ext.get("knowledgeBack").setStyle("display", "block")
-				} else {
-					Ext.get("videoquiz-continue").setStyle("display", "block")
-				}
-			} else {
-				if (d == "InteractiveQuiz" && g.errorBack == 1 && g.eBstartPoint != "") {
-					Ext.get("spanNotBackPoint").setStyle("display", "block");
-					Ext.get("knowledgeBack").setStyle("display", "block")
-				} else {
-					Ext.get("spanNot").setStyle("display", "block")
-				}
-			}
-		} else {
-			Ext.get("spanHas").setStyle("display", "block");
-			if (d == "InteractiveQuiz") {
-				Ext.get("videoquiz-continue").setStyle("display", "block");
-				Ext.get("knowledgeBack").setStyle("display", "none");
-				Ext.get("videoquiz-submit").setStyle("display", "none");
-				Ext.get("spanNot").setStyle("display", "none");
-				Ext.get("spanNotBack").setStyle("display", "none");
-				Ext.get("spanNotBackPoint").setStyle("display", "none")
-			}
-		}
+		!e ? g.errorBackTime && g.errorBackTime > 0 ? (Ext.get("spanNotBack").setStyle("display", "block"),
+			Ext.get("videoquiz-submit").setStyle("display", "none"),
+			d == "InteractiveQuiz" ? Ext.get("knowledgeBack").setStyle("display", "block") : Ext.get("videoquiz-continue").setStyle("display", "block")) : d == "InteractiveQuiz" && g.errorBack == 1 && g.eBstartPoint != "" ? (Ext.get("spanNotBackPoint").setStyle("display", "block"),
+				Ext.get("knowledgeBack").setStyle("display", "block")) : Ext.get("spanNot").setStyle("display", "block") : (Ext.get("spanHas").setStyle("display", "block"),
+					d == "InteractiveQuiz" && (Ext.get("videoquiz-continue").setStyle("display", "block"),
+						Ext.get("knowledgeBack").setStyle("display", "none"),
+						Ext.get("videoquiz-submit").setStyle("display", "none"),
+						Ext.get("spanNot").setStyle("display", "none"),
+						Ext.get("spanNotBack").setStyle("display", "none"),
+						Ext.get("spanNotBackPoint").setStyle("display", "none")));
 		if (typeof a != "undefined") {
 			var l = c.join(",");
 			Ext.Ajax.request({
@@ -1201,16 +1112,10 @@ Ext.define("ans.videojs.VideoQuiz", {
 					g.answerContent = l;
 					var n = Ext.decode(m.responseText);
 					if (n.status) {
-						if (d == "InteractiveQuiz") {
-							Ext.get("rightNum").setHTML(n.rightAnswerCount);
-							Ext.get("rightAnswerNum").setStyle("display", "inline-block")
-						};
+						d == "InteractiveQuiz" && (Ext.get("rightNum").setHTML(n.rightAnswerCount),
+							Ext.get("rightAnswerNum").setStyle("display", "inline-block"));
 						if (n.isRight && d == "InteractiveQuiz") {
-							if (typeof n.showTip != "undefined" && n.showTip) {
-								Ext.get("spanHas").setHTML("<span class='spanHas fr' style='display:block'><span id='InteractiveQuizTip'>恭喜你，答对了！你的答题水准超过了" + n.percent + "%的同学</span></span>")
-							} else {
-								Ext.get("spanHas").setHTML("<span class='spanHas fr' style='display:block'><span id='InteractiveQuizTip'>恭喜你，答对了！</span></span>")
-							}
+							typeof n.showTip != "undefined" && n.showTip ? Ext.get("spanHas").setHTML("<span class=\x22spanHas fr\x22 style=\x27display:block\x27><span id=\x22InteractiveQuizTip\x22>恭喜你，答对了！你的答题水准超过了" + n.percent + "%的同学</span></span>") : Ext.get("spanHas").setHTML(`<span class="spanHas fr" style="display:block"><span id="InteractiveQuizTip">恭喜你，答对了！</span></span>`);
 							if (n.testAnalysis) {
 								Ext.get("tkParsing_con").setHTML("解析：" + n.testAnalysis);
 								Ext.get("tkParsing").setStyle("display", "inline-block");
@@ -1229,9 +1134,7 @@ Ext.define("ans.videojs.VideoQuiz", {
 					}
 				}
 			});
-			if (!e && f.onerror && d != "InteractiveQuiz") {
-				f.onerror()
-			}
+			!e && f.onerror && d != "InteractiveQuiz" && f.onerror()
 		} else {
 			if (!e) {
 				Ext.Ajax.request({
@@ -1287,7 +1190,7 @@ Ext.define("ans.videojs.VideoAnnotation", {
 	extend: "Ext.Component",
 	xtype: "videoannotation",
 	cls: "ans-videoannotation",
-	renderTpl: ['<div class="vidNota">', '<div class="vidNota_title"><h2 class="vidNota_h2">[批注]</h2><a class="vidNota_close" href="javascript:;"></a></div>', '<div class="vidNota_con" id="pizhuScroll" tabindex="1" style="overflow: hidden; outline: none;">', "<p>{description}</p>", "</div>", "</div>"],
+	renderTpl: ['<div class=\x22vidNota\x22>', `<div class="vidNota_title"><h2 class="vidNota_h2">[批注]</h2><a class="vidNota_close" href="javascript:;"></a></div>`, `<div class="vidNota_con" id="pizhuScroll" tabindex="1" style="overflow:hidden; outline:none;">`, "<p>{description}</p>", "</div>", '</div>'],
 	renderSelectors: {
 		closeEl: "a.vidNota_close",
 		contentEl: "div.vidNota_con"
@@ -1315,7 +1218,7 @@ Ext.define("ans.videojs.VideoPpt", {
 	cls: "ans-videoppt",
 	width: "100%",
 	model: false,
-	renderTpl: ['<div class="sp_video_ppt_pic" id="sp_video_ppt_pic">', '<img src="{src}" class="sp_video_img" style="width: 100%;"/>', '<a class="sp_size_big" id="sp_size_big" href="javascript:;"></a>', '<a class="sp_size_small" href="javascript:;" style="display:none;" id="sp_size_small"></a>', "</div>"],
+	renderTpl: [`<div class="sp_video_ppt_pic" id="sp_video_ppt_pic">`, `<img src="{ src }" class="sp_video_img" style="width:100 %; "/>`, `<a class="sp_size_big" id="sp_size_big" href="javascript:; "></a>`, `<a class="sp_size_small" href="javascript:; " style="display:none; " id="sp_size_small"></a>`, "</div>"],
 	renderSelectors: {
 		pptPicEl: "div.sp_video_ppt_pic",
 		sizeBigEl: "a.sp_size_big",
@@ -1421,28 +1324,22 @@ Ext.define("ans.videojs.TimelineObjects", {
 		if (b == "InteractiveQuiz") {
 			var k = function () { };
 			if (e.errorBackTime && e.errorBackTime > 0) {
-				var o = e.errorBackTime * 60;
+				var n = e.errorBackTime * 60;
 				k = function () {
-					var z = Math.max(m.currentTime() - o, 0);
-					m.switchStatus = true;
-					m.currentTime(z)
+					var z = Math.max(m.currentTime() - n, 0);
+					m.switchStatus = true,
+						m.currentTime(z);
 				}
 			}
 			if (e.errorBack == 1 && e.eBstartPoint != "") {
-				var o = 0,
+				var n = 0,
 					y = e.eBstartPoint.split(":"),
 					x = y.length;
-				if (x > 0) {
-					if (x == 1) {
-						o = parseInt(y[0]) * 60
-					} else if (x == 2) {
-						o = parseInt(y[0]) * 60 + parseInt(y[1])
+				x > 0 && (x == 1 ? n = parseInt(y[0]) * 60 : x == 2 && (n = parseInt(y[0]) * 60 + parseInt(y[1]))),
+					k = function () {
+						m.switchStatus = true;
+						m.currentTime(n)
 					}
-				}
-				k = function () {
-					m.switchStatus = true;
-					m.currentTime(o)
-				}
 			}
 			e.dtype = "InteractiveQuiz";
 			l = j.add({
@@ -1459,11 +1356,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 				return
 			}
 			var a = e.url;
-			if (e.thumb) {
-				a = e.thumb + e.pageNo + ".png"
-			} else {
-				a = a.replace(/swfv2\/.*$/, "thumb/" + e.fp + ".png")
-			}
+			e.thumb ? a = e.thumb + e.pageNo + ".png" : a = a.replace(/swfv2\/.*$/, "thumb/" + e.fp + ".png");
 			var f = {
 				src: a
 			};
@@ -1472,12 +1365,10 @@ Ext.define("ans.videojs.TimelineObjects", {
 				renderData: f
 			})
 		}
-		if (b == "SyncAnnotationEvent") {
-			l = j.add({
-				xtype: "videoannotation",
-				renderData: e
-			})
-		}
+		b == "SyncAnnotationEvent" && (l = j.add({
+			xtype: "videoannotation",
+			renderData: e
+		}))
 		if (!l) {
 			return
 		}
@@ -1496,14 +1387,10 @@ Ext.define("ans.videojs.TimelineObjects", {
 		}
 		var c = this;
 		c.show();
-		if (a) {
-			c.removeCls("ans-timelineobjects-autosize");
-			c.setAutoScroll(true);
-			c.bg.show()
-		} else {
-			c.addCls("ans-timelineobjects-autosize");
-			c.setAutoScroll(false)
-		}
+		a ? (c.removeCls("ans-timelineobjects-autosize"),
+			c.setAutoScroll(true),
+			c.bg.show()) : (c.addCls("ans-timelineobjects-autosize"),
+				c.setAutoScroll(false));
 	},
 	hide: function () {
 		this.callParent(arguments);
@@ -1517,10 +1404,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 			f = c.objects[c.current],
 			b = f.style,
 			g = f.datas[0];
-		if (e >= g.startTime) {
-			c.current++;
-			setTimeout(function () { c.showObject(a, b, g) }, 30)
-		}
+		e >= g.startTime && (c.current++,
+			setTimeout(function () { c.showObject(a, b, g) }, 30))
 	},
 	resetTime: function (b, e) {
 		var c = this,
@@ -1659,13 +1544,13 @@ Ext.define("ans.videojs.TimelineObjects", {
 							}
 						}
 						function tmp_F1(h) {
-							var j = '<div class="zsCloud_box"><h2 class="zsCloud_seltime">选择时间</h2><div class="zsCloud_div"><div class="zsCloud_div_list">';
-							for (var i = 0; i < h.length; i++) {
+							var j = "<div class=\x22zsCloud_box\x22><h2 class=\x22zsCloud_seltime\x22>选择时间</h2><div class=\x22zsCloud_div\x22><div class=\x22zsCloud_div_list\x22>";
+							for (var i = 0; i < h["length"]; i++) {
 								var k = h[i],
-									tmp_topic = Ext.fly(topicContent.elements[0]).select(".topicId" + k.topicid + ":not(.markertime)"),
-									l = videojs.formatTime(k.time);
-								tmp_topic && tmp_topic.elements[0] && tmp_topic.elements[0].parentElement.remove();
-								j += '<div class="zsCloud_item topicId' + k.topicid + '" data-marker-time="' + k.time + '" title="' + l + '"onclick ="markersPlayer(this)">' + l + "</div>";
+									tmp_topic = Ext.fly(topicContent["elements"][0]).select(".topicId" + k.topicid + ":not(.markertime)"),
+									l = videojs["formatTime"](k["time"]);
+								tmp_topic && tmp_topic.elements[0] && tmp_topic["elements"][0]["parentElement"]["remove"](),
+									j += '<div class="zsCloud_item topicId' + k["topicid"] + '" data-marker-time="' + k["time"] + '" title="' + l + '" onclick="markersPlayer(this)">' + l + "</div>";
 							}
 							j += "</div></div></div>";
 							return j;
@@ -1680,27 +1565,18 @@ Ext.define("ans.videojs.TimelineObjects", {
 								var markerHtml = "";
 								if (k) {
 									if (k.length == 1) {
-										var marker = k[0];
-										var topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)");
-										var title = videojs.formatTime(marker.time);
-										if (topic && topic.elements[0]) {
-											topic.elements[0].parentElement.remove()
-										}
-										markerHtml = '<li><span class="topicId' + marker.topicid + ' markertime" data-marker-time="' + marker.time + "' title='" + title + "' onclick='markersPlayer(this)'>" + marker.text + "</span></li>";
-									} else {
-										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">' + j + '</span>';
-										if (k && k.length > 0) {
-											markerHtml += tmp_F1(k)
-										} else {
-											markerHtml += "</li>"
-										}
-									}
+										var marker = k[0],
+											topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)"),
+											title = videojs.formatTime(marker.time);
+										topic && topic.elements[0] && topic.elements[0].parentElement.remove(),
+											markerHtml = "<li><span class=\x27topicId" + marker.topicid + " markertime' data-marker-time='" + marker.time + "' title='" + title + "\x27 onclick=\x27markersPlayer(this)\x27>" + marker.text + "</span></li>";
+									} else
+										markerHtml = "<li class=\x22zsCloud_select\x22><span class=\x22zsCloud_span\x22>" + j + "</span>",
+											k && k.length > 0 ? markerHtml += tmp_F1(k) : markerHtml += "</li>";
 								}
-								if (insertLocaltion) {
-									insertLocaltion = Ext.DomHelper.insertHtml("afterEnd", insertLocaltion.elements[0], markerHtml)
-								} else {
-									insertLocaltion = Ext.DomHelper.insertHtml("afterBegin", topicContent.elements[0], markerHtml)
-								}
+								insertLocaltion ?
+									insertLocaltion = Ext.DomHelper.insertHtml("afterEnd", insertLocaltion.elements[0], markerHtml) :
+									insertLocaltion = Ext.DomHelper.insertHtml("afterBegin", topicContent.elements[0], markerHtml);
 								insertLocaltion = Ext.fly(insertLocaltion).select("")
 							}
 						}
@@ -1715,26 +1591,22 @@ Ext.define("ans.videojs.TimelineObjects", {
 						for (var i = 0; i < data.list.length; i++) {
 							var topicid = data.list[i].topicid;
 							var item = dataMap.get(topicid);
-							if (!item) {
-								item = {};
-								item.text = data.list[i].text;
-								item.time = data.list[i].time;
-								item.topicid = data.list[i].topicid;
-								item.weight = 0;
+							!item && (item = {},
+								item.text = data.list[i].text,
+								item.time = data.list[i].time,
+								item.topicid = data.list[i].topicid,
+								item.weight = 0,
 								item.html = {
 									"data-marker-time": data.list[i].time,
 									onclick: "markersPlayer(this)"
-								};
-								dataMap.set(topicid, item);
-								wordList.push(item)
-							}
-							item.weight += 1
+								},
+								dataMap.set(topicid, item),
+								wordList.push(item)),
+								item.weight += 1;
 						}
 					}
 					$(function () {
-						if (wordList.length != 0) {
-							$("#word_cloud").jQCloud(wordList)
-						}
+						wordList.length != 0 && $("#word_cloud").jQCloud(wordList);
 						function tmp_F2(a) {
 							$(a).niceScroll({
 								cursorborder: "",
@@ -1754,15 +1626,11 @@ Ext.define("ans.videojs.TimelineObjects", {
 					});
 					$(".zsCloud_down").click(function () {
 						var con = $(".zsCloud_body");
-						if (con.is(":visible")) {
-							con.hide();
-							$(this).addClass("zsCloud_up");
-							$(this).text("展开")
-						} else {
-							con.show();
-							$(this).removeClass("zsCloud_up");
-							$(this).text("收起")
-						}
+						con.is(":visible") ? (con.hide(),
+							$(this)["addClass"]("zsCloud_up"),
+							$(this)["text"]("展开")) : (con["show"](),
+								$(this)["removeClass"]("zsCloud_up"),
+								$(this).text("收起"))
 					})
 				}
 			})
@@ -1778,10 +1646,9 @@ Ext.define("ans.videojs.TimelineObjects", {
 			var me = this,
 				subtitleUrl = options.subtitleUrl,
 				toVtt = function (srt) {
-					var m = srt.match(/support\/(\w+).\w+/);
-					if (m) {
-						return ServerHosts.PARENT_HOST + "/ananas/video-editor/sub?objectid=" + m[1]
-					}
+					var m = srt["match"](/support\/(\w+).\w+/);
+					if (m)
+						return ServerHosts["PARENT_HOST"] + "/ananas/video-editor/sub?objectid=" + m[1];
 				},
 				addSub = function (name, src, isdefault) {
 					player.addRemoteTextTrack({
@@ -1793,51 +1660,28 @@ Ext.define("ans.videojs.TimelineObjects", {
 					}, true)
 				};
 			player.ready(function () {
-				if (subtitleUrl) {
-					Ext.Ajax.request({
-						url: subtitleUrl,
-						success: function (resp) {
-							if (resp.status != 200) {
-								return
-							}
-							eval("var subs=" + resp.responseText);
-							var index = 0,
-								enIndex = 0;
-							if (subs.length > 0) {
-								Ext.each(subs, function (o) {
-									if (options.translate == 1 && o.name == "English") {
-										o.selected = true;
-										enIndex = index
-									} else {
-										o.selected = false
-									}
-									addSub(o.name, toVtt(o.url), o.selected);
-									index++
-								})
-							}
-							if (options.translate == 1) {
-								Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").setHTML("翻译");
-								Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").addCls("vjs-hide-content")
-							}
-							setTimeout(function () {
-								var tracks = player.textTracks();
-								if (options.translate == 1) {
-									if (tracks && tracks[enIndex]) {
-										tracks[enIndex].mode = "showing"
-									} else {
-										if (tracks && tracks[0]) {
-											tracks[0].mode = "showing"
-										}
-									}
-								} else {
-									if (tracks && tracks[0]) {
-										tracks[0].mode = "showing"
-									}
-								}
-							}, 500)
+				subtitleUrl && Ext.Ajax.request({
+					url: subtitleUrl,
+					success: function (resp) {
+						if (resp.status != 200) {
+							return
 						}
-					})
-				}
+						eval("var subs=" + resp.responseText);
+						var index = 0, enIndex = 0;
+						subs.length > 0 && Ext.each(subs, function (o) {
+							options.translate == 1 && o.name == "English" ? (o.selected = true,
+								enIndex = index) : o.selected = false,
+								addSub(o.name, toVtt(o.url), o.selected),
+								index++;
+						});
+						options.translate == 1 && (Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").setHTML("翻译"),
+							Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").addCls("vjs-hide-content"));
+						setTimeout(function () {
+							var tracks = player["textTracks"]();
+							options.translate == 1 ? tracks && tracks[enIndex] ? tracks[enIndex]["mode"] = "showing" : tracks && tracks[0] && (tracks[0]["mode"] = "showing") : tracks && tracks[0] && (tracks[0]["mode"] = "showing");
+						}, 0x1f4)
+					}
+				})
 				var settings = player.textTrackSettings;
 				settings.setValues({
 					backgroundColor: "#000",
@@ -1854,7 +1698,7 @@ Ext.define("ans.videojs.ErrorDisplay", {
 	extend: "Ext.Component",
 	xtype: "vjserrdisplay",
 	cls: "ans-vjserrdisplay",
-	renderTpl: ['<div class="ans-vjserrdisplay-title">{errorMsg}</div>', '<ul class="ans-vjserrdisplay-opts">', "您可以尝试其他线路: ", '<tpl for="playlines">', '<li class="ans-vjserrdisplay-opt"><label>', '<input type="radio" name="ans-vjserrdisplay-opt" {[xindex-1 === parent.selectedIndex ? "checked disabled":""]}>', "{label}", "</label></li>", "</tpl> ", "</ul>"],
+	renderTpl: ['<div class=\x22ans-vjserrdisplay-title\x22>{errorMsg}</div>', `<ul class="ans-vjserrdisplay-opts">`, '您可以尝试其他线路:', '<tpl for=\x22playlines\x22>', `<li class="ans-vjserrdisplay-opt"><label>`, '<input type=\x22radio\x22 name=\x22ans-vjserrdisplay-opt\x22 {[xindex-1===parent.selectedIndex?\x22checked disabled\x22:\x22\x22]}>', "{label}", "</label></li>", "</tpl>", "</ul>"],
 	renderSelectors: {
 		errorMsgEl: "div.ans-vjserrdisplay-title"
 	},
@@ -1868,11 +1712,7 @@ Ext.define("ans.videojs.ErrorDisplay", {
 			})
 		});
 		try {
-			if (typeof (createVideoTask) === "function") {
-				createVideoTask()
-			} else {
-				console.log("createVideoTask函数不存在！")
-			}
+			typeof createVideoTask === "function" ? createVideoTask() : console.log("createVideoTask函数不存在！")
 		} catch (c) { }
 	},
 	setErrorMsg: function (a) {
@@ -1892,10 +1732,8 @@ Ext.define("ans.videojs.ErrorNote", {
 		},
 		colse: function () {
 			b.prototype.colse.call(this);
-			if (me.ansErrorDisplay) {
-				me.ansErrorDisplay.destroy();
-				me.ansErrorDisplay = null
-			}
+			me.ansErrorDisplay && (me.ansErrorDisplay.destroy(),
+				me.ansErrorDisplay = null)
 		},
 		fill: function () {
 			b.prototype.fill.call(this);
@@ -1903,10 +1741,8 @@ Ext.define("ans.videojs.ErrorNote", {
 				i = g.player_,
 				h = i.options_.playlines,
 				e = Ext.query(".vjs-modal-dialog-content", g.el_)[0];
-			if (g.ansErrorDisplay) {
-				g.ansErrorDisplay.destroy();
-				delete g.ansErrorDisplay
-			}
+			g.ansErrorDisplay && (g.ansErrorDisplay.destroy(),
+				delete g.ansErrorDisplay)
 			if (!i.selectCDN || !h) {
 				g.ansErrorDisplay = Ext.create("ans.videojs.ErrorNote", {
 					renderTo: g.el_
@@ -1938,224 +1774,190 @@ Ext.define("ans.videojs.ErrorNote", {
 })();
 (function () {
 	var a = null;
-	if (typeof window.videojs === "undefined" && typeof require === "function") {
-		a = require("video.js")
-	} else {
-		a = window.videojs
-	}
-	(function (i, h) {
-		var g = {},
-			c,
-			k = {},
-			b = {};
-		function f(p, o, n, q) {
-			k = {
-				label: n,
-				sources: o
-			};
-			if (typeof q === "function") {
-				return q(p, o, n)
-			}
-			p.src(o.map(function (r) {
-				return {
-					src: r.src,
-					type: r.type,
-					res: r.res
-				}
-			}));
-			return p
-		}
-		var l = h.getComponent("MenuItem");
-		var m = h.extend(l, {
-			constructor: function (p, o, q, n) {
-				this.onClickListener = q;
-				this.label = n;
-				l.call(this, p, o);
-				this.src = o.src;
-				this.on("click", this.onClick);
-				this.on("touchstart", this.onClick);
-				if (o.initialySelected) {
-					this.showAsLabel();
-					this.selected(true);
-					this.addClass("vjs-selected")
-				}
-			},
-			showAsLabel: function () {
-				if (this.label) {
-					this.label.innerHTML = this.options_.label
-				}
-			},
-			onClick: function (q) {
-				this.onClickListener(this);
-				var p = this.player_.currentTime();
-				var n = this.player_.paused();
-				this.showAsLabel();
-				this.addClass("vjs-selected");
-				if (!n) {
-					this.player_.bigPlayButton.hide()
-				}
-				if (typeof q !== "function" && typeof this.options_.customSourcePicker === "function") {
-					q = this.options_.customSourcePicker
-				}
-				var o = "loadeddata";
-				if (this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash") {
-					o = "timeupdate"
-				}
-				f(this.player_, this.src, this.options_.label, q).one(o, function () {
-					var r = this.player_;
-					r.switchStatus = true;
-					r.currentTime(p);
-					if (!n) {
-						r.play()
-					}
-					r.trigger("resolutionchange")
-				})
-			}
-		});
-		h.registerComponent("ResolutionMenuItem", m);
-		var j = h.getComponent("MenuButton");
-		var e = h.extend(j, {
-			constructor: function (q, o, r, n) {
-				this.sources = o.sources;
-				this.label = n;
-				this.label.innerHTML = o.initialySelectedLabel;
-				j.call(this, q, o, r);
-				this.controlText("Quality");
-				if (r.dynamicLabel) {
-					this.el().appendChild(n)
-				} else {
-					var p = document.createElement("span");
-					h.dom.addClass(p, "vjs-resolution-button-staticlabel");
-					this.el().appendChild(p)
-				}
-			},
-			createItems: function () {
-				var o = [];
-				var q = (this.sources && this.sources.label) || {};
-				var p = function (r) {
-					o.map(function (s) {
-						s.selected(s === r);
-						s.removeClass("vjs-selected")
-					})
+	typeof window.videojs === "undefined" && typeof require === "function" ? a = require("video.js") : a = window.videojs,
+		function (i, h) {
+			var g = {},
+				c,
+				k = {},
+				b = {};
+			function f(p, o, n, q) {
+				k = {
+					label: n,
+					sources: o
 				};
-				for (var n in q) {
-					if (q.hasOwnProperty(n)) {
-						o.push(new m(this.player_, {
+				if (typeof q === "function") {
+					return q(p, o, n)
+				}
+				p.src(o.map(function (r) {
+					return {
+						src: r.src,
+						type: r.type,
+						res: r.res
+					}
+				}));
+				return p
+			}
+			var l = h.getComponent("MenuItem");
+			var m = h.extend(l, {
+				constructor: function (p, o, q, n) {
+					this.onClickListener = q;
+					this.label = n;
+					l.call(this, p, o);
+					this.src = o.src;
+					this.on("click", this.onClick);
+					this.on("touchstart", this.onClick);
+					o.initialySelected && (this.showAsLabel(),
+						this.selected(true),
+						this.addClass("vjs-selected"));
+				},
+				showAsLabel: function () {
+					this.label && (this.label.innerHTML = this.options_.label)
+				},
+				onClick: function (q) {
+					this.onClickListener(this);
+					var p = this.player_.currentTime(),
+						n = this.player_.paused();
+					this.showAsLabel(),
+						this.addClass("vjs-selected");
+					!n && this.player_.bigPlayButton.hide();
+					typeof q !== "function" && typeof this.options_.customSourcePicker === "function" && (q = this.options_.customSourcePicker);
+					var o = "loadeddata";
+					this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash" && (o = "timeupdate"),
+						f(this.player_, this.src, this.options_.label, q).one(o, function () {
+							var r = this.player_;
+							r.switchStatus = true,
+								r["currentTime"](p),
+								!n && r["play"](),
+								r["trigger"]("resolutionchange");
+						});
+				}
+			});
+			h.registerComponent("ResolutionMenuItem", m);
+			var j = h.getComponent("MenuButton");
+			var e = h.extend(j, {
+				constructor: function (q, o, r, n) {
+					this.sources = o.sources,
+						this.label = n,
+						this.label.innerHTML = o.initialySelectedLabel,
+						j.call(this, q, o, r),
+						this.controlText("Quality");
+					if (r.dynamicLabel)
+						this.el().appendChild(n);
+					else {
+						var p = document.createElement("span");
+						h.dom.addClass(p, "vjs-resolution-button-staticlabel"),
+							this.el().appendChild(p);
+					}
+				},
+				createItems: function () {
+					var o = [];
+					var q = (this.sources && this.sources.label) || {};
+					var p = function (r) {
+						o.map(function (s) {
+							s.selected(s === r);
+							s.removeClass("vjs-selected")
+						})
+					};
+					for (var n in q) {
+						q.hasOwnProperty(n) && (o.push(new m(this.player_, {
 							label: n,
 							src: q[n],
 							initialySelected: n === this.options_.initialySelectedLabel,
 							customSourcePicker: this.options_.customSourcePicker
-						}, p, this.label));
-						b[n] = o[o.length - 1]
+						}, p, this.label)),
+							b[n] = o[o.length - 1]);
+					}
+					return o
+				}
+			});
+			c = function (w) {
+				var p = h.mergeOptions(g, w),
+					u = this,
+					t = document.createElement("span"),
+					s = {};
+				h.dom.addClass(t, "vjs-resolution-button-label");
+				u.updateSrc = function (y) {
+					if (!y) {
+						return u.src()
+					}
+					u.controlBar.resolutionSwitcher && (u.controlBar.resolutionSwitcher.dispose(),
+						delete u.controlBar.resolutionSwitcher);
+					y = y.sort(r);
+					s = q(y);
+					var z = o(s, y);
+					var x = new e(u, {
+						sources: s,
+						initialySelectedLabel: z.label,
+						initialySelectedRes: z.res,
+						customSourcePicker: p.customSourcePicker
+					}, p, t);
+					h.dom.addClass(x.el(), "vjs-resolution-button");
+					u.controlBar.resolutionSwitcher = u.controlBar.el_.insertBefore(x.el_, u.controlBar.getChild("fullscreenToggle").el_);
+					u.controlBar.resolutionSwitcher.dispose = function () {
+						this.parentNode.removeChild(this)
+					};
+					return f(u, z.sources, z.label, p.customSourcePicker)
+				};
+				u.currentResolution = function (x, y) {
+					if (x == null) {
+						return k
+					}
+					b[x] != null && b[x].onClick(y);
+					return u
+				};
+				u.getGroupedSrc = function () {
+					return s
+				};
+				function r(y, x) {
+					if (!y.res || !x.res) {
+						return 0
+					}
+					return (+x.res) - (+y.res)
+				}
+				function q(y) {
+					var x = {
+						label: {},
+						res: {},
+						type: {}
+					};
+					y.map(function (z) {
+						n(x, "label", z);
+						n(x, "res", z);
+						n(x, "type", z);
+						v(x, "label", z);
+						v(x, "res", z);
+						v(x, "type", z)
+					});
+					return x
+				}
+				function n(x, y, z) {
+					if (x[y][z[y]] == null) {
+						x[y][z[y]] = []
 					}
 				}
-				return o
-			}
-		});
-		c = function (w) {
-			var p = h.mergeOptions(g, w),
-				u = this,
-				t = document.createElement("span"),
-				s = {};
-			h.dom.addClass(t, "vjs-resolution-button-label");
-			u.updateSrc = function (y) {
-				if (!y) {
-					return u.src()
+				function v(x, y, z) {
+					x[y][z[y]].push(z)
 				}
-				if (u.controlBar.resolutionSwitcher) {
-					u.controlBar.resolutionSwitcher.dispose();
-					delete u.controlBar.resolutionSwitcher
-				}
-				y = y.sort(r);
-				s = q(y);
-				var z = o(s, y);
-				var x = new e(u, {
-					sources: s,
-					initialySelectedLabel: z.label,
-					initialySelectedRes: z.res,
-					customSourcePicker: p.customSourcePicker
-				}, p, t);
-				h.dom.addClass(x.el(), "vjs-resolution-button");
-				u.controlBar.resolutionSwitcher = u.controlBar.el_.insertBefore(x.el_, u.controlBar.getChild("fullscreenToggle").el_);
-				u.controlBar.resolutionSwitcher.dispose = function () {
-					this.parentNode.removeChild(this)
-				};
-				return f(u, z.sources, z.label, p.customSourcePicker)
-			};
-			u.currentResolution = function (x, y) {
-				if (x == null) {
-					return k
-				}
-				if (b[x] != null) {
-					b[x].onClick(y)
-				}
-				return u
-			};
-			u.getGroupedSrc = function () {
-				return s
-			};
-			function r(y, x) {
-				if (!y.res || !x.res) {
-					return 0
-				}
-				return (+x.res) - (+y.res)
-			}
-			function q(y) {
-				var x = {
-					label: {},
-					res: {},
-					type: {}
-				};
-				y.map(function (z) {
-					n(x, "label", z);
-					n(x, "res", z);
-					n(x, "type", z);
-					v(x, "label", z);
-					v(x, "res", z);
-					v(x, "type", z)
-				});
-				return x
-			}
-			function n(x, y, z) {
-				if (x[y][z[y]] == null) {
-					x[y][z[y]] = []
-				}
-			}
-			function v(x, y, z) {
-				x[y][z[y]].push(z)
-			}
-			function o(z, A) {
-				var y = p["default"];
-				var x = "";
-				if (y === "high") {
-					y = A[0].res;
-					x = A[0].label
-				} else {
-					if (y === "low" || y == null || !z.res[y]) {
-						y = A[A.length - 1].res;
-						x = A[A.length - 1].label
-					} else {
-						if (z.res[y]) {
-							x = z.res[y][0].label
-						}
+				function o(z, A) {
+					var y = p["default"];
+					var x = "";
+					return y === "high" ? (y = A[0].res,
+						x = A[0].label) : y === "low" || y == null || !z.res[y] ? (y = A[A.length - 1].res,
+							x = A[A.length - 1].label) : z.res[y] && (x = z.res[y][0].label),
+					{
+						res: y,
+						label: x,
+						sources: z.res[y]
 					}
 				}
-				return {
-					res: y,
-					label: x,
-					sources: z.res[y]
-				}
-			}
-			u.ready(function () {
-				if (u.options_.sources.length > 0) {
-					u.setTimeout(function () {
+				u.ready(function () {
+					u.options_.sources.length > 0 && u.setTimeout(function () {
 						u.updateSrc(u.options_.sources)
 					}, 1)
-				}
-			})
-		};
-		h.registerPlugin("videoJsResolutionSwitcher", c)
-	})(window, a)
+				})
+			};
+			h.registerPlugin("videoJsResolutionSwitcher", c)
+		}(window, a)
 })();
 (function () {
 	(function (i, h) {
@@ -2178,27 +1980,17 @@ Ext.define("ans.videojs.ErrorNote", {
 				var m = this.player_.paused();
 				this.showAsLabel();
 				this.addClass("vjs-selected");
-				if (!m) {
-					this.player_.bigPlayButton.hide()
-				}
-				if (typeof q !== "function" && typeof this.options_.customSourcePicker === "function") {
-					q = this.options_.customSourcePicker
-				}
+				!m && this.player_.bigPlayButton.hide();
+				typeof q !== "function" && typeof this.options_.customSourcePicker === "function" && (q = this.options_.customSourcePicker);
 				var o = "loadeddata";
-				if (this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash") {
-					o = "timeupdate"
-				}
+				this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash" && (o = "timeupdate");
 				var n = c(this.player_, this.src, this.options_.label, q);
-				if (n) {
-					n.one(o, function () {
-						n.switchStatus = true;
-						n.currentTime(p);
-						if (!m) {
-							n.play()
-						}
-						n.trigger("playlinechange")
-					})
-				}
+				n && n.one(o, function () {
+					n.switchStatus = true,
+						n.currentTime(p),
+						!m && n.play(),
+						n.trigger("playlinechange");
+				})
 			}
 		});
 		var j = h.getComponent("MenuButton");
@@ -2272,7 +2064,7 @@ Ext.define("ans.videojs.ErrorNote", {
 			})
 		};
 		h.registerPlugin("videoJsPlayLine", b)
-	})(window, videojs)
+	}(window, videojs))
 })();
 Ext.define("ans.AudioJs", {
 	videoJs: null,
@@ -2289,27 +2081,19 @@ Ext.define("ans.AudioJs", {
 			f.preventDefault()
 		});
 		Ext.fly(a.videojs).on("keydown", function (f) {
-			if (f.keyCode == 32 || f.keyCode == 37 || f.keyCode == 39) {
-				f.preventDefault()
-			}
+			(f.keyCode == 0x20 || f.keyCode == 0x25 || f.keyCode == 0x27) && f.preventDefault();
 		})
 	},
 	params2VideoOpt: function (params) {
 		var sources = [];
-		if (!params.rootPath) {
-			params.rootPath = ""
-		}
-		if (params.http) {
-			sources.push({
-				src: params.http,
-				type: "audio/mp3"
-			})
-		}
+		!params.rootPath && (params.rootPath = "");
+		params.http && sources.push({
+			src: params.http,
+			type: "audio/mp3"
+		})
 		var logFunc = function (player, url, callback) {
 			var me = this;
-			if (!me.logCount) {
-				me.logCount = 0
-			}
+			!me.logCount && (me.logCount = 0);
 			videojs.xhr({
 				uri: url,
 				headers: {
@@ -2320,26 +2104,16 @@ Ext.define("ans.AudioJs", {
 				if (resp.statusCode == 200) {
 					me.logCount = 0;
 					if (resp.body.indexOf("isPassed") < 0) {
-						if (window.parent) {
-							window.parent.location.reload()
-						}
+						window.parent && window.parent.location.reload();
 						return
 					}
 					eval("var d=" + resp.body);
-					if (d.isPassed) {
-						callback()
-					}
+					d.isPassed && callback();
 					return
 				}
-				if (me.logCount >= 4) {
-					me.logCount = 0;
-					player.pause();
-					if (resp.statusCode != 0) {
-						alert("服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e: " + resp.statusCode + ")")
-					} else {
-						alert("您的网络不稳定，请您稍后继续...")
-					}
-				}
+				me.logCount >= 4 && (me.logCount = 0,
+					player.pause(),
+					resp.statusCode != 0 ? alert("服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e:" + resp.statusCode + ")") : alert("您的网络不稳定，请您稍后继续..."));
 			})
 		};
 		var sendLog_ = function (player, isdrag, currentTimeSec, callback) {

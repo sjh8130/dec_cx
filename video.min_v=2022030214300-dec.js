@@ -1,3 +1,4 @@
+// https://mooc1-2.chaoxing.com/ananas/video-js-7.2.2/video.min.js?v=2022030214300
 /**
  * @license
  * Video.js 7.2.2 <http://videojs.com/>
@@ -23372,49 +23373,49 @@
 			}, {
 				'key': 'setupSegmentLoaderListeners_',
 				'value': function _0x3fb8b1() {
-					var _0x491fa6 = this;
+					var _this3 = this;
 					this.mainSegmentLoader_.on('bandwidthupdate', function () {
-						var _0xa26779 = _0x491fa6['selectPlaylist'](), _0xdd9e73 = _0x491fa6['masterPlaylistLoader_'].media(), _0x54e450 = _0x491fa6['tech_']['buffered'](), _0xd597f0 = _0x54e450.length ? _0x54e450.end(_0x54e450.length - 1) - _0x491fa6['tech_'].currentTime() : 0, _0x1e4016 = _0x491fa6['bufferLowWaterLine']();
-						(!_0xdd9e73['endList'] || _0x491fa6.duration() < _0x229d75['MAX_BUFFER_LOW_WATER_LINE'] || _0xa26779.attributes['BANDWIDTH'] < _0xdd9e73.attributes['BANDWIDTH'] || _0xd597f0 >= _0x1e4016) && _0x491fa6['masterPlaylistLoader_'].media(_0xa26779),
-							_0x491fa6['tech_'].trigger('bandwidthupdate');
+						var _0xa26779 = _this3['selectPlaylist'](), _0xdd9e73 = _this3['masterPlaylistLoader_'].media(), _0x54e450 = _this3['tech_']['buffered'](), _0xd597f0 = _0x54e450.length ? _0x54e450.end(_0x54e450.length - 1) - _this3['tech_'].currentTime() : 0, _0x1e4016 = _this3['bufferLowWaterLine']();
+						(!_0xdd9e73['endList'] || _this3.duration() < _0x229d75['MAX_BUFFER_LOW_WATER_LINE'] || _0xa26779.attributes['BANDWIDTH'] < _0xdd9e73.attributes['BANDWIDTH'] || _0xd597f0 >= _0x1e4016) && _this3['masterPlaylistLoader_'].media(_0xa26779),
+							_this3['tech_'].trigger('bandwidthupdate');
 					}),
 						this.mainSegmentLoader_.on('progress', function () {
-							_0x491fa6.trigger('progress');
+							_this3.trigger('progress');
 						}),
 						this.mainSegmentLoader_.on('error', function () {
-							_0x491fa6['blacklistCurrentPlaylist'](_0x491fa6.mainSegmentLoader_.error());
+							_this3['blacklistCurrentPlaylist'](_this3.mainSegmentLoader_.error());
 						}),
 						this.mainSegmentLoader_.on('syncinfoupdate', function () {
-							_0x491fa6['onSyncInfoUpdate_']();
+							_this3['onSyncInfoUpdate_']();
 						}),
 						this.mainSegmentLoader_.on('timestampoffset', function () {
-							_0x491fa6['tech_'].trigger({
+							_this3['tech_'].trigger({
 								'type': 'usage',
 								'name': 'hls-timestamp-offset'
 							});
 						}),
 						this['audioSegmentLoader_'].on('syncinfoupdate', function () {
-							_0x491fa6['onSyncInfoUpdate_']();
+							_this3['onSyncInfoUpdate_']();
 						}),
 						this.mainSegmentLoader_.on('ended', function () {
-							_0x491fa6['onEndOfStream']();
+							_this3['onEndOfStream']();
 						}),
 						this.mainSegmentLoader_.on('earlyabort', function () {
-							_0x491fa6['blacklistCurrentPlaylist']({
+							_this3['blacklistCurrentPlaylist']({
 								'message': "Aborted early because there isn't enough bandwidth to complete the " + 'request without rebuffering.'
 							}, _0x19c163);
 						}),
 						this.mainSegmentLoader_.on('reseteverything', function () {
-							_0x491fa6.tech_.trigger('hls-reset');
+							_this3.tech_.trigger('hls-reset');
 						}),
 						this.mainSegmentLoader_.on('segmenttimemapping', function (_0x398316) {
-							_0x491fa6.tech_.trigger({
+							_this3.tech_.trigger({
 								'type': 'hls-segment-time-mapping',
 								'mapping': _0x398316['mapping']
 							});
 						}),
 						this['audioSegmentLoader_'].on('ended', function () {
-							_0x491fa6['onEndOfStream']();
+							_this3['onEndOfStream']();
 						});
 				}
 			}, {
@@ -23439,12 +23440,12 @@
 			}, {
 				'key': 'fastQualityChange_',
 				'value': function _0x354246() {
-					var _0x417272 = this, _0x49ad5c = this['selectPlaylist']();
+					var _this4 = this, _0x49ad5c = this['selectPlaylist']();
 					if (_0x49ad5c === this['masterPlaylistLoader_'].media())
 						return;
 					this['masterPlaylistLoader_'].media(_0x49ad5c),
 						this.mainSegmentLoader_['resetEverything'](function () {
-							_0x417272['tech_']['setCurrentTime'](_0x417272.tech_.currentTime());
+							_this4['tech_']['setCurrentTime'](_this4.tech_.currentTime());
 						});
 				}
 			}, {

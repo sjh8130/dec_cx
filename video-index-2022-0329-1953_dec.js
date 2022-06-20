@@ -1,3 +1,4 @@
+// https://mooc1-2.chaoxing.com/ananas/modules/video/index.js?v=2022-0329-1953
 Ext.Ajax.autoAbort = true;
 Ext.isIpad = (navigator.userAgent.indexOf('iPad') > -1);
 Ext.isIos = (!!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/));
