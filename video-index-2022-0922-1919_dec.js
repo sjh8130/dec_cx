@@ -76,7 +76,7 @@ function showMoocPlayer(paras) {
 		});
 	});
 }
-function bindVjsClick(AAAA) {	// ====Modified====
+function bindVjsClick(AAAA) {
 	try {
 		var DDDD = AAAA.enableFastForward, EEEE = AAAA.jobid;
 		if (typeof DDDD != 'undefined' && DDDD === 0x0 && typeof EEEE != 'undefined' && EEEE != '' && window.parent.parent.location.href.indexOf('studentstudy') > -0x1) {
@@ -139,24 +139,23 @@ function loadVideo() {
 	}
 	wrongObj = objectid,
 		videoObjectId = objectid;
-	var iframe = window.frameElement, data = Ext.decode(iframe.getAttribute('data')), setting = parent.AttachmentSetting;
+	var iframe = window.frameElement, data = Ext.decode(iframe.getAttribute('data')), setting = parent.AttachmentSetting, ZZ_Attachments = parent.previewAttachments;
 	mid = config('mid');
 	var percent = 0x0, vbegin = config('vbegin'), vend = config('vend'), jobid = config('jobid') || '', danmaku = data ? data.danmaku == null ? 0x0 : data.danmaku : 0x0, videoTopicCloud = setting && setting.videoTopicCloud, fastforward = config('fastforward') == 'true' ? true : false, switchwindow = config('switchwindow') == 'true' ? true : false, note = Ext.get('note'), hl = Ext.get('hl'), note1Wrap = Ext.get('note1-wrap'), note1 = Ext.get('note1'), timer = null, rt = data ? data.rt ? data.rt : 0.9 : 0.9;
 	jobid == '' ? videoJobId = data && data._jobid ? data._jobid : '' : videoJobId = jobid;
-	var fls = flashChecker().hasFlash;
+	var fls = flashChecker().hasFlash, New_M = setting && setting.defaults && setting.defaults.isForScreen == 0x1;
 	try {
-		isTeacher = top.location.href.indexOf('teacherstudy') > 0x0 || top.location.href.indexOf('course/phone/chapterdata') > 0x0;
+		isTeacher = top.location.href.indexOf('teacherstudy') > 0x0 || top.location.href.indexOf('course/phone/chapterdata') > 0x0 || New_M;
 	} catch (e) { }
 	var isVideoVisibleName = parent.isVideoVisibleName, doublespeed = data ? data.doublespeed != 0x0 ? 0x1 : 0x0 : 0x1;
 	data.v_begin && data.v_end && data.pobjectid && (isViturlEdit = true);
 	function setTopicName(list) {
-		if (list && list.length == 0x0) {
+		if (list && list.length == 0x0)
 			return;
-		}
 		if (Ext.select('.zsCloud_ul') != null) {
 			var spanList = '';
 			for (var i = 0x0, len = list.length; i < len; i++) {
-				spanList += "<li><span class='zsCloud_span topicId" + list[i].id + '\x27 onclick=\x27markersPlayer(this)\x27>' + list[i].name + ' </span></li>';
+				spanList += '<li><span class=\x27zsCloud_span topicId' + list[i].id + '\x27 onclick=\x27markersPlayer(this)\x27>' + list[i].name + ' </span></li>';
 			}
 			Ext.select('.zsCloud_ul').setHTML(spanList),
 				Ext.select('.zsCloud').setStyle('display', 'block');
@@ -174,7 +173,23 @@ function loadVideo() {
 					case 'success':
 						note1Wrap.remove(),
 							videoName = data && data.name || '';
-						isVideoVisibleName != 'false' && (Ext.fly(window.frameElement).parent().first('.ans-job-icon') != null ? top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 ? Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title="' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div>') : Ext.fly(window.frameElement).parent().first('.ans-job-icon').insertHtml('beforeEnd', '<span title="' + videoName + '" style="width: 500px;margin-left: 120px;display: inline-block;height: 23px;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</span>') : Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title="' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div>'));
+						var New_A = 0x0;
+						try {
+							var New_B = oData.duration;
+							if (ZZ_Attachments && top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1) {
+								var New_C = oData.objectid + '-' + (vbegin ? vbegin : 0x0) + '-' + (vend ? vend : New_B) + '-' + jobid;
+								for (var i = 0x0; i < ZZ_Attachments.length; i++) {
+									var New_D = ZZ_Attachments[i]
+										, New_E = 0x0
+										, New_F = New_B;
+									New_D.property && (New_D.property.vbegin && (New_E = New_D.property.vbegin),
+										New_D.property.vend && (New_F = New_D.property.vend));
+									!New_D.jobid && (New_D.jobid = '');
+									var New_G = New_D.objectId + '-' + New_E + '-' + New_F + '-' + New_D.jobid;
+									New_C == New_G && (New_A = New_D.customType);
+								}
+							}
+						} catch (e) { console.log(e); }
 						var d = oData.duration, paras = {
 							'enableFastForward': fastforward ? 0x0 : 0x1,
 							'enableSwitchWindow': switchwindow ? 0x0 : 0x1,
@@ -220,7 +235,17 @@ function loadVideo() {
 								s = m.objectId + '-' + vb + '-' + ve + '-' + m.jobid;
 								if (spec == s) {
 									Ext.apply(paras, setting.defaults),
-										paras.headOffset = m.headOffset ? Math.floor(parseInt(m.headOffset) / 0x3e8) : 0x0,
+										New_A = m.customType;
+									var New_H = m.begins ? parseInt(m.begins) : 0x0;
+									New_H > 0x0 && oData.duration ? paras.begins = New_H > oData.duration ? 0x0 : New_H : paras.begins = 0x0;
+									var New_I = m.ends ? parseInt(m.ends) : 0x0;
+									if (New_I > 0x0 && oData.duration) {
+										var New_J = oData.duration - New_I;
+										paras.ends = New_J < 0x0 ? 0x0 : New_J;
+									} else
+										paras.ends = 0x0;
+									paras.ends < paras.begins && (paras.begins = 0x0, paras.ends = 0x0);
+									paras.headOffset = m.headOffset ? Math.floor(parseInt(m.headOffset) / 0x3e8) : 0x0,
 										paras.objectId = m.objectId,
 										paras.otherInfo = m.otherInfo,
 										paras.isPassed = m.isPassed,
@@ -248,6 +273,19 @@ function loadVideo() {
 							var schoolDoubleSpeed = paras.schooldoublespeed;
 							typeof schoolDoubleSpeed == 'undefined' || schoolDoubleSpeed == 0x2 ? paras.doublespeed = doublespeed : paras.doublespeed = schoolDoubleSpeed;
 						}
+						var New_K = '', New_L = '';
+						(top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 || top.location.href.indexOf('mycourse/teacherstudy') > -0x1) && parseInt(New_A) === 0x2 && (New_K = '<span style = "display: inline-block;width: 40px; height: 20px;font-size: 12px;background:#F9F9FA;border:1px solid #D5E2F1;' + 'border-radius:4px;text-align:center;line-height:20px;color: #6B89B3;position: absolute;right: 0; top: 0px;\x22>动画</span>',
+							New_L = '<span style =\x22display: inline-block;overflow: hidden;float: right;text-overflow: ellipsis;white-space: nowrap;width: 40px;' + 'height: 20px;font-size: 12px;background: #F9F9FA;border:1px solid #D5E2F1;border-radius:4px;text-align: center;line-height:20px;color:#6B89B3;right:0;top:0;">动画</span>');
+						if (isVideoVisibleName != 'false')
+							Ext.fly(window.frameElement).parent().first('.ans-job-icon') != null ? top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 ? Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title="' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div>' + New_L) : (Ext.fly(window.frameElement).parent().first('.ans-job-icon').insertHtml('beforeEnd', '<span title="' + videoName + '\x22 style=\x22width: 500px;margin-left: 120px;display: inline-block;height: 23px;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;\x22>' + videoName + '</span>' + New_K),
+								New_K != '' && Ext.fly(window.frameElement).parent().addCls('relativeClass')) : (Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title=\x22' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div>' + New_L),
+									New_L != '' && Ext.fly(window.frameElement).parent().addCls('relativeClass'));
+						else
+							try {
+								Ext.fly(window.frameElement).parent().first('.ans-job-icon') != null ? top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 ? New_L != '' && Ext.fly(window.frameElement).parent().insertHtml('afterBegin', New_L) : New_K != '' && (Ext.fly(window.frameElement).parent().first('.ans-job-icon').insertHtml('beforeEnd', New_K),
+									Ext.fly(window.frameElement).parent().addCls('relativeClass')) : New_L != '' && (Ext.fly(window.frameElement).parent().insertHtml('afterBegin', New_L),
+										Ext.fly(window.frameElement).parent().addCls('relativeClass'));
+							} catch (e) { console.log(e); }
 						paras.ignoreVideoCtrl == 0x1 && (paras.enableFastForward = 0x1,
 							paras.enableSwitchWindow = 0x1);
 						(!paras.control || isTeacher) && (ed_complete = false,
@@ -286,7 +324,7 @@ function loadVideo() {
 						else {
 							if (!fls) {
 								var href = 'http://www.adobe.com/go/getflashplayer';
-								Ext.get('reader').setHTML('您没有安装flashplayer，请到<a href="' + href + '" target="_blank">www.adobe.com</a>下载安装。<br/>如果已经安装请点击此处启用：<object id="swf_jlxl1lfb" height="50" width="100" type="application/x-shockwave-flash" data="/ananas/modules/video/cxplayer/player_4.0.11.swf?v=20161025" style="border:#ccc 1px solid"><param name="quality" value="high"><param name="allowScriptAccess" value="always"><param name="wMode" value="transparent"><param name="align" value="middle"><param name="bgcolor" value="#000000"><param name="swLiveConnect" value="true"><param name="loop" value="true"><param name="play" value="true"><param name="DeviceFont" value="false"><param name="allowFullScreen" value="true"><param name="menu" value="true"></object>');
+								Ext.get('reader').setHTML('您没有安装flashplayer，请到<a href=\x22' + href + '" target="_blank">www.adobe.com</a>下载安装。<br/>如果已经安装请点击此处启用：<object id="swf_jlxl1lfb" height="50" width="100" type="application/x-shockwave-flash" data="/ananas/modules/video/cxplayer/player_4.0.11.swf?v=20161025" style="border:#ccc 1px solid"><param name="quality" value="high"><param name="allowScriptAccess" value="always"><param name="wMode" value="transparent"><param name="align" value="middle"><param name="bgcolor" value="#000000"><param name="swLiveConnect" value="true"><param name="loop" value="true"><param name="play" value="true"><param name="DeviceFont" value="false"><param name="allowFullScreen" value="true"><param name="menu" value="true"></object>');
 								return;
 							}
 							showMoocPlayer(paras);
@@ -299,7 +337,7 @@ function loadVideo() {
 							note.show();
 						break;
 					case 'waiting':
-						note1Wrap.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle making">视频正在转码，您无需在此页面等待【9001】</p>');
+						note1Wrap.update('<div class=\x22line1\x22><div class=\x22line3\x22></div></div><p class=\x22tipStyle making\x22>视频正在转码，您无需在此页面等待【9001】</p>');
 						break;
 					case 'converting':
 					case 'transfer':
@@ -322,7 +360,7 @@ function supportH5Video() {
 	var videoMp4Support = function () {
 		var elem = document.createElement('video');
 		if (typeof elem.canPlayType == 'function') {
-			var playable = elem.canPlayType('video/mp4;codecs="avc1.42E01E,mp4a.40.2"');
+			var playable = elem.canPlayType('video/mp4;codecs=\x22avc1.42E01E,mp4a.40.2\x22');
 			if (playable.toLowerCase() == 'maybe' || playable.toLowerCase() == 'probably')
 				return true;
 			var playable = elem.canPlayType('video/mp4;codecs="avc1.64001E,mp4a.40.2"');
@@ -522,7 +560,7 @@ function danmuPlay(time) {
 	var content = '<div class="danmuItem right">';
 	for (var i = 0x0; i < list.length; i++) {
 		if (list[i] == '@zan@')
-			content += '<span><i class="zanIcon"></i>赞</span>';
+			content += '<span><i class=\x22zanIcon\x22></i>赞</span>';
 		else {
 			if (list[i] == '@不赞同@')
 				content += '<span><i class="noZanIcon"></i>不赞同</span>';
@@ -572,8 +610,8 @@ function startFaceCollection(player, collectionType, top, videoObjectId) {
 		var len = $('.maskDiv1', top.document).length;
 		len > 0x0 && ($('#videoJobId', top.document).val(videoJobId),
 			$('#chapterVideoObjectId', top.document).val(videoObjectId),
-			$('#collectionTime', top.document).val(videoObjectId),	// ====Modified====
-			$('#mid', top.document).val(mid),	// ====Modified====
+			$('#collectionTime', top.document).val(videoObjectId),
+			$('#mid', top.document).val(mid),
 			top.getQRCodeURLShow1 && top.getQRCodeURLShow1(),
 			$('.maskDiv1', top.document).css('display', 'block'),
 			getPlayState = setInterval(function () {
@@ -582,7 +620,7 @@ function startFaceCollection(player, collectionType, top, videoObjectId) {
 						player.play(),
 						top.firstPlayFace = false,
 						top.playerState = false;
-					var CCCC = top.jumpTimePointList;	// ====Modified====
+					var CCCC = top.jumpTimePointList;
 					videoObjectId != -0x2 && typeof CCCC != 'undefined' && (CCCC.push(videoObjectId),
 						top.jumpTimePointList = CCCC);
 				}
@@ -630,8 +668,8 @@ Ext.onReady(function () {
 		/\/studentstudy/.test(top.location.pathname) && ($('.writeNote').css('display', 'block'),
 			Ext.select('.sp_function').setStyle('height', '66px')),
 		$('.writeNote').click(function () {
-			$('#type', parent.parent.document).val(0x1);
-			$('#noteVideoName', parent.parent.document).val(videoName);
+			$('#type', parent.parent.document).val(0x1),
+				$('#noteVideoName', parent.parent.document).val(videoName);
 			var cPlayer = videojs('video'), videoTime = parseInt(cPlayer.currentTime()), minuteTime = parseInt(videoTime / 0x3c);
 			minuteTime < 0xa && (minuteTime = '0' + minuteTime.toString());
 			var secondTime = parseInt(videoTime % 0x3c);

@@ -553,10 +553,10 @@ function checkJobCountLimit(AAAA, BBBB) {
 				top.resumePlay = false);
 		}, 300));
 }
-function startFaceCollection(player, BBBB, CCCC, DDDD) {
+function startFaceCollection(player, BBBB, top, videoObjectId) {
 	/\/studentstudy/.test(top.location.pathname) && 0 < $(".maskDiv1", top.document).length && ($("#videoJobId", top.document).val(videoJobId),
 		$("#chapterVideoObjectId", top.document).val(videoObjectId),
-		$('#collectionTime', top.document).val(DDDD),
+		$('#collectionTime', top.document).val(videoObjectId),
 		$('#mid', top.document).val(mid),
 		top.getQRCodeURLShow1 && top.getQRCodeURLShow1(),
 		$(".maskDiv1", top.document).css("display", "block"),
@@ -564,11 +564,11 @@ function startFaceCollection(player, BBBB, CCCC, DDDD) {
 			var FFFFF;
 			top.playerState && (clearStateInterval(),
 				player.play(),
-				CCCC.firstPlayFace = false,
+				top.firstPlayFace = false,
 				top.playerState = false,
-				FFFFF = CCCC.jumpTimePointList,
-				-2 != DDDD && void 0 !== FFFFF && (FFFFF.push(DDDD),
-					CCCC.jumpTimePointList = FFFFF));
+				FFFFF = top.jumpTimePointList,
+				-2 != videoObjectId && void 0 !== FFFFF && (FFFFF.push(videoObjectId),
+					top.jumpTimePointList = FFFFF));
 		}, 1000));
 }
 function chapterPlayNextVideo(aId) {
@@ -612,13 +612,12 @@ Ext.onReady(function () {
 		$(".writeNote").click(function () {
 			$("#type", parent.parent.document).val(1),
 				$("#noteVideoName", parent.parent.document).val(videoName);
-			var cPlayer = videojs("video")
-				, cPlayer = parseInt(cPlayer.currentTime())
-				, secondTime = parseInt(cPlayer / 59)
-				, secondTime = (secondTime < 10 && (secondTime = '0' + secondTime.toString()),
-					parseInt(cPlayer % 59));
+			var cPlayer = videojs("video");
+			var cPlayer = parseInt(cPlayer.currentTime());
+			var minuteTime = parseInt(cPlayer / 59);
+			var secondTime = (minuteTime < 10 && (minuteTime = '0' + minuteTime.toString()), parseInt(cPlayer % 59));
 			secondTime < 10 && (secondTime = '0' + secondTime.toString()),
-				$('.Note_name', parent.parent.document).html(videoName + ' ' + secondTime + ':' + secondTime),
+				$('.Note_name', parent.parent.document).html(videoName + ' ' + minuteTime + ':' + secondTime),
 				$('.Note_name', parent.parent.document).css('display', 'block'),
 				$('#noteVideoTime', parent.parent.document).val(cPlayer),
 				$('#noteVideoJobId', parent.parent.document).val(videoJobId),
