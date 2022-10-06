@@ -237,8 +237,7 @@ Ext.define("ananas.ServerHosts", {
 			g.md5 = f
 		}
 	}
-}
-	(this));
+}(this));
 Ext.apply(Ext, {
 	setCookie: function (c, f) {
 		var a = arguments,
@@ -320,8 +319,7 @@ Ext.define("ans.VideoJs", {
 			label: "公网2",
 			url: ServerHosts.s2_HOST,
 			ispublic: true
-		}
-		];
+		}];
 		if (params.cdn) {
 			try {
 				if (top.window.app && top.window.app == 2) {
@@ -569,7 +567,7 @@ Ext.define("ans.VideoJs", {
 					isSupportFace: params.isSupportFace || false,
 					isShowFaceCollection: params.isShowFaceCollection,
 					attachmentId: params.aId,
-					sendLog: function (player, evt, sec, A) {
+					sendLog: function (player, evt, sec, var_20220324_1) {
 						if (this.isSendLog !== true) {
 							return
 						}
@@ -591,12 +589,12 @@ Ext.define("ans.VideoJs", {
 								isdrag = 4;
 								break
 						}
-						var B = this;
+						var var_20220324_2 = this;
 						sendLog_(player, isdrag, sec, function () {
 							try {
-								if (isdrag === 4 && typeof A != "undefined") {
-									A.sendDataLog("ended");
-									A.playNextVideo(B.attachmentId);
+								if (isdrag === 4 && typeof var_20220324_1 != "undefined") {
+									var_20220324_1.sendDataLog("ended");
+									var_20220324_1.playNextVideo(var_20220324_2.attachmentId);
 								}
 							} catch (e) {
 								console.log(e)
@@ -1064,7 +1062,7 @@ Ext.define("ans.videojs.VideoQuiz", {
 	extend: "Ext.Component",
 	xtype: "videoquiz",
 	cls: "ans-videoquiz",
-	renderTpl: ['<div class="tkTopic">', '<tpl if="dtype==\x27InteractiveQuiz\x27">', '<div class="tkTopic_numbar fr">共 {interactiveQuestionCount} 题<span id="rightAnswerNum">，已答对 <i id="rightNum"></i> 题</span></div>', "</tpl> ", '<div class="tkTopic_title">[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" <tpl if="parent.dtype=="InteractiveQuiz"">{[this.getChecked(parent.answerContent, values.name, parent.dtype)]}</tpl> name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', "{name}、{description}", "</label></li>", "</tpl> ", "</ul>", "</div>", "</div>", '<div class="tkTopic_oper">', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submit">提交</a>', '<a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue"><tpl if="dtype==\x27InteractiveQuiz\x27">继续学习<tpl else>继续</tpl></a>', '<tpl if="dtype=="InteractiveQuiz"">', '<a class="bntWhiteBorder ans-videoquiz-back fr" id="knowledgeBack">知识点回看</a>', '</tpl>', '<span class="spanHas fr" id="spanHas"><tpl if="dtype=="InteractiveQuiz">恭喜你，答对了！<tpl else>回答正确</tpl></span>', '<span class="spanNot fr" id="spanNot"><tpl if="dtype==\x27InteractiveQuiz\x27">真遗憾，再接再厉！<tpl else>回答错误</tpl></span>', '<span class="spanNotBack fr" id="spanNotBack"><tpl if="dtype=="InteractiveQuiz"">真遗憾，再接再厉！<tpl else>回答错误，</tpl>回看 {errorBackTime} 分钟</span>', '<tpl if="dtype=="InteractiveQuiz"">', '<span class="spanNotBack fr" id="spanNotBackPoint">真遗憾，再接再厉！</span>', '<a class="spanHref fl" href="javascript: " id="viewAnalysis">查看解析</a>', "</div>", '<div class="tkParsing" id="tkParsing">', '<a class="tkParsing_dele" href="javascript: "></a>', '<div class="tkParsing_screll tkParsing_con" id="tkParsing_con"></div>', "</tpl>", "</div>", "</div>", {
+	renderTpl: ['<div class="tkTopic">', '<tpl if="dtype=="InteractiveQuiz"">', '<div class="tkTopic_numbar fr">共 {interactiveQuestionCount} 题<span id="rightAnswerNum">，已答对 <i id="rightNum"></i> 题</span></div>', '</tpl> ', '<div class="tkTopic_title">[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" <tpl if="parent.dtype=="InteractiveQuiz"">{[this.getChecked(parent.answerContent, values.name, parent.dtype)]}</tpl> name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', '{name}、{description}', '</label></li>', '</tpl> ', '</ul>', '</div>', '</div>', '<div class="tkTopic_oper">', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submit">提交</a>', '<a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue"><tpl if="dtype=="InteractiveQuiz"">继续学习<tpl else>继续</tpl></a>', '<tpl if="dtype=="InteractiveQuiz"">', '<a class="bntWhiteBorder ans-videoquiz-back fr" id="knowledgeBack">知识点回看</a>', '</tpl>', '<span class="spanHas fr" id="spanHas"><tpl if="dtype=="InteractiveQuiz"">恭喜你，答对了！<tpl else>回答正确</tpl></span>', '<span class="spanNot fr" id="spanNot"><tpl if="dtype=="InteractiveQuiz"">真遗憾，再接再厉！<tpl else>回答错误</tpl></span>', '<span class="spanNotBack fr" id="spanNotBack"><tpl if="dtype=="InteractiveQuiz"">真遗憾，再接再厉！<tpl else>回答错误，</tpl>回看 {errorBackTime} 分钟</span>', '<tpl if="dtype=="InteractiveQuiz"">', '<span class="spanNotBack fr" id="spanNotBackPoint">真遗憾，再接再厉！</span>', '<a class="spanHref fl" href="javascript:" id="viewAnalysis">查看解析</a>', '</div>', '<div class="tkParsing" id="tkParsing">', '<a class="tkParsing_dele" href="javascript:"></a>', '<div class="tkParsing_screll tkParsing_con" id="tkParsing_con"></div>', '</tpl>', '</div>', '</div>', {
 		getChecked: function (q, w, e) {
 			return q.indexOf(w) != -1 && e == "InteractiveQuiz" ? 'checked="checked"' : "";
 		}
@@ -1592,8 +1590,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 					}
 					var videoPlayer = videojs("video");
 					if (videoPlayer && typeof videoPlayer.markers === "function") {
-						var a = player.eventPoints;
-						a.push.apply(a, data.list);
+						var var_20220324_3 = player.eventPoints;
+						var_20220324_3.push.apply(var_20220324_3, data.list);
 						videoPlayer.markers({
 							markerTip: {
 								display: true,
@@ -1601,7 +1599,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 									return marker.text
 								}
 							},
-							markers: a,
+							markers: var_20220324_3,
 							onMarkerClick: function (marker) {
 								if (options.ff != 1) {
 									return false
@@ -1613,45 +1611,45 @@ Ext.define("ans.videojs.TimelineObjects", {
 						})
 					}
 					if (data.list && data.list.length > 0) {
-						var b = [];
-						var c = {};
+						var var_20220324_4 = [];
+						var var_20220324_5 = {};
 						for (var i = 0; i < data.list.length; i++) {
-							var d = data.list[i];
-							var e = d.text;
-							if (!c[e]) {
-								var f = [];
-								f.push(d);
-								c[e] = f;
-								b.push(e);
+							var var_20220324_6 = data.list[i];
+							var var_20220324_7 = var_20220324_6.text;
+							if (!var_20220324_5[var_20220324_7]) {
+								var var_20220324_8 = [];
+								var_20220324_8.push(var_20220324_6);
+								var_20220324_5[var_20220324_7] = var_20220324_8;
+								var_20220324_4.push(var_20220324_7);
 							} else {
-								var g = c[e];
-								g.push(d);
-								c[e] = g;
+								var var_20220324_8 = var_20220324_5[var_20220324_7];
+								var_20220324_8.push(var_20220324_6);
+								var_20220324_5[var_20220324_7] = var_20220324_8;
 							}
 						}
-						function tmp_F1(h) {
-							var j = '<div class="zsCloud_box"><h2 class="zsCloud_seltime">选择时间</h2><div class="zsCloud_div"><div class="zsCloud_div_list">';
-							for (var i = 0; i < h.length; i++) {
-								var k = h[i],
-									tmp_topic = Ext.fly(topicContent.elements[0]).select(".topicId" + k.topicid + ":not(.markertime)"),
-									l = videojs.formatTime(k.time);
-								tmp_topic && tmp_topic.elements[0] && tmp_topic.elements[0].parentElement.remove();
-								j += '<div class="zsCloud_item topicId' + k.topicid + '" data-marker-time="' + k.time + '" title="' + l + '"onclick ="markersPlayer(this)">' + l + "</div>";
+						function func_20220324_1(var_20220324_9) {
+							var var_20220324_10 = '<div class="zsCloud_box"><h2 class="zsCloud_seltime">选择时间</h2><div class="zsCloud_div"><div class="zsCloud_div_list">';
+							for (var i = 0; i < var_20220324_9.length; i++) {
+								var var_20220324_11 = var_20220324_9[i],
+									var_20220324_12 = Ext.fly(topicContent.elements[0]).select(".topicId" + var_20220324_11.topicid + ":not(.markertime)"),
+									var_20220324_13 = videojs.formatTime(var_20220324_11.time);
+								var_20220324_12 && var_20220324_12.elements[0] && var_20220324_12.elements[0].parentElement.remove();
+								var_20220324_10 += '<div class="zsCloud_item topicId' + var_20220324_11.topicid + '" data-marker-time="' + var_20220324_11.time + '" title="' + var_20220324_13 + '"onclick ="markersPlayer(this)">' + var_20220324_13 + "</div>";
 							}
-							j += "</div></div></div>";
-							return j;
+							var_20220324_10 += "</div></div></div>";
+							return var_20220324_10;
 						}
 						Ext.select(".zsCloud").setStyle("display", "block");
 						var topicContent = Ext.select(".zsCloud_ul");
 						if (topicContent && topicContent.elements[0]) {
 							var insertLocaltion;
-							for (var i = 0; i < b.length; i++) {
-								var j = b[i];
-								var k = c[j];
+							for (var i = 0; i < var_20220324_4.length; i++) {
+								var var_20220324_14 = var_20220324_4[i];
+								var var_20220324_15 = var_20220324_5[var_20220324_14];
 								var markerHtml = "";
-								if (k) {
-									if (k.length == 1) {
-										var marker = k[0];
+								if (var_20220324_15) {
+									if (var_20220324_15.length == 1) {
+										var marker = var_20220324_15[0];
 										var topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)");
 										var title = videojs.formatTime(marker.time);
 										if (topic && topic.elements[0]) {
@@ -1659,9 +1657,9 @@ Ext.define("ans.videojs.TimelineObjects", {
 										}
 										markerHtml = '<li><span class="topicId' + marker.topicid + 'markertime" data-marker-time="' + marker.time + "' title='" + title + '"onclick="markersPlayer(this)">' + marker.text + "</span></li>";
 									} else {
-										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">' + j + '</span>';
-										if (k && k.length > 0) {
-											markerHtml += tmp_F1(k)
+										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">' + var_20220324_14 + '</span>';
+										if (var_20220324_15 && var_20220324_15.length > 0) {
+											markerHtml += func_20220324_1(var_20220324_15)
 										} else {
 											markerHtml += "</li>"
 										}
@@ -1706,8 +1704,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 						if (wordList.length != 0) {
 							$("#word_cloud").jQCloud(wordList)
 						}
-						function tmp_F2(a) {
-							$(a).niceScroll({
+						function func_20220324_2(var_20220324_16) {
+							$(var_20220324_16).niceScroll({
 								cursorborder: "",
 								cursorwidth: 8,
 								cursorcolor: "#DADFE6",
@@ -1715,12 +1713,12 @@ Ext.define("ans.videojs.TimelineObjects", {
 								autohidemode: true
 							});
 							setInterval(function () {
-								$(a).getNiceScroll().resize()
+								$(var_20220324_16).getNiceScroll().resize()
 							}, 300);
 						}
-						$(".zsCloud_box").each(function (a) {
-							$(this).find(".zsCloud_div").attr("id", "zsCloud_div_" + a);
-							tmp_F2("#zsCloud_div_" + a);
+						$(".zsCloud_box").each(function (var_20220324_17) {
+							$(this).find(".zsCloud_div").attr("id", "zsCloud_div_" + var_20220324_17);
+							func_20220324_2("#zsCloud_div_" + var_20220324_17);
 						});
 					});
 					$(".zsCloud_down").click(function () {
@@ -2319,14 +2317,14 @@ Ext.define("ans.AudioJs", {
 			}
 			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]",
 				clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
-			var a = 0,
-				b;
-			currentTimeSec.toString().indexOf("-") != -1 ? (b = currentTimeSec.split("-"),
-				b.length == 2 && (a = parseInt(b[1]) * 1000)) : a = currentTimeSec * 1000;
-			if (a == params.duration * 1000 && isdrag == 2) {
+			var var_20220210_1 = 0,
+				var_20220210_2;
+			currentTimeSec.toString().indexOf("-") != -1 ? (var_20220210_2 = currentTimeSec.split("-"),
+				var_20220210_2.length == 2 && (var_20220210_1 = parseInt(var_20220210_2[1]) * 1000)) : var_20220210_1 = currentTimeSec * 1000;
+			if (var_20220210_1 == params.duration * 1000 && isdrag == 2) {
 				return
 			}
-			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, a, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
+			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, var_20220210_1, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
 			var rurl = [params.reportUrl, "/", params.dtoken, "?clazzId=", params.clazzId, "&playingTime=", currentTimeSec, "&duration=", params.duration, "&clipTime=", clipTime, "&objectId=", params.objectId, "&otherInfo=", params.otherInfo, "&jobid=", params.jobid, "&userid=", params.userid, "&isdrag=", isdrag, "&view=pc", "&enc=", md5(enc), "&rt=", params.rt, "&dtype=Audio", "&_t=", new Date().getTime()].join("");
 			logFunc(player, rurl, callback)
 		};

@@ -9,8 +9,8 @@ function greenligth() {
 }
 function isUnFinishJob() {
 	try {
-		var AAAA = Ext.fly(window.frameElement).prev();
-		if (AAAA && AAAA.hasCls('ans-job-icon')) {
+		var var_20220311_1 = Ext.fly(window.frameElement).prev();
+		if (var_20220311_1 && var_20220311_1.hasCls('ans-job-icon')) {
 			return !Ext.fly(window.frameElement).parent().hasCls('ans-job-finished');
 		}
 		return false;
@@ -699,16 +699,16 @@ var playStateV2;
 function clearStateV2Interval() {
 	playStateV2 && clearInterval(playStateV2);
 }
-function checkJobCountLimit(AAAA, BBBB) {
+function checkJobCountLimit(var_20220311_2, var_20220610_1) {
 	if (/\/studentstudy/.test(top.location.pathname)) {
-		if (BBBB == 0) {
+		if (var_20220610_1 == 0) {
 			top.showJobLimitTip();
 		} else {
 			top.showVideoTimeLimitTip();
 			playStateV2 = setInterval(function () {
 				if (top.resumePlay) {
 					clearStateV2Interval();
-					AAAA.play();
+					var_20220311_2.play();
 					top.resumePlay = false;
 				}
 			}, 300);

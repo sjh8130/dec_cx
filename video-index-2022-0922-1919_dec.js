@@ -9,8 +9,8 @@ function greenligth() {
 }
 function isUnFinishJob() {
 	try {
-		var AAAA = Ext.fly(window.frameElement).prev();
-		if (AAAA && AAAA.hasCls('ans-job-icon'))
+		var var_20220311_1 = Ext.fly(window.frameElement).prev();
+		if (var_20220311_1 && var_20220311_1.hasCls('ans-job-icon'))
 			return !Ext.fly(window.frameElement).parent().hasCls('ans-job-finished');
 		return false;
 	} catch (e) {
@@ -76,12 +76,12 @@ function showMoocPlayer(paras) {
 		});
 	});
 }
-function bindVjsClick(AAAA) {
+function bindVjsClick(var_20220715_1) {
 	try {
-		var DDDD = AAAA.enableFastForward, EEEE = AAAA.jobid;
-		if (typeof DDDD != 'undefined' && DDDD === 0x0 && typeof EEEE != 'undefined' && EEEE != '' && window.parent.parent.location.href.indexOf('studentstudy') > -0x1) {
-			var BBBB = $('.video-js .toolTipBox1'), CCCC = $('#tipDiv');
-			BBBB.length === 0x0 && CCCC.length > 0x0 && ($('.video-js').prepend(CCCC.html()),
+		var var_20220715_4 = var_20220715_1.enableFastForward, var_20220715_5 = var_20220715_1.jobid;
+		if (typeof var_20220715_4 != 'undefined' && var_20220715_4 === 0x0 && typeof var_20220715_5 != 'undefined' && var_20220715_5 != '' && window.parent.parent.location.href.indexOf('studentstudy') > -0x1) {
+			var var_20220715_2 = $('.video-js .toolTipBox1'), var_20220715_3 = $('#tipDiv');
+			var_20220715_2.length === 0x0 && var_20220715_3.length > 0x0 && ($('.video-js').prepend(var_20220715_3.html()),
 				$('.vjs-progress-control').on('click', function () {
 					!$('.toolTipBox1').is(':visible') && ($('.toolTipBox1').show(),
 						setTimeout(function () {
@@ -92,30 +92,30 @@ function bindVjsClick(AAAA) {
 	} catch (e) { console.log(e); }
 }
 function showHTML5Player(paras) {
-	Ext.get('reader').setHTML('<video id="video" class="video-js vjs-default-skin vjs-big-play-centered"></video>'),
-		new ans[('VideoJs')]({
-			'videojs': 'video',
-			'params': paras
-		}),
-		document.getElementsByTagName('video')[0x0].addEventListener('play', function () {
-			var iframearray = parent.document.getElementsByTagName('iframe');
-			for (var i = 0x0; i < iframearray.length; i++) {
-				if (iframearray[i].getAttribute('src').indexOf('microCourse') != -0x1) {
-					var AAAAA = iframearray[i].contentWindow.document.getElementsByTagName('iframe')[0x0].contentWindow;
-					AAAAA.PageView.stopAll && AAAAA.PageView.stopAll();
-				}
+	Ext.get('reader').setHTML('<video id="video" class="video-js vjs-default-skin vjs-big-play-centered"></video>');
+	new ans[('VideoJs')]({
+		'videojs': 'video',
+		'params': paras
+	});
+	document.getElementsByTagName('video')[0x0].addEventListener('play', function () {
+		var iframearray = parent.document.getElementsByTagName('iframe');
+		for (var i = 0x0; i < iframearray.length; i++) {
+			if (iframearray[i].getAttribute('src').indexOf('microCourse') != -0x1) {
+				var var_20220715_6 = iframearray[i].contentWindow.document.getElementsByTagName('iframe')[0x0].contentWindow;
+				var_20220715_6.PageView.stopAll && var_20220715_6.PageView.stopAll();
 			}
-			$('.vjs-subs-caps-button .vjs-icon-placeholder').hover(function () {
-				$('.vjs-subs-caps-button .vjs-menu-content').length > 0x0 && ($('.vjs-subs-caps-button .vjs-menu-content').niceScroll({
-					'cursorborder': '',
-					'cursorwidth': 0x8,
-					'cursorcolor': '#CAD5E6',
-					'boxzoom': false,
-					'autohidemode': true
-				}),
-					$('.vjs-subs-caps-button .vjs-menu-content').getNiceScroll().resize());
-			});
+		}
+		$('.vjs-subs-caps-button .vjs-icon-placeholder').hover(function () {
+			$('.vjs-subs-caps-button .vjs-menu-content').length > 0x0 && ($('.vjs-subs-caps-button .vjs-menu-content').niceScroll({
+				'cursorborder': '',
+				'cursorwidth': 0x8,
+				'cursorcolor': '#CAD5E6',
+				'boxzoom': false,
+				'autohidemode': true
+			}),
+				$('.vjs-subs-caps-button .vjs-menu-content').getNiceScroll().resize());
 		});
+	});
 	function changePPTTop() {
 		var videoHeight = $('#video').height(), picHeight = $('#sp_video_ppt_pic').height(), topHeight = (parseInt(videoHeight) - 0x3c - parseInt(picHeight)) / 0x2;
 		$('#sp_video_ppt_pic').length > 0x0 && $('#sp_video_ppt_pic').hasClass('sp_ppt_pic_fullScreen') ? ($('#sp_video_ppt_pic').css('top', topHeight + 'px'),
@@ -139,13 +139,13 @@ function loadVideo() {
 	}
 	wrongObj = objectid,
 		videoObjectId = objectid;
-	var iframe = window.frameElement, data = Ext.decode(iframe.getAttribute('data')), setting = parent.AttachmentSetting, ZZ_Attachments = parent.previewAttachments;
+	var iframe = window.frameElement, data = Ext.decode(iframe.getAttribute('data')), setting = parent.AttachmentSetting, var_20220922_1 = parent.previewAttachments;
 	mid = config('mid');
 	var percent = 0x0, vbegin = config('vbegin'), vend = config('vend'), jobid = config('jobid') || '', danmaku = data ? data.danmaku == null ? 0x0 : data.danmaku : 0x0, videoTopicCloud = setting && setting.videoTopicCloud, fastforward = config('fastforward') == 'true' ? true : false, switchwindow = config('switchwindow') == 'true' ? true : false, note = Ext.get('note'), hl = Ext.get('hl'), note1Wrap = Ext.get('note1-wrap'), note1 = Ext.get('note1'), timer = null, rt = data ? data.rt ? data.rt : 0.9 : 0.9;
 	jobid == '' ? videoJobId = data && data._jobid ? data._jobid : '' : videoJobId = jobid;
-	var fls = flashChecker().hasFlash, New_M = setting && setting.defaults && setting.defaults.isForScreen == 0x1;
+	var fls = flashChecker().hasFlash, var_20220922_2 = setting && setting.defaults && setting.defaults.isForScreen == 0x1;
 	try {
-		isTeacher = top.location.href.indexOf('teacherstudy') > 0x0 || top.location.href.indexOf('course/phone/chapterdata') > 0x0 || New_M;
+		isTeacher = top.location.href.indexOf('teacherstudy') > 0x0 || top.location.href.indexOf('course/phone/chapterdata') > 0x0 || var_20220922_2;
 	} catch (e) { }
 	var isVideoVisibleName = parent.isVideoVisibleName, doublespeed = data ? data.doublespeed != 0x0 ? 0x1 : 0x0 : 0x1;
 	data.v_begin && data.v_end && data.pobjectid && (isViturlEdit = true);
@@ -173,20 +173,20 @@ function loadVideo() {
 					case 'success':
 						note1Wrap.remove(),
 							videoName = data && data.name || '';
-						var New_A = 0x0;
+						var var_20220922_3 = 0x0;
 						try {
-							var New_B = oData.duration;
-							if (ZZ_Attachments && top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1) {
-								var New_C = oData.objectid + '-' + (vbegin ? vbegin : 0x0) + '-' + (vend ? vend : New_B) + '-' + jobid;
-								for (var i = 0x0; i < ZZ_Attachments.length; i++) {
-									var New_D = ZZ_Attachments[i]
-										, New_E = 0x0
-										, New_F = New_B;
-									New_D.property && (New_D.property.vbegin && (New_E = New_D.property.vbegin),
-										New_D.property.vend && (New_F = New_D.property.vend));
-									!New_D.jobid && (New_D.jobid = '');
-									var New_G = New_D.objectId + '-' + New_E + '-' + New_F + '-' + New_D.jobid;
-									New_C == New_G && (New_A = New_D.customType);
+							var var_20220922_4 = oData.duration;
+							if (var_20220922_1 && top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1) {
+								var var_20220922_5 = oData.objectid + '-' + (vbegin ? vbegin : 0x0) + '-' + (vend ? vend : var_20220922_4) + '-' + jobid;
+								for (var i = 0x0; i < var_20220922_1.length; i++) {
+									var var_20220922_6 = var_20220922_1[i]
+										, var_20220922_7 = 0x0
+										, var_20220922_8 = var_20220922_4;
+									var_20220922_6.property && (var_20220922_6.property.vbegin && (var_20220922_7 = var_20220922_6.property.vbegin),
+										var_20220922_6.property.vend && (var_20220922_8 = var_20220922_6.property.vend));
+									!var_20220922_6.jobid && (var_20220922_6.jobid = '');
+									var var_20220922_9 = var_20220922_6.objectId + '-' + var_20220922_7 + '-' + var_20220922_8 + '-' + var_20220922_6.jobid;
+									var_20220922_5 == var_20220922_9 && (var_20220922_3 = var_20220922_6.customType);
 								}
 							}
 						} catch (e) { console.log(e); }
@@ -235,13 +235,13 @@ function loadVideo() {
 								s = m.objectId + '-' + vb + '-' + ve + '-' + m.jobid;
 								if (spec == s) {
 									Ext.apply(paras, setting.defaults),
-										New_A = m.customType;
-									var New_H = m.begins ? parseInt(m.begins) : 0x0;
-									New_H > 0x0 && oData.duration ? paras.begins = New_H > oData.duration ? 0x0 : New_H : paras.begins = 0x0;
-									var New_I = m.ends ? parseInt(m.ends) : 0x0;
-									if (New_I > 0x0 && oData.duration) {
-										var New_J = oData.duration - New_I;
-										paras.ends = New_J < 0x0 ? 0x0 : New_J;
+										var_20220922_3 = m.customType;
+									var var_20220922_10 = m.begins ? parseInt(m.begins) : 0x0;
+									var_20220922_10 > 0x0 && oData.duration ? paras.begins = var_20220922_10 > oData.duration ? 0x0 : var_20220922_10 : paras.begins = 0x0;
+									var var_20220922_11 = m.ends ? parseInt(m.ends) : 0x0;
+									if (var_20220922_11 > 0x0 && oData.duration) {
+										var var_20220922_12 = oData.duration - var_20220922_11;
+										paras.ends = var_20220922_12 < 0x0 ? 0x0 : var_20220922_12;
 									} else
 										paras.ends = 0x0;
 									paras.ends < paras.begins && (paras.begins = 0x0, paras.ends = 0x0);
@@ -273,17 +273,17 @@ function loadVideo() {
 							var schoolDoubleSpeed = paras.schooldoublespeed;
 							typeof schoolDoubleSpeed == 'undefined' || schoolDoubleSpeed == 0x2 ? paras.doublespeed = doublespeed : paras.doublespeed = schoolDoubleSpeed;
 						}
-						var New_K = '', New_L = '';
-						(top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 || top.location.href.indexOf('mycourse/teacherstudy') > -0x1) && parseInt(New_A) === 0x2 && (New_K = '<span style = "display: inline-block;width: 40px; height: 20px;font-size: 12px;background:#F9F9FA;border:1px solid #D5E2F1;' + 'border-radius:4px;text-align:center;line-height:20px;color: #6B89B3;position: absolute;right: 0; top: 0px;\x22>动画</span>',
-							New_L = '<span style =\x22display: inline-block;overflow: hidden;float: right;text-overflow: ellipsis;white-space: nowrap;width: 40px;' + 'height: 20px;font-size: 12px;background: #F9F9FA;border:1px solid #D5E2F1;border-radius:4px;text-align: center;line-height:20px;color:#6B89B3;right:0;top:0;">动画</span>');
+						var var_20220922_13 = '', var_20220922_14 = '';
+						(top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 || top.location.href.indexOf('mycourse/teacherstudy') > -0x1) && parseInt(var_20220922_3) === 0x2 && (var_20220922_13 = '<span style = "display: inline-block;width: 40px; height: 20px;font-size: 12px;background:#F9F9FA;border:1px solid #D5E2F1;' + 'border-radius:4px;text-align:center;line-height:20px;color: #6B89B3;position: absolute;right: 0; top: 0px;\x22>动画</span>',
+							var_20220922_14 = '<span style =\x22display: inline-block;overflow: hidden;float: right;text-overflow: ellipsis;white-space: nowrap;width: 40px;' + 'height: 20px;font-size: 12px;background: #F9F9FA;border:1px solid #D5E2F1;border-radius:4px;text-align: center;line-height:20px;color:#6B89B3;right:0;top:0;">动画</span>');
 						if (isVideoVisibleName != 'false')
-							Ext.fly(window.frameElement).parent().first('.ans-job-icon') != null ? top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 ? Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title="' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div>' + New_L) : (Ext.fly(window.frameElement).parent().first('.ans-job-icon').insertHtml('beforeEnd', '<span title="' + videoName + '\x22 style=\x22width: 500px;margin-left: 120px;display: inline-block;height: 23px;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;\x22>' + videoName + '</span>' + New_K),
-								New_K != '' && Ext.fly(window.frameElement).parent().addCls('relativeClass')) : (Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title=\x22' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div>' + New_L),
-									New_L != '' && Ext.fly(window.frameElement).parent().addCls('relativeClass'));
+							Ext.fly(window.frameElement).parent().first('.ans-job-icon') != null ? top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 ? Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title="' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div>' + var_20220922_14) : (Ext.fly(window.frameElement).parent().first('.ans-job-icon').insertHtml('beforeEnd', '<span title="' + videoName + '\x22 style=\x22width: 500px;margin-left: 120px;display: inline-block;height: 23px;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;\x22>' + videoName + '</span>' + var_20220922_13),
+								var_20220922_13 != '' && Ext.fly(window.frameElement).parent().addCls('relativeClass')) : (Ext.fly(window.frameElement).parent().insertHtml('afterBegin', '<div title=\x22' + videoName + '" style="width: 500px;display: inline-block;line-height: 23px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">' + videoName + '</div>' + var_20220922_14),
+									var_20220922_14 != '' && Ext.fly(window.frameElement).parent().addCls('relativeClass'));
 						else
 							try {
-								Ext.fly(window.frameElement).parent().first('.ans-job-icon') != null ? top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 ? New_L != '' && Ext.fly(window.frameElement).parent().insertHtml('afterBegin', New_L) : New_K != '' && (Ext.fly(window.frameElement).parent().first('.ans-job-icon').insertHtml('beforeEnd', New_K),
-									Ext.fly(window.frameElement).parent().addCls('relativeClass')) : New_L != '' && (Ext.fly(window.frameElement).parent().insertHtml('afterBegin', New_L),
+								Ext.fly(window.frameElement).parent().first('.ans-job-icon') != null ? top.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1 ? var_20220922_14 != '' && Ext.fly(window.frameElement).parent().insertHtml('afterBegin', var_20220922_14) : var_20220922_13 != '' && (Ext.fly(window.frameElement).parent().first('.ans-job-icon').insertHtml('beforeEnd', var_20220922_13),
+									Ext.fly(window.frameElement).parent().addCls('relativeClass')) : var_20220922_14 != '' && (Ext.fly(window.frameElement).parent().insertHtml('afterBegin', var_20220922_14),
 										Ext.fly(window.frameElement).parent().addCls('relativeClass'));
 							} catch (e) { console.log(e); }
 						paras.ignoreVideoCtrl == 0x1 && (paras.enableFastForward = 0x1,
@@ -421,7 +421,7 @@ function sendReadZTMediaLog(st) {
 			else
 				st == 0x2 && (playLogTimer && clearInterval(playLogTimer));
 		}
-	} catch (error) { }
+	} catch (e) { }
 }
 function receiveStudyLog() {
 	try {
@@ -597,11 +597,11 @@ var playStateV2;
 function clearStateV2Interval() {
 	playStateV2 && clearInterval(playStateV2);
 }
-function checkJobCountLimit(AAAA, BBBB) {
-	/\/studentstudy/.test(top.location.pathname) && (BBBB == 0x0 ? top.showJobLimitTip() : top.showVideoTimeLimitTip(),
+function checkJobCountLimit(var_20220311_2, var_20220610_1) {
+	/\/studentstudy/.test(top.location.pathname) && (var_20220610_1 == 0x0 ? top.showJobLimitTip() : top.showVideoTimeLimitTip(),
 		playStateV2 = setInterval(function () {
 			top.resumePlay && (clearStateV2Interval(),
-				AAAA.play(),
+				var_20220311_2.play(),
 				top.resumePlay = false);
 		}, 0x12c));
 }
@@ -620,9 +620,9 @@ function startFaceCollection(player, collectionType, top, videoObjectId) {
 						player.play(),
 						top.firstPlayFace = false,
 						top.playerState = false;
-					var CCCC = top.jumpTimePointList;
-					videoObjectId != -0x2 && typeof CCCC != 'undefined' && (CCCC.push(videoObjectId),
-						top.jumpTimePointList = CCCC);
+					var var_20220715_7 = top.jumpTimePointList;
+					videoObjectId != -0x2 && typeof var_20220715_7 != 'undefined' && (var_20220715_7.push(videoObjectId),
+						top.jumpTimePointList = var_20220715_7);
 				}
 			}, 0x3e8));
 	}
@@ -668,8 +668,8 @@ Ext.onReady(function () {
 		/\/studentstudy/.test(top.location.pathname) && ($('.writeNote').css('display', 'block'),
 			Ext.select('.sp_function').setStyle('height', '66px')),
 		$('.writeNote').click(function () {
-			$('#type', parent.parent.document).val(0x1),
-				$('#noteVideoName', parent.parent.document).val(videoName);
+			$('#type', parent.parent.document).val(0x1);
+			$('#noteVideoName', parent.parent.document).val(videoName);
 			var cPlayer = videojs('video'), videoTime = parseInt(cPlayer.currentTime()), minuteTime = parseInt(videoTime / 0x3c);
 			minuteTime < 0xa && (minuteTime = '0' + minuteTime.toString());
 			var secondTime = parseInt(videoTime % 0x3c);

@@ -484,7 +484,7 @@ Ext.define("ans.VideoJs", {
 					isShowFaceCollection: params.isShowFaceCollection,
 					jumpTimePointList: params.jumpTimePointList,
 					attachmentId: params.aId,
-					sendLog: function (player, evt, sec, A) {
+					sendLog: function (player, evt, sec, var_20220324_1) {
 						if (this.isSendLog !== true)
 							return;
 						var isdrag = 0x0;
@@ -505,11 +505,11 @@ Ext.define("ans.VideoJs", {
 								isdrag = 0x4;
 								break;
 						}
-						var B = this;
+						var var_20220324_2 = this;
 						sendLog_(player, isdrag, sec, function () {
 							try {
-								isdrag === 0x4 && typeof A != "undefined" && (A.sendDataLog("ended"),
-									A.playNextVideo(B.attachmentId));
+								isdrag === 0x4 && typeof var_20220324_1 != "undefined" && (var_20220324_1.sendDataLog("ended"),
+									var_20220324_1.playNextVideo(var_20220324_2.attachmentId));
 							} catch (e) {
 								console.log(e);
 							}
@@ -730,9 +730,9 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				else {
 					if (h.chapterCapture == 1) {	// ====Modified====
 						if (h.firstPlay) {	// ====Modified====
-							var New_A = h.sec_(g);	// ====Modified====
-							if (New_A == 0 && (h.startCapture == 1 || typeof h.startCapture == "undefined") && h.firstPlayFace) {	// ====Modified====
-								h.playingFaceTime = New_A,	// ====Modified====
+							var var_20220715_1 = h.sec_(g);	// ====Modified====
+							if (var_20220715_1 == 0 && (h.startCapture == 1 || typeof h.startCapture == "undefined") && h.firstPlayFace) {	// ====Modified====
+								h.playingFaceTime = var_20220715_1,	// ====Modified====
 									h.playingFace = false,	// ====Modified====
 									h.faceCollection("play", g, h.chapterCollectionType, 0);	// ====Modified====
 								return;	// ====Modified====
@@ -844,19 +844,19 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			typeof danmuPlay != "undefined" && danmuPlay(e)
 		},
 		timer: function (c) { },
-		faceCollection: function (e, c, f, New_2) {	// ====Modified====
-			if (New_2 != -0x2) {	// ====Modified====
-				var New_3 = this.jumpTimePointList;	// ====Modified====
-				if (typeof New_3 != "undefined")	// ====Modified====
-					try {	// ====Modified====
-						if (New_3.includes(New_2)) {	// ====Modified====
-							this.firstPlayFace = false;	// ====Modified====
-							this.pausePlayFace = false;	// ====Modified====
-							this.playingFace = false;	// ====Modified====
-							return;	// ====Modified====
-						}	// ====Modified====
-					} catch (e) { }	// ====Modified====
-			}	// ====Modified====
+		faceCollection: function (e, c, f, New_2) {
+			if (New_2 != -0x2) {
+				var New_3 = this.jumpTimePointList;
+				if (typeof New_3 != "undefined")
+					try {
+						if (New_3.includes(New_2)) {
+							this.firstPlayFace = false;
+							this.pausePlayFace = false;
+							this.playingFace = false;
+							return;
+						}
+					} catch (e) { }
+			}
 			e == "play" ? typeof startFaceCollection != "undefined" && (c.pause(),
 				startFaceCollection(c, f, this, New_2)) : e == "ended" ? typeof startFaceCollection != "undefined" && (c.pause(),
 					startFaceCollection(c, f, this, New_2)) : e == "playing" ? (typeof startFaceCollection != "undefined" && (c.pause(),
@@ -894,8 +894,8 @@ Ext.define("ans.videojs.VideoQuiz", {
 				if (typeof q != "undefined")
 					return q.indexOf(w) != -1 && e == "InteractiveQuiz" ? 'checked="checked"' : "";
 				return "";
-			} catch (rr) {
-				console.log(rr);
+			} catch (err) {
+				console.log(err);
 			}
 		}
 	}],
@@ -937,8 +937,8 @@ Ext.define("ans.videojs.VideoQuiz", {
 				if (Ext.get("videoquiz-continue").getStyle("display") == "none") {
 					try {
 						top.configFullScreen && exitMediumSizeWindow();
-					} catch (ERROR) {
-						console.log(ERROR);
+					} catch (err) {
+						console.log(err);
 					}
 					b.fireEvent("continue");
 				}
@@ -947,8 +947,8 @@ Ext.define("ans.videojs.VideoQuiz", {
 		b.continueEl.on("click", function () {
 			try {
 				top.configFullScreen && exitMediumSizeWindow();
-			} catch (ERROR) {
-				console.log(ERROR);
+			} catch (err) {
+				console.log(err);
 			}
 			b.fireEvent("continue");
 		});
@@ -1021,8 +1021,8 @@ Ext.define("ans.videojs.VideoQuiz", {
 									var s = Ext.getCookie("fid", 0);
 									r = parseInt(r),
 										s == "179952" && r > 0 && (r = 0x5a + r * 0.1);
-								} catch (Error) {
-									console.log(Error);
+								} catch (err) {
+									console.log(err);
 								}
 								Ext.get("spanHas").setHTML(`<span class="spanHas fr" style="display:block"><span id="InteractiveQuizTip">恭喜你，答对了！你的答题水准超过了` + r + "%的同学</span></span>");
 							} else
@@ -1064,14 +1064,14 @@ Ext.define("ans.videojs.VideoImg", {
 		var a = this;
 		a.callParent(arguments);
 		try {	// ====Modified====
-			var b = document.querySelector(".sp_video_img");
-			b.addEventListener("load", function () {
-				b.naturalWidth >= b.naturalHeight ? b.naturalWidth >= 0x190 && (b.style.width = "90%",
-					b.style.height = "80%") : b.naturalHeight >= 0x190 && (b.style.height = "90%",
-						b.style.width = "80%");
+			var var_20220715_2 = document.querySelector(".sp_video_img");
+			var_20220715_2.addEventListener("load", function () {
+				var_20220715_2.naturalWidth >= var_20220715_2.naturalHeight ? var_20220715_2.naturalWidth >= 0x190 && (var_20220715_2.style.width = "90%",
+					var_20220715_2.style.height = "80%") : var_20220715_2.naturalHeight >= 0x190 && (var_20220715_2.style.height = "90%",
+						var_20220715_2.style.width = "80%");
 			});
-		} catch (ERROR) {
-			console.log(ERROR)
+		} catch (err) {
+			console.log(err)
 		}
 		a.el.on("click", function () {
 			a.fireEvent("continue")
@@ -1079,8 +1079,8 @@ Ext.define("ans.videojs.VideoImg", {
 		a.closeEl.on("click", function () {
 			try {
 				top.configFullScreen && exitMediumSizeWindow()
-			} catch (ERROR) {
-				console.log(ERROR)
+			} catch (err) {
+				console.log(err)
 			}
 			a.fireEvent("continue")
 		})
@@ -1128,8 +1128,8 @@ Ext.define("ans.videojs.VideoPpt", {
 		a.callParent(arguments);
 		try {	// ====Modified====
 			dragFn && dragFn("#sp_video_ppt_pic", "#video_html5_api");
-		} catch (ERROR) {
-			console.log(ERROR);
+		} catch (err) {
+			console.log(err);
 		};
 		a.sizeBigEl.on("click", function (g) {
 			g.stopPropagation();
@@ -1256,8 +1256,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 	showModel: function (a) {
 		try {
 			top.configFullScreen && mediumSizeWindow();
-		} catch (ERROR) {
-			console.log(ERROR);
+		} catch (err) {
+			console.log(err);
 		}
 		var c = this;
 		c.show();
@@ -1366,8 +1366,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 						return;
 					var videoPlayer = videojs("video");
 					if (videoPlayer && typeof videoPlayer.markers === "function") {
-						var a = player.eventPoints;
-						a.push.apply(a, data.list),
+						var var_20220324_3 = player.eventPoints;
+						var_20220324_3.push.apply(var_20220324_3, data.list),
 							videoPlayer.markers({
 								markerTip: {
 									display: true,
@@ -1375,7 +1375,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 										return marker.text;
 									}
 								},
-								markers: a,
+								markers: var_20220324_3,
 								onMarkerClick: function (marker) {
 									if (options.ff != 1)
 										return false;
@@ -1386,44 +1386,44 @@ Ext.define("ans.videojs.TimelineObjects", {
 							})
 					}
 					if (data.list && data.list.length > 0) {
-						var b = [], c = {};
+						var var_20220324_4 = [], var_20220324_5 = {};
 						for (var i = 0; i < data.list.length; i++) {
-							var d = data.list[i], e = d.text;
-							if (!c[e]) {
-								var f = [];
-								f.push(d);
-								c[e] = f;
-								b.push(e);
+							var var_20220324_6 = data.list[i], var_20220324_7 = var_20220324_6.text;
+							if (!var_20220324_5[var_20220324_7]) {
+								var var_20220324_8 = [];
+								var_20220324_8.push(var_20220324_6);
+								var_20220324_5[var_20220324_7] = var_20220324_8;
+								var_20220324_4.push(var_20220324_7);
 							} else {
-								var g = c[e];
-								g.push(d);
-								c[e] = g;
+								var var_20220324_8 = var_20220324_5[var_20220324_7];
+								var_20220324_8.push(var_20220324_6);
+								var_20220324_5[var_20220324_7] = var_20220324_8;
 							}
 						}
-						function tmp_F1(h) {
-							var j = '<div class=\x22zsCloud_box\x22><h2 class=\x22zsCloud_seltime\x22>选择时间</h2><div class=\x22zsCloud_div\x22><div class=\x22zsCloud_div_list\x22>';
-							for (var i = 0; i < h.length; i++) {
-								var k = h[i], tmp_topic = Ext.fly(topicContent.elements[0]).select(".topicId" + k.topicid + ":not(.markertime)"), l = videojs.formatTime(k.time);
-								tmp_topic && tmp_topic.elements[0] && tmp_topic.elements[0].parentElement.remove(),
-									j += '<div class="zsCloud_item topicId' + k.topicid + '" data-marker-time="' + k.time + '" title="' + l + '" onclick="markersPlayer(this)">' + l + "</div>";
+						function func_20220324_1(var_20220324_9) {
+							var var_20220324_10 = '<div class=\x22zsCloud_box\x22><h2 class=\x22zsCloud_seltime\x22>选择时间</h2><div class=\x22zsCloud_div\x22><div class=\x22zsCloud_div_list\x22>';
+							for (var i = 0; i < var_20220324_9.length; i++) {
+								var var_20220324_11 = var_20220324_9[i], var_20220324_12 = Ext.fly(topicContent.elements[0]).select(".topicId" + var_20220324_11.topicid + ":not(.markertime)"), var_20220324_13 = videojs.formatTime(var_20220324_11.time);
+								var_20220324_12 && var_20220324_12.elements[0] && var_20220324_12.elements[0].parentElement.remove(),
+									var_20220324_10 += '<div class="zsCloud_item topicId' + var_20220324_11.topicid + '" data-marker-time="' + var_20220324_11.time + '" title="' + var_20220324_13 + '" onclick="markersPlayer(this)">' + var_20220324_13 + "</div>";
 							}
-							return j += "</div></div></div>",
-								j;
+							return var_20220324_10 += "</div></div></div>",
+								var_20220324_10;
 						}
 						Ext.select(".zsCloud").setStyle("display", "block");
 						var topicContent = Ext.select(".zsCloud_ul");
 						if (topicContent && topicContent.elements[0]) {
 							var insertLocaltion;
-							for (var i = 0; i < b.length; i++) {
-								var j = b[i], k = c[j], markerHtml = "";
-								if (k) {
-									if (k.length == 1) {
-										var marker = k[0], topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)"), title = videojs.formatTime(marker.time);
+							for (var i = 0; i < var_20220324_4.length; i++) {
+								var var_20220324_14 = var_20220324_4[i], var_20220324_15 = var_20220324_5[var_20220324_14], markerHtml = "";
+								if (var_20220324_15) {
+									if (var_20220324_15.length == 1) {
+										var marker = var_20220324_15[0], topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)"), title = videojs.formatTime(marker.time);
 										topic && topic.elements[0] && topic.elements[0].parentElement.remove(),
 											markerHtml = '<li><span class=\x27topicId' + marker.topicid + ` markertime' data-marker-time='` + marker.time + '\x27 title=\x27' + title + `' onclick='markersPlayer(this)'>` + marker.text + '</span></li>';
 									} else
-										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">' + j + '</span>',
-											k && k.length > 0x0 ? markerHtml += tmp_F1(k) : markerHtml += '</li>';
+										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">' + var_20220324_14 + '</span>',
+											var_20220324_15 && var_20220324_15.length > 0x0 ? markerHtml += func_20220324_1(var_20220324_15) : markerHtml += '</li>';
 								}
 								insertLocaltion ? insertLocaltion = Ext.DomHelper.insertHtml("afterEnd", insertLocaltion.elements[0], markerHtml) : insertLocaltion = Ext.DomHelper.insertHtml("afterBegin", topicContent.elements[0], markerHtml),
 									insertLocaltion = Ext.fly(insertLocaltion).select("");
@@ -1451,8 +1451,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 						}
 					$(function () {
 						wordList.length != 0x0 && $("#word_cloud").jQCloud(wordList);
-						function tmp_F2(a) {
-							$(a).niceScroll({
+						function func_20220324_2(var_20220324_16) {
+							$(var_20220324_16).niceScroll({
 								cursorborder: "",
 								cursorwidth: 0x8,
 								cursorcolor: "#DADFE6",
@@ -1460,12 +1460,12 @@ Ext.define("ans.videojs.TimelineObjects", {
 								autohidemode: true
 							}),
 								setInterval(function () {
-									$(a).getNiceScroll().resize();
+									$(var_20220324_16).getNiceScroll().resize();
 								}, 0x12c);
 						}
-						$(".zsCloud_box").each(function (a) {
-							$(this).find(".zsCloud_div").attr("id", "zsCloud_div_" + a),
-								tmp_F2("#zsCloud_div_" + a);
+						$(".zsCloud_box").each(function (var_20220324_17) {
+							$(this).find(".zsCloud_div").attr("id", "zsCloud_div_" + var_20220324_17),
+								func_20220324_2("#zsCloud_div_" + var_20220324_17);
 						});
 					});
 					$(".zsCloud_down").click(function () {
@@ -1724,8 +1724,7 @@ Ext.define("ans.videojs.ErrorNote", {
 					},
 					u.getGroupedSrc = function () {
 						return s;
-					}
-					;
+					};
 				function r(y, x) {
 					if (!y.res || !x.res)
 						return 0x0;
@@ -1920,13 +1919,13 @@ Ext.define("ans.AudioJs", {
 				return;
 			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]",
 				clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration),
-				a = 0x0,
-				b;
-			currentTimeSec.toString().indexOf("-") != -0x1 ? (b = currentTimeSec.split("-"),
-				b.length == 0x2 && (a = parseInt(b[0x1]) * 0x3e8)) : a = currentTimeSec * 0x3e8;
-			if (a == params.duration * 0x3e8 && isdrag == 0x2)
+				var_20220210_1 = 0x0,
+				var_20220210_2;
+			currentTimeSec.toString().indexOf("-") != -0x1 ? (var_20220210_2 = currentTimeSec.split("-"),
+				var_20220210_2.length == 0x2 && (var_20220210_1 = parseInt(var_20220210_2[0x1]) * 0x3e8)) : var_20220210_1 = currentTimeSec * 0x3e8;
+			if (var_20220210_1 == params.duration * 0x3e8 && isdrag == 0x2)
 				return;
-			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, a, "d_yHJ!$pdA~5", params.duration * 0x3e8, clipTime),
+			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, var_20220210_1, "d_yHJ!$pdA~5", params.duration * 0x3e8, clipTime),
 				rurl = [params.reportUrl, "/", params.dtoken, "?clazzId=", params.clazzId, "&playingTime=", currentTimeSec, "&duration=", params.duration, "&clipTime=", clipTime, "&objectId=", params.objectId, "&otherInfo=", params.otherInfo, "&jobid=", params.jobid, "&userid=", params.userid, "&isdrag=", isdrag, "&view=pc", "&enc=", md5(enc), "&rt=", params.rt, "&dtype=Audio", "&_t=", new Date().getTime()].join("");
 			logFunc(player, rurl, callback);
 		};

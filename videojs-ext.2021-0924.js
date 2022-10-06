@@ -235,20 +235,20 @@ Ext.define("ananas.ServerHosts", {
 }(this));
 Ext.apply(Ext, {
 	setCookie: function (c, f) {
-		var a = arguments
-			, i = arguments.length
-			, b = (i > 2) ? a[2] : null
-			, h = (i > 3) ? a[3] : "/"
-			, e = (i > 4) ? a[4] : null
-			, g = (i > 5) ? a[5] : false;
+		var a = arguments,
+			i = arguments.length,
+			b = (i > 2) ? a[2] : null,
+			h = (i > 3) ? a[3] : "/",
+			e = (i > 4) ? a[4] : null,
+			g = (i > 5) ? a[5] : false;
 		document.cookie = c + "=" + escape(f) + ((b === null) ? "" : ("; expires=" + b.toGMTString())) + ((h === null) ? "" : ("; path=" + h)) + ((e === null) ? "" : ("; domain=" + e)) + ((g === true) ? "; secure" : "")
 	},
 	getCookie: function (e, h) {
-		var b = e + "="
-			, g = b.length
-			, a = document.cookie.length
-			, f = 0
-			, c = 0;
+		var b = e + "=",
+			g = b.length,
+			a = document.cookie.length,
+			f = 0,
+			c = 0;
 		while (f < a) {
 			c = f + g;
 			if (document.cookie.substring(f, c) == b) {
@@ -290,8 +290,8 @@ Ext.define("ans.VideoJs", {
 		});
 		if (c.videoJsResolutionSwitcher) {
 			c.on("resolutionchange", function () {
-				var g = c.currentResolution()
-					, f = g.sources ? g.sources[0].res : false;
+				var g = c.currentResolution(),
+					f = g.sources ? g.sources[0].res : false;
 				Ext.setCookie("resolution", f)
 			})
 		}
@@ -351,25 +351,27 @@ Ext.define("ans.VideoJs", {
 					src: m3u8(params.objectId, src.resolution, r.url),
 					type: "application/x-mpegURL",
 					res: src.res
-				} : {
-					src: r.url + file,
-					type: "video/mp4",
-					res: src.res
 				}
+					: {
+						src: r.url + file,
+						type: "video/mp4",
+						res: src.res
+					}
 			} else {
 				return useM3u8 ? {
 					src: m3u8(params.objectId, src.resolution, r.url + sdomain),
 					type: "application/x-mpegURL",
 					res: src.res
-				} : {
-					src: r.url + sdomain + file,
-					type: "video/mp4",
-					res: src.res
 				}
+					: {
+						src: r.url + sdomain + file,
+						type: "video/mp4",
+						res: src.res
+					}
 			}
 		}
-		var sources = []
-			, defaultRes = Ext.getCookie("resolution", 360);
+		var sources = [],
+			defaultRes = Ext.getCookie("resolution", 360);
 		if (!params.rootPath) {
 			params.rootPath = ""
 		}
@@ -467,8 +469,8 @@ Ext.define("ans.VideoJs", {
 			if (params.isFiled == 1 || params.state == 1) {
 				return
 			}
-			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]"
-				, clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
+			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]",
+				clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
 			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid || "", params.objectId, currentTimeSec * 1000, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
 			var rurl = [params.reportUrl, "/", params.dtoken, "?clazzId=", params.clazzId, "&playingTime=", currentTimeSec, "&duration=", params.duration, "&clipTime=", clipTime, "&objectId=", params.objectId, "&otherInfo=", params.otherInfo, "&jobid=", params.jobid, "&userid=", params.userid, "&isdrag=", isdrag, "&view=pc", "&enc=", md5(enc), "&rt=", params.rt, "&dtype=Video", "&_t=", new Date().getTime()].join("");
 			logFunc(player, rurl, callback)
@@ -561,9 +563,9 @@ Ext.define("ans.VideoJs", {
 	var a = videojs.extend(b, {
 		constructor: function (f, c) {
 			b.call(this, f, c);
-			var g = this
-				, j = c.mouseElTarget
-				, i = 1;
+			var g = this,
+				j = c.mouseElTarget,
+				i = 1;
 			if (c.enableSwitchWindow !== 1) {
 				i = 0
 			}
@@ -584,8 +586,8 @@ Ext.define("ans.VideoJs", {
 			g.singleton(f)
 		},
 		singleton: function (c) {
-			var f = this
-				, e = parseInt(Math.random() * 9999999);
+			var f = this,
+				e = parseInt(Math.random() * 9999999);
 			c.on("play", function () {
 				Ext.setCookie("videojs_id", e)
 			});
@@ -596,8 +598,7 @@ Ext.define("ans.VideoJs", {
 		}
 	});
 	videojs.registerPlugin("studyControl", a)
-}
-)();
+})();
 (function () {
 	var a = videojs.getComponent("SeekBar");
 	var b = videojs.extend(a, {
@@ -606,16 +607,13 @@ Ext.define("ans.VideoJs", {
 			var f = this;
 			e.disableSeek = function (g) {
 				f.disableSeek(g)
-			}
-				;
+			};
 			e.onlyBackward = function (g) {
 				f.onlyBackward(g)
-			}
-				;
+			};
 			e.getSeekBar = function () {
 				return f
-			}
-				;
+			};
 			f.on("slideractive", function () {
 				e.trigger("seekstart")
 			});
@@ -684,8 +682,7 @@ Ext.define("ans.VideoJs", {
 		}
 	});
 	videojs.registerComponent("SeekBar", b)
-}
-)();
+})();
 (function () {
 	var a = videojs.getPlugin("plugin");
 	var b = videojs.extend(a, {
@@ -713,9 +710,9 @@ Ext.define("ans.VideoJs", {
 			if (e.headOffset) {
 				f.currentTime(e.headOffset)
 			}
-			var j = 0
-				, c = e.reportTimeInterval || 60
-				, i = c * 1000;
+			var j = 0,
+				c = e.reportTimeInterval || 60,
+				i = c * 1000;
 			var h = function (k, l) {
 				if (!g.isSendLog_) {
 					return
@@ -753,8 +750,8 @@ Ext.define("ans.VideoJs", {
 			});
 			f.on("seeked", function () {
 				if (e.enableFastForward != 1 && !f.switchStatus) {
-					var k = f.currentTime()
-						, l = e.headOffset ? e.headOffset : 0;
+					var k = f.currentTime(),
+						l = e.headOffset ? e.headOffset : 0;
 					if (k != 0 && k > l) {
 						f.currentTime(l)
 					}
@@ -867,8 +864,7 @@ Ext.define("ans.VideoJs", {
 		}
 	});
 	videojs.registerPlugin("seekBarControl", b)
-}
-)();
+})();
 Ext.define("ans.videojs.TimelineObjectsBg", {
 	extend: "Ext.Component",
 	cls: "ans-timelineobjectsbg",
@@ -892,14 +888,14 @@ Ext.define("ans.videojs.VideoQuiz", {
 		})
 	},
 	checkResult: function () {
-		var f = this
-			, i = Ext.query("input", f.el.dom)
-			, e = true
-			, g = f.renderData
-			, b = g.options
-			, c = []
-			, h = f.quizErrorReportUrl
-			, a = f.validationUrl2;
+		var f = this,
+			i = Ext.query("input", f.el.dom),
+			e = true,
+			g = f.renderData,
+			b = g.options,
+			c = [],
+			h = f.quizErrorReportUrl,
+			a = f.validationUrl2;
 		Ext.each(i, function (k, j) {
 			if ((k.value == "true" && !k.checked) || (k.value == "false" && k.checked)) {
 				e = false
@@ -985,11 +981,15 @@ Ext.define("ans.videojs.TimelineObjects", {
 		b.current = 0
 	},
 	showObject: function (l, b, e) {
-		var i = this, g = i.getBox(), c = i.items.getAt(0), k, h = function () {
-			k.destroy();
-			i.hide();
-			l.play()
-		};
+		var i = this,
+			g = i.getBox(),
+			c = i.items.getAt(0),
+			k,
+			h = function () {
+				k.destroy();
+				i.hide();
+				l.play()
+			};
 		if (c != null) {
 			c.destroy()
 		}
@@ -1062,17 +1062,18 @@ Ext.define("ans.videojs.TimelineObjects", {
 		if (this.current >= this.objects.length || a.scrubbing()) {
 			return
 		}
-		var c = this
-			, f = c.objects[c.current]
-			, b = f.style
-			, g = f.datas[0];
+		var c = this,
+			f = c.objects[c.current],
+			b = f.style,
+			g = f.datas[0];
 		if (e >= g.startTime) {
 			c.current++;
 			c.showObject(a, b, g)
 		}
 	},
 	resetTime: function (b, e) {
-		var c = this, a;
+		var c = this,
+			a;
 		for (a = 0; a < c.objects.length; a++) {
 			var f = c.objects[a].datas[0].startTime;
 			if (e <= f) {
@@ -1128,22 +1129,21 @@ Ext.define("ans.videojs.TimelineObjects", {
 		}
 	});
 	videojs.registerPlugin("timelineObjects", TimelineObjects)
-}
-)();
+})();
 (function () {
 	var Plugin = videojs.getPlugin("plugin");
 	var Subtitle = videojs.extend(Plugin, {
 		constructor: function (player, options) {
 			Plugin.call(this, player, options);
-			var me = this
-				, subtitleUrl = options.subtitleUrl
-				, toVtt = function (srt) {
+			var me = this,
+				subtitleUrl = options.subtitleUrl,
+				toVtt = function (srt) {
 					var m = srt.match(/support\/(\w+).\w+/);
 					if (m) {
 						return ServerHosts.CS_HOST + "/support/sub/" + m[1] + ".vtt"
 					}
-				}
-				, addSub = function (name, src, isdefault) {
+				},
+				addSub = function (name, src, isdefault) {
 					player.addRemoteTextTrack({
 						kind: "subtitles",
 						srclang: "cn",
@@ -1190,8 +1190,7 @@ Ext.define("ans.videojs.TimelineObjects", {
 		}
 	});
 	videojs.registerPlugin("subtitle", Subtitle)
-}
-)();
+})();
 Ext.define("ans.videojs.ErrorDisplay", {
 	extend: "Ext.Component",
 	xtype: "vjserrdisplay",
@@ -1241,10 +1240,10 @@ Ext.define("ans.videojs.ErrorNote", {
 		},
 		fill: function () {
 			b.prototype.fill.call(this);
-			var g = this
-				, i = g.player_
-				, h = i.options_.playlines
-				, e = Ext.query(".vjs-modal-dialog-content", g.el_)[0];
+			var g = this,
+				i = g.player_,
+				h = i.options_.playlines,
+				e = Ext.query(".vjs-modal-dialog-content", g.el_)[0];
 			if (g.ansErrorDisplay) {
 				g.ansErrorDisplay.destroy();
 				delete g.ansErrorDisplay
@@ -1255,8 +1254,8 @@ Ext.define("ans.videojs.ErrorNote", {
 				});
 				return
 			}
-			var f = i.currentPlayline()
-				, c = 0;
+			var f = i.currentPlayline(),
+				c = 0;
 			Ext.each(h, function (k, j) {
 				if (f == k) {
 					c = j
@@ -1277,8 +1276,7 @@ Ext.define("ans.videojs.ErrorNote", {
 		}
 	});
 	videojs.registerComponent("ErrorDisplay", a)
-}
-)();
+})();
 /*! videojs-resolution-switcher - 2015-7-26
  * Copyright (c) 2016 Kasper Moskwiak
  * Modified by Pierre Kraft
@@ -1291,7 +1289,10 @@ Ext.define("ans.videojs.ErrorNote", {
 		a = window.videojs
 	}
 	(function (i, h) {
-		var g = {}, c, k = {}, b = {};
+		var g = {},
+			c,
+			k = {},
+			b = {};
 		function f(p, o, n, q) {
 			k = {
 				label: n,
@@ -1397,10 +1398,10 @@ Ext.define("ans.videojs.ErrorNote", {
 			}
 		});
 		c = function (w) {
-			var p = h.mergeOptions(g, w)
-				, u = this
-				, t = document.createElement("span")
-				, s = {};
+			var p = h.mergeOptions(g, w),
+				u = this,
+				t = document.createElement("span"),
+				s = {};
 			h.dom.addClass(t, "vjs-resolution-button-label");
 			u.updateSrc = function (y) {
 				if (!y) {
@@ -1423,11 +1424,9 @@ Ext.define("ans.videojs.ErrorNote", {
 				u.controlBar.resolutionSwitcher = u.controlBar.el_.insertBefore(x.el_, u.controlBar.getChild("fullscreenToggle").el_);
 				u.controlBar.resolutionSwitcher.dispose = function () {
 					this.parentNode.removeChild(this)
-				}
-					;
+				};
 				return f(u, z.sources, z.label, p.customSourcePicker)
-			}
-				;
+			};
 			u.currentResolution = function (x, y) {
 				if (x == null) {
 					return k
@@ -1436,12 +1435,10 @@ Ext.define("ans.videojs.ErrorNote", {
 					b[x].onClick(y)
 				}
 				return u
-			}
-				;
+			};
 			u.getGroupedSrc = function () {
 				return s
-			}
-				;
+			};
 			function r(y, x) {
 				if (!y.res || !x.res) {
 					return 0
@@ -1501,16 +1498,16 @@ Ext.define("ans.videojs.ErrorNote", {
 					}, 1)
 				}
 			})
-		}
-			;
+		};
 		h.registerPlugin("videoJsResolutionSwitcher", c)
-	}
-	)(window, a)
-}
-)();
+	})(window, a)
+})();
 (function () {
 	(function (i, h) {
-		var f = {}, b, g = {}, a = {};
+		var f = {},
+			b,
+			g = {},
+			a = {};
 		function c(o, n, m, p) {
 			g = n;
 			if (typeof p === "function") {
@@ -1588,10 +1585,10 @@ Ext.define("ans.videojs.ErrorNote", {
 			}
 		});
 		b = function (o) {
-			var q = h.mergeOptions(f, o)
-				, p = this
-				, n = document.createElement("span")
-				, r = p.options_.playlines;
+			var q = h.mergeOptions(f, o),
+				p = this,
+				n = document.createElement("span"),
+				r = p.options_.playlines;
 			h.dom.addClass(n, "vjs-resolution-button-label");
 			var m = new k(p, {
 				playlines: r,
@@ -1605,28 +1602,23 @@ Ext.define("ans.videojs.ErrorNote", {
 			p.selectCDN = function (s) {
 				m.items[s].onClick(q.customSourcePicker);
 				p.play()
-			}
-				;
+			};
 			if (r.length > 0) {
 				g = r[0]
 			}
 			p.currentPlayline = function () {
 				return g
-			}
-				;
+			};
 			p.ready(function () {
 				p.controlBar.videoJsPlayLine = p.controlBar.el_.insertBefore(m.el_, p.controlBar.getChild("fullscreenToggle").el_);
 				p.controlBar.videoJsPlayLine.dispose = function () {
 					this.parentNode.removeChild(this)
 				}
 			})
-		}
-			;
+		};
 		h.registerPlugin("videoJsPlayLine", b)
-	}
-	)(window, videojs)
-}
-)();
+	})(window, videojs)
+})();
 Ext.define("ans.AudioJs", {
 	videoJs: null,
 	mixins: {
@@ -1698,8 +1690,8 @@ Ext.define("ans.AudioJs", {
 			if (!params.reportUrl) {
 				return
 			}
-			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]"
-				, clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
+			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]",
+				clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
 			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, currentTimeSec * 1000, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
 			var rurl = [params.reportUrl, "/", params.dtoken, "?clazzId=", params.clazzId, "&playingTime=", currentTimeSec, "&duration=", params.duration, "&clipTime=", clipTime, "&objectId=", params.objectId, "&otherInfo=", params.otherInfo, "&jobid=", params.jobid, "&userid=", params.userid, "&isdrag=", isdrag, "&view=pc", "&enc=", md5(enc), "&rt=", params.rt, "&dtype=Audio", "&_t=", new Date().getTime()].join("");
 			logFunc(player, rurl, callback)
@@ -1770,5 +1762,4 @@ Ext.define("ans.videojs.AudioNote", {
 		}
 	});
 	videojs.registerPlugin("audioNote", a)
-}
-)();
+})();

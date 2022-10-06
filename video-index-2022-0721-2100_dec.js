@@ -9,8 +9,8 @@ function greenligth() {
 }
 function isUnFinishJob() {
 	try {
-		var AAAA = Ext.fly(window.frameElement).prev();
-		if (AAAA && AAAA.hasCls('ans-job-icon'))
+		var var_20220311_1 = Ext.fly(window.frameElement).prev();
+		if (var_20220311_1 && var_20220311_1.hasCls('ans-job-icon'))
 			return !Ext.fly(window.frameElement).parent().hasCls('ans-job-finished');
 		return false;
 	} catch (e) {
@@ -76,12 +76,12 @@ function showMoocPlayer(paras) {
 		});
 	});
 }
-function bindVjsClick(AAAA) {	// ====Modified====
+function bindVjsClick(var_20220715_1) {	// ====Modified====
 	try {
-		var DDDD = AAAA.enableFastForward, EEEE = AAAA.jobid;
-		if (typeof DDDD != 'undefined' && DDDD === 0x0 && typeof EEEE != 'undefined' && EEEE != '' && window.parent.parent.location.href.indexOf('studentstudy') > -0x1) {
-			var BBBB = $('.video-js .toolTipBox1'), CCCC = $('#tipDiv');
-			BBBB.length === 0x0 && CCCC.length > 0x0 && ($('.video-js').prepend(CCCC.html()),
+		var var_20220715_4 = var_20220715_1.enableFastForward, var_20220715_5 = var_20220715_1.jobid;
+		if (typeof var_20220715_4 != 'undefined' && var_20220715_4 === 0x0 && typeof var_20220715_5 != 'undefined' && var_20220715_5 != '' && window.parent.parent.location.href.indexOf('studentstudy') > -0x1) {
+			var var_20220715_2 = $('.video-js .toolTipBox1'), var_20220715_3 = $('#tipDiv');
+			var_20220715_2.length === 0x0 && var_20220715_3.length > 0x0 && ($('.video-js').prepend(var_20220715_3.html()),
 				$('.vjs-progress-control').on('click', function () {
 					!$('.toolTipBox1').is(':visible') && ($('.toolTipBox1').show(),
 						setTimeout(function () {
@@ -92,30 +92,30 @@ function bindVjsClick(AAAA) {	// ====Modified====
 	} catch (e) { console.log(e); }
 }
 function showHTML5Player(paras) {
-	Ext.get('reader').setHTML('<video id="video" class="video-js vjs-default-skin vjs-big-play-centered"></video>'),
-		new ans[('VideoJs')]({
-			'videojs': 'video',
-			'params': paras
-		}),
-		document.getElementsByTagName('video')[0x0].addEventListener('play', function () {
-			var iframearray = parent.document.getElementsByTagName('iframe');
-			for (var i = 0x0; i < iframearray.length; i++) {
-				if (iframearray[i].getAttribute('src').indexOf('microCourse') != -0x1) {
-					var AAAAA = iframearray[i].contentWindow.document.getElementsByTagName('iframe')[0x0].contentWindow;
-					AAAAA.PageView.stopAll && AAAAA.PageView.stopAll();
-				}
+	Ext.get('reader').setHTML('<video id="video" class="video-js vjs-default-skin vjs-big-play-centered"></video>');
+	new ans[('VideoJs')]({
+		'videojs': 'video',
+		'params': paras
+	});
+	document.getElementsByTagName('video')[0x0].addEventListener('play', function () {
+		var iframearray = parent.document.getElementsByTagName('iframe');
+		for (var i = 0x0; i < iframearray.length; i++) {
+			if (iframearray[i].getAttribute('src').indexOf('microCourse') != -0x1) {
+				var var_20220715_6 = iframearray[i].contentWindow.document.getElementsByTagName('iframe')[0x0].contentWindow;
+				var_20220715_6.PageView.stopAll && var_20220715_6.PageView.stopAll();
 			}
-			$('.vjs-subs-caps-button .vjs-icon-placeholder').hover(function () {
-				$('.vjs-subs-caps-button .vjs-menu-content').length > 0x0 && ($('.vjs-subs-caps-button .vjs-menu-content').niceScroll({
-					'cursorborder': '',
-					'cursorwidth': 0x8,
-					'cursorcolor': '#CAD5E6',
-					'boxzoom': false,
-					'autohidemode': true
-				}),
-					$('.vjs-subs-caps-button .vjs-menu-content').getNiceScroll().resize());
-			});
+		}
+		$('.vjs-subs-caps-button .vjs-icon-placeholder').hover(function () {
+			$('.vjs-subs-caps-button .vjs-menu-content').length > 0x0 && ($('.vjs-subs-caps-button .vjs-menu-content').niceScroll({
+				'cursorborder': '',
+				'cursorwidth': 0x8,
+				'cursorcolor': '#CAD5E6',
+				'boxzoom': false,
+				'autohidemode': true
+			}),
+				$('.vjs-subs-caps-button .vjs-menu-content').getNiceScroll().resize());
 		});
+	});
 	function changePPTTop() {
 		var videoHeight = $('#video').height(), picHeight = $('#sp_video_ppt_pic').height(), topHeight = (parseInt(videoHeight) - 0x3c - parseInt(picHeight)) / 0x2;
 		$('#sp_video_ppt_pic').length > 0x0 && $('#sp_video_ppt_pic').hasClass('sp_ppt_pic_fullScreen') ? ($('#sp_video_ppt_pic').css('top', topHeight + 'px'),
@@ -383,7 +383,7 @@ function sendReadZTMediaLog(st) {
 			else
 				st == 0x2 && (playLogTimer && clearInterval(playLogTimer));
 		}
-	} catch (error) { }
+	} catch (e) { }
 }
 function receiveStudyLog() {
 	try {
@@ -559,11 +559,11 @@ var playStateV2;
 function clearStateV2Interval() {
 	playStateV2 && clearInterval(playStateV2);
 }
-function checkJobCountLimit(AAAA, BBBB) {
-	/\/studentstudy/.test(top.location.pathname) && (BBBB == 0x0 ? top.showJobLimitTip() : top.showVideoTimeLimitTip(),
+function checkJobCountLimit(var_20220311_2, var_20220610_1) {
+	/\/studentstudy/.test(top.location.pathname) && (var_20220610_1 == 0x0 ? top.showJobLimitTip() : top.showVideoTimeLimitTip(),
 		playStateV2 = setInterval(function () {
 			top.resumePlay && (clearStateV2Interval(),
-				AAAA.play(),
+				var_20220311_2.play(),
 				top.resumePlay = false);
 		}, 0x12c));
 }
@@ -582,9 +582,9 @@ function startFaceCollection(player, collectionType, top, videoObjectId) {
 						player.play(),
 						top.firstPlayFace = false,
 						top.playerState = false;
-					var CCCC = top.jumpTimePointList;	// ====Modified====
-					videoObjectId != -0x2 && typeof CCCC != 'undefined' && (CCCC.push(videoObjectId),
-						top.jumpTimePointList = CCCC);
+					var var_20220715_7 = top.jumpTimePointList;	// ====Modified====
+					videoObjectId != -0x2 && typeof var_20220715_7 != 'undefined' && (var_20220715_7.push(videoObjectId),
+						top.jumpTimePointList = var_20220715_7);
 				}
 			}, 0x3e8));
 	}

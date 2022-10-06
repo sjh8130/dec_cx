@@ -237,8 +237,7 @@ Ext.define("ananas.ServerHosts", {
 			g.md5 = f
 		}
 	}
-}
-	(this));
+}(this));
 Ext.apply(Ext, {
 	setCookie: function (c, f) {
 		var a = arguments,
@@ -320,8 +319,7 @@ Ext.define("ans.VideoJs", {
 			label: "公网2",
 			url: ServerHosts.s2_HOST,
 			ispublic: true
-		}
-		];
+		}];
 		if (params.cdn) {
 			try {
 				if (top.window.app && top.window.app == 2) {
@@ -2241,14 +2239,14 @@ Ext.define("ans.AudioJs", {
 			}
 			var format = "[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]",
 				clipTime = (params.startTime || "0") + "_" + (params.endTime || params.duration);
-			var a = 0,
-				b;
-			currentTimeSec.toString().indexOf("-") != -1 ? (b = currentTimeSec.split("-"),
-				b.length == 2 && (a = parseInt(b[1]) * 1000)) : a = currentTimeSec * 1000;
-			if (a == params.duration * 1000 && isdrag == 2) {
+			var var_20220210_1 = 0,
+				var_20220210_2;
+			currentTimeSec.toString().indexOf("-") != -1 ? (var_20220210_2 = currentTimeSec.split("-"),
+				var_20220210_2.length == 2 && (var_20220210_1 = parseInt(var_20220210_2[1]) * 1000)) : var_20220210_1 = currentTimeSec * 1000;
+			if (var_20220210_1 == params.duration * 1000 && isdrag == 2) {
 				return
 			}
-			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, a, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
+			var enc = Ext.String.format(format, params.clazzId, params.userid, params.jobid ? params.jobid : "", params.objectId, var_20220210_1, "d_yHJ!$pdA~5", params.duration * 1000, clipTime);
 			var rurl = [params.reportUrl, "/", params.dtoken, "?clazzId=", params.clazzId, "&playingTime=", currentTimeSec, "&duration=", params.duration, "&clipTime=", clipTime, "&objectId=", params.objectId, "&otherInfo=", params.otherInfo, "&jobid=", params.jobid, "&userid=", params.userid, "&isdrag=", isdrag, "&view=pc", "&enc=", md5(enc), "&rt=", params.rt, "&dtype=Audio", "&_t=", new Date().getTime()].join("");
 			logFunc(player, rurl, callback)
 		};

@@ -201,8 +201,7 @@
 			g.md5 = f
 		}
 	}
-}
-	(this));
+}(this));
 Ext.apply(Ext, {
 	setCookie: function (c, f) {
 		var a = arguments,
@@ -278,8 +277,7 @@ Ext.define("ans.VideoJs", {
 			label: "公网2",
 			url: "https://s2.ananas.chaoxing.com",
 			ispublic: true
-		}
-		];
+		}];
 		if (params.cdn) {
 			try {
 				if (top.window.app && top.window.app == 2) {
