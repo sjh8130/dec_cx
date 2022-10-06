@@ -844,12 +844,12 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			typeof danmuPlay != "undefined" && danmuPlay(e)
 		},
 		timer: function (c) { },
-		faceCollection: function (e, c, f, New_2) {
-			if (New_2 != -0x2) {
-				var New_3 = this.jumpTimePointList;
-				if (typeof New_3 != "undefined")
+		faceCollection: function (e, c, f, var_20220715_5) {
+			if (var_20220715_5 != -0x2) {
+				var var_20220715_6 = this.jumpTimePointList;
+				if (typeof var_20220715_6 != "undefined")
 					try {
-						if (New_3.includes(New_2)) {
+						if (var_20220715_6.includes(var_20220715_5)) {
 							this.firstPlayFace = false;
 							this.pausePlayFace = false;
 							this.playingFace = false;
@@ -858,13 +858,13 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 					} catch (e) { }
 			}
 			e == "play" ? typeof startFaceCollection != "undefined" && (c.pause(),
-				startFaceCollection(c, f, this, New_2)) : e == "ended" ? typeof startFaceCollection != "undefined" && (c.pause(),
-					startFaceCollection(c, f, this, New_2)) : e == "playing" ? (typeof startFaceCollection != "undefined" && (c.pause(),
+				startFaceCollection(c, f, this, var_20220715_5)) : e == "ended" ? typeof startFaceCollection != "undefined" && (c.pause(),
+					startFaceCollection(c, f, this, var_20220715_5)) : e == "playing" ? (typeof startFaceCollection != "undefined" && (c.pause(),
 						this.playingFaceTime = this.sec_(c),
-						startFaceCollection(c, f, this, New_2),
+						startFaceCollection(c, f, this, var_20220715_5),
 						this.playingFace = false),
 						this.pausePlayFace = false) : e == "aginPlay" && (typeof startFaceCollection != "undefined" && (c.pause(),
-							startFaceCollection(c, f, this, New_2)),
+							startFaceCollection(c, f, this, var_20220715_5)),
 							this.pausePlayFace = false);
 		},
 		playNextVideo: function (c) {
