@@ -1314,8 +1314,7 @@ Ext['define']('ans.videojs.TimelineObjects', {
 					var o = Math['max'](m['currentTime']() - n, 0x0);
 					m['switchStatus'] = true,
 						m['currentTime'](o);
-				}
-					;
+				};
 			}
 			l = j['add']({
 				'xtype': 'videoquiz',
@@ -1432,97 +1431,41 @@ Ext['define']('ans.videojs.TimelineObjects', {
 			return c - b;
 		});
 	}
-}),
-	(function () {
-		var Plugin = videojs['getPlugin']('plugin'), TimelineObjects = videojs['extend'](Plugin, {
-			'constructor': function (player, options) {
-				Plugin['call'](this, player, options);
-				if (!options['url'])
-					return;
-				var var_20220902_26 = function (var_20220902_27) {
-					try {
-						var var_20220902_28 = var_20220902_27['datas'];
-						if (var_20220902_28 && var_20220902_28['length'] > 0x0)
-							return var_20220902_28[0x0]['startTime'];
-					} catch (err) {
-						console['log'](err);
-					}
-					return -0x1;
-				}, me = this;
-				player['eventPoints'] = [],
-					player['otherPointTimes'] = [];
-				var var_20220902_29 = [];
-				if (options['begins'] && options['begins'] > 0x0) {
-					var var_20220902_30 = {
-						'time': options['begins'],
-						'text': '片头'
-					};
-					var_20220902_29['push'](var_20220902_30);
+});
+(function () {
+	var Plugin = videojs['getPlugin']('plugin'), TimelineObjects = videojs['extend'](Plugin, {
+		'constructor': function (player, options) {
+			Plugin['call'](this, player, options);
+			if (!options['url'])
+				return;
+			var var_20220902_26 = function (var_20220902_27) {
+				try {
+					var var_20220902_28 = var_20220902_27['datas'];
+					if (var_20220902_28 && var_20220902_28['length'] > 0x0)
+						return var_20220902_28[0x0]['startTime'];
+				} catch (err) {
+					console['log'](err);
 				}
-				if (options['ends'] && options['ends'] > 0x0) {
-					var var_20220902_30 = {
-						'time': options['ends'],
-						'text': '片尾'
-					};
-					var_20220902_29['push'](var_20220902_30);
-				}
-				player['eventPoints'] = var_20220902_29,
-					Ext['Ajax']['request']({
-						'url': options['url'],
-						'async': false,
-						'success': function (resp) {
-							if (resp['status'] != 0xc8)
-								return;
-							eval('var data=' + resp['responseText']);
-							if (data && data['length'] > 0x0) {
-								var a = [];
-								for (var i = 0x0; i < data['length']; i++) {
-									var b = data[i];
-									if (b['style'] == 'InteractiveQuiz') {
-										var c = b['datas'];
-										if (c && c['length'] > 0x0)
-											var d = {
-												'time': c[0x0]['startTime'],
-												'text': '互动测验'
-											};
-										a['push'](d);
-									}
-									var var_20220902_31 = var_20220902_26(b);
-									var_20220902_31 >= 0x0 && player['otherPointTimes']['push'](var_20220902_31);
-								}
-								a['forEach'](function (var_20220902_32) {
-									player['eventPoints']['push'](var_20220902_32);
-								});
-							}
-							var timeline = Ext['create']('ans.videojs.TimelineObjects', {
-								'renderTo': player['el_'],
-								'quizErrorReportUrl': options['quizErrorReportUrl'],
-								'validationUrl2': options['validationUrl2'],
-								'quizRightCountUrl': options['quizRightCountUrl'],
-								'objects': data
-							});
-							player['on']('play', function () {
-								timeline['resetTime'](player, player['currentTime']());
-							}),
-								player['on']('seekend', function () {
-									timeline['resetTime'](player, player['currentTime']());
-								}),
-								player['on']('timeupdate', function () {
-									!player['paused']() && timeline['updateTime'](player, player['currentTime']());
-								});
-						}
-					});
+				return -0x1;
+			}, me = this;
+			player['eventPoints'] = [],
+				player['otherPointTimes'] = [];
+			var var_20220902_29 = [];
+			if (options['begins'] && options['begins'] > 0x0) {
+				var var_20220902_30 = {
+					'time': options['begins'],
+					'text': '片头'
+				};
+				var_20220902_29['push'](var_20220902_30);
 			}
-		});
-		videojs['registerPlugin']('timelineObjects', TimelineObjects);
-	}()),
-	(function () {
-		var Plugin = videojs['getPlugin']('plugin'), Marker = videojs['extend'](Plugin, {
-			'constructor': function (player, options) {
-				Plugin['call'](this, player, options);
-				if (!options['url'])
-					return;
-				var me = this;
+			if (options['ends'] && options['ends'] > 0x0) {
+				var var_20220902_30 = {
+					'time': options['ends'],
+					'text': '片尾'
+				};
+				var_20220902_29['push'](var_20220902_30);
+			}
+			player['eventPoints'] = var_20220902_29,
 				Ext['Ajax']['request']({
 					'url': options['url'],
 					'async': false,
@@ -1530,620 +1473,674 @@ Ext['define']('ans.videojs.TimelineObjects', {
 						if (resp['status'] != 0xc8)
 							return;
 						eval('var data=' + resp['responseText']);
-						if (!data['status'])
-							return;
-						var videoPlayer = videojs('video');
-						if (videoPlayer && typeof videoPlayer['markers'] === 'function') {
-							var var_20220324_3 = player['eventPoints'];
-							var_20220324_3['push']['apply'](var_20220324_3, data['list']),
-								videoPlayer['markers']({
-									'markerTip': {
-										'display': true,
-										'text': function (marker) {
-											return marker['text'];
-										}
-									},
-									'markers': var_20220324_3,
-									'onMarkerClick': function (marker) {
-										if (options['ff'] != 0x1)
-											return false;
-										var key = $(this)['data']('marker-key');
-										return player['currentTime'](marker['time']),
-											false;
-									}
-								});
-						}
-						if (data['list'] && data['list']['length'] > 0x0) {
-							var var_20220324_4 = [], var_20220324_5 = {};
-							for (var i = 0x0; i < data['list']['length']; i++) {
-								var var_20220324_6 = data['list'][i], var_20220324_7 = var_20220324_6['text'];
-								if (!var_20220324_5[var_20220324_7]) {
-									var var_20220324_8 = [];
-									var_20220324_8['push'](var_20220324_6),
-										var_20220324_5[var_20220324_7] = var_20220324_8,
-										var_20220324_4['push'](var_20220324_7);
-								} else {
-									var var_20220324_8 = var_20220324_5[var_20220324_7];
-									var_20220324_8['push'](var_20220324_6),
-										var_20220324_5[var_20220324_7] = var_20220324_8;
+						if (data && data['length'] > 0x0) {
+							var a = [];
+							for (var i = 0x0; i < data['length']; i++) {
+								var b = data[i];
+								if (b['style'] == 'InteractiveQuiz') {
+									var c = b['datas'];
+									if (c && c['length'] > 0x0)
+										var d = {
+											'time': c[0x0]['startTime'],
+											'text': '互动测验'
+										};
+									a['push'](d);
 								}
+								var var_20220902_31 = var_20220902_26(b);
+								var_20220902_31 >= 0x0 && player['otherPointTimes']['push'](var_20220902_31);
 							}
-							function func_20220324_1(var_20220324_9) {
-								var var_20220324_10 = '<div class="zsCloud_box"><h2 class="zsCloud_seltime">选择时间</h2><div class="zsCloud_div"><div class="zsCloud_div_list">';
-								for (var i = 0x0; i < var_20220324_9['length']; i++) {
-									var var_20220324_11 = var_20220324_9[i], var_20220324_12 = Ext['fly'](topicContent['elements'][0x0])['select']('.topicId' + var_20220324_11['topicid'] + ':not(.markertime)'), var_20220324_13 = videojs['formatTime'](var_20220324_11['time']);
-									var_20220324_12 && var_20220324_12['elements'][0x0] && var_20220324_12['elements'][0x0]['parentElement']['remove'](),
-										var_20220324_10 += '<div class="zsCloud_item topicId' + var_20220324_11['topicid'] + '\x22 data-marker-time=\x22' + var_20220324_11['time'] + '\x22 title=\x22' + var_20220324_13 + '\x22 onclick=\x22markersPlayer(this)\x22>' + var_20220324_13 + '</div>';
-								}
-								return var_20220324_10 += '</div></div></div>',
-									var_20220324_10;
-							}
-							Ext['select']('.zsCloud')['setStyle']('display', 'block');
-							var topicContent = Ext['select']('.zsCloud_ul');
-							if (topicContent && topicContent['elements'][0x0]) {
-								var insertLocaltion;
-								for (var i = 0x0; i < var_20220324_4['length']; i++) {
-									var var_20220324_14 = var_20220324_4[i], var_20220324_15 = var_20220324_5[var_20220324_14], markerHtml = '';
-									if (var_20220324_15) {
-										if (var_20220324_15['length'] == 0x1) {
-											var marker = var_20220324_15[0x0], topic = Ext['fly'](topicContent['elements'][0x0])['select']('.topicId' + marker['topicid'] + ':not(.markertime)'), title = videojs['formatTime'](marker['time']);
-											topic && topic['elements'][0x0] && topic['elements'][0x0]['parentElement']['remove'](),
-												markerHtml = '<li><span class=\'topicId' + marker['topicid'] + ' markertime\' data-marker-time=\'' + marker['time'] + '\' title=\'' + title + '\x27 onclick=\x27markersPlayer(this)\x27>' + marker['text'] + '</span></li>';
-										} else
-											markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">' + var_20220324_14 + '</span>',
-												var_20220324_15 && var_20220324_15['length'] > 0x0 ? markerHtml += func_20220324_1(var_20220324_15) : markerHtml += '</li>';
-									}
-									insertLocaltion ? insertLocaltion = Ext['DomHelper']['insertHtml']('afterEnd', insertLocaltion['elements'][0x0], markerHtml) : insertLocaltion = Ext['DomHelper']['insertHtml']('afterBegin', topicContent['elements'][0x0], markerHtml),
-										insertLocaltion = Ext['fly'](insertLocaltion)['select']('');
-								}
-							}
-							options['videoTopicCloud'] && options['videoTopicCloud'] == 0x1 && (Ext['select']('.zsCloud_down')['setStyle']('display', 'block'),
-								Ext['select']('.zsCloud_body')['setStyle']('display', 'block'));
-						}
-						var dataMap = new Map(), wordList = new Array();
-						if (data['list'] && data['list']['length'] > 0x0)
-							for (var i = 0x0; i < data['list']['length']; i++) {
-								var topicid = data['list'][i]['topicid'], item = dataMap['get'](topicid);
-								!item && (item = {},
-									item['text'] = data['list'][i]['text'],
-									item['time'] = data['list'][i]['time'],
-									item['topicid'] = data['list'][i]['topicid'],
-									item['weight'] = 0x0,
-									item['html'] = {
-										'data-marker-time': data['list'][i]['time'],
-										'onclick': 'markersPlayer(this)'
-									},
-									dataMap['set'](topicid, item),
-									wordList['push'](item)),
-									item['weight'] += 0x1;
-							}
-						$(function () {
-							wordList['length'] != 0x0 && $('#word_cloud')['jQCloud'](wordList);
-							function func_20220324_2(var_20220324_16) {
-								$(var_20220324_16)['niceScroll']({
-									'cursorborder': '',
-									'cursorwidth': 0x8,
-									'cursorcolor': '#DADFE6',
-									'boxzoom': false,
-									'autohidemode': true
-								}),
-									setInterval(function () {
-										$(var_20220324_16)['getNiceScroll']()['resize']();
-									}, 0x12c);
-							}
-							$('.zsCloud_box')['each'](function (var_20220324_17) {
-								$(this)['find']('.zsCloud_div')['attr']('id', 'zsCloud_div_' + var_20220324_17),
-									func_20220324_2('#zsCloud_div_' + var_20220324_17);
+							a['forEach'](function (var_20220902_32) {
+								player['eventPoints']['push'](var_20220902_32);
 							});
+						}
+						var timeline = Ext['create']('ans.videojs.TimelineObjects', {
+							'renderTo': player['el_'],
+							'quizErrorReportUrl': options['quizErrorReportUrl'],
+							'validationUrl2': options['validationUrl2'],
+							'quizRightCountUrl': options['quizRightCountUrl'],
+							'objects': data
+						});
+						player['on']('play', function () {
+							timeline['resetTime'](player, player['currentTime']());
 						}),
-							$('.zsCloud_down')['click'](function () {
-								var con = $('.zsCloud_body');
-								con['is'](':visible') ? (con['hide'](),
-									$(this)['addClass']('zsCloud_up'),
-									$(this)['text']('展开')) : (con['show'](),
-										$(this)['removeClass']('zsCloud_up'),
-										$(this)['text']('收起'));
-							});
-					}
-				});
-			}
-		});
-		videojs['registerPlugin']('marker', Marker);
-	}()),
-	(function () {
-		var Plugin = videojs['getPlugin']('plugin'), Subtitle = videojs['extend'](Plugin, {
-			'constructor': function (player, options) {
-				Plugin['call'](this, player, options);
-				var me = this, subtitleUrl = options['subtitleUrl'], toVtt = function (srt) {
-					var m = srt['match'](/support\/(\w+).\w+/);
-					if (m)
-						return ServerHosts['PARENT_HOST'] + '/ananas/video-editor/sub?objectid=' + m[0x1];
-				}, addSub = function (name, src, isdefault) {
-					player['addRemoteTextTrack']({
-						'kind': 'subtitles',
-						'srclang': 'cn',
-						'label': name,
-						'src': src,
-						'default': isdefault
-					}, true);
-				};
-				player['ready'](function () {
-					subtitleUrl && Ext['Ajax']['request']({
-						'url': subtitleUrl,
-						'success': function (resp) {
-							if (resp['status'] != 0xc8)
-								return;
-							eval('var subs=' + resp['responseText']);
-							var index = 0x0, enIndex = 0x0;
-							subs['length'] > 0x0 && Ext['each'](subs, function (o) {
-								options['translate'] == 0x1 && o['name'] == 'English' ? (o['selected'] = true,
-									enIndex = index) : o['selected'] = false,
-									addSub(o['name'], toVtt(o['url']), o['selected']),
-									index++;
+							player['on']('seekend', function () {
+								timeline['resetTime'](player, player['currentTime']());
 							}),
-								options['translate'] == 0x1 && (Ext['select']('.vjs-subs-caps-button .vjs-icon-placeholder')['setHTML']('翻译'),
-									Ext['select']('.vjs-subs-caps-button .vjs-icon-placeholder')['addCls']('vjs-hide-content')),
-								setTimeout(function () {
-									var tracks = player['textTracks']();
-									options['translate'] == 0x1 ? tracks && tracks[enIndex] ? tracks[enIndex]['mode'] = 'showing' : tracks && tracks[0x0] && (tracks[0x0]['mode'] = 'showing') : tracks && tracks[0x0] && (tracks[0x0]['mode'] = 'showing');
-								}, 0x1f4);
-						}
-					});
-					var settings = player['textTrackSettings'];
-					settings['setValues']({
-						'backgroundColor': '#000',
-						'backgroundOpacity': '0',
-						'edgeStyle': 'uniform'
-					}),
-						settings['updateDisplay']();
+							player['on']('timeupdate', function () {
+								!player['paused']() && timeline['updateTime'](player, player['currentTime']());
+							});
+					}
 				});
-			}
-		});
-		videojs['registerPlugin']('subtitle', Subtitle);
-	}()),
-	Ext['define']('ans.videojs.ErrorDisplay', {
-		'extend': 'Ext.Component',
-		'xtype': 'vjserrdisplay',
-		'cls': 'ans-vjserrdisplay',
-		'renderTpl': ['<div class="ans-vjserrdisplay-title">{errorMsg}</div>', '<ul class="ans-vjserrdisplay-opts">', '您可以尝试其他线路:', '<tpl for="playlines">', '<li class="ans-vjserrdisplay-opt"><label>', '<input type="radio" name="ans-vjserrdisplay-opt" {[xindex-1 === parent.selectedIndex ? "checked disabled":""]}>', '{label}', '</label></li>', '</tpl>', '</ul>'],
-		'renderSelectors': {
-			'errorMsgEl': 'div.ans-vjserrdisplay-title'
-		},
-		'afterRender': function () {
-			var b = this;
-			b['callParent'](arguments);
-			var a = Ext['query']('input', b['el']['dom']);
-			Ext['each'](a, function (f, e) {
-				Ext['fly'](f)['on']('click', function () {
-					b['onSelected'](e);
-				});
-			});
-			try {
-				typeof createVideoTask === 'function' ? createVideoTask() : console['log']('createVideoTask函数不存在！');
-			} catch (c) { }
-		},
-		'setErrorMsg': function (a) {
-			Ext['fly'](this['errorMsgEl'])['setHTML'](a);
 		}
-	}),
-	Ext['define']('ans.videojs.ErrorNote', {
-		'extend': 'Ext.Component',
-		'cls': 'ans-vjserrdisplay',
-		'renderTpl': ['<div class=\x22ans-vjserrdisplay-title\x22>播放出现异常。</div>']
-	}),
-	(function () {
-		var b = videojs['getComponent']('ErrorDisplay'), a = videojs['extend'](b, {
-			'constructor': function (e, c) {
-				b['call'](this, e, c);
-			},
-			'colse': function () {
-				b['prototype']['colse']['call'](this),
-					me['ansErrorDisplay'] && (me['ansErrorDisplay']['destroy'](),
-						me['ansErrorDisplay'] = null);
-			},
-			'fill': function () {
-				b['prototype']['fill']['call'](this);
-				var g = this, i = g['player_'], h = i['options_']['playlines'], e = Ext['query']('.vjs-modal-dialog-content', g['el_'])[0x0];
-				g['ansErrorDisplay'] && (g['ansErrorDisplay']['destroy'](),
-					delete g['ansErrorDisplay']);
-				if (!i['selectCDN'] || !h) {
-					g['ansErrorDisplay'] = Ext['create']('ans.videojs.ErrorNote', {
-						'renderTo': g['el_']
-					});
-					return;
-				}
-				var f = i['currentPlayline'](), c = 0x0;
-				Ext['each'](h, function (k, j) {
-					f == k && (c = j);
-				}),
-					g['ansErrorDisplay'] = Ext['create']('ans.videojs.ErrorDisplay', {
-						'renderTo': g['el_'],
-						'onSelected': function (j) {
-							i['selectCDN'](j),
-								g['close']();
-						},
-						'renderData': {
-							'playlines': h,
-							'errorMsg': g['content'](),
-							'selectedIndex': c
-						}
-					});
-			}
-		});
-		videojs['registerComponent']('ErrorDisplay', a);
-	}()),
-	(function () {
-		var a = null;
-		typeof window['videojs'] === 'undefined' && typeof require === 'function' ? a = require('video.js') : a = window['videojs'],
-			function (i, h) {
-				var g = {}, c, k = {}, b = {};
-				function f(p, o, n, q) {
-					k = {
-						'label': n,
-						'sources': o
-					};
-					if (typeof q === 'function')
-						return q(p, o, n);
-					return p['src'](o['map'](function (r) {
-						return {
-							'src': r['src'],
-							'type': r['type'],
-							'res': r['res']
-						};
-					})),
-						p;
-				}
-				var l = h['getComponent']('MenuItem'), m = h['extend'](l, {
-					'constructor': function (p, o, n, q) {
-						this['onClickListener'] = n,
-							this['label'] = q,
-							l['call'](this, p, o),
-							this['src'] = o['src'],
-							this['on']('click', this['onClick']),
-							this['on']('touchstart', this['onClick']),
-							o['initialySelected'] && (this['showAsLabel'](),
-								this['selected'](true),
-								this['addClass']('vjs-selected'));
-					},
-					'showAsLabel': function () {
-						this['label'] && (this['label']['innerHTML'] = this['options_']['label']);
-					},
-					'onClick': function (q) {
-						this['onClickListener'](this);
-						var p = this['player_']['currentTime'](), n = this['player_']['paused']();
-						this['showAsLabel'](),
-							this['addClass']('vjs-selected');
-						!n && this['player_']['bigPlayButton']['hide']();
-						typeof q !== 'function' && typeof this['options_']['customSourcePicker'] === 'function' && (q = this['options_']['customSourcePicker']);
-						var o = 'loadeddata';
-						this['player_']['techName_'] !== 'Youtube' && this['player_']['preload']() === 'none' && this['player_']['techName_'] !== 'Flash' && (o = 'timeupdate'),
-							f(this['player_'], this['src'], this['options_']['label'], q)['one'](o, function () {
-								var r = this['player_'];
-								r['switchStatus'] = true,
-									r['currentTime'](p),
-									!n && r['play'](),
-									r['trigger']('resolutionchange');
-							});
-					}
-				});
-				h['registerComponent']('ResolutionMenuItem', m);
-				var j = h['getComponent']('MenuButton'), e = h['extend'](j, {
-					'constructor': function (q, o, r, n) {
-						this['sources'] = o['sources'],
-							this['label'] = n,
-							this['label']['innerHTML'] = o['initialySelectedLabel'],
-							j['call'](this, q, o, r),
-							this['controlText']('Quality');
-						if (r['dynamicLabel'])
-							this['el']()['appendChild'](n);
-						else {
-							var p = document['createElement']('span');
-							h['dom']['addClass'](p, 'vjs-resolution-button-staticlabel'),
-								this['el']()['appendChild'](p);
-						}
-					},
-					'createItems': function () {
-						var o = [], q = this['sources'] && this['sources']['label'] || {}, p = function (r) {
-							o['map'](function (s) {
-								s['selected'](s === r),
-									s['removeClass']('vjs-selected');
-							});
-						};
-						for (var n in q) {
-							q['hasOwnProperty'](n) && (o['push'](new m(this['player_'], {
-								'label': n,
-								'src': q[n],
-								'initialySelected': n === this['options_']['initialySelectedLabel'],
-								'customSourcePicker': this['options_']['customSourcePicker']
-							}, p, this['label'])),
-								b[n] = o[o['length'] - 0x1]);
-						}
-						return o;
-					}
-				});
-				c = function (w) {
-					var p = h['mergeOptions'](g, w), u = this, t = document['createElement']('span'), s = {};
-					h['dom']['addClass'](t, 'vjs-resolution-button-label'),
-						u['updateSrc'] = function (y) {
-							if (!y)
-								return u['src']();
-							u['controlBar']['resolutionSwitcher'] && (u['controlBar']['resolutionSwitcher']['dispose'](),
-								delete u['controlBar']['resolutionSwitcher']);
-							y = y['sort'](r),
-								s = q(y);
-							var z = o(s, y), x = new e(u, {
-								'sources': s,
-								'initialySelectedLabel': z['label'],
-								'initialySelectedRes': z['res'],
-								'customSourcePicker': p['customSourcePicker']
-							}, p, t);
-							return h['dom']['addClass'](x['el'](), 'vjs-resolution-button'),
-								u['controlBar']['resolutionSwitcher'] = u['controlBar']['el_']['insertBefore'](x['el_'], u['controlBar']['getChild']('fullscreenToggle')['el_']),
-								u['controlBar']['resolutionSwitcher']['dispose'] = function () {
-									this['parentNode']['removeChild'](this);
+	});
+	videojs['registerPlugin']('timelineObjects', TimelineObjects);
+}());
+(function () {
+	var Plugin = videojs['getPlugin']('plugin'), Marker = videojs['extend'](Plugin, {
+		'constructor': function (player, options) {
+			Plugin['call'](this, player, options);
+			if (!options['url'])
+				return;
+			var me = this;
+			Ext['Ajax']['request']({
+				'url': options['url'],
+				'async': false,
+				'success': function (resp) {
+					if (resp['status'] != 0xc8)
+						return;
+					eval('var data=' + resp['responseText']);
+					if (!data['status'])
+						return;
+					var videoPlayer = videojs('video');
+					if (videoPlayer && typeof videoPlayer['markers'] === 'function') {
+						var var_20220324_3 = player['eventPoints'];
+						var_20220324_3['push']['apply'](var_20220324_3, data['list']),
+							videoPlayer['markers']({
+								'markerTip': {
+									'display': true,
+									'text': function (marker) {
+										return marker['text'];
+									}
 								},
-								f(u, z['sources'], z['label'], p['customSourcePicker']);
-						},
-						u['currentResolution'] = function (x, y) {
-							if (x == null)
-								return k;
-							return b[x] != null && b[x]['onClick'](y),
-								u;
-						},
-						u['getGroupedSrc'] = function () {
-							return s;
+								'markers': var_20220324_3,
+								'onMarkerClick': function (marker) {
+									if (options['ff'] != 0x1)
+										return false;
+									var key = $(this)['data']('marker-key');
+									return player['currentTime'](marker['time']),
+										false;
+								}
+							});
+					}
+					if (data['list'] && data['list']['length'] > 0x0) {
+						var var_20220324_4 = [], var_20220324_5 = {};
+						for (var i = 0x0; i < data['list']['length']; i++) {
+							var var_20220324_6 = data['list'][i], var_20220324_7 = var_20220324_6['text'];
+							if (!var_20220324_5[var_20220324_7]) {
+								var var_20220324_8 = [];
+								var_20220324_8['push'](var_20220324_6),
+									var_20220324_5[var_20220324_7] = var_20220324_8,
+									var_20220324_4['push'](var_20220324_7);
+							} else {
+								var var_20220324_8 = var_20220324_5[var_20220324_7];
+								var_20220324_8['push'](var_20220324_6),
+									var_20220324_5[var_20220324_7] = var_20220324_8;
+							}
 						}
-						;
-					function r(y, x) {
-						if (!y['res'] || !x['res'])
-							return 0x0;
-						return +x['res'] - +y['res'];
+						function func_20220324_1(var_20220324_9) {
+							var var_20220324_10 = '<div class="zsCloud_box"><h2 class="zsCloud_seltime">选择时间</h2><div class="zsCloud_div"><div class="zsCloud_div_list">';
+							for (var i = 0x0; i < var_20220324_9['length']; i++) {
+								var var_20220324_11 = var_20220324_9[i], var_20220324_12 = Ext['fly'](topicContent['elements'][0x0])['select']('.topicId' + var_20220324_11['topicid'] + ':not(.markertime)'), var_20220324_13 = videojs['formatTime'](var_20220324_11['time']);
+								var_20220324_12 && var_20220324_12['elements'][0x0] && var_20220324_12['elements'][0x0]['parentElement']['remove'](),
+									var_20220324_10 += '<div class="zsCloud_item topicId' + var_20220324_11['topicid'] + '\x22 data-marker-time=\x22' + var_20220324_11['time'] + '\x22 title=\x22' + var_20220324_13 + '\x22 onclick=\x22markersPlayer(this)\x22>' + var_20220324_13 + '</div>';
+							}
+							return var_20220324_10 += '</div></div></div>',
+								var_20220324_10;
+						}
+						Ext['select']('.zsCloud')['setStyle']('display', 'block');
+						var topicContent = Ext['select']('.zsCloud_ul');
+						if (topicContent && topicContent['elements'][0x0]) {
+							var insertLocaltion;
+							for (var i = 0x0; i < var_20220324_4['length']; i++) {
+								var var_20220324_14 = var_20220324_4[i], var_20220324_15 = var_20220324_5[var_20220324_14], markerHtml = '';
+								if (var_20220324_15) {
+									if (var_20220324_15['length'] == 0x1) {
+										var marker = var_20220324_15[0x0], topic = Ext['fly'](topicContent['elements'][0x0])['select']('.topicId' + marker['topicid'] + ':not(.markertime)'), title = videojs['formatTime'](marker['time']);
+										topic && topic['elements'][0x0] && topic['elements'][0x0]['parentElement']['remove'](),
+											markerHtml = '<li><span class=\'topicId' + marker['topicid'] + ' markertime\' data-marker-time=\'' + marker['time'] + '\' title=\'' + title + '\x27 onclick=\x27markersPlayer(this)\x27>' + marker['text'] + '</span></li>';
+									} else
+										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">' + var_20220324_14 + '</span>',
+											var_20220324_15 && var_20220324_15['length'] > 0x0 ? markerHtml += func_20220324_1(var_20220324_15) : markerHtml += '</li>';
+								}
+								insertLocaltion ? insertLocaltion = Ext['DomHelper']['insertHtml']('afterEnd', insertLocaltion['elements'][0x0], markerHtml) : insertLocaltion = Ext['DomHelper']['insertHtml']('afterBegin', topicContent['elements'][0x0], markerHtml),
+									insertLocaltion = Ext['fly'](insertLocaltion)['select']('');
+							}
+						}
+						options['videoTopicCloud'] && options['videoTopicCloud'] == 0x1 && (Ext['select']('.zsCloud_down')['setStyle']('display', 'block'),
+							Ext['select']('.zsCloud_body')['setStyle']('display', 'block'));
 					}
-					function q(y) {
-						var x = {
-							'label': {},
-							'res': {},
-							'type': {}
-						};
-						return y['map'](function (z) {
-							n(x, 'label', z),
-								n(x, 'res', z),
-								n(x, 'type', z),
-								v(x, 'label', z),
-								v(x, 'res', z),
-								v(x, 'type', z);
+					var dataMap = new Map(), wordList = new Array();
+					if (data['list'] && data['list']['length'] > 0x0)
+						for (var i = 0x0; i < data['list']['length']; i++) {
+							var topicid = data['list'][i]['topicid'], item = dataMap['get'](topicid);
+							!item && (item = {},
+								item['text'] = data['list'][i]['text'],
+								item['time'] = data['list'][i]['time'],
+								item['topicid'] = data['list'][i]['topicid'],
+								item['weight'] = 0x0,
+								item['html'] = {
+									'data-marker-time': data['list'][i]['time'],
+									'onclick': 'markersPlayer(this)'
+								},
+								dataMap['set'](topicid, item),
+								wordList['push'](item)),
+								item['weight'] += 0x1;
+						}
+					$(function () {
+						wordList['length'] != 0x0 && $('#word_cloud')['jQCloud'](wordList);
+						function func_20220324_2(var_20220324_16) {
+							$(var_20220324_16)['niceScroll']({
+								'cursorborder': '',
+								'cursorwidth': 0x8,
+								'cursorcolor': '#DADFE6',
+								'boxzoom': false,
+								'autohidemode': true
+							}),
+								setInterval(function () {
+									$(var_20220324_16)['getNiceScroll']()['resize']();
+								}, 0x12c);
+						}
+						$('.zsCloud_box')['each'](function (var_20220324_17) {
+							$(this)['find']('.zsCloud_div')['attr']('id', 'zsCloud_div_' + var_20220324_17),
+								func_20220324_2('#zsCloud_div_' + var_20220324_17);
+						});
+					}),
+						$('.zsCloud_down')['click'](function () {
+							var con = $('.zsCloud_body');
+							con['is'](':visible') ? (con['hide'](),
+								$(this)['addClass']('zsCloud_up'),
+								$(this)['text']('展开')) : (con['show'](),
+									$(this)['removeClass']('zsCloud_up'),
+									$(this)['text']('收起'));
+						});
+				}
+			});
+		}
+	});
+	videojs['registerPlugin']('marker', Marker);
+}());
+(function () {
+	var Plugin = videojs['getPlugin']('plugin'), Subtitle = videojs['extend'](Plugin, {
+		'constructor': function (player, options) {
+			Plugin['call'](this, player, options);
+			var me = this, subtitleUrl = options['subtitleUrl'], toVtt = function (srt) {
+				var m = srt['match'](/support\/(\w+).\w+/);
+				if (m)
+					return ServerHosts['PARENT_HOST'] + '/ananas/video-editor/sub?objectid=' + m[0x1];
+			}, addSub = function (name, src, isdefault) {
+				player['addRemoteTextTrack']({
+					'kind': 'subtitles',
+					'srclang': 'cn',
+					'label': name,
+					'src': src,
+					'default': isdefault
+				}, true);
+			};
+			player['ready'](function () {
+				subtitleUrl && Ext['Ajax']['request']({
+					'url': subtitleUrl,
+					'success': function (resp) {
+						if (resp['status'] != 0xc8)
+							return;
+						eval('var subs=' + resp['responseText']);
+						var index = 0x0, enIndex = 0x0;
+						subs['length'] > 0x0 && Ext['each'](subs, function (o) {
+							options['translate'] == 0x1 && o['name'] == 'English' ? (o['selected'] = true,
+								enIndex = index) : o['selected'] = false,
+								addSub(o['name'], toVtt(o['url']), o['selected']),
+								index++;
 						}),
-							x;
+							options['translate'] == 0x1 && (Ext['select']('.vjs-subs-caps-button .vjs-icon-placeholder')['setHTML']('翻译'),
+								Ext['select']('.vjs-subs-caps-button .vjs-icon-placeholder')['addCls']('vjs-hide-content')),
+							setTimeout(function () {
+								var tracks = player['textTracks']();
+								options['translate'] == 0x1 ? tracks && tracks[enIndex] ? tracks[enIndex]['mode'] = 'showing' : tracks && tracks[0x0] && (tracks[0x0]['mode'] = 'showing') : tracks && tracks[0x0] && (tracks[0x0]['mode'] = 'showing');
+							}, 0x1f4);
 					}
-					function n(x, y, z) {
-						x[y][z[y]] == null && (x[y][z[y]] = []);
-					}
-					function v(x, y, z) {
-						x[y][z[y]]['push'](z);
-					}
-					function o(z, A) {
-						var y = p['default'], x = '';
-						return y === 'high' ? (y = A[0x0]['res'],
-							x = A[0x0]['label']) : y === 'low' || y == null || !z['res'][y] ? (y = A[A['length'] - 0x1]['res'],
-								x = A[A['length'] - 0x1]['label']) : z['res'][y] && (x = z['res'][y][0x0]['label']),
-						{
-							'res': y,
-							'label': x,
-							'sources': z['res'][y]
-						};
-					}
-					u['ready'](function () {
-						u['options_']['sources']['length'] > 0x0 && u['setTimeout'](function () {
-							u['updateSrc'](u['options_']['sources']);
-						}, 0x1);
-					});
-				},
-					h['registerPlugin']('videoJsResolutionSwitcher', c);
-			}(window, a);
-	}()),
-	(function () {
-		(function (i, h) {
-			var f = {}, b, g = {}, a = {};
-			function c(o, n, m, p) {
-				g = n;
-				if (typeof p === 'function')
-					return p(o, n, m);
-				return o;
+				});
+				var settings = player['textTrackSettings'];
+				settings['setValues']({
+					'backgroundColor': '#000',
+					'backgroundOpacity': '0',
+					'edgeStyle': 'uniform'
+				}),
+					settings['updateDisplay']();
+			});
+		}
+	});
+	videojs['registerPlugin']('subtitle', Subtitle);
+}());
+Ext['define']('ans.videojs.ErrorDisplay', {
+	'extend': 'Ext.Component',
+	'xtype': 'vjserrdisplay',
+	'cls': 'ans-vjserrdisplay',
+	'renderTpl': ['<div class="ans-vjserrdisplay-title">{errorMsg}</div>', '<ul class="ans-vjserrdisplay-opts">', '您可以尝试其他线路:', '<tpl for="playlines">', '<li class="ans-vjserrdisplay-opt"><label>', '<input type="radio" name="ans-vjserrdisplay-opt" {[xindex-1 === parent.selectedIndex ? "checked disabled":""]}>', '{label}', '</label></li>', '</tpl>', '</ul>'],
+	'renderSelectors': {
+		'errorMsgEl': 'div.ans-vjserrdisplay-title'
+	},
+	'afterRender': function () {
+		var b = this;
+		b['callParent'](arguments);
+		var a = Ext['query']('input', b['el']['dom']);
+		Ext['each'](a, function (f, e) {
+			Ext['fly'](f)['on']('click', function () {
+				b['onSelected'](e);
+			});
+		});
+		try {
+			typeof createVideoTask === 'function' ? createVideoTask() : console['log']('createVideoTask函数不存在！');
+		} catch (c) { }
+	},
+	'setErrorMsg': function (a) {
+		Ext['fly'](this['errorMsgEl'])['setHTML'](a);
+	}
+});
+Ext['define']('ans.videojs.ErrorNote', {
+	'extend': 'Ext.Component',
+	'cls': 'ans-vjserrdisplay',
+	'renderTpl': ['<div class=\x22ans-vjserrdisplay-title\x22>播放出现异常。</div>']
+});
+(function () {
+	var b = videojs['getComponent']('ErrorDisplay'), a = videojs['extend'](b, {
+		'constructor': function (e, c) {
+			b['call'](this, e, c);
+		},
+		'colse': function () {
+			b['prototype']['colse']['call'](this),
+				me['ansErrorDisplay'] && (me['ansErrorDisplay']['destroy'](),
+					me['ansErrorDisplay'] = null);
+		},
+		'fill': function () {
+			b['prototype']['fill']['call'](this);
+			var g = this, i = g['player_'], h = i['options_']['playlines'], e = Ext['query']('.vjs-modal-dialog-content', g['el_'])[0x0];
+			g['ansErrorDisplay'] && (g['ansErrorDisplay']['destroy'](),
+				delete g['ansErrorDisplay']);
+			if (!i['selectCDN'] || !h) {
+				g['ansErrorDisplay'] = Ext['create']('ans.videojs.ErrorNote', {
+					'renderTo': g['el_']
+				});
+				return;
 			}
-			var l = h['getComponent']('ResolutionMenuItem'), e = h['extend'](l, {
+			var f = i['currentPlayline'](), c = 0x0;
+			Ext['each'](h, function (k, j) {
+				f == k && (c = j);
+			}),
+				g['ansErrorDisplay'] = Ext['create']('ans.videojs.ErrorDisplay', {
+					'renderTo': g['el_'],
+					'onSelected': function (j) {
+						i['selectCDN'](j),
+							g['close']();
+					},
+					'renderData': {
+						'playlines': h,
+						'errorMsg': g['content'](),
+						'selectedIndex': c
+					}
+				});
+		}
+	});
+	videojs['registerComponent']('ErrorDisplay', a);
+}());
+(function () {
+	var a = null;
+	typeof window['videojs'] === 'undefined' && typeof require === 'function' ? a = require('video.js') : a = window['videojs'],
+		function (i, h) {
+			var g = {}, c, k = {}, b = {};
+			function f(p, o, n, q) {
+				k = {
+					'label': n,
+					'sources': o
+				};
+				if (typeof q === 'function')
+					return q(p, o, n);
+				return p['src'](o['map'](function (r) {
+					return {
+						'src': r['src'],
+						'type': r['type'],
+						'res': r['res']
+					};
+				})),
+					p;
+			}
+			var l = h['getComponent']('MenuItem'), m = h['extend'](l, {
+				'constructor': function (p, o, n, q) {
+					this['onClickListener'] = n,
+						this['label'] = q,
+						l['call'](this, p, o),
+						this['src'] = o['src'],
+						this['on']('click', this['onClick']),
+						this['on']('touchstart', this['onClick']),
+						o['initialySelected'] && (this['showAsLabel'](),
+							this['selected'](true),
+							this['addClass']('vjs-selected'));
+				},
+				'showAsLabel': function () {
+					this['label'] && (this['label']['innerHTML'] = this['options_']['label']);
+				},
 				'onClick': function (q) {
 					this['onClickListener'](this);
-					var p = this['player_']['currentTime'](), m = this['player_']['paused']();
+					var p = this['player_']['currentTime'](), n = this['player_']['paused']();
 					this['showAsLabel'](),
 						this['addClass']('vjs-selected');
-					!m && this['player_']['bigPlayButton']['hide']();
+					!n && this['player_']['bigPlayButton']['hide']();
 					typeof q !== 'function' && typeof this['options_']['customSourcePicker'] === 'function' && (q = this['options_']['customSourcePicker']);
 					var o = 'loadeddata';
-					this['player_']['techName_'] !== 'Youtube' && this['player_']['preload']() === 'none' && this['player_']['techName_'] !== 'Flash' && (o = 'timeupdate');
-					var n = c(this['player_'], this['src'], this['options_']['label'], q);
-					n && n['one'](o, function () {
-						n['switchStatus'] = true,
-							n['currentTime'](p),
-							!m && n['play'](),
-							n['trigger']('playlinechange');
-					});
+					this['player_']['techName_'] !== 'Youtube' && this['player_']['preload']() === 'none' && this['player_']['techName_'] !== 'Flash' && (o = 'timeupdate'),
+						f(this['player_'], this['src'], this['options_']['label'], q)['one'](o, function () {
+							var r = this['player_'];
+							r['switchStatus'] = true,
+								r['currentTime'](p),
+								!n && r['play'](),
+								r['trigger']('resolutionchange');
+						});
 				}
-			}), j = h['getComponent']('MenuButton'), k = h['extend'](j, {
-				'constructor': function (p, n, q, m) {
-					this['playlines'] = n['playlines'],
-						this['label'] = m,
-						this['label']['innerHTML'] = n['initialySelectedLabel'],
-						j['call'](this, p, n, q),
-						this['controlText']('Playline');
-					if (q['dynamicLabel'])
-						this['el']()['appendChild'](m);
+			});
+			h['registerComponent']('ResolutionMenuItem', m);
+			var j = h['getComponent']('MenuButton'), e = h['extend'](j, {
+				'constructor': function (q, o, r, n) {
+					this['sources'] = o['sources'],
+						this['label'] = n,
+						this['label']['innerHTML'] = o['initialySelectedLabel'],
+						j['call'](this, q, o, r),
+						this['controlText']('Quality');
+					if (r['dynamicLabel'])
+						this['el']()['appendChild'](n);
 					else {
-						var o = document['createElement']('span');
-						h['addClass'](o, 'vjs-resolution-button-staticlabel'),
-							this['el']()['appendChild'](o);
+						var p = document['createElement']('span');
+						h['dom']['addClass'](p, 'vjs-resolution-button-staticlabel'),
+							this['el']()['appendChild'](p);
 					}
 				},
 				'createItems': function () {
-					var o = [], q = this['playlines'] || [], p = function (r) {
+					var o = [], q = this['sources'] && this['sources']['label'] || {}, p = function (r) {
 						o['map'](function (s) {
 							s['selected'](s === r),
 								s['removeClass']('vjs-selected');
 						});
 					};
-					for (var n = 0x0; n < q['length']; n++) {
-						var m = q[n]['label'];
-						o['push'](new e(this['player_'], {
-							'label': m,
+					for (var n in q) {
+						q['hasOwnProperty'](n) && (o['push'](new m(this['player_'], {
+							'label': n,
 							'src': q[n],
-							'initialySelected': m === this['options_']['initialySelectedLabel'],
+							'initialySelected': n === this['options_']['initialySelectedLabel'],
 							'customSourcePicker': this['options_']['customSourcePicker']
 						}, p, this['label'])),
-							a[m] = o[o['length'] - 0x1];
+							b[n] = o[o['length'] - 0x1]);
 					}
 					return o;
 				}
 			});
-			b = function (o) {
-				var q = h['mergeOptions'](f, o), p = this, n = document['createElement']('span'), r = p['options_']['playlines'];
-				h['dom']['addClass'](n, 'vjs-resolution-button-label');
-				var m = new k(p, {
-					'playlines': r,
-					'initialySelectedLabel': r[0x0]['label'],
-					'initialySelectedUrl': r[0x0]['url'],
-					'customSourcePicker': q['customSourcePicker']
-				}, q, n);
-				h['dom']['addClass'](m['el'](), 'vjs-resolution-button'),
-					h['dom']['addClass'](m['el'](), 'vjs-playline-button'),
-					m['show'](),
-					p['selectCDN'] = function (s) {
-						m['items'][s]['onClick'](q['customSourcePicker']),
-							p['play']();
-					},
-					r['length'] > 0x0 && (g = r[0x0]),
-					p['currentPlayline'] = function () {
-						return g;
-					},
-					p['ready'](function () {
-						p['controlBar']['videoJsPlayLine'] = p['controlBar']['el_']['insertBefore'](m['el_'], p['controlBar']['getChild']('fullscreenToggle')['el_']),
-							p['controlBar']['videoJsPlayLine']['dispose'] = function () {
+			c = function (w) {
+				var p = h['mergeOptions'](g, w), u = this, t = document['createElement']('span'), s = {};
+				h['dom']['addClass'](t, 'vjs-resolution-button-label'),
+					u['updateSrc'] = function (y) {
+						if (!y)
+							return u['src']();
+						u['controlBar']['resolutionSwitcher'] && (u['controlBar']['resolutionSwitcher']['dispose'](),
+							delete u['controlBar']['resolutionSwitcher']);
+						y = y['sort'](r),
+							s = q(y);
+						var z = o(s, y), x = new e(u, {
+							'sources': s,
+							'initialySelectedLabel': z['label'],
+							'initialySelectedRes': z['res'],
+							'customSourcePicker': p['customSourcePicker']
+						}, p, t);
+						return h['dom']['addClass'](x['el'](), 'vjs-resolution-button'),
+							u['controlBar']['resolutionSwitcher'] = u['controlBar']['el_']['insertBefore'](x['el_'], u['controlBar']['getChild']('fullscreenToggle')['el_']),
+							u['controlBar']['resolutionSwitcher']['dispose'] = function () {
 								this['parentNode']['removeChild'](this);
-							}
-							;
-					});
+							},
+							f(u, z['sources'], z['label'], p['customSourcePicker']);
+					},
+					u['currentResolution'] = function (x, y) {
+						if (x == null)
+							return k;
+						return b[x] != null && b[x]['onClick'](y),
+							u;
+					},
+					u['getGroupedSrc'] = function () {
+						return s;
+					};
+				function r(y, x) {
+					if (!y['res'] || !x['res'])
+						return 0x0;
+					return +x['res'] - +y['res'];
+				}
+				function q(y) {
+					var x = {
+						'label': {},
+						'res': {},
+						'type': {}
+					};
+					return y['map'](function (z) {
+						n(x, 'label', z),
+							n(x, 'res', z),
+							n(x, 'type', z),
+							v(x, 'label', z),
+							v(x, 'res', z),
+							v(x, 'type', z);
+					}),
+						x;
+				}
+				function n(x, y, z) {
+					x[y][z[y]] == null && (x[y][z[y]] = []);
+				}
+				function v(x, y, z) {
+					x[y][z[y]]['push'](z);
+				}
+				function o(z, A) {
+					var y = p['default'], x = '';
+					return y === 'high' ? (y = A[0x0]['res'],
+						x = A[0x0]['label']) : y === 'low' || y == null || !z['res'][y] ? (y = A[A['length'] - 0x1]['res'],
+							x = A[A['length'] - 0x1]['label']) : z['res'][y] && (x = z['res'][y][0x0]['label']),
+					{
+						'res': y,
+						'label': x,
+						'sources': z['res'][y]
+					};
+				}
+				u['ready'](function () {
+					u['options_']['sources']['length'] > 0x0 && u['setTimeout'](function () {
+						u['updateSrc'](u['options_']['sources']);
+					}, 0x1);
+				});
 			},
-				h['registerPlugin']('videoJsPlayLine', b);
-		}(window, videojs));
-	}()),
-	Ext['define']('ans.AudioJs', {
-		'videoJs': null,
-		'mixins': {
-			'observable': 'Ext.util.Observable'
-		},
-		'constructor': function (a) {
-			a = a || {};
-			var c = this;
-			c['addEvents'](['seekstart']),
-				c['mixins']['observable']['constructor']['call'](c, a);
-			var b = videojs(a['videojs'], c['params2VideoOpt'](a['params']), function () { });
-			Ext['fly'](a['videojs'])['on']('contextmenu', function (f) {
-				f['preventDefault']();
-			}),
-				Ext['fly'](a['videojs'])['on']('keydown', function (f) {
-					(f['keyCode'] == 0x20 || f['keyCode'] == 0x25 || f['keyCode'] == 0x27) && f['preventDefault'](),
-						f['keyCode'] == 0x20 && (b['paused']() ? b['play']() : b['pause']());
+				h['registerPlugin']('videoJsResolutionSwitcher', c);
+		}(window, a);
+}());
+(function () {
+	(function (i, h) {
+		var f = {}, b, g = {}, a = {};
+		function c(o, n, m, p) {
+			g = n;
+			if (typeof p === 'function')
+				return p(o, n, m);
+			return o;
+		}
+		var l = h['getComponent']('ResolutionMenuItem'), e = h['extend'](l, {
+			'onClick': function (q) {
+				this['onClickListener'](this);
+				var p = this['player_']['currentTime'](), m = this['player_']['paused']();
+				this['showAsLabel'](),
+					this['addClass']('vjs-selected');
+				!m && this['player_']['bigPlayButton']['hide']();
+				typeof q !== 'function' && typeof this['options_']['customSourcePicker'] === 'function' && (q = this['options_']['customSourcePicker']);
+				var o = 'loadeddata';
+				this['player_']['techName_'] !== 'Youtube' && this['player_']['preload']() === 'none' && this['player_']['techName_'] !== 'Flash' && (o = 'timeupdate');
+				var n = c(this['player_'], this['src'], this['options_']['label'], q);
+				n && n['one'](o, function () {
+					n['switchStatus'] = true,
+						n['currentTime'](p),
+						!m && n['play'](),
+						n['trigger']('playlinechange');
+				});
+			}
+		}), j = h['getComponent']('MenuButton'), k = h['extend'](j, {
+			'constructor': function (p, n, q, m) {
+				this['playlines'] = n['playlines'],
+					this['label'] = m,
+					this['label']['innerHTML'] = n['initialySelectedLabel'],
+					j['call'](this, p, n, q),
+					this['controlText']('Playline');
+				if (q['dynamicLabel'])
+					this['el']()['appendChild'](m);
+				else {
+					var o = document['createElement']('span');
+					h['addClass'](o, 'vjs-resolution-button-staticlabel'),
+						this['el']()['appendChild'](o);
+				}
+			},
+			'createItems': function () {
+				var o = [], q = this['playlines'] || [], p = function (r) {
+					o['map'](function (s) {
+						s['selected'](s === r),
+							s['removeClass']('vjs-selected');
+					});
+				};
+				for (var n = 0x0; n < q['length']; n++) {
+					var m = q[n]['label'];
+					o['push'](new e(this['player_'], {
+						'label': m,
+						'src': q[n],
+						'initialySelected': m === this['options_']['initialySelectedLabel'],
+						'customSourcePicker': this['options_']['customSourcePicker']
+					}, p, this['label'])),
+						a[m] = o[o['length'] - 0x1];
+				}
+				return o;
+			}
+		});
+		b = function (o) {
+			var q = h['mergeOptions'](f, o), p = this, n = document['createElement']('span'), r = p['options_']['playlines'];
+			h['dom']['addClass'](n, 'vjs-resolution-button-label');
+			var m = new k(p, {
+				'playlines': r,
+				'initialySelectedLabel': r[0x0]['label'],
+				'initialySelectedUrl': r[0x0]['url'],
+				'customSourcePicker': q['customSourcePicker']
+			}, q, n);
+			h['dom']['addClass'](m['el'](), 'vjs-resolution-button'),
+				h['dom']['addClass'](m['el'](), 'vjs-playline-button'),
+				m['show'](),
+				p['selectCDN'] = function (s) {
+					m['items'][s]['onClick'](q['customSourcePicker']),
+						p['play']();
+				},
+				r['length'] > 0x0 && (g = r[0x0]),
+				p['currentPlayline'] = function () {
+					return g;
+				},
+				p['ready'](function () {
+					p['controlBar']['videoJsPlayLine'] = p['controlBar']['el_']['insertBefore'](m['el_'], p['controlBar']['getChild']('fullscreenToggle')['el_']),
+						p['controlBar']['videoJsPlayLine']['dispose'] = function () {
+							this['parentNode']['removeChild'](this);
+						};
 				});
 		},
-		'params2VideoOpt': function (params) {
-			var sources = [];
-			!params['rootPath'] && (params['rootPath'] = '');
-			params['http'] && sources['push']({
-				'src': params['http'],
-				'type': 'audio/mp3'
+			h['registerPlugin']('videoJsPlayLine', b);
+	}(window, videojs));
+}());
+Ext['define']('ans.AudioJs', {
+	'videoJs': null,
+	'mixins': {
+		'observable': 'Ext.util.Observable'
+	},
+	'constructor': function (a) {
+		a = a || {};
+		var c = this;
+		c['addEvents'](['seekstart']),
+			c['mixins']['observable']['constructor']['call'](c, a);
+		var b = videojs(a['videojs'], c['params2VideoOpt'](a['params']), function () { });
+		Ext['fly'](a['videojs'])['on']('contextmenu', function (f) {
+			f['preventDefault']();
+		}),
+			Ext['fly'](a['videojs'])['on']('keydown', function (f) {
+				(f['keyCode'] == 0x20 || f['keyCode'] == 0x25 || f['keyCode'] == 0x27) && f['preventDefault'](),
+					f['keyCode'] == 0x20 && (b['paused']() ? b['play']() : b['pause']());
 			});
-			var logFunc = function (player, url, callback) {
-				var me = this;
-				!me['logCount'] && (me['logCount'] = 0x0),
-					videojs['xhr']({
-						'uri': url,
-						'headers': {
-							'Content-Type': 'application/json'
-						}
-					}, function (err, resp) {
-						me['logCount']++;
-						if (resp['statusCode'] == 0xc8) {
-							me['logCount'] = 0x0;
-							if (resp['body']['indexOf']('isPassed') < 0x0) {
-								window['parent'] && window['parent']['location']['reload']();
-								return;
-							}
-							eval('var d=' + resp['body']);
-							d['isPassed'] && callback();
+	},
+	'params2VideoOpt': function (params) {
+		var sources = [];
+		!params['rootPath'] && (params['rootPath'] = '');
+		params['http'] && sources['push']({
+			'src': params['http'],
+			'type': 'audio/mp3'
+		});
+		var logFunc = function (player, url, callback) {
+			var me = this;
+			!me['logCount'] && (me['logCount'] = 0x0),
+				videojs['xhr']({
+					'uri': url,
+					'headers': {
+						'Content-Type': 'application/json'
+					}
+				}, function (err, resp) {
+					me['logCount']++;
+					if (resp['statusCode'] == 0xc8) {
+						me['logCount'] = 0x0;
+						if (resp['body']['indexOf']('isPassed') < 0x0) {
+							window['parent'] && window['parent']['location']['reload']();
 							return;
 						}
-						me['logCount'] >= 0x4 && (me['logCount'] = 0x0,
-							player['pause'](),
-							resp['statusCode'] != 0x0 ? alert('服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e:' + resp['statusCode'] + ')') : alert('您的网络不稳定，请您稍后继续...'));
-					});
-			}, sendLog_ = function (player, isdrag, currentTimeSec, callback) {
-				if (!params['reportUrl'])
-					return;
-				var format = '[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]', clipTime = (params['startTime'] || '0') + '_' + (params['endTime'] || params['duration']), var_20220210_1 = 0x0, var_20220210_2;
-				currentTimeSec['toString']()['indexOf']('-') != -0x1 ? (var_20220210_2 = currentTimeSec['split']('-'),
-					var_20220210_2['length'] == 0x2 && (var_20220210_1 = parseInt(var_20220210_2[0x1]) * 0x3e8)) : var_20220210_1 = currentTimeSec * 0x3e8;
-				if (var_20220210_1 == params['duration'] * 0x3e8 && isdrag == 0x2)
-					return;
-				var enc = Ext['String']['format'](format, params['clazzId'], params['userid'], params['jobid'] ? params['jobid'] : '', params['objectId'], var_20220210_1, 'd_yHJ!$pdA~5', params['duration'] * 0x3e8, clipTime), rurl = [params['reportUrl'], '/', params['dtoken'], '?clazzId=', params['clazzId'], '&playingTime=', currentTimeSec, '&duration=', params['duration'], '&clipTime=', clipTime, '&objectId=', params['objectId'], '&otherInfo=', params['otherInfo'], '&jobid=', params['jobid'], '&userid=', params['userid'], '&isdrag=', isdrag, '&view=pc', '&enc=', md5(enc), '&rt=', params['rt'], '&dtype=Audio', '&_t=', new Date()['getTime']()]['join']('');
-				logFunc(player, rurl, callback);
-			};
-			return {
-				'language': 'zh-CN',
-				'controls': true,
-				'preload': 'auto',
-				'bigPlayButton': false,
-				'sources': sources,
-				'textTrackDisplay': true,
-				'controlBar': {
-					'volumePanel': {
-						'inline': true
-					},
-					'children': ['playToggle', 'currentTimeDisplay', 'timeDivider', 'durationDisplay', 'progressControl', 'volumePanel']
+						eval('var d=' + resp['body']);
+						d['isPassed'] && callback();
+						return;
+					}
+					me['logCount'] >= 0x4 && (me['logCount'] = 0x0,
+						player['pause'](),
+						resp['statusCode'] != 0x0 ? alert('服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e:' + resp['statusCode'] + ')') : alert('您的网络不稳定，请您稍后继续...'));
+				});
+		}, sendLog_ = function (player, isdrag, currentTimeSec, callback) {
+			if (!params['reportUrl'])
+				return;
+			var format = '[{0}][{1}][{2}][{3}][{4}][{5}][{6}][{7}]', clipTime = (params['startTime'] || '0') + '_' + (params['endTime'] || params['duration']), var_20220210_1 = 0x0, var_20220210_2;
+			currentTimeSec['toString']()['indexOf']('-') != -0x1 ? (var_20220210_2 = currentTimeSec['split']('-'),
+				var_20220210_2['length'] == 0x2 && (var_20220210_1 = parseInt(var_20220210_2[0x1]) * 0x3e8)) : var_20220210_1 = currentTimeSec * 0x3e8;
+			if (var_20220210_1 == params['duration'] * 0x3e8 && isdrag == 0x2)
+				return;
+			var enc = Ext['String']['format'](format, params['clazzId'], params['userid'], params['jobid'] ? params['jobid'] : '', params['objectId'], var_20220210_1, 'd_yHJ!$pdA~5', params['duration'] * 0x3e8, clipTime), rurl = [params['reportUrl'], '/', params['dtoken'], '?clazzId=', params['clazzId'], '&playingTime=', currentTimeSec, '&duration=', params['duration'], '&clipTime=', clipTime, '&objectId=', params['objectId'], '&otherInfo=', params['otherInfo'], '&jobid=', params['jobid'], '&userid=', params['userid'], '&isdrag=', isdrag, '&view=pc', '&enc=', md5(enc), '&rt=', params['rt'], '&dtype=Audio', '&_t=', new Date()['getTime']()]['join']('');
+			logFunc(player, rurl, callback);
+		};
+		return {
+			'language': 'zh-CN',
+			'controls': true,
+			'preload': 'auto',
+			'bigPlayButton': false,
+			'sources': sources,
+			'textTrackDisplay': true,
+			'controlBar': {
+				'volumePanel': {
+					'inline': true
 				},
-				'plugins': {
-					'audioNote': {
-						'title': params['filename']
-					},
-					'studyControl': {
-						'enableSwitchWindow': 0x1
-					},
-					'seekBarControl': {
-						'headOffset': params['headOffset'],
-						'enableFastForward': params['enableFastForward'],
-						'isSendLog': true,
-						'reportTimeInterval': params['reportTimeInterval'],
-						'sendLog': function (player, evt, sec) {
-							if (this['isSendLog'] !== true)
-								return;
-							var isdrag = 0x0;
-							switch (evt) {
-								case 'play':
-									isdrag = 0x3;
-									break;
-								case 'pause':
-									isdrag = 0x2;
-									break;
-								case 'ended':
-									isdrag = 0x4;
-									break;
-							}
-							sendLog_(player, isdrag, sec, function () {
-								window['proxy_completed'] && window['proxy_completed']();
-							});
+				'children': ['playToggle', 'currentTimeDisplay', 'timeDivider', 'durationDisplay', 'progressControl', 'volumePanel']
+			},
+			'plugins': {
+				'audioNote': {
+					'title': params['filename']
+				},
+				'studyControl': {
+					'enableSwitchWindow': 0x1
+				},
+				'seekBarControl': {
+					'headOffset': params['headOffset'],
+					'enableFastForward': params['enableFastForward'],
+					'isSendLog': true,
+					'reportTimeInterval': params['reportTimeInterval'],
+					'sendLog': function (player, evt, sec) {
+						if (this['isSendLog'] !== true)
+							return;
+						var isdrag = 0x0;
+						switch (evt) {
+							case 'play':
+								isdrag = 0x3;
+								break;
+							case 'pause':
+								isdrag = 0x2;
+								break;
+							case 'ended':
+								isdrag = 0x4;
+								break;
 						}
+						sendLog_(player, isdrag, sec, function () {
+							window['proxy_completed'] && window['proxy_completed']();
+						});
 					}
 				}
-			};
-		}
-	});
+			}
+		};
+	}
+});
 Ext['define']('ans.videojs.AudioNote', {
 	'extend': 'Ext.Component',
 	'cls': 'ans-audionote'

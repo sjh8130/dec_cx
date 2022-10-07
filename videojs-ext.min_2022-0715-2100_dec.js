@@ -1858,8 +1858,7 @@ Ext.define("ans.videojs.ErrorNote", {
 					p.controlBar.videoJsPlayLine = p.controlBar.el_.insertBefore(m.el_, p.controlBar.getChild("fullscreenToggle").el_),
 						p.controlBar.videoJsPlayLine.dispose = function () {
 							this.parentNode.removeChild(this);
-						}
-						;
+						};
 				});
 		};
 		h.registerPlugin("videoJsPlayLine", b)
