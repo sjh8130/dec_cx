@@ -11,9 +11,9 @@ Ext.define("ananas.ServerHosts", {
 			a.MASTER_HOST = location.protocol + "//" + location.host;
 		}
 		try {
-			a.PARENT_HOST = parent.location.host !== "" ? location.protocol + "//" + parent.location.host : a.MASTER_HOST;	// ====Modified====
+			a.PARENT_HOST = parent.location.host !== "" ? location.protocol + "//" + parent.location.host : a.MASTER_HOST;
 		} catch (c) {
-			a.PARENT_HOST = location.protocol + "//" + location.host;	// ====Modified====
+			a.PARENT_HOST = location.protocol + "//" + location.host;
 		}
 		a.P_HOST = location.protocol + "//p.ananas.chaoxing.com";
 		a.s1_HOST = location.protocol + "//s1.ananas.chaoxing.com";
@@ -32,7 +32,7 @@ Ext.define("ananas.ServerHosts", {
 		a.LIVE_HOST = location.protocol + "//live.chaoxing.com";
 		a.APPCD_HOST = location.protocol + "//appcd.chaoxing.com";
 		a.ZHIBO_HOST = "https://zhibo.chaoxing.com";
-		a.CXCLASSTASL_HOST = location.protocol + "//noteyd.chaoxing.com";	// ====Modified====
+		a.CXCLASSTASL_HOST = location.protocol + "//noteyd.chaoxing.com";
 	}
 });
 (function (g) {
@@ -396,7 +396,7 @@ Ext.define("ans.VideoJs", {
 						me.logCount = 0x0,
 							player.pause();
 						if (resp.statusCode != 0x0) {
-							if (resp.statusCode == 0xca || resp.statusCode == 0x12e) {	// ====Modified====
+							if (resp.statusCode == 0xca || resp.statusCode == 0x12e) {
 								try {
 									parent.location.reload();
 								} catch (e) {
@@ -662,11 +662,11 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			h.isSendLog_ = !!f.isSendLog;
 			h.isShowDanmu_ = !!f.isShowDanmu;
 			h.damuLastGetTime = 0;
-			h.firstPlay = true;	// ====Modified====
-			h.firstPlayFace = true;	// ====Modified====
-			h.pausePlayFace = false;	// ====Modified====
+			h.firstPlay = true;
+			h.firstPlayFace = true;
+			h.pausePlayFace = false;
 			h.playingFace = false;
-			h.playingFaceTime = 0;	// ====Modified====
+			h.playingFaceTime = 0;
 			h.chapterCapture = f.chapterCapture || 0;
 			h.captureInterval = f.captureInterval * 0x3c || 0x258;
 			h.chapterCollectionType = f.chapterCollectionType || 0;
@@ -679,7 +679,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			h.playingLoopCapture = f.playingLoopCapture;
 			h.isShowFaceCollection = f.isShowFaceCollection;
 			h.duration = f.duration;
-			h.jumpTimePointList = f.jumpTimePointList;	// ====Modified====
+			h.jumpTimePointList = f.jumpTimePointList;
 			h.loopCaptureInterval = Math.floor(Math.random() * (parseInt(h.duration) - 0x0) + 0x1);
 			h.attachmentId = f.attachmentId;
 			g.on("ready", function () {
@@ -694,7 +694,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 						return;
 					var n = h.now_() - k;
 					(n > j || m === true) && (typeof o != "undefined" ? f.sendLog(g, l, o, h) : f.sendLog(g, l, h.sec_(g), h),
-						k = h.now_());	// ====Modified====
+						k = h.now_());
 				};
 			g.on("play", function () {
 				try {
@@ -725,18 +725,18 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 						h.sendDataLog("play"),
 						h.receiveStudyLog(),
 						h.getDanmuList("play", g),
-						h.firstPlay = false,	// ====Modified====
-						h.pausePlayFace = true;	// ====Modified====
+						h.firstPlay = false,
+						h.pausePlayFace = true;
 				else {
-					if (h.chapterCapture == 1) {	// ====Modified====
-						if (h.firstPlay) {	// ====Modified====
-							var var_20220715_1 = h.sec_(g);	// ====Modified====
-							if (var_20220715_1 == 0 && (h.startCapture == 1 || typeof h.startCapture == "undefined") && h.firstPlayFace) {	// ====Modified====
-								h.playingFaceTime = var_20220715_1,	// ====Modified====
-									h.playingFace = false,	// ====Modified====
-									h.faceCollection("play", g, h.chapterCollectionType, 0);	// ====Modified====
-								return;	// ====Modified====
-							}	// ====Modified====
+					if (h.chapterCapture == 1) {
+						if (h.firstPlay) {
+							var var_20220715_1 = h.sec_(g);
+							if (var_20220715_1 == 0 && (h.startCapture == 1 || typeof h.startCapture == "undefined") && h.firstPlayFace) {
+								h.playingFaceTime = var_20220715_1,
+									h.playingFace = false,
+									h.faceCollection("play", g, h.chapterCollectionType, 0);
+								return;
+							}
 							!g.ignorePlay ? (i("play", true),
 								g.ignoreSeek = true) : (g.ignorePlay = false,
 									g.ignoreSeek = false),
@@ -774,7 +774,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 					h.sendDataLog("pause"),
 					h.getDanmuList("pause", g);
 			});
-			g.on("timeupdate", function () {	// ====Modified====
+			g.on("timeupdate", function () {
 				var c = h.sec_(g);
 				h.isSupportFace && h.isShowFaceCollection && h.chapterCapture == 1 && h.playingCapture == 1 && h.playingFace && (h.playingFace = false,
 					h.playingLoopCapture == 1 ? c == h.loopCaptureInterval && h.faceCollection("playing", g, h.chapterCollectionType, -1) : c >= h.captureInterval && c % h.captureInterval == 0 && h.faceCollection("playing", g, h.chapterCollectionType, c));
@@ -795,7 +795,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				h.sec_(g) - c <= 1 && !g.ignorePlay && (c = h.sec_(g)),
 					i("playing");
 			});
-			g.on("ended", function () {	// ====Modified====
+			g.on("ended", function () {
 				h.isShowFaceCollection && h.chapterCapture == 1 && h.endCapture == 1 && h.faceCollection("ended", g, h.chapterCollectionType, h.duration),
 					i("ended", true);
 			})
@@ -889,7 +889,7 @@ Ext.define("ans.videojs.VideoQuiz", {
 	xtype: "videoquiz",
 	cls: "ans-videoquiz",
 	renderTpl: ['<div class=tkTopic">', `<tpl if="dtype=='InteractiveQuiz'">`, '<div class="tkTopic_numbar fr">共 {interactiveQuestionCount} 题<span id="rightAnswerNum">，已答对 <i id="rightNum"></i> 题</span></div>', '</tpl> ', '<div class=\x22tkTopic_title\x22>[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', `<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox:"radio"]}" <tpl if="parent.dtype=='InteractiveQuiz'">{[this.getChecked(parent.answerContent, values.name, parent.dtype)]}</tpl> name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>`, '{name}、{description}', '</label></li>', '</tpl>', '</ul>', '</div>', '</div>', '<div class="tkTopic_oper">', '<a class=\x22ans-videoquiz-submit bntLinear fr\x22 id=\x22videoquiz-submit\x22>提交</a>', `<a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue"><tpl if="dtype=='InteractiveQuiz'">继续学习<tpl else>继续</tpl></a>`, `<tpl if="dtype=='InteractiveQuiz'">`, '<a class=\x22bntWhiteBorder ans-videoquiz-back fr\x22 id=\x22knowledgeBack\x22>知识点回看</a>', '</tpl>', `<tpl if="dtype=='InteractiveQuiz'"><span id="spanHas" class="rightInfo"></span><tpl else><span class="spanHas fr" id="spanHas">回答正确</span></tpl>`, `<span class="spanNot fr" id="spanNot"><tpl if="dtype=='InteractiveQuiz'">真遗憾，再接再厉！<tpl else>回答错误</tpl></span>`, `<span class="spanNotBack fr" id="spanNotBack"><tpl if="dtype=='InteractiveQuiz'">真遗憾，再接再厉！<tpl else>回答错误，</tpl>回看 {errorBackTime} 分钟</span>`, `<tpl if="dtype=='InteractiveQuiz'">`, '<span class=\x22spanNotBack fr\x22 id=\x22spanNotBackPoint\x22>真遗憾，再接再厉！</span>', '<a class="spanHref fl" href="javascript:" id="viewAnalysis">查看解析</a>', '</div>', '<div class=\x22tkParsing\x22 id=\x22tkParsing\x22>', '<a class=\x22tkParsing_dele\x22 href=\x22javascript:\x22></a>', '<div class=\x22tkParsing_screll tkParsing_con\x22 id=\x22tkParsing_con\x22></div>', "</tpl>", "</div>", "</div>", {
-		getChecked: function (q, w, e) {	// ====Modified====
+		getChecked: function (q, w, e) {
 			try {
 				if (typeof q != "undefined")
 					return q.indexOf(w) != -1 && e == "InteractiveQuiz" ? 'checked="checked"' : "";
@@ -997,7 +997,7 @@ Ext.define("ans.videojs.VideoQuiz", {
 						if (d == "InteractiveQuiz") {
 							Ext.get("rightNum").setHTML(n.rightAnswerCount),
 								Ext.get("rightAnswerNum").setStyle("display", "inline-block");
-							var q = "";	// ====Modified====
+							var q = "";
 							n.showAnswer && n.showAnswer > 0x0 && (q += "正确答案：" + n.rightContent);
 							if (n.showAnswer && n.showAnswer > 0x0 || n.isRight) {
 								n.testAnalysis && (q += "</br>解析：" + n.testAnalysis);
@@ -1014,7 +1014,7 @@ Ext.define("ans.videojs.VideoQuiz", {
 								f.tkParseScroll = p;
 							}
 						}
-						if (n.isRight && d == "InteractiveQuiz") {	// ====Modified====
+						if (n.isRight && d == "InteractiveQuiz") {
 							if (typeof n.showTip != "undefined" && n.showTip) {
 								var r = n.percent;
 								try {
@@ -1063,7 +1063,7 @@ Ext.define("ans.videojs.VideoImg", {
 	afterRender: function () {
 		var a = this;
 		a.callParent(arguments);
-		try {	// ====Modified====
+		try {
 			var var_20220715_2 = document.querySelector(".sp_video_img");
 			var_20220715_2.addEventListener("load", function () {
 				var_20220715_2.naturalWidth >= var_20220715_2.naturalHeight ? var_20220715_2.naturalWidth >= 0x190 && (var_20220715_2.style.width = "90%",
@@ -1126,7 +1126,7 @@ Ext.define("ans.videojs.VideoPpt", {
 	afterRender: function () {
 		var a = this;
 		a.callParent(arguments);
-		try {	// ====Modified====
+		try {
 			dragFn && dragFn("#sp_video_ppt_pic", "#video_html5_api");
 		} catch (err) {
 			console.log(err);

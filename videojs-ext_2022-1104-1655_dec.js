@@ -1,38 +1,38 @@
-Ext.define("ananas.ServerHosts", {
-	alternateClassName: "ServerHosts",
-	singleton: true,
-	constructor: function () {
+Ext.define('ananas.ServerHosts', {
+	'alternateClassName': 'ServerHosts',
+	'singleton': true,
+	'constructor': function () {
 		var a = this;
 		a.callParent(arguments);
 		var b = document.domain;
 		try {
-			a.MASTER_HOST = location.protocol + "//" + top.location.host;
+			a.MASTER_HOST = location.protocol + '//' + top.location.host;
 		} catch (c) {
-			a.MASTER_HOST = location.protocol + "//" + location.host;
+			a.MASTER_HOST = location.protocol + '//' + location.host;
 		}
 		try {
-			a.PARENT_HOST = parent.location.host !== "" ? location.protocol + "//" + parent.location.host : a.MASTER_HOST;
+			a.PARENT_HOST = parent.location.host !== '' ? location.protocol + '//' + parent.location.host : a.MASTER_HOST;
 		} catch (c) {
-			a.PARENT_HOST = location.protocol + "//" + location.host;
+			a.PARENT_HOST = location.protocol + '//' + location.host;
 		}
-		a.P_HOST = location.protocol + "//p.ananas.chaoxing.com";
-		a.s1_HOST = location.protocol + "//s1.ananas.chaoxing.com";
-		a.s2_HOST = location.protocol + "//s2.ananas.chaoxing.com";
-		a.CLOUD_HOST = "http://cloud.ananas." + b;
-		a.NEW_CLOUD_HOST = location.protocol + "//pan-yz.chaoxing.com";
-		a.CS_HOST = location.protocol + "//cs.ananas." + b;
-		a.FANYA_HOST = "http://course.fanya." + b;
-		a.PAN_HOST = "http://pan.ananas." + b;
-		a.CXLIVE_HOST = "http://cxlive." + b;
-		a.ERYA_TSK_HOST = "http://erya.tsk." + b;
-		a.QUESTIONNAIRE_HOST = "http://surveyapp.fy." + b;
-		a.FX_HOST = "http://www." + b;
-		a.PHONE_ZT_HOST = "https://special.rhky.com";
-		a.CHAOXING_CLASS_HOST = "https://k.chaoxing.com";
-		a.LIVE_HOST = location.protocol + "//live.chaoxing.com";
-		a.APPCD_HOST = location.protocol + "//appcd.chaoxing.com";
-		a.ZHIBO_HOST = "https://zhibo.chaoxing.com";
-		a.CXCLASSTASL_HOST = location.protocol + "//noteyd.chaoxing.com";
+		a.P_HOST = location.protocol + '//p.ananas.chaoxing.com';
+		a.s1_HOST = location.protocol + '//s1.ananas.chaoxing.com';
+		a.s2_HOST = location.protocol + '//s2.ananas.chaoxing.com';
+		a.CLOUD_HOST = 'http://cloud.ananas.' + b;
+		a.NEW_CLOUD_HOST = location.protocol + '//pan-yz.chaoxing.com';
+		a.CS_HOST = location.protocol + '//cs.ananas.' + b;
+		a.FANYA_HOST = 'http://course.fanya.' + b;
+		a.PAN_HOST = 'http://pan.ananas.' + b;
+		a.CXLIVE_HOST = 'http://cxlive.' + b;
+		a.ERYA_TSK_HOST = 'http://erya.tsk.' + b;
+		a.QUESTIONNAIRE_HOST = 'http://surveyapp.fy.' + b;
+		a.FX_HOST = 'http://www.' + b;
+		a.PHONE_ZT_HOST = 'https://special.rhky.com';
+		a.CHAOXING_CLASS_HOST = 'https://k.chaoxing.com';
+		a.LIVE_HOST = location.protocol + '//live.chaoxing.com';
+		a.APPCD_HOST = location.protocol + '//appcd.chaoxing.com';
+		a.ZHIBO_HOST = 'https://zhibo.chaoxing.com';
+		a.CXCLASSTASL_HOST = location.protocol + '//noteyd.chaoxing.com';
 	}
 });
 (function (g) {
@@ -209,11 +209,11 @@ Ext.define("ananas.ServerHosts", {
 	}) : typeof module === 'object' && module.exports ? module.exports = f : g.md5 = f;
 }(this));
 Ext.apply(Ext, {
-	setCookie: function (c, f) {
+	'setCookie': function (c, f) {
 		var a = arguments, i = arguments.length, b = i > 0x2 ? a[0x2] : null, h = i > 0x3 ? a[0x3] : '/', e = i > 0x4 ? a[0x4] : null, g = i > 0x5 ? a[0x5] : false;
 		document.cookie = c + '=' + escape(f) + (b === null ? '' : '; expires=' + b.toGMTString()) + (h === null ? '' : '; path=' + h) + (e === null ? '' : '; domain=' + e) + (g === true ? '; secure' : '');
 	},
-	getCookie: function (e, h) {
+	'getCookie': function (e, h) {
 		var b = e + '=', g = b.length, a = document.cookie.length, f = 0x0, c = 0x0;
 		while (f < a) {
 			c = f + g;
@@ -225,56 +225,91 @@ Ext.apply(Ext, {
 		}
 		return h;
 	},
-	getCookieVal: function (b) {
+	'getCookieVal': function (b) {
 		var a = document.cookie.indexOf(';', b);
 		return a == -0x1 && (a = document.cookie.length),
 			unescape(document.cookie.substring(b, a));
 	}
 });
 Ext.define('ans.VideoJs', {
-	videoJs: null,
-	mixins: {
-		observable: 'Ext.util.Observable'
+	'videoJs': null,
+	'mixins': {
+		'observable': 'Ext.util.Observable'
 	},
-	constructor: function (b) {
+	'constructor': function (b) {
 		b = b || {};
 		var e = this;
 		e.addEvents(['seekstart']),
 			e.mixins.observable.constructor.call(e, b);
 		var c = videojs(b.videojs, e.params2VideoOpt(b.params), function () { });
+		c.eventCount = 0x0;
 		Ext.fly(b.videojs).on('contextmenu', function (f) {
 			f.preventDefault();
 		}),
+			$('.video-js').attr('tabindex', 0x1),
+			$('.vjs-big-play-button').on('click', function (f) {
+				$('.video-js').focus();
+			}),
 			Ext.fly(b.videojs).on('keydown', function (f) {
-				(f.keyCode == 0x20 || f.keyCode == 0x25 || f.keyCode == 0x27 || f.keyCode == 0x6b) && f.preventDefault();
+				(f.keyCode == 0x20 || f.keyCode == 0x25 || f.keyCode == 0x27 || f.keyCode == 0x6b) && f.preventDefault(),
+					f.keyCode == 0x20 && (c.paused() ? c.play() : c.pause());
 			});
 		c.videoJsResolutionSwitcher && c.on('resolutionchange', function () {
 			var g = c.currentResolution(), f = g.sources ? g.sources[0x0].res : false;
 			Ext.setCookie('resolution', f);
 		});
-		var a = b.params && b.params.doublespeed ? 0x2 : 0x1;
+		var a = b.params && b.params.doublespeed ? 0x2 : 0x1, i = true;
 		c.on('ratechange', function () {
 			var h = c.playbackRate();
 			h > a ? (c.pause(), c.playbackRate(0x1)) : Ext.setCookie('doubleSpeedValue', h);
-		});
-		c.on('play', function () {
-			if (b.params && b.params.doublespeed) {
-				var var_20220727_7 = Ext.getCookie('doubleSpeedValue', 0x1);
-				c.playbackRate(var_20220727_7);
+			if (typeof aplus_queue != 'undefined' && !i) {
+				var j = b.params && b.params.aplus_video_id ? b.params.aplus_video_id : '', k = b.params && b.params.aplus_resource_id ? b.params.aplus_resource_id : '', l = b.params && b.params.knowledgename ? b.params.knowledgename : '', m = b.params && b.params.coursename ? b.params.coursename : '';
+				aplus_queue.push({
+					'action': 'aplus.record',
+					'arguments': ['video_speed_click', 'CLK', {
+						'video_name': l,
+						'video_id': j,
+						'resource_id': k,
+						'resource_name': m,
+						'speed_type': c.playbackRate()
+					}]
+				});
+			}
+			i = false;
+		}),
+			c.on('play', function () {
+				try {
+					$('.video-js').focus();
+					if (b.params && b.params.doublespeed && parseInt(b.params.doublespeed) === 0x1) {
+						var var_20220727_7 = Ext.getCookie('doubleSpeedValue', 0x1);
+						c.playbackRate(var_20220727_7);
+					}
+				} catch (e) {
+					console.log(e);
+				}
+			});
+		c.on('ended', function () {
+			try {
+				b.params.enableFastForward = 0x1,
+					c.finished = true,
+					c.disableSeek(false),
+					$('.vjs-progress-control').unbind('click');
+			} catch (e) {
+				console.log(e);
 			}
 		});
 	},
-	params2VideoOpt: function (params) {
+	'params2VideoOpt': function (params) {
 		var var_20220727_6 = typeof params.cpi == 'undefined' ? 0x0 : params.cpi, useM3u8 = false, cdn = [{
-			indexorder: 0x0,
-			label: '公网1',
-			url: ServerHosts.s1_HOST,
-			ispublic: true
+			'indexorder': 0x0,
+			'label': '公网1',
+			'url': ServerHosts.s1_HOST,
+			'ispublic': true
 		}, {
-			indexorder: 0x1,
-			label: '公网2',
-			url: ServerHosts.s2_HOST,
-			ispublic: true
+			'indexorder': 0x1,
+			'label': '公网2',
+			'url': ServerHosts.s2_HOST,
+			'ispublic': true
 		}];
 		if (params.cdn)
 			try {
@@ -293,57 +328,57 @@ Ext.define('ans.VideoJs', {
 			var file = src.src.substr(start);
 			if (r.ispublic && start == 0x0)
 				return {
-					src: file,
-					type: 'video/mp4',
-					res: src.res
+					'src': file,
+					'type': 'video/mp4',
+					'res': src.res
 				};
 			return r.ispublic ? useM3u8 ? {
-				src: m3u8(params.objectId, src.resolution, r.url),
-				type: 'application/x-mpegURL',
-				res: src.res
+				'src': m3u8(params.objectId, src.resolution, r.url),
+				'type': 'application/x-mpegURL',
+				'res': src.res
 			} : {
-				src: r.url + file,
-				type: 'video/mp4',
-				res: src.res
+				'src': r.url + file,
+				'type': 'video/mp4',
+				'res': src.res
 			} : useM3u8 ? {
-				src: m3u8(params.objectId, src.resolution, r.url + sdomain),
-				type: 'application/x-mpegURL',
-				res: src.res
+				'src': m3u8(params.objectId, src.resolution, r.url + sdomain),
+				'type': 'application/x-mpegURL',
+				'res': src.res
 			} : {
-				src: r.url + sdomain + file,
-				type: 'video/mp4',
-				res: src.res
+				'src': r.url + sdomain + file,
+				'type': 'video/mp4',
+				'res': src.res
 			};
 		}
 		var sources = [], defaultRes = Ext.getCookie('resolution', 0x168);
 		!params.rootPath && (params.rootPath = '');
 		params.http && sources.push({
-			src: params.http,
-			type: 'video/mp4',
-			label: '标清',
-			resolution: 'sd',
-			res: 0x168
+			'src': params.http,
+			'type': 'video/mp4',
+			'label': '标清',
+			'resolution': 'sd',
+			'res': 0x168
 		});
 		params.httphd && sources.push({
-			src: params.httphd,
-			type: 'video/mp4',
-			label: '高清',
-			resolution: 'hd',
-			res: 0x2d0
+			'src': params.httphd,
+			'type': 'video/mp4',
+			'label': '高清',
+			'resolution': 'hd',
+			'res': 0x2d0
 		});
 		params.httpshd && sources.push({
-			src: params.httpshd,
-			type: 'video/mp4',
-			label: '超高清',
-			resolution: 'shd',
-			res: 0x438
+			'src': params.httpshd,
+			'type': 'video/mp4',
+			'label': '超高清',
+			'resolution': 'shd',
+			'res': 0x438
 		});
 		params.httpmd && sources.push({
-			src: params.httpmd,
-			type: 'video/mp4',
-			label: '极速',
-			resolution: 'md',
-			res: 0xf0
+			'src': params.httpmd,
+			'type': 'video/mp4',
+			'label': '极速',
+			'resolution': 'md',
+			'res': 0xf0
 		});
 		if (sources.length == 0x1) {
 			var cdnItem = sources[0x0];
@@ -371,8 +406,8 @@ Ext.define('ans.VideoJs', {
 			var me = this;
 			!me.logCount && (me.logCount = 0x0),
 				videojs.xhr({
-					uri: url,
-					headers: {
+					'uri': url,
+					'headers': {
 						'Content-Type': 'application/json'
 					}
 				}, function (err, resp) {
@@ -408,7 +443,7 @@ Ext.define('ans.VideoJs', {
 									console.log(e.message);
 								}
 							else
-								alert('服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e: ' + resp.statusCode + ')');
+								alert('服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e:' + resp.statusCode + ')');
 						} else
 							alert('您的网络不稳定，请您稍后继续...');
 					}
@@ -427,63 +462,89 @@ Ext.define('ans.VideoJs', {
 			logFunc(player, rurl, callback);
 		};
 		return {
-			language: 'zh-CN',
-			poster: params.screenshot,
-			controls: true,
-			preload: 'none',
-			sources: sources,
-			playlines: cdn,
-			playbackRates: params.doublespeed != 0x0 ? [0x1, 1.25, 1.5, 0x2] : false,
-			textTrackDisplay: true,
-			controlBar: {
-				volumePanel: {
-					inline: false
+			'language': 'zh-CN',
+			'poster': params.screenshot,
+			'controls': true,
+			'preload': 'none',
+			'sources': sources,
+			'playlines': cdn,
+			'playbackRates': params.doublespeed != 0x0 ? [0x1, 1.25, 1.5, 0x2] : false,
+			'textTrackDisplay': true,
+			'controlBar': {
+				'volumePanel': {
+					'inline': false
 				},
-				children: ['playToggle', 'playbackRateMenuButton', 'currentTimeDisplay', 'timeDivider', 'durationDisplay', 'progressControl', 'volumePanel', 'subsCapsButton', 'fullscreenToggle', 'videoJsPlayLine', 'textTrackButton']
+				'children': ['playToggle', 'playbackRateMenuButton', 'currentTimeDisplay', 'timeDivider', 'durationDisplay', 'progressControl', 'volumePanel', 'subsCapsButton', 'fullscreenToggle', 'videoJsPlayLine', 'textTrackButton']
 			},
-			plugins: {
-				videoJsResolutionSwitcher: {
-					default: defaultRes,
-					dynamicLabel: true,
-					customSourcePicker: function (player, sources, label) {
+			'plugins': {
+				'videoJsResolutionSwitcher': {
+					'default': defaultRes,
+					'dynamicLabel': true,
+					'customSourcePicker': function (player, sources, label) {
 						var r = player.currentPlayline();
-						return player.src(sources.map(function (src) {
+						player.src(sources.map(function (src) {
 							return makeSource(src, r);
-						})),
-							player;
+						}));
+						if (typeof aplus_queue != 'undefined') {
+							function func_20221104_1() {
+								var var_20221104_1 = '';
+								for (var i = 0x1; i <= 0x20; i++) {
+									var var_20221104_2 = Math.floor(Math.random() * 0x10).toString(0x10);
+									var_20221104_1 += var_20221104_2,
+										(i == 0x8 || i == 0xc || i == 0x10 || i == 0x14) && (var_20221104_1 += '-');
+								}
+								return var_20221104_1;
+							}
+							typeof aplus_queue != 'undefined' && aplus_queue.push({
+								'action': 'aplus.record',
+								'arguments': ['video_positive_load', 'CLK', {
+									'video_name': params.knowledgename || '',
+									'video_id': params.aplus_video_id || '',
+									'resource_id': params.aplus_resource_id || '',
+									'resource_name': params.coursename || '',
+									'video_duration': params.duration,
+									'request_id': func_20221104_1()
+								}]
+							});
+						}
+						return player;
 					}
 				},
-				videoJsPlayLine: {
-					dynamicLabel: true,
-					customSourcePicker: function (player, r, label) {
+				'videoJsPlayLine': {
+					'dynamicLabel': true,
+					'customSourcePicker': function (player, r, label) {
 						var src = player.currentResolution().sources[0x0];
 						return player.src(makeSource(src, r)),
 							player;
 					}
 				},
-				studyControl: {
-					enableSwitchWindow: params.enableSwitchWindow
+				'studyControl': {
+					'enableSwitchWindow': params.enableSwitchWindow
 				},
-				seekBarControl: {
-					headOffset: params.headOffset,
-					enableFastForward: params.enableFastForward,
-					isSendLog: !!parent.AttachmentSetting && params.control,
-					reportTimeInterval: params.reportTimeInterval,
-					isShowDanmu: params.danmaku,
-					chapterCapture: params.chapterCapture || 0x0,
-					captureInterval: params.captureInterval || 0x258,
-					chapterCollectionType: params.chapterCollectionType || 0x0,
-					startCapture: params.startCapture,
-					endCapture: params.endCapture,
-					playAginCapture: params.playAginCapture,
-					playingCapture: params.playingCapture,
-					playingLoopCapture: params.playingLoopCapture,
-					duration: params.duration,
-					isSupportFace: params.isSupportFace || false,
-					isShowFaceCollection: params.isShowFaceCollection,
-					jumpTimePointList: params.jumpTimePointList,
-					attachmentId: params.aId,
-					sendLog: function (player, evt, sec, var_20220324_1) {
+				'seekBarControl': {
+					'headOffset': params.headOffset,
+					'enableFastForward': params.enableFastForward,
+					'isSendLog': !!parent.AttachmentSetting && params.control,
+					'reportTimeInterval': params.reportTimeInterval,
+					'isShowDanmu': params.danmaku,
+					'chapterCapture': params.chapterCapture || 0x0,
+					'captureInterval': params.captureInterval || 0x258,
+					'chapterCollectionType': params.chapterCollectionType || 0x0,
+					'startCapture': params.startCapture,
+					'endCapture': params.endCapture,
+					'playAginCapture': params.playAginCapture,
+					'playingCapture': params.playingCapture,
+					'playingLoopCapture': params.playingLoopCapture,
+					'duration': params.duration,
+					'isSupportFace': params.isSupportFace || false,
+					'isShowFaceCollection': params.isShowFaceCollection,
+					'jumpTimePointList': params.jumpTimePointList,
+					'attachmentId': params.aId,
+					'aplusVideoId': params.aplus_video_id || '',
+					'aplusResourseId': params.aplus_resource_id || '',
+					'aplusVideoName': params.knowledgename || '',
+					'aplusResourceName': params.coursename || '',
+					'sendLog': function (player, evt, sec, var_20220324_1) {
 						if (this.isSendLog !== true)
 							return;
 						var isdrag = 0x0;
@@ -516,34 +577,49 @@ Ext.define('ans.VideoJs', {
 						});
 					}
 				},
-				timelineObjects: {
-					url: params.rootPath + '/richvideo/initdatawithviewerV2?mid=' + params.mid + '&cpi=' + params.cpi + '&classid=' + params.clazzId,
-					quizErrorReportUrl: params.rootPath + '/question/addquestionerror?classid=' + params.clazzId + '&cpi=' + params.cpi,
-					validationUrl2: params.rootPath + '/question/quiz-validation?classid=' + params.clazzId + '&cpi=' + var_20220727_6 + '&objectid=' + params.objectId,
-					quizRightCountUrl: params.rootPath + '/question/quiz-rightcount?classid=' + params.clazzId + '&cpi=' + var_20220727_6
+				'timelineObjects': {
+					'begins': params.begins,
+					'ends': params.ends,
+					'url': params.rootPath + '/richvideo/initdatawithviewerV2?mid=' + params.mid + '&cpi=' + params.cpi + '&classid=' + params.clazzId,
+					'quizErrorReportUrl': params.rootPath + '/question/addquestionerror?classid=' + params.clazzId + '&cpi=' + params.cpi,
+					'validationUrl2': params.rootPath + '/question/quiz-validation?classid=' + params.clazzId + '&cpi=' + var_20220727_6 + '&objectid=' + params.objectId,
+					'quizRightCountUrl': params.rootPath + '/question/quiz-rightcount?classid=' + params.clazzId + '&cpi=' + var_20220727_6
 				},
-				subtitle: {
-					translate: params.chapterVideoTranslate,
-					subtitleUrl: params.rootPath + '/richvideo/allsubtitle?mid=' + params.mid + '&objectid=' + params.objectId + '&courseid=' + params.courseid,
-					subtitle: params.rootPath + '/ananas/video-editor/sub?objectid=' + params.subobjectid
+				'customIframePlugin': {
+					'eventArray': params.eventArray,
+					'supportHeartbeat': params.supportHeartbeat,
+					'courseid': params.courseid,
+					'clazzId': params.clazzId,
+					'userId': params.userid,
+					'cookieFid': params.cookieFid,
+					'knowledgeid': params.knowledgeid,
+					'objectid': params.objectid,
+					'playTime': params.playTime,
+					'videoEnc': params.videoEnc,
+					'headOffset': params.headOffset
 				},
-				marker: {
-					url: !params.isNotMark ? params.rootPath + '/ananas/getpoints?courseid=' + params.courseid + '&mid=' + params.mid : '',
-					ff: params.enableFastForward,
-					videoTopicCloud: params.videoTopicCloud
+				'subtitle': {
+					'translate': params.chapterVideoTranslate,
+					'subtitleUrl': params.rootPath + '/richvideo/allsubtitle?mid=' + params.mid + '&objectid=' + params.objectId + '&courseid=' + params.courseid,
+					'subtitle': params.rootPath + '/ananas/video-editor/sub?objectid=' + params.subobjectid
+				},
+				'marker': {
+					'url': !params.isNotMark ? params.rootPath + '/ananas/getpoints?courseid=' + params.courseid + '&mid=' + params.mid : '',
+					'ff': params.enableFastForward,
+					'videoTopicCloud': params.videoTopicCloud
 				}
 			}
 		};
 	}
 });
-Object.defineProperty(ans.VideoJs.prototype, 'params2VideoOpt', {
-	configurable: false,
-	writable: false
-});
-Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
+(Object.defineProperty(ans.VideoJs.prototype, 'params2VideoOpt', {
+	'configurable': false,
+	'writable': false
+}),
+	Object.freeze(ans.VideoJs.prototype.params2VideoOpt));
 (function () {
 	var b = videojs.getPlugin('plugin'), a = videojs.extend(b, {
-		constructor: function (f, c) {
+		'constructor': function (f, c) {
 			b.call(this, f, c);
 			var g = this, j = c.mouseElTarget, i = 0x1;
 			c.enableSwitchWindow !== 0x1 && (i = 0x0);
@@ -560,7 +636,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			}),
 				g.singleton(f);
 		},
-		singleton: function (c) {
+		'singleton': function (c) {
 			var f = this, e = parseInt(Math.random() * 0x98967f);
 			c.on('play', function () {
 				Ext.setCookie('videojs_id', e);
@@ -575,7 +651,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 }());
 (function () {
 	var a = videojs.getComponent('SeekBar'), b = videojs.extend(a, {
-		constructor: function (e, c) {
+		'constructor': function (e, c) {
 			a.call(this, e, c);
 			var f = this;
 			e.ignorePause = false,
@@ -603,16 +679,16 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 					f.maxPercent = Math.max(f.getPercent(), f.maxPercent);
 				});
 		},
-		getCurrentTime_: function () {
+		'getCurrentTime_': function () {
 			return this.player_.currentTime();
 		},
-		getMaxPercent: function () {
+		'getMaxPercent': function () {
 			return this.maxPercent;
 		},
-		isBackward: function (c) {
+		'isBackward': function (c) {
 			return this.maxPercent > this.calculateDistance(c);
 		},
-		handleMouseDown: function (c) {
+		'handleMouseDown': function (c) {
 			if (this._onlyBackward) {
 				if (!this.isBackward(c))
 					return;
@@ -621,7 +697,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				return;
 			a.prototype.handleMouseDown.call(this, c);
 		},
-		handleMouseMove: function (c) {
+		'handleMouseMove': function (c) {
 			if (this._disableSeek === true)
 				return;
 			if (this._onlyBackward) {
@@ -630,7 +706,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			}
 			a.prototype.handleMouseMove.call(this, c);
 		},
-		handleMouseUp: function (c) {
+		'handleMouseUp': function (c) {
 			if (this._disableSeek === true)
 				return;
 			if (this._onlyBackward) {
@@ -639,12 +715,12 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			}
 			a.prototype.handleMouseUp.call(this, c);
 		},
-		disableSeek: function (c) {
+		'disableSeek': function (c) {
 			var e = this;
 			e._disableSeek = c !== false,
 				e._disableSeek ? e.disable() : e.enable();
 		},
-		onlyBackward: function (e) {
+		'onlyBackward': function (e) {
 			var c = this;
 			c._onlyBackward = e !== false;
 		}
@@ -653,7 +729,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 }());
 (function () {
 	var a = videojs.getPlugin('plugin'), b = videojs.extend(a, {
-		constructor: function (g, f) {
+		'constructor': function (g, f) {
 			a.call(this, g, f);
 			var h = this;
 			h.firstClick = true;
@@ -680,18 +756,118 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			h.jumpTimePointList = f.jumpTimePointList;
 			h.loopCaptureInterval = Math.floor(Math.random() * (parseInt(h.duration) - 0x0) + 0x1);
 			h.attachmentId = f.attachmentId;
-			g.on('ready', function () {
-				f.enableFastForward != 0x1 && g.disableSeek();
-			});
+			h.aplusVideoId = f.aplusVideoId;
+			h.aplusResourseId = f.aplusResourseId;
+			h.aplusVideoName = f.aplusVideoName;
+			h.aplusResourceName = f.aplusResourceName,
+				g.on('ready', function () {
+					f.enableFastForward != 0x1 && g.disableSeek();
+				});
 			!f.sendLog && (f.sendLog = function () { }
 			);
 			f.headOffset && g.currentTime(f.headOffset);
-			var k = 0x0, c = 0x0, e = f.reportTimeInterval || 0x3c, j = e * 0x3e8, i = function (l, m, o) {
+			function func_20221104_2() {
+				typeof aplus_queue != 'undefined' && aplus_queue.push({
+					'action': 'aplus.record',
+					'arguments': ['heartbeat', 'CLK', {
+						'video_name': h.aplusVideoName,
+						'video_id': h.aplusVideoId,
+						'resource_id': h.aplusResourseId,
+						'resource_name': h.aplusResourceName,
+						'request_id': h.getNewGuid()
+					}]
+				});
+			}
+			var var_20221104_3 = null, k = 0x0, c = 0x0, e = f.reportTimeInterval || 0x3c, j = e * 0x3e8, i = function (l, m, o) {
+				var var_20220902_1 = $('.vjs-tip2');
+				var_20220902_1.find('.vjs-tip-inner2').text(o),
+					var_20220902_1.css({
+						'left': l / m.duration() * 0x64 + '%',
+						'margin-left': -parseFloat(var_20220902_1.width()) / 0x2 - 0x5 + 'px',
+						'visibility': 'visible'
+					}),
+					$('.vjs-default-skin').removeClass('vjs-user-inactive'),
+					$('.vjs-default-skin').addClass('vjs-user-active'),
+					setTimeout(function () {
+						var_20220902_1.css('visibility', 'hidden');
+					}, 0x7d0);
+			}, i = function (l, m, o) {
 				if (!h.isSendLog_)
 					return;
 				var n = h.now_() - k;
 				(n > j || m === true) && (typeof o != 'undefined' ? f.sendLog(g, l, o, h) : f.sendLog(g, l, h.sec_(g), h),
 					k = h.now_());
+			}, func_20220902_1 = function (var_20220902_5) {
+				return var_20220902_5 && var_20220902_5.sort && var_20220902_5.sort(function (var_20220902_6, var_20220902_7) {
+					return parseInt(var_20220902_6) - parseInt(var_20220902_7);
+				});
+			}, func_20220902_2 = function (var_20220902_8) {
+				try {
+					var var_20220902_9 = var_20220902_8.otherPointTimes;
+					if (var_20220902_9.length === 0x0)
+						return -0x1;
+					return var_20220902_9 = func_20220902_1(var_20220902_9),
+						var_20220902_9[0x0];
+				} catch (err) {
+					console.log(err);
+				}
+				return -0x1;
+			}, func_20220902_3 = function (var_20220902_10) {
+				try {
+					var var_20220902_11 = var_20220902_10.otherPointTimes, var_20220902_12 = var_20220902_11.length;
+					if (var_20220902_12 === 0x0)
+						return -0x1;
+					return var_20220902_11 = func_20220902_1(var_20220902_11),
+						var_20220902_11[var_20220902_12 - 0x1];
+				} catch (err) {
+					console.log(err);
+				}
+				return -0x1;
+			}, func_20220902_4 = function (var_20220902_13, var_20220902_14) {
+				try {
+					if (!var_20220902_13.paused() && typeof var_20220902_13.eventPoints != 'undefined') {
+						var var_20220902_15 = var_20220902_13.currentTime(), var_20220902_16 = 0x0;
+						var_20220902_13.eventPoints.forEach(function (var_20220902_17) {
+							var_20220902_17.text == '片头' && (var_20220902_16 = var_20220902_17.time);
+						});
+						if (var_20220902_14.headOffset > 0x0 && var_20220902_14.headOffset < var_20220902_16)
+							return;
+						if (var_20220902_16 > 0x0 && parseInt(var_20220902_15) === 0x0) {
+							var var_20220902_18 = parseInt(func_20220902_2(var_20220902_13));
+							if (var_20220902_18 >= 0x0 && var_20220902_16 > var_20220902_18)
+								return;
+							var_20220902_13.ignoreSeek = false,
+								var_20220902_13.switchStatus = true,
+								var_20220902_13.currentTime(var_20220902_16),
+								i(var_20220902_16, var_20220902_13, '已跳过片头');
+						}
+					}
+				} catch (err) {
+					console.log(err);
+				}
+				try {
+					var var_20220902_19 = 0x0;
+					if (!var_20220902_13.paused() && typeof var_20220902_13.eventPoints != 'undefined') {
+						var var_20220902_15 = var_20220902_13.currentTime();
+						var_20220902_13.eventPoints.forEach(function (var_20220902_20) {
+							var_20220902_20.text == '片尾' && (var_20220902_19 = var_20220902_20.time);
+						});
+						if (var_20220902_14.headOffset > var_20220902_19)
+							return;
+						var var_20220902_21 = parseInt(var_20220902_15);
+						if (var_20220902_19 > 0x0 && var_20220902_21 === var_20220902_19) {
+							var var_20220902_22 = parseInt(func_20220902_3(var_20220902_13));
+							if (var_20220902_22 >= 0x0 && var_20220902_19 < var_20220902_22)
+								return;
+							var_20220902_13.ignoreSeek = false,
+								var_20220902_13.switchStatus = true,
+								var_20220902_13.currentTime(var_20220902_14.duration),
+								i(var_20220902_21, var_20220902_13, '已跳过片尾');
+						}
+					}
+				} catch (err) {
+					console.log(err);
+				}
 			};
 			g.on('play', function () {
 				try {
@@ -699,6 +875,16 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				} catch (e) {
 					console.log(e);
 				}
+				h.firstPlay && (typeof aplus_queue != 'undefined' && aplus_queue.push({
+					'action': 'aplus.record',
+					'arguments': ['video_positive_pybk', 'OTHER', {
+						'video_name': h.aplusVideoName,
+						'video_id': h.aplusVideoId,
+						'resource_id': h.aplusResourseId,
+						'resource_name': h.aplusResourceName,
+						'request_id': h.getNewGuid()
+					}]
+				}));
 				try {
 					if (typeof top.hasJobLimit != 'undefined' && top.hasJobLimit === true && h.firstClick && isUnFinishJob()) {
 						h.firstClick = false,
@@ -716,6 +902,15 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 					console.log(e);
 				}
 				h.isAlertTip = false;
+				!g.ignorePlay && !h.firstPlay && (typeof aplus_queue != 'undefined' && aplus_queue.push({
+					'action': 'aplus.record',
+					'arguments': ['continue_pybk_click', 'CLK', {
+						'video_name': h.aplusVideoName,
+						'video_id': h.aplusVideoId,
+						'resource_id': h.aplusResourseId,
+						'resource_name': h.aplusResourceName
+					}]
+				}));
 				if (h.chapterCapture == 0x0 || !h.isSupportFace || !h.isShowFaceCollection)
 					!g.ignorePlay ? (i('play', true),
 						g.ignoreSeek = true) : (g.ignorePlay = false,
@@ -754,23 +949,54 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 						}
 					}
 				}
+				typeof aplus_queue != 'undefined' && (var_20221104_3 = setInterval(func_20221104_2, 0x4e20));
 			}),
-				g.on("seeked", function () {
-					if (f.enableFastForward != 0x1 && !g.switchStatus) {
+				g.on('seeked', function () {
+					if (f.enableFastForward != 0x1 && !g.switchStatus && !g.finished) {
 						var l = g.currentTime(), m = f.headOffset ? f.headOffset : 0x0;
 						l != 0x0 && l > m && g.currentTime(m);
 					}
-					!g.ignoreSeek ? i('drag', true, c + '-' + h.sec_(g)) : g.ignoreSeek = false,
+					!g.ignoreSeek ? (i('drag', true, c + '-' + h.sec_(g)),
+						typeof aplus_queue != 'undefined' && aplus_queue.push({
+							'action': 'aplus.record',
+							'arguments': ['time_shift_click', 'OTHER', {
+								'video_name': h.aplusVideoName,
+								'video_id': h.aplusVideoId,
+								'resource_id': h.aplusResourseId,
+								'resource_name': h.aplusResourceName,
+								'time_shift_time': c + '',
+								'time_shift_duration': Math.abs(parseInt(h.sec_(g)) - parseInt(c))
+							}]
+						}),
+						typeof aplus_queue != 'undefined' && aplus_queue.push({
+							'action': 'aplus.record',
+							'arguments': ['video_progress_drag', 'OTHER', {
+								'video_name': h.aplusVideoName,
+								'video_id': h.aplusVideoId,
+								'resource_id': h.aplusResourseId,
+								'resource_name': h.aplusResourceName
+							}]
+						})) : g.ignoreSeek = false,
 						c = h.sec_(g),
 						g.ignorePlay = true,
 						delete g.switchStatus;
 				}),
-				g.on("pause", function () {
-					!g.ignorePause ? (i("pause", true),
+				g.on('pause', function () {
+					!g.ignorePause ? (i('pause', true),
 						g.ignorePlay = false,
-						g.ignoreSeek = false) : g.ignorePause = false,
-						h.sendDataLog("pause"),
-						h.getDanmuList("pause", g);
+						g.ignoreSeek = false,
+						typeof aplus_queue != 'undefined' && aplus_queue.push({
+							'action': 'aplus.record',
+							'arguments': ['video_pause_click', 'CLK', {
+								'video_name': h.aplusVideoName,
+								'video_id': h.aplusVideoId,
+								'resource_id': h.aplusResourseId,
+								'resource_name': h.aplusResourceName
+							}]
+						})) : g.ignorePause = false,
+						h.sendDataLog('pause'),
+						h.getDanmuList('pause', g),
+						var_20221104_3 && clearInterval(var_20221104_3);
 				}),
 				g.on('timeupdate', function () {
 					var c = h.sec_(g);
@@ -788,40 +1014,56 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 					}
 					parseInt(g.currentTime()) >= this.damuLastGetTime && h.getDanmuList('timeupdate', g);
 					h.danmuDisplay(g);
-					if (k == 0x0)
+					if (k == 0x0) {
+						func_20220902_4(g, f);
 						return;
+					}
 					h.sec_(g) - c <= 0x1 && !g.ignorePlay && (c = h.sec_(g)),
-						i('playing');
+						i('playing'),
+						func_20220902_4(g, f);
 				}),
 				g.on('ended', function () {
 					h.isShowFaceCollection && h.chapterCapture == 0x1 && h.endCapture == 0x1 && h.faceCollection('ended', g, h.chapterCollectionType, h.duration),
-						i('ended', true);
+						i('ended', true),
+						typeof aplus_queue != 'undefined' && aplus_queue.push({
+							'action': 'aplus.record',
+							'arguments': ['video_end_click', 'CLK', {
+								'video_name': h.aplusVideoName,
+								'video_id': h.aplusVideoId,
+								'resource_id': h.aplusResourseId,
+								'resource_name': h.aplusResourceName,
+								'request_id': h.getNewGuid(),
+								'pybk_duration': h.duration,
+								'full_play_count': 0x1
+							}]
+						}),
+						var_20221104_3 && clearInterval(var_20221104_3);
 				});
 		},
-		sec_: function (c) {
+		'sec_': function (c) {
 			return parseInt(c.currentTime());
 		},
-		now_: function () {
+		'now_': function () {
 			return new Date().getTime();
 		},
-		isSendLog: function (c) {
+		'isSendLog': function (c) {
 			return c && (this.isSendLog_ = !!c),
 				this.isSendLog_;
 		},
-		sendDataLog: function (e) {
-			var c = e == "pause" || e == 'end' ? 0x2 : 0x1;
+		'sendDataLog': function (e) {
+			var c = e == 'pause' || e == 'end' ? 0x2 : 0x1;
 			typeof sendReadZTMediaLog != 'undefined' && sendReadZTMediaLog(c);
 		},
-		receiveStudyLog: function () {
+		'receiveStudyLog': function () {
 			typeof receiveStudyLog != 'undefined' && setTimeout(function () {
 				receiveStudyLog();
 			}, 0x32);
 		},
-		getDanmuList: function (e, c) {
+		'getDanmuList': function (e, c) {
 			if (!this.isShowDanmu_)
 				return;
 			var f = this.sec_(c);
-			if (e == "pause") {
+			if (e == 'pause') {
 				this.damuLastGetTime = 0x0,
 					setTimeout(function () {
 						getDanmuByTime(e, 0x0);
@@ -835,14 +1077,14 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				return;
 			this.damuLastGetTime = f + 0x3b;
 		},
-		danmuDisplay: function (c) {
+		'danmuDisplay': function (c) {
 			if (!this.isShowDanmu_)
 				return;
 			var e = this.sec_(c);
 			typeof danmuPlay != 'undefined' && danmuPlay(e);
 		},
-		timer: function (c) { },
-		faceCollection: function (e, c, f, var_20220715_5) {
+		'timer': function (c) { },
+		'faceCollection': function (e, c, f, var_20220715_5) {
 			if (var_20220715_5 != -0x2) {
 				var var_20220715_6 = this.jumpTimePointList;
 				if (typeof var_20220715_6 != 'undefined')
@@ -853,7 +1095,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 								this.playingFace = false;
 							return;
 						}
-					} catch (e) { }
+					} catch (err) { }
 			}
 			e == 'play' ? typeof startFaceCollection != 'undefined' && (c.pause(),
 				startFaceCollection(c, f, this, var_20220715_5)) : e == 'ended' ? typeof startFaceCollection != 'undefined' && (c.pause(),
@@ -865,7 +1107,7 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 							startFaceCollection(c, f, this, var_20220715_5)),
 							this.pausePlayFace = false);
 		},
-		playNextVideo: function (c) {
+		'playNextVideo': function (c) {
 			if (typeof chapterPlayNextVideo != 'undefined') {
 				if (typeof top.allowNextVideo != 'undefined' && top.allowNextVideo === false) {
 					top.hasJobLimit === true ? top.showJobLimitTip() : top.showVideoTimeLimitTip();
@@ -873,21 +1115,30 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				}
 				chapterPlayNextVideo(c);
 			}
+		},
+		'getNewGuid': function () {
+			var var_20221104_4 = '';
+			for (var i = 0x1; i <= 0x20; i++) {
+				var var_20221104_5 = Math.floor(Math.random() * 0x10).toString(0x10);
+				var_20221104_4 += var_20221104_5,
+					(i == 0x8 || i == 0xc || i == 0x10 || i == 0x14) && (var_20221104_4 += '-');
+			}
+			return var_20221104_4;
 		}
 	});
 	videojs.registerPlugin('seekBarControl', b);
 }());
 Ext.define('ans.videojs.TimelineObjectsBg', {
-	extend: 'Ext.Component',
-	cls: 'ans-timelineobjectsbg',
-	hidden: true
+	'extend': 'Ext.Component',
+	'cls': 'ans-timelineobjectsbg',
+	'hidden': true
 });
 Ext.define('ans.videojs.VideoQuiz', {
-	extend: 'Ext.Component',
-	xtype: 'videoquiz',
-	cls: 'ans-videoquiz',
-	renderTpl: ['<div class=\x22tkTopic\x22>', '<tpl if=\x22dtype==\x27InteractiveQuiz\x27\x22>', '<div class=\x22tkTopic_numbar fr\x22>共 {interactiveQuestionCount} 题<span id=\x22rightAnswerNum\x22>，已答对 <i id=\x22rightNum\x22></i> 题</span></div>', '</tpl>', '<div class="tkTopic_title">[{questionType}]</div>', '<div class=\x22tkTopic_con tkScroll\x22>', '<div class="tkItem">', '<div class=\x22tkItem_title\x22>{description}</div>', '<ul class=\x22tkItem_ul\x22>', '<tpl for="options">', '<li class=\x22ans-videoquiz-opt\x22><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" <tpl if="parent.dtype==\'InteractiveQuiz\'">{[this.getChecked(parent.answerContent, values.name, parent.dtype)]}</tpl> name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', '{name}、{description}', '</label></li>', '</tpl>', '</ul>', '</div>', '</div>', '<div class=\x22tkTopic_oper\x22>', '<a class=\x22ans-videoquiz-submit bntLinear fr\x22 id=\x22videoquiz-submit\x22>提交</a>', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submitting" style="display:none">提交中</a>', '<a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue"><tpl if="dtype==\'InteractiveQuiz\'">继续学习<tpl else>继续</tpl></a>', "<tpl if=\"dtype=='InteractiveQuiz'\">", '<a class=\x22bntWhiteBorder ans-videoquiz-back fr\x22 id=\x22knowledgeBack\x22>知识点回看</a>', '</tpl>', '<tpl if=\x22dtype==\x27InteractiveQuiz\x27\x22><span id=\x22spanHas\x22 class=\x22rightInfo\x22></span><tpl else><span class=\x22spanHas fr\x22 id=\x22spanHas\x22>回答正确</span></tpl>', '<span class=\x22spanNot fr\x22 id=\x22spanNot\x22><tpl if=\x22dtype==\x27InteractiveQuiz\x27\x22>真遗憾，再接再厉！<tpl else>回答错误</tpl></span>', '<span class=\x22spanNotBack fr\x22 id=\x22spanNotBack\x22><tpl if=\x22dtype==\x27InteractiveQuiz\x27\x22>真遗憾，再接再厉！<tpl else>回答错误，</tpl>回看 {errorBackTime} 分钟</span>', '<tpl if=\x22dtype==\x27InteractiveQuiz\x27\x22>', '<span class=\x22spanNotBack fr\x22 id=\x22spanNotBackPoint\x22>真遗憾，再接再厉！</span>', '<a class="spanHref fl" href="javascript:" id="viewAnalysis">查看解析</a>', '</div>', '<div class="tkParsing" id="tkParsing">', '<a class="tkParsing_dele" id="tkParsingDele" href="javascript:"></a>', '<div class="tkParsing_screll tkParsing_con" id="tkParsing_con"></div>', '</tpl>', '</div>', '</div>', {
-		getChecked: function (q, w, e) {
+	'extend': 'Ext.Component',
+	'xtype': 'videoquiz',
+	'cls': 'ans-videoquiz',
+	'renderTpl': ['<div class="tkTopic">', '<tpl if="dtype==\'InteractiveQuiz\'">', '<div class="tkTopic_numbar fr">共 {interactiveQuestionCount} 题<span id="rightAnswerNum">，已答对 <i id="rightNum"></i> 题</span></div>', '</tpl>', '<div class="tkTopic_title">[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" <tpl if="parent.dtype==\'InteractiveQuiz\'">{[this.getChecked(parent.answerContent, values.name, parent.dtype)]}</tpl> name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', '{name}、{description}', '</label></li>', '</tpl>', '</ul>', '</div>', '</div>', '<div class="tkTopic_oper">', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submit">提交</a>', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submitting" style="display:none">提交中</a>', '<a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue"><tpl if="dtype==\'InteractiveQuiz\'">继续学习<tpl else>继续</tpl></a>', '<tpl if="dtype==\'InteractiveQuiz\'">', '<a class="bntWhiteBorder ans-videoquiz-back fr" id="knowledgeBack">知识点回看</a>', '</tpl>', '<tpl if="dtype==\'InteractiveQuiz\'"><span id="spanHas" class="rightInfo"></span><tpl else><span class="spanHas fr" id="spanHas">回答正确</span></tpl>', '<span class="spanNot fr" id="spanNot"><tpl if="dtype==\'InteractiveQuiz\'">真遗憾，再接再厉！<tpl else>回答错误</tpl></span>', '<span class="spanNotBack fr" id="spanNotBack"><tpl if="dtype==\'InteractiveQuiz\'">真遗憾，再接再厉！<tpl else>回答错误，</tpl>回看 {errorBackTime} 分钟</span>', '<tpl if="dtype==\'InteractiveQuiz\'">', '<span class="spanNotBack fr" id="spanNotBackPoint">真遗憾，再接再厉！</span>', '<a class="spanHref fl" href="javascript:" id="viewAnalysis">查看解析</a>', '</div>', '<div class="tkParsing" id="tkParsing">', '<a class="tkParsing_dele" id="tkParsingDele" href="javascript:"></a>', '<div class="tkParsing_screll tkParsing_con" id="tkParsing_con"></div>', '</tpl>', '</div>', '</div>', {
+		'getChecked': function (q, w, e) {
 			try {
 				if (typeof q != 'undefined')
 					return q.indexOf(w) != -0x1 && e == 'InteractiveQuiz' ? 'checked="checked"' : '';
@@ -897,25 +1148,25 @@ Ext.define('ans.videojs.VideoQuiz', {
 			}
 		}
 	}],
-	renderSelectors: {
-		submitEl: 'a.ans-videoquiz-submit',
-		continueEl: 'a.ans-videoquiz-continue',
-		scrollEl: 'div.tkScroll',
-		backEl: 'a.ans-videoquiz-back',
-		tkParseScrollEl: 'div.tkParsing_screll',
-		viewAnalysisEl: 'a.spanHref',
-		delAnalysisEl: 'a.tkParsing_dele'
+	'renderSelectors': {
+		'submitEl': 'a.ans-videoquiz-submit',
+		'continueEl': 'a.ans-videoquiz-continue',
+		'scrollEl': 'div.tkScroll',
+		'backEl': 'a.ans-videoquiz-back',
+		'tkParseScrollEl': 'div.tkParsing_screll',
+		'viewAnalysisEl': 'a.spanHref',
+		'delAnalysisEl': 'a.tkParsing_dele'
 	},
-	afterRender: function () {
+	'afterRender': function () {
 		var b = this, d = b.renderData, e = b.quizRightCountUrl;
 		typeof e != 'undefined' && Ext.Ajax.request({
-			url: e,
-			params: {
-				eventid: d.resourceId,
-				memberinfo: d.memberinfo
+			'url': e,
+			'params': {
+				'eventid': d.resourceId,
+				'memberinfo': d.memberinfo
 			},
-			method: 'get',
-			success: function (f) {
+			'method': 'get',
+			'success': function (f) {
 				var g = Ext.decode(f.responseText);
 				g.status && (Ext.get('rightNum').setHTML(g.rightAnswerCount),
 					Ext.get('rightAnswerNum').setStyle('display', 'inline-block'));
@@ -923,11 +1174,11 @@ Ext.define('ans.videojs.VideoQuiz', {
 		});
 		b.callParent(arguments);
 		var c = b.scrollEl, a = $(c.dom).niceScroll({
-			cursorborder: '',
-			cursorwidth: 0x6,
-			cursorcolor: '#A5A5A5',
-			boxzoom: false,
-			autohidemode: false
+			'cursorborder': '',
+			'cursorwidth': 0x6,
+			'cursorcolor': '#A5A5A5',
+			'boxzoom': false,
+			'autohidemode': false
 		});
 		b.scroller = a,
 			b.submitEl.on('click', function () {
@@ -952,7 +1203,7 @@ Ext.define('ans.videojs.VideoQuiz', {
 				Ext.get('tkParsing').setStyle('display', 'none');
 			});
 	},
-	checkResult: function () {
+	'checkResult': function () {
 		var f = this, i = Ext.query('input', f.el.dom), e = true, g = f.renderData, b = g.options, c = [], h = f.quizErrorReportUrl, a = f.validationUrl2, d = g.dtype;
 		if (Ext.get('videoquiz-continue').getStyle('display') == 'none' && window.parent.parent.location.href.indexOf('nodedetailcontroller/visitnodedetail') > -0x1) {
 			try {
@@ -963,22 +1214,22 @@ Ext.define('ans.videojs.VideoQuiz', {
 			f.fireEvent('continue');
 			return;
 		}
-		Ext.each(i, function (var_20220727_4, var_20220727_5) {
-			var_20220727_4.checked && c.push(b[var_20220727_5].name);
+		Ext.each(i, function (var_20220727_3, var_20220727_4) {
+			var_20220727_3.checked && c.push(b[var_20220727_4].name);
 		}),
 			Ext.get('videoquiz-submit').setStyle('display', 'none'),
 			Ext.get('videoquiz-submitting').setStyle('display', 'block');
 		if (typeof a != 'undefined') {
 			var l = c.join(',');
 			Ext.Ajax.request({
-				url: a,
-				params: {
-					eventid: g.resourceId,
-					memberinfo: g.memberinfo,
-					answerContent: l
+				'url': a,
+				'params': {
+					'eventid': g.resourceId,
+					'memberinfo': g.memberinfo,
+					'answerContent': l
 				},
-				method: 'get',
-				success: function (m) {
+				'method': 'get',
+				'success': function (m) {
 					Ext.get('videoquiz-submit').setStyle('display', 'block'),
 						Ext.get('videoquiz-submitting').setStyle('display', 'none'),
 						g.answerContent = l;
@@ -995,8 +1246,8 @@ Ext.define('ans.videojs.VideoQuiz', {
 									Ext.get('spanNotBackPoint').setStyle('display', 'none')));
 					if (n.status) {
 						if (d == 'InteractiveQuiz') {
-							Ext.get('rightNum').setHTML(n.rightAnswerCount),
-								Ext.get('rightAnswerNum').setStyle('display', 'inline-block');
+							n.rightAnswerCount && (Ext.get('rightNum').setHTML(n.rightAnswerCount),
+								Ext.get('rightAnswerNum').setStyle('display', 'inline-block'));
 							var q = '', var_20220727_1 = false;
 							n.testAnalysis ? n.showAnswer && n.showAnswer > 0x0 ? (q += '正确答案：' + n.rightContent,
 								q += '</br>解析：' + n.testAnalysis,
@@ -1011,11 +1262,11 @@ Ext.define('ans.videojs.VideoQuiz', {
 								Ext.get('tkParsing_con').setHTML(q),
 									Ext.get('tkParsing').setStyle('display', 'inline-block');
 								var o = f.tkParseScrollEl, p = $(o.dom).niceScroll({
-									cursorborder: '',
-									cursorwidth: 0x6,
-									cursorcolor: '#A5A5A5',
-									boxzoom: false,
-									autohidemode: true
+									'cursorborder': '',
+									'cursorwidth': 0x6,
+									'cursorcolor': '#A5A5A5',
+									'boxzoom': false,
+									'autohidemode': true
 								});
 								f.tkParseScroll = p;
 							}
@@ -1030,9 +1281,9 @@ Ext.define('ans.videojs.VideoQuiz', {
 								} catch (err) {
 									console.log(err);
 								}
-								Ext.get('spanHas').setHTML("<span class=\"spanHas fr\" style='display:block'><span id=\"InteractiveQuizTip\">恭喜你，答对了！你的答题水准超过了" + r + '%的同学</span></span>');
+								Ext.get('spanHas').setHTML('<span class="spanHas fr" style=\'display:block\'><span id="InteractiveQuizTip">恭喜你，答对了！你的答题水准超过了' + r + '%的同学</span></span>');
 							} else
-								Ext.get('spanHas').setHTML('<span class=\x22spanHas fr\x22 style=\x27display:block\x27><span id=\x22InteractiveQuizTip\x22>恭喜你，答对了！</span></span>');
+								Ext.get('spanHas').setHTML('<span class="spanHas fr" style=\'display:block\'><span id="InteractiveQuizTip">恭喜你，答对了！</span></span>');
 						}
 					}
 					!var_20220727_2 && f.onerror && d != 'InteractiveQuiz' && f.onerror();
@@ -1048,7 +1299,7 @@ Ext.define('ans.videojs.VideoQuiz', {
 						f.fireEvent('continue');
 					}
 				},
-				error: function () {
+				'error': function () {
 					Ext.get('videoquiz-submit').setStyle('display', 'block'),
 						Ext.get('videoquiz-submitting').setStyle('display', 'none'),
 						f.onerror && d != 'InteractiveQuiz' && f.onerror();
@@ -1057,27 +1308,27 @@ Ext.define('ans.videojs.VideoQuiz', {
 		}
 		return e;
 	},
-	continueFun: function () {
+	'continueFun': function () {
 		var a = this;
 		a.fireEvent('continue');
 	}
 });
 Ext.define('ans.videojs.VideoImg', {
-	extend: 'Ext.Component',
-	xtype: 'videoimg',
-	renderTpl: ['<div class="sp_video_pic">', '<img src=\x22{src}\x22 class=\x22sp_video_img\x22 />', '<a class=\x22jb_btn jb_btn_92 fs14 sp_video_pic_dele2\x22 style=\x22position:absolute;bottom:14px;right:20px;z-index:6;\x22 href=\x22javascript:\x22>继续学习</a>', '</div>'],
-	renderSelectors: {
-		closeEl: 'a.sp_video_pic_dele2'
+	'extend': 'Ext.Component',
+	'xtype': 'videoimg',
+	'renderTpl': ['<div class="sp_video_pic">', '<img src="{src}" class="sp_video_img" />', '<a class="jb_btn jb_btn_92 fs14 sp_video_pic_dele2" style="position:absolute;bottom:14px;right:20px;z-index:6;" href="javascript:">继续学习</a>', '</div>'],
+	'renderSelectors': {
+		'closeEl': 'a.sp_video_pic_dele2'
 	},
-	afterRender: function () {
+	'afterRender': function () {
 		var a = this;
 		a.callParent(arguments);
 		try {
 			var var_20220715_2 = document.querySelector('.sp_video_img');
 			var_20220715_2.addEventListener('load', function () {
 				var_20220715_2.naturalWidth >= var_20220715_2.naturalHeight ? var_20220715_2.naturalWidth >= 0x190 && (var_20220715_2.style.width = '90%',
-					var_20220715_2.style.height = '80%') : var_20220715_2.naturalHeight >= 0x190 && (var_20220715_2.style.height = '90%',
-						var_20220715_2.style.width = '80%');
+					var_20220715_2.style.height = 'auto') : var_20220715_2.naturalHeight >= 0x190 && (var_20220715_2.style.height = '90%',
+						var_20220715_2.style.width = 'auto');
 			});
 		} catch (err) {
 			console.log(err);
@@ -1096,43 +1347,58 @@ Ext.define('ans.videojs.VideoImg', {
 	}
 });
 Ext.define('ans.videojs.VideoAnnotation', {
-	extend: 'Ext.Component',
-	xtype: 'videoannotation',
-	cls: 'ans-videoannotation',
-	renderTpl: ['<div class="vidNota">', '<div class=\x22vidNota_title\x22><h2 class=\x22vidNota_h2\x22>[批注]</h2><a class=\x22vidNota_close\x22 href=\x22javascript:;\x22></a></div>', '<div class=\x22vidNota_con\x22 id=\x22pizhuScroll\x22 tabindex=\x221\x22 style=\x22overflow: hidden; outline: none;\x22>', "<p>{description}</p>", '</div>', '</div>'],
-	renderSelectors: {
-		closeEl: 'a.vidNota_close',
-		contentEl: 'div.vidNota_con'
+	'extend': 'Ext.Component',
+	'xtype': 'videoannotation',
+	'cls': 'ans-videoannotation',
+	'width': '259px',
+	'model': false,
+	'renderTpl': ['<div class="comment_icon"><img src="/ananas/modules/video/pz_icon.png"/></div>', '<div class="comment_box" style="display:block">', '<div class="comment_tit"><a href="javascript:;" class="stow_icon fr"><img src="/ananas/modules/video/stow_icon.png" /></a><p class="fl">[批注]</p></div>', '<p class="comment_con">{description}</p>', '<a href="javascript:;" class="continueLearn fr">继续学习</a>', '</div>'],
+	'renderSelectors': {
+		'stowEl': 'a.stow_icon',
+		'commentOpenEl': 'div.comment_icon',
+		'boxEl': 'div.comment_box',
+		'continueEl': 'a.continueLearn'
 	},
-	afterRender: function () {
-		var c = this, b = c.contentEl;
-		c.callParent(arguments),
-			c.closeEl.on('click', function () {
+	'afterRender': function () {
+		var c = this, var_20221104_6 = c.commentOpenEl, var_20221104_7 = c.boxEl;
+		c.callParent(arguments);
+		var var_20221104_8 = $('#video_html5_api').height();
+		var_20221104_7.setStyle('height', var_20221104_8 + 'px'),
+			var_20221104_6.on('click', function () {
+				var_20221104_6.setStyle('display', 'none'),
+					var_20221104_7.setStyle('display', 'block'),
+					$('.comment_con').getNiceScroll().resize();
+			}),
+			c.stowEl.on('click', function () {
+				var_20221104_7.setStyle('display', 'none'),
+					var_20221104_6.setStyle('display', 'block');
+			}),
+			c.continueEl.on('click', function () {
 				c.fireEvent('continue');
 			});
-		var a = $(b.dom).niceScroll({
-			cursorborder: '',
-			cursorwidth: 0x6,
-			cursorcolor: '#e0e0e0',
-			boxzoom: false,
-			autohidemode: true
+		var a = $('.comment_con').niceScroll({
+			'cursorborder': '',
+			'cursorwidth': '8px',
+			'cursorcolor': '#ACB4BF',
+			'boxzoom': false,
+			'autohidemode': true
 		});
 		c.scroller = a;
 	}
 });
 Ext.define('ans.videojs.VideoPpt', {
-	extend: 'Ext.Component',
-	xtype: 'videoppt',
-	cls: 'ans-videoppt',
-	width: '100%',
-	model: false,
-	renderTpl: ['<div class="sp_video_ppt_pic" id="sp_video_ppt_pic">', '<img src="{src}" class="sp_video_img" style="width: 100%;"/>', '<div style=\x22position:absolute;left:0;top:0;right:0;bottom:0;\x22></div>', '<a class="sp_size_big" id="sp_size_big" href="javascript:;"></a>', '<a class="sp_size_small" href="javascript:;" style="display:none;" id="sp_size_small"></a>', '</div>'],
-	renderSelectors: {
-		pptPicEl: 'div.sp_video_ppt_pic',
-		sizeBigEl: 'a.sp_size_big',
-		sizeSmallEl: 'a.sp_size_small'
+	'extend': 'Ext.Component',
+	'xtype': 'videoppt',
+	'cls': 'ans-videoppt',
+	'width': '100%',
+	'model': false,
+	'renderTpl': ['<div class="sp_video_ppt_pic" id="sp_video_ppt_pic">', '<img src="{src}" class="sp_video_img" style="width: 100%;"/>', '<div style="position:absolute;left:0;top:0;right:0;bottom:0;"></div>', '<a class="sp_size_big" id="sp_size_big" href="javascript:;"></a>', '<a class="sp_size_small" href="javascript:;" style="display:none;" id="sp_size_small"></a>', '</div>'],
+	'renderSelectors': {
+		'pptPicEl': 'div.sp_video_ppt_pic',
+		'sizeBigEl': 'a.sp_size_big',
+		'sizeSmallEl': 'a.sp_size_small'
 	},
-	afterRender: function () {
+	'afterRender': function () {
 		var a = this;
 		a.callParent(arguments);
 		try {
@@ -1140,55 +1406,94 @@ Ext.define('ans.videojs.VideoPpt', {
 		} catch (err) {
 			console.log(err);
 		}
-		a.sizeBigEl.on('click', function (g) {
-			g.stopPropagation(),
-				a.pptPicEl.toggleCls('sp_ppt_pic_fullScreen'),
-				Ext.get('sp_size_big').setStyle('display', 'none'),
+		function func_20221104_3() {
+			Ext.get('sp_size_big').setStyle('display', 'none'),
 				Ext.get('sp_size_small').setStyle('display', 'block');
 			var b = Ext.get('video').getStyle('height'), c = Ext.get('sp_video_ppt_pic').getStyle('height'), f = (parseInt(b) - 0x3c - parseInt(c)) / 0x2;
 			Ext.get('sp_video_ppt_pic').setStyle('top', f + 'px'),
 				Ext.get('sp_video_ppt_pic').setStyle('left', '0');
+		}
+		function func_20221104_4() {
+			Ext.get('sp_size_big').setStyle('display', 'block'),
+				Ext.get('sp_size_small').setStyle('display', 'none'),
+				Ext.get('sp_video_ppt_pic').setStyle('top', '0px'),
+				Ext.get('sp_video_ppt_pic').setStyle('left', '0px');
+		}
+		a.sizeBigEl.on('click', function (g) {
+			g.stopPropagation(),
+				a.pptPicEl.toggleCls('sp_ppt_pic_fullScreen'),
+				func_20221104_3();
 		}),
 			a.sizeSmallEl.on('click', function (g) {
 				g.stopPropagation(),
 					a.pptPicEl.toggleCls('sp_ppt_pic_fullScreen'),
-					Ext.get('sp_size_big').setStyle('display', 'block'),
-					Ext.get('sp_size_small').setStyle('display', 'none'),
-					Ext.get('sp_video_ppt_pic').setStyle('top', '0px'),
-					Ext.get('sp_video_ppt_pic').setStyle('left', '0px');
+					func_20221104_4();
+			}),
+			a.sizeBigEl.on('touchend', function (g) {
+				g.stopPropagation(),
+					a.pptPicEl.toggleCls('sp_ppt_pic_fullScreen'),
+					func_20221104_3();
+			}),
+			a.sizeSmallEl.on('touchend', function (g) {
+				g.stopPropagation(),
+					a.pptPicEl.toggleCls('sp_ppt_pic_fullScreen'),
+					func_20221104_4();
 			});
 	}
 });
 Ext.define('ans.videojs.TimelineObjects', {
-	extend: 'Ext.container.Container',
-	cls: 'ans-timelineobjects',
-	autoScroll: true,
-	hidden: true,
-	hideMode: 'visibility',
-	constructor: function (a) {
+	'extend': 'Ext.container.Container',
+	'cls': 'ans-timelineobjects',
+	'autoScroll': true,
+	'hidden': true,
+	'hideMode': 'visibility',
+	'constructor': function (a) {
 		var b = this;
 		b.callParent(arguments),
 			b.bg = Ext.create('ans.videojs.TimelineObjectsBg', {
-				renderTo: a.renderTo
+				'renderTo': a.renderTo
 			}),
 			b.objects = a.objects && a.objects.sort ? b.sort_(a.objects) : [],
-			b.current = 0x0;
+			b.current = 0x0,
+			b.showAnnotation = false;
 	},
-	showObject: function (m, b, e) {
+	'hideTimeline': function () {
+		var var_20221104_9 = this;
+		var_20221104_9.showAnnotation && (var_20221104_9.hide(),
+			var_20221104_9.showAnnotation = false);
+	},
+	'showObject': function (m, b, e) {
 		var j = this, h = j.getBox(), c = j.items.getAt(0x0), l, i = function () {
 			l.destroy(),
 				j.hide(),
 				m.play();
+			try {
+				m.eventCount && (m.eventCount = m.eventCount - 0x1);
+			} catch (err) {
+				console.log(err);
+			}
 		};
 		c != null && c.destroy();
+		if (e) {
+			e.description && (e.description = j.htmlEncodeByRegExp(e.description));
+			if (e.options && e.options.length > 0x0)
+				for (let var_20220902_23 = 0x0; var_20220902_23 < e.options.length; var_20220902_23++) {
+					e.options[var_20220902_23].description && (e.options[var_20220902_23].description = j.htmlEncodeByRegExp(e.options[var_20220902_23].description));
+				}
+		}
 		if (b == 'IMG') {
 			var f = {
-				src: e.url.replace(/origin/, h.width + '_' + h.height)
+				'src': e.url.replace(/origin/, h.width + '_' + h.height)
 			};
 			l = j.add({
-				xtype: 'videoimg',
-				renderData: f
+				'xtype': 'videoimg',
+				'renderData': f
 			});
+			try {
+				m.eventCount && (m.eventCount += 0x1);
+			} catch (err) {
+				console.log(err);
+			}
 		}
 		if (b == 'QUIZ') {
 			var k = function () { };
@@ -1201,12 +1506,17 @@ Ext.define('ans.videojs.TimelineObjects', {
 				};
 			}
 			l = j.add({
-				xtype: 'videoquiz',
-				renderData: e,
-				quizErrorReportUrl: j.quizErrorReportUrl,
-				validationUrl2: j.validationUrl2,
-				onerror: k
+				'xtype': 'videoquiz',
+				'renderData': e,
+				'quizErrorReportUrl': j.quizErrorReportUrl,
+				'validationUrl2': j.validationUrl2,
+				'onerror': k
 			});
+			try {
+				m.eventCount && (m.eventCount += 0x1);
+			} catch (err) {
+				console.log(err);
+			}
 		}
 		if (b == 'InteractiveQuiz') {
 			var k = function () { };
@@ -1228,13 +1538,18 @@ Ext.define('ans.videojs.TimelineObjects', {
 			}
 			e.dtype = 'InteractiveQuiz',
 				l = j.add({
-					xtype: 'videoquiz',
-					renderData: e,
-					quizErrorReportUrl: j.quizErrorReportUrl,
-					validationUrl2: j.validationUrl2,
-					quizRightCountUrl: j.quizRightCountUrl,
-					onerror: k
+					'xtype': 'videoquiz',
+					'renderData': e,
+					'quizErrorReportUrl': j.quizErrorReportUrl,
+					'validationUrl2': j.validationUrl2,
+					'quizRightCountUrl': j.quizRightCountUrl,
+					'onerror': k
 				});
+			try {
+				m.eventCount && (m.eventCount += 0x1);
+			} catch (err) {
+				console.log(err);
+			}
 		}
 		if (b == 'PPT') {
 			if (e.fp == 0x0)
@@ -1242,17 +1557,31 @@ Ext.define('ans.videojs.TimelineObjects', {
 			var a = e.url;
 			e.thumb ? a = e.thumb + e.pageNo + '.png' : a = a.replace(/swfv2\/.*$/, 'thumb/' + e.fp + '.png');
 			var f = {
-				src: a
+				'src': a
 			};
 			l = j.add({
-				xtype: 'videoppt',
-				renderData: f
+				'xtype': 'videoppt',
+				'renderData': f
 			});
+			try {
+				m.eventCount && (m.eventCount += 0x1);
+			} catch (err) {
+				console.log(err);
+			}
 		}
-		b == 'SyncAnnotationEvent' && (l = j.add({
-			xtype: 'videoannotation',
-			renderData: e
-		}));
+		if (b == 'SyncAnnotationEvent') {
+			l = j.add({
+				'xtype': 'videoannotation',
+				'renderData': e
+			});
+			try {
+				m.eventCount && (m.eventCount += 0x1);
+			} catch (err) {
+				console.log(err);
+			}
+			m.pause(),
+				j.showAnnotation = true;
+		}
 		if (!l)
 			return;
 		l.on('continue', function () {
@@ -1262,7 +1591,19 @@ Ext.define('ans.videojs.TimelineObjects', {
 		j.showModel(g),
 			g && m.pause();
 	},
-	showModel: function (a) {
+	'htmlEncodeByRegExp': function (var_20220902_24) {
+		var var_20220902_25 = '';
+		if (var_20220902_24.length == 0x0)
+			return '';
+		return var_20220902_25 = var_20220902_24.replace(/&/g, '&amp;'),
+			var_20220902_25 = var_20220902_25.replace(/</g, '&lt;'),
+			var_20220902_25 = var_20220902_25.replace(/>/g, '&gt;'),
+			var_20220902_25 = var_20220902_25.replace(/\s/g, '&nbsp;'),
+			var_20220902_25 = var_20220902_25.replace(/\'/g, '&#39;'),
+			var_20220902_25 = var_20220902_25.replace(/\"/g, '&quot;'),
+			var_20220902_25;
+	},
+	'showModel': function (a) {
 		try {
 			top.configFullScreen && mediumSizeWindow();
 		} catch (err) {
@@ -1275,11 +1616,11 @@ Ext.define('ans.videojs.TimelineObjects', {
 				c.bg.show()) : (c.addCls('ans-timelineobjects-autosize'),
 					c.setAutoScroll(false));
 	},
-	hide: function () {
+	'hide': function () {
 		this.callParent(arguments),
 			this.bg.hide.apply(this.bg, arguments);
 	},
-	updateTime: function (a, e) {
+	'updateTime': function (a, e) {
 		if (this.current >= this.objects.length || a.scrubbing())
 			return;
 		var c = this, f = c.objects[c.current], b = f.style, g = f.datas[0x0];
@@ -1288,7 +1629,7 @@ Ext.define('ans.videojs.TimelineObjects', {
 				c.showObject(a, b, g);
 			}, 0x14));
 	},
-	resetTime: function (b, e) {
+	'resetTime': function (b, e) {
 		var c = this, a;
 		for (a = 0x0; a < c.objects.length; a++) {
 			var f = c.objects[a].datas[0x0].startTime;
@@ -1297,7 +1638,7 @@ Ext.define('ans.videojs.TimelineObjects', {
 		}
 		c.current = a;
 	},
-	sort_: function (a) {
+	'sort_': function (a) {
 		return a && a.sort && a.sort(function (f, e) {
 			var c = f.datas[0x0].startTime, b = e.datas[0x0].startTime;
 			return c - b;
@@ -1306,16 +1647,42 @@ Ext.define('ans.videojs.TimelineObjects', {
 });
 (function () {
 	var Plugin = videojs.getPlugin('plugin'), TimelineObjects = videojs.extend(Plugin, {
-		constructor: function (player, options) {
+		'constructor': function (player, options) {
 			Plugin.call(this, player, options);
 			if (!options.url)
 				return;
-			var me = this;
+			var var_20220902_26 = function (var_20220902_27) {
+				try {
+					var var_20220902_28 = var_20220902_27.datas;
+					if (var_20220902_28 && var_20220902_28.length > 0x0)
+						return var_20220902_28[0x0].startTime;
+				} catch (err) {
+					console.log(err);
+				}
+				return -0x1;
+			}, me = this;
 			player.eventPoints = [],
+				player.otherPointTimes = [];
+			var var_20220902_29 = [];
+			if (options.begins && options.begins > 0x0) {
+				var var_20220902_30 = {
+					'time': options.begins,
+					'text': '片头'
+				};
+				var_20220902_29.push(var_20220902_30);
+			}
+			if (options.ends && options.ends > 0x0) {
+				var var_20220902_30 = {
+					'time': options.ends,
+					'text': '片尾'
+				};
+				var_20220902_29.push(var_20220902_30);
+			}
+			player.eventPoints = var_20220902_29,
 				Ext.Ajax.request({
-					url: options.url,
-					async: false,
-					success: function (resp) {
+					'url': options.url,
+					'async': false,
+					'success': function (resp) {
 						if (resp.status != 0xc8)
 							return;
 						eval('var data=' + resp.responseText);
@@ -1327,29 +1694,36 @@ Ext.define('ans.videojs.TimelineObjects', {
 									var c = b.datas;
 									if (c && c.length > 0x0)
 										var d = {
-											time: c[0x0].startTime,
-											text: '互动测验'
+											'time': c[0x0].startTime,
+											'text': '互动测验'
 										};
 									a.push(d);
 								}
+								var var_20220902_31 = var_20220902_26(b);
+								var_20220902_31 >= 0x0 && player.otherPointTimes.push(var_20220902_31);
 							}
-							player.eventPoints = a;
+							a.forEach(function (var_20220902_32) {
+								player.eventPoints.push(var_20220902_32);
+							});
 						}
 						var timeline = Ext.create('ans.videojs.TimelineObjects', {
-							renderTo: player.el_,
-							quizErrorReportUrl: options.quizErrorReportUrl,
-							validationUrl2: options.validationUrl2,
-							quizRightCountUrl: options.quizRightCountUrl,
-							objects: data
+							'renderTo': player.el_,
+							'quizErrorReportUrl': options.quizErrorReportUrl,
+							'validationUrl2': options.validationUrl2,
+							'quizRightCountUrl': options.quizRightCountUrl,
+							'objects': data
 						});
 						player.on('play', function () {
-							timeline.resetTime(player, player.currentTime());
+							timeline.resetTime(player, player.currentTime()),
+								timeline.hideTimeline();
 						}),
 							player.on('seekend', function () {
-								timeline.resetTime(player, player.currentTime());
+								timeline.resetTime(player, player.currentTime()),
+									timeline.hideTimeline();
 							}),
 							player.on('timeupdate', function () {
-								!player.paused() && timeline.updateTime(player, player.currentTime());
+								!player.paused() && (timeline.updateTime(player, player.currentTime()),
+									timeline.hideTimeline());
 							});
 					}
 				});
@@ -1357,17 +1731,353 @@ Ext.define('ans.videojs.TimelineObjects', {
 	});
 	videojs.registerPlugin('timelineObjects', TimelineObjects);
 }());
+Ext.define('ans.videojs.customIframe', {
+	'extend': 'Ext.Component',
+	'xtype': 'customIframe',
+	'renderTpl': ['<iframe src="{src}" class="configIframe" style="height: 100%;width: 100%;left: 0;top: 0;right: 0;bottom: 0; background: rgba(0,0,0,.6);"></iframe>'],
+	'afterRender': function () {
+		var var_20221104_10 = this;
+		var_20221104_10.callParent(arguments),
+			window.addEventListener('message', function (var_20221104_11) {
+				typeof var_20221104_11.data != 'undefined' && var_20221104_11.data.opType === 'closeIframe' && var_20221104_10.fireEvent('continue');
+			});
+	}
+});
+Ext.define('ans.videojs.CustomIframe', {
+	'extend': 'Ext.container.Container',
+	'cls': 'ans-customIframe',
+	'autoScroll': true,
+	'hidden': true,
+	'hideMode': 'visibility',
+	'constructor': function (var_20221104_12) {
+		var var_20221104_13 = this;
+		var_20221104_13.callParent(arguments),
+			var_20221104_13.supportHeartbeat = false,
+			var_20221104_13.courseid = '',
+			var_20221104_13.clazzId = '',
+			var_20221104_13.knowledgeid = '',
+			var_20221104_13.objectid = '',
+			var_20221104_13.playTime = 0x0,
+			var_20221104_13.requesting = false,
+			var_20221104_13.eventArray = [],
+			var_20221104_13.userId = '',
+			var_20221104_13.cookieFid = '',
+			var_20221104_13.headOffset = '',
+			typeof var_20221104_12.userId != 'undefined' && (var_20221104_13.userId = var_20221104_12.userId),
+			typeof var_20221104_12.cookieFid != 'undefined' && (var_20221104_13.cookieFid = var_20221104_12.cookieFid),
+			typeof var_20221104_12.headOffset != 'undefined' && (var_20221104_13.headOffset = var_20221104_12.headOffset),
+			typeof var_20221104_12.eventArray != 'undefined' && (var_20221104_13.eventArray = var_20221104_12.eventArray),
+			typeof var_20221104_12.supportHeartbeat != 'undefined' && (var_20221104_13.supportHeartbeat = var_20221104_12.supportHeartbeat),
+			typeof var_20221104_12.courseid != 'undefined' && (var_20221104_13.courseid = var_20221104_12.courseid),
+			typeof var_20221104_12.clazzId != 'undefined' && (var_20221104_13.clazzId = var_20221104_12.clazzId),
+			typeof var_20221104_12.knowledgeid != 'undefined' && (var_20221104_13.knowledgeid = var_20221104_12.knowledgeid),
+			typeof var_20221104_12.objectid != 'undefined' && (var_20221104_13.objectid = var_20221104_12.objectid),
+			var_20221104_13.lastHeartbeat = 0x0,
+			var_20221104_13.lastShowIFrame = 0x0,
+			var_20221104_13.objects = var_20221104_12.objects && var_20221104_12.objects.sort ? var_20221104_13.sort_(var_20221104_12.objects) : [],
+			var_20221104_13.eventArray.forEach(function (var_20221104_14) {
+				var var_20221104_15 = parseInt(var_20221104_14.eventIntervalType);
+				var_20221104_15 === 0x0 ? (var_20221104_14.lastHeartbeat = 0x0,
+					var_20221104_14.pauseTimeRange = 0x0,
+					var_20221104_14.pauseTimeStamp = -0x1,
+					var_20221104_14.requesting = false) : var_20221104_15 === 0x1 && (var_20221104_14.timeArray = sortArray(var_20221104_14.timeArray),
+						var_20221104_14.index = 0x0);
+			});
+	},
+	'showIFrame': function (var_20221104_16, var_20221104_17, var_20221104_18) {
+		try {
+			var me = this;
+			parseInt(var_20221104_17) === 0x1 ? me.showObject(var_20221104_16, 'customIframe', var_20221104_18) : parseInt(var_20221104_17) === 0x2 && showPopIframe(var_20221104_18, var_20221104_16);
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	'initHeartbeat': function (var_20221104_19, var_20221104_20) {
+		var me = this;
+		if (typeof var_20221104_19 == 'undefined' || var_20221104_19 == '')
+			return;
+		Ext.Ajax.request({
+			'url': var_20221104_19,
+			'params': {
+				'uid': me.userId,
+				'schoolId': me.cookieFid,
+				'moocClassId': me.clazzId,
+				'moocCourseId': me.courseid,
+				'chapterId': me.knowledgeid,
+				'objectId': me.objectid,
+				'videoProgress': me.headOffset,
+				'totalVideoDuration': window.duration,
+				'enc': me.videoEnc
+			},
+			'method': 'get',
+			'success': function (var_20221104_21) {
+				typeof var_20221104_20 != 'undefined' && (var_20221104_20.requesting = false,
+					console.log('requesting: false'));
+			},
+			'failure': function () {
+				typeof var_20221104_20 != 'undefined' && (var_20221104_20.requesting = false),
+					console.log('heartbeatUrl request error');
+			}
+		});
+	},
+	'seekVideoTime': function (var_20221104_22, var_20221104_23) {
+		try {
+			var me = this;
+			typeof me.cmp != 'undefined' && me.cmp != null && (me.cmp.destroy(),
+				me.hide(),
+				var_20221104_22.eventCount = var_20221104_22.eventCount - 0x1,
+				var_20221104_22.eventCount <= 0x0 && (var_20221104_22.currentTime(var_20221104_23),
+					var_20221104_22.play()));
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	'showObject': function (var_20221104_24, var_20221104_25, var_20221104_26) {
+		var me = this, var_20221104_27 = me.items.getAt(0x0), var_20221104_28, func_20221104_5 = function (var_20221104_29) {
+			var_20221104_28.destroy(),
+				me.hide(),
+				var_20221104_29.eventCount = var_20221104_29.eventCount - 0x1,
+				var_20221104_29.eventCount <= 0x0 && var_20221104_29.play();
+		};
+		var_20221104_27 != null && var_20221104_27.destroy();
+		me.cmp = null;
+		var_20221104_25 == 'customIframe' && (var_20221104_28 = me.add({
+			'xtype': 'customIframe',
+			'renderData': {
+				'src': var_20221104_26
+			}
+		}),
+			var_20221104_24.eventCount += 0x1);
+		if (!var_20221104_28)
+			return;
+		var_20221104_28.on('continue', function () {
+			func_20221104_5(var_20221104_24);
+		});
+		var var_20221104_30 = !(var_20221104_28.model === false);
+		me.showModel(var_20221104_30),
+			me.cmp = var_20221104_28,
+			var_20221104_30 && var_20221104_24.pause();
+	},
+	'showModel': function (var_20221104_49) {
+		var me = this;
+		me.show(),
+			var_20221104_49 ? (me.removeCls('ans-timelineobjects-autosize'),
+				me.setAutoScroll(true)) : (me.addCls('ans-timelineobjects-autosize'),
+					me.setAutoScroll(false));
+	},
+	'hide': function () {
+		this.callParent(arguments);
+	},
+	'updateTime': function (var_20221104_31, var_20221104_32) {
+		try {
+			if (this.supportHeartbeat && isStuViewPage() && !var_20221104_31.paused()) {
+				var var_20221104_33 = new Date().getTime(), var_20221104_34 = this, var_20221104_35 = 0x0;
+				for (var i = 0x0; i < var_20221104_34.eventArray.length; i++) {
+					var var_20221104_36 = var_20221104_34.eventArray[i], var_20221104_37 = parseInt(var_20221104_36.eventType), var_20221104_38 = parseInt(var_20221104_36.eventIntervalType);
+					if (var_20221104_38 === 0x0) {
+						if (var_20221104_36.requesting || var_20221104_31.scrubbing())
+							continue;
+						var var_20221104_39 = var_20221104_33 - var_20221104_36.lastHeartbeat;
+						var_20221104_36.pauseTimeRange > 0x0 && (var_20221104_39 = var_20221104_39 - var_20221104_36.pauseTimeRange);
+						var var_20221104_40 = var_20221104_39 / 0x3e8;
+						var_20221104_40 = parseInt(var_20221104_40);
+						if (var_20221104_40 > var_20221104_36.eventInterval) {
+							if (var_20221104_37 === 0x1 || var_20221104_37 === 0x2) {
+								var_20221104_35++;
+								if (var_20221104_35 > 0x1)
+									break;
+							}
+							var_20221104_36.pauseTimeRange = 0x0,
+								var_20221104_36.lastHeartbeat = var_20221104_33,
+								var_20221104_37 === 0x0 ? (var_20221104_36.requesting = true,
+									this.initHeartbeat(var_20221104_36.url, var_20221104_36)) : (var_20221104_37 === 0x1 || var_20221104_37 === 0x2) && var_20221104_34.showIFrame(var_20221104_31, var_20221104_37, var_20221104_36.url);
+						}
+					} else {
+						if (var_20221104_38 === 0x1) {
+							if (var_20221104_36.index >= var_20221104_36.timeArray.length || var_20221104_31.scrubbing())
+								continue;
+							var var_20221104_41 = var_20221104_36.timeArray[var_20221104_36.index];
+							if (typeof var_20221104_41 == 'undefined')
+								continue;
+							if (var_20221104_32 >= var_20221104_41) {
+								if (var_20221104_37 === 0x1 || var_20221104_37 === 0x2) {
+									var_20221104_35++;
+									if (var_20221104_35 > 0x1)
+										break;
+								}
+								var_20221104_36.index++;
+								var var_20221104_42 = var_20221104_36.url;
+								var_20221104_37 === 0x0 ? var_20221104_34.initHeartbeat(var_20221104_42) : (var_20221104_37 === 0x1 || var_20221104_37 === 0x2) && var_20221104_34.showIFrame(var_20221104_31, var_20221104_37, var_20221104_42);
+							}
+						}
+					}
+				}
+			}
+		} catch (err) {
+			console.log(err);
+		}
+	},
+	'resetTime': function (var_20221104_43, var_20221104_44) {
+		try {
+			var me = this, i;
+			for (i = 0x0; i < me.eventArray.length; i++) {
+				var var_20221104_45 = me.eventArray[i];
+				if (var_20221104_44 <= var_20221104_45.startTime) {
+					me.index = i;
+					break;
+				}
+			}
+		} catch (err) {
+			console.log(err);
+		}
+	}
+});
+function sortArray(var_20221104_46) {
+	try {
+		return var_20221104_46 && var_20221104_46.sort && var_20221104_46.sort(function (var_20221104_47, var_20221104_48) {
+			return var_20221104_47 - var_20221104_48;
+		});
+	} catch (err) {
+		console.log(err);
+	}
+	return var_20221104_46;
+}
+(function () {
+	var b = videojs.getPlugin('plugin'), a = videojs.extend(b, {
+		'constructor': function (var_20221104_50, var_20221104_51) {
+			if (typeof var_20221104_51.supportHeartbeat == 'undefined' || !var_20221104_51.supportHeartbeat)
+				return;
+			b.call(this, var_20221104_50, var_20221104_51),
+				var_20221104_50.pauseTimeStamp = 0x0,
+				var_20221104_50.pauseTimeRange = 0x0;
+			var var_20221104_52 = null;
+			try {
+				var_20221104_52 = Ext.create('ans.videojs.CustomIframe', {
+					'renderTo': var_20221104_50.el_,
+					'supportHeartbeat': var_20221104_51.supportHeartbeat,
+					'eventArray': var_20221104_51.eventArray,
+					'courseid': var_20221104_51.courseid,
+					'clazzId': var_20221104_51.clazzId,
+					'knowledgeid': var_20221104_51.knowledgeid,
+					'objectid': var_20221104_51.objectid,
+					'videoEnc': var_20221104_51.videoEnc,
+					'userId': var_20221104_51.userId,
+					'cookieFid': var_20221104_51.cookieFid,
+					'headOffset': var_20221104_51.headOffset
+				});
+			} catch (err) {
+				console.log(err);
+			}
+			if (var_20221104_52 == null)
+				return;
+			var_20221104_50.on('play', function () {
+				try {
+					var var_20221104_53 = new Date().getTime();
+					var_20221104_52.eventArray.forEach(function (var_20221104_54) {
+						var var_20221104_55 = parseInt(var_20221104_54.eventIntervalType);
+						if (var_20221104_55 === 0x0) {
+							if (var_20221104_54.pauseTimeStamp > 0x0) {
+								var_20221104_54.pauseTimeStamp < var_20221104_54.lastHeartbeat && (var_20221104_54.pauseTimeStamp = var_20221104_54.lastHeartbeat);
+								var var_20221104_56 = var_20221104_53 - var_20221104_54.pauseTimeStamp;
+								var_20221104_54.pauseTimeRange += var_20221104_56;
+							}
+							var_20221104_54.pauseTimeStamp = 0x0;
+						}
+					}),
+						var_20221104_52.resetTime(var_20221104_50, var_20221104_50.currentTime());
+				} catch (err) {
+					console.log(err);
+				}
+			}),
+				var_20221104_50.on('seekend', function () {
+					var_20221104_52.resetTime(var_20221104_50, var_20221104_50.currentTime());
+				}),
+				var_20221104_50.on('pause', function () {
+					try {
+						var var_20221104_57 = new Date().getTime();
+						var_20221104_52.eventArray.forEach(function (var_20221104_58) {
+							var var_20221104_59 = parseInt(var_20221104_58.eventIntervalType);
+							var_20221104_59 === 0x0 && (var_20221104_58.pauseTimeStamp = var_20221104_57);
+						});
+					} catch (err) {
+						console.log(err);
+					}
+				}),
+				var_20221104_50.on('timeupdate', function () {
+					try {
+						!var_20221104_50.paused() && var_20221104_52.updateTime(var_20221104_50, parseInt(var_20221104_50.currentTime())),
+							var_20221104_52.playTime = var_20221104_50.currentTime();
+					} catch (err) {
+						console.log(err);
+					}
+				}),
+				window.addEventListener('message', function (var_20221104_60) {
+					try {
+						if (!var_20221104_51.supportHeartbeat || !isStuViewPage())
+							return;
+						var var_20221104_61 = var_20221104_60.data;
+						if (typeof var_20221104_61 == 'undefined') {
+							var_20221104_52.resetDiv(var_20221104_50);
+							return;
+						}
+						var var_20221104_62 = parseInt(var_20221104_51.duration);
+						if (var_20221104_61.opType === 'fastForward') {
+							var var_20221104_63 = var_20221104_61.value;
+							if (typeof var_20221104_63 === 'undefined') {
+								var_20221104_52.resetDiv(var_20221104_50);
+								return;
+							}
+							var_20221104_63 = parseInt(var_20221104_63);
+							if (!(var_20221104_63 > 0x0)) {
+								var_20221104_52.resetDiv(var_20221104_50);
+								return;
+							}
+							var_20221104_50.ignoreSeek = false,
+								var_20221104_50.switchStatus = true;
+							var var_20221104_64 = var_20221104_50.currentTime();
+							var_20221104_64 = parseInt(var_20221104_64);
+							var var_20221104_65 = var_20221104_64 + var_20221104_63;
+							if (var_20221104_65 > var_20221104_62) {
+								var_20221104_52.resetDiv(var_20221104_50);
+								return;
+							}
+							var_20221104_52.seekVideoTime(var_20221104_50, var_20221104_65);
+							return;
+						}
+						if (var_20221104_61.opType === 'videoStartTime') {
+							var var_20221104_63 = var_20221104_61.value;
+							if (typeof var_20221104_63 === 'undefined') {
+								var_20221104_52.resetDiv(var_20221104_50);
+								return;
+							}
+							var_20221104_63 = parseInt(var_20221104_63);
+							if (!(var_20221104_63 >= 0x0) || var_20221104_63 > var_20221104_62) {
+								var_20221104_52.resetDiv(var_20221104_50);
+								return;
+							}
+							var_20221104_50.ignoreSeek = false,
+								var_20221104_50.switchStatus = true,
+								var_20221104_52.seekVideoTime(var_20221104_50, var_20221104_63);
+						}
+					} catch (err) {
+						console.log(err);
+					}
+				});
+		}
+	});
+	videojs.registerPlugin('customIframePlugin', a);
+}());
 (function () {
 	var Plugin = videojs.getPlugin('plugin'), Marker = videojs.extend(Plugin, {
-		constructor: function (player, options) {
+		'constructor': function (player, options) {
 			Plugin.call(this, player, options);
 			if (!options.url)
 				return;
 			var me = this;
 			Ext.Ajax.request({
-				url: options.url,
-				async: false,
-				success: function (resp) {
+				'url': options.url,
+				'async': false,
+				'success': function (resp) {
 					if (resp.status != 0xc8)
 						return;
 					eval('var data=' + resp.responseText);
@@ -1378,14 +2088,14 @@ Ext.define('ans.videojs.TimelineObjects', {
 						var var_20220324_3 = player.eventPoints;
 						var_20220324_3.push.apply(var_20220324_3, data.list),
 							videoPlayer.markers({
-								markerTip: {
-									display: true,
-									text: function (marker) {
+								'markerTip': {
+									'display': true,
+									'text': function (marker) {
 										return marker.text;
 									}
 								},
-								markers: var_20220324_3,
-								onMarkerClick: function (marker) {
+								'markers': var_20220324_3,
+								'onMarkerClick': function (marker) {
 									if (options.ff != 0x1)
 										return false;
 									var key = $(this).data('marker-key');
@@ -1410,7 +2120,7 @@ Ext.define('ans.videojs.TimelineObjects', {
 							}
 						}
 						function func_20220324_1(var_20220324_9) {
-							var var_20220324_10 = '<div class=\x22zsCloud_box\x22><h2 class=\x22zsCloud_seltime\x22>选择时间</h2><div class=\x22zsCloud_div\x22><div class=\x22zsCloud_div_list\x22>';
+							var var_20220324_10 = '<div class="zsCloud_box"><h2 class="zsCloud_seltime">选择时间</h2><div class="zsCloud_div"><div class="zsCloud_div_list">';
 							for (var i = 0x0; i < var_20220324_9.length; i++) {
 								var var_20220324_11 = var_20220324_9[i], var_20220324_12 = Ext.fly(topicContent.elements[0x0]).select('.topicId' + var_20220324_11.topicid + ':not(.markertime)'), var_20220324_13 = videojs.formatTime(var_20220324_11.time);
 								var_20220324_12 && var_20220324_12.elements[0x0] && var_20220324_12.elements[0x0].parentElement.remove(),
@@ -1452,7 +2162,7 @@ Ext.define('ans.videojs.TimelineObjects', {
 								item.weight = 0x0,
 								item.html = {
 									'data-marker-time': data.list[i].time,
-									onclick: 'markersPlayer(this)'
+									'onclick': 'markersPlayer(this)'
 								},
 								dataMap.set(topicid, item),
 								wordList.push(item)),
@@ -1462,11 +2172,11 @@ Ext.define('ans.videojs.TimelineObjects', {
 						wordList.length != 0x0 && $('#word_cloud').jQCloud(wordList);
 						function func_20220324_2(var_20220324_16) {
 							$(var_20220324_16).niceScroll({
-								cursorborder: '',
-								cursorwidth: 0x8,
-								cursorcolor: '#DADFE6',
-								boxzoom: false,
-								autohidemode: true
+								'cursorborder': '',
+								'cursorwidth': 0x8,
+								'cursorcolor': '#DADFE6',
+								'boxzoom': false,
+								'autohidemode': true
 							}),
 								setInterval(function () {
 									$(var_20220324_16).getNiceScroll().resize();
@@ -1474,7 +2184,7 @@ Ext.define('ans.videojs.TimelineObjects', {
 						}
 						$('.zsCloud_box').each(function (var_20220324_17) {
 							$(this).find('.zsCloud_div').attr('id', 'zsCloud_div_' + var_20220324_17),
-								func_20220324_2("#zsCloud_div_" + var_20220324_17);
+								func_20220324_2('#zsCloud_div_' + var_20220324_17);
 						});
 					}),
 						$('.zsCloud_down').click(function () {
@@ -1493,7 +2203,7 @@ Ext.define('ans.videojs.TimelineObjects', {
 }());
 (function () {
 	var Plugin = videojs.getPlugin('plugin'), Subtitle = videojs.extend(Plugin, {
-		constructor: function (player, options) {
+		'constructor': function (player, options) {
 			Plugin.call(this, player, options);
 			var me = this, subtitleUrl = options.subtitleUrl, toVtt = function (srt) {
 				var m = srt.match(/support\/(\w+).\w+/);
@@ -1501,17 +2211,17 @@ Ext.define('ans.videojs.TimelineObjects', {
 					return ServerHosts.PARENT_HOST + '/ananas/video-editor/sub?objectid=' + m[0x1];
 			}, addSub = function (name, src, isdefault) {
 				player.addRemoteTextTrack({
-					kind: 'subtitles',
-					srclang: 'cn',
-					label: name,
-					src: src,
-					default: isdefault
+					'kind': 'subtitles',
+					'srclang': 'cn',
+					'label': name,
+					'src': src,
+					'default': isdefault
 				}, true);
 			};
 			player.ready(function () {
 				subtitleUrl && Ext.Ajax.request({
-					url: subtitleUrl,
-					success: function (resp) {
+					'url': subtitleUrl,
+					'success': function (resp) {
 						if (resp.status != 0xc8)
 							return;
 						eval('var subs=' + resp.responseText);
@@ -1532,9 +2242,9 @@ Ext.define('ans.videojs.TimelineObjects', {
 				});
 				var settings = player.textTrackSettings;
 				settings.setValues({
-					backgroundColor: '#000',
-					backgroundOpacity: '0',
-					edgeStyle: 'uniform'
+					'backgroundColor': '#000',
+					'backgroundOpacity': '0',
+					'edgeStyle': 'uniform'
 				}),
 					settings.updateDisplay();
 			});
@@ -1543,14 +2253,14 @@ Ext.define('ans.videojs.TimelineObjects', {
 	videojs.registerPlugin('subtitle', Subtitle);
 }());
 Ext.define('ans.videojs.ErrorDisplay', {
-	extend: 'Ext.Component',
-	xtype: 'vjserrdisplay',
-	cls: 'ans-vjserrdisplay',
-	renderTpl: ['<div class="ans-vjserrdisplay-title">{errorMsg}</div>', '<ul class=\x22ans-vjserrdisplay-opts\x22>', '您可以尝试其他线路: ', '<tpl for="playlines">', '<li class="ans-vjserrdisplay-opt"><label>', '<input type="radio" name="ans-vjserrdisplay-opt" {[xindex-1 === parent.selectedIndex ? "checked disabled":""]}>', '{label}', '</label></li>', '</tpl>', '</ul>'],
-	renderSelectors: {
-		errorMsgEl: 'div.ans-vjserrdisplay-title'
+	'extend': 'Ext.Component',
+	'xtype': 'vjserrdisplay',
+	'cls': 'ans-vjserrdisplay',
+	'renderTpl': ['<div class="ans-vjserrdisplay-title">{errorMsg}</div>', '<ul class="ans-vjserrdisplay-opts">', '您可以尝试其他线路:', '<tpl for="playlines">', '<li class="ans-vjserrdisplay-opt"><label>', '<input type="radio" name="ans-vjserrdisplay-opt" {[xindex-1 === parent.selectedIndex ? "checked disabled":""]}>', '{label}', '</label></li>', '</tpl>', '</ul>'],
+	'renderSelectors': {
+		'errorMsgEl': 'div.ans-vjserrdisplay-title'
 	},
-	afterRender: function () {
+	'afterRender': function () {
 		var b = this;
 		b.callParent(arguments);
 		var a = Ext.query('input', b.el.dom);
@@ -1562,34 +2272,51 @@ Ext.define('ans.videojs.ErrorDisplay', {
 		try {
 			typeof createVideoTask === 'function' ? createVideoTask() : console.log('createVideoTask函数不存在！');
 		} catch (c) { }
+		try {
+			if (typeof aplus_queue != 'undefined') {
+				var var_20221104_66 = parent.AttachmentSetting;
+				if (var_20221104_66) {
+					var var_20221104_67 = var_20221104_66.aplus_video_id, var_20221104_68 = var_20221104_66.aplus_resource_id, var_20221104_69 = var_20221104_66.knowledgename, var_20221104_70 = var_20221104_66.coursename;
+					aplus_queue.push({
+						'action': 'aplus.record',
+						'arguments': ['pybk_error', 'OTHER', {
+							'video_name': var_20221104_69,
+							'video_id': var_20221104_67,
+							'resource_id': var_20221104_68,
+							'resource_name': var_20221104_70
+						}]
+					});
+				}
+			}
+		} catch (c) { }
 	},
-	setErrorMsg: function (a) {
+	'setErrorMsg': function (a) {
 		Ext.fly(this.errorMsgEl).setHTML(a);
 	}
 });
 Ext.define('ans.videojs.ErrorNote', {
-	extend: 'Ext.Component',
-	cls: 'ans-vjserrdisplay',
-	renderTpl: ['<div class="ans-vjserrdisplay-title">播放出现异常。</div>']
+	'extend': 'Ext.Component',
+	'cls': 'ans-vjserrdisplay',
+	'renderTpl': ['<div class="ans-vjserrdisplay-title">播放出现异常。</div>']
 });
 (function () {
 	var b = videojs.getComponent('ErrorDisplay'), a = videojs.extend(b, {
-		constructor: function (e, c) {
+		'constructor': function (e, c) {
 			b.call(this, e, c);
 		},
-		colse: function () {
+		'colse': function () {
 			b.prototype.colse.call(this),
 				me.ansErrorDisplay && (me.ansErrorDisplay.destroy(),
 					me.ansErrorDisplay = null);
 		},
-		fill: function () {
+		'fill': function () {
 			b.prototype.fill.call(this);
 			var g = this, i = g.player_, h = i.options_.playlines, e = Ext.query('.vjs-modal-dialog-content', g.el_)[0x0];
 			g.ansErrorDisplay && (g.ansErrorDisplay.destroy(),
 				delete g.ansErrorDisplay);
 			if (!i.selectCDN || !h) {
 				g.ansErrorDisplay = Ext.create('ans.videojs.ErrorNote', {
-					renderTo: g.el_
+					'renderTo': g.el_
 				});
 				return;
 			}
@@ -1598,15 +2325,15 @@ Ext.define('ans.videojs.ErrorNote', {
 				f == k && (c = j);
 			}),
 				g.ansErrorDisplay = Ext.create('ans.videojs.ErrorDisplay', {
-					renderTo: g.el_,
-					onSelected: function (j) {
+					'renderTo': g.el_,
+					'onSelected': function (j) {
 						i.selectCDN(j),
 							g.close();
 					},
-					renderData: {
-						playlines: h,
-						errorMsg: g.content(),
-						selectedIndex: c
+					'renderData': {
+						'playlines': h,
+						'errorMsg': g.content(),
+						'selectedIndex': c
 					}
 				});
 		}
@@ -1620,22 +2347,22 @@ Ext.define('ans.videojs.ErrorNote', {
 			var g = {}, c, k = {}, b = {};
 			function f(p, o, n, q) {
 				k = {
-					label: n,
-					sources: o
+					'label': n,
+					'sources': o
 				};
 				if (typeof q === 'function')
 					return q(p, o, n);
 				return p.src(o.map(function (r) {
 					return {
-						src: r.src,
-						type: r.type,
-						res: r.res
+						'src': r.src,
+						'type': r.type,
+						'res': r.res
 					};
 				})),
 					p;
 			}
 			var l = h.getComponent('MenuItem'), m = h.extend(l, {
-				constructor: function (p, o, n, q) {
+				'constructor': function (p, o, n, q) {
 					this.onClickListener = n,
 						this.label = q,
 						l.call(this, p, o),
@@ -1646,10 +2373,10 @@ Ext.define('ans.videojs.ErrorNote', {
 							this.selected(true),
 							this.addClass('vjs-selected'));
 				},
-				showAsLabel: function () {
+				'showAsLabel': function () {
 					this.label && (this.label.innerHTML = this.options_.label);
 				},
-				onClick: function (q) {
+				'onClick': function (q) {
 					this.onClickListener(this);
 					var p = this.player_.currentTime(), n = this.player_.paused();
 					this.showAsLabel(),
@@ -1669,7 +2396,7 @@ Ext.define('ans.videojs.ErrorNote', {
 			});
 			h.registerComponent('ResolutionMenuItem', m);
 			var j = h.getComponent('MenuButton'), e = h.extend(j, {
-				constructor: function (q, o, r, n) {
+				'constructor': function (q, o, r, n) {
 					this.sources = o.sources,
 						this.label = n,
 						this.label.innerHTML = o.initialySelectedLabel,
@@ -1683,7 +2410,7 @@ Ext.define('ans.videojs.ErrorNote', {
 							this.el().appendChild(p);
 					}
 				},
-				createItems: function () {
+				'createItems': function () {
 					var o = [], q = this.sources && this.sources.label || {}, p = function (r) {
 						o.map(function (s) {
 							s.selected(s === r),
@@ -1692,10 +2419,10 @@ Ext.define('ans.videojs.ErrorNote', {
 					};
 					for (var n in q) {
 						q.hasOwnProperty(n) && (o.push(new m(this.player_, {
-							label: n,
-							src: q[n],
-							initialySelected: n === this.options_.initialySelectedLabel,
-							customSourcePicker: this.options_.customSourcePicker
+							'label': n,
+							'src': q[n],
+							'initialySelected': n === this.options_.initialySelectedLabel,
+							'customSourcePicker': this.options_.customSourcePicker
 						}, p, this.label)),
 							b[n] = o[o.length - 0x1]);
 					}
@@ -1713,10 +2440,10 @@ Ext.define('ans.videojs.ErrorNote', {
 						y = y.sort(r),
 							s = q(y);
 						var z = o(s, y), x = new e(u, {
-							sources: s,
-							initialySelectedLabel: z.label,
-							initialySelectedRes: z.res,
-							customSourcePicker: p.customSourcePicker
+							'sources': s,
+							'initialySelectedLabel': z.label,
+							'initialySelectedRes': z.res,
+							'customSourcePicker': p.customSourcePicker
 						}, p, t);
 						return h.dom.addClass(x.el(), 'vjs-resolution-button'),
 							u.controlBar.resolutionSwitcher = u.controlBar.el_.insertBefore(x.el_, u.controlBar.getChild('fullscreenToggle').el_),
@@ -1741,9 +2468,9 @@ Ext.define('ans.videojs.ErrorNote', {
 				}
 				function q(y) {
 					var x = {
-						label: {},
-						res: {},
-						type: {}
+						'label': {},
+						'res': {},
+						'type': {}
 					};
 					return y.map(function (z) {
 						n(x, 'label', z),
@@ -1767,9 +2494,9 @@ Ext.define('ans.videojs.ErrorNote', {
 						x = A[0x0].label) : y === 'low' || y == null || !z.res[y] ? (y = A[A.length - 0x1].res,
 							x = A[A.length - 0x1].label) : z.res[y] && (x = z.res[y][0x0].label),
 					{
-						res: y,
-						label: x,
-						sources: z.res[y]
+						'res': y,
+						'label': x,
+						'sources': z.res[y]
 					};
 				}
 				u.ready(function () {
@@ -1791,7 +2518,7 @@ Ext.define('ans.videojs.ErrorNote', {
 			return o;
 		}
 		var l = h.getComponent('ResolutionMenuItem'), e = h.extend(l, {
-			onClick: function (q) {
+			'onClick': function (q) {
 				this.onClickListener(this);
 				var p = this.player_.currentTime(), m = this.player_.paused();
 				this.showAsLabel(),
@@ -1809,7 +2536,7 @@ Ext.define('ans.videojs.ErrorNote', {
 				});
 			}
 		}), j = h.getComponent('MenuButton'), k = h.extend(j, {
-			constructor: function (p, n, q, m) {
+			'constructor': function (p, n, q, m) {
 				this.playlines = n.playlines,
 					this.label = m,
 					this.label.innerHTML = n.initialySelectedLabel,
@@ -1823,7 +2550,7 @@ Ext.define('ans.videojs.ErrorNote', {
 						this.el().appendChild(o);
 				}
 			},
-			createItems: function () {
+			'createItems': function () {
 				var o = [], q = this.playlines || [], p = function (r) {
 					o.map(function (s) {
 						s.selected(s === r),
@@ -1833,10 +2560,10 @@ Ext.define('ans.videojs.ErrorNote', {
 				for (var n = 0x0; n < q.length; n++) {
 					var m = q[n].label;
 					o.push(new e(this.player_, {
-						label: m,
-						src: q[n],
-						initialySelected: m === this.options_.initialySelectedLabel,
-						customSourcePicker: this.options_.customSourcePicker
+						'label': m,
+						'src': q[n],
+						'initialySelected': m === this.options_.initialySelectedLabel,
+						'customSourcePicker': this.options_.customSourcePicker
 					}, p, this.label)),
 						a[m] = o[o.length - 0x1];
 				}
@@ -1847,10 +2574,10 @@ Ext.define('ans.videojs.ErrorNote', {
 			var q = h.mergeOptions(f, o), p = this, n = document.createElement('span'), r = p.options_.playlines;
 			h.dom.addClass(n, 'vjs-resolution-button-label');
 			var m = new k(p, {
-				playlines: r,
-				initialySelectedLabel: r[0x0].label,
-				initialySelectedUrl: r[0x0].url,
-				customSourcePicker: q.customSourcePicker
+				'playlines': r,
+				'initialySelectedLabel': r[0x0].label,
+				'initialySelectedUrl': r[0x0].url,
+				'customSourcePicker': q.customSourcePicker
 			}, q, n);
 			h.dom.addClass(m.el(), 'vjs-resolution-button'),
 				h.dom.addClass(m.el(), 'vjs-playline-button'),
@@ -1874,11 +2601,11 @@ Ext.define('ans.videojs.ErrorNote', {
 	}(window, videojs));
 }());
 Ext.define('ans.AudioJs', {
-	videoJs: null,
-	mixins: {
-		observable: 'Ext.util.Observable'
+	'videoJs': null,
+	'mixins': {
+		'observable': 'Ext.util.Observable'
 	},
-	constructor: function (a) {
+	'constructor': function (a) {
 		a = a || {};
 		var c = this;
 		c.addEvents(['seekstart']),
@@ -1888,23 +2615,24 @@ Ext.define('ans.AudioJs', {
 			f.preventDefault();
 		}),
 			Ext.fly(a.videojs).on('keydown', function (f) {
-				(f.keyCode == 0x20 || f.keyCode == 0x25 || f.keyCode == 0x27) && f.preventDefault();
+				(f.keyCode == 0x20 || f.keyCode == 0x25 || f.keyCode == 0x27) && f.preventDefault(),
+					f.keyCode == 0x20 && (b.paused() ? b.play() : b.pause());
 			});
 	},
-	params2VideoOpt: function (params) {
+	'params2VideoOpt': function (params) {
 		var sources = [];
 		!params.rootPath && (params.rootPath = '');
 		params.http && sources.push({
-			src: params.http,
-			type: 'audio/mp3'
+			'src': params.http,
+			'type': 'audio/mp3'
 		});
 		var logFunc = function (player, url, callback) {
 			var me = this;
 			!me.logCount && (me.logCount = 0x0),
 				videojs.xhr({
-					uri: url,
-					headers: {
-						"Content-Type": 'application/json'
+					'uri': url,
+					'headers': {
+						'Content-Type': 'application/json'
 					}
 				}, function (err, resp) {
 					me.logCount++;
@@ -1920,7 +2648,7 @@ Ext.define('ans.AudioJs', {
 					}
 					me.logCount >= 0x4 && (me.logCount = 0x0,
 						player.pause(),
-						resp.statusCode != 0x0 ? alert('服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e:' + resp.statusCode + ')') : alert('您的网络不稳定，请您稍后继续...'));
+						resp.statusCode != 0x0 ? alert('服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e: ' + resp.statusCode + ')') : alert('您的网络不稳定，请您稍后继续...'));
 				});
 		}, sendLog_ = function (player, isdrag, currentTimeSec, callback) {
 			if (!params.reportUrl)
@@ -1934,31 +2662,31 @@ Ext.define('ans.AudioJs', {
 			logFunc(player, rurl, callback);
 		};
 		return {
-			language: 'zh-CN',
-			controls: true,
-			preload: 'auto',
-			bigPlayButton: false,
-			sources: sources,
-			textTrackDisplay: true,
-			controlBar: {
-				volumePanel: {
-					inline: true
+			'language': 'zh-CN',
+			'controls': true,
+			'preload': 'auto',
+			'bigPlayButton': false,
+			'sources': sources,
+			'textTrackDisplay': true,
+			'controlBar': {
+				'volumePanel': {
+					'inline': true
 				},
-				children: ['playToggle', 'currentTimeDisplay', 'timeDivider', 'durationDisplay', 'progressControl', 'volumePanel']
+				'children': ['playToggle', 'currentTimeDisplay', 'timeDivider', 'durationDisplay', 'progressControl', 'volumePanel']
 			},
-			plugins: {
-				audioNote: {
-					title: params.filename
+			'plugins': {
+				'audioNote': {
+					'title': params.filename
 				},
-				studyControl: {
-					enableSwitchWindow: 0x1
+				'studyControl': {
+					'enableSwitchWindow': 0x1
 				},
-				seekBarControl: {
-					headOffset: params.headOffset,
-					enableFastForward: params.enableFastForward,
-					isSendLog: true,
-					reportTimeInterval: params.reportTimeInterval,
-					sendLog: function (player, evt, sec) {
+				'seekBarControl': {
+					'headOffset': params.headOffset,
+					'enableFastForward': params.enableFastForward,
+					'isSendLog': true,
+					'reportTimeInterval': params.reportTimeInterval,
+					'sendLog': function (player, evt, sec) {
 						if (this.isSendLog !== true)
 							return;
 						var isdrag = 0x0;
@@ -1966,7 +2694,7 @@ Ext.define('ans.AudioJs', {
 							case 'play':
 								isdrag = 0x3;
 								break;
-							case "pause":
+							case 'pause':
 								isdrag = 0x2;
 								break;
 							case 'ended':
@@ -1982,17 +2710,17 @@ Ext.define('ans.AudioJs', {
 		};
 	}
 });
-Ext.define("ans.videojs.AudioNote", {
-	extend: 'Ext.Component',
-	cls: 'ans-audionote'
+Ext.define('ans.videojs.AudioNote', {
+	'extend': 'Ext.Component',
+	'cls': 'ans-audionote'
 });
 (function () {
 	var b = videojs.getPlugin('plugin'), a = videojs.extend(b, {
-		constructor: function (e, c) {
+		'constructor': function (e, c) {
 			b.call(this, e, c),
 				Ext.create('ans.videojs.AudioNote', {
-					renderTo: e.el_,
-					html: c.title
+					'renderTo': e.el_,
+					'html': c.title
 				});
 		}
 	});

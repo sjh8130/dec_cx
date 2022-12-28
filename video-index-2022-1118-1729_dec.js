@@ -83,11 +83,31 @@ function bindVjsClick(var_20220715_1) {
 			var var_20220715_2 = $('.video-js .toolTipBox1'), var_20220715_3 = $('#tipDiv');
 			var_20220715_2.length === 0x0 && var_20220715_3.length > 0x0 && ($('.video-js').prepend(var_20220715_3.html()),
 				$('.vjs-progress-control').on('click', function () {
-					!$('.toolTipBox1').is(':visible') && ($('.toolTipBox1').show(),
-						setTimeout(function () {
-							$('.toolTipBox1').hide();
-						}, 0x320));
+					if (!$('.toolTipBox1').is(':visible')) {
+						$('.toolTipBox1').html($('#tipDiv .toolTipBox1').html());
+						var var_20221118_1 = $('#video_html5_api').height();
+						$('.toolTipBox1').css('top', parseInt(var_20221118_1 / 0x2) + 'px'),
+							$('.toolTipBox1').show(),
+							setTimeout(function () {
+								$('.toolTipBox1').hide();
+							}, 0x320);
+					}
 				}));
+		}
+	} catch (e) { console.log(e); }
+}
+function bindVjsRateClick() {
+	try {
+		var var_20221118_2 = $('.video-js .toolTipBox1'),
+			var_20221118_3 = $('#tipDiv'),
+			var_20221118_4 = '<div class="toolTipBox1" style="display: none"><i class="loadicon"><img width="100%" height="100%" src="/ananas/videoeditor/images/tips_pop.png"/></i>该视频教师已关闭倍速功能，任务点完成后可倍速播放</div>',
+			var_20221118_5 = '<i class="loadicon"><img width="100%" height="100%" src="/ananas/videoeditor/images/tips_pop.png"/></i>该视频教师已关闭倍速功能，任务点完成后可倍速播放';
+		var_20221118_2.length === 0x0 && var_20221118_3.length > 0x0 ? $('.video-js').prepend(var_20221118_4) : $(var_20221118_2).html(var_20221118_5);
+		if (!$('.toolTipBox1').is(':visible')) {
+			var var_20221118_6 = $('#video_html5_api').height();
+			$('.toolTipBox1').css('top', parseInt(var_20221118_6 / 0x2) + 'px'), $('.toolTipBox1').show(), setTimeout(function () {
+				$('.toolTipBox1').hide();
+			}, 0x320);
 		}
 	} catch (e) { console.log(e); }
 }
@@ -156,7 +176,10 @@ function showHTML5Player(paras) {
 				'autohidemode': true
 			}),
 				$('.vjs-subs-caps-button .vjs-menu-content').getNiceScroll().resize());
-		});
+		}),
+			document.getElementsByClassName('vjs-playback-rate').length > 0x0 && document.getElementsByClassName('vjs-playback-rate')[0x0].addEventListener('click', function () {
+				$('.vjs-playback-rate .vjs-menu .vjs-menu-content li').length == 0x0 && bindVjsRateClick();
+			});
 	});
 	function changePPTTop() {
 		var videoHeight = $('#video').height(), picHeight = $('#sp_video_ppt_pic').height(), topHeight = (parseInt(videoHeight) - 0x3c - parseInt(picHeight)) / 0x2;
@@ -306,6 +329,7 @@ function loadVideo() {
 										doublespeed = 0x0);
 									var schoolDoubleSpeed = paras.schooldoublespeed;
 									typeof schoolDoubleSpeed == 'undefined' || schoolDoubleSpeed == 0x2 ? paras.doublespeed = doublespeed : paras.doublespeed = schoolDoubleSpeed;
+									(!m.job || isTeacher) && (paras.doublespeed = 0x1);
 									jobid && (paras.jobid = jobid,
 										!m.job && (!isTeacher && greenligth(),
 											ed_complete = false,

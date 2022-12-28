@@ -1304,9 +1304,9 @@ Ext.define("ans.videojs.TimelineObjects", {
 		if (b == "QUIZ") {
 			var k = function () { };
 			if (e.errorBackTime && e.errorBackTime > 0) {
-				var o = e.errorBackTime * 60;
+				var n = e.errorBackTime * 60;
 				k = function () {
-					var o = Math.max(m.currentTime() - o, 0);
+					var o = Math.max(m.currentTime() - n, 0);
 					m.switchStatus = true;
 					m.currentTime(o)
 				}
@@ -1546,8 +1546,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 								var var_20220324_11 = var_20220324_9[i],
 									var_20220324_12 = Ext.fly(topicContent.elements[0]).select(".topicId" + var_20220324_11.topicid + ":not(.markertime)"),
 									var_20220324_13 = videojs.formatTime(var_20220324_11.time);
-								var_20220324_12 && var_20220324_12.elements[0] && var_20220324_12.elements[0].parentElement.remove(),
-									var_20220324_10 += '<div class="zsCloud_item topicId' + var_20220324_11.topicid + '" data-marker-time="' + var_20220324_11.time + '" title="' + var_20220324_13 + '" onclick="markersPlayer(this)">' + var_20220324_13 + "</div>";
+								var_20220324_12 && var_20220324_12.elements[0] && var_20220324_12.elements[0].parentElement.remove();
+								var_20220324_10 += '<div class="zsCloud_item topicId' + var_20220324_11.topicid + '" data-marker-time="' + var_20220324_11.time + '" title="' + var_20220324_13 + '" onclick="markersPlayer(this)">' + var_20220324_13 + "</div>";
 							}
 							var_20220324_10 += "</div></div></div>";
 							return var_20220324_10;
