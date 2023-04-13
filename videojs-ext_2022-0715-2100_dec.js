@@ -35,186 +35,223 @@ Ext.define("ananas.ServerHosts", {
 		a.CXCLASSTASL_HOST = location.protocol + "//noteyd.chaoxing.com";
 	}
 });
-(function (g) {
-	function q(v, A) {
-		var z = (v & 0xffff) + (A & 0xffff), w = (v >> 0x10) + (A >> 0x10) + (z >> 0x10);
-		return w << 0x10 | z & 0xffff;
+(function ($) {
+	function safeAdd(x, y) {
+		var lsw = (x & 65535) + (y & 65535);
+		var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+		return (msw << 16) | (lsw & 65535)
 	}
-	function p(v, w) {
-		return v << w | v >>> 0x20 - w;
+	function bitRotateLeft(num, cnt) {
+		return (num << cnt) | (num >>> (32 - cnt))
 	}
-	function k(B, y, w, v, A, z) {
-		return q(p(q(q(y, B), q(v, z)), A), w);
+	function md5cmn(q, a, b, x, s, t) {
+		return safeAdd(bitRotateLeft(safeAdd(safeAdd(a, q), safeAdd(x, t)), s), b)
 	}
-	function a(y, w, C, B, v, A, z) {
-		return k(w & C | ~w & B, y, w, v, A, z);
+	function md5ff(a, b, c, d, x, s, t) {
+		return md5cmn((b & c) | ((~b) & d), a, b, x, s, t)
 	}
-	function h(y, w, C, B, v, A, z) {
-		return k(w & B | C & ~B, y, w, v, A, z);
+	function md5gg(a, b, c, d, x, s, t) {
+		return md5cmn((b & d) | (c & (~d)), a, b, x, s, t)
 	}
-	function n(y, w, C, B, v, A, z) {
-		return k(w ^ C ^ B, y, w, v, A, z);
+	function md5hh(a, b, c, d, x, s, t) {
+		return md5cmn(b ^ c ^ d, a, b, x, s, t)
 	}
-	function t(y, w, C, B, v, A, z) {
-		return k(C ^ (w | ~B), y, w, v, A, z);
+	function md5ii(a, b, c, d, x, s, t) {
+		return md5cmn(c ^ (b | (~d)), a, b, x, s, t)
 	}
-	function c(G, B) {
-		G[B >> 0x5] |= 0x80 << B % 0x20;
-		G[(B + 0x40 >>> 0x9 << 0x4) + 0xe] = B;
-		var y, A, z, w, v, F = 0x67452301, E = -0x10325477, D = -0x67452302, C = 0x10325476;
-		for (y = 0x0; y < G.length; y += 0x10) {
-			A = F;
-			z = E;
-			w = D;
-			v = C;
-			F = a(F, E, D, C, G[y], 0x7, -0x28955b88);
-			C = a(C, F, E, D, G[y + 0x1], 0xc, -0x173848aa);
-			D = a(D, C, F, E, G[y + 0x2], 0x11, 0x242070db);
-			E = a(E, D, C, F, G[y + 0x3], 0x16, -0x3e423112);
-			F = a(F, E, D, C, G[y + 0x4], 0x7, -0xa83f051);
-			C = a(C, F, E, D, G[y + 0x5], 0xc, 0x4787c62a);
-			D = a(D, C, F, E, G[y + 0x6], 0x11, -0x57cfb9ed);
-			E = a(E, D, C, F, G[y + 0x7], 0x16, -0x2b96aff);
-			F = a(F, E, D, C, G[y + 0x8], 0x7, 0x698098d8);
-			C = a(C, F, E, D, G[y + 0x9], 0xc, -0x74bb0851);
-			D = a(D, C, F, E, G[y + 0xa], 0x11, -0xa44f);
-			E = a(E, D, C, F, G[y + 0xb], 0x16, -0x76a32842);
-			F = a(F, E, D, C, G[y + 0xc], 0x7, 0x6b901122);
-			C = a(C, F, E, D, G[y + 0xd], 0xc, -0x2678e6d);
-			D = a(D, C, F, E, G[y + 0xe], 0x11, -0x5986bc72);
-			E = a(E, D, C, F, G[y + 0xf], 0x16, 0x49b40821);
-			F = h(F, E, D, C, G[y + 0x1], 0x5, -0x9e1da9e);
-			C = h(C, F, E, D, G[y + 0x6], 0x9, -0x3fbf4cc0);
-			D = h(D, C, F, E, G[y + 0xb], 0xe, 0x265e5a51);
-			E = h(E, D, C, F, G[y], 0x14, -0x16493856);
-			F = h(F, E, D, C, G[y + 0x5], 0x5, -0x29d0efa3);
-			C = h(C, F, E, D, G[y + 0xa], 0x9, 0x2441453);
-			D = h(D, C, F, E, G[y + 0xf], 0xe, -0x275e197f);
-			E = h(E, D, C, F, G[y + 0x4], 0x14, -0x182c0438);
-			F = h(F, E, D, C, G[y + 0x9], 0x5, 0x21e1cde6);
-			C = h(C, F, E, D, G[y + 0xe], 0x9, -0x3cc8f82a);
-			D = h(D, C, F, E, G[y + 0x3], 0xe, -0xb2af279);
-			E = h(E, D, C, F, G[y + 0x8], 0x14, 0x455a14ed);
-			F = h(F, E, D, C, G[y + 0xd], 0x5, -0x561c16fb);
-			C = h(C, F, E, D, G[y + 0x2], 0x9, -0x3105c08);
-			D = h(D, C, F, E, G[y + 0x7], 0xe, 0x676f02d9);
-			E = h(E, D, C, F, G[y + 0xc], 0x14, -0x72d5b376);
-			F = n(F, E, D, C, G[y + 0x5], 0x4, -0x5c6be);
-			C = n(C, F, E, D, G[y + 0x8], 0xb, -0x788e097f);
-			D = n(D, C, F, E, G[y + 0xb], 0x10, 0x6d9d6122);
-			E = n(E, D, C, F, G[y + 0xe], 0x17, -0x21ac7f4);
-			F = n(F, E, D, C, G[y + 0x1], 0x4, -0x5b4115bc);
-			C = n(C, F, E, D, G[y + 0x4], 0xb, 0x4bdecfa9);
-			D = n(D, C, F, E, G[y + 0x7], 0x10, -0x944b4a0);
-			E = n(E, D, C, F, G[y + 0xa], 0x17, -0x41404390);
-			F = n(F, E, D, C, G[y + 0xd], 0x4, 0x289b7ec6);
-			C = n(C, F, E, D, G[y], 0xb, -0x155ed806);
-			D = n(D, C, F, E, G[y + 0x3], 0x10, -0x2b10cf7b);
-			E = n(E, D, C, F, G[y + 0x6], 0x17, 0x4881d05);
-			F = n(F, E, D, C, G[y + 0x9], 0x4, -0x262b2fc7);
-			C = n(C, F, E, D, G[y + 0xc], 0xb, -0x1924661b);
-			D = n(D, C, F, E, G[y + 0xf], 0x10, 0x1fa27cf8);
-			E = n(E, D, C, F, G[y + 0x2], 0x17, -0x3b53a99b);
-			F = t(F, E, D, C, G[y], 0x6, -0xbd6ddbc);
-			C = t(C, F, E, D, G[y + 0x7], 0xa, 0x432aff97);
-			D = t(D, C, F, E, G[y + 0xe], 0xf, -0x546bdc59);
-			E = t(E, D, C, F, G[y + 0x5], 0x15, -0x36c5fc7);
-			F = t(F, E, D, C, G[y + 0xc], 0x6, 0x655b59c3);
-			C = t(C, F, E, D, G[y + 0x3], 0xa, -0x70f3336e);
-			D = t(D, C, F, E, G[y + 0xa], 0xf, -0x100b83);
-			E = t(E, D, C, F, G[y + 0x1], 0x15, -0x7a7ba22f);
-			F = t(F, E, D, C, G[y + 0x8], 0x6, 0x6fa87e4f);
-			C = t(C, F, E, D, G[y + 0xf], 0xa, -0x1d31920);
-			D = t(D, C, F, E, G[y + 0x6], 0xf, -0x5cfebcec);
-			E = t(E, D, C, F, G[y + 0xd], 0x15, 0x4e0811a1);
-			F = t(F, E, D, C, G[y + 0x4], 0x6, -0x8ac817e);
-			C = t(C, F, E, D, G[y + 0xb], 0xa, -0x42c50dcb);
-			D = t(D, C, F, E, G[y + 0x2], 0xf, 0x2ad7d2bb);
-			E = t(E, D, C, F, G[y + 0x9], 0x15, -0x14792c6f);
-			F = q(F, A);
-			E = q(E, z);
-			D = q(D, w);
-			C = q(C, v);
+	function binlMD5(x, len) {
+		x[len >> 5] |= 128 << (len % 32);
+		x[(((len + 64) >>> 9) << 4) + 14] = len;
+		var i;
+		var olda;
+		var oldb;
+		var oldc;
+		var oldd;
+		var a = 1732584193;
+		var b = -271733879;
+		var c = -1732584194;
+		var d = 271733878;
+		for (i = 0; i < x.length; i += 16) {
+			olda = a;
+			oldb = b;
+			oldc = c;
+			oldd = d;
+			a = md5ff(a, b, c, d, x[i], 7, -680876936);
+			d = md5ff(d, a, b, c, x[i + 1], 12, -389564586);
+			c = md5ff(c, d, a, b, x[i + 2], 17, 606105819);
+			b = md5ff(b, c, d, a, x[i + 3], 22, -1044525330);
+			a = md5ff(a, b, c, d, x[i + 4], 7, -176418897);
+			d = md5ff(d, a, b, c, x[i + 5], 12, 1200080426);
+			c = md5ff(c, d, a, b, x[i + 6], 17, -1473231341);
+			b = md5ff(b, c, d, a, x[i + 7], 22, -45705983);
+			a = md5ff(a, b, c, d, x[i + 8], 7, 1770035416);
+			d = md5ff(d, a, b, c, x[i + 9], 12, -1958414417);
+			c = md5ff(c, d, a, b, x[i + 10], 17, -42063);
+			b = md5ff(b, c, d, a, x[i + 11], 22, -1990404162);
+			a = md5ff(a, b, c, d, x[i + 12], 7, 1804603682);
+			d = md5ff(d, a, b, c, x[i + 13], 12, -40341101);
+			c = md5ff(c, d, a, b, x[i + 14], 17, -1502002290);
+			b = md5ff(b, c, d, a, x[i + 15], 22, 1236535329);
+			a = md5gg(a, b, c, d, x[i + 1], 5, -165796510);
+			d = md5gg(d, a, b, c, x[i + 6], 9, -1069501632);
+			c = md5gg(c, d, a, b, x[i + 11], 14, 643717713);
+			b = md5gg(b, c, d, a, x[i], 20, -373897302);
+			a = md5gg(a, b, c, d, x[i + 5], 5, -701558691);
+			d = md5gg(d, a, b, c, x[i + 10], 9, 38016083);
+			c = md5gg(c, d, a, b, x[i + 15], 14, -660478335);
+			b = md5gg(b, c, d, a, x[i + 4], 20, -405537848);
+			a = md5gg(a, b, c, d, x[i + 9], 5, 568446438);
+			d = md5gg(d, a, b, c, x[i + 14], 9, -1019803690);
+			c = md5gg(c, d, a, b, x[i + 3], 14, -187363961);
+			b = md5gg(b, c, d, a, x[i + 8], 20, 1163531501);
+			a = md5gg(a, b, c, d, x[i + 13], 5, -1444681467);
+			d = md5gg(d, a, b, c, x[i + 2], 9, -51403784);
+			c = md5gg(c, d, a, b, x[i + 7], 14, 1735328473);
+			b = md5gg(b, c, d, a, x[i + 12], 20, -1926607734);
+			a = md5hh(a, b, c, d, x[i + 5], 4, -378558);
+			d = md5hh(d, a, b, c, x[i + 8], 11, -2022574463);
+			c = md5hh(c, d, a, b, x[i + 11], 16, 1839030562);
+			b = md5hh(b, c, d, a, x[i + 14], 23, -35309556);
+			a = md5hh(a, b, c, d, x[i + 1], 4, -1530992060);
+			d = md5hh(d, a, b, c, x[i + 4], 11, 1272893353);
+			c = md5hh(c, d, a, b, x[i + 7], 16, -155497632);
+			b = md5hh(b, c, d, a, x[i + 10], 23, -1094730640);
+			a = md5hh(a, b, c, d, x[i + 13], 4, 681279174);
+			d = md5hh(d, a, b, c, x[i], 11, -358537222);
+			c = md5hh(c, d, a, b, x[i + 3], 16, -722521979);
+			b = md5hh(b, c, d, a, x[i + 6], 23, 76029189);
+			a = md5hh(a, b, c, d, x[i + 9], 4, -640364487);
+			d = md5hh(d, a, b, c, x[i + 12], 11, -421815835);
+			c = md5hh(c, d, a, b, x[i + 15], 16, 530742520);
+			b = md5hh(b, c, d, a, x[i + 2], 23, -995338651);
+			a = md5ii(a, b, c, d, x[i], 6, -198630844);
+			d = md5ii(d, a, b, c, x[i + 7], 10, 1126891415);
+			c = md5ii(c, d, a, b, x[i + 14], 15, -1416354905);
+			b = md5ii(b, c, d, a, x[i + 5], 21, -57434055);
+			a = md5ii(a, b, c, d, x[i + 12], 6, 1700485571);
+			d = md5ii(d, a, b, c, x[i + 3], 10, -1894986606);
+			c = md5ii(c, d, a, b, x[i + 10], 15, -1051523);
+			b = md5ii(b, c, d, a, x[i + 1], 21, -2054922799);
+			a = md5ii(a, b, c, d, x[i + 8], 6, 1873313359);
+			d = md5ii(d, a, b, c, x[i + 15], 10, -30611744);
+			c = md5ii(c, d, a, b, x[i + 6], 15, -1560198380);
+			b = md5ii(b, c, d, a, x[i + 13], 21, 1309151649);
+			a = md5ii(a, b, c, d, x[i + 4], 6, -145523070);
+			d = md5ii(d, a, b, c, x[i + 11], 10, -1120210379);
+			c = md5ii(c, d, a, b, x[i + 2], 15, 718787259);
+			b = md5ii(b, c, d, a, x[i + 9], 21, -343485551);
+			a = safeAdd(a, olda);
+			b = safeAdd(b, oldb);
+			c = safeAdd(c, oldc);
+			d = safeAdd(d, oldd)
 		}
-		return [F, E, D, C];
+		return [a, b, c, d]
 	}
-	function o(w) {
-		var x, v = "", y = w.length * 0x20;
-		for (x = 0x0; x < y; x += 0x8) {
-			v += String.fromCharCode(w[x >> 0x5] >>> x % 0x20 & 0xff);
+	function binl2rstr(input) {
+		var x;
+		var output = "";
+		var length32 = input.length * 32;
+		for (x = 0; x < length32; x += 8) {
+			output += String.fromCharCode((input[x >> 5] >>> (x % 32)) & 255)
 		}
-		return v;
+		return output
 	}
-	function j(w) {
-		var y, v = [];
-		v[(w.length >> 0x2) - 0x1] = undefined;
-		for (y = 0x0; y < v.length; y += 0x1) {
-			v[y] = 0x0;
+	function rstr2binl(input) {
+		var i;
+		var output = [];
+		output[(input.length >> 2) - 1] = undefined;
+		for (i = 0; i < output.length; i += 1) {
+			output[i] = 0
 		}
-		var x = w.length * 0x8;
-		for (y = 0x0; y < x; y += 0x8) {
-			v[y >> 0x5] |= (w.charCodeAt(y / 0x8) & 0xff) << y % 0x20;
+		var length8 = input.length * 8;
+		for (i = 0; i < length8; i += 8) {
+			output[i >> 5] |= (input.charCodeAt(i / 8) & 255) << (i % 32)
 		}
-		return v;
+		return output
 	}
-	function i(v) {
-		return o(c(j(v), v.length * 0x8));
+	function rstrMD5(s) {
+		return binl2rstr(binlMD5(rstr2binl(s), s.length * 8))
 	}
-	function u(x, A) {
-		var w, z = j(x), v = [], y = [], B;
-		v[0xf] = y[0xf] = undefined;
-		z.length > 0x10 && (z = c(z, x.length * 0x8));
-		for (w = 0x0; w < 0x10; w += 0x1) {
-			v[w] = z[w] ^ 0x36363636,
-				y[w] = z[w] ^ 0x5c5c5c5c;
+	function rstrHMACMD5(key, data) {
+		var i;
+		var bkey = rstr2binl(key);
+		var ipad = [];
+		var opad = [];
+		var hash;
+		ipad[15] = opad[15] = undefined;
+		if (bkey.length > 16) {
+			bkey = binlMD5(bkey, key.length * 8)
 		}
-		return B = c(v.concat(j(A)), 0x200 + A.length * 0x8),
-			o(c(y.concat(B), 0x200 + 0x80));
-	}
-	function s(z) {
-		var y = "0123456789abcdef", w = "", v, A;
-		for (A = 0x0; A < z.length; A += 0x1) {
-			v = z.charCodeAt(A),
-				w += y.charAt(v >>> 0x4 & 0xf) + y.charAt(v & 0xf);
+		for (i = 0; i < 16; i += 1) {
+			ipad[i] = bkey[i] ^ 909522486;
+			opad[i] = bkey[i] ^ 1549556828
 		}
-		return w;
+		hash = binlMD5(ipad.concat(rstr2binl(data)), 512 + data.length * 8);
+		return binl2rstr(binlMD5(opad.concat(hash), 512 + 128))
 	}
-	function l(v) {
-		return unescape(encodeURIComponent(v));
-	}
-	function e(v) {
-		return i(l(v));
-	}
-	function m(v) {
-		return s(e(v));
-	}
-	function b(v, w) {
-		return u(l(v), l(w));
-	}
-	function r(v, w) {
-		return s(b(v, w));
-	}
-	function f(w, x, v) {
-		if (!x) {
-			if (!v)
-				return m(w);
-			return e(w);
+	function rstr2hex(input) {
+		var hexTab = "0123456789abcdef";
+		var output = "";
+		var x;
+		var i;
+		for (i = 0; i < input.length; i += 1) {
+			x = input.charCodeAt(i);
+			output += hexTab.charAt((x >>> 4) & 15) + hexTab.charAt(x & 15)
 		}
-		if (!v)
-			return r(x, w);
-		return b(x, w);
+		return output
 	}
-	typeof define === "function" && define.amd ? define(function () {
-		return f;
-	}) : typeof module === "object" && module.exports ? module.exports = f : g.md5 = f;
+	function str2rstrUTF8(input) {
+		return unescape(encodeURIComponent(input))
+	}
+	function rawMD5(v) {
+		return rstrMD5(str2rstrUTF8(v))
+	}
+	function hexMD5(v) {
+		return rstr2hex(rawMD5(v))
+	}
+	function rawHMACMD5(k, d) {
+		return rstrHMACMD5(str2rstrUTF8(k), str2rstrUTF8(d))
+	}
+	function md5(string, key, raw) {
+		if (!key) {
+			if (!raw) {
+				return hexMD5(string)
+			}
+			return rawMD5(string)
+		}
+		if (!raw) {
+			return hexHMACMD5(key, string)
+		}
+		return rawHMACMD5(key, string)
+	}
+	if (typeof define === "function" && define.amd) {
+		define(function () {
+			return md5
+		})
+	} else {
+		if (typeof module === "object" && module.exports) {
+			module.exports = md5
+		} else {
+			$.md5 = md5
+		}
+	}
 }(this));
 Ext.apply(Ext, {
 	setCookie: function (c, f) {
-		var a = arguments, i = arguments.length, b = i > 0x2 ? a[0x2] : null, h = i > 0x3 ? a[0x3] : "/", e = i > 0x4 ? a[0x4] : null, g = i > 0x5 ? a[0x5] : false;
+		var a = arguments,
+			i = arguments.length,
+			b = i > 0x2 ? a[0x2] : null,
+			h = i > 0x3 ? a[0x3] : "/",
+			e = i > 0x4 ? a[0x4] : null,
+			g = i > 0x5 ? a[0x5] : false;
 		document.cookie = c + "=" + escape(f) + (b === null ? "" : "; expires=" + b.toGMTString()) + (h === null ? "" : "; path=" + h) + (e === null ? "" : "; domain=" + e) + (g === true ? "; secure" : "");
 	},
 	getCookie: function (e, h) {
-		var b = e + "=", g = b.length, a = document.cookie.length, f = 0x0, c = 0x0;
+		var b = e + "=",
+			g = b.length,
+			a = document.cookie.length,
+			f = 0x0,
+			c = 0x0;
 		while (f < a) {
 			c = f + g;
 			if (document.cookie.substring(f, c) == b)
@@ -260,17 +297,18 @@ Ext.define("ans.VideoJs", {
 		});
 	},
 	params2VideoOpt: function (params) {
-		var useM3u8 = false, cdn = [{
-			indexorder: 0x0,
-			label: "公网1",
-			url: ServerHosts.s1_HOST,
-			ispublic: true
-		}, {
-			indexorder: 0x1,
-			label: "公网2",
-			url: ServerHosts.s2_HOST,
-			ispublic: true
-		}];
+		var useM3u8 = false,
+			cdn = [{
+				indexorder: 0x0,
+				label: "公网1",
+				url: ServerHosts.s1_HOST,
+				ispublic: true
+			}, {
+				indexorder: 0x1,
+				label: "公网2",
+				url: ServerHosts.s2_HOST,
+				ispublic: true
+			}];
 		if (params.cdn)
 			try {
 				top.window.app && top.window.app == 0x2 ? cdn = cdn.concat(params.cdn) : cdn = cdn.concat(params.cdn).sort(function (o1, o2) {
@@ -308,7 +346,7 @@ Ext.define("ans.VideoJs", {
 				src: r.url + sdomain + file,
 				type: "video/mp4",
 				res: src.res
-			};
+			}
 		}
 		var sources = [], defaultRes = Ext.getCookie("resolution", 0x168);
 		!params.rootPath && (params.rootPath = "");
@@ -351,8 +389,11 @@ Ext.define("ans.VideoJs", {
 				break;
 			}
 		}
-		!findDefaultRes && (defaultRes = 0x168);
-		var disableLog = !Ext.isChaoxing && (Ext.isIos || Ext.isAndroid), logFunc = function (player, url, callback) {
+		if (!findDefaultRes) {
+			defaultRes = 360
+		}
+		var disableLog = !Ext.isChaoxing && (Ext.isIos || Ext.isAndroid);
+		var logFunc = function (player, url, callback) {
 			try {
 				if (typeof top.hasJobLimit != "undefined" && top.hasJobLimit === true && isUnFinishJob())
 					return;
@@ -361,8 +402,9 @@ Ext.define("ans.VideoJs", {
 			} catch (e) {
 				console.log(e);
 			}
-			if (disableLog)
-				return;
+			if (disableLog) {
+				return
+			}
 			var me = this;
 			!me.logCount && (me.logCount = 0x0),
 				videojs.xhr({
@@ -385,8 +427,8 @@ Ext.define("ans.VideoJs", {
 									top.hasJobLimit = true),
 									typeof d.videoTimeLimit != "undefined" && d.videoTimeLimit === true && (top.allowNextVideo = false,
 										top.videoTimeLimit = true);
-							} catch (e) {
-								console.log(e);
+							} catch (error) {
+								console.log(error);
 							}
 							callback();
 						}
@@ -399,8 +441,8 @@ Ext.define("ans.VideoJs", {
 							if (resp.statusCode == 0xca || resp.statusCode == 0x12e) {
 								try {
 									parent.location.reload();
-								} catch (e) {
-									console.log(e.message);
+								} catch (error) {
+									console.log(error.message);
 								}
 							} else {
 								alert("服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e:" + resp.statusCode + ")")
@@ -510,8 +552,8 @@ Ext.define("ans.VideoJs", {
 							try {
 								isdrag === 0x4 && typeof var_20220324_1 != "undefined" && (var_20220324_1.sendDataLog("ended"),
 									var_20220324_1.playNextVideo(var_20220324_2.attachmentId));
-							} catch (e) {
-								console.log(e);
+							} catch (error) {
+								console.log(error);
 							}
 							window.proxy_completed && window.proxy_completed();
 						});
@@ -534,7 +576,7 @@ Ext.define("ans.VideoJs", {
 					videoTopicCloud: params.videoTopicCloud
 				}
 			}
-		};
+		}
 	}
 });
 Object.defineProperty(ans.VideoJs.prototype, "params2VideoOpt", {
@@ -699,8 +741,8 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			g.on("play", function () {
 				try {
 					top.configFullScreen && reSizeVideoWindow();
-				} catch (e) {
-					console.log(e);
+				} catch (error) {
+					console.log(error);
 				}
 				try {
 					if (typeof top.hasJobLimit != "undefined" && top.hasJobLimit === true && h.firstClick && isUnFinishJob()) {
@@ -843,7 +885,8 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			var e = this.sec_(c);
 			typeof danmuPlay != "undefined" && danmuPlay(e)
 		},
-		timer: function (c) { },
+		timer: function (c) {
+		},
 		faceCollection: function (e, c, f, var_20220715_5) {
 			if (var_20220715_5 != -0x2) {
 				var var_20220715_6 = this.jumpTimePointList;
@@ -894,8 +937,8 @@ Ext.define("ans.videojs.VideoQuiz", {
 				if (typeof q != "undefined")
 					return q.indexOf(w) != -1 && e == "InteractiveQuiz" ? 'checked="checked"' : "";
 				return "";
-			} catch (err) {
-				console.log(err);
+			} catch (error) {
+				console.log(error);
 			}
 		}
 	}],
@@ -937,8 +980,8 @@ Ext.define("ans.videojs.VideoQuiz", {
 				if (Ext.get("videoquiz-continue").getStyle("display") == "none") {
 					try {
 						top.configFullScreen && exitMediumSizeWindow();
-					} catch (err) {
-						console.log(err);
+					} catch (error) {
+						console.log(error);
 					}
 					b.fireEvent("continue");
 				}
@@ -947,8 +990,8 @@ Ext.define("ans.videojs.VideoQuiz", {
 		b.continueEl.on("click", function () {
 			try {
 				top.configFullScreen && exitMediumSizeWindow();
-			} catch (err) {
-				console.log(err);
+			} catch (error) {
+				console.log(error);
 			}
 			b.fireEvent("continue");
 		});
@@ -964,7 +1007,15 @@ Ext.define("ans.videojs.VideoQuiz", {
 		});
 	},
 	checkResult: function () {
-		var f = this, i = Ext.query("input", f.el.dom), e = true, g = f.renderData, b = g.options, c = [], h = f.quizErrorReportUrl, a = f.validationUrl2, d = g.dtype;
+		var f = this,
+			i = Ext.query("input", f.el.dom),
+			e = true,
+			g = f.renderData,
+			b = g.options,
+			c = [],
+			h = f.quizErrorReportUrl,
+			a = f.validationUrl2,
+			d = g.dtype;
 		Ext.each(i, function (k, j) {
 			(k.value == "true" && !k.checked || k.value == "false" && k.checked) && (e = false),
 				k.checked && c.push(b[j].name);
@@ -1021,8 +1072,8 @@ Ext.define("ans.videojs.VideoQuiz", {
 									var s = Ext.getCookie("fid", 0);
 									r = parseInt(r),
 										s == "179952" && r > 0 && (r = 0x5a + r * 0.1);
-								} catch (err) {
-									console.log(err);
+								} catch (error) {
+									console.log(error);
 								}
 								Ext.get("spanHas").setHTML(`<span class="spanHas fr" style="display:block"><span id="InteractiveQuizTip">恭喜你，答对了！你的答题水准超过了` + r + "%的同学</span></span>");
 							} else
@@ -1070,8 +1121,8 @@ Ext.define("ans.videojs.VideoImg", {
 					var_20220715_2.style.height = "80%") : var_20220715_2.naturalHeight >= 0x190 && (var_20220715_2.style.height = "90%",
 						var_20220715_2.style.width = "80%");
 			});
-		} catch (err) {
-			console.log(err)
+		} catch (error) {
+			console.log(error)
 		}
 		a.el.on("click", function () {
 			a.fireEvent("continue")
@@ -1079,8 +1130,8 @@ Ext.define("ans.videojs.VideoImg", {
 		a.closeEl.on("click", function () {
 			try {
 				top.configFullScreen && exitMediumSizeWindow()
-			} catch (err) {
-				console.log(err)
+			} catch (error) {
+				console.log(error)
 			}
 			a.fireEvent("continue")
 		})
@@ -1128,8 +1179,8 @@ Ext.define("ans.videojs.VideoPpt", {
 		a.callParent(arguments);
 		try {
 			dragFn && dragFn("#sp_video_ppt_pic", "#video_html5_api");
-		} catch (err) {
-			console.log(err);
+		} catch (error) {
+			console.log(error);
 		};
 		a.sizeBigEl.on("click", function (g) {
 			g.stopPropagation();
@@ -1256,8 +1307,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 	showModel: function (a) {
 		try {
 			top.configFullScreen && mediumSizeWindow();
-		} catch (err) {
-			console.log(err);
+		} catch (error) {
+			console.log(error);
 		}
 		var c = this;
 		c.show();
@@ -1388,7 +1439,8 @@ Ext.define("ans.videojs.TimelineObjects", {
 					if (data.list && data.list.length > 0) {
 						var var_20220324_4 = [], var_20220324_5 = {};
 						for (var i = 0; i < data.list.length; i++) {
-							var var_20220324_6 = data.list[i], var_20220324_7 = var_20220324_6.text;
+							var var_20220324_6 = data.list[i],
+								var_20220324_7 = var_20220324_6.text;
 							if (!var_20220324_5[var_20220324_7]) {
 								var var_20220324_8 = [];
 								var_20220324_8.push(var_20220324_6);
@@ -1415,10 +1467,14 @@ Ext.define("ans.videojs.TimelineObjects", {
 						if (topicContent && topicContent.elements[0]) {
 							var insertLocaltion;
 							for (var i = 0; i < var_20220324_4.length; i++) {
-								var var_20220324_14 = var_20220324_4[i], var_20220324_15 = var_20220324_5[var_20220324_14], markerHtml = "";
+								var var_20220324_14 = var_20220324_4[i],
+									var_20220324_15 = var_20220324_5[var_20220324_14],
+									markerHtml = "";
 								if (var_20220324_15) {
 									if (var_20220324_15.length == 1) {
-										var marker = var_20220324_15[0], topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)"), title = videojs.formatTime(marker.time);
+										var marker = var_20220324_15[0],
+											topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)"),
+											title = videojs.formatTime(marker.time);
 										topic && topic.elements[0] && topic.elements[0].parentElement.remove(),
 											markerHtml = '<li><span class=\x27topicId' + marker.topicid + ` markertime' data-marker-time='` + marker.time + '\x27 title=\x27' + title + `' onclick='markersPlayer(this)'>` + marker.text + '</span></li>';
 									} else
@@ -1486,19 +1542,22 @@ Ext.define("ans.videojs.TimelineObjects", {
 	var Plugin = videojs.getPlugin("plugin"), Subtitle = videojs.extend(Plugin, {
 		constructor: function (player, options) {
 			Plugin.call(this, player, options);
-			var me = this, subtitleUrl = options.subtitleUrl, toVtt = function (srt) {
-				var m = srt.match(/support\/(\w+).\w+/);
-				if (m)
-					return ServerHosts.PARENT_HOST + "/ananas/video-editor/sub?objectid=" + m[0x1];
-			}, addSub = function (name, src, isdefault) {
-				player.addRemoteTextTrack({
-					kind: "subtitles",
-					srclang: "cn",
-					label: name,
-					src: src,
-					"default": isdefault
-				}, true);
-			};
+			var me = this,
+				subtitleUrl = options.subtitleUrl,
+				toVtt = function (srt) {
+					var m = srt.match(/support\/(\w+).\w+/);
+					if (m)
+						return ServerHosts.PARENT_HOST + "/ananas/video-editor/sub?objectid=" + m[0x1];
+				},
+				addSub = function (name, src, isdefault) {
+					player.addRemoteTextTrack({
+						kind: "subtitles",
+						srclang: "cn",
+						label: name,
+						src: src,
+						"default": isdefault
+					}, true);
+				};
 			player.ready(function () {
 				subtitleUrl && Ext.Ajax.request({
 					url: subtitleUrl,
@@ -1608,7 +1667,10 @@ Ext.define("ans.videojs.ErrorNote", {
 	var a = null;
 	typeof window.videojs === "undefined" && typeof require === "function" ? a = require("video.js") : a = window.videojs,
 		function (i, h) {
-			var g = {}, c, k = {}, b = {};
+			var g = {},
+				c,
+				k = {},
+				b = {};
 			function f(p, o, n, q) {
 				k = {
 					label: n,
@@ -1659,42 +1721,48 @@ Ext.define("ans.videojs.ErrorNote", {
 				}
 			});
 			h.registerComponent("ResolutionMenuItem", m);
-			var j = h.getComponent("MenuButton"), e = h.extend(j, {
-				constructor: function (q, o, r, n) {
-					this.sources = o.sources,
-						this.label = n,
-						this.label.innerHTML = o.initialySelectedLabel,
-						j.call(this, q, o, r),
-						this.controlText("Quality");
-					if (r.dynamicLabel)
-						this.el().appendChild(n);
-					else {
-						var p = document.createElement("span");
-						h.dom.addClass(p, "vjs-resolution-button-staticlabel"),
-							this.el().appendChild(p);
+			var j = h.getComponent("MenuButton"),
+				e = h.extend(j, {
+					constructor: function (q, o, r, n) {
+						this.sources = o.sources,
+							this.label = n,
+							this.label.innerHTML = o.initialySelectedLabel,
+							j.call(this, q, o, r),
+							this.controlText("Quality");
+						if (r.dynamicLabel)
+							this.el().appendChild(n);
+						else {
+							var p = document.createElement("span");
+							h.dom.addClass(p, "vjs-resolution-button-staticlabel"),
+								this.el().appendChild(p);
+						}
+					},
+					createItems: function () {
+						var o = [],
+							q = this.sources && this.sources.label || {},
+							p = function (r) {
+								o.map(function (s) {
+									s.selected(s === r),
+										s.removeClass("vjs-selected");
+								});
+							};
+						for (var n in q) {
+							q.hasOwnProperty(n) && (o.push(new m(this.player_, {
+								label: n,
+								src: q[n],
+								initialySelected: n === this.options_.initialySelectedLabel,
+								customSourcePicker: this.options_.customSourcePicker
+							}, p, this.label)),
+								b[n] = o[o.length - 0x1]);
+						}
+						return o;
 					}
-				},
-				createItems: function () {
-					var o = [], q = this.sources && this.sources.label || {}, p = function (r) {
-						o.map(function (s) {
-							s.selected(s === r),
-								s.removeClass("vjs-selected");
-						});
-					};
-					for (var n in q) {
-						q.hasOwnProperty(n) && (o.push(new m(this.player_, {
-							label: n,
-							src: q[n],
-							initialySelected: n === this.options_.initialySelectedLabel,
-							customSourcePicker: this.options_.customSourcePicker
-						}, p, this.label)),
-							b[n] = o[o.length - 0x1]);
-					}
-					return o;
-				}
-			});
+				});
 			c = function (w) {
-				var p = h.mergeOptions(g, w), u = this, t = document.createElement("span"), s = {};
+				var p = h.mergeOptions(g, w),
+					u = this,
+					t = document.createElement("span"),
+					s = {};
 				h.dom.addClass(t, "vjs-resolution-button-label"),
 					u.updateSrc = function (y) {
 						if (!y)
@@ -1774,7 +1842,10 @@ Ext.define("ans.videojs.ErrorNote", {
 }());
 (function () {
 	(function (i, h) {
-		var f = {}, b, g = {}, a = {};
+		var f = {},
+			b,
+			g = {},
+			a = {};
 		function c(o, n, m, p) {
 			g = n;
 			if (typeof p === "function")
@@ -1784,7 +1855,8 @@ Ext.define("ans.videojs.ErrorNote", {
 		var l = h.getComponent("ResolutionMenuItem"), e = h.extend(l, {
 			onClick: function (q) {
 				this.onClickListener(this);
-				var p = this.player_.currentTime(), m = this.player_.paused();
+				var p = this.player_.currentTime(),
+					m = this.player_.paused();
 				this.showAsLabel(),
 					this.addClass("vjs-selected");
 				!m && this.player_.bigPlayButton.hide();
@@ -1797,43 +1869,44 @@ Ext.define("ans.videojs.ErrorNote", {
 						n.currentTime(p),
 						!m && n.play(),
 						n.trigger("playlinechange");
-				});
+				})
 			}
-		}), j = h.getComponent("MenuButton"), k = h.extend(j, {
-			constructor: function (p, n, q, m) {
-				this.playlines = n.playlines,
-					this.label = m,
-					this.label.innerHTML = n.initialySelectedLabel,
-					j.call(this, p, n, q),
-					this.controlText("Playline");
-				if (q.dynamicLabel)
-					this.el().appendChild(m);
-				else {
-					var o = document.createElement("span");
-					h.addClass(o, "vjs-resolution-button-staticlabel"),
-						this.el().appendChild(o);
+		}),
+			j = h.getComponent("MenuButton"), k = h.extend(j, {
+				constructor: function (p, n, q, m) {
+					this.playlines = n.playlines,
+						this.label = m,
+						this.label.innerHTML = n.initialySelectedLabel,
+						j.call(this, p, n, q),
+						this.controlText("Playline");
+					if (q.dynamicLabel)
+						this.el().appendChild(m);
+					else {
+						var o = document.createElement("span");
+						h.addClass(o, "vjs-resolution-button-staticlabel"),
+							this.el().appendChild(o);
+					}
+				},
+				createItems: function () {
+					var o = [], q = this.playlines || [], p = function (r) {
+						o.map(function (s) {
+							s.selected(s === r);
+							s.removeClass("vjs-selected");
+						});
+					};
+					for (var n = 0x0; n < q.length; n++) {
+						var m = q[n].label;
+						o.push(new e(this.player_, {
+							label: m,
+							src: q[n],
+							initialySelected: m === this.options_.initialySelectedLabel,
+							customSourcePicker: this.options_.customSourcePicker
+						}, p, this.label)),
+							a[m] = o[o.length - 0x1];
+					}
+					return o;
 				}
-			},
-			createItems: function () {
-				var o = [], q = this.playlines || [], p = function (r) {
-					o.map(function (s) {
-						s.selected(s === r);
-						s.removeClass("vjs-selected");
-					});
-				};
-				for (var n = 0x0; n < q.length; n++) {
-					var m = q[n].label;
-					o.push(new e(this.player_, {
-						label: m,
-						src: q[n],
-						initialySelected: m === this.options_.initialySelectedLabel,
-						customSourcePicker: this.options_.customSourcePicker
-					}, p, this.label)),
-						a[m] = o[o.length - 0x1];
-				}
-				return o;
-			}
-		});
+			});
 		b = function (o) {
 			var q = h.mergeOptions(f, o), p = this, n = document.createElement("span"), r = p.options_.playlines;
 			h.dom.addClass(n, "vjs-resolution-button-label");

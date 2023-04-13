@@ -27,9 +27,9 @@
 			FF5(1);
 			if (c) {
 				var t = new Date().getTime();
-				var scrollTop = Func_Currect_Position();
+				var scrollTop = Func_Current_Position();
 				setInterval(function () {
-					var l = Func_Currect_Position();
+					var l = Func_Current_Position();
 					if (scrollTop !== l) {
 						FF5(2);
 						scrollTop = l;
@@ -177,7 +177,7 @@
 				ic: b.imgCount || NUM_Image_Count,
 				v: 2,
 				s: input,
-				h: Func_Currect_Position()
+				h: Func_Current_Position()
 			};
 			FF4(f);
 			var g = {
@@ -186,7 +186,7 @@
 				pid: b.pid,
 				s: b.sessionID,
 				d: encodeURIComponent(JSON.stringify(f)),
-				t: Func_Currect_DateTime()
+				t: Func_Current_DateTime()
 			};
 			var url = "https://data-xxt.aichaoxing.com/analysis/ac_mark?";
 			var dataKeys = [];
@@ -240,7 +240,7 @@
 				xhr.send();
 			}
 		}
-		function Func_Currect_DateTime() {
+		function Func_Current_DateTime() {
 			var f = new Date();
 			return "" + f.getFullYear() + Func_Padding_Numbers_to_10(f.getMonth() + 1) + Func_Padding_Numbers_to_10(f.getDate()) + Func_Padding_Numbers_to_10(f.getHours()) + Func_Padding_Numbers_to_10(f.getMinutes()) + Func_Padding_Numbers_to_10(f.getSeconds()) + Func_Padding_Numbers_to_100(f.getMilliseconds());
 		}
@@ -270,7 +270,7 @@
 		function Func_Padding_Numbers_to_100(input) {
 			return input < 10 ? "00" + input : input < 100 ? "0" + input : input;
 		}
-		function Func_Currect_Position() {
+		function Func_Current_Position() {
 			try {
 				if (b.resourceType === "note") {
 					var USER_AGENT = navigator.userAgent, f = navigator.appVersion;

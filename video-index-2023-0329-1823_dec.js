@@ -114,7 +114,9 @@ function bindVjsRateClick() {
 	}
 }
 function showHTML5Player(paras) {
-	Ext.get('reader').setHTML('<video id="video" class="video-js vjs-default-skin vjs-big-play-centered"></video>'),
+	var var_2023_0329_Guess_watermark = '<div class="watermark">' + '<p class="uname">' + paras.studentName + '</p>' + '<p style="margin-top: 10px;" class="loginName">' + paras.studentLoginName + '</p>' + '</div>';
+	!paras.showWatermark && (var_2023_0329_Guess_watermark = '');
+	Ext.get('reader').setHTML('<video id="video" class="video-js vjs-default-skin vjs-big-play-centered"></video>' + var_2023_0329_Guess_watermark),
 		new ans[('VideoJs')]({
 			'videojs': 'video',
 			'params': paras
@@ -181,6 +183,10 @@ function showHTML5Player(paras) {
 		}),
 			document.getElementsByClassName('vjs-playback-rate').length > 0x0 && document.getElementsByClassName('vjs-playback-rate')[0x0].addEventListener('click', function () {
 				$('.vjs-playback-rate .vjs-menu .vjs-menu-content li').length == 0x0 && bindVjsRateClick();
+			}),
+			document.getElementsByClassName('vjs-fullscreen-control').length > 0x0 && document.getElementsByClassName('vjs-fullscreen-control')[0x0].addEventListener('click', function () {
+				$(this).parents('#reader').find('.watermark').remove(),
+					$(this).parents('#video').append(var_2023_0329_Guess_watermark);
 			});
 	});
 	function changePPTTop() {
@@ -222,7 +228,7 @@ function loadVideo() {
 		if (Ext.select('.zsCloud_ul') != null) {
 			var spanList = '';
 			for (var i = 0x0, len = list.length; i < len; i++) {
-				spanList += "<li><span class='zsCloud_span topicId" + list[i].id + "' onclick='markersPlayer(this)'>" + list[i].name + ' </span></li>';
+				spanList += '<li><span class=\x27zsCloud_span topicId' + list[i].id + '\x27 onclick=\x27markersPlayer(this)\x27>' + list[i].name + ' </span></li>';
 			}
 			Ext.select('.zsCloud_ul').setHTML(spanList),
 				Ext.select('.zsCloud').setStyle('display', 'block');
@@ -288,7 +294,7 @@ function loadVideo() {
 							paras.rt = rt,
 							paras.control = setting && setting.control;
 						isTeacher && (paras.control = false);
-						var m = {}, s, vb, ve;
+						var m = {}, s, vb, ve, var_Guess_20230329_username = '', var_Guess_20230329_loginName = '';
 						if (setting && setting.control) {
 							var attachments = setting.attachments, defaults = setting.defaults, spec = oData.objectid + '-' + (vbegin ? vbegin : 0x0) + '-' + (vend ? vend : d) + '-' + jobid;
 							defaults && (paras.userid = defaults.userid || '',
@@ -296,7 +302,12 @@ function loadVideo() {
 								paras.courseid = defaults.courseid || '',
 								paras.clazzId = defaults.clazzId || '',
 								paras.knowledgeid = defaults.knowledgeid || '',
-								paras.cookieFid = defaults.cookieFid || '');
+								paras.cookieFid = defaults.cookieFid || '',
+								var_Guess_20230329_username = defaults.username || '',
+								var_Guess_20230329_loginName = defaults.loginName || '');
+							!isTeacher && (paras.studentName = var_Guess_20230329_username,
+								paras.studentLoginName = var_Guess_20230329_loginName,
+								paras.showWatermark = true);
 							for (var i = 0x0; i < attachments.length; i++) {
 								m = attachments[i],
 									vb = 0x0,
@@ -415,14 +426,14 @@ function loadVideo() {
 									'defer': 'defer'
 								}], function () {
 									loadMultiFile([{
-										'src': 'cxplayer/videodanmu.js',
+										'src': 'cxplayer/videodanmu.js?v=3',
 										'tag': 'script',
 										'type': 'text/javascript',
 										'defer': 'defer'
 									}]);
 								});
 							}),
-								Ext.select('.rage_bd').setStyle('display', 'block'),
+								Ext.select('.danmuDiv').setStyle('display', 'inline-block'),
 								Ext.select('.sp_function').setStyle('height', '66px')),
 								ff = paras.enableFastForward,
 								typeof aplus_queue != 'undefined' && (paras.aplus_video_id = setting.aplus_video_id,
@@ -664,7 +675,7 @@ function danmuPlay(time) {
 	var list = danmaku[time];
 	if (!list)
 		return;
-	if (!$('.mui-switch').hasClass('checked'))
+	if (!$('.sp_tanmu').hasClass('sp_tanmu_blue'))
 		return;
 	var content = '<div class="danmuItem right">';
 	for (var i = 0x0; i < list.length; i++) {
@@ -694,7 +705,7 @@ function danmuPlay(time) {
 		}
 	}
 	content += '</div>';
-	var r = count % 0x3, el = new Ext[('XTemplate')](content).append('channel_' + r);
+	var r = count % 0x3, el = new Ext.XTemplate(content).append('channel_' + r);
 	shotdanmu(el),
 		count++;
 }
@@ -764,6 +775,9 @@ function markersPlayer(marker) {
 	if (time)
 		return playerTime(time);
 }
+function closeFullScreen() {
+	$('.vjs-fullscreen-control').click();
+}
 function getMarkers() {
 	return videojs('video').markers;
 }
@@ -782,6 +796,9 @@ function playVideo() {
 }
 function reSizeIframe() {
 	try {
+		var var_20230329_width_0 = parseInt(Ext.fly(Ext.select('.main').elements[0x0]).getWidth()),
+			width = parseInt(var_20230329_width_0 / 0x10 * 0x9);
+		Ext.fly('reader').setHeight(width + 'px');
 		var height = Ext.fly(Ext.select('.main').elements[0x0]).getHeight();
 		Ext.fly(window.frameElement).setHeight(height + 'px');
 	} catch (e) {
@@ -795,8 +812,9 @@ Ext.onReady(function () {
 	window.setInterval('reSizeIframe()', 0xc8),
 		window.setInterval('removeDownloadBtn()', 0x1f4),
 		/\/studentstudy/.test(top.location.pathname) && ($('.writeNote').css('display', 'block'),
+			$('.writeNote_vid').css('display', 'block'),
 			Ext.select('.sp_function').setStyle('height', '66px')),
-		$('.writeNote').click(function () {
+		$('.writeNote_vid_edit').click(function () {
 			$('#type', parent.parent.document).val(0x1),
 				$('#noteVideoName', parent.parent.document).val(videoName);
 			var cPlayer = videojs('video'), videoTime = parseInt(cPlayer.currentTime()), minuteTime = parseInt(videoTime / 0x3c);

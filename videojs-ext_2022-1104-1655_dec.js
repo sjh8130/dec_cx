@@ -1477,8 +1477,8 @@ Ext.define('ans.videojs.TimelineObjects', {
 		if (e) {
 			e.description && (e.description = j.htmlEncodeByRegExp(e.description));
 			if (e.options && e.options.length > 0x0)
-				for (let var_20220902_23 = 0x0; var_20220902_23 < e.options.length; var_20220902_23++) {
-					e.options[var_20220902_23].description && (e.options[var_20220902_23].description = j.htmlEncodeByRegExp(e.options[var_20220902_23].description));
+				for (let ii = 0x0; ii < e.options.length; ii++) {
+					e.options[ii].description && (e.options[ii].description = j.htmlEncodeByRegExp(e.options[ii].description));
 				}
 		}
 		if (b == 'IMG') {
@@ -1736,10 +1736,10 @@ Ext.define('ans.videojs.customIframe', {
 	'xtype': 'customIframe',
 	'renderTpl': ['<iframe src="{src}" class="configIframe" style="height: 100%;width: 100%;left: 0;top: 0;right: 0;bottom: 0; background: rgba(0,0,0,.6);"></iframe>'],
 	'afterRender': function () {
-		var var_20221104_10 = this;
-		var_20221104_10.callParent(arguments),
+		var me = this;
+		me.callParent(arguments),
 			window.addEventListener('message', function (var_20221104_11) {
-				typeof var_20221104_11.data != 'undefined' && var_20221104_11.data.opType === 'closeIframe' && var_20221104_10.fireEvent('continue');
+				typeof var_20221104_11.data != 'undefined' && var_20221104_11.data.opType === 'closeIframe' && me.fireEvent('continue');
 			});
 	}
 });
@@ -1749,33 +1749,33 @@ Ext.define('ans.videojs.CustomIframe', {
 	'autoScroll': true,
 	'hidden': true,
 	'hideMode': 'visibility',
-	'constructor': function (var_20221104_12) {
-		var var_20221104_13 = this;
-		var_20221104_13.callParent(arguments),
-			var_20221104_13.supportHeartbeat = false,
-			var_20221104_13.courseid = '',
-			var_20221104_13.clazzId = '',
-			var_20221104_13.knowledgeid = '',
-			var_20221104_13.objectid = '',
-			var_20221104_13.playTime = 0x0,
-			var_20221104_13.requesting = false,
-			var_20221104_13.eventArray = [],
-			var_20221104_13.userId = '',
-			var_20221104_13.cookieFid = '',
-			var_20221104_13.headOffset = '',
-			typeof var_20221104_12.userId != 'undefined' && (var_20221104_13.userId = var_20221104_12.userId),
-			typeof var_20221104_12.cookieFid != 'undefined' && (var_20221104_13.cookieFid = var_20221104_12.cookieFid),
-			typeof var_20221104_12.headOffset != 'undefined' && (var_20221104_13.headOffset = var_20221104_12.headOffset),
-			typeof var_20221104_12.eventArray != 'undefined' && (var_20221104_13.eventArray = var_20221104_12.eventArray),
-			typeof var_20221104_12.supportHeartbeat != 'undefined' && (var_20221104_13.supportHeartbeat = var_20221104_12.supportHeartbeat),
-			typeof var_20221104_12.courseid != 'undefined' && (var_20221104_13.courseid = var_20221104_12.courseid),
-			typeof var_20221104_12.clazzId != 'undefined' && (var_20221104_13.clazzId = var_20221104_12.clazzId),
-			typeof var_20221104_12.knowledgeid != 'undefined' && (var_20221104_13.knowledgeid = var_20221104_12.knowledgeid),
-			typeof var_20221104_12.objectid != 'undefined' && (var_20221104_13.objectid = var_20221104_12.objectid),
-			var_20221104_13.lastHeartbeat = 0x0,
-			var_20221104_13.lastShowIFrame = 0x0,
-			var_20221104_13.objects = var_20221104_12.objects && var_20221104_12.objects.sort ? var_20221104_13.sort_(var_20221104_12.objects) : [],
-			var_20221104_13.eventArray.forEach(function (var_20221104_14) {
+	'constructor': function (options) {
+		var me = this;
+		me.callParent(arguments),
+			me.supportHeartbeat = false,
+			me.courseid = '',
+			me.clazzId = '',
+			me.knowledgeid = '',
+			me.objectid = '',
+			me.playTime = 0x0,
+			me.requesting = false,
+			me.eventArray = [],
+			me.userId = '',
+			me.cookieFid = '',
+			me.headOffset = '',
+			typeof options.userId != 'undefined' && (me.userId = options.userId),
+			typeof options.cookieFid != 'undefined' && (me.cookieFid = options.cookieFid),
+			typeof options.headOffset != 'undefined' && (me.headOffset = options.headOffset),
+			typeof options.eventArray != 'undefined' && (me.eventArray = options.eventArray),
+			typeof options.supportHeartbeat != 'undefined' && (me.supportHeartbeat = options.supportHeartbeat),
+			typeof options.courseid != 'undefined' && (me.courseid = options.courseid),
+			typeof options.clazzId != 'undefined' && (me.clazzId = options.clazzId),
+			typeof options.knowledgeid != 'undefined' && (me.knowledgeid = options.knowledgeid),
+			typeof options.objectid != 'undefined' && (me.objectid = options.objectid),
+			me.lastHeartbeat = 0x0,
+			me.lastShowIFrame = 0x0,
+			me.objects = options.objects && options.objects.sort ? me.sort_(options.objects) : [],
+			me.eventArray.forEach(function (var_20221104_14) {
 				var var_20221104_15 = parseInt(var_20221104_14.eventIntervalType);
 				var_20221104_15 === 0x0 ? (var_20221104_14.lastHeartbeat = 0x0,
 					var_20221104_14.pauseTimeRange = 0x0,
@@ -1944,33 +1944,33 @@ function sortArray(var_20221104_46) {
 }
 (function () {
 	var b = videojs.getPlugin('plugin'), a = videojs.extend(b, {
-		'constructor': function (var_20221104_50, var_20221104_51) {
-			if (typeof var_20221104_51.supportHeartbeat == 'undefined' || !var_20221104_51.supportHeartbeat)
+		'constructor': function (player, options) {
+			if (typeof options.supportHeartbeat == 'undefined' || !options.supportHeartbeat)
 				return;
-			b.call(this, var_20221104_50, var_20221104_51),
-				var_20221104_50.pauseTimeStamp = 0x0,
-				var_20221104_50.pauseTimeRange = 0x0;
+			b.call(this, player, options),
+				player.pauseTimeStamp = 0x0,
+				player.pauseTimeRange = 0x0;
 			var var_20221104_52 = null;
 			try {
 				var_20221104_52 = Ext.create('ans.videojs.CustomIframe', {
-					'renderTo': var_20221104_50.el_,
-					'supportHeartbeat': var_20221104_51.supportHeartbeat,
-					'eventArray': var_20221104_51.eventArray,
-					'courseid': var_20221104_51.courseid,
-					'clazzId': var_20221104_51.clazzId,
-					'knowledgeid': var_20221104_51.knowledgeid,
-					'objectid': var_20221104_51.objectid,
-					'videoEnc': var_20221104_51.videoEnc,
-					'userId': var_20221104_51.userId,
-					'cookieFid': var_20221104_51.cookieFid,
-					'headOffset': var_20221104_51.headOffset
+					'renderTo': player.el_,
+					'supportHeartbeat': options.supportHeartbeat,
+					'eventArray': options.eventArray,
+					'courseid': options.courseid,
+					'clazzId': options.clazzId,
+					'knowledgeid': options.knowledgeid,
+					'objectid': options.objectid,
+					'videoEnc': options.videoEnc,
+					'userId': options.userId,
+					'cookieFid': options.cookieFid,
+					'headOffset': options.headOffset
 				});
 			} catch (err) {
 				console.log(err);
 			}
 			if (var_20221104_52 == null)
 				return;
-			var_20221104_50.on('play', function () {
+			player.on('play', function () {
 				try {
 					var var_20221104_53 = new Date().getTime();
 					var_20221104_52.eventArray.forEach(function (var_20221104_54) {
@@ -1984,15 +1984,15 @@ function sortArray(var_20221104_46) {
 							var_20221104_54.pauseTimeStamp = 0x0;
 						}
 					}),
-						var_20221104_52.resetTime(var_20221104_50, var_20221104_50.currentTime());
+						var_20221104_52.resetTime(player, player.currentTime());
 				} catch (err) {
 					console.log(err);
 				}
 			}),
-				var_20221104_50.on('seekend', function () {
-					var_20221104_52.resetTime(var_20221104_50, var_20221104_50.currentTime());
+				player.on('seekend', function () {
+					var_20221104_52.resetTime(player, player.currentTime());
 				}),
-				var_20221104_50.on('pause', function () {
+				player.on('pause', function () {
 					try {
 						var var_20221104_57 = new Date().getTime();
 						var_20221104_52.eventArray.forEach(function (var_20221104_58) {
@@ -2003,61 +2003,61 @@ function sortArray(var_20221104_46) {
 						console.log(err);
 					}
 				}),
-				var_20221104_50.on('timeupdate', function () {
+				player.on('timeupdate', function () {
 					try {
-						!var_20221104_50.paused() && var_20221104_52.updateTime(var_20221104_50, parseInt(var_20221104_50.currentTime())),
-							var_20221104_52.playTime = var_20221104_50.currentTime();
+						!player.paused() && var_20221104_52.updateTime(player, parseInt(player.currentTime())),
+							var_20221104_52.playTime = player.currentTime();
 					} catch (err) {
 						console.log(err);
 					}
 				}),
 				window.addEventListener('message', function (var_20221104_60) {
 					try {
-						if (!var_20221104_51.supportHeartbeat || !isStuViewPage())
+						if (!options.supportHeartbeat || !isStuViewPage())
 							return;
 						var var_20221104_61 = var_20221104_60.data;
 						if (typeof var_20221104_61 == 'undefined') {
-							var_20221104_52.resetDiv(var_20221104_50);
+							var_20221104_52.resetDiv(player);
 							return;
 						}
-						var var_20221104_62 = parseInt(var_20221104_51.duration);
+						var var_20221104_62 = parseInt(options.duration);
 						if (var_20221104_61.opType === 'fastForward') {
 							var var_20221104_63 = var_20221104_61.value;
 							if (typeof var_20221104_63 === 'undefined') {
-								var_20221104_52.resetDiv(var_20221104_50);
+								var_20221104_52.resetDiv(player);
 								return;
 							}
 							var_20221104_63 = parseInt(var_20221104_63);
 							if (!(var_20221104_63 > 0x0)) {
-								var_20221104_52.resetDiv(var_20221104_50);
+								var_20221104_52.resetDiv(player);
 								return;
 							}
-							var_20221104_50.ignoreSeek = false,
-								var_20221104_50.switchStatus = true;
-							var var_20221104_64 = var_20221104_50.currentTime();
+							player.ignoreSeek = false,
+								player.switchStatus = true;
+							var var_20221104_64 = player.currentTime();
 							var_20221104_64 = parseInt(var_20221104_64);
 							var var_20221104_65 = var_20221104_64 + var_20221104_63;
 							if (var_20221104_65 > var_20221104_62) {
-								var_20221104_52.resetDiv(var_20221104_50);
+								var_20221104_52.resetDiv(player);
 								return;
 							}
-							var_20221104_52.seekVideoTime(var_20221104_50, var_20221104_65);
+							var_20221104_52.seekVideoTime(player, var_20221104_65);
 							return;
 						}
 						if (var_20221104_61.opType === 'videoStartTime') {
 							var var_20221104_63 = var_20221104_61.value;
 							if (typeof var_20221104_63 === 'undefined') {
-								var_20221104_52.resetDiv(var_20221104_50);
+								var_20221104_52.resetDiv(player);
 								return;
 							}
 							var_20221104_63 = parseInt(var_20221104_63);
 							if (!(var_20221104_63 >= 0x0) || var_20221104_63 > var_20221104_62) {
-								var_20221104_52.resetDiv(var_20221104_50);
+								var_20221104_52.resetDiv(player);
 								return;
 							}
-							var_20221104_50.ignoreSeek = false,
-								var_20221104_50.switchStatus = true,
-								var_20221104_52.seekVideoTime(var_20221104_50, var_20221104_63);
+							player.ignoreSeek = false,
+								player.switchStatus = true,
+								var_20221104_52.seekVideoTime(player, var_20221104_63);
 						}
 					} catch (err) {
 						console.log(err);

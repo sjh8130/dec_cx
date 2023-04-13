@@ -1,4 +1,3 @@
-// https://mooc1-2.chaoxing.com/ananas/videojs-ext/videojs-ext.min.js?v=2022-0608-1801
 Ext.define("ananas.ServerHosts", {
 	alternateClassName: "ServerHosts",
 	singleton: true,
@@ -35,207 +34,207 @@ Ext.define("ananas.ServerHosts", {
 		a.ZHIBO_HOST = "https://zhibo.chaoxing.com"
 	}
 });
-(function (g) {
-	function q(v, A) {
-		var z = (v & 65535) + (A & 65535);
-		var w = (v >> 16) + (A >> 16) + (z >> 16);
-		return (w << 16) | (z & 65535)
+(function ($) {
+	function safeAdd(x, y) {
+		var lsw = (x & 65535) + (y & 65535);
+		var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+		return (msw << 16) | (lsw & 65535)
 	}
-	function p(v, w) {
-		return (v << w) | (v >>> (32 - w))
+	function bitRotateLeft(num, cnt) {
+		return (num << cnt) | (num >>> (32 - cnt))
 	}
-	function k(B, y, w, v, A, z) {
-		return q(p(q(q(y, B), q(v, z)), A), w)
+	function md5cmn(q, a, b, x, s, t) {
+		return safeAdd(bitRotateLeft(safeAdd(safeAdd(a, q), safeAdd(x, t)), s), b)
 	}
-	function a(y, w, C, B, v, A, z) {
-		return k((w & C) | ((~w) & B), y, w, v, A, z)
+	function md5ff(a, b, c, d, x, s, t) {
+		return md5cmn((b & c) | ((~b) & d), a, b, x, s, t)
 	}
-	function h(y, w, C, B, v, A, z) {
-		return k((w & B) | (C & (~B)), y, w, v, A, z)
+	function md5gg(a, b, c, d, x, s, t) {
+		return md5cmn((b & d) | (c & (~d)), a, b, x, s, t)
 	}
-	function n(y, w, C, B, v, A, z) {
-		return k(w ^ C ^ B, y, w, v, A, z)
+	function md5hh(a, b, c, d, x, s, t) {
+		return md5cmn(b ^ c ^ d, a, b, x, s, t)
 	}
-	function t(y, w, C, B, v, A, z) {
-		return k(C ^ (w | (~B)), y, w, v, A, z)
+	function md5ii(a, b, c, d, x, s, t) {
+		return md5cmn(c ^ (b | (~d)), a, b, x, s, t)
 	}
-	function c(G, B) {
-		G[B >> 5] |= 128 << (B % 32);
-		G[(((B + 64) >>> 9) << 4) + 14] = B;
-		var y;
-		var A;
-		var z;
-		var w;
-		var v;
-		var F = 1732584193;
-		var E = -271733879;
-		var D = -1732584194;
-		var C = 271733878;
-		for (y = 0; y < G.length; y += 16) {
-			A = F;
-			z = E;
-			w = D;
-			v = C;
-			F = a(F, E, D, C, G[y], 7, -680876936);
-			C = a(C, F, E, D, G[y + 1], 12, -389564586);
-			D = a(D, C, F, E, G[y + 2], 17, 606105819);
-			E = a(E, D, C, F, G[y + 3], 22, -1044525330);
-			F = a(F, E, D, C, G[y + 4], 7, -176418897);
-			C = a(C, F, E, D, G[y + 5], 12, 1200080426);
-			D = a(D, C, F, E, G[y + 6], 17, -1473231341);
-			E = a(E, D, C, F, G[y + 7], 22, -45705983);
-			F = a(F, E, D, C, G[y + 8], 7, 1770035416);
-			C = a(C, F, E, D, G[y + 9], 12, -1958414417);
-			D = a(D, C, F, E, G[y + 10], 17, -42063);
-			E = a(E, D, C, F, G[y + 11], 22, -1990404162);
-			F = a(F, E, D, C, G[y + 12], 7, 1804603682);
-			C = a(C, F, E, D, G[y + 13], 12, -40341101);
-			D = a(D, C, F, E, G[y + 14], 17, -1502002290);
-			E = a(E, D, C, F, G[y + 15], 22, 1236535329);
-			F = h(F, E, D, C, G[y + 1], 5, -165796510);
-			C = h(C, F, E, D, G[y + 6], 9, -1069501632);
-			D = h(D, C, F, E, G[y + 11], 14, 643717713);
-			E = h(E, D, C, F, G[y], 20, -373897302);
-			F = h(F, E, D, C, G[y + 5], 5, -701558691);
-			C = h(C, F, E, D, G[y + 10], 9, 38016083);
-			D = h(D, C, F, E, G[y + 15], 14, -660478335);
-			E = h(E, D, C, F, G[y + 4], 20, -405537848);
-			F = h(F, E, D, C, G[y + 9], 5, 568446438);
-			C = h(C, F, E, D, G[y + 14], 9, -1019803690);
-			D = h(D, C, F, E, G[y + 3], 14, -187363961);
-			E = h(E, D, C, F, G[y + 8], 20, 1163531501);
-			F = h(F, E, D, C, G[y + 13], 5, -1444681467);
-			C = h(C, F, E, D, G[y + 2], 9, -51403784);
-			D = h(D, C, F, E, G[y + 7], 14, 1735328473);
-			E = h(E, D, C, F, G[y + 12], 20, -1926607734);
-			F = n(F, E, D, C, G[y + 5], 4, -378558);
-			C = n(C, F, E, D, G[y + 8], 11, -2022574463);
-			D = n(D, C, F, E, G[y + 11], 16, 1839030562);
-			E = n(E, D, C, F, G[y + 14], 23, -35309556);
-			F = n(F, E, D, C, G[y + 1], 4, -1530992060);
-			C = n(C, F, E, D, G[y + 4], 11, 1272893353);
-			D = n(D, C, F, E, G[y + 7], 16, -155497632);
-			E = n(E, D, C, F, G[y + 10], 23, -1094730640);
-			F = n(F, E, D, C, G[y + 13], 4, 681279174);
-			C = n(C, F, E, D, G[y], 11, -358537222);
-			D = n(D, C, F, E, G[y + 3], 16, -722521979);
-			E = n(E, D, C, F, G[y + 6], 23, 76029189);
-			F = n(F, E, D, C, G[y + 9], 4, -640364487);
-			C = n(C, F, E, D, G[y + 12], 11, -421815835);
-			D = n(D, C, F, E, G[y + 15], 16, 530742520);
-			E = n(E, D, C, F, G[y + 2], 23, -995338651);
-			F = t(F, E, D, C, G[y], 6, -198630844);
-			C = t(C, F, E, D, G[y + 7], 10, 1126891415);
-			D = t(D, C, F, E, G[y + 14], 15, -1416354905);
-			E = t(E, D, C, F, G[y + 5], 21, -57434055);
-			F = t(F, E, D, C, G[y + 12], 6, 1700485571);
-			C = t(C, F, E, D, G[y + 3], 10, -1894986606);
-			D = t(D, C, F, E, G[y + 10], 15, -1051523);
-			E = t(E, D, C, F, G[y + 1], 21, -2054922799);
-			F = t(F, E, D, C, G[y + 8], 6, 1873313359);
-			C = t(C, F, E, D, G[y + 15], 10, -30611744);
-			D = t(D, C, F, E, G[y + 6], 15, -1560198380);
-			E = t(E, D, C, F, G[y + 13], 21, 1309151649);
-			F = t(F, E, D, C, G[y + 4], 6, -145523070);
-			C = t(C, F, E, D, G[y + 11], 10, -1120210379);
-			D = t(D, C, F, E, G[y + 2], 15, 718787259);
-			E = t(E, D, C, F, G[y + 9], 21, -343485551);
-			F = q(F, A);
-			E = q(E, z);
-			D = q(D, w);
-			C = q(C, v)
+	function binlMD5(x, len) {
+		x[len >> 5] |= 128 << (len % 32);
+		x[(((len + 64) >>> 9) << 4) + 14] = len;
+		var i;
+		var olda;
+		var oldb;
+		var oldc;
+		var oldd;
+		var a = 1732584193;
+		var b = -271733879;
+		var c = -1732584194;
+		var d = 271733878;
+		for (i = 0; i < x.length; i += 16) {
+			olda = a;
+			oldb = b;
+			oldc = c;
+			oldd = d;
+			a = md5ff(a, b, c, d, x[i], 7, -680876936);
+			d = md5ff(d, a, b, c, x[i + 1], 12, -389564586);
+			c = md5ff(c, d, a, b, x[i + 2], 17, 606105819);
+			b = md5ff(b, c, d, a, x[i + 3], 22, -1044525330);
+			a = md5ff(a, b, c, d, x[i + 4], 7, -176418897);
+			d = md5ff(d, a, b, c, x[i + 5], 12, 1200080426);
+			c = md5ff(c, d, a, b, x[i + 6], 17, -1473231341);
+			b = md5ff(b, c, d, a, x[i + 7], 22, -45705983);
+			a = md5ff(a, b, c, d, x[i + 8], 7, 1770035416);
+			d = md5ff(d, a, b, c, x[i + 9], 12, -1958414417);
+			c = md5ff(c, d, a, b, x[i + 10], 17, -42063);
+			b = md5ff(b, c, d, a, x[i + 11], 22, -1990404162);
+			a = md5ff(a, b, c, d, x[i + 12], 7, 1804603682);
+			d = md5ff(d, a, b, c, x[i + 13], 12, -40341101);
+			c = md5ff(c, d, a, b, x[i + 14], 17, -1502002290);
+			b = md5ff(b, c, d, a, x[i + 15], 22, 1236535329);
+			a = md5gg(a, b, c, d, x[i + 1], 5, -165796510);
+			d = md5gg(d, a, b, c, x[i + 6], 9, -1069501632);
+			c = md5gg(c, d, a, b, x[i + 11], 14, 643717713);
+			b = md5gg(b, c, d, a, x[i], 20, -373897302);
+			a = md5gg(a, b, c, d, x[i + 5], 5, -701558691);
+			d = md5gg(d, a, b, c, x[i + 10], 9, 38016083);
+			c = md5gg(c, d, a, b, x[i + 15], 14, -660478335);
+			b = md5gg(b, c, d, a, x[i + 4], 20, -405537848);
+			a = md5gg(a, b, c, d, x[i + 9], 5, 568446438);
+			d = md5gg(d, a, b, c, x[i + 14], 9, -1019803690);
+			c = md5gg(c, d, a, b, x[i + 3], 14, -187363961);
+			b = md5gg(b, c, d, a, x[i + 8], 20, 1163531501);
+			a = md5gg(a, b, c, d, x[i + 13], 5, -1444681467);
+			d = md5gg(d, a, b, c, x[i + 2], 9, -51403784);
+			c = md5gg(c, d, a, b, x[i + 7], 14, 1735328473);
+			b = md5gg(b, c, d, a, x[i + 12], 20, -1926607734);
+			a = md5hh(a, b, c, d, x[i + 5], 4, -378558);
+			d = md5hh(d, a, b, c, x[i + 8], 11, -2022574463);
+			c = md5hh(c, d, a, b, x[i + 11], 16, 1839030562);
+			b = md5hh(b, c, d, a, x[i + 14], 23, -35309556);
+			a = md5hh(a, b, c, d, x[i + 1], 4, -1530992060);
+			d = md5hh(d, a, b, c, x[i + 4], 11, 1272893353);
+			c = md5hh(c, d, a, b, x[i + 7], 16, -155497632);
+			b = md5hh(b, c, d, a, x[i + 10], 23, -1094730640);
+			a = md5hh(a, b, c, d, x[i + 13], 4, 681279174);
+			d = md5hh(d, a, b, c, x[i], 11, -358537222);
+			c = md5hh(c, d, a, b, x[i + 3], 16, -722521979);
+			b = md5hh(b, c, d, a, x[i + 6], 23, 76029189);
+			a = md5hh(a, b, c, d, x[i + 9], 4, -640364487);
+			d = md5hh(d, a, b, c, x[i + 12], 11, -421815835);
+			c = md5hh(c, d, a, b, x[i + 15], 16, 530742520);
+			b = md5hh(b, c, d, a, x[i + 2], 23, -995338651);
+			a = md5ii(a, b, c, d, x[i], 6, -198630844);
+			d = md5ii(d, a, b, c, x[i + 7], 10, 1126891415);
+			c = md5ii(c, d, a, b, x[i + 14], 15, -1416354905);
+			b = md5ii(b, c, d, a, x[i + 5], 21, -57434055);
+			a = md5ii(a, b, c, d, x[i + 12], 6, 1700485571);
+			d = md5ii(d, a, b, c, x[i + 3], 10, -1894986606);
+			c = md5ii(c, d, a, b, x[i + 10], 15, -1051523);
+			b = md5ii(b, c, d, a, x[i + 1], 21, -2054922799);
+			a = md5ii(a, b, c, d, x[i + 8], 6, 1873313359);
+			d = md5ii(d, a, b, c, x[i + 15], 10, -30611744);
+			c = md5ii(c, d, a, b, x[i + 6], 15, -1560198380);
+			b = md5ii(b, c, d, a, x[i + 13], 21, 1309151649);
+			a = md5ii(a, b, c, d, x[i + 4], 6, -145523070);
+			d = md5ii(d, a, b, c, x[i + 11], 10, -1120210379);
+			c = md5ii(c, d, a, b, x[i + 2], 15, 718787259);
+			b = md5ii(b, c, d, a, x[i + 9], 21, -343485551);
+			a = safeAdd(a, olda);
+			b = safeAdd(b, oldb);
+			c = safeAdd(c, oldc);
+			d = safeAdd(d, oldd)
 		}
-		return [F, E, D, C]
+		return [a, b, c, d]
 	}
-	function o(w) {
+	function binl2rstr(input) {
 		var x;
-		var v = "";
-		var y = w.length * 32;
-		for (x = 0; x < y; x += 8) {
-			v += String.fromCharCode((w[x >> 5] >>> (x % 32)) & 255)
+		var output = "";
+		var length32 = input.length * 32;
+		for (x = 0; x < length32; x += 8) {
+			output += String.fromCharCode((input[x >> 5] >>> (x % 32)) & 255)
 		}
-		return v
+		return output
 	}
-	function j(w) {
-		var y;
-		var v = [];
-		v[(w.length >> 2) - 1] = undefined;
-		for (y = 0; y < v.length; y += 1) {
-			v[y] = 0
+	function rstr2binl(input) {
+		var i;
+		var output = [];
+		output[(input.length >> 2) - 1] = undefined;
+		for (i = 0; i < output.length; i += 1) {
+			output[i] = 0
 		}
-		var x = w.length * 8;
-		for (y = 0; y < x; y += 8) {
-			v[y >> 5] |= (w.charCodeAt(y / 8) & 255) << (y % 32)
+		var length8 = input.length * 8;
+		for (i = 0; i < length8; i += 8) {
+			output[i >> 5] |= (input.charCodeAt(i / 8) & 255) << (i % 32)
 		}
-		return v
+		return output
 	}
-	function i(v) {
-		return o(c(j(v), v.length * 8))
+	function rstrMD5(s) {
+		return binl2rstr(binlMD5(rstr2binl(s), s.length * 8))
 	}
-	function u(x, A) {
-		var w;
-		var z = j(x);
-		var v = [];
-		var y = [];
-		var B;
-		v[15] = y[15] = undefined;
-		if (z.length > 16) {
-			z = c(z, x.length * 8)
+	function rstrHMACMD5(key, data) {
+		var i;
+		var bkey = rstr2binl(key);
+		var ipad = [];
+		var opad = [];
+		var hash;
+		ipad[15] = opad[15] = undefined;
+		if (bkey.length > 16) {
+			bkey = binlMD5(bkey, key.length * 8)
 		}
-		for (w = 0; w < 16; w += 1) {
-			v[w] = z[w] ^ 909522486;
-			y[w] = z[w] ^ 1549556828
+		for (i = 0; i < 16; i += 1) {
+			ipad[i] = bkey[i] ^ 909522486;
+			opad[i] = bkey[i] ^ 1549556828
 		}
-		B = c(v.concat(j(A)), 512 + A.length * 8);
-		return o(c(y.concat(B), 512 + 128))
+		hash = binlMD5(ipad.concat(rstr2binl(data)), 512 + data.length * 8);
+		return binl2rstr(binlMD5(opad.concat(hash), 512 + 128))
 	}
-	function s(z) {
-		var y = "0123456789abcdef";
-		var w = "";
-		var v;
-		var A;
-		for (A = 0; A < z.length; A += 1) {
-			v = z.charCodeAt(A);
-			w += y.charAt((v >>> 4) & 15) + y.charAt(v & 15)
+	function rstr2hex(input) {
+		var hexTab = "0123456789abcdef";
+		var output = "";
+		var x;
+		var i;
+		for (i = 0; i < input.length; i += 1) {
+			x = input.charCodeAt(i);
+			output += hexTab.charAt((x >>> 4) & 15) + hexTab.charAt(x & 15)
 		}
-		return w
+		return output
 	}
-	function l(v) {
-		return unescape(encodeURIComponent(v))
+	function str2rstrUTF8(input) {
+		return unescape(encodeURIComponent(input))
 	}
-	function e(v) {
-		return i(l(v))
+	function rawMD5(v) {
+		return rstrMD5(str2rstrUTF8(v))
 	}
-	function m(v) {
-		return s(e(v))
+	function hexMD5(v) {
+		return rstr2hex(rawMD5(v))
 	}
-	function b(v, w) {
-		return u(l(v), l(w))
+	function rawHMACMD5(k, d) {
+		return rstrHMACMD5(str2rstrUTF8(k), str2rstrUTF8(d))
 	}
-	function r(v, w) {
-		return s(b(v, w))
+	function hexHMACMD5(k, d) {
+		return rstr2hex(rawHMACMD5(k, d))
 	}
-	function f(w, x, v) {
-		if (!x) {
-			if (!v) {
-				return m(w)
+	function md5(string, key, raw) {
+		if (!key) {
+			if (!raw) {
+				return hexMD5(string)
 			}
-			return e(w)
+			return rawMD5(string)
 		}
-		if (!v) {
-			return r(x, w)
+		if (!raw) {
+			return hexHMACMD5(key, string)
 		}
-		return b(x, w)
+		return rawHMACMD5(key, string)
 	}
 	if (typeof define === "function" && define.amd) {
 		define(function () {
-			return f
+			return md5
 		})
 	} else {
 		if (typeof module === "object" && module.exports) {
-			module.exports = f
+			module.exports = md5
 		} else {
-			g.md5 = f
+			$.md5 = md5
 		}
 	}
 }(this));
@@ -323,9 +322,13 @@ Ext.define("ans.VideoJs", {
 		}];
 		if (params.cdn) {
 			try {
-				top.window.app && top.window.app == 2 ? cdn = cdn.concat(params.cdn) : cdn = cdn.concat(params.cdn).sort(function (o1, o2) {
-					return o1.indexorder - o2.indexorder
-				})
+				if (top.window.app && top.window.app == 2) {
+					cdn = cdn.concat(params.cdn)
+				} else {
+					cdn = cdn.concat(params.cdn).sort(function (o1, o2) {
+						return o1.indexorder - o2.indexorder
+					})
+				}
 			} catch (e) {
 				cdn = cdn.concat(params.cdn)
 			}
@@ -347,22 +350,28 @@ Ext.define("ans.VideoJs", {
 					res: src.res
 				}
 			}
-			return r.ispublic ? useM3u8 ? {
-				src: m3u8(params.objectId, src.resolution, r.url),
-				type: "application/x-mpegURL",
-				res: src.res
-			} : {
-				src: r.url + file,
-				type: "video/mp4",
-				res: src.res
-			} : useM3u8 ? {
-				src: m3u8(params.objectId, src.resolution, r.url + sdomain),
-				type: "application/x-mpegURL",
-				res: src.res
-			} : {
-				src: r.url + sdomain + file,
-				type: "video/mp4",
-				res: src.res
+			if (r.ispublic) {
+				return useM3u8 ? {
+					src: m3u8(params.objectId, src.resolution, r.url),
+					type: "application/x-mpegURL",
+					res: src.res
+				}
+					: {
+						src: r.url + file,
+						type: "video/mp4",
+						res: src.res
+					}
+			} else {
+				return useM3u8 ? {
+					src: m3u8(params.objectId, src.resolution, r.url + sdomain),
+					type: "application/x-mpegURL",
+					res: src.res
+				}
+					: {
+						src: r.url + sdomain + file,
+						type: "video/mp4",
+						res: src.res
+					}
 			}
 		}
 		var sources = [],
@@ -370,34 +379,42 @@ Ext.define("ans.VideoJs", {
 		if (!params.rootPath) {
 			params.rootPath = ""
 		}
-		params.http && sources.push({
-			src: params.http,
-			type: "video/mp4",
-			label: "标清",
-			resolution: "sd",
-			res: 360
-		})
-		params.httphd && sources.push({
-			src: params.httphd,
-			type: "video/mp4",
-			label: "高清",
-			resolution: "hd",
-			res: 720
-		})
-		params.httpshd && sources.push({
-			src: params.httpshd,
-			type: "video/mp4",
-			label: "超高清",
-			resolution: "shd",
-			res: 1080
-		})
-		params.httpmd && sources.push({
-			src: params.httpmd,
-			type: "video/mp4",
-			label: "极速",
-			resolution: "md",
-			res: 240
-		})
+		if (params.http) {
+			sources.push({
+				src: params.http,
+				type: "video/mp4",
+				label: "标清",
+				resolution: "sd",
+				res: 360
+			})
+		}
+		if (params.httphd) {
+			sources.push({
+				src: params.httphd,
+				type: "video/mp4",
+				label: "高清",
+				resolution: "hd",
+				res: 720
+			})
+		}
+		if (params.httpshd) {
+			sources.push({
+				src: params.httpshd,
+				type: "video/mp4",
+				label: "超高清",
+				resolution: "shd",
+				res: 1080
+			})
+		}
+		if (params.httpmd) {
+			sources.push({
+				src: params.httpmd,
+				type: "video/mp4",
+				label: "极速",
+				resolution: "md",
+				res: 240
+			})
+		}
 		if (sources.length == 1) {
 			var cdnItem = sources[0];
 			cdnItem.label = "高清"
@@ -418,11 +435,8 @@ Ext.define("ans.VideoJs", {
 				if (typeof top.hasJobLimit != "undefined" && top.hasJobLimit === true && isUnFinishJob()) {
 					return
 				}
-				if (typeof top.videoTimeLimit != "undefined" && top.videoTimeLimit === true && isUnFinishJob()) {
-					return
-				}
-			} catch (e) {
-				console.log(e);
+			} catch (error) {
+				console.log(error);
 			}
 			if (disableLog) {
 				return
@@ -453,12 +467,8 @@ Ext.define("ans.VideoJs", {
 								top.allowNextVideo = false;
 								top.hasJobLimit = true
 							}
-							if (typeof d.videoTimeLimit != "undefined" && d.videoTimeLimit === true) {
-								top.allowNextVideo = false;
-								top.videoTimeLimit = true
-							}
-						} catch (e) {
-							console.log(e)
+						} catch (error) {
+							console.log(error)
 						}
 						callback()
 					}
@@ -491,8 +501,6 @@ Ext.define("ans.VideoJs", {
 				if (timeArr.length == 2) {
 					playTime = parseInt(timeArr[1]) * 1000
 				}
-			} else {
-				playTime = currentTimeSec * 1000;
 			}
 			if (playTime == params.duration * 1000 && isdrag == 2) {
 				return
@@ -586,8 +594,8 @@ Ext.define("ans.VideoJs", {
 									var_20220324_1.sendDataLog("ended");
 									var_20220324_1.playNextVideo(var_20220324_2.attachmentId);
 								}
-							} catch (e) {
-								console.log(e)
+							} catch (error) {
+								console.log(error)
 							}
 							window.proxy_completed && window.proxy_completed()
 						})
@@ -815,45 +823,64 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			};
 			g.on("play", function () {
 				try {
-					top.configFullScreen && reSizeVideoWindow();
-				} catch (e) {
-					console.log(e);
-				}
-				try {
 					if (typeof top.hasJobLimit != "undefined" && top.hasJobLimit === true && h.firstClick && isUnFinishJob()) {
 						h.firstClick = false;
 						g.pause();
-						checkJobCountLimit(g, 0);
-						return
-					}
-					if (typeof top.videoTimeLimit != "undefined" && top.videoTimeLimit === true && h.firstClick && isUnFinishJob()) {
-						h.firstClick = false;
-						g.pause();
-						checkJobCountLimit(g, 1);
+						checkJobCountLimit(g);
 						return;
 					}
-				} catch (e) {
-					console.log(e);
+				} catch (error) {
+					console.log(error);
 				}
 				h.isAlertTip = false;
-				h.chapterCapture == 0 || !h.isSupportFace ? (!g.ignorePlay ? (i("play", true),
-					g.ignoreSeek = true) : (g.ignorePlay = false,
-						g.ignoreSeek = false),
-					h.sendDataLog("play"),
-					h.receiveStudyLog(),
-					h.getDanmuList("play", g)) : h.chapterCapture == 1 && (h.timeCount == 0 ? h.isShowFaceCollection && !h.isPlay && (h.startCapture == 1 || typeof h.startCapture == "undefined") ? (h.faceCollection("play", g, h.chapterCollectionType),
-						g.pause()) : (!g.ignorePlay ? (i("play", true),
-							g.ignoreSeek = true) : (g.ignorePlay = false,
-								g.ignoreSeek = false),
-							h.sendDataLog("play"),
-							h.receiveStudyLog(),
-							h.getDanmuList("play", g),
-							(h.isShowFaceCollection && typeof h.playingCapture == "undefined" || h.playingCapture == 1 && h.playingLoopCapture == 0) && h.timer(g),
-							h.isShowFaceCollection && h.playAginCapture == 1 && g.ignorePlay && !h.isAginFace && (h.faceCollection("aginPlay", g, h.chapterCollectionType),
-								g.pause())) : ((h.isShowFaceCollection && typeof h.playingCapture == "undefined" || h.playingCapture == 1 && h.playingLoopCapture == 1) && h.timer(g),
-									h.isShowFaceCollection && h.playAginCapture == 1 && !g.ignorePlay && !h.isAginFace && (h.faceCollection("aginPlay", g, h.chapterCollectionType),
-										g.pause(),
-										h.againStartTime = h.sec_(g))));
+				if (h.chapterCapture == 0 || !h.isSupportFace) {
+					if (!g.ignorePlay) {
+						i("play", true);
+						g.ignoreSeek = true
+					} else {
+						g.ignorePlay = false;
+						g.ignoreSeek = false
+					}
+					h.sendDataLog("play");
+					h.receiveStudyLog();
+					h.getDanmuList("play", g)
+				} else {
+					if (h.chapterCapture == 1) {
+						if (h.timeCount == 0) {
+							if (h.isShowFaceCollection && !h.isPlay && (h.startCapture == 1 || typeof h.startCapture == "undefined")) {
+								h.faceCollection("play", g, h.chapterCollectionType);
+								g.pause()
+							} else {
+								if (!g.ignorePlay) {
+									i("play", true);
+									g.ignoreSeek = true
+								} else {
+									g.ignorePlay = false;
+									g.ignoreSeek = false
+								}
+								h.sendDataLog("play");
+								h.receiveStudyLog();
+								h.getDanmuList("play", g);
+								if (h.isShowFaceCollection && typeof h.playingCapture == "undefined" || (h.playingCapture == 1 && h.playingLoopCapture == 0)) {
+									h.timer(g)
+								}
+								if (h.isShowFaceCollection && h.playAginCapture == 1 && g.ignorePlay && !h.isAginFace) {
+									h.faceCollection("aginPlay", g, h.chapterCollectionType);
+									g.pause()
+								}
+							}
+						} else {
+							if (h.isShowFaceCollection && typeof h.playingCapture == "undefined" || (h.playingCapture == 1 && h.playingLoopCapture == 1)) {
+								h.timer(g)
+							}
+							if (h.isShowFaceCollection && h.playAginCapture == 1 && !g.ignorePlay && !h.isAginFace) {
+								h.faceCollection("aginPlay", g, h.chapterCollectionType);
+								g.pause();
+								h.againStartTime = h.sec_(g)
+							}
+						}
+					}
+				}
 			});
 			g.on("seeked", function () {
 				if (f.enableFastForward != 1 && !g.switchStatus) {
@@ -863,22 +890,34 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 						g.currentTime(m)
 					}
 				}
-				!g.ignoreSeek ? i("drag", true, c + "-" + h.sec_(g)) : g.ignoreSeek = false,
-					c = h.sec_(g),
-					g.ignorePlay = true,
-					delete g.switchStatus;
+				if (!g.ignoreSeek) {
+					i("drag", true, c + "-" + h.sec_(g))
+				} else {
+					g.ignoreSeek = false
+				}
+				c = h.sec_(g);
+				g.ignorePlay = true;
+				delete g.switchStatus
 			});
 			g.on("pause", function () {
-				!g.ignorePause ? (i("pause", true),
-					g.ignorePlay = false,
-					g.ignoreSeek = false) : g.ignorePause = false,
-					h.sendDataLog("pause"),
-					h.getDanmuList("pause", g);
+				if (!g.ignorePause) {
+					i("pause", true);
+					g.ignorePlay = false;
+					g.ignoreSeek = false
+				} else {
+					g.ignorePause = false
+				}
+				h.sendDataLog("pause");
+				h.getDanmuList("pause", g)
 			});
 			g.on("timeupdate", function () {
-				h.sec_(g) - h.againStartTime > 2 && (h.isAginFace = false);
-				h.isShowFaceCollection && h.chapterCapture == 1 && h.playingCapture == 1 && h.playingLoopCapture == 1 && h.sec_(g) == h.loopCaptureInterval && !h.playingFace && (h.faceCollection("playing", g, h.chapterCollectionType),
-					g.pause());
+				if (h.sec_(g) - h.againStartTime > 2) {
+					h.isAginFace = false
+				}
+				if (h.isShowFaceCollection && h.chapterCapture == 1 && h.playingCapture == 1 && h.playingLoopCapture == 1 && h.sec_(g) == h.loopCaptureInterval && !h.playingFace) {
+					h.faceCollection("playing", g, h.chapterCollectionType);
+					g.pause()
+				}
 				if (typeof parent.videoTrialDuration != "undefined" && parent.videoTrialDuration != "-1") {
 					var l = parseInt(parent.videoTrialDuration) * 60;
 					if (l < h.sec_(g) && !h.isAlertTip) {
@@ -902,7 +941,9 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			});
 			g.on("ended", function () {
 				h.playTimer && clearInterval(h.playTimer);
-				h.isShowFaceCollection && !h.isEnd && h.chapterCapture == 1 && h.endCapture == 1 && h.faceCollection("ended", g, h.chapterCollectionType)
+				if (h.isShowFaceCollection && !h.isEnd && h.chapterCapture == 1 && h.endCapture == 1) {
+					h.faceCollection("ended", g, h.chapterCollectionType)
+				}
 				i("ended", true);
 			})
 		},
@@ -913,17 +954,23 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 			return new Date().getTime()
 		},
 		isSendLog: function (c) {
-			c && (this.isSendLog_ = !!c);
+			if (c) {
+				this.isSendLog_ = !!c
+			}
 			return this.isSendLog_
 		},
 		sendDataLog: function (e) {
-			var c = e == "pause" || e == "end" ? 2 : 1;
-			typeof sendReadZTMediaLog != "undefined" && sendReadZTMediaLog(c)
+			var c = (e == "pause" || e == "end") ? 2 : 1;
+			if (typeof (sendReadZTMediaLog) != "undefined") {
+				sendReadZTMediaLog(c)
+			}
 		},
 		receiveStudyLog: function () {
-			typeof receiveStudyLog != "undefined" && setTimeout(function () {
-				receiveStudyLog()
-			}, 50)
+			if (typeof (receiveStudyLog) != "undefined") {
+				setTimeout(function () {
+					receiveStudyLog()
+				}, 50)
+			}
 		},
 		getDanmuList: function (e, c) {
 			if (!this.isShowDanmu_) {
@@ -937,9 +984,11 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				}, 200);
 				return
 			}
-			typeof getDanmuByTime != "undefined" && setTimeout(function () {
-				getDanmuByTime(e, f)
-			}, 200);
+			if (typeof (getDanmuByTime) != "undefined") {
+				setTimeout(function () {
+					getDanmuByTime(e, f)
+				}, 200);
+			}
 			if (f < this.damuLastGetTime) {
 				return
 			}
@@ -950,36 +999,50 @@ Object.freeze(ans.VideoJs.prototype.params2VideoOpt);
 				return
 			}
 			var e = this.sec_(c);
-			typeof danmuPlay != "undefined" && danmuPlay(e)
+			if (typeof (danmuPlay) != "undefined") {
+				danmuPlay(e)
+			}
 		},
 		timer: function (c) {
 			var e = this;
 			this.playTimer = setInterval(function () {
 				e.timeCount++;
-				e.timeCount >= e.captureInterval && (e.isPlay = false,
-					c.pause(),
-					e.faceCollection("pause", c, e.chapterCollectionType));
+				if (e.timeCount >= e.captureInterval) {
+					e.isPlay = false;
+					e.faceCollection("pause", c, e.chapterCollectionType)
+				}
 			}, 1000)
 		},
 		faceCollection: function (e, c, f) {
-			e == "play" && this.timeCount == 0 ? typeof startFaceCollection != "undefined" && startFaceCollection(c, f, this) : e == "pause" ? (this.playTimer && clearInterval(this.playTimer),
-				!this.isPlay && this.timeCount >= this.captureInterval && (typeof startFaceCollection != "undefined" && startFaceCollection(c, f, this),
-					this.timeCount = 0)) : e == "ended" ? (this.playTimer && clearInterval(this.playTimer),
-						typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
-							this.isEnd = true),
-						this.timeCount = 0) : e == "playing" ? typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
-							this.playingFace = true) : e == "aginPlay" && (typeof startFaceCollection != "undefined" && (startFaceCollection(c, f, this),
-								this.isAginFace = true));
+			if (e == "play" && this.timeCount == 0 && typeof (startFaceCollection) != "undefined") {
+				startFaceCollection(c, f, this)
+			} else if (e == "pause") {
+				this.playTimer && clearInterval(this.playTimer);
+				if (!this.isPlay && this.timeCount >= this.captureInterval) {
+					if (typeof (startFaceCollection) != "undefined") {
+						startFaceCollection(c, f, this)
+					}
+					this.timeCount = 0
+				}
+			} else if (e == "ended") {
+				this.playTimer && clearInterval(this.playTimer);
+				if (typeof (startFaceCollection) != "undefined") {
+					startFaceCollection(c, f, this);
+					this.isEnd = true
+				}
+				this.timeCount = 0
+			} else if (e == "playing" && typeof (startFaceCollection) != "undefined") {
+				startFaceCollection(c, f, this);
+				this.playingFace = true
+			} else if (e == "aginPlay" && typeof (startFaceCollection) != "undefined") {
+				startFaceCollection(c, f, this);
+				this.isAginFace = true
+			}
 		},
 		playNextVideo: function (c) {
-			if (typeof chapterPlayNextVideo != "undefined") {
+			if (typeof (chapterPlayNextVideo) != "undefined") {
 				if (typeof top.allowNextVideo != "undefined" && top.allowNextVideo === false) {
-					if (top.hasJobLimit === true) {
-						top.showJobLimitTip()
-					}
-					else {
-						top.showVideoTimeLimitTip()
-					}
+					top.showJobLimitTip();
 					return
 				}
 				chapterPlayNextVideo(c)
@@ -997,7 +1060,7 @@ Ext.define("ans.videojs.VideoQuiz", {
 	extend: "Ext.Component",
 	xtype: "videoquiz",
 	cls: "ans-videoquiz",
-	renderTpl: ['<div class="tkTopic">', '<tpl if="dtype==\x27InteractiveQuiz\x27">', '<div class="tkTopic_numbar fr">共 {interactiveQuestionCount} 题<span id="rightAnswerNum">，已答对 <i id="rightNum"></i> 题</span></div>', '</tpl>', '<div class="tkTopic_title">[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" <tpl if="parent.dtype==\x27InteractiveQuiz\x27">{[this.getChecked(parent.answerContent, values.name, parent.dtype)]}</tpl> name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', '{name}、{description}', "</label></li>", "</tpl>", '</ul>', "</div>", '</div>', '<div class="tkTopic_oper">', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submit">提交</a>', `<a class="ans-videoquiz -continue bntLinear fr" id="videoquiz -continue"><tpl if="dtype=='InteractiveQuiz'">继续学习<tpl else>继续</tpl></a>`, `<tpl if="dtype=='InteractiveQuiz'">`, '<a class=\x22bntWhiteBorder ans-videoquiz-back fr\x22 id=\x22knowledgeBack\x22>知识点回看</a>', '</tpl>', '<tpl if=\x22dtype==\x27InteractiveQuiz\x27\x22><span id=\x22spanHas\x22 class=\x22rightInfo\x22></span><tpl else><span class=\x22spanHas fr\x22 id=\x22spanHas\x22>回答正确</span></tpl>', '<span class=\x22spanNot fr\x22 id=\x22spanNot\x22><tpl if=\x22dtype==\x27InteractiveQuiz\x27\x22>真遗憾，再接再厉！<tpl else>回答错误</tpl></span>', `<span class="spanNotBack fr" id="spanNotBack"><tpl if="dtype=="InteractiveQuiz"">真遗憾，再接再厉！<tpl else>回答错误，</tpl>回看 {errorBackTime} 分钟</span>`, `<tpl if="dtype=="InteractiveQuiz"">`, `<span class="spanNotBack fr" id="spanNotBackPoint">真遗憾，再接再厉！</span>`, `<a class="spanHref fl" href="javascript:" id="viewAnalysis">查看解析</a>`, "</div>", `<div class="tkParsing" id="tkParsing">`, `<a class="tkParsing_dele" href="javascript:"></a>`, `<div class="tkParsing_screll tkParsing_con" id="tkParsing_con"></div>`, "</tpl>", "</div>", "</div>", {
+	renderTpl: ['<div class="tkTopic">', '<div class="tkTopic_title">[{questionType}]</div>', '<div class="tkTopic_con tkScroll">', '<div class="tkItem">', '<div class="tkItem_title">{description}</div>', '<ul class="tkItem_ul">', '<tpl for="options">', '<li class="ans-videoquiz-opt"><label>', '<span class="tkRadio"><input type="{[parent.questionType=="多选题"?"checkbox":"radio"]}" name="ans-videoquiz-opt" value="{isRight}"/><i></i></span>', "{name}、{description}", "</label></li>", "</tpl> ", "</ul>", "</div>", "</div>", '<div class="tkTopic_oper">', '<a class="ans-videoquiz-submit bntLinear fr" id="videoquiz-submit">提交</a>', '<a class="ans-videoquiz-continue bntLinear fr" id="videoquiz-continue">继续</a>', '<span class="spanHas fr" id="spanHas">回答正确</span>', '<span class="spanNot fr" id="spanNot">回答错误</span>', '<span class="spanNotBack fr" id="spanNotBack">回答错误，回看 {errorBackTime} 分钟</span>', "</div>", "</div>", {
 		getChecked: function (q, w, e) {
 			return q.indexOf(w) != -1 && e == "InteractiveQuiz" ? 'checked="checked"' : "";
 		}
@@ -1015,21 +1078,23 @@ Ext.define("ans.videojs.VideoQuiz", {
 		var b = this,
 			d = b.renderData,
 			e = b.quizRightCountUrl;
-		typeof e != "undefined" && Ext.Ajax.request({
-			url: e,
-			params: {
-				eventid: d.resourceId,
-				memberinfo: d.memberinfo
-			},
-			method: "get",
-			success: function (f) {
-				var g = Ext.decode(f.responseText);
-				if (g.status) {
-					Ext.get("rightNum").setHTML(g.rightAnswerCount);
-					Ext.get("rightAnswerNum").setStyle("display", "inline-block")
+		if (typeof e != "undefined") {
+			Ext.Ajax.request({
+				url: e,
+				params: {
+					eventid: d.resourceId,
+					memberinfo: d.memberinfo
+				},
+				method: "get",
+				success: function (f) {
+					var g = Ext.decode(f.responseText);
+					if (g.status) {
+						Ext.get("rightNum").setHTML(g.rightAnswerCount);
+						Ext.get("rightAnswerNum").setStyle("display", "inline-block")
+					}
 				}
-			}
-		});
+			});
+		}
 		b.callParent(arguments);
 		var c = b.scrollEl;
 		var a = $(c.dom).niceScroll({
@@ -1043,21 +1108,11 @@ Ext.define("ans.videojs.VideoQuiz", {
 		b.submitEl.on("click", function () {
 			if (b.checkResult()) {
 				if (Ext.get("videoquiz-continue").getStyle("display") == "none") {
-					try {
-						top.configFullScreen && exitMediumSizeWindow();
-					} catch (err) {
-						console.log(err);
-					}
 					b.fireEvent("continue")
 				}
 			}
 		});
 		b.continueEl.on("click", function () {
-			try {
-				top.configFullScreen && exitMediumSizeWindow();
-			} catch (err) {
-				console.log(err);
-			}
 			b.fireEvent("continue")
 		});
 		b.backEl && b.backEl.on("click", function () {
@@ -1085,16 +1140,34 @@ Ext.define("ans.videojs.VideoQuiz", {
 			(k.value == "true" && !k.checked) || (k.value == "false" && k.checked) && (e = false);
 			k.checked && c.push(b[j].name);
 		});
-		!e ? g.errorBackTime && g.errorBackTime > 0 ? (Ext.get("spanNotBack").setStyle("display", "block"),
-			Ext.get("videoquiz-submit").setStyle("display", "none"),
-			d == "InteractiveQuiz" ? Ext.get("knowledgeBack").setStyle("display", "block") : Ext.get("videoquiz-continue").setStyle("display", "block")) : d == "InteractiveQuiz" && g.errorBack == 1 && g.eBstartPoint != "" ? (Ext.get("spanNotBackPoint").setStyle("display", "block"),
-				Ext.get("knowledgeBack").setStyle("display", "block")) : Ext.get("spanNot").setStyle("display", "block") : (Ext.get("spanHas").setStyle("display", "block"),
-					d == "InteractiveQuiz" && (Ext.get("videoquiz-continue").setStyle("display", "block"),
-						Ext.get("knowledgeBack").setStyle("display", "none"),
-						Ext.get("videoquiz-submit").setStyle("display", "none"),
-						Ext.get("spanNot").setStyle("display", "none"),
-						Ext.get("spanNotBack").setStyle("display", "none"),
-						Ext.get("spanNotBackPoint").setStyle("display", "none")));
+		if (!e) {
+			if (g.errorBackTime && g.errorBackTime > 0) {
+				Ext.get("spanNotBack").setStyle("display", "block");
+				Ext.get("videoquiz-submit").setStyle("display", "none");
+				if (d == "InteractiveQuiz") {
+					Ext.get("knowledgeBack").setStyle("display", "block")
+				} else {
+					Ext.get("videoquiz-continue").setStyle("display", "block")
+				}
+			} else {
+				if (d == "InteractiveQuiz" && g.errorBack == 1 && g.eBstartPoint != "") {
+					Ext.get("spanNotBackPoint").setStyle("display", "block");
+					Ext.get("knowledgeBack").setStyle("display", "block")
+				} else {
+					Ext.get("spanNot").setStyle("display", "block")
+				}
+			}
+		} else {
+			Ext.get("spanHas").setStyle("display", "block");
+			if (d == "InteractiveQuiz") {
+				Ext.get("videoquiz-continue").setStyle("display", "block");
+				Ext.get("knowledgeBack").setStyle("display", "none");
+				Ext.get("videoquiz-submit").setStyle("display", "none");
+				Ext.get("spanNot").setStyle("display", "none");
+				Ext.get("spanNotBack").setStyle("display", "none");
+				Ext.get("spanNotBackPoint").setStyle("display", "none")
+			}
+		}
 		if (typeof a != "undefined") {
 			var l = c.join(",");
 			Ext.Ajax.request({
@@ -1110,10 +1183,16 @@ Ext.define("ans.videojs.VideoQuiz", {
 					g.answerContent = l;
 					var n = Ext.decode(m.responseText);
 					if (n.status) {
-						d == "InteractiveQuiz" && (Ext.get("rightNum").setHTML(n.rightAnswerCount),
-							Ext.get("rightAnswerNum").setStyle("display", "inline-block"));
+						if (d == "InteractiveQuiz") {
+							Ext.get("rightNum").setHTML(n.rightAnswerCount);
+							Ext.get("rightAnswerNum").setStyle("display", "inline-block")
+						};
 						if (n.isRight && d == "InteractiveQuiz") {
-							typeof n.showTip != "undefined" && n.showTip ? Ext.get("spanHas").setHTML("<span class=\x22spanHas fr\x22 style=\x27display:block\x27><span id=\x22InteractiveQuizTip\x22>恭喜你，答对了！你的答题水准超过了" + n.percent + "%的同学</span></span>") : Ext.get("spanHas").setHTML(`<span class="spanHas fr" style="display:block"><span id="InteractiveQuizTip">恭喜你，答对了！</span></span>`);
+							if (typeof n.showTip != "undefined" && n.showTip) {
+								Ext.get("spanHas").setHTML("<span class='spanHas fr' style='display:block'><span id='InteractiveQuizTip'>恭喜你，答对了！你的答题水准超过了" + n.percent + "%的同学</span></span>")
+							} else {
+								Ext.get("spanHas").setHTML("<span class='spanHas fr' style='display:block'><span id='InteractiveQuizTip'>恭喜你，答对了！</span></span>")
+							}
 							if (n.testAnalysis) {
 								Ext.get("tkParsing_con").setHTML("解析：" + n.testAnalysis);
 								Ext.get("tkParsing").setStyle("display", "inline-block");
@@ -1132,7 +1211,9 @@ Ext.define("ans.videojs.VideoQuiz", {
 					}
 				}
 			});
-			!e && f.onerror && d != "InteractiveQuiz" && f.onerror()
+			if (!e && f.onerror && d != "InteractiveQuiz") {
+				f.onerror()
+			}
 		} else {
 			if (!e) {
 				Ext.Ajax.request({
@@ -1175,11 +1256,6 @@ Ext.define("ans.videojs.VideoImg", {
 			a.fireEvent("continue")
 		});
 		a.closeEl.on("click", function () {
-			try {
-				top.configFullScreen && exitMediumSizeWindow()
-			} catch (err) {
-				console.log(err)
-			}
 			a.fireEvent("continue")
 		})
 	}
@@ -1188,7 +1264,7 @@ Ext.define("ans.videojs.VideoAnnotation", {
 	extend: "Ext.Component",
 	xtype: "videoannotation",
 	cls: "ans-videoannotation",
-	renderTpl: ['<div class=\x22vidNota\x22>', `<div class="vidNota_title"><h2 class="vidNota_h2">[批注]</h2><a class="vidNota_close" href="javascript:;"></a></div>`, `<div class="vidNota_con" id="pizhuScroll" tabindex="1" style="overflow:hidden; outline:none;">`, "<p>{description}</p>", "</div>", '</div>'],
+	renderTpl: ['<div class="vidNota">', '<div class="vidNota_title"><h2 class="vidNota_h2">[批注]</h2><a class="vidNota_close" href="javascript:;"></a></div>', '<div class="vidNota_con" id="pizhuScroll" tabindex="1" style="overflow: hidden; outline: none;">', "<p>{description}</p>", "</div>", "</div>"],
 	renderSelectors: {
 		closeEl: "a.vidNota_close",
 		contentEl: "div.vidNota_con"
@@ -1216,7 +1292,7 @@ Ext.define("ans.videojs.VideoPpt", {
 	cls: "ans-videoppt",
 	width: "100%",
 	model: false,
-	renderTpl: [`<div class="sp_video_ppt_pic" id="sp_video_ppt_pic">`, `<img src="{ src }" class="sp_video_img" style="width:100 %; "/>`, `<a class="sp_size_big" id="sp_size_big" href="javascript:; "></a>`, `<a class="sp_size_small" href="javascript:; " style="display:none; " id="sp_size_small"></a>`, "</div>"],
+	renderTpl: ['<div class="sp_video_ppt_pic" id="sp_video_ppt_pic">', '<img src="{src}" class="sp_video_img" style="width: 100%;"/>', '<a class="sp_size_big" id="sp_size_big" href="javascript:;"></a>', '<a class="sp_size_small" href="javascript:;" style="display:none;" id="sp_size_small"></a>', "</div>"],
 	renderSelectors: {
 		pptPicEl: "div.sp_video_ppt_pic",
 		sizeBigEl: "a.sp_size_big",
@@ -1333,7 +1409,13 @@ Ext.define("ans.videojs.TimelineObjects", {
 				var o = 0,
 					y = e.eBstartPoint.split(":"),
 					x = y.length;
-				x > 0 && (x == 1 ? o = parseInt(y[0]) * 60 : x == 2 && (o = parseInt(y[0]) * 60 + parseInt(y[1])));
+				if (x > 0) {
+					if (x == 1) {
+						o = parseInt(y[0]) * 60
+					} else if (x == 2) {
+						o = parseInt(y[0]) * 60 + parseInt(y[1])
+					}
+				}
 				k = function () {
 					m.switchStatus = true;
 					m.currentTime(o)
@@ -1354,7 +1436,11 @@ Ext.define("ans.videojs.TimelineObjects", {
 				return
 			}
 			var a = e.url;
-			e.thumb ? a = e.thumb + e.pageNo + ".png" : a = a.replace(/swfv2\/.*$/, "thumb/" + e.fp + ".png");
+			if (e.thumb) {
+				a = e.thumb + e.pageNo + ".png"
+			} else {
+				a = a.replace(/swfv2\/.*$/, "thumb/" + e.fp + ".png")
+			}
 			var f = {
 				src: a
 			};
@@ -1363,10 +1449,12 @@ Ext.define("ans.videojs.TimelineObjects", {
 				renderData: f
 			})
 		}
-		b == "SyncAnnotationEvent" && (l = j.add({
-			xtype: "videoannotation",
-			renderData: e
-		}))
+		if (b == "SyncAnnotationEvent") {
+			l = j.add({
+				xtype: "videoannotation",
+				renderData: e
+			})
+		}
 		if (!l) {
 			return
 		}
@@ -1378,17 +1466,16 @@ Ext.define("ans.videojs.TimelineObjects", {
 		g && m.pause()
 	},
 	showModel: function (a) {
-		try {
-			top.configFullScreen && mediumSizeWindow()
-		} catch (err) {
-			console.log(err)
-		}
 		var c = this;
 		c.show();
-		a ? (c.removeCls("ans-timelineobjects-autosize"),
-			c.setAutoScroll(true),
-			c.bg.show()) : (c.addCls("ans-timelineobjects-autosize"),
-				c.setAutoScroll(false));
+		if (a) {
+			c.removeCls("ans-timelineobjects-autosize");
+			c.setAutoScroll(true);
+			c.bg.show()
+		} else {
+			c.addCls("ans-timelineobjects-autosize");
+			c.setAutoScroll(false)
+		}
 	},
 	hide: function () {
 		this.callParent(arguments);
@@ -1402,7 +1489,10 @@ Ext.define("ans.videojs.TimelineObjects", {
 			f = c.objects[c.current],
 			b = f.style,
 			g = f.datas[0];
-		e >= g.startTime && (c.current++, setTimeout(function () { c.showObject(a, b, g) }, 30))
+		if (e >= g.startTime) {
+			c.current++;
+			c.showObject(a, b, g)
+		}
 	},
 	resetTime: function (b, e) {
 		var c = this,
@@ -1541,13 +1631,13 @@ Ext.define("ans.videojs.TimelineObjects", {
 							}
 						}
 						function func_20220324_1(var_20220324_9) {
-							var var_20220324_10 = "<div class=\x22zsCloud_box\x22><h2 class=\x22zsCloud_seltime\x22>选择时间</h2><div class=\x22zsCloud_div\x22><div class=\x22zsCloud_div_list\x22>";
+							var var_20220324_10 = '<div class="zsCloud_box"><h2 class="zsCloud_seltime">选择时间</h2><div class="zsCloud_div"><div class="zsCloud_div_list">';
 							for (var i = 0; i < var_20220324_9.length; i++) {
 								var var_20220324_11 = var_20220324_9[i],
 									var_20220324_12 = Ext.fly(topicContent.elements[0]).select(".topicId" + var_20220324_11.topicid + ":not(.markertime)"),
 									var_20220324_13 = videojs.formatTime(var_20220324_11.time);
 								var_20220324_12 && var_20220324_12.elements[0] && var_20220324_12.elements[0].parentElement.remove();
-								var_20220324_10 += '<div class="zsCloud_item topicId' + var_20220324_11.topicid + '" data-marker-time="' + var_20220324_11.time + '" title="' + var_20220324_13 + '" onclick="markersPlayer(this)">' + var_20220324_13 + "</div>";
+								var_20220324_10 += '<div class="zsCloud_item topicId' + var_20220324_11.topicid + '" data-marker-time="' + var_20220324_11.time + '" title="' + var_20220324_13 + '"onclick ="markersPlayer(this)">' + var_20220324_13 + "</div>";
 							}
 							var_20220324_10 += "</div></div></div>";
 							return var_20220324_10;
@@ -1562,18 +1652,27 @@ Ext.define("ans.videojs.TimelineObjects", {
 								var markerHtml = "";
 								if (var_20220324_15) {
 									if (var_20220324_15.length == 1) {
-										var marker = var_20220324_15[0],
-											topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)"),
-											title = videojs.formatTime(marker.time);
-										topic && topic.elements[0] && topic.elements[0].parentElement.remove(),
-											markerHtml = "<li><span class=\x27topicId" + marker.topicid + " markertime' data-marker-time='" + marker.time + "' title='" + title + "\x27 onclick=\x27markersPlayer(this)\x27>" + marker.text + "</span></li>";
-									} else
-										markerHtml = "<li class=\x22zsCloud_select\x22><span class=\x22zsCloud_span\x22>" + var_20220324_14 + "</span>",
-											var_20220324_15 && var_20220324_15.length > 0 ? markerHtml += func_20220324_1(var_20220324_15) : markerHtml += "</li>";
+										var marker = var_20220324_15[0];
+										var topic = Ext.fly(topicContent.elements[0]).select(".topicId" + marker.topicid + ":not(.markertime)");
+										var title = videojs.formatTime(marker.time);
+										if (topic && topic.elements[0]) {
+											topic.elements[0].parentElement.remove()
+										}
+										markerHtml = '<li><span class="topicId' + marker.topicid + ' markertime" data-marker-time="' + marker.time + "' title='" + title + "' onclick='markersPlayer(this)'>" + marker.text + "</span></li>";
+									} else {
+										markerHtml = '<li class="zsCloud_select"><span class="zsCloud_span">' + var_20220324_14 + '</span>';
+										if (var_20220324_15 && var_20220324_15.length > 0) {
+											markerHtml += func_20220324_1(var_20220324_15)
+										} else {
+											markerHtml += "</li>"
+										}
+									}
 								}
-								insertLocaltion ?
-									insertLocaltion = Ext.DomHelper.insertHtml("afterEnd", insertLocaltion.elements[0], markerHtml) :
-									insertLocaltion = Ext.DomHelper.insertHtml("afterBegin", topicContent.elements[0], markerHtml);
+								if (insertLocaltion) {
+									insertLocaltion = Ext.DomHelper.insertHtml("afterEnd", insertLocaltion.elements[0], markerHtml)
+								} else {
+									insertLocaltion = Ext.DomHelper.insertHtml("afterBegin", topicContent.elements[0], markerHtml)
+								}
 								insertLocaltion = Ext.fly(insertLocaltion).select("")
 							}
 						}
@@ -1666,28 +1765,51 @@ Ext.define("ans.videojs.TimelineObjects", {
 					}, true)
 				};
 			player.ready(function () {
-				subtitleUrl && Ext.Ajax.request({
-					url: subtitleUrl,
-					success: function (resp) {
-						if (resp.status != 200) {
-							return
+				if (subtitleUrl) {
+					Ext.Ajax.request({
+						url: subtitleUrl,
+						success: function (resp) {
+							if (resp.status != 200) {
+								return
+							}
+							eval("var subs=" + resp.responseText);
+							var index = 0,
+								enIndex = 0;
+							if (subs.length > 0) {
+								Ext.each(subs, function (o) {
+									if (options.translate == 1 && o.name == "English") {
+										o.selected = true;
+										enIndex = index
+									} else {
+										o.selected = false
+									}
+									addSub(o.name, toVtt(o.url), o.selected);
+									index++
+								})
+							}
+							if (options.translate == 1) {
+								Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").setHTML("翻译");
+								Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").addCls("vjs-hide-content")
+							}
+							setTimeout(function () {
+								var tracks = player.textTracks();
+								if (options.translate == 1) {
+									if (tracks && tracks[enIndex]) {
+										tracks[enIndex].mode = "showing"
+									} else {
+										if (tracks && tracks[0]) {
+											tracks[0].mode = "showing"
+										}
+									}
+								} else {
+									if (tracks && tracks[0]) {
+										tracks[0].mode = "showing"
+									}
+								}
+							}, 500)
 						}
-						eval("var subs=" + resp.responseText);
-						var index = 0, enIndex = 0;
-						subs.length > 0 && Ext.each(subs, function (o) {
-							options.translate == 1 && o.name == "English" ? (o.selected = true,
-								enIndex = index) : o.selected = false,
-								addSub(o.name, toVtt(o.url), o.selected),
-								index++;
-						});
-						options.translate == 1 && (Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").setHTML("翻译"),
-							Ext.select(".vjs-subs-caps-button .vjs-icon-placeholder").addCls("vjs-hide-content"));
-						setTimeout(function () {
-							var tracks = player.textTracks();
-							options.translate == 1 ? tracks && tracks[enIndex] ? tracks[enIndex].mode = "showing" : tracks && tracks[0] && (tracks[0].mode = "showing") : tracks && tracks[0] && (tracks[0].mode = "showing");
-						}, 0x1f4)
-					}
-				})
+					})
+				}
 				var settings = player.textTrackSettings;
 				settings.setValues({
 					backgroundColor: "#000",
@@ -1704,7 +1826,7 @@ Ext.define("ans.videojs.ErrorDisplay", {
 	extend: "Ext.Component",
 	xtype: "vjserrdisplay",
 	cls: "ans-vjserrdisplay",
-	renderTpl: ['<div class=\x22ans-vjserrdisplay-title\x22>{errorMsg}</div>', `<ul class="ans-vjserrdisplay-opts">`, '您可以尝试其他线路:', '<tpl for=\x22playlines\x22>', `<li class="ans-vjserrdisplay-opt"><label>`, '<input type=\x22radio\x22 name=\x22ans-vjserrdisplay-opt\x22 {[xindex-1===parent.selectedIndex?\x22checked disabled\x22:\x22\x22]}>', "{label}", "</label></li>", "</tpl>", "</ul>"],
+	renderTpl: ['<div class="ans-vjserrdisplay-title">{errorMsg}</div>', '<ul class="ans-vjserrdisplay-opts">', "您可以尝试其他线路: ", '<tpl for="playlines">', '<li class="ans-vjserrdisplay-opt"><label>', '<input type="radio" name="ans-vjserrdisplay-opt" {[xindex-1 === parent.selectedIndex ? "checked disabled":""]}>', "{label}", "</label></li>", "</tpl> ", "</ul>"],
 	renderSelectors: {
 		errorMsgEl: "div.ans-vjserrdisplay-title"
 	},
@@ -1718,7 +1840,11 @@ Ext.define("ans.videojs.ErrorDisplay", {
 			})
 		});
 		try {
-			typeof createVideoTask === "function" ? createVideoTask() : console.log("createVideoTask函数不存在！")
+			if (typeof (createVideoTask) === "function") {
+				createVideoTask()
+			} else {
+				console.log("createVideoTask函数不存在！")
+			}
 		} catch (c) { }
 	},
 	setErrorMsg: function (a) {
@@ -1738,8 +1864,10 @@ Ext.define("ans.videojs.ErrorNote", {
 		},
 		colse: function () {
 			b.prototype.colse.call(this);
-			me.ansErrorDisplay && (me.ansErrorDisplay.destroy(),
-				me.ansErrorDisplay = null)
+			if (me.ansErrorDisplay) {
+				me.ansErrorDisplay.destroy();
+				me.ansErrorDisplay = null
+			}
 		},
 		fill: function () {
 			b.prototype.fill.call(this);
@@ -1747,8 +1875,10 @@ Ext.define("ans.videojs.ErrorNote", {
 				i = g.player_,
 				h = i.options_.playlines,
 				e = Ext.query(".vjs-modal-dialog-content", g.el_)[0];
-			g.ansErrorDisplay && (g.ansErrorDisplay.destroy(),
-				delete g.ansErrorDisplay)
+			if (g.ansErrorDisplay) {
+				g.ansErrorDisplay.destroy();
+				delete g.ansErrorDisplay
+			}
 			if (!i.selectCDN || !h) {
 				g.ansErrorDisplay = Ext.create("ans.videojs.ErrorNote", {
 					renderTo: g.el_
@@ -1780,190 +1910,224 @@ Ext.define("ans.videojs.ErrorNote", {
 })();
 (function () {
 	var a = null;
-	typeof window.videojs === "undefined" && typeof require === "function" ? a = require("video.js") : a = window.videojs,
-		function (i, h) {
-			var g = {},
-				c,
-				k = {},
-				b = {};
-			function f(p, o, n, q) {
-				k = {
-					label: n,
-					sources: o
-				};
-				if (typeof q === "function") {
-					return q(p, o, n)
-				}
-				p.src(o.map(function (r) {
-					return {
-						src: r.src,
-						type: r.type,
-						res: r.res
-					}
-				}));
-				return p
+	if (typeof window.videojs === "undefined" && typeof require === "function") {
+		a = require("video.js")
+	} else {
+		a = window.videojs
+	}
+	(function (i, h) {
+		var g = {},
+			c,
+			k = {},
+			b = {};
+		function f(p, o, n, q) {
+			k = {
+				label: n,
+				sources: o
+			};
+			if (typeof q === "function") {
+				return q(p, o, n)
 			}
-			var l = h.getComponent("MenuItem");
-			var m = h.extend(l, {
-				constructor: function (p, o, q, n) {
-					this.onClickListener = q;
-					this.label = n;
-					l.call(this, p, o);
-					this.src = o.src;
-					this.on("click", this.onClick);
-					this.on("touchstart", this.onClick);
-					o.initialySelected && (this.showAsLabel(),
-						this.selected(true),
-						this.addClass("vjs-selected"));
-				},
-				showAsLabel: function () {
-					this.label && (this.label.innerHTML = this.options_.label)
-				},
-				onClick: function (q) {
-					this.onClickListener(this);
-					var p = this.player_.currentTime(),
-						n = this.player_.paused();
-					this.showAsLabel(),
-						this.addClass("vjs-selected");
-					!n && this.player_.bigPlayButton.hide();
-					typeof q !== "function" && typeof this.options_.customSourcePicker === "function" && (q = this.options_.customSourcePicker);
-					var o = "loadeddata";
-					this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash" && (o = "timeupdate"),
-						f(this.player_, this.src, this.options_.label, q).one(o, function () {
-							var r = this.player_;
-							r.switchStatus = true,
-								r.currentTime(p),
-								!n && r.play(),
-								r.trigger("resolutionchange");
-						});
+			p.src(o.map(function (r) {
+				return {
+					src: r.src,
+					type: r.type,
+					res: r.res
 				}
-			});
-			h.registerComponent("ResolutionMenuItem", m);
-			var j = h.getComponent("MenuButton");
-			var e = h.extend(j, {
-				constructor: function (q, o, r, n) {
-					this.sources = o.sources,
-						this.label = n,
-						this.label.innerHTML = o.initialySelectedLabel,
-						j.call(this, q, o, r),
-						this.controlText("Quality");
-					if (r.dynamicLabel)
-						this.el().appendChild(n);
-					else {
-						var p = document.createElement("span");
-						h.dom.addClass(p, "vjs-resolution-button-staticlabel"),
-							this.el().appendChild(p);
+			}));
+			return p
+		}
+		var l = h.getComponent("MenuItem");
+		var m = h.extend(l, {
+			constructor: function (p, o, q, n) {
+				this.onClickListener = q;
+				this.label = n;
+				l.call(this, p, o);
+				this.src = o.src;
+				this.on("click", this.onClick);
+				this.on("touchstart", this.onClick);
+				if (o.initialySelected) {
+					this.showAsLabel();
+					this.selected(true);
+					this.addClass("vjs-selected")
+				}
+			},
+			showAsLabel: function () {
+				if (this.label) {
+					this.label.innerHTML = this.options_.label
+				}
+			},
+			onClick: function (q) {
+				this.onClickListener(this);
+				var p = this.player_.currentTime();
+				var n = this.player_.paused();
+				this.showAsLabel();
+				this.addClass("vjs-selected");
+				if (!n) {
+					this.player_.bigPlayButton.hide()
+				}
+				if (typeof q !== "function" && typeof this.options_.customSourcePicker === "function") {
+					q = this.options_.customSourcePicker
+				}
+				var o = "loadeddata";
+				if (this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash") {
+					o = "timeupdate"
+				}
+				f(this.player_, this.src, this.options_.label, q).one(o, function () {
+					var r = this.player_;
+					r.switchStatus = true;
+					r.currentTime(p);
+					if (!n) {
+						r.play()
 					}
-				},
-				createItems: function () {
-					var o = [];
-					var q = (this.sources && this.sources.label) || {};
-					var p = function (r) {
-						o.map(function (s) {
-							s.selected(s === r);
-							s.removeClass("vjs-selected")
-						})
-					};
-					for (var n in q) {
-						q.hasOwnProperty(n) && (o.push(new m(this.player_, {
+					r.trigger("resolutionchange")
+				})
+			}
+		});
+		h.registerComponent("ResolutionMenuItem", m);
+		var j = h.getComponent("MenuButton");
+		var e = h.extend(j, {
+			constructor: function (q, o, r, n) {
+				this.sources = o.sources;
+				this.label = n;
+				this.label.innerHTML = o.initialySelectedLabel;
+				j.call(this, q, o, r);
+				this.controlText("Quality");
+				if (r.dynamicLabel) {
+					this.el().appendChild(n)
+				} else {
+					var p = document.createElement("span");
+					h.dom.addClass(p, "vjs-resolution-button-staticlabel");
+					this.el().appendChild(p)
+				}
+			},
+			createItems: function () {
+				var o = [];
+				var q = (this.sources && this.sources.label) || {};
+				var p = function (r) {
+					o.map(function (s) {
+						s.selected(s === r);
+						s.removeClass("vjs-selected")
+					})
+				};
+				for (var n in q) {
+					if (q.hasOwnProperty(n)) {
+						o.push(new m(this.player_, {
 							label: n,
 							src: q[n],
 							initialySelected: n === this.options_.initialySelectedLabel,
 							customSourcePicker: this.options_.customSourcePicker
-						}, p, this.label)),
-							b[n] = o[o.length - 1]);
+						}, p, this.label));
+						b[n] = o[o.length - 1]
 					}
-					return o
 				}
-			});
-			c = function (w) {
-				var p = h.mergeOptions(g, w),
-					u = this,
-					t = document.createElement("span"),
-					s = {};
-				h.dom.addClass(t, "vjs-resolution-button-label");
-				u.updateSrc = function (y) {
-					if (!y) {
-						return u.src()
-					}
-					u.controlBar.resolutionSwitcher && (u.controlBar.resolutionSwitcher.dispose(),
-						delete u.controlBar.resolutionSwitcher);
-					y = y.sort(r);
-					s = q(y);
-					var z = o(s, y);
-					var x = new e(u, {
-						sources: s,
-						initialySelectedLabel: z.label,
-						initialySelectedRes: z.res,
-						customSourcePicker: p.customSourcePicker
-					}, p, t);
-					h.dom.addClass(x.el(), "vjs-resolution-button");
-					u.controlBar.resolutionSwitcher = u.controlBar.el_.insertBefore(x.el_, u.controlBar.getChild("fullscreenToggle").el_);
-					u.controlBar.resolutionSwitcher.dispose = function () {
-						this.parentNode.removeChild(this)
-					};
-					return f(u, z.sources, z.label, p.customSourcePicker)
+				return o
+			}
+		});
+		c = function (w) {
+			var p = h.mergeOptions(g, w),
+				u = this,
+				t = document.createElement("span"),
+				s = {};
+			h.dom.addClass(t, "vjs-resolution-button-label");
+			u.updateSrc = function (y) {
+				if (!y) {
+					return u.src()
+				}
+				if (u.controlBar.resolutionSwitcher) {
+					u.controlBar.resolutionSwitcher.dispose();
+					delete u.controlBar.resolutionSwitcher
+				}
+				y = y.sort(r);
+				s = q(y);
+				var z = o(s, y);
+				var x = new e(u, {
+					sources: s,
+					initialySelectedLabel: z.label,
+					initialySelectedRes: z.res,
+					customSourcePicker: p.customSourcePicker
+				}, p, t);
+				h.dom.addClass(x.el(), "vjs-resolution-button");
+				u.controlBar.resolutionSwitcher = u.controlBar.el_.insertBefore(x.el_, u.controlBar.getChild("fullscreenToggle").el_);
+				u.controlBar.resolutionSwitcher.dispose = function () {
+					this.parentNode.removeChild(this)
 				};
-				u.currentResolution = function (x, y) {
-					if (x == null) {
-						return k
-					}
-					b[x] != null && b[x].onClick(y);
-					return u
+				return f(u, z.sources, z.label, p.customSourcePicker)
+			};
+			u.currentResolution = function (x, y) {
+				if (x == null) {
+					return k
+				}
+				if (b[x] != null) {
+					b[x].onClick(y)
+				}
+				return u
+			};
+			u.getGroupedSrc = function () {
+				return s
+			};
+			function r(y, x) {
+				if (!y.res || !x.res) {
+					return 0
+				}
+				return (+x.res) - (+y.res)
+			}
+			function q(y) {
+				var x = {
+					label: {},
+					res: {},
+					type: {}
 				};
-				u.getGroupedSrc = function () {
-					return s
-				};
-				function r(y, x) {
-					if (!y.res || !x.res) {
-						return 0
-					}
-					return (+x.res) - (+y.res)
+				y.map(function (z) {
+					n(x, "label", z);
+					n(x, "res", z);
+					n(x, "type", z);
+					v(x, "label", z);
+					v(x, "res", z);
+					v(x, "type", z)
+				});
+				return x
+			}
+			function n(x, y, z) {
+				if (x[y][z[y]] == null) {
+					x[y][z[y]] = []
 				}
-				function q(y) {
-					var x = {
-						label: {},
-						res: {},
-						type: {}
-					};
-					y.map(function (z) {
-						n(x, "label", z);
-						n(x, "res", z);
-						n(x, "type", z);
-						v(x, "label", z);
-						v(x, "res", z);
-						v(x, "type", z)
-					});
-					return x
-				}
-				function n(x, y, z) {
-					if (x[y][z[y]] == null) {
-						x[y][z[y]] = []
-					}
-				}
-				function v(x, y, z) {
-					x[y][z[y]].push(z)
-				}
-				function o(z, A) {
-					var y = p["default"];
-					var x = "";
-					return y === "high" ? (y = A[0].res,
-						x = A[0].label) : y === "low" || y == null || !z.res[y] ? (y = A[A.length - 1].res,
-							x = A[A.length - 1].label) : z.res[y] && (x = z.res[y][0].label),
-					{
-						res: y,
-						label: x,
-						sources: z.res[y]
+			}
+			function v(x, y, z) {
+				x[y][z[y]].push(z)
+			}
+			function o(z, A) {
+				var y = p["default"];
+				var x = "";
+				if (y === "high") {
+					y = A[0].res;
+					x = A[0].label
+				} else {
+					if (y === "low" || y == null || !z.res[y]) {
+						y = A[A.length - 1].res;
+						x = A[A.length - 1].label
+					} else {
+						if (z.res[y]) {
+							x = z.res[y][0].label
+						}
 					}
 				}
-				u.ready(function () {
-					u.options_.sources.length > 0 && u.setTimeout(function () {
+				return {
+					res: y,
+					label: x,
+					sources: z.res[y]
+				}
+			}
+			u.ready(function () {
+				if (u.options_.sources.length > 0) {
+					u.setTimeout(function () {
 						u.updateSrc(u.options_.sources)
 					}, 1)
-				})
-			};
-			h.registerPlugin("videoJsResolutionSwitcher", c)
-		}(window, a)
+				}
+			})
+		};
+		h.registerPlugin("videoJsResolutionSwitcher", c)
+	})(window, a)
 })();
 (function () {
 	(function (i, h) {
@@ -1986,17 +2150,27 @@ Ext.define("ans.videojs.ErrorNote", {
 				var m = this.player_.paused();
 				this.showAsLabel();
 				this.addClass("vjs-selected");
-				!m && this.player_.bigPlayButton.hide();
-				typeof q !== "function" && typeof this.options_.customSourcePicker === "function" && (q = this.options_.customSourcePicker);
+				if (!m) {
+					this.player_.bigPlayButton.hide()
+				}
+				if (typeof q !== "function" && typeof this.options_.customSourcePicker === "function") {
+					q = this.options_.customSourcePicker
+				}
 				var o = "loadeddata";
-				this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash" && (o = "timeupdate");
+				if (this.player_.techName_ !== "Youtube" && this.player_.preload() === "none" && this.player_.techName_ !== "Flash") {
+					o = "timeupdate"
+				}
 				var n = c(this.player_, this.src, this.options_.label, q);
-				n && n.one(o, function () {
-					n.switchStatus = true,
-						n.currentTime(p),
-						!m && n.play(),
-						n.trigger("playlinechange");
-				})
+				if (n) {
+					n.one(o, function () {
+						n.switchStatus = true;
+						n.currentTime(p);
+						if (!m) {
+							n.play()
+						}
+						n.trigger("playlinechange")
+					})
+				}
 			}
 		});
 		var j = h.getComponent("MenuButton");
@@ -2070,7 +2244,7 @@ Ext.define("ans.videojs.ErrorNote", {
 			})
 		};
 		h.registerPlugin("videoJsPlayLine", b)
-	}(window, videojs))
+	})(window, videojs)
 })();
 Ext.define("ans.AudioJs", {
 	videoJs: null,
@@ -2087,19 +2261,27 @@ Ext.define("ans.AudioJs", {
 			f.preventDefault()
 		});
 		Ext.fly(a.videojs).on("keydown", function (f) {
-			(f.keyCode == 0x20 || f.keyCode == 0x25 || f.keyCode == 0x27) && f.preventDefault();
+			if (f.keyCode == 32 || f.keyCode == 37 || f.keyCode == 39) {
+				f.preventDefault()
+			}
 		})
 	},
 	params2VideoOpt: function (params) {
 		var sources = [];
-		!params.rootPath && (params.rootPath = "");
-		params.http && sources.push({
-			src: params.http,
-			type: "audio/mp3"
-		})
+		if (!params.rootPath) {
+			params.rootPath = ""
+		}
+		if (params.http) {
+			sources.push({
+				src: params.http,
+				type: "audio/mp3"
+			})
+		}
 		var logFunc = function (player, url, callback) {
 			var me = this;
-			!me.logCount && (me.logCount = 0);
+			if (!me.logCount) {
+				me.logCount = 0
+			}
 			videojs.xhr({
 				uri: url,
 				headers: {
@@ -2110,16 +2292,26 @@ Ext.define("ans.AudioJs", {
 				if (resp.statusCode == 200) {
 					me.logCount = 0;
 					if (resp.body.indexOf("isPassed") < 0) {
-						window.parent && window.parent.location.reload();
+						if (window.parent) {
+							window.parent.location.reload()
+						}
 						return
 					}
 					eval("var d=" + resp.body);
-					d.isPassed && callback();
+					if (d.isPassed) {
+						callback()
+					}
 					return
 				}
-				me.logCount >= 4 && (me.logCount = 0,
-					player.pause(),
-					resp.statusCode != 0 ? alert("服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e:" + resp.statusCode + ")") : alert("您的网络不稳定，请您稍后继续..."));
+				if (me.logCount >= 4) {
+					me.logCount = 0;
+					player.pause();
+					if (resp.statusCode != 0) {
+						alert("服务繁忙，不能保证您能否正常完成任务，请您稍后继续...(e: " + resp.statusCode + ")")
+					} else {
+						alert("您的网络不稳定，请您稍后继续...")
+					}
+				}
 			})
 		};
 		var sendLog_ = function (player, isdrag, currentTimeSec, callback) {
