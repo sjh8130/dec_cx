@@ -1,0 +1,620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+        *{margin:0;padding:0}
+        body,html{margin:0;padding:0;background-color:#fff;height:100%}
+        #loading{width:16px;height:16px;background:url(/ananas/css/loading.gif) no-repeat center;position:absolute;top:50%;left:50%}
+        #note{background:#fafbfd;font-size:14px;display:none}
+        #note1-wrap{background:#fafbfd;font-size:14px}
+        #hl{width:0;transition:width .2s;-webkit-transition:width .2s}
+        #note1{padding:10px;font-size:12px}
+        .popWindow{background-color:grey;width:100%;height:100%;left:0;top:0;opacity:.5;z-index:1;position:absolute}
+        .maskLayer{width:68px;height:66px;background:url(/ananas/css/play-document.png) no-repeat center;position:absolute;top:42%;left:42%;z-index:10;cursor:pointer}
+        .Divhover{position:absolute;right:0;bottom:35px;z-index:2}
+        .Con{position:relative;height:40px;width:160px;overflow:hidden}
+        .RightArrow{position:absolute;right:0;bottom:0;display:inline-block;width:18px;height:32px;cursor:pointer}
+        .OtherOpen{display:inline-block;background:rgba(0,0,0,.5);color:#fff;font-size:14px;padding:0 14px;line-height:32px;border-radius:35px 0 0 35px;float:left;position:absolute;right:-127px;bottom:0}
+        #docContainer{height:590px;}
+        .imglook{width:100%;height: calc(100% - 48px);overflow:hidden}
+        .imglook .documentImg{border-bottom:1px solid #000}
+        .imglook .mkeNum{width:100%;text-align:center;position:fixed;background-color:#f6f6f6;font-size:13px;color:grey}
+        .imglook .mkeLbtn{background:url(/ananas/css/bnt_left.png) no-repeat;width:60px;height:60px;position:fixed;left:20px;top:50%;margin-top:-30px;z-index:10;cursor:pointer;display:none}
+        .imglook .mkeRbtn{background:url(/ananas/css/bnt_right.png) no-repeat;width:60px;height:60px;position:fixed;right:20px;top:50%;margin-top:-30px;z-index:10;cursor:pointer;display:none}
+        .line1{height:8px;background:#ebf0f5;position:relative}
+        .line2,.line3{position:absolute;left:0;top:0;height:8px;width:251px;opacity:.3}
+        .line2{background:#8b8b8b}
+        .line3{background:#4fcf5a;opacity:1}
+        .tipStyle{padding-left:51px;height:54px;font-size:14px;color:#646873;line-height:54px;background:url(/ananas/modules/video/wrong.png) no-repeat 21px 17px}
+        .tipStyle span{color:#646873;font-size:12px}
+        .tipStyle a{font-size:14px;color:#646873;text-decoration:none}
+        .making{background:url(/ananas/modules/video/tips.png) no-repeat 21px 17px}
+        .downloadContent{display:none;position:absolute;width:32px;height:32px;top:9px;right:24px;z-index:1}
+        .download{position:absolute;top:0;right:0;background:#000;width:32px;height:32px;opacity:.1;border-radius:32px;z-index:2}
+        .downloadBtn{position:absolute;top:6px;right:6px;width:20px;height:20px;z-index:100}
+        .downloadBtn>a{display:inline-block;width:20px;height:20px;background:url(/ananas/css/download.png) no-repeat left top;background-size:100%}
+        .mkeNum_bom{background:#fbfbfb;height:48px;line-height:48px;padding:0 10px;width:100%;box-sizing:border-box}
+        .fl{float:left}
+        .turnpage_Btn{width:104px;margin:0 auto;padding-top:7px}
+        .turnpage_Btn a{display:inline-block;width:34px;height:34px;margin:0 9px;float:left}
+        .turnpage_Btn a.preBtn{background:url(/ananas/css/preBtn.png) no-repeat;background-size:100%}
+        .turnpage_Btn a.preBtn:hover{background:url(/ananas/css/preBtnHover.png) no-repeat;background-size:100%}
+        .turnpage_Btn a.nextBtn{background:url(/ananas/css/nextBtn.png) no-repeat;background-size:100%}
+        .turnpage_Btn a.nextBtn:hover{background:url(/ananas/css/nextBtnHover.png) no-repeat;background-size:100%}
+        .BtnRight{float:right;position:relative;padding-top:5px}
+        .downLoad,.fullsrceen,.otherOpen,.report{position:relative}
+        .downLoad{display:none}
+        .otherOpenIcon{display:inline-block;width:22px;height:22px;margin-left:12px;float:left}
+        .otherOpenIcon:hover{background:#ecf2de;border-radius:2px}
+        .tipsCon{position:absolute;left:-30px;top:-42px;width:104px;height:37px;background:rgba(24,30,51,.8);border-radius:4px;opacity:0;visibility:hidden;-webkit-transition:opacity .1s 1s,visibility 0s .3s;transition:opacity .1s 1s,visibility 0s .2s;text-align:center;line-height:37px;color:#fff;font-size:12px}
+        .tipsCon i{display:block;width:0;height:0;border:solid rgba(24,30,51,.8) 4px;position:absolute;left:50%;margin-left:-2px;top:37px;bottom:auto;border-color:rgba(24,30,51,.8) transparent transparent transparent}
+        .tipsCon i.active{display:block;width:0;height:0;border:solid rgba(63,63,63,.8) 4px;position:absolute;left:50%;margin-left:-4px;bottom:40px;top:auto;border-color:transparent transparent rgba(24,30,51,.8) transparent}
+        .downLoad:hover .tipsCon,.fullsrceen:hover .tipsCon,.otherOpen:hover .tipsCon,.report:hover .tipsCon{display:block;opacity:1;visibility:visible;-webkit-transition:opacity .3s .1s,visibility .3s .1s;transition:opacity .3s .1s,visibility .3s .1s}
+        .downLoadIcon,.fullsrceenIcon,.reportIcon{display:inline-block;width:22px;height:22px;margin-left:12px;float:left;cursor:pointer}
+        .report{padding-right: 10px;}
+        .reportLine{height:10px;border-right: 1px solid #dbdbdb;width:1px;margin-top: 9px;}
+        .downLoadIcon:hover,.fullsrceenIcon:hover,.reportIcon:hover{background:#ecf2de;border-radius:2px}
+        .wid70{width:50px;left:-3px}
+        .pageInfo{color:#A2A2A2}
+        .num{color:#333}
+        .all{color:#A2A2A2}
+        .otherOpen .tipsCon,.fullsrceen .tipsCon{height: auto;}
+        #officeonlineview{display: none;width:100%;height:538px;}
+    </style>
+    <script type="text/javascript" src="/ananas/static/js/domain.js?v=2021-1112-1540"></script>
+    <script type="text/javascript" src="/ananas/ext/import-all-classes.js?v=2023-0731-1400"></script>
+    <script type="text/javascript" src="/ananas/swfobject/flashchecker.js"></script>
+    <script type="text/javascript" src="/ananas/swfobject/swfobject.js"></script>
+    <script type="text/javascript" src="/ananas/ext/ed_complete.js?v=20220726"></script>
+    <script src="/ananas/ueditor/documentJob.js?v=2023-0802-2315" type="text/javascript"></script>
+    <script type="text/javascript" src="/ananas/ueditor/form.utils.js"></script>
+    <!--<script type="text/javascript" src="https://officeonline.superlib.com/3rd/js/messenger.js"></script> -->
+    <script type="text/javascript" src="/ananas/screenfull/screenfull.min.js"></script>
+    <script type="text/javascript" src="/mooc-ans/js/ServerHost.js"></script>
+    <script type="text/javascript" src="/ananas/modules/pdf/web-office-sdk-v1.1.16.umd.js"></script>
+    <script type="text/javascript">
+        Ext.Ajax.autoAbort = true;
+
+        var timer, percent = 0;
+        var downloadNum = window.frameElement.getAttribute('download');
+        function getCookie(objname){
+            var arrstr = document.cookie.split("; ");
+            for(var i = 0;i < arrstr.length;i ++){
+                var temp = arrstr[i].split("=");
+                if(temp[0] == objname){
+                    return unescape(temp[1]);
+                }
+            }
+        };
+        Ext.onReady(function () {
+            function setTopicName(list) {
+                if (list && list.length == 0) {
+                    return;
+                }
+
+                if(list[0].id){
+                    if(Ext.fly(window.frameElement).parent().select("#topicList") != null){
+                        Ext.fly(window.frameElement).parent().select("#topicType").setHTML('知识点:');
+                        var spanList = "";
+                        for (var i = 0, len = list.length; i < len; i++) {
+                            spanList += "<span>" + list[i].name + "</span>";
+                        }
+                        Ext.fly(window.frameElement).parent().select("#topicContent").setHTML(spanList);
+                    }
+                }else{
+                    if(Ext.fly(window.frameElement).parent().select("#topicList") != null){
+                        if (list && list.length == 0) {
+                            return;
+                        }
+                        Ext.fly(window.frameElement).parent().select("#topicType").setHTML('知识点:');
+                        var spanList = "";
+                        for (var i = 0, len = list.length; i < len; i++) {
+                            spanList += "<span>" + list[i] + "</span>";
+                        }
+                        Ext.fly(window.frameElement).parent().select("#topicContent").setHTML(spanList);
+                    }
+                }
+            }
+            var requestSatusResourceDownGrade = parent.requestSatusResourceDownGrade;
+            if (requestSatusResourceDownGrade && requestSatusResourceDownGrade == 1) {
+                var tipImg = '<img src="/ananas/css/downgradeBlueTip.jpg" width="676" height="540">';
+                Ext.select('body').setHTML(tipImg);
+                return;
+            }
+
+
+            var setting = parent.AttachmentSetting,
+                data = Ext.decode(window.frameElement.getAttribute('data')),
+                ut = "s";
+            try {
+                ut  = (parent.parent.location.pathname.indexOf('teacherstudy') != -1) ? 't' : 's';
+            } catch (e) {
+            }
+
+            if (setting && setting.control) {
+
+                var attachments = setting.attachments,
+                        spec = data.objectid,
+                        s = '',
+                        m = {};
+
+                for (var i = 0; i < attachments.length; i++) {
+                    m = attachments[i];
+
+                    if (m.property && m.property.objectid) {
+                        s = m.property.objectid;
+                        if (spec == s) {
+                            if (m.topicList) {
+                                setTopicName(m.topicList);
+                            }
+                            window._jobindex = i;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            request();
+            //timer = setInterval(request, 5000);
+
+            if (checkJobFinish()) {
+                greenligth();
+            } /* else if (hasJobToFinish()) {
+			mask();
+		} */
+            // 镜像隐藏其它方式打开按钮
+            var ismirror = window.frameElement.getAttribute('ismirror');
+            if(ismirror == "1" && document.getElementById("otherOpen1")){
+                document.getElementById("otherOpen1").style.display = "none";
+            }
+            if(ismirror == "1" && document.getElementById("reportDiv")){
+                document.getElementById("reportDiv").style.display = "none";
+                Ext.select(".reportLine").setStyle("display", "none");
+            }
+        });
+        var appInfo = "";
+        var setting = parent.AttachmentSetting;
+        if (setting) {
+            var defults = setting.defaults;
+            if (defults && typeof defults.appInfo != "undefined") {
+                appInfo = defults.appInfo;
+            }
+        }
+        function request() {
+            var objectid = window.frameElement.getAttribute('objectid'),
+                    note = Ext.get('note'),
+                    hl = Ext.get('hl'),
+                    note1Wrap = Ext.get('note1-wrap'),
+                    note1 = Ext.get('note1');
+
+            if (percent <= 100) {
+                hl.setWidth((percent += 5) + "%");
+            }
+
+            if (!objectid) {
+                return;
+            }
+
+            //Ext.get('objectid').setHTML('(文件ID:' + objectid + ')');
+
+            Ext.Ajax.request({
+                url: '/ananas/status/' + objectid + '?flag=normal',
+
+                success: function (response) {
+                    eval("var data = " + response.responseText);
+
+                    switch (data.status) {
+                        case 'success':
+                            note1Wrap.remove();
+                            if (parent.location.protocol.indexOf("https:") != -1 && data.download.indexOf("http:") != -1) {
+                                data.download = data.download.replace("http:", "https:");
+                            } else if (parent.location.protocol.indexOf("http:") != -1 && data.download.indexOf("https:") != -1) {
+                                data.download = data.download.replace("https:", "http:");
+                            }
+                            renderImg(data) || renderOfficeOnline(data);
+                            bindToggleLook(data);
+                            bindReport(data);
+                            if (timer)
+                                clearInterval(timer);
+
+                            break;
+                        case 'failed':
+
+                            if (timer)
+                                clearInterval(timer);
+
+                            note1Wrap.remove();
+                            note.show();
+                            break;
+
+                        case 'waiting':
+                            note1Wrap.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle making">文件正在转码，您无需在此页面等待【9001】</p>');
+                            break;
+                        case 'converting':
+                        case 'transfer':
+                            note1Wrap.update('<div class="line1"><div class="line2"></div></div><p class="tipStyle">文件上传中【9002】</p>');
+                            break;
+                    }
+
+                    Ext.get('loading').hide();
+
+                },
+                failure: function (resp) {
+                    if (resp.status == 0) {
+                        timer && clearInterval(timer);
+                        note1Wrap.update('<div class="line1"><div class="line3"></div></div><p class="tipStyle">文件加载超时，请刷新页面重试【9003】</p>');
+                        Ext.get('loading').hide();
+                    } else {
+                        timer && clearInterval(timer);
+                        note1Wrap.update('<div class="line1"><div class="line2"></div><p class="tipStyle">文件加载失败，请稍后再试【9004】</p>');
+                        Ext.get('loading').hide();
+                    }
+                }
+            });
+        }
+
+        function renderSWF(data) {
+            var objectid = data.objectid;
+            var page = data.pagenum;
+            var baseSrc = data.swf;
+            var fls = flashChecker();
+            if (!(Ext.isIpad || Ext.isIos || Ext.isMac) && !fls.hasFlash) {
+                var href = "http://www.adobe.com/go/getflashplayer";
+                Ext.get(Ext.query("#reader")).setHTML('您没有安装flashplayer，请到<a href="' + href + '" target="_blank">www.adobe.com</a>下载安装。');
+                return false;
+            }
+
+            var swfUrl = '/mooc-ans/flexreader/FlexReader.swf';
+            /* if(document.domain=="haust.edu.cn"){
+                swfUrl='http://mooc1.haust.edu.cn/flexreader/FlexReader.swf';
+            } */
+            swfobject.embedSWF(
+                    swfUrl,
+                    'reader',
+                    '100%', '100%',
+                    '10.1.85.3',
+                    '',
+                    {objectId: objectid, pageCount: page, baseSrc: ServerHosts.CS_HOST + '/mtiView/reader'},
+                    {
+                        quality: 'high',
+                        wmode: 'opaque',
+                        allowScriptAccess: 'sameDomain',
+                        swLiveConnect: 'true',
+                        allowFullScreen: 'true'
+                    }
+            );
+            data.openStyle = 'flash';
+            return true;
+        }
+
+        function renderOfficeOnline(data) {
+            var objectid = data.objectid;
+            Ext.Ajax.request({
+                url: '/ananas/wpsview?objectId=' + objectid,
+                success: function (response) {
+                    eval("var res = " + response.responseText);
+                    if (res && res.result) {
+                        var viewData = res.data;
+                        if (viewData.length > 0) {
+                            var viewUrl = viewData[0].originPlayUrl;
+                            if (viewUrl.indexOf("?") > -1) {
+                                viewUrl += "&_from=mooc";
+                            } else {
+                                viewUrl += "?_from=mooc";
+                            }
+                            var filename = data.filename;
+                            var suffixName = "";
+                            if (filename) {
+                                var suffixIndex = filename.lastIndexOf('.');
+                                if (suffixIndex < 0) {
+                                    return false;
+                                }
+                                suffixName = filename.substring(suffixIndex + 1, filename.length);
+                            }
+                            var dataParam = {};
+                            dataParam.objectid = objectid;
+                            dataParam.suffixName = suffixName;
+                            Ext.get('img').setStyle("display", "none");
+                            Ext.get('officeonlineview').setStyle("display", "block");
+                            var jssdk = WebOfficeSDK.config({
+                                url: viewUrl,
+                                mount: document.querySelector('#officeonlineview'),
+                                mode: 'simple',
+                                commonOptions: {
+                                    isShowTopArea: false, // 隐藏顶部区域（头部和工具栏）
+                                    isSHowHeader: false  // 隐藏头部区域
+                                },
+                                commandBars: [
+                                    {
+                                        cmbId: 'MoreMenus',
+                                        attributes: {
+                                            visible: false
+                                        },
+                                    },
+                                    {
+                                        cmbId: 'Print',
+                                        attributes: {
+                                            visible: false
+                                        },
+                                    },
+                                    {
+                                        cmbId: 'ToolsTab',
+                                        attributes: {
+                                            visible: false
+                                        },
+                                    }
+                                ],
+                            });
+                            Ext.select(".toggleImg").show();
+                            if (downloadNum == "1" && appInfo.indexOf("6") < 0) {
+                                Ext.select("#downLoad1").show();
+                                Ext.select('#downloadUrl1').set({"href": data.download});
+                                Ext.get('bR').setStyle("padding-right", "10px");
+                            } else {
+                                Ext.get('bR').setStyle("padding-right", "40px");
+                            }
+                            Ext.get("docContainer").setStyle("height", "538px");
+                            data.openStyle = 'officeonline';
+                            return true;
+                        }
+                    } else {
+                        alert("切换其他方式失败…");
+                        return false;
+                    }
+                },
+                failure: function (resp) {
+                    // 提示语优化
+                    alert("正在切换中，请稍等...");
+                    return false;
+                }
+            });
+        }
+
+        function getScrollTop() {
+            var targetWindow = document.getElementById("panView").contentWindow;
+            return targetWindow.document.documentElement.scrollTop || targetWindow.document.body.scrollTop;
+        }
+
+        var finishFlag = false;
+        function bindScroll () {
+            try {
+                var ifm = document.getElementById("panView").contentWindow.document.documentElement;
+                if(ifm.scrollHeight == ifm.clientHeight) {
+                    !checkJobFinish() && finishJob();
+                }
+                window.document.getElementById("panView").contentWindow.onscroll = function iframeScroll() {
+                    if (getScrollTop() > ifm.scrollHeight - ifm.clientHeight - 100) {
+                        if (!finishFlag) {
+                            !checkJobFinish() && finishJob();
+                            finishFlag = true;
+                        }
+                    }
+                }
+            } catch (e) {
+                function messageCallBack(event) {
+                    if (!event || !event.data) {
+                        return;
+                    }
+                    var data = event.data;
+                    if (data.isFinished == 1) {
+                        !checkJobFinish() && finishJob();
+                    }
+                }
+                window.addEventListener('message', messageCallBack);
+            }
+        }
+        function renderImg(data) {
+            var lineHeight=isEn?"line-height: unset;":'';
+            var containerTpl = '<div class="Divhover" id="toggleBtn"></div>' +
+                '<div id="officeonlineview"></div>' +
+                '<div class="imglook" id="img">' +
+                '<div class="mkeNum" id="navigation">' +
+                '<div class="BtnRight" style="padding-top:0;margin-right:10px">' +
+                '<div class="report fl" id="reportDiv" style="margin-top:4px;">' +
+                '<a class="reportIcon" id="report" href="javascript:void(0)"><img src="/ananas/css/report.png" width="100%" height="100%"/></a>' +
+                '<div class="tipsCon wid70"><i></i>'+(langMap.report||'举报')+'</div>' +
+                '</div>' +
+                '<div class="reportLine fl"></div>' +
+                '<div class="otherOpen fl" id="otherOpen" style="margin-top:3px">' +
+                '<span class="otherOpenIcon"><img src="/ananas/css/qtIcon.png" width="100%" height="100%"/></span>' +
+                '<div class="tipsCon" style="'+lineHeight+'"><i></i>'+(langMap.openOtherWay||'其他方式打开')+'</div>' +
+                '</div>' +
+                '<div class="downLoad fl" id="downLoad" style="margin-top:3px">' +
+                '<a class="downLoadIcon" id="downloadUrl" href="javascript:void(0)" target="_blank"><img src="/ananas/css/downloaddoc.png" width="100%" height="100%"/></a>' +
+                '<div class="tipsCon wid70"><i></i>下载</div>' +
+                '</div>' +
+                '<div class="fullsrceen fl" style="margin-top:3px">' +
+                '<span class = "fullsrceenIcon"><img src = "/ananas/css/full.png" width = "100%" height = "100%"/></span>' +
+                '<div class="tipsCon wid70" id="fullScreenTip" style="'+lineHeight+'"><i></i>'+(langMap.fullScreen||'全屏')+'</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+            window.frameElement.style['height'] = 570 + 'px';
+            Ext.select('#docContainer').setHTML(containerTpl);
+            // 镜像隐藏其它方式打开按钮
+            var ismirror = window.frameElement.getAttribute('ismirror');
+            if(ismirror == "1" && Ext.get('otherOpen')){
+                Ext.get('otherOpen').setStyle("display", "none");
+            }
+            if (ismirror == "1" && Ext.get('reportDiv')){
+                Ext.get('reportDiv').setStyle("display", "none");
+                Ext.select(".reportLine").setStyle("display", "none");
+            }
+            if (downloadNum == "1" && appInfo.indexOf("6") < 0) {
+                Ext.get("downLoad").show();
+                Ext.select('#downloadUrl').set({"href": data.download});
+            }
+            var iframedata = window.data;
+            var jobid = iframedata.jobid;
+            var ext = {
+                "_from_" : parent._from
+            }
+            var hostname = "";
+            // 如果当前域名为chaoxing.com，并且通过后台拿到的域名不是chaoxing.com
+            if (parent.window.location.href.indexOf('chaoxing.com') > -1 && ServerHost.panDomain.indexOf('chaoxing.com') < 0) {
+                hostname = ServerHosts.NEW_CLOUD_HOST;
+            } else {
+                hostname = ServerHost.panDomain;
+            }
+            var webUrl = hostname + '/screen/file_' + data.objectid;
+            var setting = parent.AttachmentSetting;
+            if ((setting && setting.control && ut == "s") || (typeof parent.courseDataPreview != "undefined" && parent.courseDataPreview == true)) {
+                try {
+                    webUrl += "?ext=" + encodeURIComponent(JSON.stringify(ext));
+                }catch (ex) {
+                    console.log(ex)
+                }
+            }
+            var tpl = '<iframe id="panView" width="100%" height="100%" onload="bindScroll()" allowfullscreen="true" src="' + webUrl + '"></iframe>';
+            new Ext.XTemplate(tpl).insertBefore('navigation');
+            fullscreenEvent();
+            data.openStyle = 'imglook';
+            setTimeout(function() {
+                if (setting && setting.isMirror) {
+                    Ext.select("#otherOpen").setStyle("display", "none");
+                    Ext.select('#reportDiv').setStyle("display", "none");
+                    Ext.select(".reportLine").setStyle("display", "none");
+                }
+            }, 10)
+            return true;
+        }
+
+        function fullscreenEvent() {
+            if (!screenfull.enabled) {
+                Ext.select('.fullscreen, .fullsrceen').first().remove();
+                return false;
+            }
+            Ext.select('.fullscreen, .fullsrceen').on('click', function (ele) {
+                var imglook = Ext.select('.imglook').first().dom;
+                screenfull.toggle(imglook);
+            });
+            Ext.select('.fullsrceen').on('mouseover', function (ele) {
+                var tips = "";
+                if (screenfull.isFullscreen) {
+                    tips = "<i></i>取消全屏";
+                } else {
+                    tips = "<i></i>" + (langMap.fullScreen||'全屏');
+                }
+                Ext.select('#fullScreenTip').setHTML(tips);
+            });
+            Ext.select('.fullscreen').on('mouseover', function (ele) {
+                if (screenfull.isFullscreen) {
+                    Ext.select('.fullscreen').set({"title": "退出全屏"});
+                } else {
+                    Ext.select('.fullscreen').set({"title": "全屏"});
+                }
+            });
+        }
+        function bindReport(data) {
+            var reportUrl = ServerHosts.GROUPWEB + "/pc/report/reportIndex";
+            var sourceContent = {"downUrl" : data.download, "name" : data.filename, "puid" : getCookie("_uid")};
+            Ext.select('.report').on('click', function (ele) {
+               var params = new Array();
+               params.push({name : "type", value : "clouddisk"});
+               params.push({name : "sourceIdstr", value : data.objectid});
+               params.push({name : "sourceContent", value : encodeURIComponent(JSON.stringify(sourceContent))})
+               FORM_UTILS.post(reportUrl, params, "_blank");
+            });
+        }
+        function bindToggleLook(data) {
+            Ext.select('.RightArrow').on('mouseover', function (ele) {
+                Ext.get(this).hide();
+                Ext.select(".OtherOpen").setStyle({
+                    "right": "0px"
+                });
+            });
+
+            Ext.select('.OtherOpen').on('mouseleave', function (ele) {
+                Ext.select('.RightArrow').show();
+                Ext.get(this).setStyle({
+                    "right": "-127px"
+                });
+            });
+
+            Ext.select('.OtherOpen, .otherOpen').on('click', function (ele) {
+                var openStyle = data.openStyle;
+                if (openStyle == 'imglook') {
+                    if (typeof Ext.select('#officeonlineview iframe').elements[0] != "undefined") {
+                        Ext.get('img').setStyle("display", "none");
+                        Ext.get('officeonlineview').setStyle("display", "block");
+                        Ext.select(".toggleImg").show();
+                        if (downloadNum == "1" && appInfo.indexOf("6") < 0) {
+                            Ext.select("#downLoad1").show();
+                            Ext.select('#downloadUrl1').set({"href": data.download});
+                            Ext.get('bR').setStyle("padding-right", "10px");
+                        } else {
+                            Ext.get('bR').setStyle("padding-right", "40px");
+                        }
+                        Ext.get("docContainer").setStyle("height", "538px");
+                        data.openStyle = 'officeonline';
+                    } else {
+                        renderOfficeOnline(data);
+                    }
+                } else if (openStyle == 'officeonline') {
+                    Ext.get("docContainer").setStyle("height", "590px");
+                    Ext.get('officeonlineview').setStyle("display", "none");
+                    Ext.select(".toggleImg").hide();
+                    Ext.get('img').setStyle("display", "");
+                    data.openStyle = 'imglook';
+                }
+            });
+        }
+    </script>
+
+    <script type="text/javascript">
+        function mask() {
+            document.getElementById('popWindow').style.display = 'block';
+            document.getElementById('maskLayer').style.display = 'block';
+        }
+
+        function unMaskAndFinishJob() {
+            document.getElementById('popWindow').style.display = 'none';
+            document.getElementById('maskLayer').style.display = 'none';
+            !checkJobFinish() && finishJob();
+        }
+    </script>
+</head>
+<body oncontextmenu="return false">
+<div class="downloadContent" id="downloadContent">
+    <div class="download" id="download"></div>
+    <div class="downloadBtn" id="downloadBtn"></div>
+</div>
+<div id="popWindow" class="popWindow" style="display: none;"></div>
+<div id="maskLayer" class="maskLayer" style="display: none;" onclick="unMaskAndFinishJob()"></div>
+<div id="loading"></div>
+<div id="note">
+    <div class="line1">
+        <div class="line2"></div>
+    </div>
+    <p class="tipStyle">文档转码失败，请使用其他软件另存后重新上传【9005】</p>
+</div>
+<div id="note1-wrap">
+    <div class="line1">
+        <div class="line3" id="hl"></div>
+    </div>
+    <p class="tipStyle making">正在为您加载文件... </p>
+</div>
+<div id="docContainer">
+</div>
+<div class="toggleImg" style="display: none;">
+    <div class="BtnRight" style="padding-top:0;" id="bR">
+        <div class="report fl" id="reportDiv" style="margin-top:4px;">
+            <a class="reportIcon" id="report" href="javascript:void(0)"><img src="/ananas/css/report.png" width="100%" height="100%"/></a>
+            <div class="tipsCon wid70"><i></i>举报</div>
+        </div>
+        <div class="reportLine fl"></div>
+        <div class="otherOpen fl" id="otherOpen1" style="margin-top:4px;">
+            <span class="otherOpenIcon"><img src="/ananas/css/qtIcon.png" width="100%" height="100%"/></span>
+            <div class="tipsCon"><i></i>其他方式打开</div>
+        </div>
+        <div class="downLoad fl" id="downLoad1" style="margin-top:4px;">
+            <a class="downLoadIcon" id="downloadUrl1" href="javascript:void(0)" target="_blank"><img src="/ananas/css/downloaddoc.png" width="100%" height="100%"/></a>
+            <div class="tipsCon wid70"><i></i>下载</div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

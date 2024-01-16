@@ -1,4 +1,4 @@
-; (function () {
+(function () {
 	var A = window.jQuery;
 	try {
 		if (typeof (A) != 'function') {

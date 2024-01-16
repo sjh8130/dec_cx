@@ -4,9 +4,7 @@
 '(.*?)':	$1:
 '(.*?)'	"$1"
 "(.*?)"	'$1'
-for(z=0;z<=512;z++){console.log(z,TT(z))}
-for(z=0;z<=1024;z++){console.log(z,TT(z))}
-for(z=0;z<=4096;z++){console.log(z,TT(z))}
+for(z=0;z<=0xffff;z++){if(TT(z)!=undefined)console.log(z,TT(z))}
 0x0	TT(0x0)	0
 0x1	TT(0x1)	1
 0x2	TT(0x2)	2
