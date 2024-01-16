@@ -1,61 +1,60 @@
 !function () {
-	function F4() {
+	function F1() {
 		var a = true;
 		return function (b, c) {
-			var e = a ? function () {
+			var F2 = a ? function () {
 				if (c) {
 					var d = c.apply(b, arguments);
 					c = null;
 					return d;
 				}
-			}
-				: function () { };
+			} : function () { };
 			a = false;
-			return e;
+			return F2;
 		};
 	}
-	var a = F4(this, function () {
-		function F7() {
+	var F3 = F1(this, function () {
+		function F4() {
 			return 'dev';
 		}
-		function F8() {
+		function F5() {
 			return 'window';
 		}
-		function F9() {
+		function F6() {
 			var e = new RegExp('\\w+ *\\(\\) *{\\w+ *[\'|\"].+[\'|\"];? *}');
-			return !e.test(F7.toString());
+			return !e.test(F4.toString());
 		}
-		function F10() {
+		function F7() {
 			var f = new RegExp('(\\\\[x|u](\\w){2,4})+');
-			return f.test(F8.toString());
+			return f.test(F5.toString());
 		}
-		function F11(g) {
+		function F8(g) {
 			var h = ~-0x1 >> 0x1 + 0xff % 0;
 			if (g.indexOf('i' === h)) {
-				F12(g);
+				F9(g);
 			}
 		}
-		function F12(i) {
+		function F9(i) {
 			var j = ~-0x4 >> 0x1 + 0xff % 0;
 			if (i.indexOf((true + '')[0x3]) !== j) {
-				F11(i);
+				F8(i);
 			}
 		}
-		if (!F9()) {
-			if (!F10()) {
-				F11('indеxOf');
+		if (!F6()) {
+			if (!F7()) {
+				F8('indеxOf');
 			} else {
-				F11('indexOf');
+				F8('indexOf');
 			}
 		} else {
-			F11('indеxOf');
+			F8('indеxOf');
 		}
 	});
-	a();
-	var F13 = function () {
+	F3();
+	var F10 = function () {
 		var k = true;
 		return function (l, m) {
-			var F14 = k ? function () {
+			var F24 = k ? function () {
 				if (m) {
 					var n = m.apply(l, arguments);
 					m = null;
@@ -63,25 +62,25 @@
 				}
 			} : function () { };
 			k = false;
-			return F14;
+			return F24;
 		};
 	}();
 	(function () {
-		F13(this, function () {
+		F10(this, function () {
 			var p = new RegExp('function *\\( *\\)');
 			var q = new RegExp('\\+\\+ *(?:_0x(?:[a-f0-9]){4,6}|(?:\\b|\\d)[a-z0-9]{1,4}(?:\\b|\\d))', 'i');
-			var r = F22('init');
+			var r = F17('init');
 			if (!p.test(r + 'chain') || !q.test(r + 'input')) {
 				r('0');
 			} else {
-				F22();
+				F17();
 			}
 		})();
 	}());
-	function F15() {
+	function F11() {
 		var w = true;
 		return function (x, y) {
-			var F16 = w ? function () {
+			var F12 = w ? function () {
 				if (y) {
 					var z = y.apply(x, arguments);
 					y = null;
@@ -89,11 +88,11 @@
 				}
 			} : function () { };
 			w = false;
-			return F16;
+			return F12;
 		};
 	}
-	var F18 = F15(this, function () {
-		var F19 = function () { };
+	var F13 = F11(this, function () {
+		var F14 = function () { };
 		var ac;
 		try {
 			var ad = Function('return (function() {}.constructor("return this")( ));');
@@ -112,22 +111,22 @@
 				ae.exception = af;
 				ae.trace = af;
 				return ae;
-			}(F19);
+			}(F14);
 		} else {
-			ac.console.log = F19;
-			ac.console.warn = F19;
-			ac.console.debug = F19;
-			ac.console.info = F19;
-			ac.console.error = F19;
-			ac.console.exception = F19;
-			ac.console.trace = F19;
+			ac.console.log = F14;
+			ac.console.warn = F14;
+			ac.console.debug = F14;
+			ac.console.info = F14;
+			ac.console.error = F14;
+			ac.console.exception = F14;
+			ac.console.trace = F14;
 		}
 	});
-	F18();
-	function F20() {
+	F13();
+	function F15() {
 		return Math.floor(0xa * Math.random());
 	}
-	function F21() {
+	function F16() {
 		var ag,
 			ah = {},
 			ai = document.getElementById('userId'),
@@ -135,8 +134,8 @@
 			ak = document.getElementById('questionId'),
 			al = '',
 			am = '' + new Date().getTime(),
-			an = F20(),
-			ao = F20(),
+			an = F15(),
+			ao = F15(),
 			ap = aj;
 		ah.x = -0x1;
 		ah.y = -0x1;
@@ -161,13 +160,13 @@
 				} : function (bc) {
 					var bd, be = 0, bf = F22(ar);
 					if (0 === bc.length) return be;
-					for (bd = 0; bd < bc.length; bd++) be = (be << (bf ? 0x5 : 0x10)) - be + bc.charCodeAt(bd), be = bf ? be : ~be;
+					for (bd = 0; bd < bc.length; bd++) be = (be << (bf ? 5 : 16)) - be + bc.charCodeAt(bd), be = bf ? be : ~be;
 					return 0x7fffffff & be;
 				} : function (bc) {
 					var bd = 0;
 					if (0 == bc.length) return bd;
 					for (var be = 0; be < bc.length; be++) {
-						bd = (bd << 0x5) - bd + bc.charCodeAt(be),
+						bd = (bd << 5) - bd + bc.charCodeAt(be),
 							bd &= 0xfffffff;
 					}
 					return bd;
@@ -178,7 +177,7 @@
 			ah.x = -0x2;
 			ah.y = -0x2;
 		}
-		an = '' + an + ao + ag(be.join('') + am.substring(0x4) + an + ao + al) % 0xa;
+		an = '' + an + ao + ag('f042fcf1f483b05ae5f316d02cdd02d6' + am.substring(0x4) + an + ao + al) % 0xa;
 		var bh = '(' + Math.ceil(ah.x) + '|' + Math.ceil(ah.y) + ')';
 		return function (bi, bj) {
 			if (null == bj || bj.length <= 0)
@@ -201,21 +200,18 @@
 			return (bt += br) + '&rd=' + bq;
 		}(bh, ap = ap + '|' + an) + '&value=' + bh + '&qid=' + al + '&_edt=' + (am + an);
 	}
-	var be = ['f', '0', '4', '2', 'f', 'c', 'f', '1', 'f', '4', '8', '3', 'b', '0', '5', 'a', 'e', '5', 'f', '3', '1', '6', 'd', '0', '2', 'c', 'd', 'd', '0', '2', 'd', '6'];
 	window.getEnc = function () {
-		return F21();
+		return F16();
 	};
 }();
-setInterval(function () {
-	F22();
-}, 0xfa0);
-function F22(a) {
-	function F23(b) {
+setInterval(function () {F17();}, 4000);
+function F17(a) {
+	function F18(b) {
 		if (typeof b === 'string') {
 			return function (xxxx) { }
 			['constructor']('while (true) {}').apply('counter');
 		} else {
-			if (('' + b / b).length !== 1 || b % 0x14 === 0) {
+			if (('' + b / b).length !== 1 || b % 20 === 0) {
 				(function () {
 					return true;
 				}['constructor']('debugger').call('action'));
@@ -225,13 +221,13 @@ function F22(a) {
 				}['constructor']('debugger').apply('stateObject'));
 			}
 		}
-		F23(++b);
+		F18(++b);
 	}
 	try {
 		if (a) {
-			return F23;
+			return F18;
 		} else {
-			F23(0);
+			F18(0);
 		}
 	} catch (xxx) { }
 }

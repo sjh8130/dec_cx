@@ -162,7 +162,7 @@
 						for (var ax = 0, ay = 0, az = F20(aq), ba = 0, bb = av.length; ba < bb; ba++) {
 							0 != (ay = 1879048192 & (ax = (ax << 4) + av.charCodeAt(ba))) && (ax ^= ay >> (az ? 24 : 16), ax &= ~ay);
 						}
-						return 2147483647 & ax;
+						return 0x7fffffff & ax;
 					} : function (bc) {
 						var be, bd = 0, bf = F20(aq);
 						if (0 === bc.length)
@@ -171,14 +171,14 @@
 							bd = (bd << (bf ? 5 : 16)) - bd + bc.charCodeAt(be);
 							bd = bf ? bd : ~bd;
 						}
-						return 2147483647 & bd;
+						return 0x7fffffff & bd;
 					} : function (bc) {
 						var bd = 0;
 						if (0 == bc.length)
 							return bd;
 						for (var be = 0; be < bc.length; be++) {
 							bd = (bd << 5) - bd + bc.charCodeAt(be);
-							bd &= 268435455;
+							bd &= 0xfffffff;
 						}
 						return bd;
 					};
@@ -220,7 +220,7 @@
 		return F16();
 	};
 };
-setInterval(F17(), 4e3);
+setInterval(F17(), 4000);
 function F17(a) {
 	function F18(b) {
 		if (typeof b === 'string') {
