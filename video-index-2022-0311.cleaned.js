@@ -538,7 +538,6 @@ function danmuPlay(_0x4ae9d6) {
 	count++;
 }
 var getPlayState;
-;
 function clearStateInterval() {
 	getPlayState && clearInterval(getPlayState);
 }
@@ -556,7 +555,6 @@ function startFaceCollection(_0x1ddb36, _0xa37f8e, _0x542d5b) {
 		}
 	}
 }
-;
 function chapterPlayNextVideo(_0x39979c) {
 	/\/studentstudy/.test(top.location.pathname) && (top.getChapterNextVideo && top.getChapterNextVideo(_0x39979c));
 }
