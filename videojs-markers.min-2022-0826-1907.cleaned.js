@@ -1,6 +1,6 @@
 //!LOCATE 'use strict';var _0x245bff=_0x2183;
 'use strict';
-(function (getAttribute, _video2, _0x4e2fe1) {
+(function (getAttribute, _video2, undefined) {
 	var defaultSetting = {
 		'markerStyle': {
 			'width': '7px',
@@ -16,20 +16,20 @@
 		},
 		'markerTip': {
 			'display': true,
-			'text': function(marker) {
+			'text': function (marker) {
 				return 'Break: ' + marker.text;
 			},
-			'time': function(marker) {
+			'time': function (marker) {
 				return marker.time;
 			}
 		},
-		'breakOverlay': {
-			'display': false,
-			'displayTime': 3,
-			'text': function(marker) {
+		breakOverlay: {
+			display: false,
+			displayTime: 3,
+			text: function (marker) {
 				return 'Break overlay: ' + marker.overlayText;
 			},
-			'style': {
+			style: {
 				'width': '100%',
 				'height': '20%',
 				'background-color': 'rgba(0,0,0,0.7)',
@@ -37,14 +37,13 @@
 				'font-size': '17px'
 			}
 		},
-		'onMarkerClick': function(marker) {
-		},
-		'onMarkerReached': function(marker, index) {
-		},
+		'onMarkerClick': function (marker) { },
+		'onMarkerReached': function (marker, index) { },
 		'markers': []
 	};
 	function generateUUID() {
-		var d = new Date().getTime(), uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+		var d = new Date().getTime();
+		var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
 			var r = (d + Math.random() * 16) % 16 | 0;
 			return d = Math.floor(d / 16), (c == 'x' ? r : r & 3 | 8).toString(16);
 		});
@@ -52,7 +51,15 @@
 	}
 	var NULL_INDEX = -1;
 	function registerVideoJsMarkersPlugin(options) {
-		var setting = getAttribute.extend(true, {}, defaultSetting, options), markersMap = {}, markersList = [], player_el = getAttribute(this.el()), currentMarkerIndex = NULL_INDEX, player = this, markerTip = null, breakOverlay = null, overlayIndex = NULL_INDEX;
+		var setting = getAttribute.extend(true, {}, defaultSetting, options),
+			markersMap = {},
+			markersList = [],
+			player_el = getAttribute(this.el()),
+			currentMarkerIndex = NULL_INDEX,
+			player = this,
+			markerTip = null,
+			breakOverlay = null,
+			overlayIndex = NULL_INDEX;
 		function sortMarkersList() {
 			markersList.sort(function (a, b) {
 				return setting.markerTip.time(a) - setting.markerTip.time(b);
@@ -71,8 +78,9 @@
 			return setting.markerTip.time(marker) / player.duration() * 100;
 		}
 		function createMarkerDiv(marker) {
-			var markerDiv = getAttribute('<div class=\'vjs-marker\'></div>'), _0x3b80cc = setting.markerStyle;
-			return (marker.text == '片头' || marker.text == '片尾') && (_0x3b80cc = setting.markerStyle2), markerDiv.css(_0x3b80cc).css({
+			var markerDiv = getAttribute('<div class=\'vjs-marker\'></div>');
+			var styleStr = setting.markerStyle;
+			return (marker.text == '片头' || marker.text == '片尾') && (styleStr = setting.markerStyle2), markerDiv.css(styleStr).css({
 				'margin-left': -parseFloat(markerDiv.css('width')) / 2 + 'px',
 				'left': getPosition(marker) + '%'
 			}).attr('data-marker-key', marker.key).attr('data-marker-time', setting.markerTip.time(marker)), marker.class && markerDiv.addClass(marker.class), markerDiv.on('click', function (e) {
@@ -121,8 +129,8 @@
 		function initializeMarkerTip() {
 			markerTip = getAttribute('<div class=\'vjs-tip\'><div class=\'vjs-tip-arrow\'></div><div class=\'vjs-tip-inner\'></div></div>');
 			player_el.find('.vjs-progress-holder').append(markerTip);
-			var _0x1126ce = getAttribute('<div class=\'vjs-tip2\'><div class=\'vjs-tip-arrow2\'></div><div class=\'vjs-tip-inner2\'></div></div>');
-			player_el.find('.vjs-progress-holder').append(_0x1126ce);
+			var markerTip2 = getAttribute('<div class=\'vjs-tip2\'><div class=\'vjs-tip-arrow2\'></div><div class=\'vjs-tip-inner2\'></div></div>');
+			player_el.find('.vjs-progress-holder').append(markerTip2);
 		}
 		function updateBreakOverlay() {
 			if (!setting.breakOverlay.display || currentMarkerIndex < 0) {
@@ -145,7 +153,7 @@
 			if (!markersList.length) {
 				return;
 			}
-			var getNextMarkerTime = function(index) {
+			var getNextMarkerTime = function (index) {
 				if (index < markersList.length - 1) {
 					return setting.markerTip.time(markersList[index + 1]);
 				}

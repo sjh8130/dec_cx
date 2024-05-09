@@ -1,9 +1,9 @@
-//https://mooc1-2.chaoxing.com/ananas/videojs-ext/drag_div.js 2023-03-31
+// https://mooc1-2.chaoxing.com/ananas/videojs-ext/drag_div.js 2023-03-31
 /*
   dragObj:  拖拽对象
   parent: 指定区域
 */
-function dragFn (dragObj,parent) {
+function dragFn(dragObj, parent) {
   $(dragObj).mousedown(function (e) {
     var _this = $(this)
     var parent_h = $(parent)[0].offsetHeight
@@ -14,7 +14,7 @@ function dragFn (dragObj,parent) {
     var dragY = e.clientY - $(this)[0].offsetTop
 
     // 当前拖拽对象层级优先
-    $(this).css('z-index','9').siblings().css('z-index','1')
+    $(this).css('z-index', '9').siblings().css('z-index', '1')
 
     $(document).mousemove(function (e) {
       var l = e.clientX - dragX
